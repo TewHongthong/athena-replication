@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_047",
+  "language": "javascript",
+  "originalName": "name",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function profileEditCommand(l) {\n  if (!l) {\n    console.error('Usage: rolecraft profile edit <name>')\n    throw new Error('Missing profile name.')\n  }\n\n  const data = await readProfile(l)\n  if (!data) throw new Error(`Profile \"${l}\" not found.`)\n\n  const editor = process.env.EDITOR || 'vi'\n  const tmpDir = mkdtempSync(join(tmpdir(), 'rolecraft-profile-'))\n  const tmpFile = join(tmpDir, `${l}.json`)\n  writeFileSync(tmpFile, `${JSON.stringify(data, null, 2)}\\n`, 'utf-8')\n\n  try {\n    const [editorCmd, ...editorArgs] = editor.split(/\\s+/)\n    const result = spawnSync(editorCmd, [...editorArgs, tmpFile], {\n      stdio: 'inherit',\n    })\n    if (result.error) throw result.error\n    if (result.status !== 0)\n      throw new Error(\n        `Command failed: ${editorCmd} exited with code ${result.status}`,\n      )\n    const edited = JSON.parse(readFileSync(tmpFile, 'utf-8'))\n    edited.name = l\n    await writeProfile(edited)\n    console.log(`\\n✅ Profile \"${l}\" updated.`)\n  } catch (err) {\n    if (err instanceof SyntaxError)\n      throw new Error(`Invalid JSON after editing. Profile not saved.`)\n    throw err\n  } finally {\n    try {\n      unlinkSync(tmpFile)\n      rmdirSync(tmpDir)\n    } catch {}\n  }\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

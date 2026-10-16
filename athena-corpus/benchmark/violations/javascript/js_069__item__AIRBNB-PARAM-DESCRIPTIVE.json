@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_069",
+  "language": "javascript",
+  "originalName": "item",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildStudyTimeViewModel({sessions=[],today,weekStart,monthStart,hoursForDate,addDays}={}){\n  const dated=sessions.filter(i=>i.date),totalSeconds=sum(dated,i=>i.durationSeconds),todaySeconds=sum(dated.filter(i=>i.date===today),i=>i.durationSeconds),weekSeconds=sum(dated.filter(i=>i.date>=weekStart&&i.date<=today),i=>i.durationSeconds),monthSeconds=sum(dated.filter(i=>i.date>=monthStart&&i.date<=today),i=>i.durationSeconds);\n  const firstRecent=dated.filter(i=>i.date>=addDays(today,-29)&&i.date<=today).map(i=>i.date).sort()[0]||null;\n  const days=firstRecent?daySpan(firstRecent,today)+1:0,recent=firstRecent?dated.filter(i=>i.date>=firstRecent&&i.date<=today):[],realized=sum(recent,i=>i.durationSeconds);let planned=0;for(let index=0;index<days;index++)planned+=hoursForDate(addDays(firstRecent,index))*3600;\n  const elapsed=daySpan(weekStart,today)+1,byDate=Object.groupBy?Object.groupBy(dated.filter(i=>i.date>=weekStart&&i.date<=today),i=>i.date):dated.filter(i=>i.date>=weekStart&&i.date<=today).reduce((map,i)=>((map[i.date]??=[]).push(i),map),{});let achieved=0;for(let index=0;index<elapsed;index++){const date=addDays(weekStart,index),target=hoursForDate(date)*3600,actual=sum(byDate[date]||[],i=>i.durationSeconds);if(target>0&&actual>=target)achieved++}\n  const targetSeconds=hoursForDate(today)*3600;\n  return {todaySeconds,weekSeconds,monthSeconds,totalSeconds,targetSeconds,todayGoalPct:targetSeconds>0?Math.round(todaySeconds/targetSeconds*100):0,consistency:{achieved,elapsed},pace:{secondsPerDay:days?realized/days:0,days},dedication:{score:planned>0?Math.min(100,Math.round(realized/planned*100)):0,realized,planned,days}};\n}",
+  "occurrencesRenamed": 41,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_009",
+  "language": "csharp",
+  "originalName": "MealPlanEntryId",
+  "injectedName": "meal_plan_entry_id",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'meal_plan_entry_id' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed class ConsumptionEvent\n{\n    public int Id { get; set; }\n    public ConsumptionKind Kind { get; set; }\n    public int? meal_plan_entry_id { get; set; }\n    public int? BomDefinitionId { get; set; }\n    public string Description { get; set; } = string.Empty;\n    public DateTimeOffset ConsumedAt { get; set; }\n    public DateTimeOffset? UndoneAt { get; set; }\n    public string? MealPlanName { get; set; }\n    public DateOnly? PlanDate { get; set; }\n    public string? MealSlot { get; set; }\n    public List<ConsumptionLine> Lines { get; set; } = [];\n\n    public bool CanUndo => UndoneAt is null\n                           && Lines.Count > 0\n                           && Lines.All(line => line.ItemId is not null);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

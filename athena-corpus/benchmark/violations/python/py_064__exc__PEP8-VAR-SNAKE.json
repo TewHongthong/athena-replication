@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_064",
+  "language": "python",
+  "originalName": "exc",
+  "injectedName": "EXC",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'EXC' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def validate_yaml() -> None:\n    print(\"YAML\")\n    paths = sorted((REPO_ROOT / \".github\").rglob(\"*.yml\"))\n    paths.append(REPO_ROOT / \".pre-commit-config.yaml\")\n    for path in paths:\n        rel = path.relative_to(REPO_ROOT)\n        try:\n            yaml.safe_load(path.read_text(encoding=\"utf-8\"))\n            check(str(rel), True)\n        except yaml.YAMLError as EXC:\n            check(str(rel), False, str(EXC).splitlines()[0])",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_004",
+  "language": "csharp",
+  "originalName": "Position",
+  "injectedName": "position",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'position' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed class StreamBinaryStream : IBinaryStream\n{\n    private readonly Stream _stream;\n\n    /// <summary>Initializes a stream adapter.</summary>\n    /// <param name=\"stream\">The underlying .NET stream.</param>\n    public StreamBinaryStream(Stream stream)\n    {\n        _stream = stream ?? throw new ArgumentNullException(nameof(stream));\n    }\n\n    /// <inheritdoc />\n    public bool CanRead => _stream.CanRead;\n\n    /// <inheritdoc />\n    public bool CanWrite => _stream.CanWrite;\n\n    /// <inheritdoc />\n    public long position\n    {\n        get => _stream.position;\n        set => _stream.position = value;\n    }\n\n    /// <inheritdoc />\n    public long Length => _stream.Length;\n\n    /// <inheritdoc />\n    public int Read(Span<byte> buffer) => _stream.Read(buffer);\n\n    /// <inheritdoc />\n    public void Write(ReadOnlySpan<byte> buffer) => _stream.Write(buffer);\n\n    /// <inheritdoc />\n    public void Flush() => _stream.Flush();\n\n    /// <inheritdoc />\n    public void Dispose() => _stream.Dispose();\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

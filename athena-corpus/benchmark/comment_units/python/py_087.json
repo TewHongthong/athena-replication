@@ -1,0 +1,38 @@
+{
+  "snippetId": "py_087",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "function",
+  "name": "row_perk_hashes",
+  "codeBare": "def row_perk_hashes(row: pd.Series, perk_map: dict[str, frozenset[int]]) -> frozenset[int]:\n    \n    hashes: set[int] = set()\n    for col in row.index:\n        if not col.startswith(\"Perks \"):\n            continue\n        name = str(row[col]).strip().removesuffix(\"*\").strip().casefold()\n        if name:\n            hashes |= perk_map.get(name, frozenset())\n    return frozenset(hashes)",
+  "referenceComment": "\"\"\"All perk hashes present on an item, resolved from complete Perks N cells.\n\n    DIM's measured cells contain one complete perk name, including legitimate\n    commas. Only the single trailing ``*`` selected marker is removed; names\n    are never split into guessed options.\n    \"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-FUNC"
+  ],
+  "origin": "snippet",
+  "source": "github:tonym999/vault-cleaner@1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+  "sourceDetail": "src/vault_cleaner/rules/weapons.py lines 33-47 (function row_perk_hashes); license MIT; repo created 2026-07-18T09:39:13Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 6,
+  "signature": {
+    "params": 2,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "tonym999/vault-cleaner",
+    "repoUrl": "https://github.com/tonym999/vault-cleaner",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-18T09:39:13Z",
+    "commit": "1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+    "path": "src/vault_cleaner/rules/weapons.py",
+    "startLine": 33,
+    "endLine": 47,
+    "unit": "function row_perk_hashes",
+    "corpusFile": "corpus/python/tonym999__vault-cleaner__weapons.py.md"
+  }
+}

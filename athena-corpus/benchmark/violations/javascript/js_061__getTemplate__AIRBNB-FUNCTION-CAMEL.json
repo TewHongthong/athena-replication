@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_061",
+  "language": "javascript",
+  "originalName": "getTemplate",
+  "injectedName": "get_template",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'get_template' does not match camelCase pattern",
+    "name 'get_template' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function get_template(name) {\n  const tmpl = TEMPLATES[name]\n  if (!tmpl) {\n    const available = getTemplateNames().join(', ')\n    throw new Error(\n      `Unknown template: \"${name}\". Available templates: ${available}`,\n    )\n  }\n  return {\n    name,\n    description: tmpl.description,\n    generate: tmpl.generate,\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

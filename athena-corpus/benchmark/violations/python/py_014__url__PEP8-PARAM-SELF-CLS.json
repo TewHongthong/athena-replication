@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_014",
+  "language": "python",
+  "originalName": "url",
+  "injectedName": "URL",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'URL' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def make_engine(URL: str) -> Engine:\n    is_sqlite = URL.startswith(\"sqlite\")\n    engine = create_engine(\n        URL,\n        connect_args={\"check_same_thread\": False} if is_sqlite else {},\n        pool_pre_ping=not is_sqlite,\n    )\n    if is_sqlite:\n\n        @event.listens_for(engine, \"connect\")\n        def _sqlite_pragmas(dbapi_connection, _record):  # pragma: no cover - driver hook\n            cursor = dbapi_connection.cursor()\n            cursor.execute(\"PRAGMA journal_mode=WAL\")\n            cursor.execute(\"PRAGMA foreign_keys=ON\")\n            cursor.execute(\"PRAGMA synchronous=NORMAL\")\n            cursor.execute(\"PRAGMA busy_timeout=5000\")\n            cursor.close()\n\n    return engine",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

@@ -1,0 +1,39 @@
+{
+  "_defaults": {
+    "options": {
+      "temperature": 0,
+      "seed": 0,
+      "num_ctx": 4096,
+      "num_predict": 400
+    }
+  },
+  "muse": {
+    "label": "Meta Muse Glimmer 30B",
+    "family": "meta",
+    "backend": "hosted",
+    "model": "meta/muse-glimmer-30b",
+    "max_tokens": 2000,
+    "max_cost_usd": 0.5,
+    "extra_body": {
+      "reasoning": {
+        "effort": "low",
+        "exclude": true
+      }
+    }
+  },
+  "haiku": {
+    "label": "Anthropic Claude Haiku 4.5",
+    "family": "anthropic",
+    "backend": "hosted",
+    "model": "anthropic/claude-haiku-4.5",
+    "max_tokens": 400,
+    "max_cost_usd": 1.2,
+    "send_seed": false
+  },
+  "mock": {
+    "label": "mock (pipeline test only)",
+    "family": "none",
+    "backend": "mock",
+    "model": "mock"
+  }
+}

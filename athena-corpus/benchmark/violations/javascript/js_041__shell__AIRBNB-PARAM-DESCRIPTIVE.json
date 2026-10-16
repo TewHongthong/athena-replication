@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_041",
+  "language": "javascript",
+  "originalName": "shell",
+  "injectedName": "s",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 's' shorter than minLength=2",
+    "name 's' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function completionsCommand(s) {\n  if (!s) {\n    console.log('Usage: rolecraft completions bash|zsh|fish')\n    console.log()\n    console.log('Generate shell completion scripts for rolecraft.')\n    console.log()\n    console.log('Examples:')\n    console.log('  rolecraft completions bash  # print bash completion script')\n    console.log('  rolecraft completions zsh   # print zsh completion script')\n    console.log('  rolecraft completions fish  # print fish completion script')\n    console.log()\n    console.log('To install completions, add to your shell rc file:')\n    console.log('  Bash: source <(rolecraft completions bash)')\n    console.log('  Zsh:  source <(rolecraft completions zsh)')\n    console.log('  Fish: rolecraft completions fish | source')\n    return\n  }\n\n  switch (s) {\n    case 'bash':\n      console.log(bashScript())\n      break\n    case 'zsh':\n      console.log(zshScript())\n      break\n    case 'fish':\n      console.log(fishScript())\n      break\n    default:\n      throw new Error(\n        `Unknown shell: ${s}. Usage: rolecraft completions bash|zsh|fish`,\n      )\n  }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

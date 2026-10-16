@@ -1,0 +1,37 @@
+{
+  "snippetId": "java_034",
+  "language": "java",
+  "standardId": "GOOGLE_JAVA",
+  "identifierKind": "method",
+  "name": "check",
+  "codeBare": "public static void check() {\n    if (state == State.CHECKING || state == State.DOWNLOADING || state == State.READY) {\n        return;\n    }\n    Path jar = jar();\n    if (jar == null) {\n        state = State.DEV;\n        return;\n    }\n    state = State.CHECKING;\n    Thread.ofVirtual().start(() -> {\n        try {\n            HttpRequest req = HttpRequest.newBuilder(URI.create(API)).timeout(Duration.ofSeconds(20))\n                    .header(\"User-Agent\", \"AeroClient-Mod\").build();\n            JsonObject rel = JsonParser.parseString(HTTP.send(req, HttpResponse.BodyHandlers.ofString()).body()).getAsJsonObject();\n            stamp = null;\n            for (var a : rel.getAsJsonArray(\"assets\")) {\n                JsonObject o = a.getAsJsonObject();\n                if (\"aero-client.jar\".equals(o.get(\"name\").getAsString())) {\n                    assetUrl = o.get(\"browser_download_url\").getAsString();\n                    stamp = o.get(\"updated_at\").getAsString();\n                }\n            }\n            if (stamp == null) {\n                throw new IllegalStateException(\"no release jar\");\n            }\n            Path stampFile = jar.resolveSibling(\".aero-client.version\");\n            String have = Files.isRegularFile(stampFile) ? Files.readString(stampFile).trim() : \"\";\n            state = have.equals(stamp) ? State.UPTODATE : State.AVAILABLE;\n        } catch (Throwable t) {\n            state = State.ERROR;\n        }\n    });\n}",
+  "referenceComment": "    /** Starts a background check unless one is running or an update is already staged. */",
+  "ruleIds": [
+    "GJAVA-JAVADOC-METHOD-REQUIRED",
+    "GJAVA-JAVADOC-SUMMARY-FRAGMENT"
+  ],
+  "origin": "snippet",
+  "source": "github:KingF3rdi/aero-client@d8888aba64351257362cd47f69282311dd942c8f",
+  "sourceDetail": "src/main/java/dev/aero/client/ModUpdater.java lines 70-103 (method ModUpdater.check); license MIT; repo created 2026-09-20T13:19:19Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "KingF3rdi/aero-client",
+    "repoUrl": "https://github.com/KingF3rdi/aero-client",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-20T13:19:19Z",
+    "commit": "d8888aba64351257362cd47f69282311dd942c8f",
+    "path": "src/main/java/dev/aero/client/ModUpdater.java",
+    "startLine": 70,
+    "endLine": 103,
+    "unit": "method ModUpdater.check",
+    "corpusFile": "corpus/java/KingF3rdi__aero-client__ModUpdater.java.md"
+  }
+}

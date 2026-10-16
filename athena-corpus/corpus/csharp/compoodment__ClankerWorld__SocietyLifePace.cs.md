@@ -1,0 +1,38 @@
+# src/ClankerWorld.Simulation/Society/SocietyLifePace.cs
+
+- source repo: compoodment/ClankerWorld
+- repo url: https://github.com/compoodment/ClankerWorld
+- license: MIT
+- created_at: 2026-09-18T08:13:45Z
+- file path: src/ClankerWorld.Simulation/Society/SocietyLifePace.cs
+- commit: 58d48ddaa57f24bceedae8ac01aff6e7f396920f
+
+```csharp
+namespace ClankerWorld.Simulation.Society;
+
+public static partial class SocietyFixture
+{
+    public static SocietyOperationResult SetLifePace(SocietyCheckpoint checkpoint, int rate)
+    {
+        Validate(checkpoint);
+        if (!checkpoint.IsPaused)
+        {
+            throw new InvalidOperationException("Pause the world before changing life pace.");
+        }
+        if (rate is not (1 or 365 or 1_460))
+        {
+            throw new ArgumentOutOfRangeException(nameof(rate));
+        }
+        if ((checkpoint.LifeClock?.Rate ?? 1) == rate)
+        {
+            return new(checkpoint);
+        }
+        var next = checkpoint with
+        {
+            Config = checkpoint.Config with { ContractVersion = Math.Max(2, checkpoint.Config.ContractVersion) },
+            LifeClock = new(rate, checkpoint.WorldTick, checkpoint.LifeTickAt(checkpoint.WorldTick)),
+        };
+        return Commit(next, "life_pace_changed", rate.ToString(System.Globalization.CultureInfo.InvariantCulture));
+    }
+}
+```

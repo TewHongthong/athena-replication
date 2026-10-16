@@ -1,0 +1,38 @@
+{
+  "snippetId": "ts_009",
+  "language": "typescript",
+  "standardId": "GOOGLE_TS",
+  "identifierKind": "function",
+  "name": "imageResult",
+  "codeBare": "export async function imageResult(filePath: string, mimeType: \"image/png\" | \"image/jpeg\", note?: string): Promise<CallToolResult> {\n  const text = { type: \"text\" as const, text: note === undefined ? filePath : `${note}\n${filePath}` };\n  if (previewMode === \"path\") return { content: [text] };\n  const data = (await readFile(filePath)).toString(\"base64\");\n  const image = { type: \"image\" as const, data, mimeType };\n  return { content: previewMode === \"inline\" ? [image] : [image, text] };\n}",
+  "referenceComment": "/**\n * Returns an image the model can see, plus a text block naming the file on\n * disk so pipelines can pass the full-resolution path along. Callers keep the\n * file small (export at a reduced scale) — image bytes count against context.\n * In \"path\" mode (clients that cannot show the model images) only the text\n * block is returned; in \"inline\" mode only the image block.\n */",
+  "ruleIds": [
+    "GTS-JSDOC-TOPLEVEL-EXPORT"
+  ],
+  "origin": "snippet",
+  "source": "github:Brainferno/brainferno-mcp-bridge@95695615162b4db4a3189be9dd0ebf9e7d80c129",
+  "sourceDetail": "packages/server/src/tools/result.ts lines 32-39 (function imageResult); license Apache-2.0; repo created 2026-08-26; curated by athena-curation-1.0",
+  "referenceCommentLines": 7,
+  "signature": {
+    "params": 3,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "Brainferno/brainferno-mcp-bridge",
+    "repoUrl": "https://github.com/Brainferno/brainferno-mcp-bridge",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-08-26",
+    "commit": "95695615162b4db4a3189be9dd0ebf9e7d80c129",
+    "path": "packages/server/src/tools/result.ts",
+    "startLine": 32,
+    "endLine": 39,
+    "unit": "function imageResult",
+    "corpusFile": "corpus/typescript/Brainferno__brainferno-mcp-bridge__result.ts.md"
+  }
+}

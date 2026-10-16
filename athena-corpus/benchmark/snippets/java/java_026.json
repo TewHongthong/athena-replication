@@ -1,0 +1,52 @@
+{
+  "id": "java_026",
+  "language": "java",
+  "source": "github:KingF3rdi/aero-client@d8888aba64351257362cd47f69282311dd942c8f",
+  "sourceDetail": "src/main/java/dev/aero/client/AlphaBuffers.java lines 18-37 (method AlphaBuffers.wrap); license MIT; repo created 2026-09-20T13:19:19Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public static VertexConsumerProvider wrap(Entity entity, VertexConsumerProvider inner) {\n    if (inner == null) {\n        return inner;\n    }\n    float alpha = Math.min(Math.min(Visuals.transparentPlayerAlpha(entity, false), Visuals.crystalAlpha(entity)),\n            Visuals.deathFadeAlpha(entity));\n    float tintStrength = Visuals.damageTintStrength(entity);\n    if (alpha >= 0.999f && tintStrength <= 0f) {\n        return inner;\n    }\n    if (alpha <= 0.01f) {\n        return layer -> inner.getBuffer(layer);\n    }\n    int tintRgb = tintStrength > 0f ? Visuals.damageTintRgb() : 0;\n    try {\n        return layer -> tint(inner.getBuffer(layer), alpha, tintStrength, tintRgb);\n    } catch (Throwable ignored) {\n        return inner;\n    }\n}",
+  "identifiers": [
+    {
+      "name": "wrap",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "alpha",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "entity",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "inner",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "tintStrength",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "tintRgb",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "KingF3rdi/aero-client",
+    "repoUrl": "https://github.com/KingF3rdi/aero-client",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-20T13:19:19Z",
+    "commit": "d8888aba64351257362cd47f69282311dd942c8f",
+    "path": "src/main/java/dev/aero/client/AlphaBuffers.java",
+    "startLine": 18,
+    "endLine": 37,
+    "unit": "method AlphaBuffers.wrap",
+    "corpusFile": "corpus/java/KingF3rdi__aero-client__AlphaBuffers.java.md"
+  }
+}

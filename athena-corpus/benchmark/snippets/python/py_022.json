@@ -1,0 +1,52 @@
+{
+  "id": "py_022",
+  "language": "python",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/config.py lines 69-102 (class AgentConfig); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@dataclass\nclass AgentConfig:\n    path: Path\n    runtime: dict[str, Any] = field(default_factory=dict)\n    budget: BudgetConfig = field(default_factory=BudgetConfig)\n    notify: NotifyConfig = field(default_factory=NotifyConfig)\n    providers: dict[str, ProviderConfig] = field(default_factory=dict)\n    executors: dict[str, ExecutorConfig] = field(default_factory=dict)\n    shell_allowlist: list[str] = field(default_factory=list)\n    raw: dict[str, Any] = field(default_factory=dict)\n\n    @property\n    def default_provider(self) -> str:\n        return str(self.runtime.get(\"default_provider\", \"deepseek\"))\n\n    @property\n    def default_executor(self) -> str:\n        return str(self.runtime.get(\"default_executor\", \"codex\"))\n\n    def provider(self, name: str | None = None) -> ProviderConfig:\n        key = name or self.default_provider\n        if key not in self.providers:\n            raise ConfigError(\n                f\"unknown provider {key!r}; configured: {sorted(self.providers)}\"\n            )\n        return self.providers[key]\n\n    def executor(self, name: str | None = None) -> ExecutorConfig:\n        key = name or self.default_executor\n        if key not in self.executors:\n            raise ConfigError(\n                f\"unknown executor {key!r}; configured: {sorted(self.executors)}\"\n            )\n        return self.executors[key]",
+  "identifiers": [
+    {
+      "name": "AgentConfig",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "provider",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "runtime",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "budget",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/config.py",
+    "startLine": 69,
+    "endLine": 102,
+    "unit": "class AgentConfig",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__config.py.md"
+  }
+}

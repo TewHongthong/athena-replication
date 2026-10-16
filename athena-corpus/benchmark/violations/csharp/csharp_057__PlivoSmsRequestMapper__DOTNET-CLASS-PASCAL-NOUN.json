@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_057",
+  "language": "csharp",
+  "originalName": "PlivoSmsRequestMapper",
+  "injectedName": "plivo_sms_request_mapper",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'plivo_sms_request_mapper' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class plivo_sms_request_mapper\n{\n    public static IReadOnlyDictionary<string, object> ToRequestBody(\n        SmsMessage message,\n        PlivoOptions options)\n    {\n        var body = new Dictionary<string, object>\n        {\n            [\"src\"] = message.From ?? options.From,\n            [\"dst\"] = message.To,\n            [\"text\"] = message.Body\n        };\n\n        if (!string.IsNullOrWhiteSpace(options.CallbackUrl))\n        {\n            body[\"url\"] = options.CallbackUrl;\n            body[\"method\"] = \"POST\";\n        }\n\n        return body;\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

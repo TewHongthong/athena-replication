@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_088",
+  "language": "csharp",
+  "originalName": "ballRb",
+  "injectedName": "ball_rb",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ball_rb' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public void FeedBallIntoTurret(GameObject ball)\n{\n    if (!isEnabled || !isReadyToShoot) return;\n\n    Rigidbody ball_rb = ball.GetComponent<Rigidbody>();\n    Collider ballCollider = ball.GetComponent<Collider>();\n\n    if (ball_rb != null)\n    {\n        StartCoroutine(PropelThroughHood(ball, ball_rb, ballCollider));\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

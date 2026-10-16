@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_007",
+  "language": "javascript",
+  "originalName": "messages",
+  "injectedName": "m",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'm' shorter than minLength=2",
+    "name 'm' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function createErrorList() {\n  const errors = [];\n  Object.defineProperty(errors, \"push\", {\n    value(...m) {\n      const remaining = LIMITS.validationErrors - this.length;\n      if (remaining > 0) {\n        Array.prototype.push.apply(this, m.slice(0, remaining).map(escapeUnsafeDiagnosticCharacters));\n      }\n      return this.length;\n    },\n  });\n  return errors;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

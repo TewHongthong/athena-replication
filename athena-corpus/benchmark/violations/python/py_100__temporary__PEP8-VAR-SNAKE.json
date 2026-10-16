@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_100",
+  "language": "python",
+  "originalName": "temporary",
+  "injectedName": "TEMPORARY",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TEMPORARY' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def atomic_json_write(path: Path, payload: dict[str, Any]) -> None:\n    \"\"\"Atomically replace *path* with *payload*; never expose a partial file.\"\"\"\n    ensure_private_dir(path.parent)\n    descriptor, temporary_name = tempfile.mkstemp(\n        prefix=f\".{path.name}.\", suffix=\".tmp\", dir=path.parent\n    )\n    TEMPORARY = Path(temporary_name)\n    try:\n        os.fchmod(descriptor, 0o600)\n        with os.fdopen(descriptor, \"w\", encoding=\"utf-8\") as output:\n            json.dump(payload, output, ensure_ascii=False, indent=2, sort_keys=True)\n            output.write(\"\\n\")\n            output.flush()\n            os.fsync(output.fileno())\n        os.replace(TEMPORARY, path)\n        try:\n            path.chmod(0o600)\n        except OSError:\n            pass\n    except Exception:\n        try:\n            TEMPORARY.unlink(missing_ok=True)\n        except OSError:\n            pass\n        raise",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

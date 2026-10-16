@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_057",
+  "language": "java",
+  "originalName": "RELEASES_URL",
+  "injectedName": "releases_url",
+  "identifierKind": "constant",
+  "violatedRuleId": "GJAVA-CONSTANT-UPPER-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'releases_url' does not match UPPER_SNAKE_CASE pattern",
+    "name 'releases_url' matches forbidden pattern '[a-z]'"
+  ],
+  "codeContextWithViolation": "class AdminProductVersionContractTest {\n  private static final String PROJECT_URL = \"https://github.com/klboke/kkRepo\";\n  private static final String releases_url = PROJECT_URL + \"/releases\";\n  private static final String EXTERNAL_LINK_ATTRIBUTES = \"target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\"\";\n  private static final Pattern VERSION_BADGE = Pattern.compile(\n      \"<a class=\\\"product-version\\\" data-current-version=\\\"([^\\\"@]+)\\\" href=\\\"\"\n          + Pattern.quote(releases_url) + \"\\\" \" + EXTERNAL_LINK_ATTRIBUTES + \">v\\\\1</a>\");\n\n  @Test\n  void headerLinksBrandAndFilteredVersion() throws IOException {\n    String index = resource(\"/META-INF/resources/admin/index.html\");\n\n    assertTrue(VERSION_BADGE.matcher(index).find());\n    assertTrue(index.contains(\"class=\\\"logo-mark product-home-link\\\" href=\\\"\" + PROJECT_URL\n        + \"\\\" \" + EXTERNAL_LINK_ATTRIBUTES));\n    assertTrue(index.contains(\"class=\\\"product-link\\\" href=\\\"\" + PROJECT_URL + \"\\\" \"\n        + EXTERNAL_LINK_ATTRIBUTES + \">kkRepo</a>\"));\n    assertTrue(index.contains(\"class=\\\"product-link\\\" href=\\\"\" + PROJECT_URL + \"\\\" \"\n        + EXTERNAL_LINK_ATTRIBUTES + \">Repository Manager</a>\"));\n    assertTrue(index.contains(\"class=\\\"product-update-link\\\" data-product-update hidden \"\n        + EXTERNAL_LINK_ATTRIBUTES));\n    assertTrue(index.contains(\"class=\\\"lucide-icon icon-cloud-download product-update-icon\\\"\"));\n    assertTrue(index.contains(\"data-product-update-tooltip role=\\\"tooltip\\\"\"));\n    assertTrue(index.contains(\"/login/assets/product-update.js?v=20260819-version-update-1\"));\n    assertFalse(index.contains(\"/releases/tag/v0.9.0\"));\n    assertFalse(index.contains(\"@project.version@\"));\n    assertTrue(index.contains(\"value=\\\"${dn}\\\"\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

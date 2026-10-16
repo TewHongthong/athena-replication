@@ -1,0 +1,52 @@
+{
+  "id": "js_028",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/compose.js lines 8-18 (function mergeSectionLines); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function mergeSectionLines(existingLines, newLines) {\n  const seen = new Set(existingLines)\n  const merged = [...existingLines]\n  for (const line of newLines) {\n    if (!seen.has(line)) {\n      merged.push(line)\n      seen.add(line)\n    }\n  }\n  return merged\n}",
+  "identifiers": [
+    {
+      "name": "mergeSectionLines",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "seen",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "existingLines",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "newLines",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "merged",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "line",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/compose.js",
+    "startLine": 8,
+    "endLine": 18,
+    "unit": "function mergeSectionLines",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_api_compose.js.md"
+  }
+}

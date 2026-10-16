@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_099",
+  "language": "javascript",
+  "originalName": "plan",
+  "injectedName": "p",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'p' shorter than minLength=2",
+    "name 'p' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function createReplanController({service,repository,getState,clock,getDailyCapacity,onChanged=()=>{},onConfirmed=()=>{},onUndone=()=>{}}={}){\n  if(!service||!repository||typeof getState!=='function'||!clock)throw new TypeError('Controlador de replanejamento requer serviço, repositório, estado e relógio.');\n  let preview=null;\n  const view=()=>preview;\n  const calculate=()=>{const today=clock.today(),start=clock.startOfWeek(today),end=clock.addDays(start,6),state=getState(),futureDays=[];for(let date=clock.addDays(today,1);date<=end;date=clock.addDays(date,1)){const planned=state.dailyPlans.filter(p=>p.date===date).reduce((sum,p)=>sum+(p.items||[]).filter(item=>!['skipped','replaced','deferred'].includes(item.status)).reduce((total,item)=>total+(Number(item.plannedMinutes)||0),0),0);futureDays.push({date,availableMinutes:Math.max(0,getDailyCapacity(date)-planned)})}preview=service.calculate({plans:repository.getDailyPlans().filter(p=>p.date>=start&&p.date<today),periodStart:start,periodEnd:end,futureDays});onChanged(preview);return preview};\n  const clear=()=>{preview=null;onChanged(null)};\n  const confirm=()=>{if(preview?.state!=='proposal')return null;const result=service.confirm(preview);preview=null;onConfirmed(result);return result};\n  const undo=id=>{const result=service.undo(id);if(result)onUndone(result);return result};\n  return Object.freeze({view,calculate,clear,confirm,undo});\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "py_017",
+  "language": "python",
+  "source": "github:Nikhils-G/podium@64d18bf7ed5c1eef58d5397ff282807ceb3bf23e",
+  "sourceDetail": "src/podium/models/events.py lines 113-127 (class JudgeInvite); license MIT; repo created 2026-09-26T18:48:58Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class JudgeInvite(Base):\n    __tablename__ = \"judge_invites\"\n\n    id: Mapped[int] = mapped_column(primary_key=True)\n    event_id: Mapped[int] = mapped_column(ForeignKey(\"events.id\", ondelete=\"CASCADE\"), index=True)\n    email: Mapped[str] = mapped_column(String(254), nullable=False)\n    token_hash: Mapped[str] = mapped_column(String(64), unique=True, nullable=False)\n    track_public_ids: Mapped[list] = mapped_column(JSON, default=list, nullable=False)\n    invited_by: Mapped[int | None] = mapped_column(ForeignKey(\"users.id\", ondelete=\"SET NULL\"))\n    created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow, nullable=False)\n    expires_at: Mapped[datetime] = mapped_column(UTCDateTime, nullable=False)\n    accepted_at: Mapped[datetime | None] = mapped_column(UTCDateTime)\n    accepted_user_id: Mapped[int | None] = mapped_column(\n        ForeignKey(\"users.id\", ondelete=\"SET NULL\")\n    )",
+  "identifiers": [
+    {
+      "name": "JudgeInvite",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "event_id",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "email",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "token_hash",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "track_public_ids",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "invited_by",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Nikhils-G/podium",
+    "repoUrl": "https://github.com/Nikhils-G/podium",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:48:58Z",
+    "commit": "64d18bf7ed5c1eef58d5397ff282807ceb3bf23e",
+    "path": "src/podium/models/events.py",
+    "startLine": 113,
+    "endLine": 127,
+    "unit": "class JudgeInvite",
+    "corpusFile": "corpus/python/Nikhils-G__podium__src_podium_models_events.py.md"
+  }
+}

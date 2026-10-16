@@ -1,0 +1,52 @@
+{
+  "id": "csharp_012",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Entities/IntakeQueueItem.cs lines 13-22 (class IntakeQueueStatus); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public enum IntakeQueueStatus\n{\n    Pending,\n    Processing,\n    ReadyForReview,\n    Failed,\n    Accepted,\n    Rejected,\n    Undone\n}",
+  "identifiers": [
+    {
+      "name": "IntakeQueueStatus",
+      "kind": "enum",
+      "isCompliant": true
+    },
+    {
+      "name": "Pending",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Processing",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "ReadyForReview",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Failed",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Accepted",
+      "kind": "enum_member",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Entities/IntakeQueueItem.cs",
+    "startLine": 13,
+    "endLine": 22,
+    "unit": "class IntakeQueueStatus",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__IntakeQueueItem.cs.md"
+  }
+}

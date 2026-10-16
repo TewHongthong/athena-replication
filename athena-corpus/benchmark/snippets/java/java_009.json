@@ -1,0 +1,52 @@
+{
+  "id": "java_009",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/auth/EmailVerificationService.java lines 39-65 (method EmailVerificationService.resendVerification); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Transactional\npublic int resendVerification(String email) {\n    var userOpt = userRepository.findByEmailForUpdate(email);\n    if (userOpt.isEmpty()) {\n        log.info(\"Resend verification requested for unknown email {}\", email);\n        return (int) RESEND_COOLDOWN.toSeconds();\n    }\n\n    var user = userOpt.get();\n    if (user.isEmailVerified()) {\n        throw new BadRequestException(\"Email already verified\");\n    }\n\n    var lastSentAt = user.getLastVerificationEmailSentAt();\n    if (lastSentAt != null) {\n        long remaining = remainingCooldownSeconds(lastSentAt);\n        if (remaining > 0) {\n            throw new RateLimitExceededException(remaining);\n        }\n    }\n\n    tokenService.createVerificationToken(user);\n    user.setLastVerificationEmailSentAt(LocalDateTime.now());\n    userRepository.save(user);\n    log.info(\"Verification email resent to {}\", email);\n    return (int) RESEND_COOLDOWN.toSeconds();\n}",
+  "identifiers": [
+    {
+      "name": "resendVerification",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "userOpt",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "email",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "user",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "lastSentAt",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "remaining",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/auth/EmailVerificationService.java",
+    "startLine": 39,
+    "endLine": 65,
+    "unit": "method EmailVerificationService.resendVerification",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__EmailVerificationService.java.md"
+  }
+}

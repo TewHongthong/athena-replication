@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_068",
+  "language": "csharp",
+  "originalName": "Resolve",
+  "injectedName": "resolve",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'resolve' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public ISmsProvider resolve(SmsRoutingContext context)\n{\n    var providerName = context.ExplicitProvider ?? _options.DefaultProvider;\n\n    if (string.IsNullOrWhiteSpace(providerName))\n        throw new SmsBridgeException(\n            \"No provider could be resolved. Set 'SmsBridge:DefaultProvider' in configuration.\");\n\n    if (!_providers.TryGetValue(providerName, out var provider))\n        throw new SmsBridgeException(\n            $\"Provider '{providerName}' is not registered. Registered: [{string.Join(\", \", _providers.Keys)}].\");\n\n    return provider;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

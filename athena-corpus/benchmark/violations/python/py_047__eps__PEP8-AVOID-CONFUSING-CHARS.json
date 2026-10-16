@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_047",
+  "language": "python",
+  "originalName": "eps",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def discover_and_load(registry: BrickRegistry) -> int:\n    \"\"\"Discover installed brick packs and load them into *registry*.\n\n    Iterates the ``bricks.packs`` entry point group, imports each pack's\n    module, and calls its ``register(registry)`` function.\n\n    Args:\n        registry: The registry to populate with discovered bricks.\n\n    Returns:\n        Number of packs loaded.\n\n    Raises:\n        BricksConfigError: If no packs are installed.\n    \"\"\"\n    l = list(importlib.metadata.entry_points(group=\"bricks.packs\"))\n    if not l:\n        raise BricksConfigError(\"No brick packs installed. Run: pip install bricks-stdlib\")\n    for ep in l:\n        module = importlib.import_module(ep.value)\n        module.register(registry)\n    return len(l)",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

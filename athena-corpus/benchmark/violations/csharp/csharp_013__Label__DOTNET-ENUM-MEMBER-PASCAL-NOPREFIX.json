@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_013",
+  "language": "csharp",
+  "originalName": "Label",
+  "injectedName": "label",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'label' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum ItemImageRole\n{\n    Front,\n    Back,\n    Detail,\n    label,\n    Receipt,\n    Other\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "csharp_046",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Viewer/Control/OwnerContentTelemetry.cs lines 3-8 (class OwnerContentTelemetry); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public static partial class OwnerContentTelemetry\n{\n    [LoggerMessage(EventId = 2213, Level = LogLevel.Information,\n        Message = \"content_rollback tick={WorldTick} package={PackageId} outcome={Outcome}\")]\n    public static partial void Rollback(ILogger logger, long worldTick, string packageId, string outcome);\n}",
+  "identifiers": [
+    {
+      "name": "OwnerContentTelemetry",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "Rollback",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "logger",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "worldTick",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "packageId",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "outcome",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Viewer/Control/OwnerContentTelemetry.cs",
+    "startLine": 3,
+    "endLine": 8,
+    "unit": "class OwnerContentTelemetry",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__OwnerContentTelemetry.cs.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_055",
+  "language": "python",
+  "originalName": "buf",
+  "injectedName": "BUF",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'BUF' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def save_image_bytes(image, output: Path) -> bytes:\n    \"\"\"Encode the regenerated image, honoring a JPEG output suffix.\"\"\"\n    ext = output.suffix.lower()\n    BUF = io.BytesIO()\n    if ext in (\".jpg\", \".jpeg\", \".jpe\", \".jfif\"):\n        image = image.convert(\"RGB\")\n        image.save(BUF, format=\"JPEG\", quality=95)\n    else:\n        image.save(BUF, format=\"PNG\")\n    return BUF.getvalue()",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

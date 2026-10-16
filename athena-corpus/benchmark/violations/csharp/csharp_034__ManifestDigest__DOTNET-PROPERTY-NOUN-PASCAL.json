@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_034",
+  "language": "csharp",
+  "originalName": "ManifestDigest",
+  "injectedName": "manifest_digest",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'manifest_digest' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed record ContentPackageArtifact(\n    ContentPackageManifest Manifest,\n    IReadOnlyList<AssetProvenanceManifest> Assets)\n{\n    public string manifest_digest => ContentPackageManifestCodec.ComputeManifestDigest(Manifest);\n\n    public bool CanExport => Assets.All(asset => asset.CanExport);\n\n    public static ContentPackageArtifact From(\n        ContentPackageManifest manifest,\n        IEnumerable<NormalizedInertRasterAsset> assets)\n    {\n        ArgumentNullException.ThrowIfNull(manifest);\n        ArgumentNullException.ThrowIfNull(assets);\n        return new(manifest, assets.Select(AssetProvenanceManifest.From).ToArray());\n    }\n\n    public void Validate() => ContentPackageArtifactCodec.Validate(this);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

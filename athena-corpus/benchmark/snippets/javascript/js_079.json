@@ -1,0 +1,32 @@
+{
+  "id": "js_079",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/create-app-context.js lines 3-8 (function createAppContext); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function createAppContext({storage,repositories={},clock,idGenerator}={}){\n  if(!storage||REQUIRED_STORAGE_METHODS.some(method=>typeof storage[method]!=='function')) throw new TypeError('O contexto requer um provider de armazenamento válido.');\n  if(!clock||typeof clock.today!=='function'||typeof clock.nowISO!=='function') throw new TypeError('O contexto requer um relógio válido.');\n  if(typeof idGenerator!=='function') throw new TypeError('O contexto requer um gerador de IDs.');\n  return Object.freeze({storage,repositories:Object.freeze({...repositories}),clock,idGenerator});\n}",
+  "identifiers": [
+    {
+      "name": "createAppContext",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "method",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/create-app-context.js",
+    "startLine": 3,
+    "endLine": 8,
+    "unit": "function createAppContext",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__create-app-context.js.md"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_079",
+  "language": "java",
+  "originalName": "handleSyncFurkinData",
+  "injectedName": "handle_sync_furkin_data",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'handle_sync_furkin_data' does not match camelCase pattern",
+    "name 'handle_sync_furkin_data' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public static void handle_sync_furkin_data(SyncFurkinDataPacket packet) {\n    Minecraft minecraft = Minecraft.getInstance();\n    if (minecraft.level == null) {\n        return;\n    }\n    Entity entity = minecraft.level.getEntity(packet.getEntityId());\n    if (!(entity instanceof LivingEntity living)) {\n        return;\n    }\n    FurkinData data = living.getCapability(FurkinCapability.FURKIN_DATA).orElse(null);\n    if (data == null) {\n        return;\n    }\n    CompoundTag nbt = packet.getData();\n    if (nbt != null && !nbt.isEmpty()) {\n        data.deserializeNBT(nbt);\n    } else {\n        // 空包 = 收回，清回 WILD。\n        data.setState(FurkinState.WILD);\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

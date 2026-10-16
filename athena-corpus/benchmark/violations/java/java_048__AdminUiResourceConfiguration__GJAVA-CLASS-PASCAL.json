@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_048",
+  "language": "java",
+  "originalName": "AdminUiResourceConfiguration",
+  "injectedName": "admin_ui_resource_configuration",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'admin_ui_resource_configuration' does not match PascalCase pattern",
+    "name 'admin_ui_resource_configuration' matches forbidden pattern '^[a-z]'",
+    "name 'admin_ui_resource_configuration' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Configuration\npublic class admin_ui_resource_configuration implements WebMvcConfigurer {\n  @Override\n  public void addResourceHandlers(ResourceHandlerRegistry registry) {\n    registry\n        .addResourceHandler(\"/admin/**\")\n        .addResourceLocations(\"classpath:/META-INF/resources/admin/\");\n    registry\n        .addResourceHandler(\"/login/**\")\n        .addResourceLocations(\"classpath:/META-INF/resources/login/\");\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

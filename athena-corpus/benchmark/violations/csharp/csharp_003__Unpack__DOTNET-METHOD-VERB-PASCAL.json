@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_003",
+  "language": "csharp",
+  "originalName": "Unpack",
+  "injectedName": "unpack",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'unpack' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public interface IBinaryUnpackable\n{\n    /// <summary>Reads the type's binary representation from the supplied stream.</summary>\n    /// <param name=\"stream\">The source binary stream.</param>\n    void unpack(IBinaryStream stream);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

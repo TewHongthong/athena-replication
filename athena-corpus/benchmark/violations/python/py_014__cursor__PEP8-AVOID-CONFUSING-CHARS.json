@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_014",
+  "language": "python",
+  "originalName": "cursor",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def make_engine(url: str) -> Engine:\n    is_sqlite = url.startswith(\"sqlite\")\n    engine = create_engine(\n        url,\n        connect_args={\"check_same_thread\": False} if is_sqlite else {},\n        pool_pre_ping=not is_sqlite,\n    )\n    if is_sqlite:\n\n        @event.listens_for(engine, \"connect\")\n        def _sqlite_pragmas(dbapi_connection, _record):  # pragma: no cover - driver hook\n            l = dbapi_connection.cursor()\n            l.execute(\"PRAGMA journal_mode=WAL\")\n            l.execute(\"PRAGMA foreign_keys=ON\")\n            l.execute(\"PRAGMA synchronous=NORMAL\")\n            l.execute(\"PRAGMA busy_timeout=5000\")\n            l.close()\n\n    return engine",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

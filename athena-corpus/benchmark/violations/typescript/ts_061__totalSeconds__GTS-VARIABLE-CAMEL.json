@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_061",
+  "language": "typescript",
+  "originalName": "totalSeconds",
+  "injectedName": "total_seconds",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'total_seconds' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function formatTimecode(ms: number) {\n  const safe = Math.max(0, ms);\n  const total_seconds = Math.floor(safe / 1000);\n  const frames = Math.floor(((safe % 1000) / 1000) * framesPerSecond);\n  const hours = Math.floor(total_seconds / 3600);\n  const minutes = Math.floor((total_seconds % 3600) / 60);\n  const seconds = total_seconds % 60;\n  return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}:${pad(frames)}`;\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

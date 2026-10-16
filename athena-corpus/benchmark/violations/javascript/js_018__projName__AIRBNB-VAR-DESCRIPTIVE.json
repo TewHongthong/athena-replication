@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_018",
+  "language": "javascript",
+  "originalName": "projName",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function formatDirLabel(agent) {\n  if (agent.name === 'copilot') {\n    return './.github/skills/ or ~/.copilot/skills/'\n  }\n  if (DUAL_PATH_AGENTS.has(agent.name)) {\n    const homePath = agent.label\n    const l = NAME_TO_DIR[agent.name] || agent.name\n    const projPath = `./.${l}/skills/`\n    return `${homePath} or ${projPath}`\n  }\n  return agent.label\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

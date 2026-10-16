@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_009",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "ConsumptionEvent",
+  "codeBare": "public sealed class ConsumptionEvent\n{\n    public int Id { get; set; }\n    public ConsumptionKind Kind { get; set; }\n    public int? MealPlanEntryId { get; set; }\n    public int? BomDefinitionId { get; set; }\n    public string Description { get; set; } = string.Empty;\n    public DateTimeOffset ConsumedAt { get; set; }\n    public DateTimeOffset? UndoneAt { get; set; }\n    public string? MealPlanName { get; set; }\n    public DateOnly? PlanDate { get; set; }\n    public string? MealSlot { get; set; }\n    public List<ConsumptionLine> Lines { get; set; } = [];\n\n    public bool CanUndo => UndoneAt is null\n                           && Lines.Count > 0\n                           && Lines.All(line => line.ItemId is not null);\n}",
+  "referenceComment": "/// <summary>A durable, reversible inventory consumption event.</summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Entities/Consumption.cs lines 10-27 (class ConsumptionEvent); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Entities/Consumption.cs",
+    "startLine": 10,
+    "endLine": 27,
+    "unit": "class ConsumptionEvent",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__Consumption.cs.md"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_038",
+  "language": "javascript",
+  "originalName": "data",
+  "injectedName": "d",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'd' shorter than minLength=2",
+    "name 'd' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "async function searchSkillsSh(query) {\n  const url = `https://skills.sh/api/search?q=${encodeURIComponent(query)}`\n  const response = await runFetch(url, { signal: AbortSignal.timeout(10000) })\n  if (!response.ok) return { error: `skills.sh API error: ${response.status}` }\n  const d = await response.json()\n  return { items: d.skills || [] }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

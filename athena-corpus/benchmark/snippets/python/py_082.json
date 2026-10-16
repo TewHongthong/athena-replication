@@ -1,0 +1,52 @@
+{
+  "id": "py_082",
+  "language": "python",
+  "source": "github:tonym999/vault-cleaner@1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+  "sourceDetail": "src/vault_cleaner/note_history.py lines 87-104 (function strip_trailing_tool_clauses); license MIT; repo created 2026-07-18T09:39:13Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def strip_trailing_tool_clauses(notes: object) -> str:\n    \"\"\"Remove complete known vault-cleaner clauses from the Notes tail.\n\n    Repeated clauses are removed one at a time from the end.  A tool-looking\n    fragment with user text after it is intentionally left untouched because\n    its ownership is ambiguous.\n    \"\"\"\n    remaining = str(notes).strip()\n    while remaining:\n        markers = tuple(_MARKER_RE.finditer(remaining))\n        if not markers:\n            break\n        start = markers[-1].start(1)\n        suffix = remaining[start:]\n        if not any(pattern.fullmatch(suffix) for pattern in _GENERATED_CLAUSE_RES):\n            break\n        remaining = remaining[:start].rstrip()\n    return remaining",
+  "identifiers": [
+    {
+      "name": "strip_trailing_tool_clauses",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "remaining",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "notes",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "markers",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "start",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "suffix",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "tonym999/vault-cleaner",
+    "repoUrl": "https://github.com/tonym999/vault-cleaner",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-18T09:39:13Z",
+    "commit": "1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+    "path": "src/vault_cleaner/note_history.py",
+    "startLine": 87,
+    "endLine": 104,
+    "unit": "function strip_trailing_tool_clauses",
+    "corpusFile": "corpus/python/tonym999__vault-cleaner__note_history.py.md"
+  }
+}

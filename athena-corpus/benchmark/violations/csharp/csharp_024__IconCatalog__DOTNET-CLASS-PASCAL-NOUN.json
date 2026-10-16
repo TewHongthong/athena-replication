@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_024",
+  "language": "csharp",
+  "originalName": "IconCatalog",
+  "injectedName": "icon_catalog",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'icon_catalog' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static class icon_catalog\n{\n    public static readonly IReadOnlyList<(string Key, string Icon)> Options = new List<(string, string)>\n    {\n        (\"Inventory2\", Icons.Material.Filled.Inventory2),\n        (\"Kitchen\", Icons.Material.Filled.Kitchen),\n        (\"MenuBook\", Icons.Material.Filled.MenuBook),\n        (\"Dashboard\", Icons.Material.Filled.Dashboard),\n        (\"QrCodeScanner\", Icons.Material.Filled.QrCodeScanner),\n        (\"Handyman\", Icons.Material.Filled.Handyman),\n        (\"Devices\", Icons.Material.Filled.Devices),\n        (\"Album\", Icons.Material.Filled.Album),\n        (\"Checkroom\", Icons.Material.Filled.Checkroom),\n        (\"Category\", Icons.Material.Filled.Category),\n        (\"Room\", Icons.Material.Filled.Room),\n        (\"Home\", Icons.Material.Filled.Home),\n        (\"Star\", Icons.Material.Filled.Star),\n        (\"ShoppingCart\", Icons.Material.Filled.ShoppingCart),\n        (\"Kitchen2\", Icons.Material.Filled.Blender),\n    };\n\n    private static readonly Dictionary<string, string> Map =\n        Options.ToDictionary(o => o.Key, o => o.Icon, StringComparer.OrdinalIgnoreCase);\n\n    /// <summary>Resolves a stored icon key to a MudBlazor icon, falling back to a generic one.</summary>\n    public static string Resolve(string? key) =>\n        key is not null && Map.TryGetValue(key, out var icon) ? icon : Icons.Material.Filled.Category;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

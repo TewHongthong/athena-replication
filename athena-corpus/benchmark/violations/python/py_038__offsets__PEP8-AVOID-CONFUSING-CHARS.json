@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_038",
+  "language": "python",
+  "originalName": "offsets",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def get_batch(self, type, block_size=16, batch_size=16):\n    if type == \"train\":\n        data = self.train_data\n    else:\n        data = self.val_data\n    \n    l = torch.randint(\n        0,\n        len(data) - block_size - 1,\n        (batch_size,)\n    )\n\n    x = torch.stack([\n        data[i:i + block_size]\n        for i in l\n    ])\n\n    y = torch.stack([\n        data[i + 1:i + block_size + 1]\n        for i in l\n    ])\n\n    return x, y",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

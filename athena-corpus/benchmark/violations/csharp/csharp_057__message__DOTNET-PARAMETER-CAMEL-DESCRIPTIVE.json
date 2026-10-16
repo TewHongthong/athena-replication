@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_057",
+  "language": "csharp",
+  "originalName": "message",
+  "injectedName": "MESSAGE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MESSAGE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class PlivoSmsRequestMapper\n{\n    public static IReadOnlyDictionary<string, object> ToRequestBody(\n        SmsMessage MESSAGE,\n        PlivoOptions options)\n    {\n        var body = new Dictionary<string, object>\n        {\n            [\"src\"] = MESSAGE.From ?? options.From,\n            [\"dst\"] = MESSAGE.To,\n            [\"text\"] = MESSAGE.Body\n        };\n\n        if (!string.IsNullOrWhiteSpace(options.CallbackUrl))\n        {\n            body[\"url\"] = options.CallbackUrl;\n            body[\"method\"] = \"POST\";\n        }\n\n        return body;\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_081",
+  "language": "javascript",
+  "originalName": "input",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function createExamRegistry({state,idGenerator}={}){\n  if(!state||!Array.isArray(state.exams)||!Array.isArray(state.examQuestions)||typeof idGenerator!=='function')throw new TypeError('Registro de provas requer estado e gerador de IDs.');\n  const addExam=i=>{\n    const exam=createExam({...i,id:i?.id||idGenerator('exam')});\n    if(state.exams.some(item=>item.id===exam.id))throw new RangeError('A prova já está cadastrada.');\n    state.exams.push(exam);return exam;\n  };\n  const addQuestion=i=>{\n    const question=createExamQuestion({...i,id:i?.id||idGenerator('exam-question')});\n    const subject=state.subjects.find(item=>item.id===question.subjectId);\n    if(!state.exams.some(item=>item.id===question.examId)||!subject?.topics?.some(item=>item.id===question.topicId))throw new RangeError('A questão precisa apontar para prova e tópico existentes.');\n    if(state.examQuestions.some(item=>item.id===question.id||item.examId===question.examId&&item.questionNumber===question.questionNumber))throw new RangeError('A questão já está cadastrada nesta prova.');\n    state.examQuestions.push(question);return question;\n  };\n  return Object.freeze({addExam,addQuestion});\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

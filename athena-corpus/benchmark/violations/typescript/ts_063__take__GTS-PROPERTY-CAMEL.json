@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_063",
+  "language": "typescript",
+  "originalName": "take",
+  "injectedName": "TAKE",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TAKE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface Recording {\n  id: string;\n  TAKE: number;\n  uri: string;\n  mimeType: string;\n  createdAt: number;\n  durationMs: number;\n  facing: Facing;\n  source: CaptureSource;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

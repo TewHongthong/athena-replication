@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_052",
+  "language": "python",
+  "originalName": "skip_dirs",
+  "injectedName": "SKIP_DIRS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SKIP_DIRS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def walk_files(root: Path, SKIP_DIRS: set[str]):\n    for dirpath, dirnames, filenames in os.walk(root):\n        dirnames[:] = sorted(d for d in dirnames if d not in SKIP_DIRS and not d.startswith(\".\"))\n        for fn in sorted(filenames):\n            path = Path(dirpath) / fn\n            if path.is_file():\n                yield path",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

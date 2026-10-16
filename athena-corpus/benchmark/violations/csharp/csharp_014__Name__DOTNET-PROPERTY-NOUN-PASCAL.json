@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_014",
+  "language": "csharp",
+  "originalName": "Name",
+  "injectedName": "name",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'name' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public class ItemKind\n{\n    public int Id { get; set; }\n\n    public required string name { get; set; }\n\n    /// <summary>Icon key resolved via <c>IconCatalog</c> (e.g. \"Kitchen\", \"MenuBook\").</summary>\n    public string? Icon { get; set; }\n\n    /// <summary>\n    /// Suggested custom-attribute field names for this kind (e.g. Book → Author, Publisher).\n    /// Stored as a JSON array. Purely advisory — items may carry any attributes.\n    /// </summary>\n    public List<string> SuggestedAttributes { get; set; } = new();\n\n    /// <summary>Built-in kinds are seeded and cannot be deleted from the UI.</summary>\n    public bool IsSystem { get; set; }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

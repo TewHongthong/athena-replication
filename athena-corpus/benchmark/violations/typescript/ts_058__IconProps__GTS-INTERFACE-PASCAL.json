@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_058",
+  "language": "typescript",
+  "originalName": "IconProps",
+  "injectedName": "icon_props",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'icon_props' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "interface icon_props {\n  name: IconName;\n  size?: number;\n  color?: string;\n  weight?: number;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

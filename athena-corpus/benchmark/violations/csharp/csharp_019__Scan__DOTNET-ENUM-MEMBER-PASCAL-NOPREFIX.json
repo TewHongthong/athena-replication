@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_019",
+  "language": "csharp",
+  "originalName": "Scan",
+  "injectedName": "scan",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'scan' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum QuickLinkTarget\n{\n    Dashboard = 0,\n    scan = 1,\n    Inventory = 2,\n    Places = 3\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

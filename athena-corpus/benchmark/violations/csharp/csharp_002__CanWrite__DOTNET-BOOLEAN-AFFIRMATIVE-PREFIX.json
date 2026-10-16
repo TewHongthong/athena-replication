@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_002",
+  "language": "csharp",
+  "originalName": "CanWrite",
+  "injectedName": "notCanWrite",
+  "identifierKind": "boolean_variable",
+  "violatedRuleId": "DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'notCanWrite' matches forbidden pattern '^(not|cant|isnt|dont)[A-Z]'"
+  ],
+  "codeContextWithViolation": "public interface IBinaryStream : IDisposable\n{\n    /// <summary>Gets a value indicating whether the stream supports reading.</summary>\n    bool CanRead { get; }\n\n    /// <summary>Gets a value indicating whether the stream supports writing.</summary>\n    bool notCanWrite { get; }\n\n    /// <summary>Gets or sets the current position within the stream.</summary>\n    long Position { get; set; }\n\n    /// <summary>Gets the length of the stream in bytes.</summary>\n    long Length { get; }\n\n    /// <summary>Reads bytes from the stream into the supplied buffer.</summary>\n    /// <param name=\"buffer\">The destination buffer.</param>\n    /// <returns>The number of bytes read.</returns>\n    int Read(Span<byte> buffer);\n\n    /// <summary>Writes the supplied bytes to the stream.</summary>\n    /// <param name=\"buffer\">The bytes to write.</param>\n    void Write(ReadOnlySpan<byte> buffer);\n\n    /// <summary>Flushes buffered data to the underlying representation.</summary>\n    void Flush();\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

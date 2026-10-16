@@ -1,0 +1,52 @@
+{
+  "id": "csharp_038",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Simulation/Kernel/DeterministicRandom.cs lines 11-49 (class Pcg32XshRrV1); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public sealed class Pcg32XshRrV1\n{\n    public const string AlgorithmId = \"pcg32-xsh-rr-v1\";\n\n    private const ulong Multiplier = 6_364_136_223_846_793_005UL;\n    private ulong state;\n    private readonly ulong increment;\n\n    private Pcg32XshRrV1(ulong initialState, ulong initialIncrement)\n    {\n        increment = initialIncrement | 1UL;\n        state = 0;\n        _ = NextUInt();\n        state = unchecked(state + initialState);\n        _ = NextUInt();\n    }\n\n    public static Pcg32XshRrV1 Create(string worldSeed, string streamName)\n    {\n        ArgumentException.ThrowIfNullOrWhiteSpace(worldSeed);\n        ArgumentException.ThrowIfNullOrWhiteSpace(streamName);\n\n        var key = Encoding.UTF8.GetBytes(worldSeed);\n        var stateBytes = HMACSHA256.HashData(key, Encoding.UTF8.GetBytes($\"{streamName}/state\"));\n        var incrementBytes = HMACSHA256.HashData(key, Encoding.UTF8.GetBytes($\"{streamName}/increment\"));\n        return new Pcg32XshRrV1(\n            BinaryPrimitives.ReadUInt64BigEndian(stateBytes),\n            BinaryPrimitives.ReadUInt64BigEndian(incrementBytes));\n    }\n\n    public uint NextUInt()\n    {\n        var oldState = state;\n        state = unchecked((oldState * Multiplier) + increment);\n        var xorshifted = (uint)(((oldState >> 18) ^ oldState) >> 27);\n        var rotation = (int)(oldState >> 59);\n        return (xorshifted >> rotation) | (xorshifted << ((-rotation) & 31));\n    }\n}",
+  "identifiers": [
+    {
+      "name": "Pcg32XshRrV1",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "Create",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "AlgorithmId",
+      "kind": "constant",
+      "isCompliant": true
+    },
+    {
+      "name": "key",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "initialState",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "Multiplier",
+      "kind": "constant",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Simulation/Kernel/DeterministicRandom.cs",
+    "startLine": 11,
+    "endLine": 49,
+    "unit": "class Pcg32XshRrV1",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__DeterministicRandom.cs.md"
+  }
+}

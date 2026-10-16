@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_081",
+  "language": "python",
+  "originalName": "candidates",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def discover_export(kind: str, input_dir: str | Path) -> Path:\n    \"\"\"Return the sole matching export, refusing zero or multiple matches.\"\"\"\n    directory = Path(input_dir)\n    pattern = EXPORT_PATTERNS[kind]\n    try:\n        entries = directory.iterdir()\n        l = sorted(\n            (\n                entry\n                for entry in entries\n                if pattern.fullmatch(entry.name) and entry.is_file()\n            ),\n            key=lambda entry: entry.name,\n        )\n    except FileNotFoundError:\n        l = []\n    except OSError as e:\n        raise ExportDiscoveryError(\n            f\"could not search for {kind} exports in {directory}: {e}\"\n        ) from e\n\n    if not l:\n        raise MissingExportError(kind, directory)\n    if len(l) > 1:\n        raise AmbiguousExportError(\n            kind,\n            directory,\n            tuple(candidate.name for candidate in l),\n        )\n    return l[0]",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

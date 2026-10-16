@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_054",
+  "language": "javascript",
+  "originalName": "fileContents",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function backupSkill(slug, l) {\n  const backupDir = getBackupDir(slug)\n\n  await mkdir(backupDir, { recursive: true })\n\n  const timestamp = new Date().toISOString().replace(/[:.]/g, '-')\n\n  const backupFile = join(backupDir, `${timestamp}.json`)\n\n  await writeFile(backupFile, JSON.stringify(l, null, 2), 'utf-8')\n\n  return timestamp\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

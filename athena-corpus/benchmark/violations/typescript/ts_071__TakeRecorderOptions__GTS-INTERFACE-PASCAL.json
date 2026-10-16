@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_071",
+  "language": "typescript",
+  "originalName": "TakeRecorderOptions",
+  "injectedName": "take_recorder_options",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'take_recorder_options' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "interface take_recorder_options {\n  viewfinder: RefObject<ViewfinderHandle | null>;\n  limitSeconds: number;\n  countdownSeconds: number;\n  facing: Facing;\n  source: CaptureSource;\n  onCapture: (input: NewRecording) => Promise<Recording>;\n  onFinished: (recording: Recording) => void;\n  onError: (message: string) => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

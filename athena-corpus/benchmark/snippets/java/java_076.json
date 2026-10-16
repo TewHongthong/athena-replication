@@ -1,0 +1,52 @@
+{
+  "id": "java_076",
+  "language": "java",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/capability/FurkinProvider.java lines 17-45 (class FurkinProvider); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public final class FurkinProvider implements ICapabilitySerializable<CompoundTag> {\n\n    private final FurkinData data = new FurkinData();\n    private final LazyOptional<FurkinData> holder = LazyOptional.of(() -> data);\n\n    @NotNull\n    @Override\n    public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {\n        if (cap == FurkinCapability.FURKIN_DATA) {\n            return holder.cast();\n        }\n        return LazyOptional.empty();\n    }\n\n    @Override\n    public CompoundTag serializeNBT() {\n        return data.serializeNBT();\n    }\n\n    @Override\n    public void deserializeNBT(CompoundTag nbt) {\n        data.deserializeNBT(nbt);\n    }\n\n    /** 使能力失效（实体被移除时调用）。 */\n    public void invalidate() {\n        holder.invalidate();\n    }\n}",
+  "identifiers": [
+    {
+      "name": "FurkinProvider",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "getCapability",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "data",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "cap",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "holder",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "side",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/capability/FurkinProvider.java",
+    "startLine": 17,
+    "endLine": 45,
+    "unit": "class FurkinProvider",
+    "corpusFile": "corpus/java/wanancat__furkin__FurkinProvider.java.md"
+  }
+}

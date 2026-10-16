@@ -1,0 +1,141 @@
+# src/main/java/ru/heldyy/hubswap/gui/NotificationRenderer.java
+
+- source repo: xvDoshik/HubSwap
+- repo url: https://github.com/xvDoshik/HubSwap
+- license: MIT
+- created_at: 2026-08-04T22:22:23Z
+- file path: src/main/java/ru/heldyy/hubswap/gui/NotificationRenderer.java
+- commit: c6967c6dadcae0fd21acdf29749ea597bf6c7ad9
+
+```java
+package ru.heldyy.hubswap.gui;
+
+import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
+import net.minecraft.client.DeltaTracker;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.network.chat.Component;
+import ru.heldyy.hubswap.HubSwap;
+
+public class NotificationRenderer {
+    private static Component message = null;
+    private static long showTime = 0L;
+    private static final long TOTAL_DURATION = 4000L;
+    private static final long FADE_IN = 400L;
+    private static final long FADE_OUT = 400L;
+    private static final float BASE_Y = 25.0f;
+    private static final AnimationState anim = new AnimationState();
+
+    public static void showNotification(String msg) {
+        if (!HubSwap.getConfig().isNotificationsEnabled()) return;
+        message = Component.literal(msg);
+        showTime = System.currentTimeMillis();
+        anim.alpha = 0.0f;
+        anim.offsetY = -20.0f;
+        anim.scale = 0.9f;
+        anim.lastUpdate = showTime;
+    }
+
+    public static void register() {
+        HudRenderCallback.EVENT.register((GuiGraphics context, DeltaTracker tickCounter) -> {
+            if (!HubSwap.getConfig().isNotificationsEnabled()) return;
+            if (message == null || Minecraft.getInstance().level == null) return;
+
+            long now = System.currentTimeMillis();
+            long elapsed = now - showTime;
+            if (elapsed > TOTAL_DURATION) {
+                message = null;
+                return;
+            }
+
+            float targetAlpha;
+            float targetScale;
+            if (elapsed < FADE_IN) {
+                float progress = (float) elapsed / (float) FADE_IN;
+                targetAlpha = easeOutQuart(progress);
+                targetScale = 0.9f + (0.1f * easeOutBack(progress));
+            } else if (elapsed > (TOTAL_DURATION - FADE_OUT)) {
+                float progress = 1.0f - (float) (elapsed - (TOTAL_DURATION - FADE_OUT)) / (float) FADE_OUT;
+                targetAlpha = easeInQuart(progress);
+                targetScale = 1.0f;
+            } else {
+                targetAlpha = 1.0f;
+                targetScale = 1.0f;
+            }
+
+            float targetYOffset = 0.0f;
+            float deltaTime = (float) (now - anim.lastUpdate) / 1000.0f;
+            anim.lastUpdate = now;
+
+            float smoothing = 8.0f * deltaTime;
+            anim.alpha = smoothLerp(anim.alpha, targetAlpha, smoothing);
+            anim.offsetY = smoothLerp(anim.offsetY, targetYOffset, smoothing);
+            anim.scale = smoothLerp(anim.scale, targetScale, smoothing);
+
+            Minecraft client = Minecraft.getInstance();
+            int screenWidth = context.guiWidth();
+            int textWidth = client.font.width(message);
+
+            int panelWidth = textWidth + 20;
+            int panelHeight = 16;
+
+            int x = screenWidth - panelWidth - 10;
+            int y = (int) (BASE_Y + anim.offsetY);
+
+            context.pose().pushMatrix();
+
+            float scaleOriginX = screenWidth - 10;
+            float scaleOriginY = y + panelHeight / 2.0f;
+            context.pose().translate(scaleOriginX, scaleOriginY);
+            context.pose().scale(anim.scale, anim.scale);
+            context.pose().translate(-scaleOriginX, -scaleOriginY);
+
+            int alphaInt = (int) (anim.alpha * 255.0f);
+
+            int bgColorTop = (int) (anim.alpha * 180.0f) << 24 | 0x1a1a2e;
+            int bgColorBottom = (int) (anim.alpha * 200.0f) << 24 | 0x16213e;
+            context.fillGradient(x, y, x + panelWidth, y + panelHeight, bgColorTop, bgColorBottom);
+
+            int borderColor = alphaInt << 24 | HubSwap.getConfig().getColorTheme().getRgbColor();
+            context.fill(x - 1, y - 1, x + panelWidth + 1, y, borderColor);
+            context.fill(x - 1, y + panelHeight, x + panelWidth + 1, y + panelHeight + 1, borderColor);
+            context.fill(x - 1, y - 1, x, y + panelHeight + 1, borderColor);
+            context.fill(x + panelWidth, y - 1, x + panelWidth + 1, y + panelHeight + 1, borderColor);
+
+            int iconColor = alphaInt << 24 | HubSwap.getConfig().getColorTheme().getRgbColor();
+            context.fill(x + 6, y + 5, x + 8, y + 11, iconColor);
+            context.fill(x + 8, y + 6, x + 10, y + 10, iconColor);
+
+            int textColor = alphaInt << 24 | 0xFFFFFF;
+            context.drawString(client.font, message, x + 14, y + 4, textColor, true);
+
+            context.pose().popMatrix();
+        });
+    }
+
+    private static float smoothLerp(float current, float target, float smoothing) {
+        return current + (target - current) * Math.min(smoothing, 1.0f);
+    }
+
+    private static float easeOutQuart(float t) {
+        return 1.0f - (float) Math.pow(1.0f - t, 4.0);
+    }
+
+    private static float easeInQuart(float t) {
+        return (float) Math.pow(t, 4.0);
+    }
+
+    private static float easeOutBack(float t) {
+        float c1 = 1.70158f;
+        float c3 = c1 + 1.0f;
+        return 1.0f + c3 * (float) Math.pow(t - 1.0f, 3.0) + c1 * (float) Math.pow(t - 1.0f, 2.0);
+    }
+
+    private static class AnimationState {
+        float alpha = 0.0f;
+        float offsetY = -20.0f;
+        float scale = 0.9f;
+        long lastUpdate = 0L;
+    }
+}
+```

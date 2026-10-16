@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_034",
+  "language": "typescript",
+  "originalName": "size",
+  "injectedName": "SIZE",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SIZE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface LeaderDialProps {\n  SIZE: number;\n  digit: number | null;\n  progress: Animated.Value;\n  lit?: boolean;\n  reducedMotion?: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

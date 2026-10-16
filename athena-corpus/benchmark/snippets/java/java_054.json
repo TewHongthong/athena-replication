@@ -1,0 +1,42 @@
+{
+  "id": "java_054",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminFilterJavascriptTest.java lines 35-52 (method AdminFilterJavascriptTest.nodeIsAvailable); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "private static boolean nodeIsAvailable() {\n  try {\n    Process process = new ProcessBuilder(\"node\", \"--version\")\n        .redirectErrorStream(true)\n        .start();\n    boolean exited = process.waitFor(5, TimeUnit.SECONDS);\n    if (!exited) {\n      process.destroyForcibly();\n      return false;\n    }\n    return process.exitValue() == 0;\n  } catch (IOException exception) {\n    return false;\n  } catch (InterruptedException exception) {\n    Thread.currentThread().interrupt();\n    return false;\n  }\n}",
+  "identifiers": [
+    {
+      "name": "nodeIsAvailable",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "process",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "exited",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "exception",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminFilterJavascriptTest.java",
+    "startLine": 35,
+    "endLine": 52,
+    "unit": "method AdminFilterJavascriptTest.nodeIsAvailable",
+    "corpusFile": "corpus/java/klboke__kkRepo__AdminFilterJavascriptTest.java.md"
+  }
+}

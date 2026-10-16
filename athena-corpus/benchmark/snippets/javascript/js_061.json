@@ -1,0 +1,37 @@
+{
+  "id": "js_061",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/utils/templates/index.js lines 21-34 (function getTemplate); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function getTemplate(name) {\n  const tmpl = TEMPLATES[name]\n  if (!tmpl) {\n    const available = getTemplateNames().join(', ')\n    throw new Error(\n      `Unknown template: \"${name}\". Available templates: ${available}`,\n    )\n  }\n  return {\n    name,\n    description: tmpl.description,\n    generate: tmpl.generate,\n  }\n}",
+  "identifiers": [
+    {
+      "name": "getTemplate",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "tmpl",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "available",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/utils/templates/index.js",
+    "startLine": 21,
+    "endLine": 34,
+    "unit": "function getTemplate",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_utils_templates_index.js.md"
+  }
+}

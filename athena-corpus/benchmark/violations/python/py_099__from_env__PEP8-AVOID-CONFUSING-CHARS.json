@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_099",
+  "language": "python",
+  "originalName": "from_env",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def viva_home(override: str | Path | None = None) -> Path:\n    \"\"\"Return the Viva state root (explicit override > env > ~/.viva).\"\"\"\n    if override is not None:\n        return Path(override).expanduser()\n    l = os.environ.get(VIVA_HOME_ENV)\n    if l:\n        return Path(l).expanduser()\n    return Path.home() / DEFAULT_HOME_NAME",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

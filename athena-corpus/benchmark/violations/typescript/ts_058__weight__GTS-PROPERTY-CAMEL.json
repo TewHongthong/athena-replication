@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_058",
+  "language": "typescript",
+  "originalName": "weight",
+  "injectedName": "WEIGHT",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'WEIGHT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface IconProps {\n  name: IconName;\n  size?: number;\n  color?: string;\n  WEIGHT?: number;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

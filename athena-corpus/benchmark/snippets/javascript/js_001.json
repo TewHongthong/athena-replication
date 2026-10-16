@@ -1,0 +1,32 @@
+{
+  "id": "js_001",
+  "language": "javascript",
+  "source": "github:LCdev1234/Cube-Matcher@4ed30b070c9bb773f67c707dc33c746dbc2a38c2",
+  "sourceDetail": "src/geometry.js lines 18-24 (method Point.cross); license MIT; repo created 2026-08-05T23:30:41Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "cross(point){\n    return new Point(\n        this.y * point.z - this.z * point.y,\n        this.z * point.x - this.x * point.z,\n        this.x * point.y - this.y * point.x\n    )\n}",
+  "identifiers": [
+    {
+      "name": "cross",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "point",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "LCdev1234/Cube-Matcher",
+    "repoUrl": "https://github.com/LCdev1234/Cube-Matcher",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-05T23:30:41Z",
+    "commit": "4ed30b070c9bb773f67c707dc33c746dbc2a38c2",
+    "path": "src/geometry.js",
+    "startLine": 18,
+    "endLine": 24,
+    "unit": "method Point.cross",
+    "corpusFile": "corpus/javascript/LCdev1234__Cube-Matcher__geometry.js.md"
+  }
+}

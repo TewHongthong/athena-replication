@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_094",
+  "language": "python",
+  "originalName": "buy_value",
+  "injectedName": "BUY_VALUE",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'BUY_VALUE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def compute_round_trip_cost(\n    buy_price: float,\n    sell_price: float,\n    qty: int,\n    product: str = \"INTRADAY\",\n    rates: CostRates = CostRates(),\n) -> RoundTripCost:\n    \"\"\"Cost of one BUY + one SELL of `qty` shares. `product` is \"INTRADAY\"\n    or \"CNC\" (delivery) -- STT and stamp duty differ between the two.\n    \"\"\"\n    BUY_VALUE = buy_price * qty\n    sell_value = sell_price * qty\n    turnover = BUY_VALUE + sell_value\n\n    brokerage = rates.brokerage_per_order * 2  # one order to enter, one to exit\n\n    if product == \"CNC\":\n        stt = (BUY_VALUE + sell_value) * rates.stt_delivery_pct\n        stamp_duty = BUY_VALUE * rates.stamp_duty_delivery_buy_pct\n    else:\n        stt = sell_value * rates.stt_intraday_sell_pct\n        stamp_duty = BUY_VALUE * rates.stamp_duty_intraday_buy_pct\n\n    exchange_txn = turnover * rates.exchange_txn_pct\n    sebi_turnover = turnover * rates.sebi_turnover_pct\n    gst = (brokerage + exchange_txn + sebi_turnover) * rates.gst_pct\n\n    total = brokerage + stt + exchange_txn + sebi_turnover + stamp_duty + gst\n\n    return RoundTripCost(\n        brokerage=brokerage, stt=stt, exchange_txn=exchange_txn,\n        sebi_turnover=sebi_turnover, stamp_duty=stamp_duty, gst=gst, total=total,\n    )",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

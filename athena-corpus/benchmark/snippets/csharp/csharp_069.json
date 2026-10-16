@@ -1,0 +1,42 @@
+{
+  "id": "csharp_069",
+  "language": "csharp",
+  "source": "github:teesofttech/SMSBridge@1b400e9c1804dc01402d0b9769db5475f76d3785",
+  "sourceDetail": "src/SmsBridge/Validation/SmsMessageValidator.cs lines 5-23 (class SmsMessageValidator); license MIT; repo created 2026-06-13; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "internal static class SmsMessageValidator\n{\n    public static void Validate(SmsMessage message)\n    {\n        if (message is null)\n            throw new ArgumentNullException(nameof(message));\n\n        var errors = new List<string>();\n\n        if (string.IsNullOrWhiteSpace(message.To))\n            errors.Add(\"'To' is required.\");\n\n        if (string.IsNullOrWhiteSpace(message.Body))\n            errors.Add(\"'Body' is required.\");\n\n        if (errors.Count > 0)\n            throw new SmsBridgeException($\"SMS message validation failed: {string.Join(\" \", errors)}\");\n    }\n}",
+  "identifiers": [
+    {
+      "name": "SmsMessageValidator",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "Validate",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "errors",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "message",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "teesofttech/SMSBridge",
+    "repoUrl": "https://github.com/teesofttech/SMSBridge",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-13",
+    "commit": "1b400e9c1804dc01402d0b9769db5475f76d3785",
+    "path": "src/SmsBridge/Validation/SmsMessageValidator.cs",
+    "startLine": 5,
+    "endLine": 23,
+    "unit": "class SmsMessageValidator",
+    "corpusFile": "corpus/csharp/teesofttech__SMSBridge__SmsMessageValidator.cs.md"
+  }
+}

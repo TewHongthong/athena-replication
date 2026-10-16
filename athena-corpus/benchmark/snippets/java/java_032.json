@@ -1,0 +1,52 @@
+{
+  "id": "java_032",
+  "language": "java",
+  "source": "github:KingF3rdi/aero-client@d8888aba64351257362cd47f69282311dd942c8f",
+  "sourceDetail": "src/main/java/dev/aero/client/McBind.java lines 105-135 (method McBind.bindEnum); license MIT; repo created 2026-09-20T13:19:19Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "private static void bindEnum(GameOptions opt, boolean on, String getter, String offName, boolean backup) {\n    Object option = option(opt, getter);\n    if (option == null) {\n        return;\n    }\n    Object cur = getValue(option);\n    if (on) {\n        if (backup && cloudsOr(getter) && cloudsBackup == null) {\n            cloudsBackup = cur;\n        }\n        if (backup && getter.contains(\"Particle\") && particlesBackup == null) {\n            particlesBackup = cur;\n        }\n        if (backup && getter.contains(\"Graphics\") && graphicsBackup == null) {\n            graphicsBackup = cur;\n        }\n        Object off = enumConst(cur, offName);\n        if (off != null) {\n            setValue(option, off);\n        }\n    } else if (getter.contains(\"Cloud\") && cloudsBackup != null) {\n        setValue(option, cloudsBackup);\n        cloudsBackup = null;\n    } else if (getter.contains(\"Particle\") && particlesBackup != null) {\n        setValue(option, particlesBackup);\n        particlesBackup = null;\n    } else if (getter.contains(\"Graphics\") && graphicsBackup != null) {\n        setValue(option, graphicsBackup);\n        graphicsBackup = null;\n    }\n}",
+  "identifiers": [
+    {
+      "name": "bindEnum",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "option",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "opt",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "getter",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "offName",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "backup",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "KingF3rdi/aero-client",
+    "repoUrl": "https://github.com/KingF3rdi/aero-client",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-20T13:19:19Z",
+    "commit": "d8888aba64351257362cd47f69282311dd942c8f",
+    "path": "src/main/java/dev/aero/client/McBind.java",
+    "startLine": 105,
+    "endLine": 135,
+    "unit": "method McBind.bindEnum",
+    "corpusFile": "corpus/java/KingF3rdi__aero-client__McBind.java.md"
+  }
+}

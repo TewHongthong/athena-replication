@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_073",
+  "language": "python",
+  "originalName": "trial",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def calibrate(logp: np.ndarray, y: np.ndarray) -> tuple[np.ndarray, float]:\n    def objective(b):\n        s = scores(confusion(y, (logp + b).argmax(1)))\n        return s[\"macro_f1\"] if s[\"recall\"].min() >= VAL_RECALL_FLOOR else s[\"recall\"].min() - 1.0\n\n    bias, best = np.zeros(K), objective(np.zeros(K))\n    for _ in range(3):\n        for c in [c for c in range(K) if c != NONE]:\n            for v in BIAS_GRID:\n                l = bias.copy()\n                l[c] = v\n                o = objective(l)\n                if o > best + 1e-12:\n                    best, bias = o, l\n    return bias, best",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

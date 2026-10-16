@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_029",
+  "language": "typescript",
+  "originalName": "ViewfinderProps",
+  "injectedName": "viewfinder_props",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'viewfinder_props' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "export interface viewfinder_props {\n  ref: Ref<ViewfinderHandle>;\n  facing: Facing;\n  demo: boolean;\n  onReady: () => void;\n  onFailure: (message: string) => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

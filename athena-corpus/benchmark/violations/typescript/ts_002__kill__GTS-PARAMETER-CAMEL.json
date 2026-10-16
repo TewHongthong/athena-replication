@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_002",
+  "language": "typescript",
+  "originalName": "kill",
+  "injectedName": "KILL",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'KILL' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function pidAlive(pid: number, KILL: (pid: number, signal: number) => void = process.kill): boolean {\n  if (!Number.isInteger(pid) || pid <= 0 || pid === process.pid) return false;\n  try {\n    KILL(pid, 0);\n    return true;\n  } catch (e) {\n    return (e as NodeJS.ErrnoException).code === \"EPERM\";\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

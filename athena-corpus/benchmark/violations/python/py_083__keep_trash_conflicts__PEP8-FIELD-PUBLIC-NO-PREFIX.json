@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_083",
+  "language": "python",
+  "originalName": "keep_trash_conflicts",
+  "injectedName": "KEEP_TRASH_CONFLICTS",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'KEEP_TRASH_CONFLICTS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass WeaponPipelineResult:\n    decisions: list[Decision]\n    KEEP_TRASH_CONFLICTS: int\n    wishlists_used: bool\n    wishlist_sources: tuple[WishlistSourceIdentity, ...] = ()\n    manifest: ManifestIdentity | None = None\n    coverage: CoverageSummary | None = None",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_070",
+  "language": "javascript",
+  "originalName": "range",
+  "injectedName": "r",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'r' shorter than minLength=2",
+    "name 'r' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function aggregate({ sessions, questions, reviews }, r) {\n  const selectedSessions = sessions.filter(item => within(item, r.start, r.end));\n  const selectedQuestions = questions.filter(item => within(item, r.start, r.end));\n  const selectedReviews = reviews.filter(item => within(item, r.start, r.end) && ['Concluído', 'completed', 'done'].includes(item.status));\n  const resolved = sum(selectedQuestions, 'resolved');\n  return {\n    minutes: Math.round(sum(selectedSessions, 'durationSeconds') / 60),\n    questions: resolved,\n    accuracy: resolved ? Math.round(sum(selectedQuestions, 'correct') / resolved * 100) : null,\n    reviews: selectedReviews.length\n  };\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

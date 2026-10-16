@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_008",
+  "language": "python",
+  "originalName": "resolved",
+  "injectedName": "RESOLVED",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RESOLVED' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@lru_cache(maxsize=4)\ndef get_encoder(model_name: str, device: str = \"auto\") -> Any:\n    from sentence_transformers import SentenceTransformer\n\n    RESOLVED = resolve_device(device)\n    logger.info(\"Loading embedding model %s on %s\", model_name, RESOLVED)\n    return SentenceTransformer(model_name, device=RESOLVED)",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

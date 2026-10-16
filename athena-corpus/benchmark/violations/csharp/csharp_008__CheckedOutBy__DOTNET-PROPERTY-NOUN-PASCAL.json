@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_008",
+  "language": "csharp",
+  "originalName": "CheckedOutBy",
+  "injectedName": "checked_out_by",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'checked_out_by' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public class CheckoutRecord\n{\n    public int Id { get; set; }\n\n    public int ItemId { get; set; }\n\n    /// <summary>Item name, populated by the data layer for list views.</summary>\n    public string? ItemName { get; set; }\n\n    /// <summary>Who has it (a person's name).</summary>\n    public string checked_out_by { get; set; } = string.Empty;\n\n    /// <summary>Where it went / any note about its whereabouts.</summary>\n    public string? WhereaboutsNote { get; set; }\n\n    public DateTimeOffset CheckedOutAt { get; set; }\n\n    public DateOnly? DueDate { get; set; }\n\n    public DateTimeOffset? ReturnedAt { get; set; }\n\n    public string? Notes { get; set; }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

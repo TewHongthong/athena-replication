@@ -1,0 +1,42 @@
+{
+  "id": "js_014",
+  "language": "javascript",
+  "source": "github:cloudflare/security-audit-skill@c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+  "sourceDetail": "skills/security-audit/validate-findings.test.cjs lines 120-125 (function assertNoInjectedControlBytes); license MIT; repo created 2026-06-18; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function assertNoInjectedControlBytes(output) {\n  const bytes = Buffer.isBuffer(output) ? output : Buffer.from(output, \"utf8\");\n  for (const marker of TERMINAL_CONTROL_BYTES) {\n    assert.equal(bytes.indexOf(marker), -1, `found raw control bytes ${marker.toString(\"hex\")}`);\n  }\n}",
+  "identifiers": [
+    {
+      "name": "assertNoInjectedControlBytes",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "bytes",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "output",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "marker",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "cloudflare/security-audit-skill",
+    "repoUrl": "https://github.com/cloudflare/security-audit-skill",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-18",
+    "commit": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+    "path": "skills/security-audit/validate-findings.test.cjs",
+    "startLine": 120,
+    "endLine": 125,
+    "unit": "function assertNoInjectedControlBytes",
+    "corpusFile": "corpus/javascript/cloudflare__security-audit-skill__validate-findings.test.cjs.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_037",
+  "language": "typescript",
+  "originalName": "SymbolShapesProps",
+  "injectedName": "symbol_shapes_props",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'symbol_shapes_props' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "interface symbol_shapes_props {\n  cx: number;\n  cy: number;\n  radius: number;\n  lit?: boolean;\n  tone?: string;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

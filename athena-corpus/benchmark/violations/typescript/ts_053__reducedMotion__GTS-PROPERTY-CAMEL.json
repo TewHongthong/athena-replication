@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_053",
+  "language": "typescript",
+  "originalName": "reducedMotion",
+  "injectedName": "reduced_motion",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'reduced_motion' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface RecordButtonProps {\n  phase: TakePhase;\n  disabled: boolean;\n  progress: number;\n  reduced_motion: boolean;\n  onPress: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

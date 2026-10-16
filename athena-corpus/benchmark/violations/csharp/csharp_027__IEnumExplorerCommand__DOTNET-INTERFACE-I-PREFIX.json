@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_027",
+  "language": "csharp",
+  "originalName": "IEnumExplorerCommand",
+  "injectedName": "i_enum_explorer_command",
+  "identifierKind": "interface",
+  "violatedRuleId": "DOTNET-INTERFACE-I-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'i_enum_explorer_command' does not match PascalCase pattern",
+    "name 'i_enum_explorer_command' does not start with required prefix 'I'"
+  ],
+  "codeContextWithViolation": "[ComImport, Guid(\"A88826F8-186F-4987-AADE-EA0CEF8FBFE8\"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]\nprivate interface i_enum_explorer_command\n{\n    [PreserveSig] int Next(uint count, out IExplorerCommand command, out uint fetched);\n    [PreserveSig] int Skip(uint count);\n    void Reset();\n    void Clone(out i_enum_explorer_command clone);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

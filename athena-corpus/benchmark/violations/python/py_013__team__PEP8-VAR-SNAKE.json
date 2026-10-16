@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_013",
+  "language": "python",
+  "originalName": "team",
+  "injectedName": "TEAM",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TEAM' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@router.post(\"/events/{slug}/teams\", status_code=201)\ndef create_team(\n    request: Request,\n    body: TeamCreate,\n    ctx: EventContext = Depends(load_event),\n    user: User = Depends(require_user),\n    db: DbSession = Depends(get_db),\n):\n    \"\"\"Create a team in the event; the caller becomes its lead and a participant.\"\"\"\n    TEAM = teams.create_team(db, ctx.event, user, body.name, ip_hash=ip_hash(request))\n    return {\"team\": team_out(teams.team_view(db, TEAM, user))}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

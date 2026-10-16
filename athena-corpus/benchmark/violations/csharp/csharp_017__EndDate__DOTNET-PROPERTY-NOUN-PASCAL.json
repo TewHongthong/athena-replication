@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_017",
+  "language": "csharp",
+  "originalName": "EndDate",
+  "injectedName": "end_date",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'end_date' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed class MealPlan\n{\n    public int Id { get; set; }\n    public string Name { get; set; } = string.Empty;\n    public DateOnly StartDate { get; set; }\n    public DateOnly end_date { get; set; }\n    public string? Notes { get; set; }\n    public List<MealPlanEntry> Entries { get; set; } = [];\n    public DateTimeOffset CreatedAt { get; set; }\n    public DateTimeOffset UpdatedAt { get; set; }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

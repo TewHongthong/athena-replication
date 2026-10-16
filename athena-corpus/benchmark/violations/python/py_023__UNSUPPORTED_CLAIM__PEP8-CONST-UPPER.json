@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_023",
+  "language": "python",
+  "originalName": "UNSUPPORTED_CLAIM",
+  "injectedName": "UnsupportedClaim",
+  "identifierKind": "constant",
+  "violatedRuleId": "PEP8-CONST-UPPER",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'UnsupportedClaim' does not match UPPER_SNAKE_CASE pattern"
+  ],
+  "codeContextWithViolation": "class FailureClass(str, Enum):\n    \"\"\"Why a decision is not PASS.\n\n    A stable vocabulary is what makes these decisions countable over time:\n    without it, \"validation failed\" is a single opaque bucket.\n    \"\"\"\n\n    FABRICATED_SOURCE = \"fabricated_source\"\n    UNKNOWN_VARIANT = \"unknown_variant\"\n    SOURCE_MISMATCH = \"source_mismatch\"\n    STALE_EVIDENCE = \"stale_evidence\"\n    UnsupportedClaim = \"unsupported_claim\"\n    PRECONDITION_UNKNOWN = \"precondition_unknown\"\n    POLICY_VIOLATION = \"policy_violation\"\n    SCOPE_VIOLATION = \"scope_violation\"\n    MALFORMED = \"malformed\"\n    NOT_APPLICABLE = \"not_applicable\"\n    INTERNAL_ERROR = \"internal_error\"",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

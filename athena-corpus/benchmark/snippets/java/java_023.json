@@ -1,0 +1,52 @@
+{
+  "id": "java_023",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/payment/OrderCancellationListener.java lines 9-25 (class OrderCancellationListener); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Slf4j\n@Component\n@RequiredArgsConstructor\npublic class OrderCancellationListener {\n\n    private final PaymentService paymentService;\n    private final StripeService stripeService;\n\n    @TransactionalEventListener\n    public void onOrderCancelled(OrderCancelledEvent event) {\n        var sessionIds = paymentService.expirePendingPaymentsInNewTransaction(event.getOrderId());\n        sessionIds.forEach(stripeService::expireCheckoutSession);\n        if (!sessionIds.isEmpty()) {\n            log.info(\"Expired {} pending checkout session(s) for cancelled order {}\", sessionIds.size(), event.getOrderId());\n        }\n    }\n}",
+  "identifiers": [
+    {
+      "name": "OrderCancellationListener",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "onOrderCancelled",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "paymentService",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "sessionIds",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "event",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "stripeService",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/payment/OrderCancellationListener.java",
+    "startLine": 9,
+    "endLine": 25,
+    "unit": "class OrderCancellationListener",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__OrderCancellationListener.java.md"
+  }
+}

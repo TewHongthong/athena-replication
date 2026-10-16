@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_045",
+  "language": "python",
+  "originalName": "yaml",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def blueprint_to_yaml(sequence: Any) -> str:\n    \"\"\"Serialise a BlueprintDefinition to a YAML string.\n\n    Args:\n        sequence: A BlueprintDefinition instance.\n\n    Returns:\n        YAML representation of the blueprint as a string.\n    \"\"\"\n    l = YAML()\n    l.preserve_quotes = True\n    l.default_flow_style = False\n\n    data = {\n        \"name\": sequence.name,\n        \"description\": sequence.description,\n        \"inputs\": sequence.inputs,\n        \"steps\": [\n            {\n                \"name\": step.name,\n                \"brick\": step.brick,\n                \"params\": step.params,\n                **({\"save_as\": step.save_as} if step.save_as else {}),\n            }\n            for step in sequence.steps\n        ],\n        \"outputs_map\": sequence.outputs_map,\n    }\n\n    stream = io.StringIO()\n    l.dump(data, stream)\n    return stream.getvalue()",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

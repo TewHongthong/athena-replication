@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_055",
+  "language": "javascript",
+  "originalName": "slug",
+  "injectedName": "s",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 's' shorter than minLength=2",
+    "name 's' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function addSkillToLock(\n  s,\n  entry,\n  lockPath = getGlobalLockPath(),\n) {\n  const lock = await readLock(lockPath)\n  const existing = lock.skills[s]\n\n  const mergedAgents = existing?.agents\n    ? [...new Set([...existing.agents, ...(entry.agents || [])])]\n    : entry.agents || []\n\n  pushHistory(lock, s, entry)\n\n  const history = lock.skills[s]?.history || []\n\n  lock.skills[s] = {\n    ...entry,\n    agents: mergedAgents,\n    installedAt: new Date().toISOString(),\n    history,\n  }\n\n  await writeLock(lock, lockPath)\n\n  return lock\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

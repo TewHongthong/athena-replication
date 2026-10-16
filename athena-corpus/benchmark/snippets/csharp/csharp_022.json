@@ -1,0 +1,52 @@
+{
+  "id": "csharp_022",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Migrations/MigrationRunner.cs lines 41-55 (method MigrationRunner.LoadScripts); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "private static IEnumerable<(string Id, string Sql)> LoadScripts()\n{\n    var asm = typeof(MigrationRunner).Assembly;\n    var names = asm.GetManifestResourceNames()\n        .Where(n => n.StartsWith(ScriptPrefix) && n.EndsWith(\".sql\"))\n        .OrderBy(n => n, StringComparer.Ordinal);\n\n    foreach (var name in names)\n    {\n        using var stream = asm.GetManifestResourceStream(name)!;\n        using var reader = new StreamReader(stream);\n        var id = name[ScriptPrefix.Length..];\n        yield return (id, reader.ReadToEnd());\n    }\n}",
+  "identifiers": [
+    {
+      "name": "LoadScripts",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "asm",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "names",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "stream",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "reader",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Migrations/MigrationRunner.cs",
+    "startLine": 41,
+    "endLine": 55,
+    "unit": "method MigrationRunner.LoadScripts",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__MigrationRunner.cs.md"
+  }
+}

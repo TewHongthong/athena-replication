@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_072",
+  "language": "python",
+  "originalName": "chunk",
+  "injectedName": "CHUNK",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CHUNK' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def sha256(path: Path) -> str:\n    h = hashlib.sha256()\n    with open(path, \"rb\") as f:\n        for CHUNK in iter(lambda: f.read(1 << 24), b\"\"):\n            h.update(CHUNK)\n    return h.hexdigest()",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,647 @@
+{
+  "K2": {
+    "units": 122,
+    "tfidf_sanity_mismatches": 0,
+    "hit_pct": {
+      "tfidf": 17.2,
+      "bm25": 5.7,
+      "bm25_k15": 5.7
+    },
+    "hit_pct_by_rule": {
+      "tfidf": {
+        "GSCS-CONST-UPPER": 9.1,
+        "GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "GSCS-VAR-TYPED-PREFIX": 3.6,
+        "GSCS-TYPE-SUFFIX": 11.1,
+        "GSCS-PROC-VERB-OBJECT": 0.0,
+        "GSCS-BOOL-BLN-PREFIX": 33.3
+      },
+      "bm25": {
+        "GSCS-CONST-UPPER": 0.0,
+        "GSCS-FUNC-RETURN-PREFIX": 50.0,
+        "GSCS-VAR-TYPED-PREFIX": 0.0,
+        "GSCS-TYPE-SUFFIX": 11.1,
+        "GSCS-PROC-VERB-OBJECT": 0.0,
+        "GSCS-BOOL-BLN-PREFIX": 0.0
+      },
+      "bm25_k15": {
+        "GSCS-CONST-UPPER": 0.0,
+        "GSCS-FUNC-RETURN-PREFIX": 50.0,
+        "GSCS-VAR-TYPED-PREFIX": 0.0,
+        "GSCS-TYPE-SUFFIX": 11.1,
+        "GSCS-PROC-VERB-OBJECT": 0.0,
+        "GSCS-BOOL-BLN-PREFIX": 0.0
+      }
+    }
+  },
+  "K4": {
+    "o3-mini": {
+      "by_rule": {
+        "chunk|GSCS-BOOL-BLN-PREFIX": 80.6,
+        "chunk|GSCS-CONST-UPPER": 16.7,
+        "chunk|GSCS-FUNC-RETURN-PREFIX": 77.8,
+        "chunk|GSCS-PROC-VERB-OBJECT": 2.8,
+        "chunk|GSCS-TYPE-SUFFIX": 11.1,
+        "chunk|GSCS-VAR-TYPED-PREFIX": 95.2,
+        "fulldoc|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "fulldoc|GSCS-CONST-UPPER": 100.0,
+        "fulldoc|GSCS-FUNC-RETURN-PREFIX": 97.2,
+        "fulldoc|GSCS-PROC-VERB-OBJECT": 80.6,
+        "fulldoc|GSCS-TYPE-SUFFIX": 100.0,
+        "fulldoc|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "graph|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "graph|GSCS-CONST-UPPER": 100.0,
+        "graph|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph|GSCS-TYPE-SUFFIX": 100.0,
+        "graph|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "none|GSCS-BOOL-BLN-PREFIX": 0.0,
+        "none|GSCS-CONST-UPPER": 60.6,
+        "none|GSCS-FUNC-RETURN-PREFIX": 0.0,
+        "none|GSCS-PROC-VERB-OBJECT": 0.0,
+        "none|GSCS-TYPE-SUFFIX": 0.0,
+        "none|GSCS-VAR-TYPED-PREFIX": 29.7
+      },
+      "by_language": {
+        "chunk|cpp": 64.3,
+        "chunk|java": 60.2,
+        "chunk|python": 63.2,
+        "fulldoc|cpp": 100.0,
+        "fulldoc|java": 99.2,
+        "fulldoc|python": 94.0,
+        "graph|cpp": 100.0,
+        "graph|java": 100.0,
+        "graph|python": 100.0,
+        "none|cpp": 30.2,
+        "none|java": 21.1,
+        "none|python": 21.4
+      }
+    },
+    "GPT-6 Luna": {
+      "by_rule": {
+        "chunk|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "chunk|GSCS-CONST-UPPER": 19.7,
+        "chunk|GSCS-FUNC-RETURN-PREFIX": 97.2,
+        "chunk|GSCS-PROC-VERB-OBJECT": 61.1,
+        "chunk|GSCS-TYPE-SUFFIX": 37.0,
+        "chunk|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "fulldoc|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "fulldoc|GSCS-CONST-UPPER": 100.0,
+        "fulldoc|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "fulldoc|GSCS-PROC-VERB-OBJECT": 94.4,
+        "fulldoc|GSCS-TYPE-SUFFIX": 100.0,
+        "fulldoc|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "graph|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "graph|GSCS-CONST-UPPER": 100.0,
+        "graph|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph|GSCS-TYPE-SUFFIX": 100.0,
+        "graph|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "none|GSCS-BOOL-BLN-PREFIX": 0.0,
+        "none|GSCS-CONST-UPPER": 92.4,
+        "none|GSCS-FUNC-RETURN-PREFIX": 0.0,
+        "none|GSCS-PROC-VERB-OBJECT": 0.0,
+        "none|GSCS-TYPE-SUFFIX": 0.0,
+        "none|GSCS-VAR-TYPED-PREFIX": 66.1
+      },
+      "by_language": {
+        "chunk|cpp": 79.4,
+        "chunk|java": 77.2,
+        "chunk|python": 73.5,
+        "fulldoc|cpp": 100.0,
+        "fulldoc|java": 100.0,
+        "fulldoc|python": 98.3,
+        "graph|cpp": 100.0,
+        "graph|java": 100.0,
+        "graph|python": 100.0,
+        "none|cpp": 57.9,
+        "none|java": 44.7,
+        "none|python": 35.9
+      }
+    },
+    "Qwen3.5-9B": {
+      "by_rule": {
+        "chunk|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "chunk|GSCS-CONST-UPPER": 9.1,
+        "chunk|GSCS-FUNC-RETURN-PREFIX": 11.1,
+        "chunk|GSCS-PROC-VERB-OBJECT": 0.0,
+        "chunk|GSCS-TYPE-SUFFIX": 7.4,
+        "chunk|GSCS-VAR-TYPED-PREFIX": 76.4,
+        "fulldoc|GSCS-BOOL-BLN-PREFIX": 97.2,
+        "fulldoc|GSCS-CONST-UPPER": 95.5,
+        "fulldoc|GSCS-FUNC-RETURN-PREFIX": 80.6,
+        "fulldoc|GSCS-PROC-VERB-OBJECT": 38.9,
+        "fulldoc|GSCS-TYPE-SUFFIX": 88.9,
+        "fulldoc|GSCS-VAR-TYPED-PREFIX": 93.9,
+        "graph|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "graph|GSCS-CONST-UPPER": 100.0,
+        "graph|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph|GSCS-PROC-VERB-OBJECT": 97.2,
+        "graph|GSCS-TYPE-SUFFIX": 96.3,
+        "graph|GSCS-VAR-TYPED-PREFIX": 87.3,
+        "none|GSCS-BOOL-BLN-PREFIX": 0.0,
+        "none|GSCS-CONST-UPPER": 60.6,
+        "none|GSCS-FUNC-RETURN-PREFIX": 0.0,
+        "none|GSCS-PROC-VERB-OBJECT": 0.0,
+        "none|GSCS-TYPE-SUFFIX": 0.0,
+        "none|GSCS-VAR-TYPED-PREFIX": 20.6
+      },
+      "by_language": {
+        "chunk|cpp": 54.0,
+        "chunk|java": 38.2,
+        "chunk|python": 50.4,
+        "fulldoc|cpp": 90.5,
+        "fulldoc|java": 87.0,
+        "fulldoc|python": 84.6,
+        "graph|cpp": 97.6,
+        "graph|java": 91.1,
+        "graph|python": 92.3,
+        "none|cpp": 23.0,
+        "none|java": 22.8,
+        "none|python": 14.5
+      }
+    },
+    "Gemini 3.1 Flash-Lite": {
+      "by_rule": {
+        "chunk|GSCS-BOOL-BLN-PREFIX": 97.2,
+        "chunk|GSCS-CONST-UPPER": 15.2,
+        "chunk|GSCS-FUNC-RETURN-PREFIX": 86.1,
+        "chunk|GSCS-PROC-VERB-OBJECT": 16.7,
+        "chunk|GSCS-TYPE-SUFFIX": 18.5,
+        "chunk|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "fulldoc|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "fulldoc|GSCS-CONST-UPPER": 100.0,
+        "fulldoc|GSCS-FUNC-RETURN-PREFIX": 91.7,
+        "fulldoc|GSCS-PROC-VERB-OBJECT": 100.0,
+        "fulldoc|GSCS-TYPE-SUFFIX": 100.0,
+        "fulldoc|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "graph|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "graph|GSCS-CONST-UPPER": 100.0,
+        "graph|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph|GSCS-TYPE-SUFFIX": 100.0,
+        "graph|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "none|GSCS-BOOL-BLN-PREFIX": 0.0,
+        "none|GSCS-CONST-UPPER": 77.3,
+        "none|GSCS-FUNC-RETURN-PREFIX": 0.0,
+        "none|GSCS-PROC-VERB-OBJECT": 0.0,
+        "none|GSCS-TYPE-SUFFIX": 0.0,
+        "none|GSCS-VAR-TYPED-PREFIX": 55.8
+      },
+      "by_language": {
+        "chunk|cpp": 73.0,
+        "chunk|java": 67.5,
+        "chunk|python": 65.8,
+        "fulldoc|cpp": 100.0,
+        "fulldoc|java": 100.0,
+        "fulldoc|python": 97.4,
+        "graph|cpp": 100.0,
+        "graph|java": 100.0,
+        "graph|python": 100.0,
+        "none|cpp": 43.7,
+        "none|java": 41.5,
+        "none|python": 31.6
+      }
+    },
+    "DeepSeek V4 Flash": {
+      "by_rule": {
+        "chunk|GSCS-BOOL-BLN-PREFIX": 75.0,
+        "chunk|GSCS-CONST-UPPER": 18.2,
+        "chunk|GSCS-FUNC-RETURN-PREFIX": 94.4,
+        "chunk|GSCS-PROC-VERB-OBJECT": 16.7,
+        "chunk|GSCS-TYPE-SUFFIX": 14.8,
+        "chunk|GSCS-VAR-TYPED-PREFIX": 98.2,
+        "fulldoc|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "fulldoc|GSCS-CONST-UPPER": 98.5,
+        "fulldoc|GSCS-FUNC-RETURN-PREFIX": 97.2,
+        "fulldoc|GSCS-PROC-VERB-OBJECT": 80.6,
+        "fulldoc|GSCS-TYPE-SUFFIX": 96.3,
+        "fulldoc|GSCS-VAR-TYPED-PREFIX": 98.2,
+        "graph|GSCS-BOOL-BLN-PREFIX": 97.2,
+        "graph|GSCS-CONST-UPPER": 100.0,
+        "graph|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph|GSCS-TYPE-SUFFIX": 100.0,
+        "graph|GSCS-VAR-TYPED-PREFIX": 98.8,
+        "none|GSCS-BOOL-BLN-PREFIX": 0.0,
+        "none|GSCS-CONST-UPPER": 54.5,
+        "none|GSCS-FUNC-RETURN-PREFIX": 0.0,
+        "none|GSCS-PROC-VERB-OBJECT": 0.0,
+        "none|GSCS-TYPE-SUFFIX": 0.0,
+        "none|GSCS-VAR-TYPED-PREFIX": 45.5
+      },
+      "by_language": {
+        "chunk|cpp": 69.8,
+        "chunk|java": 67.5,
+        "chunk|python": 63.2,
+        "fulldoc|cpp": 97.6,
+        "fulldoc|java": 97.6,
+        "fulldoc|python": 94.0,
+        "graph|cpp": 100.0,
+        "graph|java": 98.4,
+        "graph|python": 99.1,
+        "none|cpp": 31.0,
+        "none|java": 32.5,
+        "none|python": 27.4
+      }
+    },
+    "Gemma 4 26B": {
+      "by_rule": {
+        "chunk|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "chunk|GSCS-CONST-UPPER": 18.2,
+        "chunk|GSCS-FUNC-RETURN-PREFIX": 25.0,
+        "chunk|GSCS-PROC-VERB-OBJECT": 52.8,
+        "chunk|GSCS-TYPE-SUFFIX": 22.2,
+        "chunk|GSCS-VAR-TYPED-PREFIX": 99.4,
+        "fulldoc|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "fulldoc|GSCS-CONST-UPPER": 100.0,
+        "fulldoc|GSCS-FUNC-RETURN-PREFIX": 72.2,
+        "fulldoc|GSCS-PROC-VERB-OBJECT": 88.9,
+        "fulldoc|GSCS-TYPE-SUFFIX": 100.0,
+        "fulldoc|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "graph|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "graph|GSCS-CONST-UPPER": 100.0,
+        "graph|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph|GSCS-TYPE-SUFFIX": 100.0,
+        "graph|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "none|GSCS-BOOL-BLN-PREFIX": 0.0,
+        "none|GSCS-CONST-UPPER": 63.6,
+        "none|GSCS-FUNC-RETURN-PREFIX": 0.0,
+        "none|GSCS-PROC-VERB-OBJECT": 0.0,
+        "none|GSCS-TYPE-SUFFIX": 0.0,
+        "none|GSCS-VAR-TYPED-PREFIX": 53.9
+      },
+      "by_language": {
+        "chunk|cpp": 73.0,
+        "chunk|java": 66.7,
+        "chunk|python": 61.5,
+        "fulldoc|cpp": 99.2,
+        "fulldoc|java": 96.7,
+        "fulldoc|python": 92.3,
+        "graph|cpp": 100.0,
+        "graph|java": 100.0,
+        "graph|python": 100.0,
+        "none|cpp": 36.5,
+        "none|java": 32.5,
+        "none|python": 38.5
+      }
+    },
+    "o3-mini [ablation run]": {
+      "by_rule": {
+        "graph|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "graph|GSCS-CONST-UPPER": 100.0,
+        "graph|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph|GSCS-TYPE-SUFFIX": 100.0,
+        "graph|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "graph_noex|GSCS-BOOL-BLN-PREFIX": 52.8,
+        "graph_noex|GSCS-CONST-UPPER": 100.0,
+        "graph_noex|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph_noex|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph_noex|GSCS-TYPE-SUFFIX": 100.0,
+        "graph_noex|GSCS-VAR-TYPED-PREFIX": 100.0
+      },
+      "by_language": {
+        "graph|cpp": 100.0,
+        "graph|java": 100.0,
+        "graph|python": 100.0,
+        "graph_noex|cpp": 96.8,
+        "graph_noex|java": 91.9,
+        "graph_noex|python": 97.4
+      }
+    },
+    "GPT-6 Luna [ablation run]": {
+      "by_rule": {
+        "graph|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "graph|GSCS-CONST-UPPER": 100.0,
+        "graph|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph|GSCS-TYPE-SUFFIX": 100.0,
+        "graph|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "graph_noex|GSCS-BOOL-BLN-PREFIX": 86.1,
+        "graph_noex|GSCS-CONST-UPPER": 100.0,
+        "graph_noex|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph_noex|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph_noex|GSCS-TYPE-SUFFIX": 100.0,
+        "graph_noex|GSCS-VAR-TYPED-PREFIX": 100.0
+      },
+      "by_language": {
+        "graph|cpp": 100.0,
+        "graph|java": 100.0,
+        "graph|python": 100.0,
+        "graph_noex|cpp": 100.0,
+        "graph_noex|java": 95.9,
+        "graph_noex|python": 100.0
+      }
+    },
+    "Gemini 3.1 Flash-Lite [ablation run]": {
+      "by_rule": {
+        "graph|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "graph|GSCS-CONST-UPPER": 100.0,
+        "graph|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph|GSCS-TYPE-SUFFIX": 100.0,
+        "graph|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "graph_noex|GSCS-BOOL-BLN-PREFIX": 83.3,
+        "graph_noex|GSCS-CONST-UPPER": 100.0,
+        "graph_noex|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph_noex|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph_noex|GSCS-TYPE-SUFFIX": 100.0,
+        "graph_noex|GSCS-VAR-TYPED-PREFIX": 100.0
+      },
+      "by_language": {
+        "graph|cpp": 100.0,
+        "graph|java": 100.0,
+        "graph|python": 100.0,
+        "graph_noex|cpp": 100.0,
+        "graph_noex|java": 95.1,
+        "graph_noex|python": 100.0
+      }
+    },
+    "Gemma 4 26B (endpoint) [ablation run]": {
+      "by_rule": {
+        "chunk|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "chunk|GSCS-CONST-UPPER": 18.2,
+        "chunk|GSCS-FUNC-RETURN-PREFIX": 27.8,
+        "chunk|GSCS-PROC-VERB-OBJECT": 44.4,
+        "chunk|GSCS-TYPE-SUFFIX": 22.2,
+        "chunk|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "fulldoc|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "fulldoc|GSCS-CONST-UPPER": 98.5,
+        "fulldoc|GSCS-FUNC-RETURN-PREFIX": 75.0,
+        "fulldoc|GSCS-PROC-VERB-OBJECT": 86.1,
+        "fulldoc|GSCS-TYPE-SUFFIX": 100.0,
+        "fulldoc|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "graph|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "graph|GSCS-CONST-UPPER": 100.0,
+        "graph|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph|GSCS-TYPE-SUFFIX": 100.0,
+        "graph|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "graph_noex|GSCS-BOOL-BLN-PREFIX": 100.0,
+        "graph_noex|GSCS-CONST-UPPER": 100.0,
+        "graph_noex|GSCS-FUNC-RETURN-PREFIX": 100.0,
+        "graph_noex|GSCS-PROC-VERB-OBJECT": 100.0,
+        "graph_noex|GSCS-TYPE-SUFFIX": 100.0,
+        "graph_noex|GSCS-VAR-TYPED-PREFIX": 100.0,
+        "none|GSCS-BOOL-BLN-PREFIX": 0.0,
+        "none|GSCS-CONST-UPPER": 59.1,
+        "none|GSCS-FUNC-RETURN-PREFIX": 0.0,
+        "none|GSCS-PROC-VERB-OBJECT": 0.0,
+        "none|GSCS-TYPE-SUFFIX": 0.0,
+        "none|GSCS-VAR-TYPED-PREFIX": 51.5
+      },
+      "by_language": {
+        "chunk|cpp": 69.8,
+        "chunk|java": 67.5,
+        "chunk|python": 63.2,
+        "fulldoc|cpp": 99.2,
+        "fulldoc|java": 97.6,
+        "fulldoc|python": 90.6,
+        "graph|cpp": 100.0,
+        "graph|java": 100.0,
+        "graph|python": 100.0,
+        "graph_noex|cpp": 100.0,
+        "graph_noex|java": 100.0,
+        "graph_noex|python": 100.0,
+        "none|cpp": 39.7,
+        "none|java": 33.3,
+        "none|python": 28.2
+      }
+    }
+  },
+  "K5": {
+    "o3-mini": {
+      "fulldoc": {
+        "n": 366,
+        "p50": 4.77,
+        "p95": 7.52,
+        "mean": 4.86
+      },
+      "chunk": {
+        "n": 366,
+        "p50": 4.77,
+        "p95": 9.07,
+        "mean": 5.37
+      },
+      "none": {
+        "n": 366,
+        "p50": 5.01,
+        "p95": 8.9,
+        "mean": 5.51
+      },
+      "graph": {
+        "n": 366,
+        "p50": 3.41,
+        "p95": 8.08,
+        "mean": 4.1
+      }
+    },
+    "GPT-6 Luna": {
+      "chunk": {
+        "n": 366,
+        "p50": 3.36,
+        "p95": 5.93,
+        "mean": 3.67
+      },
+      "fulldoc": {
+        "n": 366,
+        "p50": 3.28,
+        "p95": 4.42,
+        "mean": 3.39
+      },
+      "graph": {
+        "n": 366,
+        "p50": 3.02,
+        "p95": 4.24,
+        "mean": 3.1
+      },
+      "none": {
+        "n": 366,
+        "p50": 4.68,
+        "p95": 9.67,
+        "mean": 5.56
+      }
+    },
+    "Qwen3.5-9B": {
+      "none": {
+        "n": 366,
+        "p50": 11.78,
+        "p95": 21.92,
+        "mean": 12.95
+      },
+      "fulldoc": {
+        "n": 366,
+        "p50": 24.12,
+        "p95": 29.89,
+        "mean": 24.38
+      },
+      "chunk": {
+        "n": 366,
+        "p50": 17.17,
+        "p95": 19.57,
+        "mean": 17.45
+      },
+      "graph": {
+        "n": 366,
+        "p50": 13.26,
+        "p95": 14.61,
+        "mean": 13.09
+      }
+    },
+    "Gemini 3.1 Flash-Lite": {
+      "graph": {
+        "n": 366,
+        "p50": 1.76,
+        "p95": 2.86,
+        "mean": 2.01
+      },
+      "chunk": {
+        "n": 366,
+        "p50": 1.73,
+        "p95": 3.05,
+        "mean": 2.03
+      },
+      "fulldoc": {
+        "n": 366,
+        "p50": 2.1,
+        "p95": 3.09,
+        "mean": 2.17
+      },
+      "none": {
+        "n": 366,
+        "p50": 1.9,
+        "p95": 3.1,
+        "mean": 2.09
+      }
+    },
+    "DeepSeek V4 Flash": {
+      "chunk": {
+        "n": 366,
+        "p50": 47.92,
+        "p95": 406.69,
+        "mean": 108.35
+      },
+      "graph": {
+        "n": 366,
+        "p50": 30.52,
+        "p95": 105.85,
+        "mean": 41.52
+      },
+      "fulldoc": {
+        "n": 366,
+        "p50": 41.15,
+        "p95": 157.33,
+        "mean": 59.38
+      },
+      "none": {
+        "n": 366,
+        "p50": 197.25,
+        "p95": 443.68,
+        "mean": 220.75
+      }
+    },
+    "Gemma 4 26B": {
+      "none": {
+        "n": 366,
+        "p50": 2.0,
+        "p95": 3.72,
+        "mean": 2.34
+      },
+      "fulldoc": {
+        "n": 366,
+        "p50": 2.54,
+        "p95": 2.89,
+        "mean": 2.52
+      },
+      "chunk": {
+        "n": 366,
+        "p50": 2.08,
+        "p95": 3.04,
+        "mean": 2.3
+      },
+      "graph": {
+        "n": 366,
+        "p50": 1.88,
+        "p95": 2.12,
+        "mean": 1.89
+      }
+    },
+    "o3-mini [ablation run]": {
+      "graph": {
+        "n": 366,
+        "p50": 4.96,
+        "p95": 11.65,
+        "mean": 5.72
+      },
+      "graph_noex": {
+        "n": 366,
+        "p50": 4.97,
+        "p95": 11.94,
+        "mean": 5.81
+      }
+    },
+    "GPT-6 Luna [ablation run]": {
+      "graph_noex": {
+        "n": 366,
+        "p50": 3.74,
+        "p95": 6.31,
+        "mean": 3.92
+      },
+      "graph": {
+        "n": 366,
+        "p50": 3.86,
+        "p95": 6.28,
+        "mean": 4.02
+      }
+    },
+    "Gemini 3.1 Flash-Lite [ablation run]": {
+      "graph_noex": {
+        "n": 366,
+        "p50": 1.43,
+        "p95": 2.53,
+        "mean": 1.56
+      },
+      "graph": {
+        "n": 366,
+        "p50": 1.46,
+        "p95": 2.18,
+        "mean": 1.53
+      }
+    },
+    "Gemma 4 26B (endpoint) [ablation run]": {
+      "graph": {
+        "n": 366,
+        "p50": 2.48,
+        "p95": 6.76,
+        "mean": 3.07
+      },
+      "chunk": {
+        "n": 366,
+        "p50": 2.92,
+        "p95": 7.57,
+        "mean": 3.7
+      },
+      "graph_noex": {
+        "n": 366,
+        "p50": 2.67,
+        "p95": 6.36,
+        "mean": 3.07
+      },
+      "none": {
+        "n": 366,
+        "p50": 3.16,
+        "p95": 9.49,
+        "mean": 3.98
+      },
+      "fulldoc": {
+        "n": 366,
+        "p50": 2.64,
+        "p95": 7.07,
+        "mean": 3.48
+      }
+    },
+    "retrieval_graph_ms_per_call": 0.0192
+  }
+}

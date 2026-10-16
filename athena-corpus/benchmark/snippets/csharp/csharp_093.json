@@ -1,0 +1,52 @@
+{
+  "id": "csharp_093",
+  "language": "csharp",
+  "source": "github:yello-gun/BetterSTT@e6ed41b232cfa71e6dcbbadeff51710527e31452",
+  "sourceDetail": "src/BetterSTT/History.cs lines 150-184 (method TextDiff.Compare); license MIT; repo created 2026-09-26T18:41:24Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public static List<DiffPart> Compare(string raw, string clean)\n{\n    var tokens = Token.Matches(raw).Select(m => m.Value).ToList();\n    var rawKeys = tokens.Select(Key).ToList();\n    var cleanKeys = Token.Matches(clean).Select(m => Key(m.Value)).Where(k => k.Length > 0).ToList();\n\n    // Longest common subsequence over normalized words.\n    int n = rawKeys.Count, m = cleanKeys.Count;\n    var lcs = new int[n + 1, m + 1];\n    for (int i = n - 1; i >= 0; i--)\n        for (int j = m - 1; j >= 0; j--)\n            lcs[i, j] = rawKeys[i].Length > 0 && rawKeys[i] == cleanKeys[j]\n                ? lcs[i + 1, j + 1] + 1\n                : Math.Max(lcs[i + 1, j], lcs[i, j + 1]);\n\n    var kept = new bool[n];\n    for (int i = 0, j = 0; i < n && j < m;)\n    {\n        if (rawKeys[i].Length > 0 && rawKeys[i] == cleanKeys[j]) { kept[i] = true; i++; j++; }\n        else if (lcs[i + 1, j] >= lcs[i, j + 1]) i++;\n        else j++;\n    }\n\n    var parts = new List<DiffPart>();\n    for (int i = 0; i < n; i++)\n    {\n        // Whitespace-only tokens never count as removed on their own.\n        bool removed = !kept[i] && rawKeys[i].Length > 0;\n        if (parts.Count > 0 && parts[^1].Removed == removed)\n            parts[^1] = new DiffPart(parts[^1].Text + tokens[i], removed);\n        else\n            parts.Add(new DiffPart(tokens[i], removed));\n    }\n    return parts;\n}",
+  "identifiers": [
+    {
+      "name": "Compare",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "removed",
+      "kind": "boolean_variable",
+      "isCompliant": true
+    },
+    {
+      "name": "tokens",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "raw",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "clean",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "rawKeys",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "yello-gun/BetterSTT",
+    "repoUrl": "https://github.com/yello-gun/BetterSTT",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:41:24Z",
+    "commit": "e6ed41b232cfa71e6dcbbadeff51710527e31452",
+    "path": "src/BetterSTT/History.cs",
+    "startLine": 150,
+    "endLine": 184,
+    "unit": "method TextDiff.Compare",
+    "corpusFile": "corpus/csharp/yello-gun__BetterSTT__History.cs.md"
+  }
+}

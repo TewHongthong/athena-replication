@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_001",
+  "language": "python",
+  "originalName": "injected",
+  "injectedName": "INJECTED",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INJECTED' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    INJECTED = set(state)\n    settings = _settings()\n    if LAMBDA and \"engine\" not in state:\n        # SSM secrets, /tmp paths, dev-auth refusal. Misconfiguration fails the cold start.\n        settings = prepare_lambda_environment(settings)\n        state[\"settings\"] = settings\n    state.setdefault(\"settings\", settings)\n    configure_logging(settings.log_format, settings.log_level)\n    if \"authenticator\" not in state:\n        # Misconfigured auth (e.g. AUTH_MODE=dev outside ENV=dev, no keys) stops startup here.\n        state[\"authenticator\"] = Authenticator(settings)\n    if \"rate_limiter\" not in state:\n        state[\"rate_limiter\"] = RateLimiter(settings.rate_limit, settings.rate_limit_storage)\n    if \"engine\" not in state:\n        encryptor = VectorStoreEncryptor()\n        # Fails fast (no silent rebuild) on an empty store, wrong key or model mismatch.\n        stack = open_serving_stack(settings, encryptor)\n        state[\"encryptor\"] = encryptor\n        state[\"store\"] = stack.store\n        state[\"retriever\"] = stack.retriever\n        state[\"engine\"] = build_engine(settings, encryptor, stack)\n        state[\"encoder\"] = stack.encoder\n        # Warm up so readiness means \"first query is fast\": load the model kernels and sparse indexes.\n        stack.encoder.encode([\"warm-up\"], normalize_embeddings=True)\n        state[\"ready_checks\"] = {\"store_verified\": True, \"embedder_warm\": True,\n                                 \"sparse_partitions\": stack.sparse.warm()}\n        logger.info(\"startup complete: backend=%s chunks=%d\", stack.store.backend, stack.store.count())\n    if \"jobs\" not in state and \"encoder\" in state and not LAMBDA:\n        state[\"jobs\"] = IngestJobManager(settings, state[\"encryptor\"], state[\"store\"], state[\"encoder\"])\n    yield\n    for key in set(state) - INJECTED:\n        state.pop(key, None)",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

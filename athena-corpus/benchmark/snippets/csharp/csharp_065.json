@@ -1,0 +1,47 @@
+{
+  "id": "csharp_065",
+  "language": "csharp",
+  "source": "github:teesofttech/SMSBridge@1b400e9c1804dc01402d0b9769db5475f76d3785",
+  "sourceDetail": "src/SmsBridge/Providers/Unifonic/UnifonicSmsRequestMapper.cs lines 29-47 (method UnifonicSmsRequestMapper.AddOptionalMetadata); license MIT; repo created 2026-06-13; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "private static void AddOptionalMetadata(\n    IDictionary<string, string> parameters,\n    SmsMessage message,\n    string parameterName,\n    params string[] metadataKeys)\n{\n    if (message.Metadata is null)\n        return;\n\n    foreach (var key in metadataKeys)\n    {\n        if (message.Metadata.TryGetValue(key, out var value) &&\n            !string.IsNullOrWhiteSpace(value))\n        {\n            parameters[parameterName] = value;\n            return;\n        }\n    }\n}",
+  "identifiers": [
+    {
+      "name": "AddOptionalMetadata",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "key",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "parameters",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "message",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "parameterName",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "teesofttech/SMSBridge",
+    "repoUrl": "https://github.com/teesofttech/SMSBridge",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-13",
+    "commit": "1b400e9c1804dc01402d0b9769db5475f76d3785",
+    "path": "src/SmsBridge/Providers/Unifonic/UnifonicSmsRequestMapper.cs",
+    "startLine": 29,
+    "endLine": 47,
+    "unit": "method UnifonicSmsRequestMapper.AddOptionalMetadata",
+    "corpusFile": "corpus/csharp/teesofttech__SMSBridge__UnifonicSmsRequestMapper.cs.md"
+  }
+}

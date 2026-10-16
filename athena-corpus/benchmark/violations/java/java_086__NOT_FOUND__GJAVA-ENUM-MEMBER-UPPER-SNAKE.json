@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_086",
+  "language": "java",
+  "originalName": "NOT_FOUND",
+  "injectedName": "not_found",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "GJAVA-ENUM-MEMBER-UPPER-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'not_found' does not match UPPER_SNAKE_CASE pattern",
+    "name 'not_found' matches forbidden pattern '[a-z]'"
+  ],
+  "codeContextWithViolation": "public enum RemoteSummonResult {\n    COMPLETED_TELEPORT,\n    COMPLETED_REBUILD,\n    not_found,\n    NOT_OWNER,\n    NOT_ALIVE,\n    ACTIVE_LIMIT,\n    REBUILD_FAILED,\n    DISABLED,\n    INVALID_STATE,\n    ALREADY_PENDING,\n    TOO_MANY_PENDING,\n    COOLDOWN,\n    NO_POSITION,\n    DIMENSION_MISSING,\n    ENTITY_UNRESOLVED,\n    DUPLICATE_CONFLICT,\n    CHUNK_LOAD_FAILED,\n    TIMEOUT,\n    TELEPORT_FAILED,\n    CANCELLED,\n    /** 请求已受理并进入 WAIT_CHUNK，不等同于最终成功。 */\n    PENDING\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

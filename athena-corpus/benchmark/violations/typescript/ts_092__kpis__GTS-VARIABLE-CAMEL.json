@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_092",
+  "language": "typescript",
+  "originalName": "kpis",
+  "injectedName": "KPIS",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'KPIS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Sparkline() {\n  const motion = useChartMotion()\n  const KPIS = [\n    { label: \"Facturado\", value: \"$ 1.284.000\", delta: \"+12,4 %\", trend: \"up\", serie: [4, 6, 5, 8, 7, 9, 8, 11, 10, 12, 13, 15] },\n    { label: \"Tickets abiertos\", value: \"37\", delta: \"+8\", trend: \"down\", serie: [12, 10, 14, 13, 18, 17, 21, 20, 26, 29, 33, 37] },\n    { label: \"Tiempo de respuesta\", value: \"1,8 h\", delta: \"−0,4 h\", trend: \"up\", serie: [3.1, 2.9, 3, 2.6, 2.4, 2.5, 2.2, 2.1, 2, 1.9, 1.9, 1.8] },\n  ] as const\n  return (\n    <div className=\"grid w-full gap-4 sm:grid-cols-3\">\n      {KPIS.map((kpi) => (\n        <Card key={kpi.label} size=\"sm\">\n          <CardContent className=\"flex flex-col gap-3\">\n            <Stat delta={kpi.delta} hint=\"vs. mes anterior\" label={kpi.label} trend={kpi.trend} value={kpi.value} />\n            <ChartContainer aria-hidden=\"true\" className=\"aspect-auto h-10\" config={{ v: { label: kpi.label } }}>\n              <LineChart data={kpi.serie.map((v, i) => ({ i, v }))} margin={{ top: 2, bottom: 2, left: 2, right: 2 }} responsive>\n                <Line dataKey=\"v\" dot={false} stroke=\"var(--color-v)\" strokeWidth={2} type=\"monotone\" {...motion} />\n              </LineChart>\n            </ChartContainer>\n          </CardContent>\n        </Card>\n      ))}\n    </div>\n  )\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_051",
+  "language": "java",
+  "originalName": "javascript",
+  "injectedName": "JAVASCRIPT",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'JAVASCRIPT' does not match camelCase pattern",
+    "name 'JAVASCRIPT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "class AdminAnsibleGalaxyRepositoryContractTest {\n\n  @Test\n  void configuresDefaultRemoteAndNestedGroups() throws IOException {\n    String JAVASCRIPT = resource(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(JAVASCRIPT.contains(\"ansiblegalaxy: \\\"Ansible Galaxy\\\"\"));\n    assertTrue(JAVASCRIPT.contains(\"ansiblegalaxy: \\\"https://galaxy.ansible.com/\\\"\"));\n    assertTrue(JAVASCRIPT.contains(\"format === \\\"ansiblegalaxy\\\"\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

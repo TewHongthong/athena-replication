@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_065",
+  "language": "csharp",
+  "originalName": "message",
+  "injectedName": "MESSAGE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MESSAGE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private static void AddOptionalMetadata(\n    IDictionary<string, string> parameters,\n    SmsMessage MESSAGE,\n    string parameterName,\n    params string[] metadataKeys)\n{\n    if (MESSAGE.Metadata is null)\n        return;\n\n    foreach (var key in metadataKeys)\n    {\n        if (MESSAGE.Metadata.TryGetValue(key, out var value) &&\n            !string.IsNullOrWhiteSpace(value))\n        {\n            parameters[parameterName] = value;\n            return;\n        }\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

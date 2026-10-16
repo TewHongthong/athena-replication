@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_040",
+  "language": "javascript",
+  "originalName": "installSources",
+  "injectedName": "install_sources",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'install_sources' does not match camelCase pattern",
+    "name 'install_sources' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "async function install_sources(sources, label, options, noMcp = false) {\n  if (sources.length === 0) {\n    console.log('No skills to install.')\n    return\n  }\n\n  console.log(\n    `\\n📦 Installing ${sources.length} skill(s)${label}:${label ? '\\n' : ''}`,\n  )\n\n  if (options.dryRun) {\n    for (const source of sources) console.log(`   • ${source}`)\n    console.log(`\\n📋 [dry-run] Would install ${sources.length} skill(s).\\n`)\n    return\n  }\n\n  const { installed: successCount, failed: failCount } =\n    await installBundleSources(\n      sources,\n      { yes: true, noMcp },\n      {\n        onStart: (source, index) =>\n          console.log('   [%s/%s] %s', index + 1, sources.length, source),\n        onError: (source, error) =>\n          console.error('   ❌ %s: %s', source, error?.message),\n      },\n    )\n\n  console.log()\n\n  if (failCount === 0) {\n    console.log(`✅ All ${successCount} skill(s) installed successfully.`)\n  } else {\n    console.log(`⚠️  ${successCount} installed, ${failCount} failed.`)\n    if (options.frozenLockfile)\n      throw new Error('Some skills failed to install.')\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

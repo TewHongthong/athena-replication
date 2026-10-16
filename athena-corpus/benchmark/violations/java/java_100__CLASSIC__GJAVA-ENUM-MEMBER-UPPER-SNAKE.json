@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_100",
+  "language": "java",
+  "originalName": "CLASSIC",
+  "injectedName": "classic",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "GJAVA-ENUM-MEMBER-UPPER-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'classic' does not match UPPER_SNAKE_CASE pattern",
+    "name 'classic' matches forbidden pattern '[a-z]'"
+  ],
+  "codeContextWithViolation": "public enum TransitionMode {\n    classic(\"Classic\"),\n    LIGHT(\"Lite\"),\n    LIGHT120(\"Lite 1.20\"),\n    PRIME(\"Prime\");\n\n    private final String displayName;\n\n    TransitionMode(String displayName) {\n        this.displayName = displayName;\n    }\n\n    public String getDisplayName() {\n        return displayName;\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "py_097",
+  "language": "python",
+  "source": "github:vikasiec/AI-Trading-App@beb8d00e020adcbdf2afc156bd87592daa40d881",
+  "sourceDetail": "src/jev_indstocks_trader/gaps.py lines 5-23 (class GapBook); license MIT; repo created 2026-09-25T18:06:05Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class GapBook:\n    def __init__(self):\n        self._day: str | None = None\n        self._gap: dict[str, float] = {}\n\n    def roll_day(self, day: str) -> None:\n        if day != self._day:\n            self._day = day\n            self._gap.clear()\n\n    def observe(self, symbol: str, day_change_pct: float | None) -> None:\n        if day_change_pct is None:\n            return\n        key = symbol.upper()\n        if key not in self._gap:\n            self._gap[key] = float(day_change_pct)\n\n    def get(self, symbol: str) -> float | None:\n        return self._gap.get(symbol.upper())",
+  "identifiers": [
+    {
+      "name": "GapBook",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "roll_day",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "key",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "day",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "observe",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "symbol",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vikasiec/AI-Trading-App",
+    "repoUrl": "https://github.com/vikasiec/AI-Trading-App",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T18:06:05Z",
+    "commit": "beb8d00e020adcbdf2afc156bd87592daa40d881",
+    "path": "src/jev_indstocks_trader/gaps.py",
+    "startLine": 5,
+    "endLine": 23,
+    "unit": "class GapBook",
+    "corpusFile": "corpus/python/vikasiec__AI-Trading-App__gaps.py.md"
+  }
+}

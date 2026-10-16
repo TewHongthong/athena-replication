@@ -1,0 +1,52 @@
+{
+  "id": "java_003",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/audit/AuditLogController.java lines 25-47 (class AuditLogController); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@RestController\n@RequestMapping(\"/api/admin/audit\")\n@RequiredArgsConstructor\n@PreAuthorize(\"hasRole('\" + Roles.ADMIN + \"')\")\n@Tag(name = \"Audit\", description = \"Audit log endpoints\")\n@SecurityRequirement(name = \"bearerAuth\")\npublic class AuditLogController {\n\n    private final AuditLogService auditLogService;\n\n    @GetMapping\n    @Operation(summary = \"Get audit logs\")\n    public ResponseEntity<Page<AuditLogResponse>> getAll(\n            @RequestParam(required = false) AuditAction action,\n            @RequestParam(required = false) String entityName,\n            @RequestParam(required = false) Long entityId,\n            @RequestParam(required = false) String performedBy,\n            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,\n            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end,\n            @SortableFields({\"performedAt\", \"id\"}) @PageableDefault(size = 20, sort = {\"performedAt\", \"id\"}, direction = Sort.Direction.DESC) Pageable pageable) {\n        return ResponseEntity.ok(auditLogService.getAll(action, entityName, entityId, performedBy, start, end, pageable));\n    }\n}",
+  "identifiers": [
+    {
+      "name": "AuditLogController",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "getAll",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "auditLogService",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "action",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "entityName",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "entityId",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/audit/AuditLogController.java",
+    "startLine": 25,
+    "endLine": 47,
+    "unit": "class AuditLogController",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__AuditLogController.java.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_008",
+  "language": "python",
+  "originalName": "get_encoder",
+  "injectedName": "GET_ENCODER",
+  "identifierKind": "function",
+  "violatedRuleId": "PEP8-FUNC-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'GET_ENCODER' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@lru_cache(maxsize=4)\ndef GET_ENCODER(model_name: str, device: str = \"auto\") -> Any:\n    from sentence_transformers import SentenceTransformer\n\n    resolved = resolve_device(device)\n    logger.info(\"Loading embedding model %s on %s\", model_name, resolved)\n    return SentenceTransformer(model_name, device=resolved)",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

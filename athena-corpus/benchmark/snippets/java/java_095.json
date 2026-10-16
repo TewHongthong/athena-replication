@@ -1,0 +1,32 @@
+{
+  "id": "java_095",
+  "language": "java",
+  "source": "github:xvDoshik/HubSwap@c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+  "sourceDetail": "src/main/java/ru/heldyy/hubswap/gui/AutoTuneManager.java lines 64-72 (method AutoTuneManager.recordSuccess); license MIT; repo created 2026-08-04T22:22:23Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public static void recordSuccess() {\n    ModConfig config = HubSwap.getConfig();\n    if (!config.isSmartAutoTuneEnabled()) {\n        return;\n    }\n\n    config.recordSuccess();\n    HubSwap.saveConfig();\n}",
+  "identifiers": [
+    {
+      "name": "recordSuccess",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "config",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "xvDoshik/HubSwap",
+    "repoUrl": "https://github.com/xvDoshik/HubSwap",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-04T22:22:23Z",
+    "commit": "c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+    "path": "src/main/java/ru/heldyy/hubswap/gui/AutoTuneManager.java",
+    "startLine": 64,
+    "endLine": 72,
+    "unit": "method AutoTuneManager.recordSuccess",
+    "corpusFile": "corpus/java/xvDoshik__HubSwap__AutoTuneManager.java.md"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_100",
+  "language": "java",
+  "originalName": "LIGHT120",
+  "injectedName": "light_120",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "GJAVA-ENUM-MEMBER-UPPER-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'light_120' does not match UPPER_SNAKE_CASE pattern",
+    "name 'light_120' matches forbidden pattern '[a-z]'"
+  ],
+  "codeContextWithViolation": "public enum TransitionMode {\n    CLASSIC(\"Classic\"),\n    LIGHT(\"Lite\"),\n    light_120(\"Lite 1.20\"),\n    PRIME(\"Prime\");\n\n    private final String displayName;\n\n    TransitionMode(String displayName) {\n        this.displayName = displayName;\n    }\n\n    public String getDisplayName() {\n        return displayName;\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

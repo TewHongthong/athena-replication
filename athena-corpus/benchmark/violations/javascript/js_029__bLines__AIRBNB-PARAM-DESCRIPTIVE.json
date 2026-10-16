@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_029",
+  "language": "javascript",
+  "originalName": "bLines",
+  "injectedName": "b",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'b' shorter than minLength=2",
+    "name 'b' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function diffLines(aLines, b) {\n  const added = []\n  const removed = []\n  const aSet = new Set(aLines)\n  const bSet = new Set(b)\n\n  for (const line of aLines) {\n    if (!bSet.has(line)) removed.push(line)\n  }\n  for (const line of b) {\n    if (!aSet.has(line)) added.push(line)\n  }\n\n  return { added, removed }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

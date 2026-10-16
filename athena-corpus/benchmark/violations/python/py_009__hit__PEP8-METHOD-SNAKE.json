@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_009",
+  "language": "python",
+  "originalName": "hit",
+  "injectedName": "HIT",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HIT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class RateLimiter:\n    def __init__(self, rule: str = \"60/minute\", storage_uri: str = \"memory://\"):\n        self.rule = parse(rule)\n        self._limiter = MovingWindowRateLimiter(storage_from_string(storage_uri))\n\n    def HIT(self, key: str) -> bool:\n        \"\"\"Record one request for ``key``; False when the limit is exceeded.\"\"\"\n        return self._limiter.HIT(self.rule, \"securerag\", key)",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

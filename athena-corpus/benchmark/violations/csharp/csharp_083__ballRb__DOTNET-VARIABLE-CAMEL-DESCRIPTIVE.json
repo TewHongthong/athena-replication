@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_083",
+  "language": "csharp",
+  "originalName": "ballRb",
+  "injectedName": "ball_rb",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ball_rb' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private void OnTriggerStay(Collider other)\n{\n    if (!isEnabled) return;\n    if (!other.CompareTag(\"GamePiece\")) return;\n\n    Rigidbody ball_rb = other.attachedRigidbody;\n    if (ball_rb == null) return;\n\n    bool activationPressed = Input.GetKey(activationKey)\n        || (PlayerInputHandler.Instance != null && PlayerInputHandler.Instance.Shoot);\n\n    if (activationPressed)\n    {\n        if (targetPoint != null)\n        {\n            Vector3 forceDirection = (targetPoint.position - transform.position).normalized;\n            ball_rb.AddForce(forceDirection * indexerForce, ForceMode.Force);\n        }\n    }\n    else\n    {\n        if (inactiveTarget != null)\n        {\n            Vector3 forceDirection = (inactiveTarget.position - transform.position).normalized;\n            ball_rb.AddForce(forceDirection * reverseForce, ForceMode.Force);\n        }\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

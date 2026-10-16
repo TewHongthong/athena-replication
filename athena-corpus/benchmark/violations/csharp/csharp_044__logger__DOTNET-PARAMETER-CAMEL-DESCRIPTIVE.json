@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_044",
+  "language": "csharp",
+  "originalName": "logger",
+  "injectedName": "LOGGER",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOGGER' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal static partial class AgentPlacementLog\n{\n    [LoggerMessage(EventId = 1710, Level = LogLevel.Information,\n        Message = \"AgentPlaced AgentId={AgentId} HouseholdId={HouseholdId} WorldTick={WorldTick} X={X} Y={Y}\")]\n    public static partial void Placed(ILogger LOGGER, string agentId, string householdId, long worldTick, int x, int y);\n\n    [LoggerMessage(EventId = 1711, Level = LogLevel.Warning,\n        Message = \"AgentPlacementRejected AgentId={AgentId} Reason={Reason}\")]\n    public static partial void Rejected(ILogger LOGGER, string agentId, string reason);\n\n    [LoggerMessage(EventId = 1712, Level = LogLevel.Information,\n        Message = \"AgentRenamed AgentId={AgentId} WorldTick={WorldTick}\")]\n    public static partial void Renamed(ILogger LOGGER, string agentId, long worldTick);\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

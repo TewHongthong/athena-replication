@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_091",
+  "language": "csharp",
+  "originalName": "Save",
+  "injectedName": "save",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'save' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static void save(string zipPath, DictationController c)\n{\n    if (File.Exists(zipPath)) File.Delete(zipPath);\n    using var zip = ZipFile.Open(zipPath, ZipArchiveMode.Create);\n    Add(zip, \"about.txt\", Report(c));\n    Add(zip, \"settings.json\", Redact(RedactedSettings(c.Settings).ToJson()));\n    string log = \"\";\n    try { if (File.Exists(AppPaths.LogFile)) log = File.ReadAllText(AppPaths.LogFile); }\n    catch (IOException) { /* being written; leave it out */ }\n    Add(zip, \"log.txt\", Redact(log));\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

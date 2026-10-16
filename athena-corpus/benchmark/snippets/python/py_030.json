@@ -1,0 +1,52 @@
+{
+  "id": "py_030",
+  "language": "python",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/providers/replay.py lines 27-59 (method ReplayProvider.chat); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def chat(\n    self,\n    messages: list[dict],\n    *,\n    tools: list[dict] | None = None,\n    temperature: float | None = None,\n    max_tokens: int | None = None,\n) -> ChatResponse:\n    self.calls += 1\n    last = next(\n        (m for m in reversed(messages) if m.get(\"role\") == \"user\"), {\"content\": \"\"}\n    )\n    content = str(last.get(\"content\", \"\"))\n    digest = hashlib.sha256(content.encode(\"utf-8\")).hexdigest()[:12]\n\n    directive = _directive(content)\n    if directive and not any(m.get(\"role\") == \"tool\" for m in messages):\n        call = ToolCall(\n            id=f\"replay_{digest}\",\n            name=directive[\"name\"],\n            arguments=directive.get(\"arguments\", {}),\n        )\n        return ChatResponse(tool_calls=[call], model=\"replay\", finish_reason=\"tool_calls\")\n\n    return ChatResponse(\n        text=json.dumps(\n            {\"replay\": True, \"sha\": digest, \"chars\": len(content)}, ensure_ascii=False\n        ),\n        tokens_in=len(content) // 4,\n        tokens_out=8,\n        model=\"replay\",\n        finish_reason=\"stop\",\n    )",
+  "identifiers": [
+    {
+      "name": "chat",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "last",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "messages",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "tools",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "temperature",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "max_tokens",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/providers/replay.py",
+    "startLine": 27,
+    "endLine": 59,
+    "unit": "method ReplayProvider.chat",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__replay.py.md"
+  }
+}

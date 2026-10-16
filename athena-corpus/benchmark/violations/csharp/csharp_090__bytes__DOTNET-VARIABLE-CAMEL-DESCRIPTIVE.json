@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_090",
+  "language": "csharp",
+  "originalName": "bytes",
+  "injectedName": "BYTES",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'BYTES' does not match camelCase pattern",
+    "name 'BYTES' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static float[] Read(string path)\n{\n    byte[] BYTES = File.ReadAllBytes(path);\n    int pos = 12; // after \"RIFF\" <size> \"WAVE\"\n    while (pos + 8 <= BYTES.Length)\n    {\n        string id = System.Text.Encoding.ASCII.GetString(BYTES, pos, 4);\n        int size = BitConverter.ToInt32(BYTES, pos + 4);\n        if (id == \"data\")\n        {\n            int start = pos + 8;\n            int count = (BYTES.Length - start) / 2;\n            var samples = new float[count];\n            for (int i = 0; i < count; i++) samples[i] = BitConverter.ToInt16(BYTES, start + i * 2) / 32768f;\n            return samples;\n        }\n        if (size < 0) break;\n        pos += 8 + size + (size & 1);\n    }\n    throw new InvalidDataException($\"{Path.GetFileName(path)} has no audio data.\");\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

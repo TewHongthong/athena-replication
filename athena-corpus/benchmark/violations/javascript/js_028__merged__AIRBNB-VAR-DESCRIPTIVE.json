@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_028",
+  "language": "javascript",
+  "originalName": "merged",
+  "injectedName": "m",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'm' shorter than minLength=2",
+    "name 'm' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function mergeSectionLines(existingLines, newLines) {\n  const seen = new Set(existingLines)\n  const m = [...existingLines]\n  for (const line of newLines) {\n    if (!seen.has(line)) {\n      m.push(line)\n      seen.add(line)\n    }\n  }\n  return m\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

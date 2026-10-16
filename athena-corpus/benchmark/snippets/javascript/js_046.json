@@ -1,0 +1,52 @@
+{
+  "id": "js_046",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/commands/mcp.js lines 202-215 (function mcpItemCard); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function mcpItemCard(item, selected, sourceType) {\n  const sel = selected ? theme.reverse(' > ') : '   '\n  const name = selected ? theme.bold(item.name) : theme.dim(item.name)\n  const desc = item.description || 'No description'\n  const installCmd =\n    sourceType === 'npm'\n      ? `rolecraft mcp install npm:${item.name}`\n      : `rolecraft mcp install gh:${item.name}`\n  return [\n    `${sel}${name}`,\n    `   ${desc}`,\n    `   ${sourceType === 'npm' ? '📦 npm' : '🟢 github'} · ${installCmd}`,\n  ]\n}",
+  "identifiers": [
+    {
+      "name": "mcpItemCard",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "sel",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "selected",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "sourceType",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/commands/mcp.js",
+    "startLine": 202,
+    "endLine": 215,
+    "unit": "function mcpItemCard",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__mcp.js.md"
+  }
+}

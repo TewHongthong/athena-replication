@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_075",
+  "language": "java",
+  "originalName": "register",
+  "injectedName": "REGISTER",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'REGISTER' does not match camelCase pattern",
+    "name 'REGISTER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public final class FurkinCapability {\n\n    /** 能力标识（ResourceLocation）。 */\n    public static final ResourceLocation ID = new ResourceLocation(FurkinMod.MODID, \"furkin_data\");\n\n    /** 能力实例。 */\n    public static final Capability<FurkinData> FURKIN_DATA = CapabilityManager.get(new CapabilityToken<>() {});\n\n    private FurkinCapability() {\n    }\n\n    /** 在 {@link RegisterCapabilitiesEvent} 中调用，注册能力。 */\n    public static void REGISTER(RegisterCapabilitiesEvent event) {\n        event.REGISTER(FurkinData.class);\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

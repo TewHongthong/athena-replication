@@ -1,0 +1,42 @@
+{
+  "id": "csharp_062",
+  "language": "csharp",
+  "source": "github:teesofttech/SMSBridge@1b400e9c1804dc01402d0b9769db5475f76d3785",
+  "sourceDetail": "src/SmsBridge/Providers/Telnyx/TelnyxSmsRequestMapper.cs lines 5-13 (class TelnyxSmsRequestMapper); license MIT; repo created 2026-06-13; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "internal static class TelnyxSmsRequestMapper\n{\n    public static object ToRequestBody(SmsMessage message, string defaultFrom) => new\n    {\n        from = message.From ?? defaultFrom,\n        to = message.To,\n        text = message.Body\n    };\n}",
+  "identifiers": [
+    {
+      "name": "TelnyxSmsRequestMapper",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "ToRequestBody",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "message",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "defaultFrom",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "teesofttech/SMSBridge",
+    "repoUrl": "https://github.com/teesofttech/SMSBridge",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-13",
+    "commit": "1b400e9c1804dc01402d0b9769db5475f76d3785",
+    "path": "src/SmsBridge/Providers/Telnyx/TelnyxSmsRequestMapper.cs",
+    "startLine": 5,
+    "endLine": 13,
+    "unit": "class TelnyxSmsRequestMapper",
+    "corpusFile": "corpus/csharp/teesofttech__SMSBridge__TelnyxSmsRequestMapper.cs.md"
+  }
+}

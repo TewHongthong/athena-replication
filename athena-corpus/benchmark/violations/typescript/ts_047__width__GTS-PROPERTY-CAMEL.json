@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_047",
+  "language": "typescript",
+  "originalName": "width",
+  "injectedName": "WIDTH",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'WIDTH' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface TakeFrameProps {\n  recording: Recording;\n  WIDTH: number;\n  active: boolean;\n  onPress: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_049",
+  "language": "csharp",
+  "originalName": "PublicIntention",
+  "injectedName": "public_intention",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'public_intention' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed record ViewerInhabitant(\n    string Id,\n    string DisplayName,\n    string Lifecycle,\n    ViewerPosition Position,\n    int HungerBasisPoints,\n    IReadOnlyList<ViewerInventoryEntry> Inventory,\n    IReadOnlyList<ViewerDecisionFactor> DecisionFactors,\n    ViewerRoute Route,\n    ViewerSpatialKnowledge SpatialKnowledge,\n    bool IsDraft)\n{\n    public ViewerPublicIntention? public_intention { get; init; }\n\n    public ViewerProject? Project { get; init; }\n    public ViewerSurvival? Survival { get; init; }\n    public ViewerLesson? Lesson { get; init; }\n    public ViewerProficiency? Proficiency { get; init; }\n    public IReadOnlyList<ViewerSocialStanding> SocialStanding { get; init; } = [];\n\n    public IReadOnlyList<string> SocialNotes { get; init; } = [];\n\n    public IReadOnlyList<ViewerInhabitantRelationship> Relationships { get; init; } = [];\n\n    public IReadOnlyList<ViewerPrivateThought> RecentPrivateThoughts { get; init; } = [];\n\n    public IReadOnlyList<ViewerAgentMemory> RecentMemories { get; init; } = [];\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

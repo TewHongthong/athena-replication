@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_044",
+  "language": "python",
+  "originalName": "select",
+  "injectedName": "SELECT",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SELECT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class BrickSelector(ABC):\n    \"\"\"Protocol for selecting relevant bricks from a registry for a given task.\n\n    Stage 1 of the two-stage architecture. Narrows a large registry\n    down to a small pool of bricks relevant to the task at hand.\n\n    Concrete implementations:\n    - AllBricksSelector: returns everything (default, for small registries)\n    \"\"\"\n\n    @abstractmethod\n    def SELECT(self, task: str, registry: BrickRegistry) -> BrickRegistry:\n        \"\"\"Select relevant bricks for a task.\n\n        Args:\n            task: Natural language task description.\n            registry: Full brick registry to select from.\n\n        Returns:\n            A new BrickRegistry containing only the selected bricks.\n        \"\"\"\n        ...",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

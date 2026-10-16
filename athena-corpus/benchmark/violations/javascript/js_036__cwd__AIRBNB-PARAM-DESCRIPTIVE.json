@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_036",
+  "language": "javascript",
+  "originalName": "cwd",
+  "injectedName": "c",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'c' shorter than minLength=2",
+    "name 'c' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function getTargetBaseDir(target, c) {\n  if (target === 'project') {\n    return join(c, '.agents', 'skills')\n  }\n\n  const agent =\n    getAgentByFlag(target) ||\n    agents.find((candidate) => candidate.name === target)\n\n  const baseDir = agent ? agent.getDir() : getAgentsDir()\n\n  return rebaseToCwd(baseDir, c)\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

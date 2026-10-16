@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_075",
+  "language": "java",
+  "originalName": "FurkinCapability",
+  "injectedName": "furkin_capability",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'furkin_capability' does not match PascalCase pattern",
+    "name 'furkin_capability' matches forbidden pattern '^[a-z]'",
+    "name 'furkin_capability' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public final class furkin_capability {\n\n    /** 能力标识（ResourceLocation）。 */\n    public static final ResourceLocation ID = new ResourceLocation(FurkinMod.MODID, \"furkin_data\");\n\n    /** 能力实例。 */\n    public static final Capability<FurkinData> FURKIN_DATA = CapabilityManager.get(new CapabilityToken<>() {});\n\n    private furkin_capability() {\n    }\n\n    /** 在 {@link RegisterCapabilitiesEvent} 中调用，注册能力。 */\n    public static void register(RegisterCapabilitiesEvent event) {\n        event.register(FurkinData.class);\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

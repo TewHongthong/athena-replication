@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_024",
+  "language": "python",
+  "originalName": "Arm",
+  "injectedName": "arm",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'arm' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass arm:\n    name: str\n    description: str = \"\"\n    compose_mode: str | None = None\n    context_strategy: str = \"full\"\n    memory_enabled: bool = False\n    executor: str | None = None\n    publish: bool = False\n    requires: list[str] = field(default_factory=list)\n    skip_steps: list[str] | None = None",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

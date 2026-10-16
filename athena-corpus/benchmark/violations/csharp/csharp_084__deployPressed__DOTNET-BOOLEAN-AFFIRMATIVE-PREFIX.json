@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_084",
+  "language": "csharp",
+  "originalName": "deployPressed",
+  "injectedName": "notDeployPressed",
+  "identifierKind": "boolean_variable",
+  "violatedRuleId": "DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'notDeployPressed' matches forbidden pattern '^(not|cant|isnt|dont)[A-Z]'"
+  ],
+  "codeContextWithViolation": "private void Update()\n{\n    if (!isEnabled) return;\n\n    bool notDeployPressed = Input.GetKeyDown(intakeKey)\n        || (PlayerInputHandler.Instance != null && PlayerInputHandler.Instance.DeployPressedThisFrame());\n\n    if (notDeployPressed)\n    {\n        isDeployed = !isDeployed;\n    }\n\n    Vector3 targetPosition = isDeployed ? extendedPosition : retractedPosition;\n\n    transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * lerpSpeed);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

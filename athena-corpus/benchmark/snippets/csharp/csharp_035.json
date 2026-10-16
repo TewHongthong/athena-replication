@@ -1,0 +1,52 @@
+{
+  "id": "csharp_035",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Simulation/Content/WorldAssetCache.cs lines 27-44 (class WorldAssetCacheResult); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public sealed record WorldAssetCacheResult(\n    bool IsSuccess,\n    WorldAssetCacheTotals Totals,\n    IReadOnlyList<WorldAssetCacheKey> Evicted,\n    string? FailureCode,\n    string? Diagnostic)\n{\n    public static WorldAssetCacheResult Success(\n        WorldAssetCacheTotals totals,\n        IReadOnlyList<WorldAssetCacheKey> evicted) =>\n        new(true, totals, evicted, null, null);\n\n    public static WorldAssetCacheResult Failure(\n        WorldAssetCacheTotals totals,\n        string failureCode,\n        string diagnostic) =>\n        new(false, totals, [], failureCode, diagnostic);\n}",
+  "identifiers": [
+    {
+      "name": "WorldAssetCacheResult",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "Success",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "totals",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "evicted",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "Failure",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "failureCode",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Simulation/Content/WorldAssetCache.cs",
+    "startLine": 27,
+    "endLine": 44,
+    "unit": "class WorldAssetCacheResult",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__WorldAssetCache.cs.md"
+  }
+}

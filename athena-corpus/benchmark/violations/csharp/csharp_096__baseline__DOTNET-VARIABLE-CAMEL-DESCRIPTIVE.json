@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_096",
+  "language": "csharp",
+  "originalName": "baseline",
+  "injectedName": "BASELINE",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'BASELINE' does not match camelCase pattern",
+    "name 'BASELINE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static string Convert(string text)\n{\n    if (string.IsNullOrWhiteSpace(text)) return text;\n    string s = text.TrimEnd();\n    if (s.EndsWith('.') && !s.EndsWith(\"..\")) s = s[..^1];\n    string BASELINE = s;\n\n    // Speech recognition sometimes glues the command to the words: \"camelCaseUserName\", \"snake_case_user_name\".\n    s = GluedCase.Replace(s, m => Identifier(m.Groups[\"k\"].Value,\n        Regex.Split(Regex.Replace(m.Groups[\"w\"].Value, @\"(?<=\\p{Ll})(?=\\p{Lu})\", \" \"), @\"[\\s_-]+\")\n            .Where(w => w.Length > 0).Select(w => w.ToLowerInvariant()).ToList()));\n    s = CaseCommand.Replace(s, m => Identifier(m.Groups[\"k\"].Value, Words(m.Groups[\"w\"].Value)) + (m.Value.EndsWith(' ') ? \" \" : \"\"));\n    s = AllCaps.Replace(s, m => string.Join(\"_\", Words(m.Groups[\"w\"].Value)).ToUpperInvariant() + (m.Value.EndsWith(' ') ? \" \" : \"\"));\n\n    foreach (var (words, symbol, join) in Symbols.OrderByDescending(x => x.Words.Length))\n    {\n        string pattern = string.Join(@\"\\s+\", words.Split(' ').Select(Regex.Escape));\n        var rx = new Regex(join ? $@\"\\s*,?\\s*\\b{pattern}\\b\\s*,?\\s*\" : $@\"\\b{pattern}\\b\", Opts);\n        s = rx.Replace(s, join ? symbol.Trim() : \"\\u0007\" + symbol + \"\\u0007\");\n    }\n    // Brackets stick to what they enclose; other symbols keep one space either side.\n    s = Regex.Replace(s, \"\\\\s*\\u0007([(\\\\[{])\\u0007\\\\s*\", \"$1\");\n    s = Regex.Replace(s, \"\\\\s*\\u0007([)\\\\]}])\\u0007\", \"$1\");\n    s = Regex.Replace(s, \"\\\\s*\\u0007([;:])\\u0007\", \"$1\");\n    s = s.Replace(\"\\u0007\", \"\");\n    s = Regex.Replace(s, @\" {2,}\", \" \").Trim();\n\n    return s == BASELINE ? text : s; // unchanged when nothing code-like was said\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

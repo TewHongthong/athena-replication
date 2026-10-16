@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_034",
+  "language": "java",
+  "originalName": "jar",
+  "injectedName": "JAR",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'JAR' does not match camelCase pattern",
+    "name 'JAR' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static void check() {\n    if (state == State.CHECKING || state == State.DOWNLOADING || state == State.READY) {\n        return;\n    }\n    Path JAR = JAR();\n    if (JAR == null) {\n        state = State.DEV;\n        return;\n    }\n    state = State.CHECKING;\n    Thread.ofVirtual().start(() -> {\n        try {\n            HttpRequest req = HttpRequest.newBuilder(URI.create(API)).timeout(Duration.ofSeconds(20))\n                    .header(\"User-Agent\", \"AeroClient-Mod\").build();\n            JsonObject rel = JsonParser.parseString(HTTP.send(req, HttpResponse.BodyHandlers.ofString()).body()).getAsJsonObject();\n            stamp = null;\n            for (var a : rel.getAsJsonArray(\"assets\")) {\n                JsonObject o = a.getAsJsonObject();\n                if (\"aero-client.jar\".equals(o.get(\"name\").getAsString())) {\n                    assetUrl = o.get(\"browser_download_url\").getAsString();\n                    stamp = o.get(\"updated_at\").getAsString();\n                }\n            }\n            if (stamp == null) {\n                throw new IllegalStateException(\"no release jar\");\n            }\n            Path stampFile = JAR.resolveSibling(\".aero-client.version\");\n            String have = Files.isRegularFile(stampFile) ? Files.readString(stampFile).trim() : \"\";\n            state = have.equals(stamp) ? State.UPTODATE : State.AVAILABLE;\n        } catch (Throwable t) {\n            state = State.ERROR;\n        }\n    });\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "csharp_089",
+  "language": "csharp",
+  "source": "github:yello-gun/BetterSTT@e6ed41b232cfa71e6dcbbadeff51710527e31452",
+  "sourceDetail": "src/BetterSTT/App.xaml.cs lines 22-35 (constructor App); license MIT; repo created 2026-09-26T18:41:24Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public App(AppSettings settings, bool background, Signals signals, string? screenshotDir, string? command, bool updated)\n{\n    _settings = settings;\n    _background = background;\n    _signals = signals;\n    _screenshotDir = screenshotDir;\n    _command = command;\n    _updated = updated;\n    DispatcherUnhandledException += (_, e) =>\n    {\n        Log.Write($\"UI error: {e.Exception}\");\n        e.Handled = true;\n    };\n}",
+  "identifiers": [
+    {
+      "name": "settings",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "background",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "signals",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "screenshotDir",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "command",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "updated",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "yello-gun/BetterSTT",
+    "repoUrl": "https://github.com/yello-gun/BetterSTT",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:41:24Z",
+    "commit": "e6ed41b232cfa71e6dcbbadeff51710527e31452",
+    "path": "src/BetterSTT/App.xaml.cs",
+    "startLine": 22,
+    "endLine": 35,
+    "unit": "constructor App",
+    "corpusFile": "corpus/csharp/yello-gun__BetterSTT__App.xaml.cs.md"
+  }
+}

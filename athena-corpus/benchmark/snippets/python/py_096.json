@@ -1,0 +1,52 @@
+{
+  "id": "py_096",
+  "language": "python",
+  "source": "github:vikasiec/AI-Trading-App@beb8d00e020adcbdf2afc156bd87592daa40d881",
+  "sourceDetail": "src/jev_indstocks_trader/features.py lines 46-70 (function compute_features); license MIT; repo created 2026-09-25T18:06:05Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def compute_features(\n    bars: list[Bar],\n    index_day_change_pct: float = 0.0,\n    or_high: float | None = None,\n    or_low: float | None = None,\n    gap_pct: float | None = None,\n) -> FeatureSet:\n    look = bars[-21:] if len(bars) >= 2 else bars\n    ret = 0.0\n    if len(look) >= 2 and look[0].close > 0:\n        ret = (look[-1].close - look[0].close) / look[0].close\n    vwap = _vwap(bars[-20:] if len(bars) >= 5 else bars)\n    last = bars[-1].close if bars else 0.0\n    dist = ((last - vwap) / vwap) if vwap and vwap > 0 else 0.0\n    return FeatureSet(\n        ret_20=ret,\n        vwap_dist_pct=dist,\n        atr_pct=_atr_pct(bars[-15:] if len(bars) > 2 else bars),\n        realized_vol=realized_vol(bars[-20:] if len(bars) >= 3 else bars),\n        regime=classify_regime(bars),\n        index_day_change_pct=index_day_change_pct,\n        or_high=or_high,\n        or_low=or_low,\n        gap_pct=gap_pct,\n    )",
+  "identifiers": [
+    {
+      "name": "compute_features",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "look",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "bars",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "index_day_change_pct",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "or_high",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "or_low",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vikasiec/AI-Trading-App",
+    "repoUrl": "https://github.com/vikasiec/AI-Trading-App",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T18:06:05Z",
+    "commit": "beb8d00e020adcbdf2afc156bd87592daa40d881",
+    "path": "src/jev_indstocks_trader/features.py",
+    "startLine": 46,
+    "endLine": 70,
+    "unit": "function compute_features",
+    "corpusFile": "corpus/python/vikasiec__AI-Trading-App__features.py.md"
+  }
+}

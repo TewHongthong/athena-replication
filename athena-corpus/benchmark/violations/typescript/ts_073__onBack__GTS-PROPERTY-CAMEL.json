@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_073",
+  "language": "typescript",
+  "originalName": "onBack",
+  "injectedName": "on_back",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'on_back' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface RollScreenProps {\n  recordings: Recording[];\n  loading: boolean;\n  on_back: () => void;\n  onOpen: (recording: Recording) => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

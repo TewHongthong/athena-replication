@@ -1,0 +1,52 @@
+{
+  "id": "java_044",
+  "language": "java",
+  "source": "github:KingF3rdi/aero-client@d8888aba64351257362cd47f69282311dd942c8f",
+  "sourceDetail": "src/main/java/dev/aero/client/cosmetic/CosmeticPreview.java lines 23-57 (method CosmeticPreview.show); license MIT; repo created 2026-09-20T13:19:19Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public static void show(DrawContext context, int x1, int y1, int x2, int y2, float scale, float yaw, LivingEntity entity) {\n    if (entity == null || context == null || x2 <= x1 || y2 <= y1) {\n        return;\n    }\n    drawing = true;\n    try {\n        var dispatcher = MinecraftClient.getInstance().getEntityRenderDispatcher();\n        EntityRenderer<? super LivingEntity, ?> renderer = dispatcher.getRenderer(entity);\n        EntityRenderState state = renderer.getAndUpdateRenderState(entity, 1.0F);\n        state.light = 15728880;\n        state.outlineColor = 0;\n        if (state instanceof LivingEntityRenderState living && living.baseScale > 0f) {\n            living.bodyYaw = yaw;\n            living.relativeHeadYaw = 0f;\n            living.pitch = 0f;\n            living.width = living.width / living.baseScale;\n            living.height = living.height / living.baseScale;\n            living.baseScale = 1.0F;\n        }\n        Vector3f offset = new Vector3f(0f, state.height / 2f + 0.0625f, 0f);\n        Quaternionf rot = new Quaternionf().rotateZ((float) Math.PI);\n        // Entity previews are placed in screen pixels and ignore the pose matrix, so a scaled menu\n        // has to map its bounds and size through the current matrix itself.\n        var m = context.getMatrices();\n        org.joml.Vector2f p1 = m.transformPosition(new org.joml.Vector2f(x1, y1));\n        org.joml.Vector2f p2 = m.transformPosition(new org.joml.Vector2f(x2, y2));\n        float k = m.m00();\n        context.addEntity(state, scale * k, offset, rot, new Quaternionf(),\n                Math.round(p1.x), Math.round(p1.y), Math.round(p2.x), Math.round(p2.y));\n    } catch (Throwable t) {\n        t.printStackTrace();\n    } finally {\n        drawing = false;\n    }\n}",
+  "identifiers": [
+    {
+      "name": "show",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "dispatcher",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "context",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "scale",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "yaw",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "entity",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "KingF3rdi/aero-client",
+    "repoUrl": "https://github.com/KingF3rdi/aero-client",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-20T13:19:19Z",
+    "commit": "d8888aba64351257362cd47f69282311dd942c8f",
+    "path": "src/main/java/dev/aero/client/cosmetic/CosmeticPreview.java",
+    "startLine": 23,
+    "endLine": 57,
+    "unit": "method CosmeticPreview.show",
+    "corpusFile": "corpus/java/KingF3rdi__aero-client__CosmeticPreview.java.md"
+  }
+}

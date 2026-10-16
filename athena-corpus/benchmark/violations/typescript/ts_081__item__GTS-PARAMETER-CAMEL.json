@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_081",
+  "language": "typescript",
+  "originalName": "item",
+  "injectedName": "ITEM",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ITEM' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function DocsNav({ nav }: { nav: Grupo[] }) {\n  const pathname = usePathname()\n  return (\n    <>\n      {nav.map((grupo) => (\n        <SidebarGroup key={grupo.id}>\n          <SidebarGroupLabel>{grupo.title}</SidebarGroupLabel>\n          {grupo.items.map((ITEM) => (\n            <SidebarItem active={pathname === ITEM.href} key={ITEM.href} render={<Link href={ITEM.href} />}>\n              {ITEM.title}\n            </SidebarItem>\n          ))}\n        </SidebarGroup>\n      ))}\n    </>\n  )\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

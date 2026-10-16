@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_036",
+  "language": "csharp",
+  "originalName": "checkpoint",
+  "injectedName": "CHECKPOINT",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CHECKPOINT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public static class ControlDigest\n{\n    public static string State(ControlCheckpoint CHECKPOINT) => Digest(Encoding.UTF8.GetString(ControlCheckpointCodec.Encode(CHECKPOINT with { Events = [] })));\n    public static string Events(IEnumerable<ControlEvent> events) => Digest(string.Join('\\n', events.OrderBy(item => item.EventId).Select(item => $\"{item.EventId}|{item.WorldTick}|{item.Kind}|{item.Detail}\")));\n    private static string Digest(string canonical) => Convert.ToHexStringLower(SHA256.HashData(Encoding.UTF8.GetBytes(canonical)));\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

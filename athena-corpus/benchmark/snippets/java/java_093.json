@@ -1,0 +1,42 @@
+{
+  "id": "java_093",
+  "language": "java",
+  "source": "github:xvDoshik/HubSwap@c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+  "sourceDetail": "src/main/java/ru/heldyy/hubswap/config/StatsData.java lines 26-31 (method StatsData.recordSwitch); license MIT; repo created 2026-08-04T22:22:23Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public void recordSwitch(String mode, int number) {\n    totalSwitches++;\n    sessionSwitches++;\n    String key = mode + \"_\" + number;\n    serverCounts.merge(key, 1L, Long::sum);\n}",
+  "identifiers": [
+    {
+      "name": "recordSwitch",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "key",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "mode",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "number",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "xvDoshik/HubSwap",
+    "repoUrl": "https://github.com/xvDoshik/HubSwap",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-04T22:22:23Z",
+    "commit": "c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+    "path": "src/main/java/ru/heldyy/hubswap/config/StatsData.java",
+    "startLine": 26,
+    "endLine": 31,
+    "unit": "method StatsData.recordSwitch",
+    "corpusFile": "corpus/java/xvDoshik__HubSwap__StatsData.java.md"
+  }
+}

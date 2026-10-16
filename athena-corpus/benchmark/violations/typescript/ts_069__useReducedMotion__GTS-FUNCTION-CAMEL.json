@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_069",
+  "language": "typescript",
+  "originalName": "useReducedMotion",
+  "injectedName": "use_reduced_motion",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'use_reduced_motion' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function use_reduced_motion() {\n  const [reduced, setReduced] = useState(false);\n\n  useEffect(() => {\n    let active = true;\n    AccessibilityInfo.isReduceMotionEnabled()\n      .then((value) => {\n        if (active) setReduced(value);\n      })\n      .catch(() => {});\n    const subscription = AccessibilityInfo.addEventListener(\"reduceMotionChanged\", setReduced);\n    return () => {\n      active = false;\n      subscription?.remove();\n    };\n  }, []);\n\n  return reduced;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

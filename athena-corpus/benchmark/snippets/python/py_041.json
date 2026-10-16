@@ -1,0 +1,52 @@
+{
+  "id": "py_041",
+  "language": "python",
+  "source": "github:boongh/ml-exp@55667c29709eb5a612d32dbbc575550ed8a5a443",
+  "sourceDetail": "src/ml_exp/pos_embs.py lines 5-20 (class SineusoidalPositionalEncoding); license MIT; repo created 2026-09-25T22:40:55Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class SineusoidalPositionalEncoding(nn.Module):\n    def __init__(self, n_embed, dtype=torch.float32, sinusoidal_base = 10000.0, max_len=5000):\n        super().__init__()\n        pe = torch.zeros(max_len, n_embed, dtype=dtype)\n        self.gamma = nn.Parameter(torch.ones(1, n_embed, dtype=dtype))\n        position = torch.arange(0, max_len, dtype=dtype).unsqueeze(1)\n        div_term = torch.exp(torch.arange(0, n_embed, 2, dtype=dtype) * (-torch.log(torch.tensor(sinusoidal_base, dtype=dtype)) / n_embed))\n        pe[:, 0::2] = torch.sin(position * div_term)\n        pe[:, 1::2] = torch.cos(position * div_term)\n        pe = pe.unsqueeze(0)\n        self.register_buffer('pe', pe)\n\n    def forward(self, x):\n        # x shape = (B, T, n_embed)\n        # pe shape = (1, max_len, n_embed) -> sliced to match x.size(1)\n        return x + self.gamma * self.pe[:, :x.size(1), :]",
+  "identifiers": [
+    {
+      "name": "SineusoidalPositionalEncoding",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "forward",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "gamma",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "position",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "n_embed",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "dtype",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "boongh/ml-exp",
+    "repoUrl": "https://github.com/boongh/ml-exp",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T22:40:55Z",
+    "commit": "55667c29709eb5a612d32dbbc575550ed8a5a443",
+    "path": "src/ml_exp/pos_embs.py",
+    "startLine": 5,
+    "endLine": 20,
+    "unit": "class SineusoidalPositionalEncoding",
+    "corpusFile": "corpus/python/boongh__ml-exp__pos_embs.py.md"
+  }
+}

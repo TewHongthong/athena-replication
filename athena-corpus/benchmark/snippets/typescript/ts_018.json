@@ -1,0 +1,37 @@
+{
+  "id": "ts_018",
+  "language": "typescript",
+  "source": "github:guillermolg00/morphicons@38d2a7221633a453eeafebd872ee3649b9274b22",
+  "sourceDetail": "src/core/parse.ts lines 24-29 (interface RawSubpath); license MIT; repo created 2026-08-01; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export interface RawSubpath {\n  x0: number;\n  y0: number;\n  segs: RawSeg[];\n  closed: boolean;\n}",
+  "identifiers": [
+    {
+      "name": "RawSubpath",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "segs",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "closed",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "guillermolg00/morphicons",
+    "repoUrl": "https://github.com/guillermolg00/morphicons",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-01",
+    "commit": "38d2a7221633a453eeafebd872ee3649b9274b22",
+    "path": "src/core/parse.ts",
+    "startLine": 24,
+    "endLine": 29,
+    "unit": "interface RawSubpath",
+    "corpusFile": "corpus/typescript/guillermolg00__morphicons__parse.ts.md"
+  }
+}

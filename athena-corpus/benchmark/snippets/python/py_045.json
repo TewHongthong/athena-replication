@@ -1,0 +1,52 @@
+{
+  "id": "py_045",
+  "language": "python",
+  "source": "github:determlab/bricks@6d401933bb7ae3024637171f649f7066edf256b2",
+  "sourceDetail": "src/bricks/core/utils.py lines 28-59 (function blueprint_to_yaml); license MIT; repo created 2026-06-11T00:07:52Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def blueprint_to_yaml(sequence: Any) -> str:\n    \"\"\"Serialise a BlueprintDefinition to a YAML string.\n\n    Args:\n        sequence: A BlueprintDefinition instance.\n\n    Returns:\n        YAML representation of the blueprint as a string.\n    \"\"\"\n    yaml = YAML()\n    yaml.preserve_quotes = True\n    yaml.default_flow_style = False\n\n    data = {\n        \"name\": sequence.name,\n        \"description\": sequence.description,\n        \"inputs\": sequence.inputs,\n        \"steps\": [\n            {\n                \"name\": step.name,\n                \"brick\": step.brick,\n                \"params\": step.params,\n                **({\"save_as\": step.save_as} if step.save_as else {}),\n            }\n            for step in sequence.steps\n        ],\n        \"outputs_map\": sequence.outputs_map,\n    }\n\n    stream = io.StringIO()\n    yaml.dump(data, stream)\n    return stream.getvalue()",
+  "identifiers": [
+    {
+      "name": "blueprint_to_yaml",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "yaml",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "sequence",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "data",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "step",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "stream",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "determlab/bricks",
+    "repoUrl": "https://github.com/determlab/bricks",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-11T00:07:52Z",
+    "commit": "6d401933bb7ae3024637171f649f7066edf256b2",
+    "path": "src/bricks/core/utils.py",
+    "startLine": 28,
+    "endLine": 59,
+    "unit": "function blueprint_to_yaml",
+    "corpusFile": "corpus/python/determlab__bricks__utils.py.md"
+  }
+}

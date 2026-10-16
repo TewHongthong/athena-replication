@@ -1,0 +1,52 @@
+{
+  "id": "csharp_052",
+  "language": "csharp",
+  "source": "github:teesofttech/SMSBridge@1b400e9c1804dc01402d0b9769db5475f76d3785",
+  "sourceDetail": "src/SmsBridge/Options/SmsBridgeOptions.cs lines 3-18 (class SmsBridgeOptions); license MIT; repo created 2026-06-13; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public sealed class SmsBridgeOptions\n{\n    public const string SectionName = \"SmsBridge\";\n\n    /// <summary>The name of the default provider. Must match a key in <see cref=\"Providers\"/>.</summary>\n    public string DefaultProvider { get; set; } = string.Empty;\n\n    /// <summary>When true and the primary provider returns a transient failure, the failover provider is tried.</summary>\n    public bool EnableFailover { get; set; }\n\n    /// <summary>The name of the failover provider. Must match a key in <see cref=\"Providers\"/> when failover is enabled.</summary>\n    public string? FailoverProvider { get; set; }\n\n    /// <summary>Named provider configurations keyed by provider name.</summary>\n    public Dictionary<string, SmsProviderOptions> Providers { get; set; } = new(StringComparer.OrdinalIgnoreCase);\n}",
+  "identifiers": [
+    {
+      "name": "SmsBridgeOptions",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "DefaultProvider",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "SectionName",
+      "kind": "constant",
+      "isCompliant": true
+    },
+    {
+      "name": "EnableFailover",
+      "kind": "boolean_variable",
+      "isCompliant": true
+    },
+    {
+      "name": "FailoverProvider",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "Providers",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "teesofttech/SMSBridge",
+    "repoUrl": "https://github.com/teesofttech/SMSBridge",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-13",
+    "commit": "1b400e9c1804dc01402d0b9769db5475f76d3785",
+    "path": "src/SmsBridge/Options/SmsBridgeOptions.cs",
+    "startLine": 3,
+    "endLine": 18,
+    "unit": "class SmsBridgeOptions",
+    "corpusFile": "corpus/csharp/teesofttech__SMSBridge__SmsBridgeOptions.cs.md"
+  }
+}

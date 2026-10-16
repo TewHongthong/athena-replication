@@ -1,0 +1,15 @@
+{
+  "snippetId": "java_041",
+  "language": "java",
+  "originalName": "expiresIn",
+  "injectedName": "expires_in",
+  "identifierKind": "field",
+  "violatedRuleId": "GJAVA-FIELD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'expires_in' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public static final class DeviceCode {\n    public String userCode = \"\";\n    public String deviceCode = \"\";\n    public String verificationUri = \"\";\n    public int interval = 5;\n    public int expires_in = 900;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

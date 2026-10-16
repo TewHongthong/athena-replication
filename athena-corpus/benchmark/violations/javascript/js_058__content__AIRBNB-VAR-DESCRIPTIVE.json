@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_058",
+  "language": "javascript",
+  "originalName": "content",
+  "injectedName": "c",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'c' shorter than minLength=2",
+    "name 'c' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function captureInstructions(agentFlag) {\n  const paths = AGENT_INSTRUCTION_PATHS[agentFlag]\n  if (!paths) return null\n\n  const result = []\n  for (const [scope, getPath] of Object.entries(paths)) {\n    const c = await readFileIfExists(getPath())\n    if (c !== null) {\n      const filePath = getPath()\n      result.push({ file: filePath, contentSha: null, scope })\n    }\n  }\n\n  return result.length > 0 ? result : null\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

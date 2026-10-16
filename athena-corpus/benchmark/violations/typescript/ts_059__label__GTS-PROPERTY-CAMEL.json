@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_059",
+  "language": "typescript",
+  "originalName": "label",
+  "injectedName": "LABEL",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LABEL' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface IconButtonProps {\n  icon: IconName;\n  LABEL: string;\n  size?: number;\n  active?: boolean;\n  disabled?: boolean;\n  caption?: string;\n  onPress: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

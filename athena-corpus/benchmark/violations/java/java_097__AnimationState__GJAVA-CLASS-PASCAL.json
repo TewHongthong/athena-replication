@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_097",
+  "language": "java",
+  "originalName": "AnimationState",
+  "injectedName": "animation_state",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'animation_state' does not match PascalCase pattern",
+    "name 'animation_state' matches forbidden pattern '^[a-z]'",
+    "name 'animation_state' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "private static class animation_state {\n    float alpha = 0.0f;\n    float offsetY = -20.0f;\n    float scale = 0.9f;\n    long lastUpdate = 0L;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

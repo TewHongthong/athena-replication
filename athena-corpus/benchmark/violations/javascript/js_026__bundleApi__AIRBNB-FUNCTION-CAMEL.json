@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_026",
+  "language": "javascript",
+  "originalName": "bundleApi",
+  "injectedName": "bundle_api",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'bundle_api' does not match camelCase pattern",
+    "name 'bundle_api' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export async function bundle_api(sources, options = {}) {\n  const { sources: skillSources } = await loadBundleSources(sources)\n  if (skillSources.length === 0) {\n    return { installed: 0, failed: 0, results: [] }\n  }\n  if (options.dryRun) {\n    return { dryRun: true, skills: skillSources }\n  }\n  return installBundleSources(skillSources, options)\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

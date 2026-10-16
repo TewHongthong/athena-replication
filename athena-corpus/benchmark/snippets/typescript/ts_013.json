@@ -1,0 +1,42 @@
+{
+  "id": "ts_013",
+  "language": "typescript",
+  "source": "github:guillermolg00/morphicons@38d2a7221633a453eeafebd872ee3649b9274b22",
+  "sourceDetail": "src/adapters/mask.ts lines 62-72 (interface MaskTargetOptions); license MIT; repo created 2026-08-01; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export interface MaskTargetOptions {\n  /** Stroke width of the mask geometry (Lucide's default is 2). */\n  strokeWidth?: number;\n  /** Grid the icon's coordinates live on (Lucide/Iconify default: \"0 0 24 24\").\n   *  Used to map the geometry onto the element's box. */\n  viewBox?: string;\n  /** Set `background-color: currentColor` on first setup so the element shows\n   *  through the mask in the current text color, standalone (no icon class).\n   *  Turn off to keep an existing paint (e.g. a `bg-*` utility). Default true. */\n  paint?: boolean;\n}",
+  "identifiers": [
+    {
+      "name": "MaskTargetOptions",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "strokeWidth",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "viewBox",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "paint",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "guillermolg00/morphicons",
+    "repoUrl": "https://github.com/guillermolg00/morphicons",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-01",
+    "commit": "38d2a7221633a453eeafebd872ee3649b9274b22",
+    "path": "src/adapters/mask.ts",
+    "startLine": 62,
+    "endLine": 72,
+    "unit": "interface MaskTargetOptions",
+    "corpusFile": "corpus/typescript/guillermolg00__morphicons__mask.ts.md"
+  }
+}

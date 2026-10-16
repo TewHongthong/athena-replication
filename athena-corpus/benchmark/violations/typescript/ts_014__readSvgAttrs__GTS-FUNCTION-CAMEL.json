@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_014",
+  "language": "typescript",
+  "originalName": "readSvgAttrs",
+  "injectedName": "read_svg_attrs",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'read_svg_attrs' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function read_svg_attrs(raw: string): IconNodeAttrs {\n  const attrs: IconNodeAttrs = {};\n  SVG_ATTR.lastIndex = 0;\n  let m: RegExpExecArray | null;\n  // biome-ignore lint/suspicious/noAssignInExpressions: standard regex drain.\n  while ((m = SVG_ATTR.exec(raw)) !== null) {\n    const name = m[1] ?? m[3];\n    if (name) attrs[name] = m[2] ?? m[4] ?? \"\";\n  }\n  return attrs;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

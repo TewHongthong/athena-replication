@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_071",
+  "language": "typescript",
+  "originalName": "viewfinder",
+  "injectedName": "VIEWFINDER",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'VIEWFINDER' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface TakeRecorderOptions {\n  VIEWFINDER: RefObject<ViewfinderHandle | null>;\n  limitSeconds: number;\n  countdownSeconds: number;\n  facing: Facing;\n  source: CaptureSource;\n  onCapture: (input: NewRecording) => Promise<Recording>;\n  onFinished: (recording: Recording) => void;\n  onError: (message: string) => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

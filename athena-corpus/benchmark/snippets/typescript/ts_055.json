@@ -1,0 +1,52 @@
+{
+  "id": "ts_055",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/components/studio/TallyBadge.tsx lines 18-47 (function TallyBadge); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function TallyBadge({ phase, ready }: TallyBadgeProps) {\n  const pulse = useRef(new Animated.Value(1)).current;\n  const live = phase === \"recording\";\n  const blinking = live || phase === \"countdown\";\n\n  useEffect(() => {\n    if (!blinking) {\n      pulse.setValue(1);\n      return;\n    }\n    const loop = Animated.loop(\n      Animated.sequence([\n        Animated.timing(pulse, { toValue: 0.2, duration: 480, easing: Easing.inOut(Easing.quad), useNativeDriver: motion.native }),\n        Animated.timing(pulse, { toValue: 1, duration: 480, easing: Easing.inOut(Easing.quad), useNativeDriver: motion.native }),\n      ]),\n    );\n    loop.start();\n    return () => loop.stop();\n  }, [blinking]);\n\n  const label = phase === \"idle\" && !ready ? \"AGUARDE\" : labels[phase];\n  const dotColor = live ? colors.ink : phase === \"idle\" && ready ? colors.peak : colors.bone;\n\n  return (\n    <Animated.View style={[styles.badge, live && styles.live]} accessibilityLiveRegion=\"polite\" accessibilityLabel={`Estado: ${label}`}>\n      <Animated.View style={[styles.dot, { backgroundColor: dotColor, opacity: pulse }]} />\n      <Text style={[styles.label, live && styles.labelLive]}>{label}</Text>\n    </Animated.View>\n  );\n}",
+  "identifiers": [
+    {
+      "name": "pulse",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "live",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "blinking",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "loop",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "label",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "dotColor",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/components/studio/TallyBadge.tsx",
+    "startLine": 18,
+    "endLine": 47,
+    "unit": "function TallyBadge",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__TallyBadge.tsx.md"
+  }
+}

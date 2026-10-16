@@ -1,0 +1,52 @@
+{
+  "id": "java_050",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminAlpineRepositoryContractTest.java lines 11-34 (class AdminAlpineRepositoryContractTest); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "class AdminAlpineRepositoryContractTest {\n  @Test\n  void exposesAlpineConfigurationAndKeyOperations() throws IOException {\n    String index = resource(\"/META-INF/resources/admin/index.html\");\n    String javascript = resource(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(index.contains(\"id=\\\"repository-alpine-fields\\\"\"));\n    assertTrue(index.contains(\"APK v2\"));\n    assertTrue(index.contains(\"id=\\\"repository-alpine-upstream-public-key\\\"\"));\n    assertTrue(index.contains(\"id=\\\"repository-alpine-private-key\\\"\"));\n    assertTrue(javascript.contains(\"alpine: \\\"Alpine / APK\\\"\"));\n    assertTrue(javascript.contains(\"/alpine/status\"));\n    assertTrue(javascript.contains(\"/alpine/rebuild\"));\n    assertTrue(javascript.contains(\"/alpine/signing-key\"));\n    assertTrue(javascript.contains(\"/alpine/public-key\"));\n    assertTrue(javascript.contains(\"upstreamPublicKeys: upstreamKey ? [upstreamKey] : []\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "identifiers": [
+    {
+      "name": "AdminAlpineRepositoryContractTest",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "resource",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "index",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "javascript",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "stream",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminAlpineRepositoryContractTest.java",
+    "startLine": 11,
+    "endLine": 34,
+    "unit": "class AdminAlpineRepositoryContractTest",
+    "corpusFile": "corpus/java/klboke__kkRepo__AdminAlpineRepositoryContractTest.java.md"
+  }
+}

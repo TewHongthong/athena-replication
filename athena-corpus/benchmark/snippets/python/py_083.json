@@ -1,0 +1,52 @@
+{
+  "id": "py_083",
+  "language": "python",
+  "source": "github:tonym999/vault-cleaner@1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+  "sourceDetail": "src/vault_cleaner/pipeline.py lines 44-51 (class WeaponPipelineResult); license MIT; repo created 2026-07-18T09:39:13Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@dataclass\nclass WeaponPipelineResult:\n    decisions: list[Decision]\n    keep_trash_conflicts: int\n    wishlists_used: bool\n    wishlist_sources: tuple[WishlistSourceIdentity, ...] = ()\n    manifest: ManifestIdentity | None = None\n    coverage: CoverageSummary | None = None",
+  "identifiers": [
+    {
+      "name": "WeaponPipelineResult",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "decisions",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "keep_trash_conflicts",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "wishlists_used",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "wishlist_sources",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "manifest",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "tonym999/vault-cleaner",
+    "repoUrl": "https://github.com/tonym999/vault-cleaner",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-18T09:39:13Z",
+    "commit": "1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+    "path": "src/vault_cleaner/pipeline.py",
+    "startLine": 44,
+    "endLine": 51,
+    "unit": "class WeaponPipelineResult",
+    "corpusFile": "corpus/python/tonym999__vault-cleaner__pipeline.py.md"
+  }
+}

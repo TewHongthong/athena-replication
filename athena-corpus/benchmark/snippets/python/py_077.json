@@ -1,0 +1,52 @@
+{
+  "id": "py_077",
+  "language": "python",
+  "source": "github:sl2ver/wm811k-wafer-defect-classification@305dbf7387943b4dec4f4f41a38ff99bfe284796",
+  "sourceDetail": "scripts/train_cnn.py lines 60-74 (class SmallCNN); license MIT; repo created 2026-09-27T06:25:24Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class SmallCNN(nn.Module):\n    def __init__(self, n_classes: int = len(CLASSES)):\n        super().__init__()\n\n        def block(cin, cout):\n            return nn.Sequential(\n                nn.Conv2d(cin, cout, 3, padding=1, bias=False), nn.BatchNorm2d(cout), nn.ReLU(inplace=True),\n                nn.Conv2d(cout, cout, 3, padding=1, bias=False), nn.BatchNorm2d(cout), nn.ReLU(inplace=True),\n                nn.MaxPool2d(2))\n\n        self.features = nn.Sequential(block(2, 32), block(32, 64), block(64, 128), block(128, 128))\n        self.head = nn.Sequential(nn.Dropout(0.3), nn.Linear(128, n_classes))\n\n    def forward(self, x):\n        return self.head(self.features(x).mean(dim=(2, 3)))  # global average pool (deterministic backward)",
+  "identifiers": [
+    {
+      "name": "SmallCNN",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "block",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "forward",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "features",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "n_classes",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "cin",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sl2ver/wm811k-wafer-defect-classification",
+    "repoUrl": "https://github.com/sl2ver/wm811k-wafer-defect-classification",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-27T06:25:24Z",
+    "commit": "305dbf7387943b4dec4f4f41a38ff99bfe284796",
+    "path": "scripts/train_cnn.py",
+    "startLine": 60,
+    "endLine": 74,
+    "unit": "class SmallCNN",
+    "corpusFile": "corpus/python/sl2ver__wm811k-wafer-defect-classification__train_cnn.py.md"
+  }
+}

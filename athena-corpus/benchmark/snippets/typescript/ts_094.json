@@ -1,0 +1,32 @@
+{
+  "id": "ts_094",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_demos/checkbox-group.tsx lines 13-38 (function ServiciosDelPaquete); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function ServiciosDelPaquete() {\n  const [enviado, setEnviado] = useState<string[] | null>(null)\n\n  return (\n    <Form\n      className=\"w-full max-w-sm\"\n      onFormSubmit={(valores) => setEnviado(valores.servicios as string[])}\n    >\n      <Field\n        name=\"servicios\"\n        validate={(valor) => ((valor as string[]).length > 0 ? null : \"Elegí al menos un servicio\")}\n      >\n        <FieldLabel required>Servicios incluidos</FieldLabel>\n        <CheckboxGroup>\n          <CheckboxGroupItem value=\"soporte\">Soporte</CheckboxGroupItem>\n          <CheckboxGroupItem value=\"capacitacion\">Capacitación</CheckboxGroupItem>\n          <CheckboxGroupItem value=\"migracion\">Migración de los datos anteriores</CheckboxGroupItem>\n        </CheckboxGroup>\n        <FieldDescription>Se cotizan por separado.</FieldDescription>\n        <FieldError />\n      </Field>\n      <Button type=\"submit\">Cotizar</Button>\n      {enviado && <p className=\"text-copy-13-mono text-gray-900\">servicios: {JSON.stringify(enviado)}</p>}\n    </Form>\n  )\n}",
+  "identifiers": [
+    {
+      "name": "valores",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "valor",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_demos/checkbox-group.tsx",
+    "startLine": 13,
+    "endLine": 38,
+    "unit": "function ServiciosDelPaquete",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__checkbox-group.tsx.md"
+  }
+}

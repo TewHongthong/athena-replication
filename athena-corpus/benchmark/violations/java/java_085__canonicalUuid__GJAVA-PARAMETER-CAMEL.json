@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_085",
+  "language": "java",
+  "originalName": "canonicalUuid",
+  "injectedName": "canonical_uuid",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'canonical_uuid' does not match camelCase pattern",
+    "name 'canonical_uuid' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "RemoteSummonRequest(long requestId, UUID playerUuid, UUID companionId,\n                    UUID canonical_uuid, ResourceKey<Level> targetDimension,\n                    ChunkPos center, int radius, long deadlineGameTime,\n                    RemoteSummonOrigin origin, RemoteSummonFeedback feedback) {\n    this.requestId = requestId;\n    this.playerUuid = playerUuid;\n    this.companionId = companionId;\n    this.canonicalUuid = canonical_uuid;\n    this.targetDimension = targetDimension;\n    this.center = center;\n    this.radius = radius;\n    this.deadlineGameTime = deadlineGameTime;\n    this.origin = origin;\n    this.feedback = feedback;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

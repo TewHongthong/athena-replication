@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_026",
+  "language": "javascript",
+  "originalName": "options",
+  "injectedName": "o",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'o' shorter than minLength=2",
+    "name 'o' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function bundleApi(sources, o = {}) {\n  const { sources: skillSources } = await loadBundleSources(sources)\n  if (skillSources.length === 0) {\n    return { installed: 0, failed: 0, results: [] }\n  }\n  if (o.dryRun) {\n    return { dryRun: true, skills: skillSources }\n  }\n  return installBundleSources(skillSources, o)\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

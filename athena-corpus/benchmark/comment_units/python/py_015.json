@@ -1,0 +1,36 @@
+{
+  "snippetId": "py_015",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "class",
+  "name": "AuditLog",
+  "codeBare": "class AuditLog(Base):\n    \n\n    __tablename__ = \"audit_log\"\n\n    id: Mapped[int] = mapped_column(primary_key=True)\n    event_id: Mapped[int | None] = mapped_column(\n        ForeignKey(\"events.id\", ondelete=\"SET NULL\"), index=True\n    )\n    actor_id: Mapped[int | None] = mapped_column(ForeignKey(\"users.id\", ondelete=\"SET NULL\"))\n    action: Mapped[str] = mapped_column(String(64), nullable=False, index=True)\n    entity_type: Mapped[str] = mapped_column(String(32), nullable=False)\n    entity_id: Mapped[str] = mapped_column(String(64), nullable=False)\n    meta: Mapped[dict] = mapped_column(JSON, default=dict, nullable=False)\n    ip_hash: Mapped[str | None] = mapped_column(String(64))\n    created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow, nullable=False)\n    prev_hash: Mapped[str] = mapped_column(String(64), nullable=False)\n    row_hash: Mapped[str] = mapped_column(String(64), nullable=False)",
+  "referenceComment": "\"\"\"Append-only, hash-chained: row_hash = sha256(prev_hash + canonical row).\"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-CLASS"
+  ],
+  "origin": "snippet",
+  "source": "github:Nikhils-G/podium@53fc458cd927f83d36c65e6361b46309d0b088ea",
+  "sourceDetail": "src/podium/models/audit.py lines 9-26 (class AuditLog); license MIT; repo created 2026-09-26T18:48:58Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "Nikhils-G/podium",
+    "repoUrl": "https://github.com/Nikhils-G/podium",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:48:58Z",
+    "commit": "53fc458cd927f83d36c65e6361b46309d0b088ea",
+    "path": "src/podium/models/audit.py",
+    "startLine": 9,
+    "endLine": 26,
+    "unit": "class AuditLog",
+    "corpusFile": "corpus/python/Nikhils-G__podium__audit.py.md"
+  }
+}

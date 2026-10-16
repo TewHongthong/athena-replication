@@ -1,0 +1,37 @@
+{
+  "snippetId": "ts_017",
+  "language": "typescript",
+  "standardId": "GOOGLE_TS",
+  "identifierKind": "function",
+  "name": "interpLinear",
+  "codeBare": "export function interpLinear(plan: MorphPlan, t: number, out: Float64Array[]): void {\n  for (let k = 0; k < plan.items.length; k++) {\n    const it = plan.items[k];\n    const o = out[k];\n    const n = plan.n;\n    for (let i = 0; i < n; i++) {\n      o[2 * i] = it.a[2 * i] + (it.bO[2 * i] - it.a[2 * i]) * t;\n      o[2 * i + 1] = it.a[2 * i + 1] + (it.bO[2 * i + 1] - it.a[2 * i + 1]) * t;\n    }\n  }\n}",
+  "referenceComment": "/** Raw coordinate lerp (same correspondence, no decomposition). */",
+  "ruleIds": [
+    "GTS-JSDOC-TOPLEVEL-EXPORT"
+  ],
+  "origin": "snippet",
+  "source": "github:guillermolg00/morphicons@38d2a7221633a453eeafebd872ee3649b9274b22",
+  "sourceDetail": "src/core/interpolate.ts lines 49-59 (function interpLinear); license MIT; repo created 2026-08-01; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 3,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params"
+  ],
+  "provenance": {
+    "repo": "guillermolg00/morphicons",
+    "repoUrl": "https://github.com/guillermolg00/morphicons",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-01",
+    "commit": "38d2a7221633a453eeafebd872ee3649b9274b22",
+    "path": "src/core/interpolate.ts",
+    "startLine": 49,
+    "endLine": 59,
+    "unit": "function interpLinear",
+    "corpusFile": "corpus/typescript/guillermolg00__morphicons__interpolate.ts.md"
+  }
+}

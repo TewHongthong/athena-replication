@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_084",
+  "language": "java",
+  "originalName": "onTerminal",
+  "injectedName": "on_terminal",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'on_terminal' does not match camelCase pattern",
+    "name 'on_terminal' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@FunctionalInterface\npublic interface RemoteSummonFeedback {\n\n    RemoteSummonFeedback NONE = (player, companionId, result) -> {\n    };\n\n    void on_terminal(ServerPlayer player, UUID companionId, RemoteSummonResult result);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

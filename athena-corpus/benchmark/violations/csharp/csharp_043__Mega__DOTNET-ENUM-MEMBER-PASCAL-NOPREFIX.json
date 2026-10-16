@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_043",
+  "language": "csharp",
+  "originalName": "Mega",
+  "injectedName": "mega",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'mega' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum WorldSizePreset\n{\n    Small,\n    Medium,\n    Large,\n    Huge,\n    mega,\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

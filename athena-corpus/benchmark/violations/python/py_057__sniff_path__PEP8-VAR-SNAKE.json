@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_057",
+  "language": "python",
+  "originalName": "sniff_path",
+  "injectedName": "SNIFF_PATH",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SNIFF_PATH' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def classify(path: Path) -> Kind:\n    \"\"\"Classify a file on disk by extension, then by its bytes.\n\n    Known extensions are routed without reading the file. For unknown\n    extensions a 4096-byte header is sniffed once; only when the header is a\n    zip local header (PK) is the whole file read, because the container\n    signature (docx/xlsx/pptx/odt/epub) lives in the central directory at\n    the end of the archive.\n    \"\"\"\n    ext = path.suffix.lower()\n    if ext in IMAGE_EXTS:\n        return \"image\"\n    if ext in CONTAINER_EXTS:\n        return \"container\"\n    if ext in TEXT_EXTS:\n        return \"text\"\n    if ext in AV_EXTS:\n        return \"av\"\n    with path.open(\"rb\") as fh:\n        head = fh.read(CLASSIFY_HEADER_BYTES)\n    if detect_image_format(head) in (\"png\", \"jpeg\", \"webp\", \"avif\", \"heic\", \"bmp\", \"gif\", \"tiff\"):\n        return \"image\"\n    if detect_av_format(head) != \"unknown\":\n        return \"av\"\n    if head:\n        data = path.read_bytes() if head[:4] == b\"PK\\x03\\x04\" else head\n        SNIFF_PATH = Path(\"input\") if not ext else Path(f\"input{ext}\")\n        if detect_container_format(SNIFF_PATH, data) != \"unknown\":\n            return \"container\"\n    return \"unknown\"",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

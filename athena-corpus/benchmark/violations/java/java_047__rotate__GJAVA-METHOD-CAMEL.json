@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_047",
+  "language": "java",
+  "originalName": "rotate",
+  "injectedName": "ROTATE",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ROTATE' does not match camelCase pattern",
+    "name 'ROTATE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void ROTATE(MatrixStack matrices, float pitch, float yaw, float roll) {\n    if (pitch == 0 && yaw == 0 && roll == 0) {\n        return;\n    }\n    try {\n        var x = net.minecraft.util.math.RotationAxis.POSITIVE_X.rotationDegrees(pitch);\n        var y = net.minecraft.util.math.RotationAxis.POSITIVE_Y.rotationDegrees(yaw);\n        var z = net.minecraft.util.math.RotationAxis.POSITIVE_Z.rotationDegrees(roll);\n        matrices.multiply(x);\n        matrices.multiply(y);\n        matrices.multiply(z);\n    } catch (Throwable ignored) {\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

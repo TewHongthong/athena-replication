@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_078",
+  "language": "javascript",
+  "originalName": "label",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function unifiedReviewLabel(item){\n  const subject=String(item?.subject||'').trim(),l=String(item?.label||'').trim();\n  if(!subject||!l)return l||'Revisão';\n  const escaped=subject.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&');\n  return l.replace(new RegExp(`^${escaped}\\\\s*[·•—-]\\\\s*`,'i'),'').trim()||'Revisão';\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_059",
+  "language": "typescript",
+  "originalName": "active",
+  "injectedName": "ACTIVE",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ACTIVE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface IconButtonProps {\n  icon: IconName;\n  label: string;\n  size?: number;\n  ACTIVE?: boolean;\n  disabled?: boolean;\n  caption?: string;\n  onPress: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

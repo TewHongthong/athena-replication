@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_073",
+  "language": "python",
+  "originalName": "logp",
+  "injectedName": "LOGP",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOGP' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def calibrate(LOGP: np.ndarray, y: np.ndarray) -> tuple[np.ndarray, float]:\n    def objective(b):\n        s = scores(confusion(y, (LOGP + b).argmax(1)))\n        return s[\"macro_f1\"] if s[\"recall\"].min() >= VAL_RECALL_FLOOR else s[\"recall\"].min() - 1.0\n\n    bias, best = np.zeros(K), objective(np.zeros(K))\n    for _ in range(3):\n        for c in [c for c in range(K) if c != NONE]:\n            for v in BIAS_GRID:\n                trial = bias.copy()\n                trial[c] = v\n                o = objective(trial)\n                if o > best + 1e-12:\n                    best, bias = o, trial\n    return bias, best",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

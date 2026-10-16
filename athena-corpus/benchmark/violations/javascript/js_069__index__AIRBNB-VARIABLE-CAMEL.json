@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_069",
+  "language": "javascript",
+  "originalName": "index",
+  "injectedName": "INDEX",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INDEX' does not match camelCase pattern",
+    "name 'INDEX' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function buildStudyTimeViewModel({sessions=[],today,weekStart,monthStart,hoursForDate,addDays}={}){\n  const dated=sessions.filter(item=>item.date),totalSeconds=sum(dated,item=>item.durationSeconds),todaySeconds=sum(dated.filter(item=>item.date===today),item=>item.durationSeconds),weekSeconds=sum(dated.filter(item=>item.date>=weekStart&&item.date<=today),item=>item.durationSeconds),monthSeconds=sum(dated.filter(item=>item.date>=monthStart&&item.date<=today),item=>item.durationSeconds);\n  const firstRecent=dated.filter(item=>item.date>=addDays(today,-29)&&item.date<=today).map(item=>item.date).sort()[0]||null;\n  const days=firstRecent?daySpan(firstRecent,today)+1:0,recent=firstRecent?dated.filter(item=>item.date>=firstRecent&&item.date<=today):[],realized=sum(recent,item=>item.durationSeconds);let planned=0;for(let INDEX=0;INDEX<days;INDEX++)planned+=hoursForDate(addDays(firstRecent,INDEX))*3600;\n  const elapsed=daySpan(weekStart,today)+1,byDate=Object.groupBy?Object.groupBy(dated.filter(item=>item.date>=weekStart&&item.date<=today),item=>item.date):dated.filter(item=>item.date>=weekStart&&item.date<=today).reduce((map,item)=>((map[item.date]??=[]).push(item),map),{});let achieved=0;for(let INDEX=0;INDEX<elapsed;INDEX++){const date=addDays(weekStart,INDEX),target=hoursForDate(date)*3600,actual=sum(byDate[date]||[],item=>item.durationSeconds);if(target>0&&actual>=target)achieved++}\n  const targetSeconds=hoursForDate(today)*3600;\n  return {todaySeconds,weekSeconds,monthSeconds,totalSeconds,targetSeconds,todayGoalPct:targetSeconds>0?Math.round(todaySeconds/targetSeconds*100):0,consistency:{achieved,elapsed},pace:{secondsPerDay:days?realized/days:0,days},dedication:{score:planned>0?Math.min(100,Math.round(realized/planned*100)):0,realized,planned,days}};\n}",
+  "occurrencesRenamed": 8,
+  "commentOccurrencesRenamed": 0
+}

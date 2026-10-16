@@ -1,0 +1,42 @@
+{
+  "id": "csharp_096",
+  "language": "csharp",
+  "source": "github:yello-gun/BetterSTT@e6ed41b232cfa71e6dcbbadeff51710527e31452",
+  "sourceDetail": "src/BetterSTT/SpokenCode.cs lines 35-63 (method SpokenCode.Convert); license MIT; repo created 2026-09-26T18:41:24Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public static string Convert(string text)\n{\n    if (string.IsNullOrWhiteSpace(text)) return text;\n    string s = text.TrimEnd();\n    if (s.EndsWith('.') && !s.EndsWith(\"..\")) s = s[..^1];\n    string baseline = s;\n\n    // Speech recognition sometimes glues the command to the words: \"camelCaseUserName\", \"snake_case_user_name\".\n    s = GluedCase.Replace(s, m => Identifier(m.Groups[\"k\"].Value,\n        Regex.Split(Regex.Replace(m.Groups[\"w\"].Value, @\"(?<=\\p{Ll})(?=\\p{Lu})\", \" \"), @\"[\\s_-]+\")\n            .Where(w => w.Length > 0).Select(w => w.ToLowerInvariant()).ToList()));\n    s = CaseCommand.Replace(s, m => Identifier(m.Groups[\"k\"].Value, Words(m.Groups[\"w\"].Value)) + (m.Value.EndsWith(' ') ? \" \" : \"\"));\n    s = AllCaps.Replace(s, m => string.Join(\"_\", Words(m.Groups[\"w\"].Value)).ToUpperInvariant() + (m.Value.EndsWith(' ') ? \" \" : \"\"));\n\n    foreach (var (words, symbol, join) in Symbols.OrderByDescending(x => x.Words.Length))\n    {\n        string pattern = string.Join(@\"\\s+\", words.Split(' ').Select(Regex.Escape));\n        var rx = new Regex(join ? $@\"\\s*,?\\s*\\b{pattern}\\b\\s*,?\\s*\" : $@\"\\b{pattern}\\b\", Opts);\n        s = rx.Replace(s, join ? symbol.Trim() : \"\\u0007\" + symbol + \"\\u0007\");\n    }\n    // Brackets stick to what they enclose; other symbols keep one space either side.\n    s = Regex.Replace(s, \"\\\\s*\\u0007([(\\\\[{])\\u0007\\\\s*\", \"$1\");\n    s = Regex.Replace(s, \"\\\\s*\\u0007([)\\\\]}])\\u0007\", \"$1\");\n    s = Regex.Replace(s, \"\\\\s*\\u0007([;:])\\u0007\", \"$1\");\n    s = s.Replace(\"\\u0007\", \"\");\n    s = Regex.Replace(s, @\" {2,}\", \" \").Trim();\n\n    return s == baseline ? text : s; // unchanged when nothing code-like was said\n}",
+  "identifiers": [
+    {
+      "name": "Convert",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "baseline",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "text",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "pattern",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "yello-gun/BetterSTT",
+    "repoUrl": "https://github.com/yello-gun/BetterSTT",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:41:24Z",
+    "commit": "e6ed41b232cfa71e6dcbbadeff51710527e31452",
+    "path": "src/BetterSTT/SpokenCode.cs",
+    "startLine": 35,
+    "endLine": 63,
+    "unit": "method SpokenCode.Convert",
+    "corpusFile": "corpus/csharp/yello-gun__BetterSTT__SpokenCode.cs.md"
+  }
+}

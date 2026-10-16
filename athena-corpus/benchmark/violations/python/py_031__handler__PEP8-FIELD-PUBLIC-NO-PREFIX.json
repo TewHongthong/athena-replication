@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_031",
+  "language": "python",
+  "originalName": "handler",
+  "injectedName": "HANDLER",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HANDLER' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass Tool:\n    name: str\n    description: str\n    input_schema: dict[str, Any]\n    HANDLER: Callable[..., Any]\n    permission_note: str = \"\"\n    side_effects: bool = False\n\n    def spec(self) -> dict[str, Any]:\n        \"\"\"OpenAI-style function-calling spec.\"\"\"\n        return {\n            \"type\": \"function\",\n            \"function\": {\n                \"name\": self.name,\n                \"description\": self.description,\n                \"parameters\": self.input_schema,\n            },\n        }",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

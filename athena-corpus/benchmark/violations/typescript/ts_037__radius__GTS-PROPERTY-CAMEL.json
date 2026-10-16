@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_037",
+  "language": "typescript",
+  "originalName": "radius",
+  "injectedName": "RADIUS",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RADIUS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface SymbolShapesProps {\n  cx: number;\n  cy: number;\n  RADIUS: number;\n  lit?: boolean;\n  tone?: string;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

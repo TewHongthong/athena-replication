@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_032",
+  "language": "csharp",
+  "originalName": "CognitionObservationDigest",
+  "injectedName": "cognition_observation_digest",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'cognition_observation_digest' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static class cognition_observation_digest\n{\n    public static string Create(\n        HarnessWorld world,\n        long runEpoch,\n        long decisionGeneration,\n        IReadOnlyList<CognitionCandidate> candidates)\n    {\n        ArgumentNullException.ThrowIfNull(world);\n        ArgumentNullException.ThrowIfNull(candidates);\n\n        var builder = new StringBuilder(\"clankerworld.cognition-observation/v1\\n\");\n        builder.Append(\"world_id=\").Append(world.Identity.WorldId).Append('\\n');\n        builder.Append(\"world_tick=\").Append(world.Identity.WorldTick).Append('\\n');\n        builder.Append(\"run_epoch=\").Append(runEpoch).Append('\\n');\n        builder.Append(\"decision_generation=\").Append(decisionGeneration).Append('\\n');\n        builder.Append(\"actor=\").Append(world.Actor.Id).Append('|')\n            .Append(world.Actor.Position.X).Append(',').Append(world.Actor.Position.Y).Append('|')\n            .Append(world.Actor.HungerBasisPoints).Append('|')\n            .Append(world.Actor.FoodItems).Append('|')\n            .Append(world.Actor.WoodItems).Append('\\n');\n        foreach (var resource in world.Resources.OrderBy(resource => resource.Id, StringComparer.Ordinal))\n        {\n            builder.Append(\"resource=\").Append(resource.Id).Append('|')\n                .Append(resource.State).Append('\\n');\n        }\n\n        foreach (var candidate in candidates)\n        {\n            builder.Append(\"candidate=\").Append(candidate.Id).Append('|')\n                .Append(candidate.Description).Append('|')\n                .Append(candidate.DeterministicPriority).Append('|')\n                .Append(candidate.DestinationId ?? string.Empty).Append('\\n');\n        }\n\n        return $\"sha256:{Convert.ToHexStringLower(SHA256.HashData(Encoding.UTF8.GetBytes(builder.ToString())))}\";\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

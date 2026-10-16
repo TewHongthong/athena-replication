@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_085",
+  "language": "csharp",
+  "originalName": "directionToTarget",
+  "injectedName": "direction_to_target",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'direction_to_target' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private void OnTriggerStay(Collider other)\n{\n    if (isEnabled && started && other.CompareTag(\"GamePiece\"))\n    {\n        Rigidbody ballRb = other.attachedRigidbody;\n        if (ballRb != null && targetPosition != null)\n        {\n            Vector3 direction_to_target = (targetPosition.position - other.transform.position).normalized;\n            ballRb.velocity = direction_to_target * surfaceVelocity;\n        }\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

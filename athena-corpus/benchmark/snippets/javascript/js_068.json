@@ -1,0 +1,32 @@
+{
+  "id": "js_068",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/analytics/build-error-analysis-view-model.js lines 3-9 (function buildErrorAnalysisViewModel); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function buildErrorAnalysisViewModel({current,previous=null,periodLabel=''}={}){\n  if(!current||current.state==='empty')return {state:'empty',totalErrors:0,items:[],message:'Nenhum erro registrado neste recorte.'};\n  const items=[...Object.keys(LABELS).map(key=>({key,label:LABELS[key],icon:ICONS[key],value:current.categories[key]||0,previous:previous?.categories?.[key]||0})),{key:'uncategorized',label:'Sem categoria',icon:'○',value:current.uncategorized||0,previous:previous?.uncategorized||0}].map(item=>({...item,delta:item.value-item.previous}));\n  const dominant=current.dominant,diagnosis=dominant?dominant.share+'% dos erros categorizados vêm de '+LABELS[dominant.key].toLowerCase()+'.':'Ainda não há evidência suficiente para definir uma causa dominante.';\n  const action=dominant?dominant.recommendation.action:'Continue categorizando os erros para receber uma ação confiável.';\n  return {state:current.state,totalErrors:current.totalErrors,categorizedErrors:current.categorizedErrors,coverage:current.coverage,confidence:current.confidence,periodLabel,items,dominant,diagnosis,action,recommendedMode:current.recommendedMode,hasPrevious:Boolean(previous?.totalErrors),algorithmVersion:current.algorithmVersion};\n}",
+  "identifiers": [
+    {
+      "name": "buildErrorAnalysisViewModel",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/analytics/build-error-analysis-view-model.js",
+    "startLine": 3,
+    "endLine": 9,
+    "unit": "function buildErrorAnalysisViewModel",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__build-error-analysis-view-model.js.md"
+  }
+}

@@ -1,0 +1,58 @@
+# backend/src/main/java/com/sushishop/audit/AuditLogService.java
+
+- source repo: AntonBas/sushi-shop
+- repo url: https://github.com/AntonBas/sushi-shop
+- license: MIT
+- created_at: 2026-06-10T21:14:11Z
+- file path: backend/src/main/java/com/sushishop/audit/AuditLogService.java
+- commit: ae80c5e6c234302eb7c645bea3a6e23c6b624ee4
+
+```java
+package com.sushishop.audit;
+
+import com.sushishop.audit.dto.AuditLogResponse;
+import com.sushishop.shared.enums.AuditAction;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
+
+@Slf4j
+@Service
+@RequiredArgsConstructor
+public class AuditLogService {
+
+    private final AuditLogRepository auditLogRepository;
+    private final AuditLogMapper auditLogMapper;
+
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void log(AuditAction action, String entityName, Long entityId, String details, String performedBy) {
+        if (action == null) {
+            log.warn("Audit log skipped: action is empty");
+            return;
+        }
+
+        var auditLog = AuditLog.builder()
+                .action(action)
+                .entityName(entityName)
+                .entityId(entityId)
+                .details(details)
+                .performedBy(performedBy != null ? performedBy : "system")
+                .build();
+        auditLogRepository.save(auditLog);
+        log.info("Audit: {} {} [{}] by {}", action, entityName, entityId, performedBy);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<AuditLogResponse> getAll(AuditAction action, String entityName, Long entityId,
+                                         String performedBy, LocalDateTime start, LocalDateTime end,
+                                         Pageable pageable) {
+        var spec = AuditLogSpecification.filter(action, entityName, entityId, performedBy, start, end);
+        return auditLogRepository.findAll(spec, pageable).map(auditLogMapper::toResponse);
+    }
+}```

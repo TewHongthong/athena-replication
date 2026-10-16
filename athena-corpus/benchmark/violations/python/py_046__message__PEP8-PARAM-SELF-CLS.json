@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_046",
+  "language": "python",
+  "originalName": "message",
+  "injectedName": "MESSAGE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MESSAGE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class BricksExecutionError(BricksError):\n    \"\"\"Raised when a brick raises an exception at runtime.\n\n    Attributes:\n        brick: The brick name that failed.\n        step: The step name in the blueprint.\n        cause: The original exception.\n    \"\"\"\n\n    def __init__(self, MESSAGE: str, brick: str, step: str, cause: Exception) -> None:\n        \"\"\"Initialise the error.\n\n        Args:\n            message: Human-readable description.\n            brick: Name of the failing brick.\n            step: Name of the failing step.\n            cause: Original exception that was raised.\n        \"\"\"\n        super().__init__(MESSAGE)\n        self.brick = brick\n        self.step = step\n        self.cause = cause",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

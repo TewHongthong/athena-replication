@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_094",
+  "language": "java",
+  "originalName": "runSequence",
+  "injectedName": "run_sequence",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'run_sequence' does not match camelCase pattern",
+    "name 'run_sequence' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "private static void run_sequence(\n        TransitionMode mode,\n        int targetNumber,\n        AutoTuneManager.Delays delays,\n        int modeSlot,\n        int... targetSlots\n) throws InterruptedException {\n    TransitionDetector.startAttempt(\n            mode,\n            targetNumber,\n            delays.hubDelay(),\n            delays.clickDelay(),\n            delays.confirmDelay()\n    );\n\n    sendCommand(\"hub\");\n    sleep(delays.hubDelay());\n\n    sendCommand(\"menu\");\n    sleep(delays.clickDelay());\n\n    clickSlot(modeSlot);\n    sleep(delays.clickDelay() + 60L);\n\n    for (int i = 0; i < targetSlots.length; i++) {\n        clickSlot(targetSlots[i]);\n        if (i < targetSlots.length - 1) {\n            sleep(delays.clickDelay() + 60L);\n        }\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_007",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "BomRequirement",
+  "codeBare": "public sealed class BomRequirement\n{\n    public int Id { get; set; }\n    public int BomDefinitionId { get; set; }\n    public string Name { get; set; } = string.Empty;\n    public decimal Quantity { get; set; } = 1;\n    public string? Unit { get; set; }\n    public bool IsOptional { get; set; }\n    public BomMatchMode MatchMode { get; set; }\n    public int? MatchItemKindId { get; set; }\n    public string? MatchText { get; set; }\n    public Dictionary<string, string> RequiredAttributes { get; set; } = new();\n    public List<int> CandidateItemIds { get; set; } = new();\n    public int SortOrder { get; set; }\n}",
+  "referenceComment": "/// <summary>\n/// One quantity needed by a BOM. With explicit candidates, any listed inventory entry can\n/// satisfy it. Otherwise kind, text, and attribute selectors are combined deterministically.\n/// Unspecified attributes such as Brand therefore do not restrict substitution.\n/// </summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Entities/Bom.cs lines 36-50 (class BomRequirement); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 5,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Entities/Bom.cs",
+    "startLine": 36,
+    "endLine": 50,
+    "unit": "class BomRequirement",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__Bom.cs.md"
+  }
+}

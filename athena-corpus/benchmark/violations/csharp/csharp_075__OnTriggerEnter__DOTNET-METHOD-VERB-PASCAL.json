@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_075",
+  "language": "csharp",
+  "originalName": "OnTriggerEnter",
+  "injectedName": "on_trigger_enter",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'on_trigger_enter' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "private void on_trigger_enter(Collider other)\n{\n    if (other.CompareTag(\"GamePiece\"))\n    {\n        bool wasLegal = false;\n        if (other.TryGetComponent<ShotData>(out ShotData shotData))\n        {\n            wasLegal = shotData.wasShotFromLegalZone;\n        }\n\n        if (hub != null)\n        {\n            hub.countFuel(wasLegal);\n        }\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_039",
+  "language": "python",
+  "originalName": "TransformerBlock",
+  "injectedName": "transformer_block",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'transformer_block' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "class transformer_block(nn.Module):\n    def __init__(self, head_size, n_embed, n_head, rank_division = 1, dtype=torch.float32, causal=True, dropout_rate=0.1):\n        super().__init__()\n        self.attention = MultiHeadAttention(head_size, n_embed, n_head, dtype=dtype, causal=causal, dropout_rate=dropout_rate)\n        self.ffwdn = MLP_Lowrank(n_embed, n_embed // rank_division, dtype=dtype, dropout_rate=dropout_rate, activation=nn.GELU())\n        self.layer_norm1 = nn.LayerNorm(n_embed, dtype=dtype)\n        self.layer_norm2 = nn.LayerNorm(n_embed, dtype=dtype)\n        self.dropout = nn.Dropout(dropout_rate)\n\n    def forward(self, x):\n        x = self.dropout(x)\n        # x + self.attention() = residual connectiong\n        # Norm before sublayer -> Pre norm formulation\n        x = x + self.attention(self.layer_norm1(x))\n        x = x + self.ffwdn(self.layer_norm2(x))\n        return x",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

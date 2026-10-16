@@ -1,0 +1,42 @@
+{
+  "id": "ts_031",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/components/access/AccessRow.tsx lines 28-47 (function AccessRow); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function AccessRow({ item }: { item: AccessItem }) {\n  const info = copy[item.key];\n  const status = statusCopy[item.status];\n  const done = item.status === \"granted\" || item.status === \"not-needed\";\n  const blocked = item.status === \"denied\";\n  return (\n    <View style={styles.row} accessibilityLabel={`${info.title}: ${status.label}`}>\n      <View style={[styles.icon, done && styles.iconDone, blocked && styles.iconBlocked]}>\n        <Icon name={done ? \"check\" : info.icon} size={19} color={done ? colors.peak : blocked ? colors.tallyText : colors.bone} />\n      </View>\n      <View style={styles.text}>\n        <Text style={styles.title}>{info.title}</Text>\n        <Text style={styles.description}>{info.description}</Text>\n      </View>\n      <View style={styles.status}>\n        <Tag label={status.label} tone={status.tone} />\n      </View>\n    </View>\n  );\n}",
+  "identifiers": [
+    {
+      "name": "info",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "status",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "done",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "blocked",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/components/access/AccessRow.tsx",
+    "startLine": 28,
+    "endLine": 47,
+    "unit": "function AccessRow",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__AccessRow.tsx.md"
+  }
+}

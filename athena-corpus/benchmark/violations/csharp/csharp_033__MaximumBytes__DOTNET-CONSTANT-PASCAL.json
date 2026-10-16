@@ -1,0 +1,17 @@
+{
+  "snippetId": "csharp_033",
+  "language": "csharp",
+  "originalName": "MaximumBytes",
+  "injectedName": "maximum_bytes",
+  "identifierKind": "constant",
+  "violatedRuleId": "DOTNET-CONSTANT-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'maximum_bytes' does not match PascalCase pattern",
+    "name 'maximum_bytes' matches forbidden pattern '^[a-z]'",
+    "name 'maximum_bytes' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public static class ProviderResponseBody\n{\n    public const int maximum_bytes = 256 * 1024;\n\n    public static async Task<string> ReadAsync(HttpContent content, CancellationToken cancellationToken = default)\n    {\n        ArgumentNullException.ThrowIfNull(content);\n        cancellationToken.ThrowIfCancellationRequested();\n        if (content.Headers.ContentLength > maximum_bytes)\n        {\n            throw new InvalidDataException(\"The provider response exceeds the byte limit.\");\n        }\n\n        using var source = await content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);\n        using var body = new MemoryStream();\n        var buffer = new byte[8192];\n        while (true)\n        {\n            var count = await source.ReadAsync(buffer.AsMemory(0, Math.Min(buffer.Length, maximum_bytes + 1 - checked((int)body.Length))), cancellationToken).ConfigureAwait(false);\n            if (count == 0)\n            {\n                return Encoding.UTF8.GetString(body.GetBuffer(), 0, checked((int)body.Length));\n            }\n            if (body.Length + count > maximum_bytes)\n            {\n                throw new InvalidDataException(\"The provider response exceeds the byte limit.\");\n            }\n            body.Write(buffer, 0, count);\n        }\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

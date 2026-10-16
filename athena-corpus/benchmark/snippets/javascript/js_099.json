@@ -1,0 +1,52 @@
+{
+  "id": "js_099",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/planning/replan-controller.js lines 1-10 (function createReplanController); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function createReplanController({service,repository,getState,clock,getDailyCapacity,onChanged=()=>{},onConfirmed=()=>{},onUndone=()=>{}}={}){\n  if(!service||!repository||typeof getState!=='function'||!clock)throw new TypeError('Controlador de replanejamento requer serviço, repositório, estado e relógio.');\n  let preview=null;\n  const view=()=>preview;\n  const calculate=()=>{const today=clock.today(),start=clock.startOfWeek(today),end=clock.addDays(start,6),state=getState(),futureDays=[];for(let date=clock.addDays(today,1);date<=end;date=clock.addDays(date,1)){const planned=state.dailyPlans.filter(plan=>plan.date===date).reduce((sum,plan)=>sum+(plan.items||[]).filter(item=>!['skipped','replaced','deferred'].includes(item.status)).reduce((total,item)=>total+(Number(item.plannedMinutes)||0),0),0);futureDays.push({date,availableMinutes:Math.max(0,getDailyCapacity(date)-planned)})}preview=service.calculate({plans:repository.getDailyPlans().filter(plan=>plan.date>=start&&plan.date<today),periodStart:start,periodEnd:end,futureDays});onChanged(preview);return preview};\n  const clear=()=>{preview=null;onChanged(null)};\n  const confirm=()=>{if(preview?.state!=='proposal')return null;const result=service.confirm(preview);preview=null;onConfirmed(result);return result};\n  const undo=id=>{const result=service.undo(id);if(result)onUndone(result);return result};\n  return Object.freeze({view,calculate,clear,confirm,undo});\n}",
+  "identifiers": [
+    {
+      "name": "createReplanController",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "preview",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "plan",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "today",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "start",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "end",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/planning/replan-controller.js",
+    "startLine": 1,
+    "endLine": 10,
+    "unit": "function createReplanController",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__replan-controller.js.md"
+  }
+}

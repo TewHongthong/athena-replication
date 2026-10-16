@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_036",
+  "language": "python",
+  "originalName": "prompt_tokens",
+  "injectedName": "PROMPT_TOKENS",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PROMPT_TOKENS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def generate_eval_outputs(max_new_tokens):\n    outputs = []\n    for prompt in eval_prompts:\n        PROMPT_TOKENS = torch.tensor(\n            [dataset.encode(prompt)],\n            dtype=torch.long,\n            device=device,\n        )\n        generated = dataset.decode(\n            model.generation(\n                PROMPT_TOKENS,\n                max_new_tokens=max_new_tokens,\n            )[0].tolist()\n        )\n        outputs.append({\"prompt\": prompt, \"generation\": generated})\n    return outputs",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "py_078",
+  "language": "python",
+  "source": "github:tonym999/vault-cleaner@1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+  "sourceDetail": "scripts/check_wheel_install.py lines 52-79 (function copy_tracked_source); license MIT; repo created 2026-07-18T09:39:13Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def copy_tracked_source(destination: Path) -> int:\n    \"\"\"Copy current bytes for tracked paths into an isolated source tree.\"\"\"\n    listing = subprocess.run(\n        [\"git\", \"ls-files\", \"-z\"],\n        cwd=ROOT,\n        check=True,\n        capture_output=True,\n    ).stdout\n    copied = 0\n    for raw_path in listing.split(b\"\\0\"):\n        if not raw_path:\n            continue\n        relative = Path(os.fsdecode(raw_path))\n        if relative.is_absolute() or \"..\" in relative.parts:\n            raise RuntimeError(f\"git returned an unsafe tracked path: {relative}\")\n        source = ROOT / relative\n        if not source.is_file():\n            # A deleted tracked file is part of the current working tree too;\n            # do not resurrect its contents from HEAD.\n            continue\n        target = destination / relative\n        target.parent.mkdir(parents=True, exist_ok=True)\n        shutil.copyfile(source, target)\n        shutil.copymode(source, target)\n        copied += 1\n    if copied == 0:\n        raise RuntimeError(\"git returned no current tracked source files\")\n    return copied",
+  "identifiers": [
+    {
+      "name": "copy_tracked_source",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "listing",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "destination",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "copied",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "raw_path",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "source",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "tonym999/vault-cleaner",
+    "repoUrl": "https://github.com/tonym999/vault-cleaner",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-18T09:39:13Z",
+    "commit": "1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+    "path": "scripts/check_wheel_install.py",
+    "startLine": 52,
+    "endLine": 79,
+    "unit": "function copy_tracked_source",
+    "corpusFile": "corpus/python/tonym999__vault-cleaner__check_wheel_install.py.md"
+  }
+}

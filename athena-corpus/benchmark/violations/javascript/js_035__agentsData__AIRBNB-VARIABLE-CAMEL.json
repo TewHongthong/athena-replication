@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_035",
+  "language": "javascript",
+  "originalName": "agentsData",
+  "injectedName": "agents_data",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'agents_data' does not match camelCase pattern",
+    "name 'agents_data' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export async function apiProfileSave(name, options = {}) {\n  let agents_data\n  if (options.targets && options.targets.length > 0) {\n    agents_data = {}\n    for (const flag of options.targets) {\n      const entry = await captureAgentFull(flag)\n      if (entry) agents_data[flag] = entry\n    }\n  } else {\n    agents_data = await captureAllAgents()\n  }\n\n  if (Object.keys(agents_data).length === 0) {\n    throw new Error('No agent configurations found to save.')\n  }\n\n  if (options.dryRun) {\n    return { dryRun: true, name, agents: agents_data }\n  }\n\n  const profileData = {\n    name,\n    description: `Saved on ${new Date().toLocaleDateString()}`,\n    agents: agents_data,\n  }\n\n  await writeProfile(profileData)\n  return { name, agents: Object.keys(agents_data).length, profile: profileData }\n}",
+  "occurrencesRenamed": 8,
+  "commentOccurrencesRenamed": 0
+}

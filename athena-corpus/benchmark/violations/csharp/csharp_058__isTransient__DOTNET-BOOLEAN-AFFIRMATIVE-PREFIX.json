@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_058",
+  "language": "csharp",
+  "originalName": "isTransient",
+  "injectedName": "notIsTransient",
+  "identifierKind": "boolean_variable",
+  "violatedRuleId": "DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'notIsTransient' matches forbidden pattern '^(not|cant|isnt|dont)[A-Z]'"
+  ],
+  "codeContextWithViolation": "internal static class PlivoSmsResponseMapper\n{\n    public static SmsSendResult FromResponse(string providerName, string json)\n    {\n        using var doc = JsonDocument.Parse(json);\n        var root = doc.RootElement;\n\n        var messageId = root.TryGetProperty(\"message_uuid\", out var uuidEl) &&\n                        uuidEl.ValueKind == JsonValueKind.Array &&\n                        uuidEl.GetArrayLength() > 0\n            ? uuidEl[0].GetString()\n            : null;\n\n        return SmsSendResult.Succeeded(providerName, messageId, SmsDeliveryStatus.Queued);\n    }\n\n    public static SmsSendResult FromErrorResponse(string providerName, int httpStatusCode, string json)\n    {\n        string? errorMessage = null;\n\n        try\n        {\n            using var doc = JsonDocument.Parse(json);\n            var root = doc.RootElement;\n            errorMessage = root.TryGetProperty(\"error\", out var errEl) ? errEl.GetString() : null;\n        }\n        catch (JsonException) { /* best-effort */ }\n\n        bool notIsTransient = httpStatusCode >= 500 || httpStatusCode == 429;\n        return SmsSendResult.Failed(\n            providerName,\n            null,\n            errorMessage ?? $\"HTTP {httpStatusCode}\",\n            notIsTransient,\n            mayHaveBeenAccepted: httpStatusCode >= 500);\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

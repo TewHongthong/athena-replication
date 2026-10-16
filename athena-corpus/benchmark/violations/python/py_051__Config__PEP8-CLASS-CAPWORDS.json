@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_051",
+  "language": "python",
+  "originalName": "Config",
+  "injectedName": "config",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'config' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "class UserResponse(UserBase):\n    id: UUID\n    created_at: datetime\n    updated_at: datetime\n\n    class config:\n        from_attributes = True",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

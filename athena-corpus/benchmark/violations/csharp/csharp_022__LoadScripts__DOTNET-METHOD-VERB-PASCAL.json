@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_022",
+  "language": "csharp",
+  "originalName": "LoadScripts",
+  "injectedName": "load_scripts",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'load_scripts' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "private static IEnumerable<(string Id, string Sql)> load_scripts()\n{\n    var asm = typeof(MigrationRunner).Assembly;\n    var names = asm.GetManifestResourceNames()\n        .Where(n => n.StartsWith(ScriptPrefix) && n.EndsWith(\".sql\"))\n        .OrderBy(n => n, StringComparer.Ordinal);\n\n    foreach (var name in names)\n    {\n        using var stream = asm.GetManifestResourceStream(name)!;\n        using var reader = new StreamReader(stream);\n        var id = name[ScriptPrefix.Length..];\n        yield return (id, reader.ReadToEnd());\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_020",
+  "language": "csharp",
+  "originalName": "Date",
+  "injectedName": "date",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'date' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum SpecialAttributeValueKind\n{\n    Money,\n    Number,\n    Text,\n    date\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

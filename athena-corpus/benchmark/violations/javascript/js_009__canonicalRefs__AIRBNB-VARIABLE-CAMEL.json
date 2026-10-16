@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_009",
+  "language": "javascript",
+  "originalName": "canonicalRefs",
+  "injectedName": "CANONICAL_REFS",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CANONICAL_REFS' does not match camelCase pattern",
+    "name 'CANONICAL_REFS' matches forbidden pattern '_'",
+    "name 'CANONICAL_REFS' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "function unit(overrides = {}) {\n  const CANONICAL_REFS = overrides.canonical_refs || {\n    surface: \"src/router.ts#POST /users/:id\",\n    boundary: \"src/authz.ts#requireOwner\",\n    subsystem: \"packages/api\",\n    attack_class: \"ATTACK-CLASSES.md#Access control\",\n  };\n  const value = {\n    coverage_id: canonicalCoverageId(CANONICAL_REFS),\n    canonical_refs: CANONICAL_REFS,\n    surface: \"Update-user route\",\n    boundary: \"Object ownership\",\n    subsystem: \"API\",\n    attack_class: \"Access control\",\n    starting_paths: [\"src/router.ts\", \"src/authz.ts\"],\n    ordinary_attack_class_block: \"ATTACK-CLASSES.md#Access control\",\n    selected_companion_blocks: [],\n    excluded_blocks: [{ block: \"WEB-PROTOCOL-AND-AUTH.md#Cache behavior\", reason: \"The route is not cached.\" }],\n    prior_status: \"new\",\n    attempts: [],\n    wave: 1,\n    status: \"planned\",\n    agent_id: null,\n    reviewed_paths: [],\n    local_checks: [],\n    result_fingerprints: [],\n    unresolved: [],\n  };\n  return Object.assign(value, overrides, { canonical_refs: CANONICAL_REFS });\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

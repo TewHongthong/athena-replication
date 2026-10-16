@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_043",
+  "language": "java",
+  "originalName": "player",
+  "injectedName": "PLAYER",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PLAYER' does not match camelCase pattern",
+    "name 'PLAYER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void tick(MinecraftClient client) {\n    try {\n        ClientPlayerEntity PLAYER = client.player;\n        if (PLAYER == null || client.world == null) {\n            havePos = false;\n            return;\n        }\n        double dx = PLAYER.getX() - lastX;\n        double dz = PLAYER.getZ() - lastZ;\n        double moved = havePos ? Math.sqrt(dx * dx + dz * dz) : 0;\n        lastX = PLAYER.getX();\n        lastZ = PLAYER.getZ();\n        havePos = true;\n        if (moved < 0.02) {\n            return;\n        }\n        String id = Cosmetics.equipped(Cosmetics.Kind.TRAIL);\n        if (!\"none\".equals(id)) {\n            FxWorld.trail(id, Cosmetics.equippedColor(Cosmetics.Kind.TRAIL), PLAYER.getX(), PLAYER.getY(), PLAYER.getZ());\n        }\n    } catch (Throwable ignored) {\n    }\n}",
+  "occurrencesRenamed": 9,
+  "commentOccurrencesRenamed": 0
+}

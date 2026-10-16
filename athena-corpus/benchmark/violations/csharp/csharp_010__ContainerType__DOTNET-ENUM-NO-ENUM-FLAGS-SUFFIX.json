@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_010",
+  "language": "csharp",
+  "originalName": "ContainerType",
+  "injectedName": "container_type",
+  "identifierKind": "enum",
+  "violatedRuleId": "DOTNET-ENUM-NO-ENUM-FLAGS-SUFFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'container_type' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum container_type\n{\n    Box,\n    Shelf,\n    Drawer,\n    Bin,\n    Cupboard,\n    Other\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

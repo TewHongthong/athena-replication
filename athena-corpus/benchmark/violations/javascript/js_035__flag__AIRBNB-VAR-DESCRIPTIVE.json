@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_035",
+  "language": "javascript",
+  "originalName": "flag",
+  "injectedName": "f",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'f' shorter than minLength=2",
+    "name 'f' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function apiProfileSave(name, options = {}) {\n  let agentsData\n  if (options.targets && options.targets.length > 0) {\n    agentsData = {}\n    for (const f of options.targets) {\n      const entry = await captureAgentFull(f)\n      if (entry) agentsData[f] = entry\n    }\n  } else {\n    agentsData = await captureAllAgents()\n  }\n\n  if (Object.keys(agentsData).length === 0) {\n    throw new Error('No agent configurations found to save.')\n  }\n\n  if (options.dryRun) {\n    return { dryRun: true, name, agents: agentsData }\n  }\n\n  const profileData = {\n    name,\n    description: `Saved on ${new Date().toLocaleDateString()}`,\n    agents: agentsData,\n  }\n\n  await writeProfile(profileData)\n  return { name, agents: Object.keys(agentsData).length, profile: profileData }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

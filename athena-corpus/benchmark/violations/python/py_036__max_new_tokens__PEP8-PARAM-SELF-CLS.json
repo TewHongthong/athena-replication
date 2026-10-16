@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_036",
+  "language": "python",
+  "originalName": "max_new_tokens",
+  "injectedName": "MAX_NEW_TOKENS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MAX_NEW_TOKENS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def generate_eval_outputs(MAX_NEW_TOKENS):\n    outputs = []\n    for prompt in eval_prompts:\n        prompt_tokens = torch.tensor(\n            [dataset.encode(prompt)],\n            dtype=torch.long,\n            device=device,\n        )\n        generated = dataset.decode(\n            model.generation(\n                prompt_tokens,\n                max_new_tokens=MAX_NEW_TOKENS,\n            )[0].tolist()\n        )\n        outputs.append({\"prompt\": prompt, \"generation\": generated})\n    return outputs",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

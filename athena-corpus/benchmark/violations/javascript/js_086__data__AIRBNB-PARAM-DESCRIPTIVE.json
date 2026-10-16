@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_086",
+  "language": "javascript",
+  "originalName": "data",
+  "injectedName": "d",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'd' shorter than minLength=2",
+    "name 'd' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function snapshotEvidenceScopes(d={}){\n  const topicScopes=buildTopicScopeIndex(d.subjects);\n  const collections=['studySessions','questoes','reviewAgenda','calendar','topicHistory'];\n  for(const field of collections)for(const record of d[field]||[]){\n    if(Array.isArray(record.examScope))record.examScope=normalizeExamTags(record.examScope);\n    else {\n      const topicId=topicIdOf(record);\n      record.examScope=topicId&&topicScopes.has(topicId)?topicScopes.get(topicId):null;\n    }\n  }\n  for(const simulation of d.simulados||[]){\n    if(Array.isArray(simulation.examScope))simulation.examScope=normalizeExamTags(simulation.examScope);\n    else simulation.examScope=normalizeExamTags(Array.isArray(simulation.examTags)?simulation.examTags:simulation.examTag?[simulation.examTag]:[]);\n  }\n  return d;\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

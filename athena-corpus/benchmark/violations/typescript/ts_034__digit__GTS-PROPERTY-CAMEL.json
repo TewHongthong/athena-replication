@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_034",
+  "language": "typescript",
+  "originalName": "digit",
+  "injectedName": "DIGIT",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DIGIT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface LeaderDialProps {\n  size: number;\n  DIGIT: number | null;\n  progress: Animated.Value;\n  lit?: boolean;\n  reducedMotion?: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

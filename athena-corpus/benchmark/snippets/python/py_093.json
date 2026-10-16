@@ -1,0 +1,52 @@
+{
+  "id": "py_093",
+  "language": "python",
+  "source": "github:vikasiec/AI-Trading-App@beb8d00e020adcbdf2afc156bd87592daa40d881",
+  "sourceDetail": "src/jev_indstocks_trader/calibration.py lines 59-92 (class CalibrationReport); license MIT; repo created 2026-09-25T18:06:05Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@dataclass\nclass CalibrationReport:\n    total_decisions: int\n    closed_trades: int\n    conviction_buckets: list[BucketStats] = field(default_factory=list)\n    confidence_buckets: list[BucketStats] = field(default_factory=list)\n    news_comparison: Optional[NewsComparison] = None\n\n    def summary_text(self) -> str:\n        lines = [\n            f\"Decisions logged: {self.total_decisions}  |  Closed trades with outcomes: {self.closed_trades}\",\n            \"\",\n            \"-- H1: net P&L by Jev conviction bucket --\",\n        ]\n        lines.extend(_format_buckets(self.conviction_buckets))\n        lines.append(\"\")\n        lines.append(\"-- H2: net P&L by Jev confidence bucket --\")\n        lines.extend(_format_buckets(self.confidence_buckets))\n        if self.news_comparison is not None:\n            lines.append(\"\")\n            lines.append(\"-- H3: net P&L with vs. without matched news --\")\n            lines.extend(_format_buckets([\n                self.news_comparison.with_news,\n                self.news_comparison.without_news,\n                self.news_comparison.unknown,\n            ]))\n        if self.closed_trades < MIN_SAMPLE_SIZE_FOR_CONFIDENCE:\n            lines.append(\"\")\n            lines.append(\n                f\"NOTE: only {self.closed_trades} closed trades total -- every bucket below is \"\n                f\"too small to draw conclusions from (need >= {MIN_SAMPLE_SIZE_FOR_CONFIDENCE} per \"\n                f\"bucket). This run checks the plumbing works, not whether Jev is calibrated.\"\n            )\n        return \"\\n\".join(lines)",
+  "identifiers": [
+    {
+      "name": "CalibrationReport",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "summary_text",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "conviction_buckets",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "lines",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "confidence_buckets",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "news_comparison",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vikasiec/AI-Trading-App",
+    "repoUrl": "https://github.com/vikasiec/AI-Trading-App",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T18:06:05Z",
+    "commit": "beb8d00e020adcbdf2afc156bd87592daa40d881",
+    "path": "src/jev_indstocks_trader/calibration.py",
+    "startLine": 59,
+    "endLine": 92,
+    "unit": "class CalibrationReport",
+    "corpusFile": "corpus/python/vikasiec__AI-Trading-App__calibration.py.md"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "js_038",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/search.js lines 25-31 (function searchSkillsSh); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "async function searchSkillsSh(query) {\n  const url = `https://skills.sh/api/search?q=${encodeURIComponent(query)}`\n  const response = await runFetch(url, { signal: AbortSignal.timeout(10000) })\n  if (!response.ok) return { error: `skills.sh API error: ${response.status}` }\n  const data = await response.json()\n  return { items: data.skills || [] }\n}",
+  "identifiers": [
+    {
+      "name": "searchSkillsSh",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "url",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "query",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "response",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "data",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/search.js",
+    "startLine": 25,
+    "endLine": 31,
+    "unit": "function searchSkillsSh",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_api_search.js.md"
+  }
+}

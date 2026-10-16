@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_033",
+  "language": "python",
+  "originalName": "path_for",
+  "injectedName": "PATH_FOR",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PATH_FOR' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def PATH_FOR(self, template: str, *, date: str, run_dir: Path | None = None) -> Path:\n    \"\"\"Resolve a task-relative, `{date}`/`{run_dir}` templated path.\"\"\"\n    rendered = render(template, date=date, run_dir=run_dir, extra=self.vars(date=date, run_dir=run_dir))\n    path = Path(rendered).expanduser()\n    if not path.is_absolute():\n        path = self.dir / path\n    return path",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

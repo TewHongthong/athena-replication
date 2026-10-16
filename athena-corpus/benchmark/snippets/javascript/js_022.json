@@ -1,0 +1,42 @@
+{
+  "id": "js_022",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/agents/manifest.js lines 72-86 (function getAgentsBySupportLevel); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function getAgentsBySupportLevel() {\n  const groups = {\n    [SUPPORT_LEVELS.VERIFIED]: [],\n    [SUPPORT_LEVELS.COMMUNITY]: [],\n    [SUPPORT_LEVELS.LEGACY]: [],\n    [SUPPORT_LEVELS.EXPERIMENTAL]: [],\n  }\n\n  for (const agent of getAgentManifest()) {\n    const level = agent.supportLevel\n    if (groups[level]) groups[level].push(agent)\n  }\n\n  return groups\n}",
+  "identifiers": [
+    {
+      "name": "getAgentsBySupportLevel",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "groups",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "agent",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "level",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/agents/manifest.js",
+    "startLine": 72,
+    "endLine": 86,
+    "unit": "function getAgentsBySupportLevel",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__manifest.js.md"
+  }
+}

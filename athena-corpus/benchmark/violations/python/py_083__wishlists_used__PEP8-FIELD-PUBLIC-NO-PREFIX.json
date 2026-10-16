@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_083",
+  "language": "python",
+  "originalName": "wishlists_used",
+  "injectedName": "WISHLISTS_USED",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'WISHLISTS_USED' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass WeaponPipelineResult:\n    decisions: list[Decision]\n    keep_trash_conflicts: int\n    WISHLISTS_USED: bool\n    wishlist_sources: tuple[WishlistSourceIdentity, ...] = ()\n    manifest: ManifestIdentity | None = None\n    coverage: CoverageSummary | None = None",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

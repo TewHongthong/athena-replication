@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_097",
+  "language": "csharp",
+  "originalName": "RemoveWords",
+  "injectedName": "remove_words",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'remove_words' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "static string remove_words(string s, Regex rx, bool requireBoundaries) => rx.Replace(s, m =>\n{\n    bool hasPre = m.Groups[\"pre\"].Success;\n    string post = m.Groups[\"post\"].Success ? m.Groups[\"post\"].Value.Trim() : \"\";\n    bool sentenceStart = !hasPre && IsSentenceStart(s, m.Index);\n    bool boundaryBefore = hasPre || PreviousChar(s, m.Index) == Pause;\n    var rest = s.AsSpan(m.Index + m.Length).TrimStart(' ');\n    bool boundaryAfter = post.Length > 0 || rest.IsEmpty || rest[0] == Pause;\n\n    if (requireBoundaries && !((boundaryBefore || sentenceStart) && boundaryAfter))\n        return m.Value;\n\n    string endPunct = post.Replace(\",\", \"\");\n    if (endPunct.Length > 0) return sentenceStart ? \" \" : endPunct + \" \";\n    return sentenceStart ? \" \" + Cap : \" \";\n});",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

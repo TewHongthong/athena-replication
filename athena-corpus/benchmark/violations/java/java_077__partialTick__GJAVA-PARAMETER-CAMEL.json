@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_077",
+  "language": "java",
+  "originalName": "partialTick",
+  "injectedName": "partial_tick",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'partial_tick' does not match camelCase pattern",
+    "name 'partial_tick' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Override\npublic void render(GuiGraphics gui, int mouseX, int mouseY, float partial_tick) {\n    renderBackground(gui);\n    gui.drawCenteredString(this.font, this.title, this.width / 2, this.height / 2 - 45, 0xFFFFFF);\n    super.render(gui, mouseX, mouseY, partial_tick);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

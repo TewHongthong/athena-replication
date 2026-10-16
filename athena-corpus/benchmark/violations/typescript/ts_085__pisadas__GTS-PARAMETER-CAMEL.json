@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_085",
+  "language": "typescript",
+  "originalName": "pisadas",
+  "injectedName": "PISADAS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PISADAS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function cssDe(PISADAS: Record<string, string>): string {\n  const lineas = Object.entries(PISADAS)\n  if (!lineas.length) return \"/* Todo en su default: no hace falta escribir nada. */\"\n  const ancho = Math.max(...lineas.map(([nombre]) => nombre.length))\n  return [\":root {\", ...lineas.map(([nombre, valor]) => `  ${`${nombre}:`.padEnd(ancho + 1)} ${valor};`), \"}\"].join(\"\\n\")\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

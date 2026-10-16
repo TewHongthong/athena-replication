@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_045",
+  "language": "typescript",
+  "originalName": "RollPanelProps",
+  "injectedName": "roll_panel_props",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'roll_panel_props' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "interface roll_panel_props {\n  recordings: Recording[];\n  loading: boolean;\n  activeId?: string;\n  onOpen: (recording: Recording) => void;\n  onRecord?: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

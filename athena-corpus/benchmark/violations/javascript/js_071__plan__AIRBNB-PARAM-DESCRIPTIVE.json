@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_071",
+  "language": "javascript",
+  "originalName": "plan",
+  "injectedName": "p",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'p' shorter than minLength=2",
+    "name 'p' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function selectWeeklyPlans(dailyPlans=[],start,end){\n  const plans=(Array.isArray(dailyPlans)?dailyPlans:[]).filter(p=>inRange(p,start,end));\n  const items=plans.flatMap(p=>(p.items||[]).map(item=>({...item,date:p.date})));\n  const eligible=items.filter(item=>!['skipped','replaced','discarded'].includes(item.status));\n  return {plans:eligible,plannedMinutes:sum(eligible,item=>item.plannedMinutes)};\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

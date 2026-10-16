@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_059",
+  "language": "javascript",
+  "originalName": "atIdx",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function parseNpmRef(source) {\n  const npmPart = source.slice(4)\n  if (!npmPart) throw new Error(`Invalid npm reference: \"${source}\"`)\n  let pkgName, version\n\n  if (npmPart.startsWith('@')) {\n    const slashIdx = npmPart.indexOf('/')\n    if (slashIdx === -1) throw new Error(`Invalid npm reference: \"${source}\"`)\n    const rest = npmPart.slice(slashIdx + 1)\n    const l = rest.indexOf('@')\n    if (l > 0) {\n      pkgName = npmPart.slice(0, slashIdx + 1 + l)\n      version = rest.slice(l + 1)\n    } else {\n      pkgName = npmPart\n      version = 'latest'\n    }\n  } else {\n    const l = npmPart.lastIndexOf('@')\n    if (l > 0) {\n      pkgName = npmPart.slice(0, l)\n      version = npmPart.slice(l + 1)\n    } else {\n      pkgName = npmPart\n      version = 'latest'\n    }\n  }\n\n  return { pkgName, version }\n}",
+  "occurrencesRenamed": 8,
+  "commentOccurrencesRenamed": 0
+}

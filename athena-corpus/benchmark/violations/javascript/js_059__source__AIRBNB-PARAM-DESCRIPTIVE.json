@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_059",
+  "language": "javascript",
+  "originalName": "source",
+  "injectedName": "s",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 's' shorter than minLength=2",
+    "name 's' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function parseNpmRef(s) {\n  const npmPart = s.slice(4)\n  if (!npmPart) throw new Error(`Invalid npm reference: \"${s}\"`)\n  let pkgName, version\n\n  if (npmPart.startsWith('@')) {\n    const slashIdx = npmPart.indexOf('/')\n    if (slashIdx === -1) throw new Error(`Invalid npm reference: \"${s}\"`)\n    const rest = npmPart.slice(slashIdx + 1)\n    const atIdx = rest.indexOf('@')\n    if (atIdx > 0) {\n      pkgName = npmPart.slice(0, slashIdx + 1 + atIdx)\n      version = rest.slice(atIdx + 1)\n    } else {\n      pkgName = npmPart\n      version = 'latest'\n    }\n  } else {\n    const atIdx = npmPart.lastIndexOf('@')\n    if (atIdx > 0) {\n      pkgName = npmPart.slice(0, atIdx)\n      version = npmPart.slice(atIdx + 1)\n    } else {\n      pkgName = npmPart\n      version = 'latest'\n    }\n  }\n\n  return { pkgName, version }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

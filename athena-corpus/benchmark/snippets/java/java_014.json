@@ -1,0 +1,52 @@
+{
+  "id": "java_014",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/file/FileStorageService.java lines 6-15 (interface FileStorageService); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public interface FileStorageService {\n\n    String store(MultipartFile file);\n\n    Resource load(String fileName);\n\n    String determineContentType(String fileName);\n\n    void delete(String fileUrl);\n}",
+  "identifiers": [
+    {
+      "name": "FileStorageService",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "store",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "file",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "load",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "fileName",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "determineContentType",
+      "kind": "method",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/file/FileStorageService.java",
+    "startLine": 6,
+    "endLine": 15,
+    "unit": "interface FileStorageService",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__FileStorageService.java.md"
+  }
+}

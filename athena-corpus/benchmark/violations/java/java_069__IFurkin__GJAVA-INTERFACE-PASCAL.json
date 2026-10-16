@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_069",
+  "language": "java",
+  "originalName": "IFurkin",
+  "injectedName": "i_furkin",
+  "identifierKind": "interface",
+  "violatedRuleId": "GJAVA-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'i_furkin' does not match PascalCase pattern",
+    "name 'i_furkin' matches forbidden pattern '^[a-z]'",
+    "name 'i_furkin' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public interface i_furkin {\n\n    /** 宠物身份 UUID（跨实体唯一档案主键）。 */\n    UUID getCompanionId();\n\n    /** 主人 UUID。 */\n    UUID getOwnerUuid();\n\n    /** 当前等级。 */\n    int getLevel();\n\n    /** 当前经验。 */\n    int getXp();\n\n    /** 可用技能点。 */\n    int getSkillPoints();\n\n    /** 当前状态机状态（未契约 / 已契约 / 已倒下）。 */\n    String getState();\n\n    /** 是否已契约。 */\n    boolean isCompanion();\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

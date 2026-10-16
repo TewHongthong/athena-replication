@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_004",
+  "language": "python",
+  "originalName": "entries",
+  "injectedName": "ENTRIES",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ENTRIES' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def build(roles: tuple[str, ...] = DEMO_ROLES) -> tuple[dict[str, str], dict]:\n    plain: dict[str, str] = {}\n    ENTRIES = []\n    stamp = datetime.now(UTC).isoformat(timespec=\"seconds\")\n    for role in roles:\n        if role not in ROLE_POLICY:\n            raise ValueError(f\"unknown role {role}\")\n        key = f\"srag_demo_{role}_\" + secrets.token_urlsafe(24)\n        plain[role] = key\n        ENTRIES.append({\"id\": f\"demo-{role}\", \"hash\": hash_api_key(key), \"principal\": f\"demo-{role}\",\n                        \"role\": role, \"created_at\": stamp})\n    return plain, {\"keys\": ENTRIES}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

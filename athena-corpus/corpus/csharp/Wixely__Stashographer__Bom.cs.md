@@ -1,0 +1,102 @@
+# src/Stashographer/Data/Entities/Bom.cs
+
+- source repo: Wixely/Stashographer
+- repo url: https://github.com/Wixely/Stashographer
+- license: MIT
+- created_at: 2026-08-18T03:19:36Z
+- file path: src/Stashographer/Data/Entities/Bom.cs
+- commit: e6568f9ca670f00ead30fe18c88491466eba11d1
+
+```csharp
+namespace Stashographer.Data.Entities;
+
+public enum BomKind
+{
+    Recipe = 0,
+    Build = 1,
+    Other = 2
+}
+
+public enum BomMatchMode
+{
+    Generic = 0,
+    ExplicitCandidates = 1
+}
+
+/// <summary>A reusable recipe, hardware build, or other bill of materials.</summary>
+public sealed class BomDefinition
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public BomKind Kind { get; set; }
+    public string? Description { get; set; }
+    public decimal OutputQuantity { get; set; } = 1;
+    public string? OutputUnit { get; set; }
+    public int RequirementCount { get; set; }
+    public List<BomRequirement> Requirements { get; set; } = new();
+    public DateTimeOffset CreatedAt { get; set; }
+    public DateTimeOffset UpdatedAt { get; set; }
+}
+
+/// <summary>
+/// One quantity needed by a BOM. With explicit candidates, any listed inventory entry can
+/// satisfy it. Otherwise kind, text, and attribute selectors are combined deterministically.
+/// Unspecified attributes such as Brand therefore do not restrict substitution.
+/// </summary>
+public sealed class BomRequirement
+{
+    public int Id { get; set; }
+    public int BomDefinitionId { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public decimal Quantity { get; set; } = 1;
+    public string? Unit { get; set; }
+    public bool IsOptional { get; set; }
+    public BomMatchMode MatchMode { get; set; }
+    public int? MatchItemKindId { get; set; }
+    public string? MatchText { get; set; }
+    public Dictionary<string, string> RequiredAttributes { get; set; } = new();
+    public List<int> CandidateItemIds { get; set; } = new();
+    public int SortOrder { get; set; }
+}
+
+public sealed record BomRequirementAvailability(
+    BomRequirement Requirement,
+    IReadOnlyList<Item> MatchingItems,
+    decimal AvailableQuantity,
+    bool IsSatisfied);
+
+public sealed record BomEvaluation(
+    BomDefinition Definition,
+    IReadOnlyList<BomRequirementAvailability> Requirements,
+    bool CanMakeOne)
+{
+    public int SatisfiedRequiredCount => Requirements.Count(x => !x.Requirement.IsOptional && x.IsSatisfied);
+    public int RequiredCount => Requirements.Count(x => !x.Requirement.IsOptional);
+}
+
+/// <summary>An exact, reviewable stock-lot allocation for one recipe output quantity.</summary>
+public sealed record BomAllocation(
+    BomDefinition Definition,
+    decimal OutputQuantity,
+    IReadOnlyList<BomAllocationLine> Lines,
+    IReadOnlyList<BomRequirementShortfall> Shortfalls)
+{
+    public bool CanMake => Shortfalls.Count == 0;
+}
+
+public sealed record BomAllocationLine(
+    int RequirementId,
+    string RequirementName,
+    int ItemId,
+    string ItemName,
+    decimal Quantity,
+    string? Unit,
+    DateOnly? ExpiryDate);
+
+public sealed record BomRequirementShortfall(
+    int RequirementId,
+    string RequirementName,
+    decimal RequiredQuantity,
+    decimal AllocatedQuantity,
+    string? Unit);
+```

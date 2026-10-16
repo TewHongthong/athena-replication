@@ -1,0 +1,32 @@
+{
+  "id": "ts_095",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_demos/collapsible.tsx lines 35-59 (function Controlado); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function Controlado() {\n  const [abierto, setAbierto] = useState(false)\n  const desde = useId()\n  const hasta = useId()\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\n      <Input placeholder=\"Buscar factura\" />\n      <Collapsible className=\"gap-2\" onOpenChange={setAbierto} open={abierto}>\n        <CollapsibleTrigger render={<Button className=\"self-start\" size=\"sm\" variant=\"ghost\" />}>\n          {abierto ? \"Ocultar filtros avanzados\" : \"Filtros avanzados\"}\n        </CollapsibleTrigger>\n        <CollapsibleContent className=\"flex flex-col gap-3 pt-1\">\n          <div className=\"flex flex-col gap-1.5\">\n            <Label htmlFor={desde}>Desde</Label>\n            <DatePicker id={desde} size=\"sm\" />\n          </div>\n          <div className=\"flex flex-col gap-1.5\">\n            <Label htmlFor={hasta}>Hasta</Label>\n            <DatePicker id={hasta} size=\"sm\" />\n          </div>\n        </CollapsibleContent>\n      </Collapsible>\n    </div>\n  )\n}",
+  "identifiers": [
+    {
+      "name": "desde",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "hasta",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_demos/collapsible.tsx",
+    "startLine": 35,
+    "endLine": 59,
+    "unit": "function Controlado",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__collapsible.tsx.md"
+  }
+}

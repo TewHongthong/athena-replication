@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_087",
+  "language": "python",
+  "originalName": "hashes",
+  "injectedName": "HASHES",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HASHES' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def row_perk_hashes(row: pd.Series, perk_map: dict[str, frozenset[int]]) -> frozenset[int]:\n    \"\"\"All perk hashes present on an item, resolved from complete Perks N cells.\n\n    DIM's measured cells contain one complete perk name, including legitimate\n    commas. Only the single trailing ``*`` selected marker is removed; names\n    are never split into guessed options.\n    \"\"\"\n    HASHES: set[int] = set()\n    for col in row.index:\n        if not col.startswith(\"Perks \"):\n            continue\n        name = str(row[col]).strip().removesuffix(\"*\").strip().casefold()\n        if name:\n            HASHES |= perk_map.get(name, frozenset())\n    return frozenset(HASHES)",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

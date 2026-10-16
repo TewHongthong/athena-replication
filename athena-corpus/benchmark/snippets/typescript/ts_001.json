@@ -1,0 +1,47 @@
+{
+  "id": "ts_001",
+  "language": "typescript",
+  "source": "github:Brainferno/brainferno-mcp-bridge@95695615162b4db4a3189be9dd0ebf9e7d80c129",
+  "sourceDetail": "packages/server/src/bridge/handshake.ts lines 16-25 (interface Handshake); license Apache-2.0; repo created 2026-08-26; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export interface Handshake {\n  /** Wire protocol the server speaks; panels refuse a mismatch. */\n  protocolVersion: number;\n  /** Loopback port the bridge is listening on. */\n  port: number;\n  /** Shared secret the panel must present, or \"\" when auth is disabled. */\n  token: string;\n  /** Server process id, so a panel can detect a stale file. */\n  pid: number;\n}",
+  "identifiers": [
+    {
+      "name": "Handshake",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "protocolVersion",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "port",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "token",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "pid",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Brainferno/brainferno-mcp-bridge",
+    "repoUrl": "https://github.com/Brainferno/brainferno-mcp-bridge",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-08-26",
+    "commit": "95695615162b4db4a3189be9dd0ebf9e7d80c129",
+    "path": "packages/server/src/bridge/handshake.ts",
+    "startLine": 16,
+    "endLine": 25,
+    "unit": "interface Handshake",
+    "corpusFile": "corpus/typescript/Brainferno__brainferno-mcp-bridge__handshake.ts.md"
+  }
+}

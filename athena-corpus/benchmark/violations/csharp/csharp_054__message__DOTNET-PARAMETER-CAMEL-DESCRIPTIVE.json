@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_054",
+  "language": "csharp",
+  "originalName": "message",
+  "injectedName": "MESSAGE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MESSAGE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class AwsSnsSmsRequestMapper\n{\n    public static IReadOnlyList<KeyValuePair<string, string>> ToFormFields(\n        SmsMessage MESSAGE,\n        AwsSnsOptions options)\n    {\n        var fields = new List<KeyValuePair<string, string>>\n        {\n            new(\"Action\", \"Publish\"),\n            new(\"Version\", \"2010-03-31\"),\n            new(\"PhoneNumber\", MESSAGE.To),\n            new(\"Message\", MESSAGE.Body)\n        };\n\n        var senderId = MESSAGE.From ?? options.SenderId;\n        if (!string.IsNullOrWhiteSpace(senderId))\n        {\n            fields.Add(new(\"MessageAttributes.entry.1.Name\", \"AWS.SNS.SMS.SenderID\"));\n            fields.Add(new(\"MessageAttributes.entry.1.Value.DataType\", \"String\"));\n            fields.Add(new(\"MessageAttributes.entry.1.Value.StringValue\", senderId));\n        }\n\n        return fields;\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

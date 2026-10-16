@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_100",
+  "language": "javascript",
+  "originalName": "input",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function createReplanService({repository,buildProposal,applyProposal,undoProposal,clock,idGenerator}={}){\n  if(!repository||typeof repository.saveAdjustment!=='function')throw new TypeError('Serviço de replanejamento requer repositório.');\n  return Object.freeze({\n    calculate:i=>buildProposal({...i,plans:i.plans||repository.getDailyPlans()}),\n    confirm:proposal=>{\n      if(proposal?.state!=='proposal'||!proposal.allocations?.length)return null;\n      const operationId=idGenerator('replan-operation'),appliedAt=clock.nowISO();\n      const result=applyProposal({dailyPlans:repository.getDailyPlans(),proposal,operationId,now:appliedAt,idGenerator});\n      const adjustment={...structuredClone(proposal),id:idGenerator('plan-adjustment'),operationId,confirmedAt:appliedAt,appliedAt,status:'applied',changes:result.changes,undoneAt:null};\n      repository.saveAdjustment(adjustment);return {result,adjustment};\n    },\n    undo:id=>{\n      const adjustment=repository.findAdjustment(id);if(!adjustment||adjustment.undoneAt)return null;\n      const result=undoProposal({dailyPlans:repository.getDailyPlans(),adjustment});\n      repository.saveAdjustment({...adjustment,status:result.complete?'undone':'partially_undone',undoneAt:result.complete?clock.nowISO():null,protectedItems:result.protectedItems});\n      return result;\n    }\n  });\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

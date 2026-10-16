@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_039",
+  "language": "javascript",
+  "originalName": "result",
+  "injectedName": "r",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'r' shorter than minLength=2",
+    "name 'r' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function agentsXmlCommand(writeToFile = false) {\n  const r = await agentsXmlApi(writeToFile)\n\n  if (!r.xml) {\n    console.log('No skills found in lockfile.')\n    return\n  }\n\n  if (r.written) {\n    console.log(`✅ Wrote skills XML to ${r.path}`)\n  } else {\n    console.log(r.xml)\n  }\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

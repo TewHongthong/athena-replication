@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_039",
+  "language": "typescript",
+  "originalName": "color",
+  "injectedName": "COLOR",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'COLOR' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface SweepDiscProps {\n  size: number;\n  progress: Animated.Value;\n  COLOR: string;\n  handColor: string;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

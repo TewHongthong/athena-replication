@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_080",
+  "language": "python",
+  "originalName": "gives_up",
+  "injectedName": "GIVES_UP",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'GIVES_UP' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass(frozen=True)\nclass ProposalExplanation:\n    label: str  # short per-slug title\n    why: str  # one or two sentences\n    keep_instead: str  # \"\" when the reasoning names no retained copy\n    GIVES_UP: str\n    caveats: tuple[str, ...] = ()",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

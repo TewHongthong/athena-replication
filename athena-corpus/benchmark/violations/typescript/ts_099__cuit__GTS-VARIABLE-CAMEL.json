@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_099",
+  "language": "typescript",
+  "originalName": "cuit",
+  "injectedName": "Cuit",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'Cuit' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Basico() {\n  const Cuit = useId()\n  const alias = useId()\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-4\">\n      <div className=\"flex flex-col gap-2\">\n        <Label htmlFor={Cuit} required>\n          CUIT\n        </Label>\n        <Input id={Cuit} placeholder=\"30-71234567-9\" required />\n      </div>\n      <div className=\"flex flex-col gap-2\">\n        <Label htmlFor={alias}>Alias</Label>\n        <Input id={alias} placeholder=\"acme.pagos\" />\n      </div>\n    </div>\n  )\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,17 @@
+{
+  "snippetId": "csharp_039",
+  "language": "csharp",
+  "originalName": "TicksPerDay",
+  "injectedName": "ticks_per_day",
+  "identifierKind": "constant",
+  "violatedRuleId": "DOTNET-CONSTANT-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ticks_per_day' does not match PascalCase pattern",
+    "name 'ticks_per_day' matches forbidden pattern '^[a-z]'",
+    "name 'ticks_per_day' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public sealed record KernelClock(long WorldTick, long DayIndex, int DayOfYear, int MinuteOfDay)\n{\n    public const int TicksPerMinute = 1;\n    public const int ticks_per_day = 1_440;\n    public const int DaysPerYear = 365;\n    public const int ScheduledTicksPerSecond = 6;\n\n    public static KernelClock FromWorldTick(long worldTick)\n    {\n        ArgumentOutOfRangeException.ThrowIfNegative(worldTick);\n\n        var dayIndex = worldTick / ticks_per_day;\n        return new KernelClock(\n            worldTick,\n            dayIndex,\n            (int)(dayIndex % DaysPerYear),\n            (int)(worldTick % ticks_per_day));\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

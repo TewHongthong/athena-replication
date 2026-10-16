@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_043",
+  "language": "python",
+  "originalName": "map",
+  "injectedName": "MAP",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MAP' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def MAP(\n    self,\n    user_inputs: dict[str, Any],\n    blueprint_inputs: list[str],\n) -> dict[str, Any]:\n    \"\"\"Map user input keys to blueprint variable names.\n\n    Args:\n        user_inputs: Dict of inputs the user provided.\n        blueprint_inputs: Ordered list of variable names the blueprint expects.\n\n    Returns:\n        A new dict with keys remapped to blueprint variable names.\n\n    Raises:\n        BricksInputError: When the count mismatch cannot be auto-resolved.\n    \"\"\"\n    # Rule 1: blueprint expects no inputs\n    if not blueprint_inputs:\n        return user_inputs\n\n    user_keys = list(user_inputs.keys())\n    user_vals = list(user_inputs.values())\n\n    # Rule 2: keys already match (same set, regardless of order)\n    if set(user_keys) == set(blueprint_inputs):\n        return user_inputs\n\n    # Rule 3 & 4: same count → positional mapping\n    if len(user_keys) == len(blueprint_inputs):\n        return dict(zip(blueprint_inputs, user_vals, strict=True))\n\n    # Rule 5: mismatch\n    raise BricksInputError(\n        f\"Blueprint expects {len(blueprint_inputs)} input(s) \"\n        f\"({', '.join(blueprint_inputs)}) but got {len(user_keys)} \"\n        f\"key(s) ({', '.join(user_keys)}). Cannot auto-map. \"\n        \"Use matching key names or provide the same number of inputs.\"\n    )",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

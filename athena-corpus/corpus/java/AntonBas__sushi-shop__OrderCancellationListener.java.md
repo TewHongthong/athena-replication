@@ -1,0 +1,36 @@
+# backend/src/main/java/com/sushishop/payment/OrderCancellationListener.java
+
+- source repo: AntonBas/sushi-shop
+- repo url: https://github.com/AntonBas/sushi-shop
+- license: MIT
+- created_at: 2026-06-10T21:14:11Z
+- file path: backend/src/main/java/com/sushishop/payment/OrderCancellationListener.java
+- commit: ae80c5e6c234302eb7c645bea3a6e23c6b624ee4
+
+```java
+package com.sushishop.payment;
+
+import com.sushishop.shared.event.OrderCancelledEvent;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.event.TransactionalEventListener;
+
+@Slf4j
+@Component
+@RequiredArgsConstructor
+public class OrderCancellationListener {
+
+    private final PaymentService paymentService;
+    private final StripeService stripeService;
+
+    @TransactionalEventListener
+    public void onOrderCancelled(OrderCancelledEvent event) {
+        var sessionIds = paymentService.expirePendingPaymentsInNewTransaction(event.getOrderId());
+        sessionIds.forEach(stripeService::expireCheckoutSession);
+        if (!sessionIds.isEmpty()) {
+            log.info("Expired {} pending checkout session(s) for cancelled order {}", sessionIds.size(), event.getOrderId());
+        }
+    }
+}
+```

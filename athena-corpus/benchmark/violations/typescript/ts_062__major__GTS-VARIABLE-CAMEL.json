@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_062",
+  "language": "typescript",
+  "originalName": "major",
+  "injectedName": "MAJOR",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MAJOR' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function tapeTicks(limitSeconds: number) {\n  if (limitSeconds <= 0) return [];\n  const step = limitSeconds > 30 ? 2 : 1;\n  const MAJOR = limitSeconds > 30 ? 10 : 5;\n  const ticks: { position: number; major: boolean }[] = [];\n  for (let second = 0; second <= limitSeconds; second += step) {\n    ticks.push({ position: second / limitSeconds, major: second % MAJOR === 0 });\n  }\n  return ticks;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

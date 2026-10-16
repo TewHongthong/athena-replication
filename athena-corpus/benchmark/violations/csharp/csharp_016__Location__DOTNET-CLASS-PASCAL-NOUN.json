@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_016",
+  "language": "csharp",
+  "originalName": "Location",
+  "injectedName": "location",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'location' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public class location\n{\n    public int Id { get; set; }\n\n    public string Name { get; set; } = string.Empty;\n\n    public string? Description { get; set; }\n\n    /// <summary>Primary stored image, served at <c>/img/{id}</c>.</summary>\n    public int? ImageId { get; set; }\n\n    /// <summary>Populated by the data layer when locations are loaded with their containers.</summary>\n    public List<Container> Containers { get; set; } = new();\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

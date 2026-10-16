@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_006",
+  "language": "python",
+  "originalName": "DocRecord",
+  "injectedName": "doc_record",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'doc_record' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass doc_record:\n    path: str\n    department: str\n    clearance: str\n    subject: str\n    doc_type: str\n    words: int\n    canary: str | None\n    injected: bool",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

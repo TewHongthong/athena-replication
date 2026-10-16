@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_021",
+  "language": "python",
+  "originalName": "max_team_size",
+  "injectedName": "MAX_TEAM_SIZE",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MAX_TEAM_SIZE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class EventCreate(BaseModel):\n    name: str = Field(..., max_length=160, examples=[\"Sample Hack 2026\"])\n    description: str = \"\"\n    is_public: bool = False\n    MAX_TEAM_SIZE: int = Field(4, ge=1, le=20)\n    submissions_open_at: datetime | None = None\n    submissions_close_at: datetime | None = None\n    voting_open_at: datetime | None = None\n    voting_close_at: datetime | None = None",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

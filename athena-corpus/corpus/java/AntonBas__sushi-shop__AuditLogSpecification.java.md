@@ -1,0 +1,50 @@
+# backend/src/main/java/com/sushishop/audit/AuditLogSpecification.java
+
+- source repo: AntonBas/sushi-shop
+- repo url: https://github.com/AntonBas/sushi-shop
+- license: MIT
+- created_at: 2026-06-10T21:14:11Z
+- file path: backend/src/main/java/com/sushishop/audit/AuditLogSpecification.java
+- commit: ae80c5e6c234302eb7c645bea3a6e23c6b624ee4
+
+```java
+package com.sushishop.audit;
+
+import com.sushishop.shared.enums.AuditAction;
+import jakarta.persistence.criteria.Predicate;
+import org.springframework.data.jpa.domain.Specification;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Locale;
+
+public class AuditLogSpecification {
+
+    public static Specification<AuditLog> filter(AuditAction action, String entityName, Long entityId,
+                                                 String performedBy, LocalDateTime start, LocalDateTime end) {
+        return (root, query, cb) -> {
+            var predicates = new ArrayList<Predicate>();
+
+            if (action != null) {
+                predicates.add(cb.equal(root.get("action"), action));
+            }
+            if (entityName != null && !entityName.isBlank()) {
+                predicates.add(cb.equal(cb.lower(root.get("entityName")), entityName.toLowerCase(Locale.ROOT)));
+            }
+            if (entityId != null) {
+                predicates.add(cb.equal(root.get("entityId"), entityId));
+            }
+            if (performedBy != null && !performedBy.isBlank()) {
+                predicates.add(cb.equal(cb.lower(root.get("performedBy")), performedBy.toLowerCase(Locale.ROOT)));
+            }
+            if (start != null) {
+                predicates.add(cb.greaterThanOrEqualTo(root.get("performedAt"), start));
+            }
+            if (end != null) {
+                predicates.add(cb.lessThanOrEqualTo(root.get("performedAt"), end));
+            }
+
+            return cb.and(predicates.toArray(new Predicate[0]));
+        };
+    }
+}```

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_061",
+  "language": "python",
+  "originalName": "transform",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def get_data_loaders(batch_size=64):\n    l=transforms.Compose([transforms.RandomCrop(32, padding=4),\n        transforms.RandomHorizontalFlip(),\n        transforms.ToTensor(),#converts image to tensor \n        transforms.Normalize(((0.5,0.5,0.5)),(0.5,0.5,0.5))#works only with tensors and normalizes it's pixels between dev(average) and std each number stands for rgb channels in order\n    ])\n    train_set=torchvision.datasets.CIFAR10(root=\"./data\",train=True,download=True,transform=l)\n    test_set=torchvision.datasets.CIFAR10(root=\"./data\",train=False,download=True,transform=l)\n    train_loader=torch.utils.data.DataLoader(train_set,batch_size=batch_size,shuffle=True)\n    test_loader=torch.utils.data.DataLoader(test_set,batch_size=batch_size,shuffle=False)\n    return train_loader,test_loader",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

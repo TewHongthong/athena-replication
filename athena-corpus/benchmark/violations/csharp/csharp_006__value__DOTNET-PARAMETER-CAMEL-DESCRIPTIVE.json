@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_006",
+  "language": "csharp",
+  "originalName": "value",
+  "injectedName": "VALUE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'VALUE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public class JsonTypeHandler<T> : SqlMapper.TypeHandler<T> where T : new()\n{\n    private static readonly JsonSerializerOptions Options = new(JsonSerializerDefaults.Web);\n\n    public override void SetValue(IDbDataParameter parameter, T? VALUE)\n    {\n        parameter.DbType = DbType.String;\n        parameter.Value = JsonSerializer.Serialize(VALUE, Options);\n    }\n\n    public override T Parse(object? VALUE) =>\n        VALUE is string s && !string.IsNullOrWhiteSpace(s)\n            ? JsonSerializer.Deserialize<T>(s, Options) ?? new T()\n            : new T();\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

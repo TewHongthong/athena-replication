@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_091",
+  "language": "java",
+  "originalName": "keyCode",
+  "injectedName": "key_code",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'key_code' does not match camelCase pattern",
+    "name 'key_code' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public HotkeySlot(int key_code, String mode, int serverNumber, boolean enabled) {\n    this.keyCode = key_code;\n    this.mode = mode;\n    this.serverNumber = serverNumber;\n    this.enabled = enabled;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

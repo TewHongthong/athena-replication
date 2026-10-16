@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_077",
+  "language": "javascript",
+  "originalName": "buildUnifiedReviews",
+  "injectedName": "build_unified_reviews",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'build_unified_reviews' does not match camelCase pattern",
+    "name 'build_unified_reviews' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function build_unified_reviews({calendar=[],reviewAgenda=[],subjectIdOf=()=>null,subjectName=()=>'',topicName=()=>''}={}){\n  const calendarItems=calendar.map(item=>({\n    id:item.id,date:item.date,subjectId:subjectIdOf(item),subject:subjectName(item),\n    label:item.reviewType&&item.reviewType!=='—'?item.reviewType:'Revisão',\n    status:item.status||'Não iniciado',origem:'Calendário'\n  }));\n  const agendaItems=reviewAgenda.map(item=>({\n    id:item.id,date:item.date,subjectId:subjectIdOf(item),subject:subjectName(item),\n    label:`${item.topicId?topicName(item.topicId):(item.topic||'Tópico')} · ${item.tipo||''}`,\n    status:item.status||'Não iniciado',origem:'Agenda de Revisões'\n  }));\n  return [...calendarItems,...agendaItems];\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

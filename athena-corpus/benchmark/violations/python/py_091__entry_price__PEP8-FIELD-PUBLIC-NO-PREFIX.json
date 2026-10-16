@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_091",
+  "language": "python",
+  "originalName": "entry_price",
+  "injectedName": "ENTRY_PRICE",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ENTRY_PRICE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass(frozen=True)\nclass BacktestTrade:\n    entry_time: str\n    exit_time: str\n    ENTRY_PRICE: float\n    exit_price: float\n    qty: int\n    exit_reason: str\n    gross_pnl: float\n    net_pnl: float",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

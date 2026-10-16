@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_045",
+  "language": "python",
+  "originalName": "blueprint_to_yaml",
+  "injectedName": "BLUEPRINT_TO_YAML",
+  "identifierKind": "function",
+  "violatedRuleId": "PEP8-FUNC-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'BLUEPRINT_TO_YAML' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def BLUEPRINT_TO_YAML(sequence: Any) -> str:\n    \"\"\"Serialise a BlueprintDefinition to a YAML string.\n\n    Args:\n        sequence: A BlueprintDefinition instance.\n\n    Returns:\n        YAML representation of the blueprint as a string.\n    \"\"\"\n    yaml = YAML()\n    yaml.preserve_quotes = True\n    yaml.default_flow_style = False\n\n    data = {\n        \"name\": sequence.name,\n        \"description\": sequence.description,\n        \"inputs\": sequence.inputs,\n        \"steps\": [\n            {\n                \"name\": step.name,\n                \"brick\": step.brick,\n                \"params\": step.params,\n                **({\"save_as\": step.save_as} if step.save_as else {}),\n            }\n            for step in sequence.steps\n        ],\n        \"outputs_map\": sequence.outputs_map,\n    }\n\n    stream = io.StringIO()\n    yaml.dump(data, stream)\n    return stream.getvalue()",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

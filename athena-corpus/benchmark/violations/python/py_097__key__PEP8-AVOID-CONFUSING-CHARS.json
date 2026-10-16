@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_097",
+  "language": "python",
+  "originalName": "key",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "class GapBook:\n    def __init__(self):\n        self._day: str | None = None\n        self._gap: dict[str, float] = {}\n\n    def roll_day(self, day: str) -> None:\n        if day != self._day:\n            self._day = day\n            self._gap.clear()\n\n    def observe(self, symbol: str, day_change_pct: float | None) -> None:\n        if day_change_pct is None:\n            return\n        l = symbol.upper()\n        if l not in self._gap:\n            self._gap[l] = float(day_change_pct)\n\n    def get(self, symbol: str) -> float | None:\n        return self._gap.get(symbol.upper())",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

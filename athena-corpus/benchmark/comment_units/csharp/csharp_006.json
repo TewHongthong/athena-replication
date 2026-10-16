@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_006",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "JsonTypeHandler",
+  "codeBare": "public class JsonTypeHandler<T> : SqlMapper.TypeHandler<T> where T : new()\n{\n    private static readonly JsonSerializerOptions Options = new(JsonSerializerDefaults.Web);\n\n    public override void SetValue(IDbDataParameter parameter, T? value)\n    {\n        parameter.DbType = DbType.String;\n        parameter.Value = JsonSerializer.Serialize(value, Options);\n    }\n\n    public override T Parse(object? value) =>\n        value is string s && !string.IsNullOrWhiteSpace(s)\n            ? JsonSerializer.Deserialize<T>(s, Options) ?? new T()\n            : new T();\n}",
+  "referenceComment": "/// <summary>Serializes a value to/from a JSON TEXT column.</summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/DapperTypeHandlers.cs lines 9-23 (class JsonTypeHandler); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/DapperTypeHandlers.cs",
+    "startLine": 9,
+    "endLine": 23,
+    "unit": "class JsonTypeHandler",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__DapperTypeHandlers.cs.md"
+  }
+}

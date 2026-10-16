@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_077",
+  "language": "csharp",
+  "originalName": "sOffset",
+  "injectedName": "s_offset",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 's_offset' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "void Update()\n{\n    float robotY = robot.eulerAngles.y;\n    if (robot != null)\n    {\n        // Get the Y rotation angle from the target object\n\n        // Apply it to the 2D object's Z axis (multiplied if needed)\n        transform.rotation = Quaternion.Euler(0f, 0f, -robotY + offsetRobot);\n    }\n    if (turret != null)\n    {\n        float turretY = turret.eulerAngles.y;\n        turretSprite.transform.rotation = Quaternion.Euler(0f, 0f, -turretY + turretOffset);\n    }\n    float s_offset = -robotY+offsetRobot;\n    FRS.transform.rotation = Quaternion.Euler(0f, 0f, -FR.wheelAngle + s_offset);\n    FLS.transform.rotation = Quaternion.Euler(0f, 0f, -FL.wheelAngle + s_offset);\n    RRS.transform.rotation = Quaternion.Euler(0f, 0f, -RR.wheelAngle + s_offset);\n    RLS.transform.rotation = Quaternion.Euler(0f, 0f, -RL.wheelAngle + s_offset);\n\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_029",
+  "language": "csharp",
+  "originalName": "canonicalProof",
+  "injectedName": "canonical_proof",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'canonical_proof' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public interface IOwnerDeviceSigner : IDisposable\n{\n    string PublicKeySpkiBase64 { get; }\n\n    string PublicKeyFingerprint { get; }\n\n    string SignCanonicalProof(string canonical_proof);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "py_073",
+  "language": "python",
+  "source": "github:sl2ver/wm811k-wafer-defect-classification@305dbf7387943b4dec4f4f41a38ff99bfe284796",
+  "sourceDetail": "scripts/evaluate_cnn.py lines 46-60 (function calibrate); license MIT; repo created 2026-09-27T06:25:24Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def calibrate(logp: np.ndarray, y: np.ndarray) -> tuple[np.ndarray, float]:\n    def objective(b):\n        s = scores(confusion(y, (logp + b).argmax(1)))\n        return s[\"macro_f1\"] if s[\"recall\"].min() >= VAL_RECALL_FLOOR else s[\"recall\"].min() - 1.0\n\n    bias, best = np.zeros(K), objective(np.zeros(K))\n    for _ in range(3):\n        for c in [c for c in range(K) if c != NONE]:\n            for v in BIAS_GRID:\n                trial = bias.copy()\n                trial[c] = v\n                o = objective(trial)\n                if o > best + 1e-12:\n                    best, bias = o, trial\n    return bias, best",
+  "identifiers": [
+    {
+      "name": "calibrate",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "bias",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "logp",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "objective",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "best",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "trial",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sl2ver/wm811k-wafer-defect-classification",
+    "repoUrl": "https://github.com/sl2ver/wm811k-wafer-defect-classification",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-27T06:25:24Z",
+    "commit": "305dbf7387943b4dec4f4f41a38ff99bfe284796",
+    "path": "scripts/evaluate_cnn.py",
+    "startLine": 46,
+    "endLine": 60,
+    "unit": "function calibrate",
+    "corpusFile": "corpus/python/sl2ver__wm811k-wafer-defect-classification__evaluate_cnn.py.md"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_012",
+  "language": "python",
+  "originalName": "response",
+  "injectedName": "RESPONSE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RESPONSE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@router.get(\"/events/{slug}/projects\", response_model=GalleryOut)\ndef list_projects(\n    RESPONSE: Response,\n    ctx: EventContext = Depends(load_event),\n    db: DbSession = Depends(get_db),\n    q: str = Query(\"\", max_length=120),\n    track: str = Query(\"\", max_length=40),\n    sort: str = Query(\"newest\", max_length=20),\n    page: int = Query(1, ge=1),\n):\n    \"\"\"Public gallery data for an event: submitted projects with search, track filter and paging.\"\"\"\n    RESPONSE.headers[\"Access-Control-Allow-Origin\"] = \"*\"  # public, read-only: safe for widgets\n    data = projects.gallery(db, ctx.event, q=q, track=track, sort=sort, page=page)\n    return {\n        \"event\": ctx.event.slug,\n        \"total\": data.total,\n        \"page\": data.page,\n        \"pages\": data.pages,\n        \"projects\": [\n            ProjectOut(\n                id=c.public_id,\n                title=c.title,\n                summary=c.summary,\n                team=c.team_name,\n                track=c.track_name,\n                repo_url=c.repo_url,\n                demo_url=c.demo_url,\n                video_url=c.video_url,\n                status=c.status.value,\n                submitted_at=c.submitted_at,\n            ).model_dump()\n            for c in data.cards\n        ],\n    }",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_088",
+  "language": "typescript",
+  "originalName": "texto",
+  "injectedName": "TEXTO",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TEXTO' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function normalizar(TEXTO: string) {\n  return TEXTO\n    .toLowerCase()\n    .normalize(\"NFD\")\n    .replace(/[̀-ͯ]/g, \"\")\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

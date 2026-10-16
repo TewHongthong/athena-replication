@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_037",
+  "language": "csharp",
+  "originalName": "GetOrCompute",
+  "injectedName": "get_or_compute",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'get_or_compute' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed class NonAuthoritativeRouteCache\n{\n    private readonly Dictionary<RouteCacheKey, GridPoint[]> routes = [];\n\n    public int ComputationCount { get; private set; }\n\n    public IReadOnlyList<GridPoint> get_or_compute(SeededMap map, RouteCacheKey key)\n    {\n        ArgumentNullException.ThrowIfNull(map);\n        ArgumentNullException.ThrowIfNull(key);\n        ValidateKey(key);\n        if (routes.TryGetValue(key, out var cached))\n        {\n            return cached.ToArray();\n        }\n\n        var route = DeterministicRouteFinder.Find(map, key.Origin, key.Destination).ToArray();\n        routes.Add(key, route);\n        ComputationCount++;\n        return route.ToArray();\n    }\n\n    private static void ValidateKey(RouteCacheKey key)\n    {\n        ArgumentException.ThrowIfNullOrWhiteSpace(key.MovementProfileId);\n        ArgumentException.ThrowIfNullOrWhiteSpace(key.RouteConfigurationVersion);\n        ArgumentException.ThrowIfNullOrWhiteSpace(key.SimulationVersion);\n        ArgumentOutOfRangeException.ThrowIfNegative(key.ActorCapabilityEpoch);\n        ArgumentOutOfRangeException.ThrowIfNegative(key.TransportEpoch);\n        ArgumentOutOfRangeException.ThrowIfNegative(key.TopologyEpoch);\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

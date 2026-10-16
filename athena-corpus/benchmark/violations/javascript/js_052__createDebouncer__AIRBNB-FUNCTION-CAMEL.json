@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_052",
+  "language": "javascript",
+  "originalName": "createDebouncer",
+  "injectedName": "create_debouncer",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'create_debouncer' does not match camelCase pattern",
+    "name 'create_debouncer' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function create_debouncer(waitMs) {\n  const timers = new Map()\n\n  function schedule(key, callback) {\n    cancel(key)\n\n    const timer = setTimeout(() => {\n      timers.delete(key)\n      void Promise.resolve()\n        .then(callback)\n        .catch(() => {})\n    }, waitMs)\n\n    timers.set(key, timer)\n  }\n\n  function cancel(key) {\n    const timer = timers.get(key)\n    if (!timer) return false\n\n    clearTimeout(timer)\n    timers.delete(key)\n    return true\n  }\n\n  function cancelAll() {\n    for (const timer of timers.values()) {\n      clearTimeout(timer)\n    }\n    timers.clear()\n  }\n\n  return { schedule, cancel, cancelAll }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

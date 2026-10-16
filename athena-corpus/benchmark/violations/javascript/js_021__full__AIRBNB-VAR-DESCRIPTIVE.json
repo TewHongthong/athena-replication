@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_021",
+  "language": "javascript",
+  "originalName": "full",
+  "injectedName": "f",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'f' shorter than minLength=2",
+    "name 'f' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function walk(dir, acc = []) {\n  for (const entry of readdirSync(dir, { withFileTypes: true })) {\n    const f = join(dir, entry.name)\n    if (entry.isDirectory()) {\n      walk(f, acc)\n    } else if (entry.name.endsWith('.html') && entry.name !== '404.html') {\n      acc.push(f)\n    }\n  }\n  return acc\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

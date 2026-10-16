@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_082",
+  "language": "python",
+  "originalName": "notes",
+  "injectedName": "NOTES",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'NOTES' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def strip_trailing_tool_clauses(NOTES: object) -> str:\n    \"\"\"Remove complete known vault-cleaner clauses from the Notes tail.\n\n    Repeated clauses are removed one at a time from the end.  A tool-looking\n    fragment with user text after it is intentionally left untouched because\n    its ownership is ambiguous.\n    \"\"\"\n    remaining = str(NOTES).strip()\n    while remaining:\n        markers = tuple(_MARKER_RE.finditer(remaining))\n        if not markers:\n            break\n        start = markers[-1].start(1)\n        suffix = remaining[start:]\n        if not any(pattern.fullmatch(suffix) for pattern in _GENERATED_CLAUSE_RES):\n            break\n        remaining = remaining[:start].rstrip()\n    return remaining",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

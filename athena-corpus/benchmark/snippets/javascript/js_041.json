@@ -1,0 +1,32 @@
+{
+  "id": "js_041",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/commands/completions.js lines 383-416 (function completionsCommand); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export async function completionsCommand(shell) {\n  if (!shell) {\n    console.log('Usage: rolecraft completions bash|zsh|fish')\n    console.log()\n    console.log('Generate shell completion scripts for rolecraft.')\n    console.log()\n    console.log('Examples:')\n    console.log('  rolecraft completions bash  # print bash completion script')\n    console.log('  rolecraft completions zsh   # print zsh completion script')\n    console.log('  rolecraft completions fish  # print fish completion script')\n    console.log()\n    console.log('To install completions, add to your shell rc file:')\n    console.log('  Bash: source <(rolecraft completions bash)')\n    console.log('  Zsh:  source <(rolecraft completions zsh)')\n    console.log('  Fish: rolecraft completions fish | source')\n    return\n  }\n\n  switch (shell) {\n    case 'bash':\n      console.log(bashScript())\n      break\n    case 'zsh':\n      console.log(zshScript())\n      break\n    case 'fish':\n      console.log(fishScript())\n      break\n    default:\n      throw new Error(\n        `Unknown shell: ${shell}. Usage: rolecraft completions bash|zsh|fish`,\n      )\n  }\n}",
+  "identifiers": [
+    {
+      "name": "completionsCommand",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "shell",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/commands/completions.js",
+    "startLine": 383,
+    "endLine": 416,
+    "unit": "function completionsCommand",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_commands_completions.js.md"
+  }
+}

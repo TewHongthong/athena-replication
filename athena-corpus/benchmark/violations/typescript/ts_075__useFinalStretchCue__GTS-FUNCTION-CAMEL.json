@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_075",
+  "language": "typescript",
+  "originalName": "useFinalStretchCue",
+  "injectedName": "use_final_stretch_cue",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'use_final_stretch_cue' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function use_final_stretch_cue(recording: boolean, limit: number, elapsed: number) {\n  const seconds = recording ? remainingWholeSeconds(limit, elapsed) : null;\n  useEffect(() => {\n    if (seconds !== null && seconds > 0 && seconds <= 5) cues.finalSecond();\n  }, [seconds]);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_077",
+  "language": "python",
+  "originalName": "n_classes",
+  "injectedName": "N_CLASSES",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'N_CLASSES' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class SmallCNN(nn.Module):\n    def __init__(self, N_CLASSES: int = len(CLASSES)):\n        super().__init__()\n\n        def block(cin, cout):\n            return nn.Sequential(\n                nn.Conv2d(cin, cout, 3, padding=1, bias=False), nn.BatchNorm2d(cout), nn.ReLU(inplace=True),\n                nn.Conv2d(cout, cout, 3, padding=1, bias=False), nn.BatchNorm2d(cout), nn.ReLU(inplace=True),\n                nn.MaxPool2d(2))\n\n        self.features = nn.Sequential(block(2, 32), block(32, 64), block(64, 128), block(128, 128))\n        self.head = nn.Sequential(nn.Dropout(0.3), nn.Linear(128, N_CLASSES))\n\n    def forward(self, x):\n        return self.head(self.features(x).mean(dim=(2, 3)))  # global average pool (deterministic backward)",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

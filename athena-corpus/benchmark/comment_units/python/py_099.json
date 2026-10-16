@@ -1,0 +1,38 @@
+{
+  "snippetId": "py_099",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "function",
+  "name": "viva_home",
+  "codeBare": "def viva_home(override: str | Path | None = None) -> Path:\n    \n    if override is not None:\n        return Path(override).expanduser()\n    from_env = os.environ.get(VIVA_HOME_ENV)\n    if from_env:\n        return Path(from_env).expanduser()\n    return Path.home() / DEFAULT_HOME_NAME",
+  "referenceComment": "\"\"\"Return the Viva state root (explicit override > env > ~/.viva).\"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-FUNC"
+  ],
+  "origin": "snippet",
+  "source": "github:zuohaisu/viva@24f9cd178b7f9faba0e101d7b773c5a0cb4cc1d4",
+  "sourceDetail": "src/viva/core/paths.py lines 20-27 (function viva_home); license MIT; repo created 2026-07-27T11:56:40Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 1,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "zuohaisu/viva",
+    "repoUrl": "https://github.com/zuohaisu/viva",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-27T11:56:40Z",
+    "commit": "24f9cd178b7f9faba0e101d7b773c5a0cb4cc1d4",
+    "path": "src/viva/core/paths.py",
+    "startLine": 20,
+    "endLine": 27,
+    "unit": "function viva_home",
+    "corpusFile": "corpus/python/zuohaisu__viva__paths.py.md"
+  }
+}

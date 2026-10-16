@@ -1,0 +1,52 @@
+{
+  "id": "csharp_041",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Simulation/Society/SocietyContracts.cs lines 12-19 (class SocietyAgeBand); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public enum SocietyAgeBand\n{\n    Infant,\n    Child,\n    Adolescent,\n    Adult,\n    Elder,\n}",
+  "identifiers": [
+    {
+      "name": "SocietyAgeBand",
+      "kind": "enum",
+      "isCompliant": true
+    },
+    {
+      "name": "Infant",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Child",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Adolescent",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Adult",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Elder",
+      "kind": "enum_member",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Simulation/Society/SocietyContracts.cs",
+    "startLine": 12,
+    "endLine": 19,
+    "unit": "class SocietyAgeBand",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__SocietyContracts.cs.md"
+  }
+}

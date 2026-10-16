@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_090",
+  "language": "javascript",
+  "originalName": "subjectTopics",
+  "injectedName": "subject_topics",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'subject_topics' does not match camelCase pattern",
+    "name 'subject_topics' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function buildPlanImpactAlignment({distribution,topics=[],impactForTopic}={}){\n  const planned=(distribution?.rows||[]).filter(row=>row.subjectId!=='unassigned'&&row.plannedMinutes>0);\n  if(planned.length<2)return {state:'insufficient',reason:'Planeje tempo para pelo menos duas disciplinas nesta semana.'};\n  const rows=planned.map(row=>{\n    const subject_topics=topics.filter(topic=>topic.subjectId===row.subjectId);\n    const impacts=subject_topics.map(impactForTopic).filter(value=>Number.isFinite(value)&&value>=0&&value<=100);\n    const coverage=subject_topics.length?impacts.length/subject_topics.length:0;\n    return {...row,topicCount:subject_topics.length,impactCount:impacts.length,coverage,averageImpact:impacts.length?impacts.reduce((sum,value)=>sum+value,0)/impacts.length:null};\n  });\n  if(rows.some(row=>row.coverage<.5||row.impactCount<1))return {state:'insufficient',reason:'O impacto estimado cobre menos da metade dos tópicos de alguma disciplina planejada.'};\n  const impactTotal=rows.reduce((sum,row)=>sum+row.averageImpact,0);\n  const plannedTotal=rows.reduce((sum,row)=>sum+row.plannedMinutes,0);\n  if(!impactTotal)return {state:'insufficient',reason:'Ainda não há impacto estimado para comparar as disciplinas planejadas.'};\n  return {state:'ready',rows:rows.map(row=>({...row,plannedShare:row.plannedMinutes/plannedTotal*100,impactShare:row.averageImpact/impactTotal*100})),subjectCount:rows.length};\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

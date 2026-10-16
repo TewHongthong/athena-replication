@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_035",
+  "language": "csharp",
+  "originalName": "WorldAssetCacheResult",
+  "injectedName": "world_asset_cache_result",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'world_asset_cache_result' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed record world_asset_cache_result(\n    bool IsSuccess,\n    WorldAssetCacheTotals Totals,\n    IReadOnlyList<WorldAssetCacheKey> Evicted,\n    string? FailureCode,\n    string? Diagnostic)\n{\n    public static world_asset_cache_result Success(\n        WorldAssetCacheTotals totals,\n        IReadOnlyList<WorldAssetCacheKey> evicted) =>\n        new(true, totals, evicted, null, null);\n\n    public static world_asset_cache_result Failure(\n        WorldAssetCacheTotals totals,\n        string failureCode,\n        string diagnostic) =>\n        new(false, totals, [], failureCode, diagnostic);\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

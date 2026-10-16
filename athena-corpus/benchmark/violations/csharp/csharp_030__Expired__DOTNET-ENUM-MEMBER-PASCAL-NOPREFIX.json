@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_030",
+  "language": "csharp",
+  "originalName": "Expired",
+  "injectedName": "expired",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'expired' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum OwnerPairingState\n{\n    Pending,\n    Approved,\n    Active,\n    expired,\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

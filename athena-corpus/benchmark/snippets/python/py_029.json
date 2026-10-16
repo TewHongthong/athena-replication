@@ -1,0 +1,52 @@
+{
+  "id": "py_029",
+  "language": "python",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/providers/openai_compat.py lines 44-79 (method OpenAICompatProvider.chat); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def chat(\n    self,\n    messages: list[dict],\n    *,\n    tools: list[dict] | None = None,\n    temperature: float | None = None,\n    max_tokens: int | None = None,\n) -> ChatResponse:\n    payload: dict = {\n        \"model\": self.config.model,\n        \"messages\": messages,\n        \"temperature\": self.config.temperature if temperature is None else temperature,\n    }\n    if tools:\n        payload[\"tools\"] = tools\n    limit = max_tokens or self.config.max_output_tokens\n    if limit:\n        payload[\"max_tokens\"] = limit\n\n    last_error: Exception | None = None\n    for attempt in range(self.config.max_retries + 1):\n        try:\n            body = self._post(\"/chat/completions\", payload)\n            return self._parse(body)\n        except ProviderError as exc:\n            last_error = exc\n            status = getattr(exc, \"status\", 0)\n            if status not in RETRY_STATUS or attempt == self.config.max_retries:\n                raise\n            time.sleep(min(2 ** attempt, 8))\n        except (urllib.error.URLError, TimeoutError) as exc:\n            last_error = ProviderError(f\"network failure calling {self.base_url}: {exc}\")\n            if attempt == self.config.max_retries:\n                raise last_error\n            time.sleep(min(2 ** attempt, 8))\n    raise ProviderError(f\"provider {self.name} failed: {last_error}\")",
+  "identifiers": [
+    {
+      "name": "chat",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "payload",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "messages",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "tools",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "temperature",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "limit",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/providers/openai_compat.py",
+    "startLine": 44,
+    "endLine": 79,
+    "unit": "method OpenAICompatProvider.chat",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__openai_compat.py.md"
+  }
+}

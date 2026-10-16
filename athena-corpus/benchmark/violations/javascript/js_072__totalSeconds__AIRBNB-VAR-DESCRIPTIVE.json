@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_072",
+  "language": "javascript",
+  "originalName": "totalSeconds",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildWeeklyStrategicFocus({sessions=[],candidates=[],recommendations=[],start,end}={}){\n  const relevantSessions=sessions.filter(item=>item.date>=start&&item.date<=end);\n  const candidatesByTopic=new Map(candidates.filter(item=>item.topicId).map(item=>[item.topicId,item]));\n  const l=seconds(relevantSessions);\n  const highImpactSeconds=seconds(relevantSessions.filter(item=>isHighImpact(candidatesByTopic.get(item.topicId)?.examImpact)));\n  const unknownSeconds=seconds(relevantSessions.filter(item=>!item.topicId||candidatesByTopic.get(item.topicId)?.examImpact==null));\n  const workedIds=new Set(relevantSessions.filter(item=>{\n    const candidate=candidatesByTopic.get(item.topicId);\n    return isStrategicGap(candidate);\n  }).map(item=>item.topicId));\n  const outcomes=new Map();\n  for(const item of recommendations){\n    if(!workedIds.has(item.topicId)||item.date<start||item.date>end)continue;\n    const measuredDate=localDateFromTimestamp(item.outcome?.measuredAt);\n    if(!measuredDate||measuredDate<start||measuredDate>end)continue;\n    const state=item.outcome?.state;\n    if(!['positive','neutral','negative'].includes(state))continue;\n    const previous=outcomes.get(item.topicId);\n    if(previous!=='positive'&&(state==='positive'||previous!=='negative'))outcomes.set(item.topicId,state);\n  }\n  const values=[...outcomes.values()];\n  return {state:l?'available':'insufficient',totalMinutes:Math.round(l/60),highImpactMinutes:Math.round(highImpactSeconds/60),unknownMinutes:Math.round(unknownSeconds/60),highImpactPercent:l?Math.round(highImpactSeconds/l*100):null,workedGaps:workedIds.size,improved:values.filter(value=>value==='positive').length,stable:values.filter(value=>value==='neutral').length,declined:values.filter(value=>value==='negative').length,unmeasured:workedIds.size-outcomes.size};\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

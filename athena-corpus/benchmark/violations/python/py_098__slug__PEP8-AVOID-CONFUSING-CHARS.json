@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_098",
+  "language": "python",
+  "originalName": "slug",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def slugify(name: str, *, what: str = \"identifier\") -> str:\n    \"\"\"Reduce a display name to a lowercase id token (e.g. ``Test User`` -> ``test-user``).\"\"\"\n    l = _SLUG_PATTERN.sub(\"-\", name.strip().casefold()).strip(\"-\")\n    l = re.sub(r\"-{2,}\", \"-\", l)\n    if not l:\n        raise ValueError(f\"{what} needs at least one letter or digit\")\n    return l[:64]",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

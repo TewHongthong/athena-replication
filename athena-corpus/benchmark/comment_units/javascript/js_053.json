@@ -1,0 +1,34 @@
+{
+  "snippetId": "js_053",
+  "language": "javascript",
+  "standardId": "AIRBNB_JS",
+  "identifierKind": "class",
+  "name": "UserError",
+  "codeBare": "export class UserError extends Error {\n  /**\n   * @param {string} message  Short, user-facing description of what went wrong.\n   * @param {object} [opts]\n   * @param {string} [opts.suggestion]  What the user should do next.\n   * @param {string} [opts.detail]      Technical detail (shown with --verbose).\n   * @param {string} [opts.code]        Machine-readable error code.\n   */\n  constructor(message, opts = {}) {\n    super(message)\n    this.name = 'UserError'\n    this.suggestion = opts.suggestion || ''\n    this.detail = opts.detail || ''\n    this.userCode = opts.code || ''\n  }\n}",
+  "referenceComment": "/**\n * User-friendly error wrapper for CLI errors.\n *\n * Usage:\n *   throw new UserError('Failed to fetch npm package', {\n *     suggestion: 'Check your internet connection and try again.',\n *     detail: `npm registry returned HTTP ${res.statusCode}`,\n *     code: 'NPM_FETCH_ERROR',\n *   })\n *\n * At the catch site, call showError(err) to format output.\n * Or inspect programmatically: err.userCode, err.suggestion, err.detail\n */",
+  "ruleIds": [],
+  "origin": "snippet",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/utils/errors.js lines 15-30 (class UserError); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 13,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/utils/errors.js",
+    "startLine": 15,
+    "endLine": 30,
+    "unit": "class UserError",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__errors.js.md"
+  }
+}

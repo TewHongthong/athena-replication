@@ -1,0 +1,98 @@
+# docs/site/app/_demos/meter.tsx
+
+- source repo: sebafermanelli/sebs7n-ui
+- repo url: https://github.com/sebafermanelli/sebs7n-ui
+- license: MIT
+- created_at: 2026-09-23T02:47:39Z
+- file path: docs/site/app/_demos/meter.tsx
+- commit: a774dd4d3e4c02918772d5c3182b80ce0a86db3b
+
+```typescript
+"use client"
+
+import { useState } from "react"
+import { Button } from "sebs7n-ui/button"
+import { Meter } from "sebs7n-ui/meter"
+
+/**
+ * Cuánto del plan se usó
+ * Una medida, no una tarea: el número puede subir o bajar solo —al borrar un archivo el disco se libera— y nunca "termina". Por eso es `role="meter"` y no `role="progressbar"`.
+ */
+export function EspacioDelPlan() {
+  const [usado, setUsado] = useState(6.4)
+
+  return (
+    <div className="flex w-full max-w-sm flex-col gap-4">
+      <Meter
+        format={{ style: "unit", unit: "gigabyte", maximumFractionDigits: 1 }}
+        label="Espacio usado"
+        locale="es-AR"
+        max={10}
+        showValue
+        value={usado}
+      />
+      <div className="flex gap-2">
+        <Button onClick={() => setUsado((v) => Math.min(10, v + 1.3))} size="sm" variant="outline">
+          Subir un adjunto
+        </Button>
+        <Button disabled={usado === 0} onClick={() => setUsado(0)} size="sm" variant="ghost">
+          Vaciar la papelera
+        </Button>
+      </div>
+    </div>
+  )
+}
+
+/**
+ * Con su propio rango y su propio formato
+ * `min` y `max` son el rango real del dato y `format` es el de `Intl.NumberFormat`: lo que se ve y lo que lee el lector salen del mismo texto, así que no se pueden desincronizar. Sin `format`, lo que se anuncia es la proporción ("64%").
+ */
+export function CupoFacturado() {
+  return (
+    <div className="flex w-full max-w-sm flex-col gap-6">
+      <Meter
+        format={{ style: "currency", currency: "ARS", maximumFractionDigits: 0 }}
+        label="Consumo del mes"
+        locale="es-AR"
+        max={500_000}
+        showValue
+        value={321_400}
+      />
+      <Meter label="Legajos cargados" max={40} showValue value={26} />
+    </div>
+  )
+}
+
+/**
+ * Tamaños y uso en una lista
+ * `sm` (4px) cuando la barra acompaña una fila y el texto de al lado ya dice el número; `md` (6px) suelta. Sin etiqueta visible va `aria-label`: una barra sin nombre no dice qué está midiendo.
+ */
+export function LicenciasPorEquipo() {
+  const equipos = [
+    { nombre: "Ventas", licencias: 48, usadas: 41 },
+    { nombre: "Soporte", licencias: 30, usadas: 12 },
+    { nombre: "Administración", licencias: 22, usadas: 22 },
+  ]
+
+  return (
+    <div className="flex w-full max-w-sm flex-col gap-4">
+      {equipos.map((equipo) => (
+        <div className="flex flex-col gap-1.5" key={equipo.nombre}>
+          <div className="flex items-baseline justify-between">
+            <span className="text-label-14 text-gray-1000">{equipo.nombre}</span>
+            <span className="text-copy-13 text-gray-900">
+              {equipo.usadas} de {equipo.licencias} licencias
+            </span>
+          </div>
+          <Meter
+            aria-label={`Licencias usadas de ${equipo.nombre}`}
+            max={equipo.licencias}
+            size="sm"
+            value={equipo.usadas}
+          />
+        </div>
+      ))}
+    </div>
+  )
+}
+```

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_028",
+  "language": "typescript",
+  "originalName": "startDemoScene",
+  "injectedName": "start_demo_scene",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'start_demo_scene' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function start_demo_scene(canvas: HTMLCanvasElement) {\n  canvas.width = width;\n  canvas.height = height;\n  const context = canvas.getContext(\"2d\");\n  if (!context) return () => {};\n  let frame = 0;\n  const started = performance.now();\n\n  const draw = (now: number) => {\n    const time = (now - started) / 1000;\n    paintSky(context);\n    paintStars(context, time);\n    paintMoon(context, time);\n    ridges.forEach((ridge) => paintRidge(context, ridge, time));\n    frame = requestAnimationFrame(draw);\n  };\n\n  frame = requestAnimationFrame(draw);\n  return () => cancelAnimationFrame(frame);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

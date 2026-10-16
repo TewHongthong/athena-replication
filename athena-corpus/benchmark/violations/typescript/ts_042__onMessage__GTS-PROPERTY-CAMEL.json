@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_042",
+  "language": "typescript",
+  "originalName": "onMessage",
+  "injectedName": "on_message",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'on_message' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface PlayerActionsProps {\n  recording: Recording;\n  stacked: boolean;\n  onDelete: () => Promise<void>;\n  on_message: (text: string) => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_019",
+  "language": "java",
+  "originalName": "paymentMethod",
+  "injectedName": "payment_method",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'payment_method' does not match camelCase pattern",
+    "name 'payment_method' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Transactional(readOnly = true)\npublic Page<OrderResponse> getAll(Pageable pageable, OrderStatus status,\n                                  DeliveryMethod deliveryMethod, PaymentMethod payment_method, String search) {\n    var spec = Specification.where(OrderSpecification.hasStatus(status))\n            .and(OrderSpecification.hasDeliveryMethod(deliveryMethod))\n            .and(OrderSpecification.hasPaymentMethod(payment_method))\n            .and(OrderSpecification.hasSearch(search));\n\n    var page = orderRepository.findAll(spec, pageable);\n    List<Order> orders = page.getContent();\n\n    if (orders.isEmpty()) {\n        return Page.empty(pageable);\n    }\n\n    var itemsByOrder = loadItemsByOrderId(orders);\n\n    List<OrderResponse> responses = orders.stream()\n            .map(order -> orderMapper.toResponse(order, itemsByOrder.getOrDefault(order.getId(), List.of())))\n            .toList();\n\n    return new PageImpl<>(responses, pageable, page.getTotalElements());\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_089",
+  "language": "typescript",
+  "originalName": "titulo",
+  "injectedName": "TITULO",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TITULO' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function buscar(consulta: string) {\n  const terminos = normalizar(consulta).split(/\\s+/).filter(Boolean)\n  if (!terminos.length) return []\n  return CORPUS.map(({ entrada, texto }) => {\n    const plano = normalizar(texto)\n    if (!terminos.every((termino) => plano.includes(termino))) return null\n    // El título pesa más que el cuerpo, y empezar con el término más que contenerlo.\n    const TITULO = normalizar(entrada.title)\n    const puntaje = terminos.reduce(\n      (total, termino) => total + (TITULO.startsWith(termino) ? 100 : TITULO.includes(termino) ? 40 : 1),\n      0\n    )\n    return { entrada, puntaje }\n  })\n    .filter((resultado) => resultado !== null)\n    .sort((a, b) => b.puntaje - a.puntaje || a.entrada.title.localeCompare(b.entrada.title))\n    .slice(0, 12)\n    .map((resultado) => resultado.entrada)\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

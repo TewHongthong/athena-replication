@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_008",
+  "language": "javascript",
+  "originalName": "errors",
+  "injectedName": "e",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'e' shorter than minLength=2",
+    "name 'e' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function validateStringArray(value, location, e, options = {}) {\n  const { allowEmpty = true, fingerprint = false, pathValue = false } = options;\n  if (!Array.isArray(value)) {\n    e.push(`${location}: expected array`);\n    return;\n  }\n  if (!allowEmpty && value.length === 0) e.push(`${location}: must not be empty`);\n  if (value.length > MAX_LIST_ITEMS) e.push(`${location}: exceeds ${MAX_LIST_ITEMS} entries`);\n  const seen = new Set();\n  value.slice(0, MAX_LIST_ITEMS).forEach((entry, index) => {\n    const entryLocation = `${location}[${index}]`;\n    const valid = pathValue ? isSafeRelativePath(entry) : isVisibleText(entry);\n    if (!valid) e.push(`${entryLocation}: invalid ${pathValue ? \"repository-relative path\" : \"text\"}`);\n    if (fingerprint && typeof entry === \"string\" && !FINGERPRINT_PATTERN.test(entry)) {\n      e.push(`${entryLocation}: invalid fingerprint`);\n    }\n    if (typeof entry === \"string\" && seen.has(entry)) e.push(`${entryLocation}: duplicate entry`);\n    if (typeof entry === \"string\") seen.add(entry);\n  });\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

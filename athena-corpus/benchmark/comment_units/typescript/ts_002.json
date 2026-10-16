@@ -1,0 +1,38 @@
+{
+  "snippetId": "ts_002",
+  "language": "typescript",
+  "standardId": "GOOGLE_TS",
+  "identifierKind": "function",
+  "name": "pidAlive",
+  "codeBare": "export function pidAlive(pid: number, kill: (pid: number, signal: number) => void = process.kill): boolean {\n  if (!Number.isInteger(pid) || pid <= 0 || pid === process.pid) return false;\n  try {\n    kill(pid, 0);\n    return true;\n  } catch (e) {\n    return (e as NodeJS.ErrnoException).code === \"EPERM\";\n  }\n}",
+  "referenceComment": "/** Whether a process id is running. `signal 0` only checks; EPERM means it exists but is not ours. */",
+  "ruleIds": [
+    "GTS-JSDOC-TOPLEVEL-EXPORT"
+  ],
+  "origin": "snippet",
+  "source": "github:Brainferno/brainferno-mcp-bridge@95695615162b4db4a3189be9dd0ebf9e7d80c129",
+  "sourceDetail": "packages/server/src/bridge/handshake.ts lines 59-67 (function pidAlive); license Apache-2.0; repo created 2026-08-26; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 2,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "Brainferno/brainferno-mcp-bridge",
+    "repoUrl": "https://github.com/Brainferno/brainferno-mcp-bridge",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-08-26",
+    "commit": "95695615162b4db4a3189be9dd0ebf9e7d80c129",
+    "path": "packages/server/src/bridge/handshake.ts",
+    "startLine": 59,
+    "endLine": 67,
+    "unit": "function pidAlive",
+    "corpusFile": "corpus/typescript/Brainferno__brainferno-mcp-bridge__handshake.ts.md"
+  }
+}

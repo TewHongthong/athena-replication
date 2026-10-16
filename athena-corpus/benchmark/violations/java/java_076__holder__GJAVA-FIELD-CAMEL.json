@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_076",
+  "language": "java",
+  "originalName": "holder",
+  "injectedName": "HOLDER",
+  "identifierKind": "field",
+  "violatedRuleId": "GJAVA-FIELD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HOLDER' does not match camelCase pattern",
+    "name 'HOLDER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public final class FurkinProvider implements ICapabilitySerializable<CompoundTag> {\n\n    private final FurkinData data = new FurkinData();\n    private final LazyOptional<FurkinData> HOLDER = LazyOptional.of(() -> data);\n\n    @NotNull\n    @Override\n    public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {\n        if (cap == FurkinCapability.FURKIN_DATA) {\n            return HOLDER.cast();\n        }\n        return LazyOptional.empty();\n    }\n\n    @Override\n    public CompoundTag serializeNBT() {\n        return data.serializeNBT();\n    }\n\n    @Override\n    public void deserializeNBT(CompoundTag nbt) {\n        data.deserializeNBT(nbt);\n    }\n\n    /** 使能力失效（实体被移除时调用）。 */\n    public void invalidate() {\n        HOLDER.invalidate();\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

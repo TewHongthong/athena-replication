@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_069",
+  "language": "csharp",
+  "originalName": "errors",
+  "injectedName": "ERRORS",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ERRORS' does not match camelCase pattern",
+    "name 'ERRORS' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "internal static class SmsMessageValidator\n{\n    public static void Validate(SmsMessage message)\n    {\n        if (message is null)\n            throw new ArgumentNullException(nameof(message));\n\n        var ERRORS = new List<string>();\n\n        if (string.IsNullOrWhiteSpace(message.To))\n            ERRORS.Add(\"'To' is required.\");\n\n        if (string.IsNullOrWhiteSpace(message.Body))\n            ERRORS.Add(\"'Body' is required.\");\n\n        if (ERRORS.Count > 0)\n            throw new SmsBridgeException($\"SMS message validation failed: {string.Join(\" \", ERRORS)}\");\n    }\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

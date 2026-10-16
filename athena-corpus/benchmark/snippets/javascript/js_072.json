@@ -1,0 +1,52 @@
+{
+  "id": "js_072",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/analytics/build-weekly-strategic-focus.js lines 5-27 (function buildWeeklyStrategicFocus); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function buildWeeklyStrategicFocus({sessions=[],candidates=[],recommendations=[],start,end}={}){\n  const relevantSessions=sessions.filter(item=>item.date>=start&&item.date<=end);\n  const candidatesByTopic=new Map(candidates.filter(item=>item.topicId).map(item=>[item.topicId,item]));\n  const totalSeconds=seconds(relevantSessions);\n  const highImpactSeconds=seconds(relevantSessions.filter(item=>isHighImpact(candidatesByTopic.get(item.topicId)?.examImpact)));\n  const unknownSeconds=seconds(relevantSessions.filter(item=>!item.topicId||candidatesByTopic.get(item.topicId)?.examImpact==null));\n  const workedIds=new Set(relevantSessions.filter(item=>{\n    const candidate=candidatesByTopic.get(item.topicId);\n    return isStrategicGap(candidate);\n  }).map(item=>item.topicId));\n  const outcomes=new Map();\n  for(const item of recommendations){\n    if(!workedIds.has(item.topicId)||item.date<start||item.date>end)continue;\n    const measuredDate=localDateFromTimestamp(item.outcome?.measuredAt);\n    if(!measuredDate||measuredDate<start||measuredDate>end)continue;\n    const state=item.outcome?.state;\n    if(!['positive','neutral','negative'].includes(state))continue;\n    const previous=outcomes.get(item.topicId);\n    if(previous!=='positive'&&(state==='positive'||previous!=='negative'))outcomes.set(item.topicId,state);\n  }\n  const values=[...outcomes.values()];\n  return {state:totalSeconds?'available':'insufficient',totalMinutes:Math.round(totalSeconds/60),highImpactMinutes:Math.round(highImpactSeconds/60),unknownMinutes:Math.round(unknownSeconds/60),highImpactPercent:totalSeconds?Math.round(highImpactSeconds/totalSeconds*100):null,workedGaps:workedIds.size,improved:values.filter(value=>value==='positive').length,stable:values.filter(value=>value==='neutral').length,declined:values.filter(value=>value==='negative').length,unmeasured:workedIds.size-outcomes.size};\n}",
+  "identifiers": [
+    {
+      "name": "buildWeeklyStrategicFocus",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "relevantSessions",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "candidatesByTopic",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "totalSeconds",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "highImpactSeconds",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/analytics/build-weekly-strategic-focus.js",
+    "startLine": 5,
+    "endLine": 27,
+    "unit": "function buildWeeklyStrategicFocus",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__build-weekly-strategic-focus.js.md"
+  }
+}

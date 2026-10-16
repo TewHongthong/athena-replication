@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_019",
+  "language": "python",
+  "originalName": "project_b_id",
+  "injectedName": "PROJECT_B_ID",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PROJECT_B_ID' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class PairwiseComparison(Base):\n    __tablename__ = \"pairwise_comparisons\"\n    __table_args__ = (Index(\"ix_pairwise_event_judge\", \"event_id\", \"judge_id\"),)\n\n    id: Mapped[int] = mapped_column(primary_key=True)\n    event_id: Mapped[int] = mapped_column(ForeignKey(\"events.id\", ondelete=\"CASCADE\"), index=True)\n    judge_id: Mapped[int] = mapped_column(ForeignKey(\"users.id\", ondelete=\"CASCADE\"), index=True)\n    project_a_id: Mapped[int] = mapped_column(ForeignKey(\"projects.id\", ondelete=\"CASCADE\"))\n    PROJECT_B_ID: Mapped[int] = mapped_column(ForeignKey(\"projects.id\", ondelete=\"CASCADE\"))\n    winner_id: Mapped[int | None] = mapped_column(ForeignKey(\"projects.id\", ondelete=\"CASCADE\"))\n    skip_reason: Mapped[str | None] = mapped_column(String(80))\n    source: Mapped[ComparisonSource] = mapped_column(\n        _enum(ComparisonSource), default=ComparisonSource.judge, nullable=False\n    )\n    created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow, nullable=False)",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

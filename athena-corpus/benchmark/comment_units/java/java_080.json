@@ -1,0 +1,37 @@
+{
+  "snippetId": "java_080",
+  "language": "java",
+  "standardId": "GOOGLE_JAVA",
+  "identifierKind": "class",
+  "name": "FurkinClientSetup",
+  "codeBare": "@Mod.EventBusSubscriber(modid = FurkinMod.MODID, value = Dist.CLIENT,\n        bus = Mod.EventBusSubscriber.Bus.MOD)\npublic final class FurkinClientSetup {\n\n    private FurkinClientSetup() {\n    }\n\n    @SubscribeEvent\n    public static void onClientSetup(FMLClientSetupEvent event) {\n        // enqueueWork：屏幕注册表不是线程安全的，官方要求在客户端主线程里注册。\n        event.enqueueWork(() -> MenuScreens.register(\n                ModMenus.FURKIN_POUCH.get(), FurkinPanelScreen::new));\n    }\n}",
+  "referenceComment": "/**\n * 客户端初始化 —— 把菜单类型绑到屏幕实现。\n *\n * <p><b>为什么只能用原版 {@code MenuScreens.register}</b>：Forge 1.20.1 的\n * {@code net.minecraftforge.client.event} 包里有 51 个类，<b>没有</b>\n * {@code RegisterMenuScreensEvent} —— 该事件是 1.20.2+ 才加入的。\n * 故这里走 {@link MenuScreens#register}，并且必须放在 {@link FMLClientSetupEvent} 里\n * （屏幕注册表在客户端启动阶段才可用）。</p>\n *\n * <p><b>端位纪律</b>：本类只在 {@code Dist.CLIENT} 加载。</p>\n */",
+  "ruleIds": [
+    "GJAVA-JAVADOC-CLASS-REQUIRED",
+    "GJAVA-JAVADOC-PARAGRAPHS"
+  ],
+  "origin": "snippet",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/client/FurkinClientSetup.java lines 22-35 (class FurkinClientSetup); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 11,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/client/FurkinClientSetup.java",
+    "startLine": 22,
+    "endLine": 35,
+    "unit": "class FurkinClientSetup",
+    "corpusFile": "corpus/java/wanancat__furkin__FurkinClientSetup.java.md"
+  }
+}

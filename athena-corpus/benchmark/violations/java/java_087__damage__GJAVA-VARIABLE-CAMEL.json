@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_087",
+  "language": "java",
+  "originalName": "damage",
+  "injectedName": "DAMAGE",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DAMAGE' does not match camelCase pattern",
+    "name 'DAMAGE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Override\npublic void applyEffectTick(LivingEntity entity, int amplifier) {\n    // 端守卫。⚠️ 1.20.1 把 applyEffectTick 从 LivingEntity#tickEffects 挪进了\n    // MobEffectInstance#tick，而 tickEffects 的 isClientSide 守卫只包住「过期移除」分支，\n    // 管不到 tick 内部 ⇒ 客户端也会走到这里（javap 取证：LivingEntity#tickEffects /\n    // MobEffectInstance#tick，2026-09-21）。\n    // 客户端那次 hurt 本身无副作用（LivingEntity#hurt 在 isClientSide 时直接 return false，\n    // 不减血、不闪红、不发声），但没必要跑 —— 更要紧的是别让客户端去读技能树：\n    // 技能树只挂在服务端数据包重载事件上，多人游戏下客户端是一棵空树。\n    if (entity.level().isClientSide()) {\n        return;\n    }\n    // 亡灵免疫（与中毒一致）。施加侧另有一道同名判定，那道是为了让亡灵「连效果都不挂」，\n    // 这道防的是绕过施加侧的途径（如 /effect give）—— 两层判的不是同一件事。\n    if (entity.isInvertedHealAndHarm()) {\n        return;\n    }\n    // 每秒伤害按技能等级取（amplifier = 等级 − 1，故此处补 1）。\n    // 取不到规格时不掉血、只留图标：这条路径只在「效果已挂上、数据随后被改坏」时才走到，\n    // 施加侧已按「取不到即禁用」处理、不会再有新效果产生；留痕由 BleedingSpec 解析时打一次\n    // （否定结果进了 SkillParams 的缓存，不会逐 tick 刷屏）。\n    float DAMAGE = BleedingSpec.of()\n            .map(spec -> spec.damageForLevel(amplifier + 1))\n            .orElse(0.0f);\n    if (DAMAGE <= 0.0f) {\n        return;\n    }\n    entity.hurt(entity.damageSources().generic(), DAMAGE);\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

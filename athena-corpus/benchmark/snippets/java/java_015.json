@@ -1,0 +1,52 @@
+{
+  "id": "java_015",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/file/LocalFileStorageService.java lines 51-81 (method LocalFileStorageService.store); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Override\npublic String store(MultipartFile file) {\n    if (file == null || file.isEmpty()) {\n        return null;\n    }\n\n    if (file.getSize() > maxFileSize) {\n        throw new BadRequestException(\"File size exceeds maximum allowed size\");\n    }\n\n    String contentType = file.getContentType();\n    if (contentType == null || !allowedTypes.contains(contentType)) {\n        throw new BadRequestException(\"File type not allowed: \" + contentType);\n    }\n\n    try {\n        String extension = getExtension(contentType);\n        String fileName = UUID.randomUUID() + extension;\n        Path filePath = resolveWithinUploadDir(fileName);\n        if (filePath == null) {\n            throw new BadRequestException(\"Invalid file path\");\n        }\n\n        Files.write(filePath, file.getBytes());\n\n        log.info(\"File stored: {}\", fileName);\n        return urlPrefix + fileName;\n    } catch (IOException e) {\n        throw new InternalServerException(\"Failed to store file\", e);\n    }\n}",
+  "identifiers": [
+    {
+      "name": "store",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "contentType",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "file",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "extension",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "fileName",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "filePath",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/file/LocalFileStorageService.java",
+    "startLine": 51,
+    "endLine": 81,
+    "unit": "method LocalFileStorageService.store",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__LocalFileStorageService.java.md"
+  }
+}

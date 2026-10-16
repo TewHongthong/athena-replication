@@ -1,0 +1,47 @@
+{
+  "id": "js_085",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/exams/evidence-scope-migration.js lines 5-11 (function buildTopicScopeIndex); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function buildTopicScopeIndex(subjects=[]){\n  const index=new Map();\n  for(const subject of subjects||[])for(const topic of subject?.topics||[]){\n    if(topic?.id)index.set(topic.id,normalizeExamTags(topic.examTags));\n  }\n  return index;\n}",
+  "identifiers": [
+    {
+      "name": "buildTopicScopeIndex",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "index",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "subjects",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "subject",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "topic",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/exams/evidence-scope-migration.js",
+    "startLine": 5,
+    "endLine": 11,
+    "unit": "function buildTopicScopeIndex",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__evidence-scope-migration.js.md"
+  }
+}

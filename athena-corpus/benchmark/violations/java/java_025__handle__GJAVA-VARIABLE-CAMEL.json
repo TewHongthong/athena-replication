@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_025",
+  "language": "java",
+  "originalName": "handle",
+  "injectedName": "HANDLE",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HANDLE' does not match camelCase pattern",
+    "name 'HANDLE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void tickModuleToggleKeys(MinecraftClient client) {\n    if (MODULES == null || client.currentScreen != null || client.getWindow() == null) {\n        return;\n    }\n    long HANDLE = client.getWindow().getHandle();\n    for (dev.aero.client.module.Module module : MODULES.all) {\n        int key = module.style().toggleKey;\n        if (key < 0) {\n            continue;\n        }\n        boolean down;\n        try {\n            down = GLFW.glfwGetKey(HANDLE, key) == GLFW.GLFW_PRESS;\n        } catch (Throwable ignored) {\n            continue;\n        }\n        boolean was = Boolean.TRUE.equals(moduleKeyWasDown.get(module.name));\n        if (down && !was) {\n            if (\"Screenshot\".equals(module.name)) {\n                if (module.enabled()) {\n                    Screenshots.capture(client);\n                }\n            } else if (!\"Emotes\".equals(module.name)) {\n                module.toggle();\n                CONFIG.save();\n                dev.aero.client.ui.Notifications.toggled(module);\n            }\n        }\n        moduleKeyWasDown.put(module.name, down);\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_095",
+  "language": "python",
+  "originalName": "ltp",
+  "injectedName": "LTP",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LTP' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass MarketSnapshot:\n    symbol: str\n    LTP: float\n    day_change_pct: float\n    volume: int\n    headlines: list[str]  # already deduped/recent, upstream",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

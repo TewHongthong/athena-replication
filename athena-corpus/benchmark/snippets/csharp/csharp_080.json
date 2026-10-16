@@ -1,0 +1,52 @@
+{
+  "id": "csharp_080",
+  "language": "csharp",
+  "source": "github:thecheetoman/ESim@59cde034d0041d0af0a43cdf7e43d979935b7db8",
+  "sourceDetail": "Assets/Scripts/Robot/IndexerRoller.cs lines 50-74 (method IndexerRoller.OnTriggerStay); license MIT; repo created 2026-09-16T23:28:41Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "private void OnTriggerStay(Collider other)\n{\n    if (!isEnabled) return;\n    if (!other.CompareTag(\"GamePiece\")) return;\n\n    Rigidbody ballRb = other.attachedRigidbody;\n    if (ballRb == null) return;\n\n    UpdateShootingMult();\n\n    Vector3 worldMoveDir = transform.TransformDirection(moveDirection).normalized;\n\n    // Only correct the component of velocity ALONG moveDirection -- this is\n    // the key fix vs. the original script. Instead of pulling the whole\n    // ball toward a fixed point (which can point straight into a wall\n    // depending on where the ball currently is), this only ever pushes\n    // along one fixed direction, so it can never aim itself into a wall.\n    // Sideways/vertical velocity (e.g. from gravity, other balls, or a\n    // wall bounce) is left alone.\n    Vector3 currentVelAlongDir = Vector3.Project(ballRb.velocity, worldMoveDir);\n    Vector3 desiredVel = worldMoveDir * (surfaceSpeed * shootingMult);\n    Vector3 correction = desiredVel - currentVelAlongDir;\n\n    ballRb.AddForce(correction * correctionForce, ForceMode.Acceleration);\n}",
+  "identifiers": [
+    {
+      "name": "OnTriggerStay",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "ballRb",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "other",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "worldMoveDir",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "currentVelAlongDir",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "desiredVel",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "thecheetoman/ESim",
+    "repoUrl": "https://github.com/thecheetoman/ESim",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-16T23:28:41Z",
+    "commit": "59cde034d0041d0af0a43cdf7e43d979935b7db8",
+    "path": "Assets/Scripts/Robot/IndexerRoller.cs",
+    "startLine": 50,
+    "endLine": 74,
+    "unit": "method IndexerRoller.OnTriggerStay",
+    "corpusFile": "corpus/csharp/thecheetoman__ESim__IndexerRoller.cs.md"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_033",
+  "language": "java",
+  "originalName": "jar",
+  "injectedName": "JAR",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'JAR' does not match camelCase pattern",
+    "name 'JAR' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static List<Conflict> find(List<dev.aero.client.module.Module> modules) {\n    List<Conflict> out = new ArrayList<>();\n    FabricLoader loader = FabricLoader.getInstance();\n    for (var e : TABLE.entrySet()) {\n        final String moduleName = e.getKey();\n        if (modules.stream().noneMatch(m -> m.name.equals(moduleName) && m.enabled())) {\n            continue; // only warn while the matching Aero module is switched on\n        }\n        for (String id : e.getValue()) {\n            ModContainer mc = loader.getModContainer(id).orElse(null);\n            if (mc == null) {\n                continue;\n            }\n            Path JAR = null;\n            try {\n                Path p = mc.getOrigin().getPaths().get(0);\n                if (Files.isRegularFile(p) && p.getFileName().toString().endsWith(\".jar\")) {\n                    JAR = p;\n                }\n            } catch (Throwable ignored) {\n            }\n            final Path found = JAR;\n            if (found != null && out.stream().noneMatch(o -> o.jar.equals(found))) {\n                out.add(new Conflict(mc.getMetadata().getName(), e.getKey(), found));\n            }\n        }\n    }\n    return out;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

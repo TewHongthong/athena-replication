@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_027",
+  "language": "typescript",
+  "originalName": "index",
+  "injectedName": "INDEX",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INDEX' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "const stars = Array.from({ length: 90 }, (_, INDEX) => {\n  const seed = Math.sin(INDEX * 91.7) * 10000;\n  const random = seed - Math.floor(seed);\n  const seedY = Math.sin(INDEX * 47.3) * 10000;\n  const randomY = seedY - Math.floor(seedY);\n  return { x: random * width, y: randomY * horizon * 0.8, size: 0.6 + (INDEX % 3) * 0.5, phase: INDEX * 0.7 };\n});",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

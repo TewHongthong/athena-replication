@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_027",
+  "language": "csharp",
+  "originalName": "Skip",
+  "injectedName": "skip",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'skip' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "[ComImport, Guid(\"A88826F8-186F-4987-AADE-EA0CEF8FBFE8\"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]\nprivate interface IEnumExplorerCommand\n{\n    [PreserveSig] int Next(uint count, out IExplorerCommand command, out uint fetched);\n    [PreserveSig] int skip(uint count);\n    void Reset();\n    void Clone(out IEnumExplorerCommand clone);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

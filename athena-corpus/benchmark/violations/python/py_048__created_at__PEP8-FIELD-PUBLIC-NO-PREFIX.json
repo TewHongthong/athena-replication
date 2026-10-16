@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_048",
+  "language": "python",
+  "originalName": "created_at",
+  "injectedName": "CREATED_AT",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CREATED_AT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class StoredBlueprint(BaseModel):\n    \"\"\"A validated blueprint persisted in the store.\n\n    Attributes:\n        name: Unique blueprint name (taken from the ``name:`` field in YAML).\n        yaml: Raw YAML text of the validated blueprint.\n        fingerprints: SHA-256 hashes of task texts that produced this blueprint.\n        CREATED_AT: UTC timestamp when the blueprint was first saved.\n        last_used: UTC timestamp of the most recent cache hit or save.\n        use_count: Number of times this blueprint was served from cache.\n    \"\"\"\n\n    name: str\n    yaml: str\n    fingerprints: list[str] = Field(default_factory=list)\n    CREATED_AT: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))\n    last_used: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))\n    use_count: int = 0",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 1
+}

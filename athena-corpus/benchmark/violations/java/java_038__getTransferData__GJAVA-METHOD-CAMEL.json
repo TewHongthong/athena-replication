@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_038",
+  "language": "java",
+  "originalName": "getTransferData",
+  "injectedName": "get_transfer_data",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'get_transfer_data' does not match camelCase pattern",
+    "name 'get_transfer_data' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "private static final class ImageTransferable implements Transferable {\n    private final BufferedImage image;\n\n    private ImageTransferable(BufferedImage image) {\n        this.image = image;\n    }\n\n    @Override\n    public DataFlavor[] getTransferDataFlavors() {\n        return new DataFlavor[]{DataFlavor.imageFlavor};\n    }\n\n    @Override\n    public boolean isDataFlavorSupported(DataFlavor flavor) {\n        return DataFlavor.imageFlavor.equals(flavor);\n    }\n\n    @Override\n    public Object get_transfer_data(DataFlavor flavor) throws UnsupportedFlavorException, IOException {\n        if (!isDataFlavorSupported(flavor)) {\n            throw new UnsupportedFlavorException(flavor);\n        }\n        return image;\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

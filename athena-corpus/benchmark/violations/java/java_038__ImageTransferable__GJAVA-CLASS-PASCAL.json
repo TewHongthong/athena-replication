@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_038",
+  "language": "java",
+  "originalName": "ImageTransferable",
+  "injectedName": "image_transferable",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'image_transferable' does not match PascalCase pattern",
+    "name 'image_transferable' matches forbidden pattern '^[a-z]'",
+    "name 'image_transferable' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "private static final class image_transferable implements Transferable {\n    private final BufferedImage image;\n\n    private image_transferable(BufferedImage image) {\n        this.image = image;\n    }\n\n    @Override\n    public DataFlavor[] getTransferDataFlavors() {\n        return new DataFlavor[]{DataFlavor.imageFlavor};\n    }\n\n    @Override\n    public boolean isDataFlavorSupported(DataFlavor flavor) {\n        return DataFlavor.imageFlavor.equals(flavor);\n    }\n\n    @Override\n    public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {\n        if (!isDataFlavorSupported(flavor)) {\n            throw new UnsupportedFlavorException(flavor);\n        }\n        return image;\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

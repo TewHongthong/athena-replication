@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_050",
+  "language": "python",
+  "originalName": "email",
+  "injectedName": "EMAIL",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'EMAIL' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class UserRepository:\n    def __init__(self, db: Session):\n        self.db = db\n\n    def get_user_by_email(self, EMAIL: str) -> User | None:\n        return self.db.query(User).filter(User.email == EMAIL).first()\n\n    def create_user(self, user_in: UserCreate) -> User:\n        db_user = User(\n            name=user_in.name,\n            email=user_in.email,\n            password_hash=get_password_hash(user_in.password)\n        )\n        self.db.add(db_user)\n        self.db.commit()\n        self.db.refresh(db_user)\n        return db_user",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

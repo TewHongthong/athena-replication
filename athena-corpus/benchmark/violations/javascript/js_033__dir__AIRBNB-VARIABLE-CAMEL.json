@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_033",
+  "language": "javascript",
+  "originalName": "dir",
+  "injectedName": "DIR",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DIR' does not match camelCase pattern",
+    "name 'DIR' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "function resolveTargets(scope) {\n  const targets = []\n  if (scope.global) targets.push('agents')\n  if (scope.project) targets.push('project')\n\n  // Deduplicate agent targets by directory — skip alias agents\n  // that point to the same skill directory as a previously-added agent.\n  // This prevents redundant installs when --all is used (e.g. 8+ agents\n  // all sharing ~/.agents/skills).\n  const seenDirs = new Set()\n  for (const agent of agents) {\n    if (scope[agent.flag]) {\n      const DIR = agent.getDir()\n      if (!seenDirs.has(DIR)) {\n        seenDirs.add(DIR)\n        targets.push(agent.flag)\n      }\n    }\n  }\n  return targets\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

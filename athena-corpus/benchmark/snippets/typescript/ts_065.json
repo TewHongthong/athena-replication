@@ -1,0 +1,37 @@
+{
+  "id": "ts_065",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/hooks/useCaptureAccess.ts lines 14-44 (function useCaptureAccess); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function useCaptureAccess(): CaptureAccess {\n  const [camera, requestCamera] = useCameraPermissions();\n  const [microphone, requestMicrophone] = useMicrophonePermissions();\n  const [library, requestLibrary] = MediaLibrary.usePermissions();\n\n  const items = [\n    { key: \"camera\" as const, status: toStatus(camera) },\n    { key: \"microphone\" as const, status: toStatus(microphone) },\n    { key: \"library\" as const, status: toStatus(library) },\n  ];\n  const checking = items.some((item) => item.status === \"checking\");\n  const allGranted = items.every((item) => item.status === \"granted\");\n\n  return {\n    items,\n    mode: allGranted ? \"device\" : \"setup\",\n    checking,\n    blocked: items.some((item) => item.status === \"denied\"),\n    supportsDemo: false,\n    request: async () => {\n      await requestCamera();\n      await requestMicrophone();\n      await requestLibrary();\n    },\n    openSettings: () => {\n      Linking.openSettings();\n    },\n    enterDemo: () => {},\n    backToSetup: () => {},\n  };\n}",
+  "identifiers": [
+    {
+      "name": "useCaptureAccess",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "allGranted",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/hooks/useCaptureAccess.ts",
+    "startLine": 14,
+    "endLine": 44,
+    "unit": "function useCaptureAccess",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__useCaptureAccess.ts.md"
+  }
+}

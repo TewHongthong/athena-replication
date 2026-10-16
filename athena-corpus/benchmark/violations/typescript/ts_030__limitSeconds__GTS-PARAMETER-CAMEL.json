@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_030",
+  "language": "typescript",
+  "originalName": "limitSeconds",
+  "injectedName": "limit_seconds",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'limit_seconds' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function recordStream(stream: MediaStream, limit_seconds: number): ActiveRecording {\n  const mimeType = pickMimeType();\n  const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);\n  const chunks: Blob[] = [];\n  let timer: ReturnType<typeof setTimeout> | undefined;\n\n  const stop = () => {\n    if (timer) clearTimeout(timer);\n    if (recorder.state !== \"inactive\") recorder.stop();\n  };\n\n  const finished = new Promise<CaptureResult | null>((resolve, reject) => {\n    recorder.ondataavailable = (event) => {\n      if (event.data.size > 0) chunks.push(event.data);\n    };\n    recorder.onerror = () => reject(new Error(\"A gravação foi interrompida pelo navegador.\"));\n    recorder.onstop = () => {\n      if (chunks.length === 0) return resolve(null);\n      const type = (recorder.mimeType || mimeType || \"video/webm\").split(\";\")[0];\n      const blob = new Blob(chunks, { type });\n      resolve({ uri: URL.createObjectURL(blob), mimeType: type, blob });\n    };\n  });\n\n  recorder.start(250);\n  if (limit_seconds > 0) timer = setTimeout(stop, limit_seconds * 1000);\n  return { finished, stop };\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

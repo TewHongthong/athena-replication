@@ -1,0 +1,42 @@
+{
+  "id": "py_009",
+  "language": "python",
+  "source": "github:Ayush1860/SecureRag@a65d2f6f70fdc5dcb477d48353de0374853125e7",
+  "sourceDetail": "securerag/security/rate_limit.py lines 14-21 (class RateLimiter); license MIT; repo created 2026-09-02T18:22:54Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class RateLimiter:\n    def __init__(self, rule: str = \"60/minute\", storage_uri: str = \"memory://\"):\n        self.rule = parse(rule)\n        self._limiter = MovingWindowRateLimiter(storage_from_string(storage_uri))\n\n    def hit(self, key: str) -> bool:\n        \"\"\"Record one request for ``key``; False when the limit is exceeded.\"\"\"\n        return self._limiter.hit(self.rule, \"securerag\", key)",
+  "identifiers": [
+    {
+      "name": "RateLimiter",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "hit",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "storage_uri",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "key",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Ayush1860/SecureRag",
+    "repoUrl": "https://github.com/Ayush1860/SecureRag",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-02T18:22:54Z",
+    "commit": "a65d2f6f70fdc5dcb477d48353de0374853125e7",
+    "path": "securerag/security/rate_limit.py",
+    "startLine": 14,
+    "endLine": 21,
+    "unit": "class RateLimiter",
+    "corpusFile": "corpus/python/Ayush1860__SecureRag__rate_limit.py.md"
+  }
+}

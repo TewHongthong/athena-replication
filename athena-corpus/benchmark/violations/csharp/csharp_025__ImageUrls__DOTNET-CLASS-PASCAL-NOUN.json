@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_025",
+  "language": "csharp",
+  "originalName": "ImageUrls",
+  "injectedName": "image_urls",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'image_urls' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static class image_urls\n{\n    public static string? For(int? imageId, string? fallbackUrl = null, int? width = null)\n    {\n        if (imageId is { } id)\n            return width is { } w ? $\"/img/{id}?w={w}\" : $\"/img/{id}\";\n        return string.IsNullOrWhiteSpace(fallbackUrl) ? null : fallbackUrl;\n    }\n\n    public static bool Has(int? imageId, string? fallbackUrl = null) =>\n        imageId is not null || !string.IsNullOrWhiteSpace(fallbackUrl);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

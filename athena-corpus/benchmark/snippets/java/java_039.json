@@ -1,0 +1,52 @@
+{
+  "id": "java_039",
+  "language": "java",
+  "source": "github:KingF3rdi/aero-client@d8888aba64351257362cd47f69282311dd942c8f",
+  "sourceDetail": "src/main/java/dev/aero/client/WorldOverlayRenderer.java lines 41-74 (method WorldOverlayRenderer.afterEntities); license MIT; repo created 2026-09-20T13:19:19Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "private static void afterEntities(WorldRenderContext context) {\n    var cfg = AeroClient.CONFIG;\n    MinecraftClient mc = MinecraftClient.getInstance();\n    if (cfg == null || mc.world == null || mc.player == null) {\n        return;\n    }\n    MatrixStack matrices = context.matrices();\n    VertexConsumerProvider consumers = context.consumers();\n    if (matrices == null || consumers == null) {\n        return;\n    }\n    Vec3d camPos = mc.gameRenderer != null && mc.gameRenderer.getCamera() != null\n            ? mc.gameRenderer.getCamera().getCameraPos() : Vec3d.ZERO;\n\n    if (cfg.hitboxes) {\n        for (Entity e : mc.world.getEntities()) {\n            if (Visuals.showHitbox(e)) {\n                drawBox(matrices, consumers, e.getBoundingBox(), camPos, cfg.hitboxColor);\n            }\n        }\n    }\n\n    if (cfg.blockOverlay && cfg.blockOverlayOutline\n            && mc.crosshairTarget instanceof BlockHitResult hit && hit.getType() == HitResult.Type.BLOCK) {\n        Box box = new Box(hit.getBlockPos());\n        drawBox(matrices, consumers, box.expand(0.002), camPos, cfg.blockOverlayColor);\n    }\n\n    if (cfg.popChams) {\n        drawPopChams(matrices, consumers, camPos, cfg);\n    } else if (!POPS.isEmpty()) {\n        POPS.clear();\n    }\n}",
+  "identifiers": [
+    {
+      "name": "afterEntities",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "cfg",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "context",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "matrices",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "consumers",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "camPos",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "KingF3rdi/aero-client",
+    "repoUrl": "https://github.com/KingF3rdi/aero-client",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-20T13:19:19Z",
+    "commit": "d8888aba64351257362cd47f69282311dd942c8f",
+    "path": "src/main/java/dev/aero/client/WorldOverlayRenderer.java",
+    "startLine": 41,
+    "endLine": 74,
+    "unit": "method WorldOverlayRenderer.afterEntities",
+    "corpusFile": "corpus/java/KingF3rdi__aero-client__WorldOverlayRenderer.java.md"
+  }
+}

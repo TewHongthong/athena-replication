@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_095",
+  "language": "python",
+  "originalName": "day_change_pct",
+  "injectedName": "DAY_CHANGE_PCT",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DAY_CHANGE_PCT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass MarketSnapshot:\n    symbol: str\n    ltp: float\n    DAY_CHANGE_PCT: float\n    volume: int\n    headlines: list[str]  # already deduped/recent, upstream",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

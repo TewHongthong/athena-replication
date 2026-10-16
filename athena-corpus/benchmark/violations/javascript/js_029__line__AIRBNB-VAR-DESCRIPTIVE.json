@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_029",
+  "language": "javascript",
+  "originalName": "line",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function diffLines(aLines, bLines) {\n  const added = []\n  const removed = []\n  const aSet = new Set(aLines)\n  const bSet = new Set(bLines)\n\n  for (const l of aLines) {\n    if (!bSet.has(l)) removed.push(l)\n  }\n  for (const l of bLines) {\n    if (!aSet.has(l)) added.push(l)\n  }\n\n  return { added, removed }\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_096",
+  "language": "python",
+  "originalName": "bars",
+  "injectedName": "BARS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'BARS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def compute_features(\n    BARS: list[Bar],\n    index_day_change_pct: float = 0.0,\n    or_high: float | None = None,\n    or_low: float | None = None,\n    gap_pct: float | None = None,\n) -> FeatureSet:\n    look = BARS[-21:] if len(BARS) >= 2 else BARS\n    ret = 0.0\n    if len(look) >= 2 and look[0].close > 0:\n        ret = (look[-1].close - look[0].close) / look[0].close\n    vwap = _vwap(BARS[-20:] if len(BARS) >= 5 else BARS)\n    last = BARS[-1].close if BARS else 0.0\n    dist = ((last - vwap) / vwap) if vwap and vwap > 0 else 0.0\n    return FeatureSet(\n        ret_20=ret,\n        vwap_dist_pct=dist,\n        atr_pct=_atr_pct(BARS[-15:] if len(BARS) > 2 else BARS),\n        realized_vol=realized_vol(BARS[-20:] if len(BARS) >= 3 else BARS),\n        regime=classify_regime(BARS),\n        index_day_change_pct=index_day_change_pct,\n        or_high=or_high,\n        or_low=or_low,\n        gap_pct=gap_pct,\n    )",
+  "occurrencesRenamed": 16,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

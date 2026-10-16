@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_001",
+  "language": "csharp",
+  "originalName": "stream",
+  "injectedName": "STREAM",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'STREAM' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public interface IBinaryPackable\n{\n    /// <summary>Writes the type's binary representation to the supplied stream.</summary>\n    /// <param name=\"stream\">The destination binary stream.</param>\n    void Pack(IBinaryStream STREAM);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

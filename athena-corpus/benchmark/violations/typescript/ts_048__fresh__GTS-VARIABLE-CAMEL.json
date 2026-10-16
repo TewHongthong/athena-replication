@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_048",
+  "language": "typescript",
+  "originalName": "fresh",
+  "injectedName": "FRESH",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FRESH' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function useArrival(createdAt: number) {\n  const FRESH = useRef(Date.now() - createdAt < freshWindowMs).current;\n  const arrival = useRef(new Animated.Value(FRESH ? 0 : 1)).current;\n\n  useEffect(() => {\n    if (!FRESH) return;\n    Animated.timing(arrival, { toValue: 1, duration: 520, easing: motion.shutter, useNativeDriver: motion.native }).start();\n  }, []);\n\n  return {\n    opacity: arrival,\n    transform: [{ translateY: arrival.interpolate({ inputRange: [0, 1], outputRange: [14, 0] }) }],\n  };\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

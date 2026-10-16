@@ -1,0 +1,47 @@
+{
+  "id": "py_086",
+  "language": "python",
+  "source": "github:tonym999/vault-cleaner@1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+  "sourceDetail": "src/vault_cleaner/rules/ghosts.py lines 41-55 (function run); license MIT; repo created 2026-07-18T09:39:13Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def run(ghosts: pd.DataFrame) -> list[Decision]:\n    decisions: list[Decision] = []\n    for _, row in ghosts.iterrows():\n        if protection_reason(row) is not None:\n            continue\n        hashtag = \"#vc-junk: ghost-unprotected-surplus\"\n        decisions.append(\n            Decision(\n                id=row[\"Id\"], hash=row[\"Hash\"], name=row[\"Name\"],\n                location=row.get(\"Owner\", \"\"), guardian_class=\"\",\n                action=\"junk\", tag=\"junk\",\n                note=append_tool_clause(row[\"Notes\"], hashtag), kept_id=\"\",\n            )\n        )\n    return decisions",
+  "identifiers": [
+    {
+      "name": "run",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "decisions",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "ghosts",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "row",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "hashtag",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "tonym999/vault-cleaner",
+    "repoUrl": "https://github.com/tonym999/vault-cleaner",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-18T09:39:13Z",
+    "commit": "1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+    "path": "src/vault_cleaner/rules/ghosts.py",
+    "startLine": 41,
+    "endLine": 55,
+    "unit": "function run",
+    "corpusFile": "corpus/python/tonym999__vault-cleaner__ghosts.py.md"
+  }
+}

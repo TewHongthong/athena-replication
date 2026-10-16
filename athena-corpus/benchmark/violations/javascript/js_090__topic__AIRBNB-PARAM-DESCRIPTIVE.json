@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_090",
+  "language": "javascript",
+  "originalName": "topic",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildPlanImpactAlignment({distribution,topics=[],impactForTopic}={}){\n  const planned=(distribution?.rows||[]).filter(row=>row.subjectId!=='unassigned'&&row.plannedMinutes>0);\n  if(planned.length<2)return {state:'insufficient',reason:'Planeje tempo para pelo menos duas disciplinas nesta semana.'};\n  const rows=planned.map(row=>{\n    const subjectTopics=topics.filter(l=>l.subjectId===row.subjectId);\n    const impacts=subjectTopics.map(impactForTopic).filter(value=>Number.isFinite(value)&&value>=0&&value<=100);\n    const coverage=subjectTopics.length?impacts.length/subjectTopics.length:0;\n    return {...row,topicCount:subjectTopics.length,impactCount:impacts.length,coverage,averageImpact:impacts.length?impacts.reduce((sum,value)=>sum+value,0)/impacts.length:null};\n  });\n  if(rows.some(row=>row.coverage<.5||row.impactCount<1))return {state:'insufficient',reason:'O impacto estimado cobre menos da metade dos tópicos de alguma disciplina planejada.'};\n  const impactTotal=rows.reduce((sum,row)=>sum+row.averageImpact,0);\n  const plannedTotal=rows.reduce((sum,row)=>sum+row.plannedMinutes,0);\n  if(!impactTotal)return {state:'insufficient',reason:'Ainda não há impacto estimado para comparar as disciplinas planejadas.'};\n  return {state:'ready',rows:rows.map(row=>({...row,plannedShare:row.plannedMinutes/plannedTotal*100,impactShare:row.averageImpact/impactTotal*100})),subjectCount:rows.length};\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

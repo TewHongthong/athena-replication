@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_055",
+  "language": "typescript",
+  "originalName": "pulse",
+  "injectedName": "PULSE",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PULSE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function TallyBadge({ phase, ready }: TallyBadgeProps) {\n  const PULSE = useRef(new Animated.Value(1)).current;\n  const live = phase === \"recording\";\n  const blinking = live || phase === \"countdown\";\n\n  useEffect(() => {\n    if (!blinking) {\n      PULSE.setValue(1);\n      return;\n    }\n    const loop = Animated.loop(\n      Animated.sequence([\n        Animated.timing(PULSE, { toValue: 0.2, duration: 480, easing: Easing.inOut(Easing.quad), useNativeDriver: motion.native }),\n        Animated.timing(PULSE, { toValue: 1, duration: 480, easing: Easing.inOut(Easing.quad), useNativeDriver: motion.native }),\n      ]),\n    );\n    loop.start();\n    return () => loop.stop();\n  }, [blinking]);\n\n  const label = phase === \"idle\" && !ready ? \"AGUARDE\" : labels[phase];\n  const dotColor = live ? colors.ink : phase === \"idle\" && ready ? colors.peak : colors.bone;\n\n  return (\n    <Animated.View style={[styles.badge, live && styles.live]} accessibilityLiveRegion=\"polite\" accessibilityLabel={`Estado: ${label}`}>\n      <Animated.View style={[styles.dot, { backgroundColor: dotColor, opacity: PULSE }]} />\n      <Text style={[styles.label, live && styles.labelLive]}>{label}</Text>\n    </Animated.View>\n  );\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

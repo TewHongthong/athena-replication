@@ -1,0 +1,52 @@
+{
+  "id": "js_051",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/utils/converter.js lines 128-148 (function mdcToSkill); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function mdcToSkill(content, filename) {\n  const { attrs, body } = parseFrontmatter(content)\n\n  const desc = attrs.description || ''\n  const baseName = filename.replace(/\\.mdc$/i, '')\n  const name = desc || baseName || 'untitled'\n  const slug = attrs._slug || baseName.toLowerCase().replace(/[^a-z0-9]+/g, '-')\n\n  const skill = {\n    name,\n    slug,\n    owner: 'local',\n    description: desc,\n  }\n\n  if (attrs.mcp_servers) {\n    skill.mcp_servers = attrs.mcp_servers\n  }\n\n  return serializeFrontmatter(skill) + body\n}",
+  "identifiers": [
+    {
+      "name": "mdcToSkill",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "desc",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "content",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "filename",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "baseName",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "skill",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/utils/converter.js",
+    "startLine": 128,
+    "endLine": 148,
+    "unit": "function mdcToSkill",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__converter.js.md"
+  }
+}

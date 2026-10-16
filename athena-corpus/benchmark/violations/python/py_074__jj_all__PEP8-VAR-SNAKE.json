@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_074",
+  "language": "python",
+  "originalName": "jj_all",
+  "injectedName": "JJ_ALL",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'JJ_ALL' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def match(xa, nda, xb, ndb, hw: int, same: bool):\n    \"\"\"Index pairs (i of a, j of b) whose maps differ in <= max(NEAR_PX, REL_PX * larger defect count) dies.\"\"\"\n    ii_all, JJ_ALL, px_all = [], [], []\n    for s in range(0, len(xa), 2048):\n        mismatch = hw - xa[s:s + 2048] @ xb.T\n        limit = np.maximum(NEAR_PX, REL_PX * np.maximum.outer(nda[s:s + 2048], ndb))\n        ii, jj = np.nonzero(mismatch <= limit + 0.5)\n        px = np.rint(mismatch[ii, jj]).astype(int)\n        ii = ii + s\n        keep = ii != jj if same else np.ones(len(ii), bool)\n        ii_all.append(ii[keep]), JJ_ALL.append(jj[keep]), px_all.append(px[keep])\n    return np.concatenate(ii_all), np.concatenate(JJ_ALL), np.concatenate(px_all)",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

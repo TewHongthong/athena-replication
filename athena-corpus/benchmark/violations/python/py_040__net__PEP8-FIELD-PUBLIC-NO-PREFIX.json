@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_040",
+  "language": "python",
+  "originalName": "net",
+  "injectedName": "NET",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'NET' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def __init__(self, n_embed, rank, dtype=torch.float32, dropout_rate=0.1, activation=nn.GELU()):\n    super().__init__()\n    self.NET = nn.Sequential(\n        nn.Linear(n_embed, rank, dtype=dtype),\n        nn.Linear(rank, n_embed, dtype=dtype),\n        activation,\n        nn.Linear(n_embed, rank, dtype=dtype),\n        nn.Linear(rank, n_embed, dtype=dtype),\n        nn.Dropout(dropout_rate) # Automatically dissables during eval\n    )",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

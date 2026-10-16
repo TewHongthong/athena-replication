@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_062",
+  "language": "javascript",
+  "originalName": "answer",
+  "injectedName": "a",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'a' shorter than minLength=2",
+    "name 'a' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "async function defaultPrompt(question) {\n  const { createInterface } = await import('node:readline')\n  const rl = createInterface({ input, output })\n  return new Promise((resolve) => {\n    rl.question(question, (a) => {\n      rl.close()\n      resolve(a.trim().toLowerCase())\n    })\n  })\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_075",
+  "language": "python",
+  "originalName": "dev",
+  "injectedName": "DEV",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DEV' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def cnn_predict(maps: list, final: dict, bias: np.ndarray) -> np.ndarray:\n    DEV = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\n    model = SmallCNN().to(DEV)\n    model.load_state_dict(torch.load(CNN_DIR / final[\"run\"] / \"model.pt\", map_location=DEV))\n    model.eval()\n    x = torch.from_numpy(np.stack([resize(m) for m in maps])).to(DEV)\n    with torch.no_grad():\n        logp = torch.cat([torch.log_softmax(model(to_input(x[i:i + 1024])), 1) for i in range(0, len(x), 1024)])\n    return (logp.cpu().numpy() + (bias if final[\"variant\"] == \"calibrated\" else 0)).argmax(1)",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

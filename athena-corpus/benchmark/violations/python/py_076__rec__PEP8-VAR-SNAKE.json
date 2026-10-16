@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_076",
+  "language": "python",
+  "originalName": "rec",
+  "injectedName": "REC",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'REC' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def summarize(runs: list[dict]) -> dict:\n    f1 = np.array([r[\"test_macro_f1\"] for r in runs])\n    REC = {c: np.array([r[\"test_recall\"][c] for r in runs]) for c in CLASSES}\n    return {\"macro_f1_mean_std_min_max\": [round(float(f1.mean()), 4), round(float(f1.std(ddof=1)), 4),\n                                          float(f1.min()), float(f1.max())],\n            \"recall_mean_std_min_max\": {c: [round(float(v.mean()), 4), round(float(v.std(ddof=1)), 4),\n                                            float(v.min()), float(v.max())] for c, v in REC.items()},\n            \"seeds_with_all_recall_ge_0.50\": int(sum(min(r[\"test_recall\"].values()) >= 0.5 for r in runs))}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

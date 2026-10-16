@@ -1,0 +1,34 @@
+{
+  "snippetId": "cx_csharp_001",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "method",
+  "name": "ExportP256PublicKeySpkiBase64",
+  "codeBare": "public static string ExportP256PublicKeySpkiBase64(ECDsa signingKey)\n{\n    ArgumentNullException.ThrowIfNull(signingKey);\n    EnsureP256(signingKey);\n    return Convert.ToBase64String(signingKey.ExportSubjectPublicKeyInfo());\n}",
+  "referenceComment": "    /// <summary>\n    /// Exports a validated P-256 public key as standard SubjectPublicKeyInfo\n    /// encoded with ordinary base64. Private key material is never exported.\n    /// </summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-METHOD-FULL",
+    "DOTNET-XMLDOC-METHOD-EXCEPTION"
+  ],
+  "origin": "extra",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.GodotClient/Pairing/OwnerPairingProtocol.cs lines 270-275 (method OwnerPairingProtocol.ExportP256PublicKeySpkiBase64); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-comment-units-1.0",
+  "referenceCommentLines": 4,
+  "signature": {
+    "params": 1,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "param",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "path": "src/ClankerWorld.GodotClient/Pairing/OwnerPairingProtocol.cs",
+    "startLine": 270,
+    "endLine": 275,
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__OwnerPairingProtocol.cs.md"
+  }
+}

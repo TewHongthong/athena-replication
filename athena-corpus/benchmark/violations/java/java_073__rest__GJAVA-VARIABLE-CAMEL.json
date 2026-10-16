@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_073",
+  "language": "java",
+  "originalName": "rest",
+  "injectedName": "REST",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'REST' does not match camelCase pattern",
+    "name 'REST' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static List<Attribute> displayableAttributes(LivingEntity entity) {\n    if (entity == null) {\n        return List.of();\n    }\n    List<Attribute> preferred = new ArrayList<>();\n    List<Attribute> REST = new ArrayList<>();\n    for (Attribute attribute : ForgeRegistries.ATTRIBUTES) {\n        if (!isDisplayable(attribute) || !entity.getAttributes().hasAttribute(attribute)) {\n            continue;\n        }\n        (PREFERRED_ORDER.contains(attribute) ? preferred : REST).add(attribute);\n    }\n    preferred.sort(Comparator.comparingInt(PREFERRED_ORDER::indexOf));\n    REST.sort(Comparator.comparing(AttributeDisplay::idOf));\n    preferred.addAll(REST);\n    return preferred;\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

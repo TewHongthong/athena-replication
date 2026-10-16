@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_036",
+  "language": "javascript",
+  "originalName": "getTargetBaseDir",
+  "injectedName": "get_target_base_dir",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'get_target_base_dir' does not match camelCase pattern",
+    "name 'get_target_base_dir' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "function get_target_base_dir(target, cwd) {\n  if (target === 'project') {\n    return join(cwd, '.agents', 'skills')\n  }\n\n  const agent =\n    getAgentByFlag(target) ||\n    agents.find((candidate) => candidate.name === target)\n\n  const baseDir = agent ? agent.getDir() : getAgentsDir()\n\n  return rebaseToCwd(baseDir, cwd)\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "java_041",
+  "language": "java",
+  "originalName": "verificationUri",
+  "injectedName": "verification_uri",
+  "identifierKind": "field",
+  "violatedRuleId": "GJAVA-FIELD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'verification_uri' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public static final class DeviceCode {\n    public String userCode = \"\";\n    public String deviceCode = \"\";\n    public String verification_uri = \"\";\n    public int interval = 5;\n    public int expiresIn = 900;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

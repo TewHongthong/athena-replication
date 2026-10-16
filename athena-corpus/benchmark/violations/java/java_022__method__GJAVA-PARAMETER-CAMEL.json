@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_022",
+  "language": "java",
+  "originalName": "method",
+  "injectedName": "METHOD",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'METHOD' does not match camelCase pattern",
+    "name 'METHOD' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public class OrderSpecification {\n    public static Specification<Order> hasStatus(OrderStatus status) {\n        return (root, query, cb) -> status == null ? null : cb.equal(root.get(\"status\"), status);\n    }\n\n    public static Specification<Order> hasDeliveryMethod(DeliveryMethod METHOD) {\n        return (root, query, cb) -> METHOD == null ? null : cb.equal(root.get(\"deliveryMethod\"), METHOD);\n    }\n\n    public static Specification<Order> hasPaymentMethod(PaymentMethod METHOD) {\n        return (root, query, cb) -> METHOD == null ? null : cb.equal(root.get(\"paymentMethod\"), METHOD);\n    }\n\n    public static Specification<Order> hasSearch(String search) {\n        return (root, query, cb) -> {\n            if (search == null || search.isBlank()) return null;\n            return cb.or(\n                    cb.like(cb.lower(root.get(\"customerName\")), LikePattern.containsIgnoreCase(search), LikePattern.ESCAPE),\n                    cb.like(root.get(\"phone\"), LikePattern.contains(search), LikePattern.ESCAPE)\n            );\n        };\n    }\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

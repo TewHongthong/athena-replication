@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_073",
+  "language": "javascript",
+  "originalName": "item",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildWeeklyCloseActionProposal({priorities=[],selectedIds=[],futureDays=[],snapshotId=null}={}){\n  const selected=priorities.filter((i,index)=>selectedIds.includes(i.priorityId||i.topicId||String(index)));\n  const capacity=(futureDays||[]).map(day=>({date:day.date,remaining:Math.max(0,Math.round(Number(day.availableMinutes)||0)),availableMinutes:Math.max(0,Math.round(Number(day.availableMinutes)||0))}));\n  const allocations=[];let unallocated=0;\n  selected.forEach((i,index)=>{let left=Math.max(0,Math.round(Number(i.estimatedMinutes)||0));for(const day of capacity){if(!left||!day.remaining)continue;const minutes=Math.min(left,day.remaining);allocations.push({priorityId:i.priorityId||i.topicId||String(index),topicId:i.topicId||null,subjectId:i.subjectId||null,minutes,date:day.date,action:i.action,reason:i.reason,snapshotId});left-=minutes;day.remaining-=minutes}unallocated+=left});\n  return{selectedCount:selected.length,allocations,unallocatedMinutes:unallocated,capacityByDay:capacity.map(day=>({date:day.date,availableMinutes:day.availableMinutes,allocatedMinutes:day.availableMinutes-day.remaining,remainingMinutes:day.remaining})),snapshotId};\n}",
+  "occurrencesRenamed": 11,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

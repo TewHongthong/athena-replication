@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_052",
+  "language": "javascript",
+  "originalName": "timers",
+  "injectedName": "TIMERS",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TIMERS' does not match camelCase pattern",
+    "name 'TIMERS' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function createDebouncer(waitMs) {\n  const TIMERS = new Map()\n\n  function schedule(key, callback) {\n    cancel(key)\n\n    const timer = setTimeout(() => {\n      TIMERS.delete(key)\n      void Promise.resolve()\n        .then(callback)\n        .catch(() => {})\n    }, waitMs)\n\n    TIMERS.set(key, timer)\n  }\n\n  function cancel(key) {\n    const timer = TIMERS.get(key)\n    if (!timer) return false\n\n    clearTimeout(timer)\n    TIMERS.delete(key)\n    return true\n  }\n\n  function cancelAll() {\n    for (const timer of TIMERS.values()) {\n      clearTimeout(timer)\n    }\n    TIMERS.clear()\n  }\n\n  return { schedule, cancel, cancelAll }\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0
+}

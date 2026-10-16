@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_059",
+  "language": "javascript",
+  "originalName": "slashIdx",
+  "injectedName": "slash_idx",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'slash_idx' does not match camelCase pattern",
+    "name 'slash_idx' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "function parseNpmRef(source) {\n  const npmPart = source.slice(4)\n  if (!npmPart) throw new Error(`Invalid npm reference: \"${source}\"`)\n  let pkgName, version\n\n  if (npmPart.startsWith('@')) {\n    const slash_idx = npmPart.indexOf('/')\n    if (slash_idx === -1) throw new Error(`Invalid npm reference: \"${source}\"`)\n    const rest = npmPart.slice(slash_idx + 1)\n    const atIdx = rest.indexOf('@')\n    if (atIdx > 0) {\n      pkgName = npmPart.slice(0, slash_idx + 1 + atIdx)\n      version = rest.slice(atIdx + 1)\n    } else {\n      pkgName = npmPart\n      version = 'latest'\n    }\n  } else {\n    const atIdx = npmPart.lastIndexOf('@')\n    if (atIdx > 0) {\n      pkgName = npmPart.slice(0, atIdx)\n      version = npmPart.slice(atIdx + 1)\n    } else {\n      pkgName = npmPart\n      version = 'latest'\n    }\n  }\n\n  return { pkgName, version }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

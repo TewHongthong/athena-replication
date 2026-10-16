@@ -1,0 +1,52 @@
+{
+  "id": "py_075",
+  "language": "python",
+  "source": "github:sl2ver/wm811k-wafer-defect-classification@305dbf7387943b4dec4f4f41a38ff99bfe284796",
+  "sourceDetail": "scripts/outline_intervention.py lines 37-45 (function cnn_predict); license MIT; repo created 2026-09-27T06:25:24Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def cnn_predict(maps: list, final: dict, bias: np.ndarray) -> np.ndarray:\n    dev = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\n    model = SmallCNN().to(dev)\n    model.load_state_dict(torch.load(CNN_DIR / final[\"run\"] / \"model.pt\", map_location=dev))\n    model.eval()\n    x = torch.from_numpy(np.stack([resize(m) for m in maps])).to(dev)\n    with torch.no_grad():\n        logp = torch.cat([torch.log_softmax(model(to_input(x[i:i + 1024])), 1) for i in range(0, len(x), 1024)])\n    return (logp.cpu().numpy() + (bias if final[\"variant\"] == \"calibrated\" else 0)).argmax(1)",
+  "identifiers": [
+    {
+      "name": "cnn_predict",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "dev",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "maps",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "final",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "bias",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "model",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sl2ver/wm811k-wafer-defect-classification",
+    "repoUrl": "https://github.com/sl2ver/wm811k-wafer-defect-classification",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-27T06:25:24Z",
+    "commit": "305dbf7387943b4dec4f4f41a38ff99bfe284796",
+    "path": "scripts/outline_intervention.py",
+    "startLine": 37,
+    "endLine": 45,
+    "unit": "function cnn_predict",
+    "corpusFile": "corpus/python/sl2ver__wm811k-wafer-defect-classification__outline_intervention.py.md"
+  }
+}

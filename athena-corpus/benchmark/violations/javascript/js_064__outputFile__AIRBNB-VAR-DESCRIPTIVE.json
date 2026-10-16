@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_064",
+  "language": "javascript",
+  "originalName": "outputFile",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "async function writeOrCheck(output,generated){\n  const l=resolve(projectRoot,output);\n  if(checkOnly){\n    const current=await readFile(l,'utf8').catch(()=>null);\n    if(current!==generated){\n      console.error(`${output} esta desatualizado. Execute npm run build.`);\n      stale=true;\n    }else console.log(`${output} atualizado e reproduzivel.`);\n  }else{\n    await writeFile(l,generated,'utf8');\n    console.log(`Arquivo atualizado: ${l}`);\n  }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

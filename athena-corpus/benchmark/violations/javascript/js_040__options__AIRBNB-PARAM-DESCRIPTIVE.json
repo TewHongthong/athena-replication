@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_040",
+  "language": "javascript",
+  "originalName": "options",
+  "injectedName": "o",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'o' shorter than minLength=2",
+    "name 'o' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "async function installSources(sources, label, o, noMcp = false) {\n  if (sources.length === 0) {\n    console.log('No skills to install.')\n    return\n  }\n\n  console.log(\n    `\\n📦 Installing ${sources.length} skill(s)${label}:${label ? '\\n' : ''}`,\n  )\n\n  if (o.dryRun) {\n    for (const source of sources) console.log(`   • ${source}`)\n    console.log(`\\n📋 [dry-run] Would install ${sources.length} skill(s).\\n`)\n    return\n  }\n\n  const { installed: successCount, failed: failCount } =\n    await installBundleSources(\n      sources,\n      { yes: true, noMcp },\n      {\n        onStart: (source, index) =>\n          console.log('   [%s/%s] %s', index + 1, sources.length, source),\n        onError: (source, error) =>\n          console.error('   ❌ %s: %s', source, error?.message),\n      },\n    )\n\n  console.log()\n\n  if (failCount === 0) {\n    console.log(`✅ All ${successCount} skill(s) installed successfully.`)\n  } else {\n    console.log(`⚠️  ${successCount} installed, ${failCount} failed.`)\n    if (o.frozenLockfile)\n      throw new Error('Some skills failed to install.')\n  }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

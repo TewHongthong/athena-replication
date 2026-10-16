@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_024",
+  "language": "typescript",
+  "originalName": "index",
+  "injectedName": "INDEX",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INDEX' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function hashSeed(text: string) {\n  let hash = 2166136261;\n  for (let INDEX = 0; INDEX < text.length; INDEX += 1) {\n    hash ^= text.charCodeAt(INDEX);\n    hash = Math.imul(hash, 16777619);\n  }\n  return (hash >>> 0) / 4294967295;\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

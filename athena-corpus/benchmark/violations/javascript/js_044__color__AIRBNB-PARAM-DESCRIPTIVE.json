@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_044",
+  "language": "javascript",
+  "originalName": "color",
+  "injectedName": "c",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'c' shorter than minLength=2",
+    "name 'c' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function colorize(text, c, enabled) {\n  if (!enabled) return text\n  const codes = {\n    red: '31',\n    green: '32',\n    yellow: '33',\n    cyan: '36',\n    gray: '90',\n    bold: '1',\n    dim: '2',\n  }\n  const code = codes[c] || '0'\n  return `\\x1b[${code}m${text}\\x1b[0m`\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_098",
+  "language": "csharp",
+  "originalName": "path",
+  "injectedName": "PATH",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PATH' does not match camelCase pattern",
+    "name 'PATH' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static async Task EnsureModelAsync(AppSettings s, IProgress<long>? progressMb, CancellationToken ct)\n{\n    string PATH = ModelPath(s.ModelType, s.ModelQuantization);\n    if (File.Exists(PATH)) return;\n\n    Directory.CreateDirectory(AppPaths.Models);\n    string partial = PATH + \".part\";\n    Log.Write($\"Downloading model {s.ModelType} {s.ModelQuantization}\");\n    await using (var source = await WhisperGgmlDownloader.Default.GetGgmlModelAsync(s.ModelType, s.ModelQuantization, ct))\n    await using (var target = File.Create(partial))\n    {\n        var buffer = new byte[1 << 20];\n        long total = 0, lastMb = -1;\n        int read;\n        while ((read = await source.ReadAsync(buffer, ct)) > 0)\n        {\n            await target.WriteAsync(buffer.AsMemory(0, read), ct);\n            total += read;\n            long mb = total >> 20;\n            if (mb != lastMb) progressMb?.Report(lastMb = mb);\n        }\n    }\n    File.Move(partial, PATH, overwrite: true);\n    Log.Write(\"Model download complete\");\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

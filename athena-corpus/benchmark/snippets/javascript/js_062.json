@@ -1,0 +1,42 @@
+{
+  "id": "js_062",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/utils/tui.js lines 111-120 (function defaultPrompt); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "async function defaultPrompt(question) {\n  const { createInterface } = await import('node:readline')\n  const rl = createInterface({ input, output })\n  return new Promise((resolve) => {\n    rl.question(question, (answer) => {\n      rl.close()\n      resolve(answer.trim().toLowerCase())\n    })\n  })\n}",
+  "identifiers": [
+    {
+      "name": "defaultPrompt",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "question",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "resolve",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "answer",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/utils/tui.js",
+    "startLine": 111,
+    "endLine": 120,
+    "unit": "function defaultPrompt",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__tui.js.md"
+  }
+}

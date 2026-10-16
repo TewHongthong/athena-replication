@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_069",
+  "language": "typescript",
+  "originalName": "subscription",
+  "injectedName": "SUBSCRIPTION",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SUBSCRIPTION' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function useReducedMotion() {\n  const [reduced, setReduced] = useState(false);\n\n  useEffect(() => {\n    let active = true;\n    AccessibilityInfo.isReduceMotionEnabled()\n      .then((value) => {\n        if (active) setReduced(value);\n      })\n      .catch(() => {});\n    const SUBSCRIPTION = AccessibilityInfo.addEventListener(\"reduceMotionChanged\", setReduced);\n    return () => {\n      active = false;\n      SUBSCRIPTION?.remove();\n    };\n  }, []);\n\n  return reduced;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

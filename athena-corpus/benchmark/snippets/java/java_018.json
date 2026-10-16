@@ -1,0 +1,52 @@
+{
+  "id": "java_018",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/order/OrderCreationService.java lines 40-61 (method OrderCreationService.create); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Auditable(action = AuditAction.CREATE, entity = \"Order\")\n@Transactional\npublic OrderResponse create(CreateOrderRequest request, String userEmail) {\n    var user = userRepository.findByEmail(userEmail)\n            .orElseThrow(() -> new NotFoundException(\"User not found\"));\n    validateDelivery(request);\n    var items = createOrderItems(request.items());\n    var totalAmount = calculateTotalAmount(items);\n    var order = buildOrder(request, items, totalAmount);\n    order.setUser(user);\n    items.forEach(i -> i.setOrder(order));\n\n    if (request.paymentMethod() == PaymentMethod.ON_DELIVERY) {\n        order.setStatus(OrderStatus.CONFIRMED);\n    }\n\n    var saved = orderRepository.save(order);\n    var notification = new OrderStatusUpdateResponse(saved.getId(), saved.getStatus().name(), orderMapper.getPaymentStatus(saved));\n    TransactionCallbacks.afterCommit(() -> messagingTemplate.convertAndSend(\"/topic/orders/new\", notification));\n    log.info(\"Order created: {}\", saved.getId());\n    return orderMapper.toResponse(saved);\n}",
+  "identifiers": [
+    {
+      "name": "create",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "user",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "request",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "userEmail",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "items",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "totalAmount",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/order/OrderCreationService.java",
+    "startLine": 40,
+    "endLine": 61,
+    "unit": "method OrderCreationService.create",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__OrderCreationService.java.md"
+  }
+}

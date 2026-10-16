@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_024",
+  "language": "python",
+  "originalName": "memory_enabled",
+  "injectedName": "MEMORY_ENABLED",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MEMORY_ENABLED' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass Arm:\n    name: str\n    description: str = \"\"\n    compose_mode: str | None = None\n    context_strategy: str = \"full\"\n    MEMORY_ENABLED: bool = False\n    executor: str | None = None\n    publish: bool = False\n    requires: list[str] = field(default_factory=list)\n    skip_steps: list[str] | None = None",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

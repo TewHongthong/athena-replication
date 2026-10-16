@@ -1,0 +1,47 @@
+{
+  "id": "ts_052",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/components/studio/LimitTape.tsx lines 12-39 (function LimitTape); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function LimitTape({ limitSeconds, elapsedMs, recording }: LimitTapeProps) {\n  const free = limitSeconds <= 0;\n  const progress = limitProgress(limitSeconds, elapsedMs);\n  const remaining = remainingMs(limitSeconds, elapsedMs);\n  const urgent = recording && isFinalStretch(limitSeconds, elapsedMs);\n\n  return (\n    <View style={styles.wrap} accessibilityLabel={free ? \"Sem limite de duração\" : `Limite de ${limitSeconds} segundos`}>\n      <Text style={styles.caption}>{free ? \"LIMITE LIVRE\" : `LIMITE ${formatLimit(limitSeconds).toUpperCase()}`}</Text>\n      <View style={styles.track}>\n        {free ? (\n          <View style={styles.freeLine} />\n        ) : (\n          tapeTicks(limitSeconds).map((tick) => (\n            <View\n              key={tick.position}\n              style={[styles.tick, tick.major && styles.tickMajor, { left: `${tick.position * 100}%` }, tick.position <= progress && recording && styles.tickPassed]}\n            />\n          ))\n        )}\n        {!free && recording ? <View style={[styles.fill, urgent && styles.fillUrgent, { width: `${progress * 100}%` }]} /> : null}\n      </View>\n      <Text style={[styles.caption, styles.remaining, urgent && styles.urgent]}>\n        {free ? \"\" : `RESTA ${formatCountdown(remaining ?? 0)}`}\n      </Text>\n    </View>\n  );\n}",
+  "identifiers": [
+    {
+      "name": "free",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "tick",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "progress",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "remaining",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "urgent",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/components/studio/LimitTape.tsx",
+    "startLine": 12,
+    "endLine": 39,
+    "unit": "function LimitTape",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__LimitTape.tsx.md"
+  }
+}

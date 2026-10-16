@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_061",
+  "language": "javascript",
+  "originalName": "available",
+  "injectedName": "a",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'a' shorter than minLength=2",
+    "name 'a' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function getTemplate(name) {\n  const tmpl = TEMPLATES[name]\n  if (!tmpl) {\n    const a = getTemplateNames().join(', ')\n    throw new Error(\n      `Unknown template: \"${name}\". Available templates: ${a}`,\n    )\n  }\n  return {\n    name,\n    description: tmpl.description,\n    generate: tmpl.generate,\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

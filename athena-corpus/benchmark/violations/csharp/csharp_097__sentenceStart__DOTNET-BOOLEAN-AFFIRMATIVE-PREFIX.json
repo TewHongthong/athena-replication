@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_097",
+  "language": "csharp",
+  "originalName": "sentenceStart",
+  "injectedName": "notSentenceStart",
+  "identifierKind": "boolean_variable",
+  "violatedRuleId": "DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'notSentenceStart' matches forbidden pattern '^(not|cant|isnt|dont)[A-Z]'"
+  ],
+  "codeContextWithViolation": "static string RemoveWords(string s, Regex rx, bool requireBoundaries) => rx.Replace(s, m =>\n{\n    bool hasPre = m.Groups[\"pre\"].Success;\n    string post = m.Groups[\"post\"].Success ? m.Groups[\"post\"].Value.Trim() : \"\";\n    bool notSentenceStart = !hasPre && IsSentenceStart(s, m.Index);\n    bool boundaryBefore = hasPre || PreviousChar(s, m.Index) == Pause;\n    var rest = s.AsSpan(m.Index + m.Length).TrimStart(' ');\n    bool boundaryAfter = post.Length > 0 || rest.IsEmpty || rest[0] == Pause;\n\n    if (requireBoundaries && !((boundaryBefore || notSentenceStart) && boundaryAfter))\n        return m.Value;\n\n    string endPunct = post.Replace(\",\", \"\");\n    if (endPunct.Length > 0) return notSentenceStart ? \" \" : endPunct + \" \";\n    return notSentenceStart ? \" \" + Cap : \" \";\n});",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

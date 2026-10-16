@@ -1,0 +1,52 @@
+{
+  "id": "js_029",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/diff.js lines 4-18 (function diffLines); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function diffLines(aLines, bLines) {\n  const added = []\n  const removed = []\n  const aSet = new Set(aLines)\n  const bSet = new Set(bLines)\n\n  for (const line of aLines) {\n    if (!bSet.has(line)) removed.push(line)\n  }\n  for (const line of bLines) {\n    if (!aSet.has(line)) added.push(line)\n  }\n\n  return { added, removed }\n}",
+  "identifiers": [
+    {
+      "name": "diffLines",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "aSet",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "aLines",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "bLines",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "bSet",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "line",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/diff.js",
+    "startLine": 4,
+    "endLine": 18,
+    "unit": "function diffLines",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__diff.js.md"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_100",
+  "language": "csharp",
+  "originalName": "words",
+  "injectedName": "WORDS",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'WORDS' does not match camelCase pattern",
+    "name 'WORDS' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "void Save()\n{\n    string word = _word.Text.Trim();\n    if (word.Length == 0)\n    {\n        ShowError(\"Type the word or name first.\");\n        return;\n    }\n    if (_replace.IsChecked == true)\n    {\n        if (DictionaryPage.AddFix(_c, word, _replacement.Text) is { } problem)\n        {\n            ShowError(problem);\n            return;\n        }\n        _c.Announce($\"From now on, “{word}” is typed as “{_replacement.Text.Trim()}”.\");\n    }\n    else\n    {\n        _c.Update(s =>\n        {\n            var WORDS = s.Vocabulary.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList();\n            if (!WORDS.Contains(word, StringComparer.OrdinalIgnoreCase)) WORDS.Add(word);\n            s.Vocabulary = string.Join(\", \", WORDS);\n        });\n        _c.Announce($\"Added “{word}” to the words BetterSTT should know.\");\n    }\n    Close();\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

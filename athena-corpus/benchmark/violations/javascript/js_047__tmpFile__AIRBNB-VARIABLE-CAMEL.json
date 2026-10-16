@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_047",
+  "language": "javascript",
+  "originalName": "tmpFile",
+  "injectedName": "tmp_file",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'tmp_file' does not match camelCase pattern",
+    "name 'tmp_file' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export async function profileEditCommand(name) {\n  if (!name) {\n    console.error('Usage: rolecraft profile edit <name>')\n    throw new Error('Missing profile name.')\n  }\n\n  const data = await readProfile(name)\n  if (!data) throw new Error(`Profile \"${name}\" not found.`)\n\n  const editor = process.env.EDITOR || 'vi'\n  const tmpDir = mkdtempSync(join(tmpdir(), 'rolecraft-profile-'))\n  const tmp_file = join(tmpDir, `${name}.json`)\n  writeFileSync(tmp_file, `${JSON.stringify(data, null, 2)}\\n`, 'utf-8')\n\n  try {\n    const [editorCmd, ...editorArgs] = editor.split(/\\s+/)\n    const result = spawnSync(editorCmd, [...editorArgs, tmp_file], {\n      stdio: 'inherit',\n    })\n    if (result.error) throw result.error\n    if (result.status !== 0)\n      throw new Error(\n        `Command failed: ${editorCmd} exited with code ${result.status}`,\n      )\n    const edited = JSON.parse(readFileSync(tmp_file, 'utf-8'))\n    edited.name = name\n    await writeProfile(edited)\n    console.log(`\\n✅ Profile \"${name}\" updated.`)\n  } catch (err) {\n    if (err instanceof SyntaxError)\n      throw new Error(`Invalid JSON after editing. Profile not saved.`)\n    throw err\n  } finally {\n    try {\n      unlinkSync(tmp_file)\n      rmdirSync(tmpDir)\n    } catch {}\n  }\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

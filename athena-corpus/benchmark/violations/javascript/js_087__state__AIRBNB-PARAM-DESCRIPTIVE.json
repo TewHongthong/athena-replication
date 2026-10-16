@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_087",
+  "language": "javascript",
+  "originalName": "state",
+  "injectedName": "s",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 's' shorter than minLength=2",
+    "name 's' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function setActiveExamTags(s,tags=[],{configuredAt=null}={}){\n  if(!s?.examBlueprint)throw new TypeError('Estado da prova inválido.');\n  const next=normalizeExamTags(tags),changed=JSON.stringify(next)!==JSON.stringify(normalizeExamTags(s.examBlueprint.activeExamTags));\n  if(!changed)return false;\n  s.examBlueprint.activeExamTags=next;\n  if(configuredAt)s.examBlueprint.configuredAt=configuredAt;\n  for(const field of DERIVED_FIELDS)if(field in s)s[field]=null;\n  return true;\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

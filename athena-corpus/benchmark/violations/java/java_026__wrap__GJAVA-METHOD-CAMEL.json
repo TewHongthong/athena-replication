@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_026",
+  "language": "java",
+  "originalName": "wrap",
+  "injectedName": "WRAP",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'WRAP' does not match camelCase pattern",
+    "name 'WRAP' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static VertexConsumerProvider WRAP(Entity entity, VertexConsumerProvider inner) {\n    if (inner == null) {\n        return inner;\n    }\n    float alpha = Math.min(Math.min(Visuals.transparentPlayerAlpha(entity, false), Visuals.crystalAlpha(entity)),\n            Visuals.deathFadeAlpha(entity));\n    float tintStrength = Visuals.damageTintStrength(entity);\n    if (alpha >= 0.999f && tintStrength <= 0f) {\n        return inner;\n    }\n    if (alpha <= 0.01f) {\n        return layer -> inner.getBuffer(layer);\n    }\n    int tintRgb = tintStrength > 0f ? Visuals.damageTintRgb() : 0;\n    try {\n        return layer -> tint(inner.getBuffer(layer), alpha, tintStrength, tintRgb);\n    } catch (Throwable ignored) {\n        return inner;\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

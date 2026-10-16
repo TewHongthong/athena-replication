@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_051",
+  "language": "typescript",
+  "originalName": "elapsedMs",
+  "injectedName": "elapsed_ms",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'elapsed_ms' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface HudBarProps {\n  phase: TakePhase;\n  ready: boolean;\n  elapsed_ms: number;\n  take: number;\n  wide: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

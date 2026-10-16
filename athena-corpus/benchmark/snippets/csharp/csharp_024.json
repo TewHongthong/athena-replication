@@ -1,0 +1,42 @@
+{
+  "id": "csharp_024",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/IconCatalog.cs lines 9-36 (class IconCatalog); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public static class IconCatalog\n{\n    public static readonly IReadOnlyList<(string Key, string Icon)> Options = new List<(string, string)>\n    {\n        (\"Inventory2\", Icons.Material.Filled.Inventory2),\n        (\"Kitchen\", Icons.Material.Filled.Kitchen),\n        (\"MenuBook\", Icons.Material.Filled.MenuBook),\n        (\"Dashboard\", Icons.Material.Filled.Dashboard),\n        (\"QrCodeScanner\", Icons.Material.Filled.QrCodeScanner),\n        (\"Handyman\", Icons.Material.Filled.Handyman),\n        (\"Devices\", Icons.Material.Filled.Devices),\n        (\"Album\", Icons.Material.Filled.Album),\n        (\"Checkroom\", Icons.Material.Filled.Checkroom),\n        (\"Category\", Icons.Material.Filled.Category),\n        (\"Room\", Icons.Material.Filled.Room),\n        (\"Home\", Icons.Material.Filled.Home),\n        (\"Star\", Icons.Material.Filled.Star),\n        (\"ShoppingCart\", Icons.Material.Filled.ShoppingCart),\n        (\"Kitchen2\", Icons.Material.Filled.Blender),\n    };\n\n    private static readonly Dictionary<string, string> Map =\n        Options.ToDictionary(o => o.Key, o => o.Icon, StringComparer.OrdinalIgnoreCase);\n\n    /// <summary>Resolves a stored icon key to a MudBlazor icon, falling back to a generic one.</summary>\n    public static string Resolve(string? key) =>\n        key is not null && Map.TryGetValue(key, out var icon) ? icon : Icons.Material.Filled.Category;\n}",
+  "identifiers": [
+    {
+      "name": "IconCatalog",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "Resolve",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "Options",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "key",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/IconCatalog.cs",
+    "startLine": 9,
+    "endLine": 36,
+    "unit": "class IconCatalog",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__IconCatalog.cs.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_097",
+  "language": "typescript",
+  "originalName": "values",
+  "injectedName": "VALUES",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'VALUES' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Multiple() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-2\">\n      <Label htmlFor=\"paises\">Países donde operás</Label>\n      <Combobox items={PAISES} multiple>\n        <ComboboxChips>\n          <ComboboxValue>\n            {(VALUES: string[]) => (\n              <>\n                {VALUES.map((value) => (\n                  <ComboboxChip key={value}>{value}</ComboboxChip>\n                ))}\n                <ComboboxChipsInput id=\"paises\" />\n              </>\n            )}\n          </ComboboxValue>\n        </ComboboxChips>\n        <ComboboxContent>\n          <ComboboxEmpty />\n          <ComboboxList>{(item: string) => <ComboboxItem key={item} value={item}>{item}</ComboboxItem>}</ComboboxList>\n        </ComboboxContent>\n      </Combobox>\n    </div>\n  )\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

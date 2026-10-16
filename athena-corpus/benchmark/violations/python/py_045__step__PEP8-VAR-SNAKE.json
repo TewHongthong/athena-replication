@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_045",
+  "language": "python",
+  "originalName": "step",
+  "injectedName": "STEP",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'STEP' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def blueprint_to_yaml(sequence: Any) -> str:\n    \"\"\"Serialise a BlueprintDefinition to a YAML string.\n\n    Args:\n        sequence: A BlueprintDefinition instance.\n\n    Returns:\n        YAML representation of the blueprint as a string.\n    \"\"\"\n    yaml = YAML()\n    yaml.preserve_quotes = True\n    yaml.default_flow_style = False\n\n    data = {\n        \"name\": sequence.name,\n        \"description\": sequence.description,\n        \"inputs\": sequence.inputs,\n        \"steps\": [\n            {\n                \"name\": STEP.name,\n                \"brick\": STEP.brick,\n                \"params\": STEP.params,\n                **({\"save_as\": STEP.save_as} if STEP.save_as else {}),\n            }\n            for STEP in sequence.steps\n        ],\n        \"outputs_map\": sequence.outputs_map,\n    }\n\n    stream = io.StringIO()\n    yaml.dump(data, stream)\n    return stream.getvalue()",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_049",
+  "language": "java",
+  "originalName": "index",
+  "injectedName": "INDEX",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INDEX' does not match camelCase pattern",
+    "name 'INDEX' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "class AdminAccountMenuContractTest {\n\n  @Test\n  void administrationUsesTheSharedBrowseAccountMenu() throws IOException {\n    String INDEX = resource(\"/META-INF/resources/admin/index.html\");\n\n    assertTrue(INDEX.contains(\"/browse/assets/account-menu.css?v=20260824-ui-themes-3\"));\n    assertTrue(INDEX.contains(\"user-avatar-icon lucide-icon icon-user-round\"));\n    assertTrue(INDEX.contains(\"class=\\\"user-name\\\" id=\\\"current-user\\\"\"));\n    assertFalse(INDEX.contains(\"current-user-source\"));\n    assertTrue(INDEX.contains(\"id=\\\"user-menu-source\\\"\"));\n    assertTrue(INDEX.contains(\"id=\\\"my-token-menu-item\\\"\"));\n    assertTrue(INDEX.contains(\"user-menu-item-danger\"));\n  }\n\n  @Test\n  void administrationKeepsDetailsInThePopoverAndLinksToMyToken() throws IOException {\n    String javascript = resource(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(javascript.contains(\"function accountSourceLabel(source)\"));\n    assertTrue(javascript.contains(\"currentUser.textContent = userId\"));\n    assertTrue(javascript.contains(\"userMenuSource.textContent = sourceLabel\"));\n    assertTrue(javascript.contains(\n        \"userMenuTrigger.setAttribute(\\\"aria-label\\\", `Account menu for ${qualifiedUser}`)\"));\n    assertTrue(javascript.contains(\"window.location.href = \\\"/browse/#browse/my-token\\\"\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 8,
+  "commentOccurrencesRenamed": 0
+}

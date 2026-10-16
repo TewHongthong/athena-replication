@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_031",
+  "language": "javascript",
+  "originalName": "skillDir",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function parseSkillContent(l) {\n  const skillPath = join(l, 'SKILL.md')\n  try {\n    const raw = readFileSync(skillPath, 'utf-8')\n    const { attrs, body } = parseFrontmatter(raw)\n    const sections = splitSections(body)\n    return { attrs, sections }\n  } catch {\n    return null\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

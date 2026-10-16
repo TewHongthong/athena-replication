@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_056",
+  "language": "python",
+  "originalName": "load_token_ids",
+  "injectedName": "LOAD_TOKEN_IDS",
+  "identifierKind": "function",
+  "violatedRuleId": "PEP8-FUNC-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOAD_TOKEN_IDS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def LOAD_TOKEN_IDS(raw: str) -> list[int]:\n    \"\"\"Parse a token-id input: a JSON array, or one integer per line.\"\"\"\n    stripped = raw.strip()\n    if stripped.startswith(\"[\"):\n        data = json.loads(stripped)\n        if not isinstance(data, list) or not all(isinstance(x, int) for x in data):\n            raise ValueError(\"token-id JSON must be an array of integers\")\n        return data\n    ids: list[int] = []\n    for raw_line in stripped.splitlines():\n        line = raw_line.strip()\n        if not line:\n            continue\n        ids.append(int(line, 0))\n    return ids",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

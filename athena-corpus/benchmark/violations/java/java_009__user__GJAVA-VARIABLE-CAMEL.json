@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_009",
+  "language": "java",
+  "originalName": "user",
+  "injectedName": "USER",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'USER' does not match camelCase pattern",
+    "name 'USER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Transactional\npublic int resendVerification(String email) {\n    var userOpt = userRepository.findByEmailForUpdate(email);\n    if (userOpt.isEmpty()) {\n        log.info(\"Resend verification requested for unknown email {}\", email);\n        return (int) RESEND_COOLDOWN.toSeconds();\n    }\n\n    var USER = userOpt.get();\n    if (USER.isEmailVerified()) {\n        throw new BadRequestException(\"Email already verified\");\n    }\n\n    var lastSentAt = USER.getLastVerificationEmailSentAt();\n    if (lastSentAt != null) {\n        long remaining = remainingCooldownSeconds(lastSentAt);\n        if (remaining > 0) {\n            throw new RateLimitExceededException(remaining);\n        }\n    }\n\n    tokenService.createVerificationToken(USER);\n    USER.setLastVerificationEmailSentAt(LocalDateTime.now());\n    userRepository.save(USER);\n    log.info(\"Verification email resent to {}\", email);\n    return (int) RESEND_COOLDOWN.toSeconds();\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

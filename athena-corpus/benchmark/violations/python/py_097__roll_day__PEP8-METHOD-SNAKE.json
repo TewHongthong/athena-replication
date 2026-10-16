@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_097",
+  "language": "python",
+  "originalName": "roll_day",
+  "injectedName": "ROLL_DAY",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ROLL_DAY' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class GapBook:\n    def __init__(self):\n        self._day: str | None = None\n        self._gap: dict[str, float] = {}\n\n    def ROLL_DAY(self, day: str) -> None:\n        if day != self._day:\n            self._day = day\n            self._gap.clear()\n\n    def observe(self, symbol: str, day_change_pct: float | None) -> None:\n        if day_change_pct is None:\n            return\n        key = symbol.upper()\n        if key not in self._gap:\n            self._gap[key] = float(day_change_pct)\n\n    def get(self, symbol: str) -> float | None:\n        return self._gap.get(symbol.upper())",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

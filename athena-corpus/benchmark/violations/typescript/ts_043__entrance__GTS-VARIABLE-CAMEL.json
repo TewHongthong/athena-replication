@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_043",
+  "language": "typescript",
+  "originalName": "entrance",
+  "injectedName": "ENTRANCE",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ENTRANCE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function useEntrance() {\n  const ENTRANCE = useRef(new Animated.Value(0)).current;\n  useEffect(() => {\n    Animated.timing(ENTRANCE, { toValue: 1, duration: 360, easing: motion.drawer, useNativeDriver: motion.native }).start();\n  }, []);\n  return {\n    opacity: ENTRANCE,\n    transform: [{ translateY: ENTRANCE.interpolate({ inputRange: [0, 1], outputRange: [18, 0] }) }],\n  };\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

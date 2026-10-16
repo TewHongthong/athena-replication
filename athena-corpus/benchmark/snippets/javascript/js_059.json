@@ -1,0 +1,52 @@
+{
+  "id": "js_059",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/utils/resolver.js lines 381-410 (function parseNpmRef); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function parseNpmRef(source) {\n  const npmPart = source.slice(4)\n  if (!npmPart) throw new Error(`Invalid npm reference: \"${source}\"`)\n  let pkgName, version\n\n  if (npmPart.startsWith('@')) {\n    const slashIdx = npmPart.indexOf('/')\n    if (slashIdx === -1) throw new Error(`Invalid npm reference: \"${source}\"`)\n    const rest = npmPart.slice(slashIdx + 1)\n    const atIdx = rest.indexOf('@')\n    if (atIdx > 0) {\n      pkgName = npmPart.slice(0, slashIdx + 1 + atIdx)\n      version = rest.slice(atIdx + 1)\n    } else {\n      pkgName = npmPart\n      version = 'latest'\n    }\n  } else {\n    const atIdx = npmPart.lastIndexOf('@')\n    if (atIdx > 0) {\n      pkgName = npmPart.slice(0, atIdx)\n      version = npmPart.slice(atIdx + 1)\n    } else {\n      pkgName = npmPart\n      version = 'latest'\n    }\n  }\n\n  return { pkgName, version }\n}",
+  "identifiers": [
+    {
+      "name": "parseNpmRef",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "npmPart",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "source",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "slashIdx",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "rest",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "atIdx",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/utils/resolver.js",
+    "startLine": 381,
+    "endLine": 410,
+    "unit": "function parseNpmRef",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__resolver.js.md"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "csharp_077",
+  "language": "csharp",
+  "source": "github:thecheetoman/ESim@59cde034d0041d0af0a43cdf7e43d979935b7db8",
+  "sourceDetail": "Assets/Scripts/Field/RobotUI.cs lines 24-45 (method RobotUI.Update); license MIT; repo created 2026-09-16T23:28:41Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "void Update()\n{\n    float robotY = robot.eulerAngles.y;\n    if (robot != null)\n    {\n        // Get the Y rotation angle from the target object\n\n        // Apply it to the 2D object's Z axis (multiplied if needed)\n        transform.rotation = Quaternion.Euler(0f, 0f, -robotY + offsetRobot);\n    }\n    if (turret != null)\n    {\n        float turretY = turret.eulerAngles.y;\n        turretSprite.transform.rotation = Quaternion.Euler(0f, 0f, -turretY + turretOffset);\n    }\n    float sOffset = -robotY+offsetRobot;\n    FRS.transform.rotation = Quaternion.Euler(0f, 0f, -FR.wheelAngle + sOffset);\n    FLS.transform.rotation = Quaternion.Euler(0f, 0f, -FL.wheelAngle + sOffset);\n    RRS.transform.rotation = Quaternion.Euler(0f, 0f, -RR.wheelAngle + sOffset);\n    RLS.transform.rotation = Quaternion.Euler(0f, 0f, -RL.wheelAngle + sOffset);\n\n}",
+  "identifiers": [
+    {
+      "name": "Update",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "robotY",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "turretY",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "sOffset",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "thecheetoman/ESim",
+    "repoUrl": "https://github.com/thecheetoman/ESim",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-16T23:28:41Z",
+    "commit": "59cde034d0041d0af0a43cdf7e43d979935b7db8",
+    "path": "Assets/Scripts/Field/RobotUI.cs",
+    "startLine": 24,
+    "endLine": 45,
+    "unit": "method RobotUI.Update",
+    "corpusFile": "corpus/csharp/thecheetoman__ESim__RobotUI.cs.md"
+  }
+}

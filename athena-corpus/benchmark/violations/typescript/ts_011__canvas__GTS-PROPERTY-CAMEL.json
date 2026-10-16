@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_011",
+  "language": "typescript",
+  "originalName": "canvas",
+  "injectedName": "CANVAS",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CANVAS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface Canvas2DContext {\n  CANVAS: { width: number; height: number };\n  lineWidth: number;\n  lineCap: string;\n  lineJoin: string;\n  strokeStyle: string | object;\n  setTransform(a: number, b: number, c: number, d: number, e: number, f: number): void;\n  clearRect(x: number, y: number, w: number, h: number): void;\n  stroke(path: object): void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "js_070",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/analytics/build-period-comparison-view-model.js lines 19-30 (function aggregate); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function aggregate({ sessions, questions, reviews }, range) {\n  const selectedSessions = sessions.filter(item => within(item, range.start, range.end));\n  const selectedQuestions = questions.filter(item => within(item, range.start, range.end));\n  const selectedReviews = reviews.filter(item => within(item, range.start, range.end) && ['Concluído', 'completed', 'done'].includes(item.status));\n  const resolved = sum(selectedQuestions, 'resolved');\n  return {\n    minutes: Math.round(sum(selectedSessions, 'durationSeconds') / 60),\n    questions: resolved,\n    accuracy: resolved ? Math.round(sum(selectedQuestions, 'correct') / resolved * 100) : null,\n    reviews: selectedReviews.length\n  };\n}",
+  "identifiers": [
+    {
+      "name": "aggregate",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "selectedSessions",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "range",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "selectedQuestions",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "selectedReviews",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/analytics/build-period-comparison-view-model.js",
+    "startLine": 19,
+    "endLine": 30,
+    "unit": "function aggregate",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__build-period-comparison-view-model.js.md"
+  }
+}

@@ -1,0 +1,32 @@
+# src/Stashographer/Data/Entities/Location.cs
+
+- source repo: Wixely/Stashographer
+- repo url: https://github.com/Wixely/Stashographer
+- license: MIT
+- created_at: 2026-08-18T03:19:36Z
+- file path: src/Stashographer/Data/Entities/Location.cs
+- commit: e6568f9ca670f00ead30fe18c88491466eba11d1
+
+```csharp
+namespace Stashographer.Data.Entities;
+
+/// <summary>
+/// A room or area in the house (Kitchen, Garage, Loft…). Locations may contain
+/// <see cref="Container"/>s (boxes/shelves) and items may live directly in a location or
+/// inside one of its containers.
+/// </summary>
+public class Location
+{
+    public int Id { get; set; }
+
+    public string Name { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+
+    /// <summary>Primary stored image, served at <c>/img/{id}</c>.</summary>
+    public int? ImageId { get; set; }
+
+    /// <summary>Populated by the data layer when locations are loaded with their containers.</summary>
+    public List<Container> Containers { get; set; } = new();
+}
+```

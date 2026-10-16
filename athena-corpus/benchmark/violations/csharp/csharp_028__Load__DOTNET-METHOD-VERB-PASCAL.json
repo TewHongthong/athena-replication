@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_028",
+  "language": "csharp",
+  "originalName": "Load",
+  "injectedName": "load",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'load' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed class GameDisplayPreferencesStore(string path)\n{\n    private readonly string path = Path.GetFullPath(path);\n\n    public GameDisplayPreferences load()\n    {\n        try\n        {\n            return File.Exists(path)\n                ? JsonSerializer.Deserialize<GameDisplayPreferences>(File.ReadAllText(path)) ?? new()\n                : new();\n        }\n        catch (Exception exception) when (exception is IOException or UnauthorizedAccessException or JsonException)\n        {\n            return new();\n        }\n    }\n\n    public void Save(GameDisplayPreferences preferences)\n    {\n        ArgumentNullException.ThrowIfNull(preferences);\n        var directory = Path.GetDirectoryName(path) ??\n            throw new InvalidOperationException(\"The game settings path has no directory.\");\n        Directory.CreateDirectory(directory);\n        var temporary = path + \".\" + Guid.NewGuid().ToString(\"N\") + \".tmp\";\n        try\n        {\n            File.WriteAllText(temporary, JsonSerializer.Serialize(preferences));\n            File.Move(temporary, path, overwrite: true);\n        }\n        finally\n        {\n            if (File.Exists(temporary)) File.Delete(temporary);\n        }\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

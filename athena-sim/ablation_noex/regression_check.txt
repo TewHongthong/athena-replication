@@ -1,0 +1,7 @@
+rename ../runs/test_luna_gscs_rename: chunk same 366, fulldoc same 366, graph same 366, none same 366
+rename ../runs/test_o3mini_gscs_rename: chunk same 366, fulldoc same 366, graph same 366, none same 366
+rename: graph_noex == graph minus example lines (and differs from graph) for 122/122 test units
+comment ../runs/test_luna_gscs_comment: chunk same 36, fulldoc same 36, graph same 36, none same 36
+comment ../runs/test_o3mini_gscs_comment: chunk same 36, fulldoc same 36, graph same 36, none same 36
+comment: graph_noex == graph minus example lines (and differs from graph) for 12/12 test units
+REGRESSION PASS

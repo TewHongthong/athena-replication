@@ -1,0 +1,52 @@
+{
+  "id": "py_065",
+  "language": "python",
+  "source": "github:mchittineni/repo-radar@940230885e4de2998792843235af48bb676401af",
+  "sourceDetail": "scripts/cleanup_readme.py lines 48-81 (function extract_repo_sections); license MIT; repo created 2026-08-19T15:35:28Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def extract_repo_sections(content: str) -> tuple[list[dict[str, str]], list[str]]:\n    \"\"\"\n    Extract repository sections from README content.\n\n    Supports both the current <details> format and the legacy ## 📂 format.\n    \"\"\"\n    repo_info = []\n    raw_sections = []\n\n    details_pattern = r'<!-- repo:(.*?) -->\\s*<details>[\\s\\S]*?</details>'\n    for match in re.finditer(details_pattern, content):\n        repo_name = match.group(1).strip()\n        section_text = match.group(0)\n        raw_sections.append(section_text)\n        repo_info.append({\n            \"name\": repo_name,\n            \"url\": \"\",\n            \"text\": section_text,\n        })\n\n    if repo_info:\n        return repo_info, raw_sections\n\n    section_pattern = r'## 📂 \\[(.*?)\\]\\((.*?)\\)[\\s\\S]*?(?=## 📂|<!-- repo:|\\Z)'\n    for match in re.finditer(section_pattern, content):\n        section_text = match.group(0)\n        raw_sections.append(section_text)\n        repo_info.append({\n            \"name\": match.group(1),\n            \"url\": match.group(2),\n            \"text\": section_text,\n        })\n\n    return repo_info, raw_sections",
+  "identifiers": [
+    {
+      "name": "extract_repo_sections",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "repo_info",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "content",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "raw_sections",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "details_pattern",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "match",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "mchittineni/repo-radar",
+    "repoUrl": "https://github.com/mchittineni/repo-radar",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-19T15:35:28Z",
+    "commit": "940230885e4de2998792843235af48bb676401af",
+    "path": "scripts/cleanup_readme.py",
+    "startLine": 48,
+    "endLine": 81,
+    "unit": "function extract_repo_sections",
+    "corpusFile": "corpus/python/mchittineni__repo-radar__cleanup_readme.py.md"
+  }
+}

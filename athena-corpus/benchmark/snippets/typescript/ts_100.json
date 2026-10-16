@@ -1,0 +1,32 @@
+{
+  "id": "ts_100",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_demos/meter.tsx lines 60-87 (function LicenciasPorEquipo); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function LicenciasPorEquipo() {\n  const equipos = [\n    { nombre: \"Ventas\", licencias: 48, usadas: 41 },\n    { nombre: \"Soporte\", licencias: 30, usadas: 12 },\n    { nombre: \"Administración\", licencias: 22, usadas: 22 },\n  ]\n\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-4\">\n      {equipos.map((equipo) => (\n        <div className=\"flex flex-col gap-1.5\" key={equipo.nombre}>\n          <div className=\"flex items-baseline justify-between\">\n            <span className=\"text-label-14 text-gray-1000\">{equipo.nombre}</span>\n            <span className=\"text-copy-13 text-gray-900\">\n              {equipo.usadas} de {equipo.licencias} licencias\n            </span>\n          </div>\n          <Meter\n            aria-label={`Licencias usadas de ${equipo.nombre}`}\n            max={equipo.licencias}\n            size=\"sm\"\n            value={equipo.usadas}\n          />\n        </div>\n      ))}\n    </div>\n  )\n}",
+  "identifiers": [
+    {
+      "name": "equipos",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "equipo",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_demos/meter.tsx",
+    "startLine": 60,
+    "endLine": 87,
+    "unit": "function LicenciasPorEquipo",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__meter.tsx.md"
+  }
+}

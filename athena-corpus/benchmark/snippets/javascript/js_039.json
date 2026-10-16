@@ -1,0 +1,37 @@
+{
+  "id": "js_039",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/commands/agents-xml.js lines 3-16 (function agentsXmlCommand); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export async function agentsXmlCommand(writeToFile = false) {\n  const result = await agentsXmlApi(writeToFile)\n\n  if (!result.xml) {\n    console.log('No skills found in lockfile.')\n    return\n  }\n\n  if (result.written) {\n    console.log(`✅ Wrote skills XML to ${result.path}`)\n  } else {\n    console.log(result.xml)\n  }\n}",
+  "identifiers": [
+    {
+      "name": "agentsXmlCommand",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "result",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "writeToFile",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/commands/agents-xml.js",
+    "startLine": 3,
+    "endLine": 16,
+    "unit": "function agentsXmlCommand",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__agents-xml.js.md"
+  }
+}

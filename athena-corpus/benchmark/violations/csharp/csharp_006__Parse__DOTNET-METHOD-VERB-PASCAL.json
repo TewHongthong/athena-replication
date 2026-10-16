@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_006",
+  "language": "csharp",
+  "originalName": "Parse",
+  "injectedName": "parse",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'parse' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public class JsonTypeHandler<T> : SqlMapper.TypeHandler<T> where T : new()\n{\n    private static readonly JsonSerializerOptions Options = new(JsonSerializerDefaults.Web);\n\n    public override void SetValue(IDbDataParameter parameter, T? value)\n    {\n        parameter.DbType = DbType.String;\n        parameter.Value = JsonSerializer.Serialize(value, Options);\n    }\n\n    public override T parse(object? value) =>\n        value is string s && !string.IsNullOrWhiteSpace(s)\n            ? JsonSerializer.Deserialize<T>(s, Options) ?? new T()\n            : new T();\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

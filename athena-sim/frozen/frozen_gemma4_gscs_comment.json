@@ -1,0 +1,51 @@
+{
+  "harness_version": "0.1.0",
+  "code_sha256": {
+    "athena/__init__.py": "4b17cf5c0b303903fc4cfe9a3f4b66a7e852812c84b1b87967ba25973a1cd388",
+    "athena/evaluate.py": "266c34e882404bdfba342c70cc0bc39607ced957ae349ca31addc43efc8e50f6",
+    "athena/freeze.py": "dadaca398c13e65a1225f92687edcc0495f078b224e990d64e3e853ebc16f4bc",
+    "athena/llm.py": "dc131718d9e638f641b92a457a9e9409ce5a5d2fed7be6a8a61143d31ea48e58",
+    "athena/ontology.py": "228123fed0bdcc58280328b7dab171aa6d7aa9148f689998524f14ac8cbc3b41",
+    "athena/packs.py": "518bafabcea41bc928b847bbbd8b35ec1a804674d8baa8b78abb67885259f1bc",
+    "athena/prompts.py": "3f31801e2f9c1055ab978d2d2ee9eb11b91dbc8eb7370521f028888091ffadb9",
+    "athena/report.py": "3403ae608ee2058293e23c8252a60d3b73a929221ef84b28b62b2c6adb6bab31",
+    "athena/retrieval.py": "9af775263aa4c80a00594dc6c19eb9dc8b2f2580a5f46aeecf7d7b77770564f9",
+    "athena/runner.py": "79c2edc083d82a18637f64dc9a999b3d8176c3e00f4f22f1f776ca448264e5f5",
+    "athena_sim.py": "5c9d300a7d97cc9d992959f111235c1101dba5b4cc3c24f4a0158965d00920b1",
+    "vendor/output_validator.py": "d154237dfca677eacfbed82cf0db332eee19519a70557ff5065d67e0a6aa14da",
+    "ALL": "1e5b18230a0db83568e752eeeac609a7b61f20ffe03f5e7c33633db944c4eac9"
+  },
+  "pack": {
+    "pack": "gscs",
+    "ontology": "gscs_ontology.json",
+    "ontology_sha256": "99b5ba83efb7b5254bd33069fe172ea45e0a8a036f5b62f4fe62c9bfc7e234a4",
+    "source_sha256": "6c77e8f8365df031a9e4142ed9f5f20a57127b92aa0e83352ad962d514d32281",
+    "units_sha256": "ab3b7fe233c2f51f20fd8aa8ae4878db0a72d9f607aaafe7349b1b4e63dd160e"
+  },
+  "settings": {
+    "pack": "gscs",
+    "task": "comment",
+    "conditions": [
+      "none",
+      "fulldoc",
+      "chunk",
+      "graph"
+    ],
+    "languages": null,
+    "per_language": 0,
+    "limit": 0,
+    "seed": 42,
+    "top_k": null,
+    "chunk_k": 3,
+    "examples": 2,
+    "backend": "openai:gemma4:26b",
+    "temperature": 0.2,
+    "max_tokens": 2048,
+    "reasoning_effort": null,
+    "repeats": 3,
+    "split": "test"
+  },
+  "hypotheses_sha256": "d0da13e6c18d2580354613a69579d3c00a3d72f5042e074ee7c89a243ae651bb",
+  "frozen_at": "2026-10-01T07:51:08+00:00",
+  "note": "Gemma 4 26B-A4B served locally, thinking off (reasoning_effort=none), temp 0.2, max_tokens 2048, no dev tuning"
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_044",
+  "language": "csharp",
+  "originalName": "Placed",
+  "injectedName": "placed",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'placed' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "internal static partial class AgentPlacementLog\n{\n    [LoggerMessage(EventId = 1710, Level = LogLevel.Information,\n        Message = \"AgentPlaced AgentId={AgentId} HouseholdId={HouseholdId} WorldTick={WorldTick} X={X} Y={Y}\")]\n    public static partial void placed(ILogger logger, string agentId, string householdId, long worldTick, int x, int y);\n\n    [LoggerMessage(EventId = 1711, Level = LogLevel.Warning,\n        Message = \"AgentPlacementRejected AgentId={AgentId} Reason={Reason}\")]\n    public static partial void Rejected(ILogger logger, string agentId, string reason);\n\n    [LoggerMessage(EventId = 1712, Level = LogLevel.Information,\n        Message = \"AgentRenamed AgentId={AgentId} WorldTick={WorldTick}\")]\n    public static partial void Renamed(ILogger logger, string agentId, long worldTick);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

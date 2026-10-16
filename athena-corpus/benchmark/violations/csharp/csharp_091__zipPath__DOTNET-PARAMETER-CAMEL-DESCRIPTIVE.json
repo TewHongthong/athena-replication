@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_091",
+  "language": "csharp",
+  "originalName": "zipPath",
+  "injectedName": "zip_path",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'zip_path' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public static void Save(string zip_path, DictationController c)\n{\n    if (File.Exists(zip_path)) File.Delete(zip_path);\n    using var zip = ZipFile.Open(zip_path, ZipArchiveMode.Create);\n    Add(zip, \"about.txt\", Report(c));\n    Add(zip, \"settings.json\", Redact(RedactedSettings(c.Settings).ToJson()));\n    string log = \"\";\n    try { if (File.Exists(AppPaths.LogFile)) log = File.ReadAllText(AppPaths.LogFile); }\n    catch (IOException) { /* being written; leave it out */ }\n    Add(zip, \"log.txt\", Redact(log));\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

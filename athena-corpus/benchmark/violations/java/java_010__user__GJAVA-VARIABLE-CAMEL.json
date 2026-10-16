@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_010",
+  "language": "java",
+  "originalName": "user",
+  "injectedName": "USER",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'USER' does not match camelCase pattern",
+    "name 'USER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Transactional\npublic void resetPassword(String resetToken, String newPassword) {\n    var tokenEntity = tokenService.validateAndGetToken(resetToken, TokenType.PASSWORD_RESET);\n    var USER = tokenEntity.getUser();\n\n    if (passwordEncoder.matches(newPassword, USER.getPassword())) {\n        throw new BadRequestException(\"New password must be different from old password\");\n    }\n\n    var oldTokenVersion = USER.getTokenVersion();\n    USER.setPassword(passwordEncoder.encode(newPassword));\n    USER.setTokenVersion(oldTokenVersion + 1);\n    userRepository.save(USER);\n\n    tokenService.invalidateAllByUserAndType(USER.getId(), TokenType.PASSWORD_RESET);\n    eventPublisher.publishEvent(new UserSessionsInvalidatedEvent(this, USER.getEmail(), oldTokenVersion));\n    mailService.sendPasswordChangedNotification(USER.getEmail());\n    log.info(\"Password reset for {}\", USER.getEmail());\n}",
+  "occurrencesRenamed": 10,
+  "commentOccurrencesRenamed": 0
+}

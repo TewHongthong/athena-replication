@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_007",
+  "language": "java",
+  "originalName": "role",
+  "injectedName": "ROLE",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ROLE' does not match camelCase pattern",
+    "name 'ROLE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Transactional(readOnly = true)\npublic AuthResult login(LoginRequest request) {\n    log.info(\"Login attempt for email: {}\", request.email());\n\n    var user = userRepository.findByEmail(request.email())\n            .orElseThrow(() -> new BadCredentialsException(\"Unknown email\"));\n\n    if (user.getPassword() == null) {\n        throw new BadRequestException(\"This account uses Google sign-in and has no password set. Sign in with Google, or use \\\"Forgot password?\\\" to set one.\",\n                PASSWORD_NOT_SET_CODE);\n    }\n\n    var authentication = authenticationManager.authenticate(\n            new UsernamePasswordAuthenticationToken(request.email(), request.password()));\n\n    if (!user.isEmailVerified()) {\n        throw new BadRequestException(\"Please verify your email before login\", EMAIL_NOT_VERIFIED_CODE);\n    }\n\n    var authority = authentication.getAuthorities().iterator().next().getAuthority();\n    String ROLE = authority != null ? authority.replace(\"ROLE_\", \"\") : \"CUSTOMER\";\n    String jwt = jwtUtil.generateToken(request.email(), ROLE, user.getTokenVersion());\n\n    var userResponse = userMapper.toResponse(user);\n    log.info(\"Login successful for email: {}\", request.email());\n    return new AuthResult(jwt, userResponse);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

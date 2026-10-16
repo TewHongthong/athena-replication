@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_090",
+  "language": "typescript",
+  "originalName": "secciones",
+  "injectedName": "SECCIONES",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SECCIONES' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Multiple() {\n  const SECCIONES = [\n    { id: \"pendientes\", titulo: \"Pendientes\", cantidad: 3, color: \"amber\" as const, detalle: \"0012 Acme · 0014 Bruma · 0015 Cortina\" },\n    { id: \"vencidas\", titulo: \"Vencidas\", cantidad: 1, color: \"red\" as const, detalle: \"0009 Delta, vencida el 12/08.\" },\n    { id: \"pagadas\", titulo: \"Pagadas este mes\", cantidad: 8, color: \"green\" as const, detalle: \"$ 1.284.000 acreditados.\" },\n  ]\n  return (\n    <Accordion className=\"w-full max-w-lg\" defaultValue={[\"pendientes\", \"vencidas\"]} multiple>\n      {SECCIONES.map((seccion) => (\n        <AccordionItem key={seccion.id} value={seccion.id}>\n          <AccordionTrigger>\n            <span className=\"flex items-center gap-2\">\n              {seccion.titulo}\n              <Badge color={seccion.color} size=\"sm\">\n                {seccion.cantidad}\n              </Badge>\n            </span>\n          </AccordionTrigger>\n          <AccordionContent>{seccion.detalle}</AccordionContent>\n        </AccordionItem>\n      ))}\n    </Accordion>\n  )\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

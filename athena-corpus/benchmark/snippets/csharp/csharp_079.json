@@ -1,0 +1,42 @@
+{
+  "id": "csharp_079",
+  "language": "csharp",
+  "source": "github:thecheetoman/ESim@59cde034d0041d0af0a43cdf7e43d979935b7db8",
+  "sourceDetail": "Assets/Scripts/Robot/Flywheel.cs lines 66-77 (method Flywheel.StepRPS); license MIT; repo created 2026-09-16T23:28:41Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "private void StepRPS()\n{\n    bool spinningUp = targetRPS > CurrentRPS;\n    float duration = spinningUp ? spinUpTime : spinDownTime;\n    duration = Mathf.Max(duration, 0.0001f);\n\n    spinT = Mathf.MoveTowards(spinT, spinningUp ? 1f : 0f, Time.deltaTime / duration);\n\n    // Use the curve for spin-up character; spin-down stays linear (coasting/braking).\n    float shaped = spinningUp ? spinUpCurve.Evaluate(spinT) : spinT;\n    CurrentRPS = Mathf.Lerp(0f, maxRPS, shaped);\n}",
+  "identifiers": [
+    {
+      "name": "StepRPS",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "spinningUp",
+      "kind": "boolean_variable",
+      "isCompliant": true
+    },
+    {
+      "name": "duration",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "shaped",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "thecheetoman/ESim",
+    "repoUrl": "https://github.com/thecheetoman/ESim",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-16T23:28:41Z",
+    "commit": "59cde034d0041d0af0a43cdf7e43d979935b7db8",
+    "path": "Assets/Scripts/Robot/Flywheel.cs",
+    "startLine": 66,
+    "endLine": 77,
+    "unit": "method Flywheel.StepRPS",
+    "corpusFile": "corpus/csharp/thecheetoman__ESim__Flywheel.cs.md"
+  }
+}

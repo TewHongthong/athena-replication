@@ -1,0 +1,52 @@
+{
+  "id": "csharp_015",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Entities/ItemPurchase.cs lines 9-25 (class ItemPurchase); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public sealed class ItemPurchase\n{\n    public int Id { get; set; }\n    public int QueueItemId { get; set; }\n    public int ReceiptLineIndex { get; set; }\n    public int ItemId { get; set; }\n    public int ImageId { get; set; }\n    public string? Merchant { get; set; }\n    public DateOnly? PurchasedOn { get; set; }\n    public string Description { get; set; } = string.Empty;\n    public decimal Quantity { get; set; } = 1;\n    public decimal? UnitPrice { get; set; }\n    public string? Currency { get; set; }\n    public decimal? LineTotal { get; set; }\n    public MatchConfidence? Confidence { get; set; }\n    public DateTimeOffset CreatedAt { get; set; }\n}",
+  "identifiers": [
+    {
+      "name": "ItemPurchase",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "QueueItemId",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "ReceiptLineIndex",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "ItemId",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "ImageId",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "Merchant",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Entities/ItemPurchase.cs",
+    "startLine": 9,
+    "endLine": 25,
+    "unit": "class ItemPurchase",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__ItemPurchase.cs.md"
+  }
+}

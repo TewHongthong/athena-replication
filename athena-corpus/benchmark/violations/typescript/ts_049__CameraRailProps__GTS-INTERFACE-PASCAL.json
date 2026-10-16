@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_049",
+  "language": "typescript",
+  "originalName": "CameraRailProps",
+  "injectedName": "camera_rail_props",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'camera_rail_props' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "interface camera_rail_props {\n  grid: boolean;\n  canFlip: boolean;\n  locked: boolean;\n  onToggleGrid: () => void;\n  onFlip: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

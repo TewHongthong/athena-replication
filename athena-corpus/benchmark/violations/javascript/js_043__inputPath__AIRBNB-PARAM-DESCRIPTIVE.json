@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_043",
+  "language": "javascript",
+  "originalName": "inputPath",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "async function convertSingleFile(l, format, outDir, options) {\n  const content = await readFile(l, 'utf-8')\n  if (!content.trim()) {\n    throw new Error(`Source is empty: ${l}`)\n  }\n\n  if (options.dryRun) {\n    console.log(`  Would convert: ${l}`)\n    if (format === 'skill') {\n      const parsed = parseFrontmatter(content)\n      const slug = parsed.attrs.slug || parsed.attrs.name || 'skill'\n      console.log(`  To:           ${join(outDir, `${slug}.mdc`)}`)\n    } else {\n      console.log(`  To:           ${join(outDir, 'SKILL.md')}`)\n    }\n    return\n  }\n\n  await mkdir(outDir, { recursive: true })\n\n  if (format === 'skill') {\n    const parsed = parseFrontmatter(content)\n    const slug = (parsed.attrs.slug || parsed.attrs.name || 'skill').replace(\n      /\\//g,\n      '-',\n    )\n    const outPath = join(outDir, `${slug}.mdc`)\n    await writeFile(outPath, skillToMdc(content), 'utf-8')\n    console.log(`  Converted:    ${l}`)\n    console.log(`  To:           ${outPath}`)\n  } else {\n    const outPath = join(outDir, 'SKILL.md')\n    await writeFile(outPath, mdcToSkill(content, basename(l)), 'utf-8')\n    console.log(`  Converted:    ${l}`)\n    console.log(`  To:           ${outPath}`)\n  }\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

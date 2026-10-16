@@ -1,0 +1,52 @@
+{
+  "id": "js_054",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/utils/installer.js lines 77-89 (function backupSkill); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export async function backupSkill(slug, fileContents) {\n  const backupDir = getBackupDir(slug)\n\n  await mkdir(backupDir, { recursive: true })\n\n  const timestamp = new Date().toISOString().replace(/[:.]/g, '-')\n\n  const backupFile = join(backupDir, `${timestamp}.json`)\n\n  await writeFile(backupFile, JSON.stringify(fileContents, null, 2), 'utf-8')\n\n  return timestamp\n}",
+  "identifiers": [
+    {
+      "name": "backupSkill",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "backupDir",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "slug",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "fileContents",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "timestamp",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "backupFile",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/utils/installer.js",
+    "startLine": 77,
+    "endLine": 89,
+    "unit": "function backupSkill",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__installer.js.md"
+  }
+}

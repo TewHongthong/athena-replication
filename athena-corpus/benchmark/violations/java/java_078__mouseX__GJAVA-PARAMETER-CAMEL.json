@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_078",
+  "language": "java",
+  "originalName": "mouseX",
+  "injectedName": "mouse_x",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'mouse_x' does not match camelCase pattern",
+    "name 'mouse_x' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Override\npublic void render(GuiGraphics gui, int mouse_x, int mouseY, float partialTick) {\n    renderBackground(gui);\n    int cx = this.width / 2;\n    int y = this.height / 2 - 48;\n    gui.drawCenteredString(this.font, this.title, cx, y, 0xFFFFFF);\n    gui.drawCenteredString(this.font,\n            Component.translatable(\"furkin.screen.force_unbind.line1\"),\n            cx, y + 24, 0xFFDDDD);\n    gui.drawCenteredString(this.font,\n            Component.translatable(\"furkin.screen.force_unbind.line2\"),\n            cx, y + 38, 0xFFDDDD);\n    gui.drawCenteredString(this.font,\n            Component.translatable(\"furkin.screen.force_unbind.line3\"),\n            cx, y + 52, 0xFFDDDD);\n    super.render(gui, mouse_x, mouseY, partialTick);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

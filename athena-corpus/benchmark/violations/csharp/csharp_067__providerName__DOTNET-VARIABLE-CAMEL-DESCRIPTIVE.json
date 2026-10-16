@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_067",
+  "language": "csharp",
+  "originalName": "providerName",
+  "injectedName": "provider_name",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'provider_name' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal sealed class DefaultSmsProviderRouter : ISmsProviderRouter\n{\n    private readonly IReadOnlyDictionary<string, ISmsProvider> _providers;\n    private readonly SmsBridgeOptions _options;\n\n    public DefaultSmsProviderRouter(\n        IEnumerable<ISmsProvider> providers,\n        IOptions<SmsBridgeOptions> options)\n    {\n        _providers = providers.ToDictionary(p => p.Name, StringComparer.OrdinalIgnoreCase);\n        _options = options.Value;\n    }\n\n    public ISmsProvider Resolve(SmsRoutingContext context)\n    {\n        var provider_name = context.ExplicitProvider ?? _options.DefaultProvider;\n\n        if (string.IsNullOrWhiteSpace(provider_name))\n            throw new SmsBridgeException(\n                \"No provider could be resolved. Set 'SmsBridge:DefaultProvider' in configuration or supply a provider name on the message.\");\n\n        if (!_providers.TryGetValue(provider_name, out var provider))\n            throw new SmsBridgeException(\n                $\"Provider '{provider_name}' is not registered. Registered providers: [{string.Join(\", \", _providers.Keys)}].\");\n\n        return provider;\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

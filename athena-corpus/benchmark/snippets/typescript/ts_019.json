@@ -1,0 +1,37 @@
+{
+  "id": "ts_019",
+  "language": "typescript",
+  "source": "github:guillermolg00/morphicons@38d2a7221633a453eeafebd872ee3649b9274b22",
+  "sourceDetail": "src/core/serialize.ts lines 14-27 (function serialize); license MIT; repo created 2026-08-01; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function serialize(\n  subs: readonly Float64Array[],\n  closed?: readonly boolean[],\n): string {\n  let d = \"\";\n  for (let k = 0; k < subs.length; k++) {\n    const o = subs[k];\n    const n = o.length / 2;\n    d += `M${fmt(o[0])} ${fmt(o[1])}`;\n    for (let i = 1; i < n; i++) d += `L${fmt(o[2 * i])} ${fmt(o[2 * i + 1])}`;\n    if (closed?.[k]) d += \"Z\";\n  }\n  return d;\n}",
+  "identifiers": [
+    {
+      "name": "serialize",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "subs",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "closed",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "guillermolg00/morphicons",
+    "repoUrl": "https://github.com/guillermolg00/morphicons",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-01",
+    "commit": "38d2a7221633a453eeafebd872ee3649b9274b22",
+    "path": "src/core/serialize.ts",
+    "startLine": 14,
+    "endLine": 27,
+    "unit": "function serialize",
+    "corpusFile": "corpus/typescript/guillermolg00__morphicons__serialize.ts.md"
+  }
+}

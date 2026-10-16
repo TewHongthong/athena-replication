@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_084",
+  "language": "typescript",
+  "originalName": "match",
+  "injectedName": "MATCH",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MATCH' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Inline({ text }: { text: string }) {\n  const nodes: ReactNode[] = []\n  const regex = /`([^`]+)`|\\*\\*([^*]+)\\*\\*/g\n  let last = 0\n  let MATCH: RegExpExecArray | null\n\n  while ((MATCH = regex.exec(text)) !== null) {\n    if (MATCH.index > last) nodes.push(text.slice(last, MATCH.index))\n    if (MATCH[1] !== undefined) {\n      nodes.push(\n        <code className=\"rounded-sm bg-gray-100 px-1 py-0.5 text-copy-13-mono text-gray-1000\" key={MATCH.index}>\n          {MATCH[1]}\n        </code>\n      )\n    } else {\n      nodes.push(\n        <strong className=\"font-medium text-gray-1000\" key={MATCH.index}>\n          {MATCH[2]}\n        </strong>\n      )\n    }\n    last = regex.lastIndex\n  }\n  if (last < text.length) nodes.push(text.slice(last))\n  return <>{nodes}</>\n}",
+  "occurrencesRenamed": 9,
+  "commentOccurrencesRenamed": 0
+}

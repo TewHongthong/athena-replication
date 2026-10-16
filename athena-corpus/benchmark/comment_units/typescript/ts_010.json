@@ -1,0 +1,38 @@
+{
+  "snippetId": "ts_010",
+  "language": "typescript",
+  "standardId": "GOOGLE_TS",
+  "identifierKind": "function",
+  "name": "guard",
+  "codeBare": "export async function guard(fn: () => Promise<CallToolResult>): Promise<CallToolResult> {\n  try {\n    return await fn();\n  } catch (error) {\n    if (error instanceof AppNotConnectedError) return errorResult(error.message);\n    if (error instanceof EvalTimeoutError) return errorResult(error.message);\n    if (error instanceof ScriptError) {\n      const where = error.scriptLine === undefined ? \"\" : ` (line ${error.scriptLine})`;\n      return errorResult(`Script failed in ${error.appId}${where}: ${error.message}`);\n    }\n    log.error(\"unhandled tool error\", error);\n    return errorResult(`Unexpected failure: ${error instanceof Error ? error.message : String(error)}`);\n  }\n}",
+  "referenceComment": "/**\n * Runs a tool body, turning the bridge's typed failures into readable tool\n * errors rather than letting them escape as protocol-level exceptions. An\n * agent can act on \"the panel isn't running\"; it cannot act on a stack trace.\n */",
+  "ruleIds": [
+    "GTS-JSDOC-TOPLEVEL-EXPORT"
+  ],
+  "origin": "snippet",
+  "source": "github:Brainferno/brainferno-mcp-bridge@95695615162b4db4a3189be9dd0ebf9e7d80c129",
+  "sourceDetail": "packages/server/src/tools/result.ts lines 50-63 (function guard); license Apache-2.0; repo created 2026-08-26; curated by athena-curation-1.0",
+  "referenceCommentLines": 5,
+  "signature": {
+    "params": 1,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "Brainferno/brainferno-mcp-bridge",
+    "repoUrl": "https://github.com/Brainferno/brainferno-mcp-bridge",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-08-26",
+    "commit": "95695615162b4db4a3189be9dd0ebf9e7d80c129",
+    "path": "packages/server/src/tools/result.ts",
+    "startLine": 50,
+    "endLine": 63,
+    "unit": "function guard",
+    "corpusFile": "corpus/typescript/Brainferno__brainferno-mcp-bridge__result.ts.md"
+  }
+}

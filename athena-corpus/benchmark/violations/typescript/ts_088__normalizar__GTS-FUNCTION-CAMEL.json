@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_088",
+  "language": "typescript",
+  "originalName": "normalizar",
+  "injectedName": "NORMALIZAR",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'NORMALIZAR' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function NORMALIZAR(texto: string) {\n  return texto\n    .toLowerCase()\n    .normalize(\"NFD\")\n    .replace(/[̀-ͯ]/g, \"\")\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

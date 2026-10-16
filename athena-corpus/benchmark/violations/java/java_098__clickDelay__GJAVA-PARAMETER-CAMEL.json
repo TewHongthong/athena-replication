@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_098",
+  "language": "java",
+  "originalName": "clickDelay",
+  "injectedName": "click_delay",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'click_delay' does not match camelCase pattern",
+    "name 'click_delay' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public TransitionAttempt(TransitionMode mode, int targetNumber, int hubDelay, int click_delay, int confirmDelay) {\n    this.mode = mode;\n    this.targetNumber = targetNumber;\n    this.startedAt = System.currentTimeMillis();\n    this.hubDelay = hubDelay;\n    this.clickDelay = click_delay;\n    this.confirmDelay = confirmDelay;\n    this.finished = false;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

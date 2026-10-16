@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_075",
+  "language": "csharp",
+  "originalName": "other",
+  "injectedName": "OTHER",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'OTHER' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private void OnTriggerEnter(Collider OTHER)\n{\n    if (OTHER.CompareTag(\"GamePiece\"))\n    {\n        bool wasLegal = false;\n        if (OTHER.TryGetComponent<ShotData>(out ShotData shotData))\n        {\n            wasLegal = shotData.wasShotFromLegalZone;\n        }\n\n        if (hub != null)\n        {\n            hub.countFuel(wasLegal);\n        }\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

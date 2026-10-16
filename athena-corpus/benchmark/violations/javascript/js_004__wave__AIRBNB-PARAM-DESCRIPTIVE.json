@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_004",
+  "language": "javascript",
+  "originalName": "wave",
+  "injectedName": "w",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'w' shorter than minLength=2",
+    "name 'w' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "const summary = (w, id) => {\n  const started = Object.keys(w.started).length;\n  const returned = Object.keys(w.returned).length;\n  if (w.state === \"complete\") return \"COMPLETE \" + id + \" (\" + returned + \"/\" + w.leaves.length + \" returned)\";\n  if (w.state === \"abandoned\") return \"ABANDONED \" + id + \" (\" + started + \"/\" + w.leaves.length +\n    \" started, \" + returned + \"/\" + w.leaves.length + \" returned): \" + terminalSafe(w.reason);\n  return w.state.toUpperCase() + \" \" + id + \" (\" + started + \"/\" + w.leaves.length +\n    \" started, \" + returned + \"/\" + w.leaves.length + \" returned)\";\n};",
+  "occurrencesRenamed": 12,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

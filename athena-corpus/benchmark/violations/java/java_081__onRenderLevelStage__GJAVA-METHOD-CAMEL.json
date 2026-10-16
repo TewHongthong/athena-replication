@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_081",
+  "language": "java",
+  "originalName": "onRenderLevelStage",
+  "injectedName": "on_render_level_stage",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'on_render_level_stage' does not match camelCase pattern",
+    "name 'on_render_level_stage' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@SubscribeEvent\npublic static void on_render_level_stage(RenderLevelStageEvent event) {\n    if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_ENTITIES) {\n        return;\n    }\n    if (!FurkinClientConfig.SHOW_STATUS_ICON.get()) {\n        return;\n    }\n\n    Minecraft mc = Minecraft.getInstance();\n    if (mc.level == null || mc.player == null) {\n        return;\n    }\n\n    PoseStack pose = event.getPoseStack();\n    MultiBufferSource buffers = mc.renderBuffers().bufferSource();\n    Vec3 cam = event.getCamera().getPosition();\n\n    // 遍历在场实体，只画「已契约」的绒亲。\n    for (Entity entity : mc.level.entitiesForRendering()) {\n        if (!(entity instanceof LivingEntity living)) {\n            continue;\n        }\n        FurkinData data = FurkinAttachHandler.getData(living);\n        if (data == null || !data.isCompanion()) {\n            continue;\n        }\n\n        // 距离判定：与原版名牌同进同出（读实体自身 NAMETAG_DISTANCE 属性，\n        // 判定式与 ForgeHooksClient.isNameplateInRenderDistance 一致）。\n        if (!isWithinNameplateDistance(living)) {\n            continue;\n        }\n\n        renderIcon(pose, buffers, living, cam);\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

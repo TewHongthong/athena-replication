@@ -1,0 +1,22 @@
+{
+  "judge": "muse",
+  "label": "Meta Muse Glimmer 30B",
+  "backend": "hosted",
+  "model": "meta/muse-glimmer-30b",
+  "options": {
+    "temperature": 0,
+    "seed": 0,
+    "num_ctx": 4096,
+    "num_predict": 400
+  },
+  "max_tokens": 2000,
+  "extra_body": {
+    "reasoning": {
+      "effort": "low",
+      "exclude": true
+    }
+  },
+  "system": null,
+  "think": null,
+  "started": "2026-10-01T16:33:42Z"
+}

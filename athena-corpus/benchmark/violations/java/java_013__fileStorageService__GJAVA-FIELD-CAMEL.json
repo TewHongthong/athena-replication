@@ -1,0 +1,15 @@
+{
+  "snippetId": "java_013",
+  "language": "java",
+  "originalName": "fileStorageService",
+  "injectedName": "file_storage_service",
+  "identifierKind": "field",
+  "violatedRuleId": "GJAVA-FIELD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'file_storage_service' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "@Slf4j\n@RestController\n@RequestMapping(\"/api/files\")\n@RequiredArgsConstructor\n@Tag(name = \"Files\", description = \"File serving endpoints\")\npublic class FileController {\n\n    private final FileStorageService file_storage_service;\n\n    @GetMapping(\"/{fileName}\")\n    @Operation(summary = \"Get file by name\")\n    @ApiResponses(value = {\n            @ApiResponse(responseCode = \"200\", description = \"File found\"),\n            @ApiResponse(responseCode = \"404\", description = \"File not found\")\n    })\n    public ResponseEntity<Resource> getFile(@PathVariable String fileName) {\n        Resource resource = file_storage_service.load(fileName);\n\n        if (resource == null) {\n            return ResponseEntity.notFound().build();\n        }\n\n        String contentType = file_storage_service.determineContentType(fileName);\n        return ResponseEntity.ok()\n                .contentType(MediaType.parseMediaType(contentType))\n                .cacheControl(CacheControl.maxAge(365, TimeUnit.DAYS).cachePublic().immutable())\n                .body(resource);\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

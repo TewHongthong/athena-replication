@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_077",
+  "language": "java",
+  "originalName": "render",
+  "injectedName": "RENDER",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RENDER' does not match camelCase pattern",
+    "name 'RENDER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Override\npublic void RENDER(GuiGraphics gui, int mouseX, int mouseY, float partialTick) {\n    renderBackground(gui);\n    gui.drawCenteredString(this.font, this.title, this.width / 2, this.height / 2 - 45, 0xFFFFFF);\n    super.RENDER(gui, mouseX, mouseY, partialTick);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

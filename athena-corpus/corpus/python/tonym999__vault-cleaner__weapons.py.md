@@ -1,0 +1,158 @@
+# src/vault_cleaner/rules/weapons.py
+
+- source repo: tonym999/vault-cleaner
+- repo url: https://github.com/tonym999/vault-cleaner
+- license: MIT
+- created_at: 2026-07-18T09:39:13Z
+- file path: src/vault_cleaner/rules/weapons.py
+- commit: 1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372
+
+```python
+"""Weapons pipeline: rails → wishlist pass → dupe pass (PLAN.md rules 1–3).
+
+Wishlist semantics (rule 2):
+- trash match (whole-item entry, or a roll subset of the item's perks) →
+  candidate junk, unless hard-protected or the item also matches a keep roll.
+  Every trash-matched copy (junk or review) is excluded from exact-dupe
+  resolution, so a proposed copy is never the kept survivor.
+- keep-roll match → protected from wishlist-trash, but NOT blanket keep: exact
+  dupes among matched copies still resolve by gear/rank/stat order.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+
+import pandas as pd
+
+from vault_cleaner.explanation import wishlist_trash
+from vault_cleaner.note_history import append_tool_clause
+from vault_cleaner.rules import coverage, dupes, rails
+from vault_cleaner.wishlist import Wishlist
+
+
+@dataclass
+class RunResult:
+    decisions: list[dupes.Decision] = field(default_factory=list)
+    # Items matching both a keep roll and a trash entry (sources disagree);
+    # keep wins, but the count is surfaced so the conflict isn't invisible.
+    keep_trash_conflicts: int = 0
+    coverage: coverage.CoverageSummary | None = None
+
+
+def row_perk_hashes(row: pd.Series, perk_map: dict[str, frozenset[int]]) -> frozenset[int]:
+    """All perk hashes present on an item, resolved from complete Perks N cells.
+
+    DIM's measured cells contain one complete perk name, including legitimate
+    commas. Only the single trailing ``*`` selected marker is removed; names
+    are never split into guessed options.
+    """
+    hashes: set[int] = set()
+    for col in row.index:
+        if not col.startswith("Perks "):
+            continue
+        name = str(row[col]).strip().removesuffix("*").strip().casefold()
+        if name:
+            hashes |= perk_map.get(name, frozenset())
+    return frozenset(hashes)
+
+
+def keep_match_count(item_hash: int, perk_hashes: frozenset[int], wl: Wishlist) -> int:
+    return sum(1 for roll in wl.keep.get(item_hash, []) if roll <= perk_hashes)
+
+
+def trash_match(item_hash: int, perk_hashes: frozenset[int], wl: Wishlist) -> str | None:
+    for roll in wl.trash.get(item_hash, []):
+        if not roll:
+            return "whole-item"
+        if roll <= perk_hashes:
+            return "roll"
+    return None
+
+
+def run(
+    weapons: pd.DataFrame,
+    wl: Wishlist,
+    perk_map: dict[str, frozenset[int]],
+    crafted_level_protect: int,
+) -> RunResult:
+    keep_counts: dict[str, int] = {}
+    result = RunResult()
+    decisions = result.decisions
+    trash_ids: set[str] = set()
+
+    for _, row in weapons.iterrows():
+        item_hash = int(row["Hash"])
+        perk_hashes = row_perk_hashes(row, perk_map)
+        keep_counts[row["Id"]] = keep_match_count(item_hash, perk_hashes, wl)
+
+        kind = trash_match(item_hash, perk_hashes, wl)
+        if kind is None:
+            continue
+        if keep_counts[row["Id"]] > 0:
+            result.keep_trash_conflicts += 1  # keep wins, visibly
+            continue
+        level, reason = rails.protection(row, crafted_level_protect)
+        if level == rails.HARD:
+            continue
+        if wl.trash_evidence is not None:
+            entries = [
+                e
+                for e in wl.trash_evidence.get(item_hash, [])
+                if not e.perks or e.perks <= perk_hashes
+            ]
+            sources = tuple(sorted({e.source for e in entries}))
+            pve_only = bool(entries) and all(
+                e.activities == frozenset({"pve"}) for e in entries
+            )
+        else:
+            sources = ()
+            pve_only = False
+        expl = wishlist_trash(
+            whole_item=(kind == "whole-item"),
+            sources=sources,
+            pve_only=pve_only,
+        )
+        if level == rails.SOFT:
+            action, tag = "review", row["Tag"]
+            hashtag = f"#vc-review: wishlist-trash {kind} ({reason})"
+        else:
+            action, tag = "junk", "junk"
+            hashtag = f"#vc-junk: wishlist-trash {kind}"
+        decisions.append(
+            dupes.Decision(
+                id=row["Id"], hash=row["Hash"], name=row["Name"],
+                location=row.get("Owner", ""), guardian_class="",
+                action=action, tag=tag,
+                note=append_tool_clause(row["Notes"], hashtag), kept_id="",
+                explanation=expl,
+            )
+        )
+        trash_ids.add(row["Id"])
+
+    # Every wishlist-trash copy, junked or soft-reviewed, stays out of dupe
+    # resolution: a proposed copy must never be the survivor other copies are
+    # told to keep (#174). A trash copy's own dupe decision would be dropped
+    # below anyway, but excluding it changes which copy survives: a copy that
+    # used to lose to it may now survive with no decision, or fall through to
+    # the coverage pass.
+    pool = weapons[~weapons["Id"].isin(trash_ids)]
+    dupe_decisions = dupes.resolve(
+        pool, crafted_level_protect,
+    )
+    decisions.extend(d for d in dupe_decisions if d.id not in trash_ids)
+    decided = {d.id for d in decisions}
+    # A copy another decision names as its kept copy must not itself be
+    # proposed by coverage; it stays available as a coverage partner (#174).
+    kept_ids = frozenset(d.kept_id for d in decisions if d.kept_id)
+    analysis = coverage.analyse(
+        weapons[~weapons["Id"].isin(decided)],
+        wl,
+        perk_map,
+        crafted_level_protect,
+        partner_only_ids=kept_ids,
+    )
+    decisions.extend(analysis.decisions)
+    result.coverage = analysis.summary
+    return result
+```

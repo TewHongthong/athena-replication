@@ -1,0 +1,15 @@
+{
+  "snippetId": "java_024",
+  "language": "java",
+  "originalName": "stripeSessionId",
+  "injectedName": "stripe_session_id",
+  "identifierKind": "field",
+  "violatedRuleId": "GJAVA-FIELD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'stripe_session_id' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "@Entity\n@Getter\n@Setter\n@NoArgsConstructor\n@AllArgsConstructor\n@Builder\n@Table(name = \"payments\", indexes = {\n        @Index(name = \"idx_payment_order_id\", columnList = \"order_id\")\n})\npublic class Payment extends BaseEntity {\n\n    @Id\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\n    private Long id;\n\n    @NotBlank\n    @Column(nullable = false, unique = true, length = 500)\n    private String stripe_session_id;\n\n    @ManyToOne(fetch = FetchType.LAZY)\n    @JoinColumn(name = \"order_id\", nullable = false)\n    private Order order;\n\n    @NotNull\n    @Positive\n    @Digits(integer = 8, fraction = 2)\n    @Column(nullable = false, precision = 10, scale = 2)\n    private BigDecimal amount;\n\n    @Enumerated(EnumType.STRING)\n    @Column(nullable = false)\n    @Builder.Default\n    private PaymentStatus status = PaymentStatus.PENDING;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

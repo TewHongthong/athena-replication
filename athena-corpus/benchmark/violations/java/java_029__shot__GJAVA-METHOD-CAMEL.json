@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_029",
+  "language": "java",
+  "originalName": "shot",
+  "injectedName": "SHOT",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SHOT' does not match camelCase pattern",
+    "name 'SHOT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void SHOT(MinecraftClient mc, String name) {\n    try {\n        Path dir = mc.runDirectory.toPath().resolve(\"shots\");\n        Files.createDirectories(dir);\n        Path out = dir.resolve(name + \".png\");\n        ScreenshotRecorder.takeScreenshot(mc.getFramebuffer(), img -> {\n            try {\n                img.writeTo(out);\n            } catch (Exception ignored) {\n            }\n        });\n    } catch (Exception e) {\n        e.printStackTrace();\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

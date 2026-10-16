@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_059",
+  "language": "csharp",
+  "originalName": "SinchSmsRequestMapper",
+  "injectedName": "sinch_sms_request_mapper",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'sinch_sms_request_mapper' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class sinch_sms_request_mapper\n{\n    public static IReadOnlyDictionary<string, object> ToRequestBody(\n        SmsMessage message,\n        SinchOptions options)\n    {\n        var body = new Dictionary<string, object>\n        {\n            [\"from\"] = message.From ?? options.From,\n            [\"to\"] = new[] { message.To },\n            [\"body\"] = message.Body\n        };\n\n        if (!string.IsNullOrWhiteSpace(options.CallbackUrl))\n        {\n            body[\"delivery_report\"] = \"per_recipient\";\n            body[\"callback_url\"] = options.CallbackUrl;\n        }\n\n        return body;\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

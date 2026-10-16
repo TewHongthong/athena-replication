@@ -1,0 +1,42 @@
+{
+  "id": "py_008",
+  "language": "python",
+  "source": "github:Ayush1860/SecureRag@a65d2f6f70fdc5dcb477d48353de0374853125e7",
+  "sourceDetail": "securerag/retrieval/embedder.py lines 31-37 (function get_encoder); license MIT; repo created 2026-09-02T18:22:54Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@lru_cache(maxsize=4)\ndef get_encoder(model_name: str, device: str = \"auto\") -> Any:\n    from sentence_transformers import SentenceTransformer\n\n    resolved = resolve_device(device)\n    logger.info(\"Loading embedding model %s on %s\", model_name, resolved)\n    return SentenceTransformer(model_name, device=resolved)",
+  "identifiers": [
+    {
+      "name": "get_encoder",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "resolved",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "model_name",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "device",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Ayush1860/SecureRag",
+    "repoUrl": "https://github.com/Ayush1860/SecureRag",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-02T18:22:54Z",
+    "commit": "a65d2f6f70fdc5dcb477d48353de0374853125e7",
+    "path": "securerag/retrieval/embedder.py",
+    "startLine": 31,
+    "endLine": 37,
+    "unit": "function get_encoder",
+    "corpusFile": "corpus/python/Ayush1860__SecureRag__embedder.py.md"
+  }
+}

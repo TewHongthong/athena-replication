@@ -1,0 +1,37 @@
+{
+  "id": "ts_097",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_demos/combobox.tsx lines 44-68 (function Multiple); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function Multiple() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-2\">\n      <Label htmlFor=\"paises\">Países donde operás</Label>\n      <Combobox items={PAISES} multiple>\n        <ComboboxChips>\n          <ComboboxValue>\n            {(values: string[]) => (\n              <>\n                {values.map((value) => (\n                  <ComboboxChip key={value}>{value}</ComboboxChip>\n                ))}\n                <ComboboxChipsInput id=\"paises\" />\n              </>\n            )}\n          </ComboboxValue>\n        </ComboboxChips>\n        <ComboboxContent>\n          <ComboboxEmpty />\n          <ComboboxList>{(item: string) => <ComboboxItem key={item} value={item}>{item}</ComboboxItem>}</ComboboxList>\n        </ComboboxContent>\n      </Combobox>\n    </div>\n  )\n}",
+  "identifiers": [
+    {
+      "name": "values",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_demos/combobox.tsx",
+    "startLine": 44,
+    "endLine": 68,
+    "unit": "function Multiple",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__combobox.tsx.md"
+  }
+}

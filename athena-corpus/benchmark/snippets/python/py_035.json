@@ -1,0 +1,47 @@
+{
+  "id": "py_035",
+  "language": "python",
+  "source": "github:boongh/ml-exp@55667c29709eb5a612d32dbbc575550ed8a5a443",
+  "sourceDetail": "data/training_report.py lines 76-92 (function escape_latex); license MIT; repo created 2026-09-25T22:40:55Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def escape_latex(text: str) -> str:\n    \"\"\"Escape special LaTeX characters.\"\"\"\n    replacements = {\n        \"\\\\\": r\"\\textbackslash{}\",\n        \"&\": r\"\\&\",\n        \"%\": r\"\\%\",\n        \"$\": r\"\\$\",\n        \"#\": r\"\\#\",\n        \"_\": r\"\\_\",\n        \"{\": r\"\\{\",\n        \"}\": r\"\\}\",\n        \"~\": r\"\\textasciitilde{}\",\n        \"^\": r\"\\textasciicircum{}\",\n    }\n    for char, escaped in replacements.items():\n        text = text.replace(char, escaped)\n    return text",
+  "identifiers": [
+    {
+      "name": "escape_latex",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "replacements",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "text",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "char",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "escaped",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "boongh/ml-exp",
+    "repoUrl": "https://github.com/boongh/ml-exp",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T22:40:55Z",
+    "commit": "55667c29709eb5a612d32dbbc575550ed8a5a443",
+    "path": "data/training_report.py",
+    "startLine": 76,
+    "endLine": 92,
+    "unit": "function escape_latex",
+    "corpusFile": "corpus/python/boongh__ml-exp__training_report.py.md"
+  }
+}

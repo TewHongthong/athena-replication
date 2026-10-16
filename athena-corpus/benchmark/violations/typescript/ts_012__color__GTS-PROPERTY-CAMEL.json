@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_012",
+  "language": "typescript",
+  "originalName": "color",
+  "injectedName": "COLOR",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'COLOR' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface CanvasTargetOptions {\n  /** Grid the icon's coordinates live on (Lucide/Iconify default: \"0 0 24 24\").\n   *  Used to map the geometry onto the backing store. */\n  viewBox?: string;\n  /** Stroke width in grid units (Lucide's default is 2). */\n  strokeWidth?: number;\n  /** Stroke color. Defaults to the canvas' computed CSS color when it is a\n   *  styled element; otherwise the context's current `strokeStyle` stands. */\n  COLOR?: string;\n  /** Clear the canvas before each frame. Turn off for manual compositing or\n   *  trails — every frame then draws on top of the last. Default true. */\n  clear?: boolean;\n  /** Called after every drawn frame — the texture consumer's dirty signal\n   *  (e.g. re-upload the canvas with `texImage2D`, or blit it into a scene). */\n  onWrite?: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

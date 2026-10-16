@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_036",
+  "language": "java",
+  "originalName": "needle",
+  "injectedName": "NEEDLE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'NEEDLE' does not match camelCase pattern",
+    "name 'NEEDLE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static boolean heldIs(PlayerEntity player, String NEEDLE) {\n    if (player == null) {\n        return false;\n    }\n    String main = player.getMainHandStack().getItem().toString().toLowerCase();\n    String off = player.getOffHandStack().getItem().toString().toLowerCase();\n    return main.contains(NEEDLE) || off.contains(NEEDLE);\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_093",
+  "language": "python",
+  "originalName": "lines",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass CalibrationReport:\n    total_decisions: int\n    closed_trades: int\n    conviction_buckets: list[BucketStats] = field(default_factory=list)\n    confidence_buckets: list[BucketStats] = field(default_factory=list)\n    news_comparison: Optional[NewsComparison] = None\n\n    def summary_text(self) -> str:\n        l = [\n            f\"Decisions logged: {self.total_decisions}  |  Closed trades with outcomes: {self.closed_trades}\",\n            \"\",\n            \"-- H1: net P&L by Jev conviction bucket --\",\n        ]\n        l.extend(_format_buckets(self.conviction_buckets))\n        l.append(\"\")\n        l.append(\"-- H2: net P&L by Jev confidence bucket --\")\n        l.extend(_format_buckets(self.confidence_buckets))\n        if self.news_comparison is not None:\n            l.append(\"\")\n            l.append(\"-- H3: net P&L with vs. without matched news --\")\n            l.extend(_format_buckets([\n                self.news_comparison.with_news,\n                self.news_comparison.without_news,\n                self.news_comparison.unknown,\n            ]))\n        if self.closed_trades < MIN_SAMPLE_SIZE_FOR_CONFIDENCE:\n            l.append(\"\")\n            l.append(\n                f\"NOTE: only {self.closed_trades} closed trades total -- every bucket below is \"\n                f\"too small to draw conclusions from (need >= {MIN_SAMPLE_SIZE_FOR_CONFIDENCE} per \"\n                f\"bucket). This run checks the plumbing works, not whether Jev is calibrated.\"\n            )\n        return \"\\n\".join(l)",
+  "occurrencesRenamed": 11,
+  "commentOccurrencesRenamed": 0
+}

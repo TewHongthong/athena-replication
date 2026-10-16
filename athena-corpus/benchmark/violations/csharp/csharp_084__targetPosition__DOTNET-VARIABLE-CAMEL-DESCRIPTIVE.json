@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_084",
+  "language": "csharp",
+  "originalName": "targetPosition",
+  "injectedName": "target_position",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'target_position' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private void Update()\n{\n    if (!isEnabled) return;\n\n    bool deployPressed = Input.GetKeyDown(intakeKey)\n        || (PlayerInputHandler.Instance != null && PlayerInputHandler.Instance.DeployPressedThisFrame());\n\n    if (deployPressed)\n    {\n        isDeployed = !isDeployed;\n    }\n\n    Vector3 target_position = isDeployed ? extendedPosition : retractedPosition;\n\n    transform.localPosition = Vector3.Lerp(transform.localPosition, target_position, Time.deltaTime * lerpSpeed);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

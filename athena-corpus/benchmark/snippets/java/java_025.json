@@ -1,0 +1,52 @@
+{
+  "id": "java_025",
+  "language": "java",
+  "source": "github:KingF3rdi/aero-client@d8888aba64351257362cd47f69282311dd942c8f",
+  "sourceDetail": "src/main/java/dev/aero/client/AeroClient.java lines 253-283 (method AeroClient.tickModuleToggleKeys); license MIT; repo created 2026-09-20T13:19:19Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "private static void tickModuleToggleKeys(MinecraftClient client) {\n    if (MODULES == null || client.currentScreen != null || client.getWindow() == null) {\n        return;\n    }\n    long handle = client.getWindow().getHandle();\n    for (dev.aero.client.module.Module module : MODULES.all) {\n        int key = module.style().toggleKey;\n        if (key < 0) {\n            continue;\n        }\n        boolean down;\n        try {\n            down = GLFW.glfwGetKey(handle, key) == GLFW.GLFW_PRESS;\n        } catch (Throwable ignored) {\n            continue;\n        }\n        boolean was = Boolean.TRUE.equals(moduleKeyWasDown.get(module.name));\n        if (down && !was) {\n            if (\"Screenshot\".equals(module.name)) {\n                if (module.enabled()) {\n                    Screenshots.capture(client);\n                }\n            } else if (!\"Emotes\".equals(module.name)) {\n                module.toggle();\n                CONFIG.save();\n                dev.aero.client.ui.Notifications.toggled(module);\n            }\n        }\n        moduleKeyWasDown.put(module.name, down);\n    }\n}",
+  "identifiers": [
+    {
+      "name": "tickModuleToggleKeys",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "handle",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "client",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "module",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "key",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "down",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "KingF3rdi/aero-client",
+    "repoUrl": "https://github.com/KingF3rdi/aero-client",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-20T13:19:19Z",
+    "commit": "d8888aba64351257362cd47f69282311dd942c8f",
+    "path": "src/main/java/dev/aero/client/AeroClient.java",
+    "startLine": 253,
+    "endLine": 283,
+    "unit": "method AeroClient.tickModuleToggleKeys",
+    "corpusFile": "corpus/java/KingF3rdi__aero-client__AeroClient.java.md"
+  }
+}

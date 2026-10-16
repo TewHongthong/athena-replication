@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_036",
+  "language": "python",
+  "originalName": "outputs",
+  "injectedName": "OUTPUTS",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'OUTPUTS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def generate_eval_outputs(max_new_tokens):\n    OUTPUTS = []\n    for prompt in eval_prompts:\n        prompt_tokens = torch.tensor(\n            [dataset.encode(prompt)],\n            dtype=torch.long,\n            device=device,\n        )\n        generated = dataset.decode(\n            model.generation(\n                prompt_tokens,\n                max_new_tokens=max_new_tokens,\n            )[0].tolist()\n        )\n        OUTPUTS.append({\"prompt\": prompt, \"generation\": generated})\n    return OUTPUTS",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

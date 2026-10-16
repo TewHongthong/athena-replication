@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_014",
+  "language": "java",
+  "originalName": "fileName",
+  "injectedName": "file_name",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'file_name' does not match camelCase pattern",
+    "name 'file_name' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public interface FileStorageService {\n\n    String store(MultipartFile file);\n\n    Resource load(String file_name);\n\n    String determineContentType(String file_name);\n\n    void delete(String fileUrl);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

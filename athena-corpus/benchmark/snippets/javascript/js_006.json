@@ -1,0 +1,32 @@
+{
+  "id": "js_006",
+  "language": "javascript",
+  "source": "github:Leonxlnx/unlazy@16671491f6679ad9378f52604d3bc2415b4120c7",
+  "sourceDetail": "scripts/lib/process-tree.mjs lines 29-35 (function syncFailure); license MIT; repo created 2026-08-09; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function syncFailure(result) {\n  if (!result) return \"returned no result\";\n  if (result.error) return result.error.code || result.error.message || \"spawn error\";\n  if (result.signal) return \"signal \" + result.signal;\n  if (result.status !== 0) return \"exit \" + String(result.status);\n  return null;\n}",
+  "identifiers": [
+    {
+      "name": "syncFailure",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "result",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Leonxlnx/unlazy",
+    "repoUrl": "https://github.com/Leonxlnx/unlazy",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-09",
+    "commit": "16671491f6679ad9378f52604d3bc2415b4120c7",
+    "path": "scripts/lib/process-tree.mjs",
+    "startLine": 29,
+    "endLine": 35,
+    "unit": "function syncFailure",
+    "corpusFile": "corpus/javascript/Leonxlnx__unlazy__process-tree.mjs.md"
+  }
+}

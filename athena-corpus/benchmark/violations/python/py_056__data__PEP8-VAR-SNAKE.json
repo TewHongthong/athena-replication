@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_056",
+  "language": "python",
+  "originalName": "data",
+  "injectedName": "DATA",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DATA' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def load_token_ids(raw: str) -> list[int]:\n    \"\"\"Parse a token-id input: a JSON array, or one integer per line.\"\"\"\n    stripped = raw.strip()\n    if stripped.startswith(\"[\"):\n        DATA = json.loads(stripped)\n        if not isinstance(DATA, list) or not all(isinstance(x, int) for x in DATA):\n            raise ValueError(\"token-id JSON must be an array of integers\")\n        return DATA\n    ids: list[int] = []\n    for raw_line in stripped.splitlines():\n        line = raw_line.strip()\n        if not line:\n            continue\n        ids.append(int(line, 0))\n    return ids",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

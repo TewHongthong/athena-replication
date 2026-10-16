@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_089",
+  "language": "java",
+  "originalName": "loadConfigInternal",
+  "injectedName": "load_config_internal",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'load_config_internal' does not match camelCase pattern",
+    "name 'load_config_internal' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "private static ModConfig load_config_internal() {\n    if (Files.exists(CONFIG_PATH)) {\n        try (BufferedReader r = Files.newBufferedReader(CONFIG_PATH, StandardCharsets.UTF_8)) {\n            ModConfig cfg = GSON.fromJson(r, ModConfig.class);\n            return cfg != null ? cfg : new ModConfig();\n        } catch (Exception ignored) {\n        }\n    }\n    return new ModConfig();\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

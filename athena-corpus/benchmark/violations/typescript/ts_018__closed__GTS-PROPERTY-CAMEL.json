@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_018",
+  "language": "typescript",
+  "originalName": "closed",
+  "injectedName": "CLOSED",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CLOSED' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface RawSubpath {\n  x0: number;\n  y0: number;\n  segs: RawSeg[];\n  CLOSED: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

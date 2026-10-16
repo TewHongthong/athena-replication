@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_051",
+  "language": "typescript",
+  "originalName": "ready",
+  "injectedName": "READY",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'READY' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface HudBarProps {\n  phase: TakePhase;\n  READY: boolean;\n  elapsedMs: number;\n  take: number;\n  wide: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

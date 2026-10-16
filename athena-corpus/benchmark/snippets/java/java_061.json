@@ -1,0 +1,52 @@
+{
+  "id": "java_061",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminRepositoryRecipeComboboxContractTest.java lines 12-49 (class AdminRepositoryRecipeComboboxContractTest); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "class AdminRepositoryRecipeComboboxContractTest {\n\n  @Test\n  void repositoryRecipeUsesAccessibleSearchableCombobox() throws IOException {\n    String index = resource(\"/META-INF/resources/admin/index.html\");\n    String javascript = resource(\"/META-INF/resources/admin/assets/admin.js\");\n    String stylesheet = resource(\"/META-INF/resources/admin/assets/admin.css\");\n\n    assertTrue(index.contains(\"id=\\\"repository-recipe\\\" name=\\\"recipe\\\" required hidden\"));\n    assertTrue(index.contains(\"id=\\\"repository-recipe-trigger\\\"\"));\n    assertTrue(index.contains(\"aria-haspopup=\\\"listbox\\\"\"));\n    assertTrue(index.contains(\"id=\\\"repository-recipe-search\\\"\"));\n    assertTrue(index.contains(\"role=\\\"combobox\\\"\"));\n    assertTrue(index.contains(\"aria-autocomplete=\\\"list\\\"\"));\n    assertTrue(index.contains(\"id=\\\"repository-recipe-options\\\"\"));\n    assertTrue(index.contains(\"role=\\\"listbox\\\"\"));\n\n    assertTrue(javascript.contains(\"function bindRepositoryRecipeCombobox()\"));\n    assertTrue(javascript.contains(\"select.dispatchEvent(new Event(\\\"change\\\", { bubbles: true }))\"));\n    assertTrue(javascript.contains(\"event.key === \\\"ArrowDown\\\" || event.key === \\\"ArrowUp\\\"\"));\n    assertTrue(javascript.contains(\"event.key === \\\"Enter\\\"\"));\n    assertTrue(javascript.contains(\"event.key === \\\"Escape\\\"\"));\n    assertTrue(javascript.contains(\"closest(\\\"label, .form-field\\\")\"));\n    assertFalse(javascript.contains(\"<small>${escapeHtml(recipe?.name || \\\"\\\")}</small>\"));\n\n    assertTrue(stylesheet.contains(\".recipe-combobox-trigger\"));\n    assertTrue(stylesheet.contains(\".recipe-combobox-popover\"));\n    assertTrue(stylesheet.contains(\"z-index: 40;\\n  width: 100%;\"));\n    assertTrue(stylesheet.contains(\".recipe-combobox-option\"));\n    assertTrue(stylesheet.contains(\".recipe-combobox-trigger:disabled\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "identifiers": [
+    {
+      "name": "AdminRepositoryRecipeComboboxContractTest",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "resource",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "index",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "javascript",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "stylesheet",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminRepositoryRecipeComboboxContractTest.java",
+    "startLine": 12,
+    "endLine": 49,
+    "unit": "class AdminRepositoryRecipeComboboxContractTest",
+    "corpusFile": "corpus/java/klboke__kkRepo__AdminRepositoryRecipeComboboxContractTest.java.md"
+  }
+}

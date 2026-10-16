@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_023",
+  "language": "csharp",
+  "originalName": "pragma",
+  "injectedName": "Pragma",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'Pragma' does not match camelCase pattern",
+    "name 'Pragma' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public class SqliteConnectionFactory(string connectionString) : IDbConnectionFactory\n{\n    public async Task<IDbConnection> OpenAsync(CancellationToken ct = default)\n    {\n        var conn = new SqliteConnection(connectionString);\n        await conn.OpenAsync(ct);\n        await using (var Pragma = conn.CreateCommand())\n        {\n            Pragma.CommandText = \"PRAGMA foreign_keys = ON;\";\n            await Pragma.ExecuteNonQueryAsync(ct);\n        }\n        return conn;\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

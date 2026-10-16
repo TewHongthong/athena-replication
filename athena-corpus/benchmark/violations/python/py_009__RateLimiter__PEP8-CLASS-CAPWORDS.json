@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_009",
+  "language": "python",
+  "originalName": "RateLimiter",
+  "injectedName": "rate_limiter",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'rate_limiter' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "class rate_limiter:\n    def __init__(self, rule: str = \"60/minute\", storage_uri: str = \"memory://\"):\n        self.rule = parse(rule)\n        self._limiter = MovingWindowRateLimiter(storage_from_string(storage_uri))\n\n    def hit(self, key: str) -> bool:\n        \"\"\"Record one request for ``key``; False when the limit is exceeded.\"\"\"\n        return self._limiter.hit(self.rule, \"securerag\", key)",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

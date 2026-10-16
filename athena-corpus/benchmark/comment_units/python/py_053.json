@@ -1,0 +1,38 @@
+{
+  "snippetId": "py_053",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "function",
+  "name": "text_findings",
+  "codeBare": "def text_findings(report: Any) -> tuple[list[str], list[str], int]:\n    \n    findings: list[str] = []\n    confidences: list[str] = []\n    for h in report.hits:\n        conf = text_hit_confidence(h.kind)\n        findings.append(f\"layer-a [{h.kind}] {h.label} x{h.count}\")\n        confidences.append(conf)\n    return findings, confidences, report.suspicious_total",
+  "referenceComment": "\"\"\"Flatten a TextInspectReport into finding strings + confidence lists.\"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-FUNC"
+  ],
+  "origin": "snippet",
+  "source": "github:guillaumemeyer/watermarks-remover@258cf20cdc2906e24398b3d6f3bc3cbcfd578245",
+  "sourceDetail": "service/scripts/audit_lib.py lines 27-35 (function text_findings); license MIT; repo created 2026-08-11; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 1,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "guillaumemeyer/watermarks-remover",
+    "repoUrl": "https://github.com/guillaumemeyer/watermarks-remover",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-11",
+    "commit": "258cf20cdc2906e24398b3d6f3bc3cbcfd578245",
+    "path": "service/scripts/audit_lib.py",
+    "startLine": 27,
+    "endLine": 35,
+    "unit": "function text_findings",
+    "corpusFile": "corpus/python/guillaumemeyer__watermarks-remover__audit_lib.py.md"
+  }
+}

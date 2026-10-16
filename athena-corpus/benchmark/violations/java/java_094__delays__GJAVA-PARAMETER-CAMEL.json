@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_094",
+  "language": "java",
+  "originalName": "delays",
+  "injectedName": "DELAYS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DELAYS' does not match camelCase pattern",
+    "name 'DELAYS' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void runSequence(\n        TransitionMode mode,\n        int targetNumber,\n        AutoTuneManager.Delays DELAYS,\n        int modeSlot,\n        int... targetSlots\n) throws InterruptedException {\n    TransitionDetector.startAttempt(\n            mode,\n            targetNumber,\n            DELAYS.hubDelay(),\n            DELAYS.clickDelay(),\n            DELAYS.confirmDelay()\n    );\n\n    sendCommand(\"hub\");\n    sleep(DELAYS.hubDelay());\n\n    sendCommand(\"menu\");\n    sleep(DELAYS.clickDelay());\n\n    clickSlot(modeSlot);\n    sleep(DELAYS.clickDelay() + 60L);\n\n    for (int i = 0; i < targetSlots.length; i++) {\n        clickSlot(targetSlots[i]);\n        if (i < targetSlots.length - 1) {\n            sleep(DELAYS.clickDelay() + 60L);\n        }\n    }\n}",
+  "occurrencesRenamed": 8,
+  "commentOccurrencesRenamed": 0
+}

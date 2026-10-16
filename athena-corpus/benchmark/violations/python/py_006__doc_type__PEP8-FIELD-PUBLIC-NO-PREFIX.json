@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_006",
+  "language": "python",
+  "originalName": "doc_type",
+  "injectedName": "DOC_TYPE",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DOC_TYPE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass DocRecord:\n    path: str\n    department: str\n    clearance: str\n    subject: str\n    DOC_TYPE: str\n    words: int\n    canary: str | None\n    injected: bool",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

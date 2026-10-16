@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_090",
+  "language": "java",
+  "originalName": "literal",
+  "injectedName": "LITERAL",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LITERAL' does not match camelCase pattern",
+    "name 'LITERAL' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void registerWithRuAlias(String LITERAL, int min, int max, IntConsumer action) {\n    if (LITERAL == null || LITERAL.isBlank()) return;\n\n    String base = LITERAL.trim();\n\n    registerLiteralIfAbsent(base, min, max, action);\n\n    String ru = toRussianLayout(base);\n\n    if (!ru.equalsIgnoreCase(base)) {\n        registerLiteralIfAbsent(ru, min, max, action);\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

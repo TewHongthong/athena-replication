@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_039",
+  "language": "javascript",
+  "originalName": "writeToFile",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function agentsXmlCommand(l = false) {\n  const result = await agentsXmlApi(l)\n\n  if (!result.xml) {\n    console.log('No skills found in lockfile.')\n    return\n  }\n\n  if (result.written) {\n    console.log(`✅ Wrote skills XML to ${result.path}`)\n  } else {\n    console.log(result.xml)\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_046",
+  "language": "csharp",
+  "originalName": "packageId",
+  "injectedName": "package_id",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'package_id' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public static partial class OwnerContentTelemetry\n{\n    [LoggerMessage(EventId = 2213, Level = LogLevel.Information,\n        Message = \"content_rollback tick={WorldTick} package={PackageId} outcome={Outcome}\")]\n    public static partial void Rollback(ILogger logger, long worldTick, string package_id, string outcome);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_085",
+  "language": "typescript",
+  "originalName": "lineas",
+  "injectedName": "LINEAS",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LINEAS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function cssDe(pisadas: Record<string, string>): string {\n  const LINEAS = Object.entries(pisadas)\n  if (!LINEAS.length) return \"/* Todo en su default: no hace falta escribir nada. */\"\n  const ancho = Math.max(...LINEAS.map(([nombre]) => nombre.length))\n  return [\":root {\", ...LINEAS.map(([nombre, valor]) => `  ${`${nombre}:`.padEnd(ancho + 1)} ${valor};`), \"}\"].join(\"\\n\")\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

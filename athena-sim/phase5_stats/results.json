@@ -1,0 +1,2463 @@
+{
+  "ci": [
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "o3-mini",
+      "condition": "none",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 24.316939890710383,
+      "wilson": [
+        20.2033626750127,
+        28.964064677670176
+      ],
+      "unit_boot": [
+        17.75956284153005,
+        31.4207650273224
+      ],
+      "snippet_boot": [
+        14.814068100358423,
+        34.94656438499868
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "o3-mini",
+      "condition": "fulldoc",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 97.81420765027322,
+      "wilson": [
+        95.74674142821212,
+        98.88836722370804
+      ],
+      "unit_boot": [
+        95.62841530054644,
+        99.45355191256832
+      ],
+      "snippet_boot": [
+        95.3168044077135,
+        99.72677595628414
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "o3-mini",
+      "condition": "chunk",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 62.568306010928964,
+      "wilson": [
+        57.503779165229474,
+        67.37173510898955
+      ],
+      "unit_boot": [
+        54.09836065573771,
+        70.49180327868852
+      ],
+      "snippet_boot": [
+        54.400000000000006,
+        71.00271002710026
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "o3-mini",
+      "condition": "graph",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        98.96128504743652,
+        100.0
+      ],
+      "unit_boot": [
+        97.02158399385713,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "none",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 46.44808743169399,
+      "wilson": [
+        41.40185371840936,
+        51.56810963887656
+      ],
+      "unit_boot": [
+        37.704918032786885,
+        55.19125683060109
+      ],
+      "snippet_boot": [
+        35.85381652661064,
+        57.18157181571816
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "fulldoc",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 99.4535519125683,
+      "wilson": [
+        98.02972171767172,
+        99.85001923088574
+      ],
+      "unit_boot": [
+        98.63387978142076,
+        100.0
+      ],
+      "snippet_boot": [
+        98.65591397849462,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "chunk",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 76.77595628415301,
+      "wilson": [
+        72.18527411602048,
+        80.81038672905481
+      ],
+      "unit_boot": [
+        69.39890710382512,
+        83.60655737704919
+      ],
+      "snippet_boot": [
+        72.1311475409836,
+        82.6210826210826
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "graph",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        98.96128504743652,
+        100.0
+      ],
+      "unit_boot": [
+        97.02158399385713,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Qwen3.5-9B",
+      "condition": "none",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 20.218579234972676,
+      "wilson": [
+        16.422943203131624,
+        24.632903407958096
+      ],
+      "unit_boot": [
+        14.754098360655735,
+        26.229508196721312
+      ],
+      "snippet_boot": [
+        15.343915343915345,
+        25.575344827586196
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Qwen3.5-9B",
+      "condition": "fulldoc",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 87.43169398907104,
+      "wilson": [
+        83.64210881121468,
+        90.4436619620028
+      ],
+      "unit_boot": [
+        82.24043715846993,
+        92.07650273224043
+      ],
+      "snippet_boot": [
+        82.11382113821138,
+        92.62295081967213
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Qwen3.5-9B",
+      "condition": "chunk",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 47.540983606557376,
+      "wilson": [
+        42.476759810460464,
+        52.65629174458361
+      ],
+      "unit_boot": [
+        39.34426229508197,
+        55.47131147540974
+      ],
+      "snippet_boot": [
+        40.21081349206348,
+        53.391063581741534
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Qwen3.5-9B",
+      "condition": "graph",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 93.71584699453553,
+      "wilson": [
+        90.74711874187163,
+        95.77640916845539
+      ],
+      "unit_boot": [
+        90.16393442622952,
+        96.72131147540983
+      ],
+      "snippet_boot": [
+        90.98360655737704,
+        96.14325068870524
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "none",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 39.07103825136612,
+      "wilson": [
+        34.21061724084206,
+        44.15850078157617
+      ],
+      "unit_boot": [
+        31.147540983606557,
+        47.267759562841526
+      ],
+      "snippet_boot": [
+        29.97127664625172,
+        48.61111111111111
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "fulldoc",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 99.18032786885246,
+      "wilson": [
+        97.61811012867139,
+        99.72085877044648
+      ],
+      "unit_boot": [
+        97.81420765027322,
+        100.0
+      ],
+      "snippet_boot": [
+        97.72079772079772,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "chunk",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 68.85245901639344,
+      "wilson": [
+        63.932816314204054,
+        73.38045509712447
+      ],
+      "unit_boot": [
+        60.92896174863388,
+        76.775956284153
+      ],
+      "snippet_boot": [
+        63.58543417366946,
+        75.46666666666665
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "graph",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        98.96128504743652,
+        100.0
+      ],
+      "unit_boot": [
+        97.02158399385713,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "DeepSeek V4 Flash",
+      "condition": "none",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 30.327868852459016,
+      "wilson": [
+        25.842869798266335,
+        35.221542642086504
+      ],
+      "unit_boot": [
+        23.49726775956284,
+        37.431693989071036
+      ],
+      "snippet_boot": [
+        19.732753623188408,
+        41.257155867811605
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "DeepSeek V4 Flash",
+      "condition": "fulldoc",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 96.44808743169399,
+      "wilson": [
+        94.01853655073391,
+        97.91271185398853
+      ],
+      "unit_boot": [
+        94.26229508196722,
+        98.36065573770492
+      ],
+      "snippet_boot": [
+        94.2257217847769,
+        98.58757062146893
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "DeepSeek V4 Flash",
+      "condition": "chunk",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 66.93989071038251,
+      "wilson": [
+        61.966211220779755,
+        71.56165584447196
+      ],
+      "unit_boot": [
+        59.2896174863388,
+        74.31693989071037
+      ],
+      "snippet_boot": [
+        60.65573770491803,
+        74.27860447528803
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "DeepSeek V4 Flash",
+      "condition": "graph",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 99.18032786885246,
+      "wilson": [
+        97.61811012867139,
+        99.72085877044648
+      ],
+      "unit_boot": [
+        98.08743169398906,
+        100.0
+      ],
+      "snippet_boot": [
+        98.38709677419357,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemma 4 26B",
+      "condition": "none",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 35.79234972677595,
+      "wilson": [
+        31.05188717397547,
+        40.82796625516825
+      ],
+      "unit_boot": [
+        27.595628415300546,
+        43.98907103825137
+      ],
+      "snippet_boot": [
+        25.984251968503933,
+        46.32768361581921
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemma 4 26B",
+      "condition": "fulldoc",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 96.17486338797814,
+      "wilson": [
+        93.68245761539661,
+        97.70801873988627
+      ],
+      "unit_boot": [
+        92.62295081967213,
+        98.90710382513662
+      ],
+      "snippet_boot": [
+        93.39080459770115,
+        98.65591397849462
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemma 4 26B",
+      "condition": "chunk",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 67.21311475409836,
+      "wilson": [
+        62.24660410033668,
+        71.82203501435457
+      ],
+      "unit_boot": [
+        58.7431693989071,
+        75.40983606557377
+      ],
+      "snippet_boot": [
+        60.11396011396012,
+        74.78260869565217
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemma 4 26B",
+      "condition": "graph",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        98.96128504743652,
+        100.0
+      ],
+      "unit_boot": [
+        97.02158399385713,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "rule-based fixer",
+      "condition": "none",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 25.40983606557377,
+      "wilson": [
+        21.220907164476518,
+        30.10960838596453
+      ],
+      "unit_boot": [
+        18.0327868852459,
+        32.78688524590164
+      ],
+      "snippet_boot": [
+        20.33898305084746,
+        29.166666666666668
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "rule-based fixer",
+      "condition": "fulldoc",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 25.40983606557377,
+      "wilson": [
+        21.220907164476518,
+        30.10960838596453
+      ],
+      "unit_boot": [
+        18.0327868852459,
+        33.60655737704918
+      ],
+      "snippet_boot": [
+        20.353982300884958,
+        29.133858267716533
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "rule-based fixer",
+      "condition": "chunk",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 25.40983606557377,
+      "wilson": [
+        21.220907164476518,
+        30.10960838596453
+      ],
+      "unit_boot": [
+        18.0327868852459,
+        33.60655737704918
+      ],
+      "snippet_boot": [
+        20.32520325203252,
+        29.133858267716533
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "rule-based fixer",
+      "condition": "graph",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 25.40983606557377,
+      "wilson": [
+        21.220907164476518,
+        30.10960838596453
+      ],
+      "unit_boot": [
+        18.0327868852459,
+        33.60655737704918
+      ],
+      "snippet_boot": [
+        20.512295081967213,
+        29.133858267716533
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "o3-mini",
+      "condition": "none",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 0.0,
+      "wilson": [
+        0.0,
+        9.642183044857635
+      ],
+      "unit_boot": [
+        0.0,
+        26.464846939705122
+      ],
+      "snippet_boot": [
+        0.0,
+        0.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "o3-mini",
+      "condition": "fulldoc",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 88.88888888888889,
+      "wilson": [
+        74.68487098496365,
+        95.59343109125815
+      ],
+      "unit_boot": [
+        80.55555555555554,
+        97.22222222222221
+      ],
+      "snippet_boot": [
+        80.55555555555554,
+        97.22222222222221
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "o3-mini",
+      "condition": "chunk",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 80.55555555555556,
+      "wilson": [
+        64.9716379364848,
+        90.24702798054665
+      ],
+      "unit_boot": [
+        55.55555555555556,
+        100.0
+      ],
+      "snippet_boot": [
+        58.333333333333336,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "o3-mini",
+      "condition": "graph",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "none",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 0.0,
+      "wilson": [
+        0.0,
+        9.642183044857635
+      ],
+      "unit_boot": [
+        0.0,
+        26.464846939705122
+      ],
+      "snippet_boot": [
+        0.0,
+        0.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "fulldoc",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 27.77777777777778,
+      "wilson": [
+        15.848170025813797,
+        43.992800216345145
+      ],
+      "unit_boot": [
+        13.888888888888888,
+        44.444444444444436
+      ],
+      "snippet_boot": [
+        13.888888888888888,
+        41.66666666666667
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "chunk",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 13.88888888888889,
+      "wilson": [
+        6.0817253631150985,
+        28.65985128039319
+      ],
+      "unit_boot": [
+        2.7777777777777777,
+        27.777777777777775
+      ],
+      "snippet_boot": [
+        2.7777777777777777,
+        27.777777777777775
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "graph",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Qwen3.5-9B",
+      "condition": "none",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 0.0,
+      "wilson": [
+        0.0,
+        9.642183044857635
+      ],
+      "unit_boot": [
+        0.0,
+        26.464846939705122
+      ],
+      "snippet_boot": [
+        0.0,
+        0.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Qwen3.5-9B",
+      "condition": "fulldoc",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 86.11111111111111,
+      "wilson": [
+        71.34014871960682,
+        93.9182746368849
+      ],
+      "unit_boot": [
+        72.22222222222221,
+        97.22222222222221
+      ],
+      "snippet_boot": [
+        72.22222222222221,
+        97.22222222222221
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Qwen3.5-9B",
+      "condition": "chunk",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 83.33333333333333,
+      "wilson": [
+        68.10888526532568,
+        92.1296593714359
+      ],
+      "unit_boot": [
+        58.333333333333336,
+        100.0
+      ],
+      "snippet_boot": [
+        58.333333333333336,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Qwen3.5-9B",
+      "condition": "graph",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "none",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 0.0,
+      "wilson": [
+        0.0,
+        9.642183044857635
+      ],
+      "unit_boot": [
+        0.0,
+        26.464846939705122
+      ],
+      "snippet_boot": [
+        0.0,
+        0.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "fulldoc",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 94.44444444444444,
+      "wilson": [
+        81.8550258923888,
+        98.46303362329331
+      ],
+      "unit_boot": [
+        86.1111111111111,
+        100.0
+      ],
+      "snippet_boot": [
+        86.1111111111111,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "chunk",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 83.33333333333333,
+      "wilson": [
+        68.10888526532568,
+        92.1296593714359
+      ],
+      "unit_boot": [
+        58.333333333333336,
+        100.0
+      ],
+      "snippet_boot": [
+        58.333333333333336,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "graph",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "DeepSeek V4 Flash",
+      "condition": "none",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 0.0,
+      "wilson": [
+        0.0,
+        9.642183044857635
+      ],
+      "unit_boot": [
+        0.0,
+        26.464846939705122
+      ],
+      "snippet_boot": [
+        0.0,
+        0.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "DeepSeek V4 Flash",
+      "condition": "fulldoc",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 86.11111111111111,
+      "wilson": [
+        71.34014871960682,
+        93.9182746368849
+      ],
+      "unit_boot": [
+        77.77777777777777,
+        94.44444444444443
+      ],
+      "snippet_boot": [
+        77.77777777777777,
+        94.44444444444443
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "DeepSeek V4 Flash",
+      "condition": "chunk",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 77.77777777777777,
+      "wilson": [
+        61.91498017214091,
+        88.2838070251604
+      ],
+      "unit_boot": [
+        55.55555555555555,
+        97.22222222222221
+      ],
+      "snippet_boot": [
+        55.55555555555555,
+        97.22222222222221
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "DeepSeek V4 Flash",
+      "condition": "graph",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 91.66666666666667,
+      "wilson": [
+        78.17298972308114,
+        97.1251910728708
+      ],
+      "unit_boot": [
+        83.33333333333331,
+        100.0
+      ],
+      "snippet_boot": [
+        83.33333333333331,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemma 4 26B",
+      "condition": "none",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 0.0,
+      "wilson": [
+        0.0,
+        9.642183044857635
+      ],
+      "unit_boot": [
+        0.0,
+        26.464846939705122
+      ],
+      "snippet_boot": [
+        0.0,
+        0.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemma 4 26B",
+      "condition": "fulldoc",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemma 4 26B",
+      "condition": "chunk",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 83.33333333333333,
+      "wilson": [
+        68.10888526532568,
+        92.1296593714359
+      ],
+      "unit_boot": [
+        58.333333333333336,
+        100.0
+      ],
+      "snippet_boot": [
+        58.333333333333336,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemma 4 26B",
+      "condition": "graph",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "rule-based fixer",
+      "condition": "none",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "rule-based fixer",
+      "condition": "fulldoc",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "rule-based fixer",
+      "condition": "chunk",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "rule-based fixer",
+      "condition": "graph",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Public5",
+      "task": "rename",
+      "model": "GPT-6 Luna (Public5)",
+      "condition": "none",
+      "trials": 300,
+      "units": 100,
+      "snippets": 83,
+      "rate": 99.66666666666667,
+      "wilson": [
+        98.13628354450567,
+        99.94113574238594
+      ],
+      "unit_boot": [
+        99.0,
+        100.0
+      ],
+      "snippet_boot": [
+        98.9247311827957,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Public5",
+      "task": "rename",
+      "model": "GPT-6 Luna (Public5)",
+      "condition": "fulldoc",
+      "trials": 300,
+      "units": 100,
+      "snippets": 83,
+      "rate": 100.0,
+      "wilson": [
+        98.73565700022642,
+        99.99999999999997
+      ],
+      "unit_boot": [
+        96.37833073548235,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Public5",
+      "task": "rename",
+      "model": "GPT-6 Luna (Public5)",
+      "condition": "chunk",
+      "trials": 300,
+      "units": 100,
+      "snippets": 83,
+      "rate": 99.0,
+      "wilson": [
+        97.10159953649372,
+        99.65934432372819
+      ],
+      "unit_boot": [
+        97.0,
+        100.0
+      ],
+      "snippet_boot": [
+        96.93877551020408,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Public5",
+      "task": "rename",
+      "model": "GPT-6 Luna (Public5)",
+      "condition": "graph",
+      "trials": 300,
+      "units": 100,
+      "snippets": 83,
+      "rate": 100.0,
+      "wilson": [
+        98.73565700022642,
+        99.99999999999997
+      ],
+      "unit_boot": [
+        96.37833073548235,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Public5",
+      "task": "comment",
+      "model": "GPT-6 Luna (Public5)",
+      "condition": "none",
+      "trials": 258,
+      "units": 86,
+      "snippets": 86,
+      "rate": 99.6124031007752,
+      "wilson": [
+        97.83748428746021,
+        99.93154859348766
+      ],
+      "unit_boot": [
+        98.83720930232558,
+        100.0
+      ],
+      "snippet_boot": [
+        98.83720930232558,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Public5",
+      "task": "comment",
+      "model": "GPT-6 Luna (Public5)",
+      "condition": "fulldoc",
+      "trials": 258,
+      "units": 86,
+      "snippets": 86,
+      "rate": 98.83720930232558,
+      "wilson": [
+        96.63761164227071,
+        99.60378009991236
+      ],
+      "unit_boot": [
+        96.89922480620154,
+        100.0
+      ],
+      "snippet_boot": [
+        96.89922480620154,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Public5",
+      "task": "comment",
+      "model": "GPT-6 Luna (Public5)",
+      "condition": "chunk",
+      "trials": 258,
+      "units": 86,
+      "snippets": 86,
+      "rate": 99.6124031007752,
+      "wilson": [
+        97.83748428746021,
+        99.93154859348766
+      ],
+      "unit_boot": [
+        98.83720930232558,
+        100.0
+      ],
+      "snippet_boot": [
+        98.83720930232558,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Public5",
+      "task": "comment",
+      "model": "GPT-6 Luna (Public5)",
+      "condition": "graph",
+      "trials": 258,
+      "units": 86,
+      "snippets": 86,
+      "rate": 99.6124031007752,
+      "wilson": [
+        97.83748428746021,
+        99.93154859348766
+      ],
+      "unit_boot": [
+        98.83720930232558,
+        100.0
+      ],
+      "snippet_boot": [
+        98.83720930232558,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "rename",
+      "model": "o3-mini (ablation)",
+      "condition": "graph",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        98.96128504743652,
+        100.0
+      ],
+      "unit_boot": [
+        97.02158399385713,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "rename",
+      "model": "o3-mini (ablation)",
+      "condition": "graph_noex",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 95.35519125683061,
+      "wilson": [
+        92.68806483269034,
+        97.08009537427391
+      ],
+      "unit_boot": [
+        91.80327868852459,
+        98.36065573770492
+      ],
+      "snippet_boot": [
+        91.59891598915988,
+        98.63387978142076
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "rename",
+      "model": "GPT-6 Luna (ablation)",
+      "condition": "graph",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        98.96128504743652,
+        100.0
+      ],
+      "unit_boot": [
+        97.02158399385713,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "rename",
+      "model": "GPT-6 Luna (ablation)",
+      "condition": "graph_noex",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 98.63387978142076,
+      "wilson": [
+        96.84231502546716,
+        99.41510977477164
+      ],
+      "unit_boot": [
+        96.44808743169399,
+        100.0
+      ],
+      "snippet_boot": [
+        96.66666666666667,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "rename",
+      "model": "Gemini 3.1 Flash-Lite (ablation)",
+      "condition": "graph",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        98.96128504743652,
+        100.0
+      ],
+      "unit_boot": [
+        97.02158399385713,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "rename",
+      "model": "Gemini 3.1 Flash-Lite (ablation)",
+      "condition": "graph_noex",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 98.36065573770492,
+      "wilson": [
+        96.47007883085503,
+        99.24657391994421
+      ],
+      "unit_boot": [
+        95.90163934426229,
+        100.0
+      ],
+      "snippet_boot": [
+        95.9349593495935,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "rename",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "none",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 33.87978142076503,
+      "wilson": [
+        29.220559926459885,
+        38.873889156607014
+      ],
+      "unit_boot": [
+        26.22950819672131,
+        42.076502732240435
+      ],
+      "snippet_boot": [
+        23.846153846153847,
+        44.808743169398895
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "rename",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "fulldoc",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 95.90163934426229,
+      "wilson": [
+        93.34882562634914,
+        97.50087867949422
+      ],
+      "unit_boot": [
+        92.34972677595627,
+        98.63387978142076
+      ],
+      "snippet_boot": [
+        92.98245614035088,
+        98.34710743801654
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "rename",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "chunk",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 66.93989071038251,
+      "wilson": [
+        61.966211220779755,
+        71.56165584447196
+      ],
+      "unit_boot": [
+        58.7431693989071,
+        74.86338797814207
+      ],
+      "snippet_boot": [
+        60.526315789473685,
+        74.22969187675069
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "rename",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "graph",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        98.96128504743652,
+        100.0
+      ],
+      "unit_boot": [
+        97.02158399385713,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "rename",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "graph_noex",
+      "trials": 366,
+      "units": 122,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        98.96128504743652,
+        100.0
+      ],
+      "unit_boot": [
+        97.02158399385713,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "comment",
+      "model": "o3-mini (ablation)",
+      "condition": "graph",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "comment",
+      "model": "o3-mini (ablation)",
+      "condition": "graph_noex",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "comment",
+      "model": "GPT-6 Luna (ablation)",
+      "condition": "graph",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "comment",
+      "model": "GPT-6 Luna (ablation)",
+      "condition": "graph_noex",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "comment",
+      "model": "Gemini 3.1 Flash-Lite (ablation)",
+      "condition": "graph",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "comment",
+      "model": "Gemini 3.1 Flash-Lite (ablation)",
+      "condition": "graph_noex",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "comment",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "none",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 0.0,
+      "wilson": [
+        0.0,
+        9.642183044857635
+      ],
+      "unit_boot": [
+        0.0,
+        26.464846939705122
+      ],
+      "snippet_boot": [
+        0.0,
+        0.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "comment",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "fulldoc",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "comment",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "chunk",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 83.33333333333333,
+      "wilson": [
+        68.10888526532568,
+        92.1296593714359
+      ],
+      "unit_boot": [
+        58.333333333333336,
+        100.0
+      ],
+      "snippet_boot": [
+        58.333333333333336,
+        100.0
+      ],
+      "degenerate": false
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "comment",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "graph",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "task": "comment",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "graph_noex",
+      "trials": 36,
+      "units": 12,
+      "snippets": 12,
+      "rate": 100.0,
+      "wilson": [
+        90.35781695514235,
+        100.0
+      ],
+      "unit_boot": [
+        73.53515306029487,
+        100.0
+      ],
+      "snippet_boot": [
+        100.0,
+        100.0
+      ],
+      "degenerate": true
+    }
+  ],
+  "collision": [
+    {
+      "family": "GSCS",
+      "model": "o3-mini",
+      "condition": "none",
+      "trials": 366,
+      "core_ok": 24.316939890710383,
+      "collision": 2.185792349726776,
+      "collision_n": 8,
+      "rename_safe": 24.316939890710383
+    },
+    {
+      "family": "GSCS",
+      "model": "o3-mini",
+      "condition": "fulldoc",
+      "trials": 366,
+      "core_ok": 97.81420765027322,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 97.81420765027322
+    },
+    {
+      "family": "GSCS",
+      "model": "o3-mini",
+      "condition": "chunk",
+      "trials": 366,
+      "core_ok": 62.568306010928964,
+      "collision": 0.819672131147541,
+      "collision_n": 3,
+      "rename_safe": 62.568306010928964
+    },
+    {
+      "family": "GSCS",
+      "model": "o3-mini",
+      "condition": "graph",
+      "trials": 366,
+      "core_ok": 100.0,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 100.0
+    },
+    {
+      "family": "GSCS",
+      "model": "GPT-6 Luna",
+      "condition": "none",
+      "trials": 366,
+      "core_ok": 46.44808743169399,
+      "collision": 3.0054644808743167,
+      "collision_n": 11,
+      "rename_safe": 46.17486338797814
+    },
+    {
+      "family": "GSCS",
+      "model": "GPT-6 Luna",
+      "condition": "fulldoc",
+      "trials": 366,
+      "core_ok": 99.4535519125683,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 99.4535519125683
+    },
+    {
+      "family": "GSCS",
+      "model": "GPT-6 Luna",
+      "condition": "chunk",
+      "trials": 366,
+      "core_ok": 76.77595628415301,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 76.77595628415301
+    },
+    {
+      "family": "GSCS",
+      "model": "GPT-6 Luna",
+      "condition": "graph",
+      "trials": 366,
+      "core_ok": 100.0,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 100.0
+    },
+    {
+      "family": "GSCS",
+      "model": "Qwen3.5-9B",
+      "condition": "none",
+      "trials": 366,
+      "core_ok": 20.218579234972676,
+      "collision": 4.644808743169399,
+      "collision_n": 17,
+      "rename_safe": 20.218579234972676
+    },
+    {
+      "family": "GSCS",
+      "model": "Qwen3.5-9B",
+      "condition": "fulldoc",
+      "trials": 366,
+      "core_ok": 87.43169398907104,
+      "collision": 1.092896174863388,
+      "collision_n": 4,
+      "rename_safe": 86.33879781420765
+    },
+    {
+      "family": "GSCS",
+      "model": "Qwen3.5-9B",
+      "condition": "chunk",
+      "trials": 366,
+      "core_ok": 47.540983606557376,
+      "collision": 2.185792349726776,
+      "collision_n": 8,
+      "rename_safe": 46.721311475409834
+    },
+    {
+      "family": "GSCS",
+      "model": "Qwen3.5-9B",
+      "condition": "graph",
+      "trials": 366,
+      "core_ok": 93.71584699453553,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 93.71584699453553
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "none",
+      "trials": 366,
+      "core_ok": 39.07103825136612,
+      "collision": 3.0054644808743167,
+      "collision_n": 11,
+      "rename_safe": 39.07103825136612
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "fulldoc",
+      "trials": 366,
+      "core_ok": 99.18032786885246,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 99.18032786885246
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "chunk",
+      "trials": 366,
+      "core_ok": 68.85245901639344,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 68.85245901639344
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "graph",
+      "trials": 366,
+      "core_ok": 100.0,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 100.0
+    },
+    {
+      "family": "GSCS",
+      "model": "DeepSeek V4 Flash",
+      "condition": "none",
+      "trials": 366,
+      "core_ok": 30.327868852459016,
+      "collision": 1.366120218579235,
+      "collision_n": 5,
+      "rename_safe": 30.327868852459016
+    },
+    {
+      "family": "GSCS",
+      "model": "DeepSeek V4 Flash",
+      "condition": "fulldoc",
+      "trials": 366,
+      "core_ok": 96.44808743169399,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 96.44808743169399
+    },
+    {
+      "family": "GSCS",
+      "model": "DeepSeek V4 Flash",
+      "condition": "chunk",
+      "trials": 366,
+      "core_ok": 66.93989071038251,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 66.93989071038251
+    },
+    {
+      "family": "GSCS",
+      "model": "DeepSeek V4 Flash",
+      "condition": "graph",
+      "trials": 366,
+      "core_ok": 99.18032786885246,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 99.18032786885246
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemma 4 26B",
+      "condition": "none",
+      "trials": 366,
+      "core_ok": 35.79234972677595,
+      "collision": 3.8251366120218577,
+      "collision_n": 14,
+      "rename_safe": 35.79234972677595
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemma 4 26B",
+      "condition": "fulldoc",
+      "trials": 366,
+      "core_ok": 96.17486338797814,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 96.17486338797814
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemma 4 26B",
+      "condition": "chunk",
+      "trials": 366,
+      "core_ok": 67.21311475409836,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 67.21311475409836
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemma 4 26B",
+      "condition": "graph",
+      "trials": 366,
+      "core_ok": 100.0,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 100.0
+    },
+    {
+      "family": "GSCS",
+      "model": "rule-based fixer",
+      "condition": "none",
+      "trials": 366,
+      "core_ok": 25.40983606557377,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 25.40983606557377
+    },
+    {
+      "family": "GSCS",
+      "model": "rule-based fixer",
+      "condition": "fulldoc",
+      "trials": 366,
+      "core_ok": 25.40983606557377,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 25.40983606557377
+    },
+    {
+      "family": "GSCS",
+      "model": "rule-based fixer",
+      "condition": "chunk",
+      "trials": 366,
+      "core_ok": 25.40983606557377,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 25.40983606557377
+    },
+    {
+      "family": "GSCS",
+      "model": "rule-based fixer",
+      "condition": "graph",
+      "trials": 366,
+      "core_ok": 25.40983606557377,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 25.40983606557377
+    },
+    {
+      "family": "Public5",
+      "model": "GPT-6 Luna (Public5)",
+      "condition": "none",
+      "trials": 300,
+      "core_ok": 99.66666666666667,
+      "collision": 1.6666666666666667,
+      "collision_n": 5,
+      "rename_safe": 98.0
+    },
+    {
+      "family": "Public5",
+      "model": "GPT-6 Luna (Public5)",
+      "condition": "fulldoc",
+      "trials": 300,
+      "core_ok": 100.0,
+      "collision": 1.0,
+      "collision_n": 3,
+      "rename_safe": 99.0
+    },
+    {
+      "family": "Public5",
+      "model": "GPT-6 Luna (Public5)",
+      "condition": "chunk",
+      "trials": 300,
+      "core_ok": 99.0,
+      "collision": 1.0,
+      "collision_n": 3,
+      "rename_safe": 98.0
+    },
+    {
+      "family": "Public5",
+      "model": "GPT-6 Luna (Public5)",
+      "condition": "graph",
+      "trials": 300,
+      "core_ok": 100.0,
+      "collision": 1.0,
+      "collision_n": 3,
+      "rename_safe": 99.0
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "model": "o3-mini (ablation)",
+      "condition": "graph",
+      "trials": 366,
+      "core_ok": 100.0,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 100.0
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "model": "o3-mini (ablation)",
+      "condition": "graph_noex",
+      "trials": 366,
+      "core_ok": 95.35519125683061,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 95.35519125683061
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "model": "GPT-6 Luna (ablation)",
+      "condition": "graph",
+      "trials": 366,
+      "core_ok": 100.0,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 100.0
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "model": "GPT-6 Luna (ablation)",
+      "condition": "graph_noex",
+      "trials": 366,
+      "core_ok": 98.63387978142076,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 98.63387978142076
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "model": "Gemini 3.1 Flash-Lite (ablation)",
+      "condition": "graph",
+      "trials": 366,
+      "core_ok": 100.0,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 100.0
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "model": "Gemini 3.1 Flash-Lite (ablation)",
+      "condition": "graph_noex",
+      "trials": 366,
+      "core_ok": 98.36065573770492,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 98.36065573770492
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "none",
+      "trials": 366,
+      "core_ok": 33.87978142076503,
+      "collision": 3.551912568306011,
+      "collision_n": 13,
+      "rename_safe": 33.87978142076503
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "fulldoc",
+      "trials": 366,
+      "core_ok": 95.90163934426229,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 95.90163934426229
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "chunk",
+      "trials": 366,
+      "core_ok": 66.93989071038251,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 66.93989071038251
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "graph",
+      "trials": 366,
+      "core_ok": 100.0,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 100.0
+    },
+    {
+      "family": "Ablation (GSCS)",
+      "model": "Gemma 4 26B via endpoint (ablation)",
+      "condition": "graph_noex",
+      "trials": 366,
+      "core_ok": 100.0,
+      "collision": 0.0,
+      "collision_n": 0,
+      "rename_safe": 100.0
+    }
+  ],
+  "cross": {
+    "collision=False behaviour_ok=True": 8817,
+    "collision=True behaviour_ok=True": 74,
+    "collision=True behaviour_ok=False": 7
+  },
+  "failures": [
+    [
+      "('Qwen3.5-9B', 'gscs_cpp_004__str_new_name__strip_prefix', 'fulldoc', 0)",
+      "str_student_name",
+      "wrong_output",
+      "True"
+    ],
+    [
+      "('Qwen3.5-9B', 'gscs_cpp_004__str_new_name__strip_prefix', 'fulldoc', 1)",
+      "str_student_name",
+      "wrong_output",
+      "True"
+    ],
+    [
+      "('Qwen3.5-9B', 'gscs_cpp_004__str_new_name__strip_prefix', 'chunk', 1)",
+      "str_student_name",
+      "wrong_output",
+      "True"
+    ],
+    [
+      "('Qwen3.5-9B', 'gscs_python_005__str_price_text__camel_no_prefix', 'fulldoc', 1)",
+      "f_price",
+      "wrong_output",
+      "True"
+    ],
+    [
+      "('Qwen3.5-9B', 'gscs_python_005__str_price_text__camel_no_prefix', 'chunk', 1)",
+      "f_price",
+      "wrong_output",
+      "True"
+    ],
+    [
+      "('Qwen3.5-9B', 'gscs_python_005__str_price_text__camel_no_prefix', 'fulldoc', 2)",
+      "f_price",
+      "wrong_output",
+      "True"
+    ],
+    [
+      "('Qwen3.5-9B', 'gscs_python_005__str_price_text__camel_no_prefix', 'chunk', 2)",
+      "f_price",
+      "wrong_output",
+      "True"
+    ]
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "py_052",
+  "language": "python",
+  "source": "github:guillaumemeyer/watermarks-remover@258cf20cdc2906e24398b3d6f3bc3cbcfd578245",
+  "sourceDetail": "service/scripts/audit_dir.py lines 40-46 (function walk_files); license MIT; repo created 2026-08-11; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def walk_files(root: Path, skip_dirs: set[str]):\n    for dirpath, dirnames, filenames in os.walk(root):\n        dirnames[:] = sorted(d for d in dirnames if d not in skip_dirs and not d.startswith(\".\"))\n        for fn in sorted(filenames):\n            path = Path(dirpath) / fn\n            if path.is_file():\n                yield path",
+  "identifiers": [
+    {
+      "name": "walk_files",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "dirpath",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "root",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "skip_dirs",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "dirnames",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "filenames",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "guillaumemeyer/watermarks-remover",
+    "repoUrl": "https://github.com/guillaumemeyer/watermarks-remover",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-11",
+    "commit": "258cf20cdc2906e24398b3d6f3bc3cbcfd578245",
+    "path": "service/scripts/audit_dir.py",
+    "startLine": 40,
+    "endLine": 46,
+    "unit": "function walk_files",
+    "corpusFile": "corpus/python/guillaumemeyer__watermarks-remover__audit_dir.py.md"
+  }
+}

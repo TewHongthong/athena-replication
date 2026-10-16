@@ -1,0 +1,79 @@
+# admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminUiThemeContractTest.java
+
+- source repo: klboke/kkRepo
+- repo url: https://github.com/klboke/kkRepo
+- license: Apache-2.0
+- created_at: 2026-06-12
+- file path: admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminUiThemeContractTest.java
+- commit: dd7dc274d1c94a1b92775d410b3dea3f1edf6029
+
+```java
+package com.github.klboke.kkrepo.admin.ui;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Objects;
+import java.util.regex.Pattern;
+import org.junit.jupiter.api.Test;
+
+class AdminUiThemeContractTest {
+  @Test
+  void loadsTheSharedThemeBeforeComponentStyles() throws IOException {
+    String index = resource("/META-INF/resources/admin/index.html");
+
+    int theme = index.indexOf("id=\"kkrepo-theme-stylesheet\"");
+    int bootstrap = index.indexOf("/login/assets/ui-theme.js");
+    int components = index.indexOf("./assets/admin.css");
+    assertTrue(theme >= 0 && bootstrap > theme && components > bootstrap);
+    assertTrue(index.contains(
+        "/browse/assets/themes/default.css?v=20260826-nexus-a11y-1"));
+    assertTrue(index.contains("/login/assets/ui-theme.js?v=20260826-nexus-a11y-1"));
+    assertTrue(index.contains("./assets/admin.css?v=20260923-scan-task-assets-2"));
+    assertFalse(index.contains("/browse/assets/tokens.css"));
+  }
+
+  @Test
+  void topbarFocusOutlineComesFromTheSelectedTheme() throws IOException {
+    String stylesheet = resource("/META-INF/resources/admin/assets/admin.css");
+
+    assertTrue(stylesheet.contains("outline: 2px solid var(--topbar-focus-outline)"));
+    assertFalse(stylesheet.contains("outline: 2px solid #ffffff"));
+    assertTrue(Pattern.compile("\\.product-update-link\\s*\\{[^}]*var\\(--topbar-active\\)",
+        Pattern.DOTALL).matcher(stylesheet).find());
+  }
+
+  @Test
+  void exposesDefaultThemeSelectionInUiSettings() throws IOException {
+    String index = resource("/META-INF/resources/admin/index.html");
+    String javascript = resource("/META-INF/resources/admin/assets/admin.js");
+    String i18n = resource("/META-INF/resources/login/assets/ui-i18n.js");
+
+    assertTrue(index.contains("id=\"ui-default-theme\" required"));
+    assertTrue(index.contains("value=\"default\" selected>Default</option>"));
+    assertTrue(index.contains("id=\"ui-theme-preview-status\" role=\"status\" aria-live=\"polite\" hidden"));
+    assertTrue(javascript.contains("saveSettings(languageSelect.value, themeSelect.value)"));
+    assertTrue(javascript.contains("window.kkrepoTheme.applyTheme("));
+    assertTrue(javascript.contains("window.kkrepoTheme?.applyTheme(themeSelect.value, themes)"));
+    assertTrue(javascript.contains("addEventListener(\"change\", previewUiTheme)"));
+    assertTrue(javascript.contains("settings.supportedDefaultThemes"));
+    assertTrue(javascript.contains("if (theme === \"jfrog\") return \"JFrog\""));
+    assertTrue(i18n.contains("正在预览所选主题。保存界面设置后，它才会成为默认主题。"));
+    assertTrue(index.contains("./assets/admin.css?v=20260923-scan-task-assets-2"));
+    assertTrue(index.contains("/login/assets/ui-i18n.js?v=20260920-storage-header-sort-1"));
+    assertTrue(index.contains("./assets/admin.js?v=20260928-scan-policy-deletion-1"));
+    assertFalse(index.contains("id=\"ui-settings-status\""));
+    assertFalse(javascript.contains("Default language: ${"));
+    assertFalse(javascript.contains("setDefaultTheme(themeSelect.value)"));
+  }
+
+  private String resource(String path) throws IOException {
+    try (InputStream stream = getClass().getResourceAsStream(path)) {
+      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);
+    }
+  }
+}
+```

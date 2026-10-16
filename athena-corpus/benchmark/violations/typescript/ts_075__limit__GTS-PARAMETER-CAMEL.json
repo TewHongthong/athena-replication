@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_075",
+  "language": "typescript",
+  "originalName": "limit",
+  "injectedName": "LIMIT",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LIMIT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function useFinalStretchCue(recording: boolean, LIMIT: number, elapsed: number) {\n  const seconds = recording ? remainingWholeSeconds(LIMIT, elapsed) : null;\n  useEffect(() => {\n    if (seconds !== null && seconds > 0 && seconds <= 5) cues.finalSecond();\n  }, [seconds]);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

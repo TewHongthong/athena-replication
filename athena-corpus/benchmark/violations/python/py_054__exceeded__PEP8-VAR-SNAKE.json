@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_054",
+  "language": "python",
+  "originalName": "exceeded",
+  "injectedName": "EXCEEDED",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'EXCEEDED' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def plan_audio_degrade(\n    tempo: float = 1.08, pitch_semitones: float = 2.0, reencode_bitrate: str = \"96k\"\n) -> dict[str, object]:\n    \"\"\"Validate the destructive chain and describe which survival limits it exits.\"\"\"\n    if not 0.5 <= tempo <= 2.0:\n        raise ValueError(\"tempo must be in [0.5, 2.0]\")\n    if abs(tempo - 1.0) <= (_TEMPO_LIMIT - 1.0):\n        raise ValueError(\"tempo change must exceed +/-5% to exit the audio survival envelope\")\n    if abs(pitch_semitones) <= _PITCH_LIMIT:\n        raise ValueError(\n            \"pitch shift must exceed +/-1 semitone to exit the audio survival envelope\"\n        )\n    kbps = _bitrate_kbps(reencode_bitrate)\n    if not kbps:\n        raise ValueError(\"reencode bitrate must be a positive value such as 96k\")\n    if kbps >= _BITRATE_FLOOR_K:\n        raise ValueError(\"lossy re-encode bitrate must be below 128 kbps\")\n\n    EXCEEDED = [\"tempo change >5%\"]\n    if abs(pitch_semitones) > _PITCH_LIMIT:\n        EXCEEDED.append(f\"pitch shift >1 semitone ({pitch_semitones:+.1f})\")\n    if kbps and kbps < _BITRATE_FLOOR_K:\n        EXCEEDED.append(f\"lossy re-encode below {_BITRATE_FLOOR_K} kbps ({kbps} kbps)\")\n\n    return {\n        \"tempo\": tempo,\n        \"pitch_semitones\": pitch_semitones,\n        \"bitrate\": reencode_bitrate,\n        \"survival_limits_exceeded\": EXCEEDED,\n        \"note\": (\n            \"destructive transform chain: tempo + pitch + EQ + lossy re-encode; \"\n            \"falls in provcheck's documented not-surviving range, but is not \"\n            \"vendor-detector-verified (we do not ship silentcipher/AudioSeal/WavMark decoders)\"\n        ),\n    }",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

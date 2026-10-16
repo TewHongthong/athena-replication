@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_056",
+  "language": "csharp",
+  "originalName": "ToFormFields",
+  "injectedName": "to_form_fields",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'to_form_fields' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class MessageBirdSmsRequestMapper\n{\n    public static IReadOnlyDictionary<string, string> to_form_fields(\n        SmsMessage message,\n        string defaultFrom) =>\n        new Dictionary<string, string>\n        {\n            [\"originator\"] = message.From ?? defaultFrom,\n            [\"recipients\"] = message.To.TrimStart('+'),\n            [\"body\"] = message.Body,\n            [\"datacoding\"] = \"auto\"\n        };\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

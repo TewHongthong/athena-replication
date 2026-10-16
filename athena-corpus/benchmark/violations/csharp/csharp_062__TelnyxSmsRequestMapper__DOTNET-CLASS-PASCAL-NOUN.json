@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_062",
+  "language": "csharp",
+  "originalName": "TelnyxSmsRequestMapper",
+  "injectedName": "telnyx_sms_request_mapper",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'telnyx_sms_request_mapper' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class telnyx_sms_request_mapper\n{\n    public static object ToRequestBody(SmsMessage message, string defaultFrom) => new\n    {\n        from = message.From ?? defaultFrom,\n        to = message.To,\n        text = message.Body\n    };\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

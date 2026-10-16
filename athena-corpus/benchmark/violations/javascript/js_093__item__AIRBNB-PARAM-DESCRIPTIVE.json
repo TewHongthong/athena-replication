@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_093",
+  "language": "javascript",
+  "originalName": "item",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildWeeklyAvailability(hoursByDay={}){\n  const days=Array.from({length:7},(_,day)=>({day,hours:clampHours(hoursByDay[String(day)]??hoursByDay[day])}));\n  const totalHours=Math.round(days.reduce((sum,i)=>sum+i.hours,0)*100)/100;\n  const activeDays=days.filter(i=>i.hours>0).length;\n  const averageHours=activeDays?Math.round(totalHours/activeDays*100)/100:0;\n  const peakHours=Math.max(0,...days.map(i=>i.hours));\n  return {days,totalHours,totalMinutes:Math.round(totalHours*60),activeDays,averageHours,peakHours,state:totalHours?'configured':'empty'};\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

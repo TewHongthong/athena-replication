@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_048",
+  "language": "csharp",
+  "originalName": "logger",
+  "injectedName": "LOGGER",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOGGER' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public static partial class ProviderUsageTelemetry\n{\n    [LoggerMessage(EventId = 2281, Level = LogLevel.Warning,\n        Message = \"provider_usage_limit_reached outcome=paused scope=installation tick={WorldTick}\")]\n    public static partial void LimitReached(ILogger LOGGER, long worldTick);\n\n    [LoggerMessage(EventId = 2282, Level = LogLevel.Information,\n        Message = \"provider_usage_limit_configured outcome=accepted enabled={Enabled} limit={AttemptLimit} attempts={Attempts}\")]\n    public static partial void LimitConfigured(ILogger LOGGER, bool enabled, long? attemptLimit, long attempts);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

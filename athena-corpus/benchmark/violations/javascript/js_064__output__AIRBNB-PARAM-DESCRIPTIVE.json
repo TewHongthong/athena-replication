@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_064",
+  "language": "javascript",
+  "originalName": "output",
+  "injectedName": "o",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'o' shorter than minLength=2",
+    "name 'o' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "async function writeOrCheck(o,generated){\n  const outputFile=resolve(projectRoot,o);\n  if(checkOnly){\n    const current=await readFile(outputFile,'utf8').catch(()=>null);\n    if(current!==generated){\n      console.error(`${o} esta desatualizado. Execute npm run build.`);\n      stale=true;\n    }else console.log(`${o} atualizado e reproduzivel.`);\n  }else{\n    await writeFile(outputFile,generated,'utf8');\n    console.log(`Arquivo atualizado: ${outputFile}`);\n  }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

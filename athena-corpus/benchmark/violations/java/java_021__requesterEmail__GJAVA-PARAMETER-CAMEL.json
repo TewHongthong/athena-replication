@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_021",
+  "language": "java",
+  "originalName": "requesterEmail",
+  "injectedName": "requester_email",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'requester_email' does not match camelCase pattern",
+    "name 'requester_email' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Transactional(readOnly = true)\npublic Order getOwnedOrder(Long id, String requester_email, boolean isStaff) {\n    var order = getOrderByIdInternal(id);\n    if (!isStaff && !order.getUser().getEmail().equals(requester_email)) {\n        throw new NotFoundException(\"Order not found: \" + id);\n    }\n    return order;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

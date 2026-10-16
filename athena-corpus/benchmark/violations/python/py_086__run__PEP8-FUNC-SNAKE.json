@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_086",
+  "language": "python",
+  "originalName": "run",
+  "injectedName": "RUN",
+  "identifierKind": "function",
+  "violatedRuleId": "PEP8-FUNC-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RUN' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def RUN(ghosts: pd.DataFrame) -> list[Decision]:\n    decisions: list[Decision] = []\n    for _, row in ghosts.iterrows():\n        if protection_reason(row) is not None:\n            continue\n        hashtag = \"#vc-junk: ghost-unprotected-surplus\"\n        decisions.append(\n            Decision(\n                id=row[\"Id\"], hash=row[\"Hash\"], name=row[\"Name\"],\n                location=row.get(\"Owner\", \"\"), guardian_class=\"\",\n                action=\"junk\", tag=\"junk\",\n                note=append_tool_clause(row[\"Notes\"], hashtag), kept_id=\"\",\n            )\n        )\n    return decisions",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

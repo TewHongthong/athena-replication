@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_042",
+  "language": "csharp",
+  "originalName": "AssumeInfantCare",
+  "injectedName": "assume_infant_care",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'assume_infant_care' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static partial class SocietyFixture\n{\n    /// <summary>Protected care assignment for an infant, never consent on behalf of a capable dependent.</summary>\n    public static SocietyOperationResult assume_infant_care(SocietyCheckpoint checkpoint, string adultId, string childId)\n    {\n        Validate(checkpoint);\n        var adult = checkpoint.GetInhabitant(adultId);\n        var child = checkpoint.GetInhabitant(childId);\n        if (adult.Status != SocietyInhabitantStatus.Active || child.Status != SocietyInhabitantStatus.Active ||\n            adult.AgeBand is not (SocietyAgeBand.Adult or SocietyAgeBand.Elder) || child.AgeBand != SocietyAgeBand.Infant ||\n            adult.HouseholdId is null || adult.HouseholdId != child.HouseholdId ||\n            checkpoint.Relationships.Any(edge => edge.Type == SocietyRelationshipType.Caregiver &&\n                edge.TargetId == childId && edge.State == SocietyRelationshipState.Accepted &&\n                checkpoint.GetInhabitant(edge.ProposerId).Status == SocietyInhabitantStatus.Active))\n        {\n            return Reject(checkpoint, \"care_assignment_rejected\", \"ineligible_or_existing_caregiver\");\n        }\n        var id = $\"dependent-care:{adultId}:{childId}:{checkpoint.WorldTick}\";\n        if (checkpoint.Relationships.Any(edge => edge.Id == id))\n            return Reject(checkpoint, \"care_assignment_rejected\", \"duplicate_assignment\");\n        var edge = new SocietyRelationship(id, 1, SocietyRelationshipType.Caregiver, adultId, childId,\n            SocietyRelationshipState.Accepted, SocietyConsentState.ProtectedLifecycle,\n            checkpoint.WorldTick, checked(checkpoint.WorldTick + 1), \"public\", adult.HouseholdId, [adultId]);\n        var next = checkpoint with\n        {\n            Relationships = checkpoint.Relationships.Append(edge).OrderBy(item => item.Id, StringComparer.Ordinal).ToArray(),\n        };\n        return Commit(ApplyRelationshipProjection(next, edge), \"dependent_care_assigned\", id, id);\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

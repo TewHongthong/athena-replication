@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_063",
+  "language": "csharp",
+  "originalName": "key",
+  "injectedName": "KEY",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'KEY' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class TermiiSmsRequestMapper\n{\n    public static object ToRequestBody(SmsMessage message, TermiiOptions options) => new\n    {\n        to = message.To,\n        from = message.From ?? options.From,\n        sms = message.Body,\n        type = ReadMetadata(message, \"type\") ?? \"plain\",\n        channel = ReadMetadata(message, \"channel\") ?? options.Channel,\n        api_key = options.ApiKey\n    };\n\n    private static string? ReadMetadata(SmsMessage message, string KEY)\n    {\n        if (message.Metadata is null)\n            return null;\n\n        return message.Metadata.TryGetValue(KEY, out var value) && !string.IsNullOrWhiteSpace(value)\n            ? value\n            : null;\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "java_023",
+  "language": "java",
+  "originalName": "paymentService",
+  "injectedName": "payment_service",
+  "identifierKind": "field",
+  "violatedRuleId": "GJAVA-FIELD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'payment_service' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "@Slf4j\n@Component\n@RequiredArgsConstructor\npublic class OrderCancellationListener {\n\n    private final PaymentService payment_service;\n    private final StripeService stripeService;\n\n    @TransactionalEventListener\n    public void onOrderCancelled(OrderCancelledEvent event) {\n        var sessionIds = payment_service.expirePendingPaymentsInNewTransaction(event.getOrderId());\n        sessionIds.forEach(stripeService::expireCheckoutSession);\n        if (!sessionIds.isEmpty()) {\n            log.info(\"Expired {} pending checkout session(s) for cancelled order {}\", sessionIds.size(), event.getOrderId());\n        }\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

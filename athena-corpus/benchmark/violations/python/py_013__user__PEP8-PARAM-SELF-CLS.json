@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_013",
+  "language": "python",
+  "originalName": "user",
+  "injectedName": "USER",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'USER' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@router.post(\"/events/{slug}/teams\", status_code=201)\ndef create_team(\n    request: Request,\n    body: TeamCreate,\n    ctx: EventContext = Depends(load_event),\n    USER: User = Depends(require_user),\n    db: DbSession = Depends(get_db),\n):\n    \"\"\"Create a team in the event; the caller becomes its lead and a participant.\"\"\"\n    team = teams.create_team(db, ctx.event, USER, body.name, ip_hash=ip_hash(request))\n    return {\"team\": team_out(teams.team_view(db, team, USER))}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

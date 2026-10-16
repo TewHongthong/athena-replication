@@ -1,0 +1,37 @@
+{
+  "id": "py_098",
+  "language": "python",
+  "source": "github:zuohaisu/viva@24f9cd178b7f9faba0e101d7b773c5a0cb4cc1d4",
+  "sourceDetail": "src/viva/core/ids.py lines 47-53 (function slugify); license MIT; repo created 2026-07-27T11:56:40Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def slugify(name: str, *, what: str = \"identifier\") -> str:\n    \"\"\"Reduce a display name to a lowercase id token (e.g. ``Test User`` -> ``test-user``).\"\"\"\n    slug = _SLUG_PATTERN.sub(\"-\", name.strip().casefold()).strip(\"-\")\n    slug = re.sub(r\"-{2,}\", \"-\", slug)\n    if not slug:\n        raise ValueError(f\"{what} needs at least one letter or digit\")\n    return slug[:64]",
+  "identifiers": [
+    {
+      "name": "slugify",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "slug",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "zuohaisu/viva",
+    "repoUrl": "https://github.com/zuohaisu/viva",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-27T11:56:40Z",
+    "commit": "24f9cd178b7f9faba0e101d7b773c5a0cb4cc1d4",
+    "path": "src/viva/core/ids.py",
+    "startLine": 47,
+    "endLine": 53,
+    "unit": "function slugify",
+    "corpusFile": "corpus/python/zuohaisu__viva__ids.py.md"
+  }
+}

@@ -1,0 +1,115 @@
+# src/ClankerWorld.GodotClient/UI/WorldTerrainMap.cs
+
+- source repo: compoodment/ClankerWorld
+- repo url: https://github.com/compoodment/ClankerWorld
+- license: MIT
+- created_at: 2026-09-18T08:13:45Z
+- file path: src/ClankerWorld.GodotClient/UI/WorldTerrainMap.cs
+- commit: 58d48ddaa57f24bceedae8ac01aff6e7f396920f
+
+```csharp
+using Godot;
+
+namespace ClankerWorld.GodotClient.UI;
+
+/// <summary>Compact, indexed terrain shared by the local camera and the overview.</summary>
+public sealed class WorldTerrainMap
+{
+    private readonly byte[] terrain;
+
+    private WorldTerrainMap(int width, int height, byte[] terrain)
+    {
+        Width = width;
+        Height = height;
+        this.terrain = terrain;
+    }
+
+    public int Width { get; }
+    public int Height { get; }
+
+    public static WorldTerrainMap FromTiles(IReadOnlyList<OwnerWorldTile> tiles, int width, int height)
+    {
+        ArgumentNullException.ThrowIfNull(tiles);
+        if (width <= 0 || height <= 0) throw new ArgumentOutOfRangeException(nameof(width));
+        var terrain = new byte[checked(width * height)];
+        foreach (var tile in tiles)
+        {
+            if (tile.X < 0 || tile.X >= width || tile.Y < 0 || tile.Y >= height) continue;
+            terrain[tile.Y * width + tile.X] = tile.Terrain switch
+            {
+                "meadow" => 1,
+                "water" => 2,
+                "mountain" => 3,
+                "river" => 4,
+                "lake" => 5,
+                "ocean" => 6,
+                "sand" => 7,
+                "forest" => 8,
+                "snow" => 9,
+                "peak" => 10,
+                _ => 0,
+            };
+        }
+        return new WorldTerrainMap(width, height, terrain);
+    }
+
+    public static WorldTerrainMap FromPacked(OwnerWorldPackedTerrain packed)
+    {
+        ArgumentNullException.ThrowIfNull(packed);
+        if (packed.Encoding != "terrain-kind-v1" || packed.Width <= 0 || packed.Height <= 0)
+            throw new InvalidDataException("The world terrain encoding or dimensions are unsupported.");
+        var source = Convert.FromBase64String(packed.Data);
+        if (source.Length != checked(packed.Width * packed.Height))
+            throw new InvalidDataException("The packed world terrain length is invalid.");
+        var terrain = new byte[source.Length];
+        for (var index = 0; index < source.Length; index++)
+            terrain[index] = source[index] switch
+            {
+                0 => 1, // meadow
+                1 => 2, // fixture water
+                2 => 3, // mountain
+                3 => 4, // river
+                4 => 5, // lake
+                5 => 6, // ocean
+                6 => 10, // peak
+                7 => 7, // sand
+                8 => 8, // forest
+                9 => 9, // snow
+                _ => throw new InvalidDataException("The packed world terrain contains an unknown kind."),
+            };
+        return new WorldTerrainMap(packed.Width, packed.Height, terrain);
+    }
+
+    public byte At(int x, int y) => terrain[y * Width + x];
+
+    public static string NameFor(byte kind) => kind switch
+    {
+        1 => "Meadow",
+        2 => "Water",
+        3 => "Mountain",
+        4 => "River",
+        5 => "Lake",
+        6 => "Ocean",
+        7 => "Sand",
+        8 => "Forest",
+        9 => "Snow",
+        10 => "Peak",
+        _ => "Unavailable",
+    };
+
+    public static Color ColorFor(byte kind) => kind switch
+    {
+        1 => WorldMapPalette.TerrainColor("meadow"),
+        2 => WorldMapPalette.TerrainColor("water"),
+        3 => WorldMapPalette.TerrainColor("mountain"),
+        4 => new Color("4786AB"),
+        5 => new Color("598FB3"),
+        6 => new Color("325F89"),
+        7 => new Color("BAA77B"),
+        8 => new Color("426D4B"),
+        9 => new Color("CCD7D1"),
+        10 => new Color("999B9A"),
+        _ => new Color("9B5463"),
+    };
+}
+```

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_068",
+  "language": "java",
+  "originalName": "addResourceHandlers",
+  "injectedName": "add_resource_handlers",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'add_resource_handlers' does not match camelCase pattern",
+    "name 'add_resource_handlers' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Configuration\npublic class BrowseUiResourceConfiguration implements WebMvcConfigurer {\n  @Override\n  public void add_resource_handlers(ResourceHandlerRegistry registry) {\n    registry\n        .addResourceHandler(\"/browse/**\")\n        .addResourceLocations(\"classpath:/META-INF/resources/browse/\");\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

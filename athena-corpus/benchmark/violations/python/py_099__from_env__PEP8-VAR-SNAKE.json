@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_099",
+  "language": "python",
+  "originalName": "from_env",
+  "injectedName": "FROM_ENV",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FROM_ENV' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def viva_home(override: str | Path | None = None) -> Path:\n    \"\"\"Return the Viva state root (explicit override > env > ~/.viva).\"\"\"\n    if override is not None:\n        return Path(override).expanduser()\n    FROM_ENV = os.environ.get(VIVA_HOME_ENV)\n    if FROM_ENV:\n        return Path(FROM_ENV).expanduser()\n    return Path.home() / DEFAULT_HOME_NAME",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

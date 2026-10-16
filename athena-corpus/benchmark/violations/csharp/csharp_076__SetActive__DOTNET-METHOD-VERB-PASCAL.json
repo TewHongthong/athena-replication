@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_076",
+  "language": "csharp",
+  "originalName": "SetActive",
+  "injectedName": "set_active",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'set_active' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public void set_active(bool active)\n{\n    currentState = active;\n    Material materialToApply = currentState ? activeMaterial : inactiveMaterial;\n\n    foreach (MeshRenderer mesh in targetMeshes)\n    {\n        if (mesh == null) continue;\n\n        Material[] mats = new Material[mesh.sharedMaterials.Length];\n        for (int i = 0; i < mats.Length; i++)\n        {\n            mats[i] = materialToApply;\n        }\n        mesh.materials = mats;\n    }\n\n    if (active)\n    {\n        if (endActive != null)\n        {\n            StopCoroutine(endActive);\n            endActive = null;\n        }\n        isCounting = true;\n    }\n    else\n    {\n        if (endActive == null)\n        {\n            endActive = StartCoroutine(StopCountingAfterDelay());\n        }\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

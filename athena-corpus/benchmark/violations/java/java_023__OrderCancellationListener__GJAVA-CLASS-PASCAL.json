@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_023",
+  "language": "java",
+  "originalName": "OrderCancellationListener",
+  "injectedName": "order_cancellation_listener",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'order_cancellation_listener' does not match PascalCase pattern",
+    "name 'order_cancellation_listener' matches forbidden pattern '^[a-z]'",
+    "name 'order_cancellation_listener' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Slf4j\n@Component\n@RequiredArgsConstructor\npublic class order_cancellation_listener {\n\n    private final PaymentService paymentService;\n    private final StripeService stripeService;\n\n    @TransactionalEventListener\n    public void onOrderCancelled(OrderCancelledEvent event) {\n        var sessionIds = paymentService.expirePendingPaymentsInNewTransaction(event.getOrderId());\n        sessionIds.forEach(stripeService::expireCheckoutSession);\n        if (!sessionIds.isEmpty()) {\n            log.info(\"Expired {} pending checkout session(s) for cancelled order {}\", sessionIds.size(), event.getOrderId());\n        }\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

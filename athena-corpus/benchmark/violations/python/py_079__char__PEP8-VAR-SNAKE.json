@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_079",
+  "language": "python",
+  "originalName": "char",
+  "injectedName": "CHAR",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CHAR' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def safe_fragment(\n    value: object,\n    *,\n    limit: int = _MAX_FRAGMENT,\n    escape_structure: bool = True,\n) -> str:\n    \"\"\"Return bounded, single-line presentation text for an export value.\n\n    CSV values are untrusted presentation input.  Control/format characters\n    become spaces, whitespace collapses, the ASCII ``#vc-`` sequence is\n    neutralised, and reference punctuation is full-width escaped so a field\n    cannot forge another tool hashtag or structural clause.  The raw value is\n    never changed by this helper.\n    \"\"\"\n    text = str(value)\n    text = \"\".join(\n        \" \" if unicodedata.category(CHAR).startswith(\"C\") else CHAR\n        for CHAR in text\n    )\n    text = \" \".join(text.split())\n    text = _TOOL_MARKER_RE.sub(\"#vc‑\", text)\n    if escape_structure:\n        text = text.translate(_STRUCTURAL_CHARS)\n    if len(text) > limit:\n        text = text[: max(0, limit - 1)].rstrip() + \"…\"\n    return text",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

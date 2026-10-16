@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_015",
+  "language": "java",
+  "originalName": "filePath",
+  "injectedName": "file_path",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'file_path' does not match camelCase pattern",
+    "name 'file_path' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Override\npublic String store(MultipartFile file) {\n    if (file == null || file.isEmpty()) {\n        return null;\n    }\n\n    if (file.getSize() > maxFileSize) {\n        throw new BadRequestException(\"File size exceeds maximum allowed size\");\n    }\n\n    String contentType = file.getContentType();\n    if (contentType == null || !allowedTypes.contains(contentType)) {\n        throw new BadRequestException(\"File type not allowed: \" + contentType);\n    }\n\n    try {\n        String extension = getExtension(contentType);\n        String fileName = UUID.randomUUID() + extension;\n        Path file_path = resolveWithinUploadDir(fileName);\n        if (file_path == null) {\n            throw new BadRequestException(\"Invalid file path\");\n        }\n\n        Files.write(file_path, file.getBytes());\n\n        log.info(\"File stored: {}\", fileName);\n        return urlPrefix + fileName;\n    } catch (IOException e) {\n        throw new InternalServerException(\"Failed to store file\", e);\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_081",
+  "language": "python",
+  "originalName": "pattern",
+  "injectedName": "PATTERN",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PATTERN' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def discover_export(kind: str, input_dir: str | Path) -> Path:\n    \"\"\"Return the sole matching export, refusing zero or multiple matches.\"\"\"\n    directory = Path(input_dir)\n    PATTERN = EXPORT_PATTERNS[kind]\n    try:\n        entries = directory.iterdir()\n        candidates = sorted(\n            (\n                entry\n                for entry in entries\n                if PATTERN.fullmatch(entry.name) and entry.is_file()\n            ),\n            key=lambda entry: entry.name,\n        )\n    except FileNotFoundError:\n        candidates = []\n    except OSError as e:\n        raise ExportDiscoveryError(\n            f\"could not search for {kind} exports in {directory}: {e}\"\n        ) from e\n\n    if not candidates:\n        raise MissingExportError(kind, directory)\n    if len(candidates) > 1:\n        raise AmbiguousExportError(\n            kind,\n            directory,\n            tuple(candidate.name for candidate in candidates),\n        )\n    return candidates[0]",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_067",
+  "language": "python",
+  "originalName": "config",
+  "injectedName": "CONFIG",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CONFIG' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def build_context(env: Mapping[str, str] | None = None) -> ApiContext:\n    source = env if env is not None else os.environ\n    CONFIG = StorageConfig.from_env(\n        host_override=source.get(\"FDP_DATABASE_HOST\")\n    )\n    writer_engine = create_write_engine(CONFIG)\n    read_engine = create_read_engine(CONFIG)\n    return ApiContext(\n        config=CONFIG,\n        writer_engine=writer_engine,\n        read_engine=read_engine,\n        meta=SqlMetaRepository(writer_engine),\n        algorithms=SqlAlgorithmStore(writer_engine),\n        registry=RegistryReader(read_engine),\n        specs=load_all(),\n    )",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

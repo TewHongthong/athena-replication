@@ -1,0 +1,37 @@
+{
+  "id": "ts_087",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_components/prose.tsx lines 30-38 (function headings); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function headings(markdown: string) {\n  return markdown\n    .split(\"\\n\")\n    .filter((line) => /^##\\s/.test(line))\n    .map((line) => {\n      const text = line.replace(/^##\\s+/, \"\").replace(/[*`]/g, \"\")\n      return { text, id: slugify(line.replace(/^##\\s+/, \"\")) }\n    })\n}",
+  "identifiers": [
+    {
+      "name": "headings",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "markdown",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "line",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_components/prose.tsx",
+    "startLine": 30,
+    "endLine": 38,
+    "unit": "function headings",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__prose.tsx.md"
+  }
+}

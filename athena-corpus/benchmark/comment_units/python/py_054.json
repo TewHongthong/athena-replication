@@ -1,0 +1,39 @@
+{
+  "snippetId": "py_054",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "function",
+  "name": "plan_audio_degrade",
+  "codeBare": "def plan_audio_degrade(\n    tempo: float = 1.08, pitch_semitones: float = 2.0, reencode_bitrate: str = \"96k\"\n) -> dict[str, object]:\n    \n    if not 0.5 <= tempo <= 2.0:\n        raise ValueError(\"tempo must be in [0.5, 2.0]\")\n    if abs(tempo - 1.0) <= (_TEMPO_LIMIT - 1.0):\n        raise ValueError(\"tempo change must exceed +/-5% to exit the audio survival envelope\")\n    if abs(pitch_semitones) <= _PITCH_LIMIT:\n        raise ValueError(\n            \"pitch shift must exceed +/-1 semitone to exit the audio survival envelope\"\n        )\n    kbps = _bitrate_kbps(reencode_bitrate)\n    if not kbps:\n        raise ValueError(\"reencode bitrate must be a positive value such as 96k\")\n    if kbps >= _BITRATE_FLOOR_K:\n        raise ValueError(\"lossy re-encode bitrate must be below 128 kbps\")\n\n    exceeded = [\"tempo change >5%\"]\n    if abs(pitch_semitones) > _PITCH_LIMIT:\n        exceeded.append(f\"pitch shift >1 semitone ({pitch_semitones:+.1f})\")\n    if kbps and kbps < _BITRATE_FLOOR_K:\n        exceeded.append(f\"lossy re-encode below {_BITRATE_FLOOR_K} kbps ({kbps} kbps)\")\n\n    return {\n        \"tempo\": tempo,\n        \"pitch_semitones\": pitch_semitones,\n        \"bitrate\": reencode_bitrate,\n        \"survival_limits_exceeded\": exceeded,\n        \"note\": (\n            \"destructive transform chain: tempo + pitch + EQ + lossy re-encode; \"\n            \"falls in provcheck's documented not-surviving range, but is not \"\n            \"vendor-detector-verified (we do not ship silentcipher/AudioSeal/WavMark decoders)\"\n        ),\n    }",
+  "referenceComment": "\"\"\"Validate the destructive chain and describe which survival limits it exits.\"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-FUNC"
+  ],
+  "origin": "snippet",
+  "source": "github:guillaumemeyer/watermarks-remover@258cf20cdc2906e24398b3d6f3bc3cbcfd578245",
+  "sourceDetail": "service/scripts/clean_audio.py lines 86-120 (function plan_audio_degrade); license MIT; repo created 2026-08-11; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 3,
+    "returns": true,
+    "throws": true
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns",
+    "throws"
+  ],
+  "provenance": {
+    "repo": "guillaumemeyer/watermarks-remover",
+    "repoUrl": "https://github.com/guillaumemeyer/watermarks-remover",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-11",
+    "commit": "258cf20cdc2906e24398b3d6f3bc3cbcfd578245",
+    "path": "service/scripts/clean_audio.py",
+    "startLine": 86,
+    "endLine": 120,
+    "unit": "function plan_audio_degrade",
+    "corpusFile": "corpus/python/guillaumemeyer__watermarks-remover__clean_audio.py.md"
+  }
+}

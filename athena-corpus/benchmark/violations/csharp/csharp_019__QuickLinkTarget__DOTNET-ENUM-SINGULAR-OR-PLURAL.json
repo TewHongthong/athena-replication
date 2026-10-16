@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_019",
+  "language": "csharp",
+  "originalName": "QuickLinkTarget",
+  "injectedName": "quick_link_target",
+  "identifierKind": "enum",
+  "violatedRuleId": "DOTNET-ENUM-SINGULAR-OR-PLURAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'quick_link_target' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum quick_link_target\n{\n    Dashboard = 0,\n    Scan = 1,\n    Inventory = 2,\n    Places = 3\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

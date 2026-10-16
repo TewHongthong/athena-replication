@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_023",
+  "language": "java",
+  "originalName": "sessionIds",
+  "injectedName": "session_ids",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'session_ids' does not match camelCase pattern",
+    "name 'session_ids' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Slf4j\n@Component\n@RequiredArgsConstructor\npublic class OrderCancellationListener {\n\n    private final PaymentService paymentService;\n    private final StripeService stripeService;\n\n    @TransactionalEventListener\n    public void onOrderCancelled(OrderCancelledEvent event) {\n        var session_ids = paymentService.expirePendingPaymentsInNewTransaction(event.getOrderId());\n        session_ids.forEach(stripeService::expireCheckoutSession);\n        if (!session_ids.isEmpty()) {\n            log.info(\"Expired {} pending checkout session(s) for cancelled order {}\", session_ids.size(), event.getOrderId());\n        }\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

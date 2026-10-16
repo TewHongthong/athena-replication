@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_052",
+  "language": "python",
+  "originalName": "dirpath",
+  "injectedName": "DIRPATH",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DIRPATH' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def walk_files(root: Path, skip_dirs: set[str]):\n    for DIRPATH, dirnames, filenames in os.walk(root):\n        dirnames[:] = sorted(d for d in dirnames if d not in skip_dirs and not d.startswith(\".\"))\n        for fn in sorted(filenames):\n            path = Path(DIRPATH) / fn\n            if path.is_file():\n                yield path",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

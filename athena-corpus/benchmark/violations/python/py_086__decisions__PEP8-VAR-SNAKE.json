@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_086",
+  "language": "python",
+  "originalName": "decisions",
+  "injectedName": "DECISIONS",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DECISIONS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def run(ghosts: pd.DataFrame) -> list[Decision]:\n    DECISIONS: list[Decision] = []\n    for _, row in ghosts.iterrows():\n        if protection_reason(row) is not None:\n            continue\n        hashtag = \"#vc-junk: ghost-unprotected-surplus\"\n        DECISIONS.append(\n            Decision(\n                id=row[\"Id\"], hash=row[\"Hash\"], name=row[\"Name\"],\n                location=row.get(\"Owner\", \"\"), guardian_class=\"\",\n                action=\"junk\", tag=\"junk\",\n                note=append_tool_clause(row[\"Notes\"], hashtag), kept_id=\"\",\n            )\n        )\n    return DECISIONS",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

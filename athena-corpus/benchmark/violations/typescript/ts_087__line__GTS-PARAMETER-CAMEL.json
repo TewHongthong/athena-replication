@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_087",
+  "language": "typescript",
+  "originalName": "line",
+  "injectedName": "LINE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LINE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function headings(markdown: string) {\n  return markdown\n    .split(\"\\n\")\n    .filter((LINE) => /^##\\s/.test(LINE))\n    .map((LINE) => {\n      const text = LINE.replace(/^##\\s+/, \"\").replace(/[*`]/g, \"\")\n      return { text, id: slugify(LINE.replace(/^##\\s+/, \"\")) }\n    })\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

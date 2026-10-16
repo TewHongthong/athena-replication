@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_088",
+  "language": "javascript",
+  "originalName": "questions",
+  "injectedName": "q",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'q' shorter than minLength=2",
+    "name 'q' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildSavedSubjectConfig(subjectId,current,{priority,masteryTarget,expectedQuestions,questionWeight}){\n  const mastery=masteryTarget===''?null:Number(masteryTarget),q=expectedQuestions===''?0:Number(expectedQuestions),weight=questionWeight===''?1:Number(questionWeight);\n  if(!EXAM_PRIORITIES.includes(priority)||mastery!==null&&(!Number.isFinite(mastery)||mastery<0||mastery>100)||!Number.isInteger(q)||q<0||!Number.isFinite(weight)||weight<.1)return null;\n  const next={...(current||{subjectId,expectedQuestions:0,questionWeight:1,priority:'normal',masteryTarget:null})};\n  if(next.expectedQuestions!==q||next.questionWeight!==weight){next.sourceRef=null;next.official=false;next.mappingType=null}\n  return {...next,priority,masteryTarget:mastery,expectedQuestions:q,questionWeight:weight};\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

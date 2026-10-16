@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_097",
+  "language": "java",
+  "originalName": "scale",
+  "injectedName": "SCALE",
+  "identifierKind": "field",
+  "violatedRuleId": "GJAVA-FIELD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SCALE' does not match camelCase pattern",
+    "name 'SCALE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static class AnimationState {\n    float alpha = 0.0f;\n    float offsetY = -20.0f;\n    float SCALE = 0.9f;\n    long lastUpdate = 0L;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

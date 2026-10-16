@@ -1,0 +1,37 @@
+{
+  "id": "java_089",
+  "language": "java",
+  "source": "github:xvDoshik/HubSwap@c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+  "sourceDetail": "src/main/java/ru/heldyy/hubswap/HubSwap.java lines 65-74 (method HubSwap.loadConfigInternal); license MIT; repo created 2026-08-04T22:22:23Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "private static ModConfig loadConfigInternal() {\n    if (Files.exists(CONFIG_PATH)) {\n        try (BufferedReader r = Files.newBufferedReader(CONFIG_PATH, StandardCharsets.UTF_8)) {\n            ModConfig cfg = GSON.fromJson(r, ModConfig.class);\n            return cfg != null ? cfg : new ModConfig();\n        } catch (Exception ignored) {\n        }\n    }\n    return new ModConfig();\n}",
+  "identifiers": [
+    {
+      "name": "loadConfigInternal",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "cfg",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "ignored",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "xvDoshik/HubSwap",
+    "repoUrl": "https://github.com/xvDoshik/HubSwap",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-04T22:22:23Z",
+    "commit": "c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+    "path": "src/main/java/ru/heldyy/hubswap/HubSwap.java",
+    "startLine": 65,
+    "endLine": 74,
+    "unit": "method HubSwap.loadConfigInternal",
+    "corpusFile": "corpus/java/xvDoshik__HubSwap__HubSwap.java.md"
+  }
+}

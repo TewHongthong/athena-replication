@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_040",
+  "language": "typescript",
+  "originalName": "half",
+  "injectedName": "HALF",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HALF' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function SweepDisc({ size, progress, color, handColor }: SweepDiscProps) {\n  const HALF = size / 2;\n  const disc = { width: HALF, height: size, backgroundColor: color };\n  const hand = progress.interpolate({ inputRange: [0, 1], outputRange: [\"0deg\", \"360deg\"] });\n\n  return (\n    <View pointerEvents=\"none\" style={[styles.box, { width: size, height: size, borderRadius: HALF }]}>\n      <View style={[styles.clip, { left: HALF, width: HALF, height: size }]}>\n        <Animated.View style={[styles.layer, { width: size, height: size, left: -HALF, transform: [{ rotate: rotation(progress, 0, 0.5) }] }]}>\n          <View style={[disc, { borderTopLeftRadius: HALF, borderBottomLeftRadius: HALF }]} />\n        </Animated.View>\n      </View>\n      <View style={[styles.clip, { left: 0, width: HALF, height: size }]}>\n        <Animated.View style={[styles.layer, { width: size, height: size, left: 0, transform: [{ rotate: rotation(progress, 0.5, 1) }] }]}>\n          <View style={[disc, { left: HALF, borderTopRightRadius: HALF, borderBottomRightRadius: HALF }]} />\n        </Animated.View>\n      </View>\n      <Animated.View style={[styles.layer, { width: size, height: size, transform: [{ rotate: hand }] }]}>\n        <View style={[styles.hand, { left: HALF - 1, height: HALF, backgroundColor: handColor }]} />\n      </Animated.View>\n    </View>\n  );\n}",
+  "occurrencesRenamed": 14,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ts_008",
+  "language": "typescript",
+  "source": "github:Brainferno/brainferno-mcp-bridge@95695615162b4db4a3189be9dd0ebf9e7d80c129",
+  "sourceDetail": "packages/server/src/logging.ts lines 32-37 (const log); license Apache-2.0; repo created 2026-08-26; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export const log = {\n  error: (message: string, detail?: unknown) => emit(\"error\", message, detail),\n  warn: (message: string, detail?: unknown) => emit(\"warn\", message, detail),\n  info: (message: string, detail?: unknown) => emit(\"info\", message, detail),\n  debug: (message: string, detail?: unknown) => emit(\"debug\", message, detail),\n};",
+  "identifiers": [
+    {
+      "name": "log",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "message",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "detail",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Brainferno/brainferno-mcp-bridge",
+    "repoUrl": "https://github.com/Brainferno/brainferno-mcp-bridge",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-08-26",
+    "commit": "95695615162b4db4a3189be9dd0ebf9e7d80c129",
+    "path": "packages/server/src/logging.ts",
+    "startLine": 32,
+    "endLine": 37,
+    "unit": "const log",
+    "corpusFile": "corpus/typescript/Brainferno__brainferno-mcp-bridge__logging.ts.md"
+  }
+}

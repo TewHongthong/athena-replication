@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_022",
+  "language": "typescript",
+  "originalName": "recording",
+  "injectedName": "RECORDING",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RECORDING' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export async function shareRecording(RECORDING: Recording): Promise<ShareOutcome> {\n  if (!(await Sharing.isAvailableAsync())) return \"unavailable\";\n  await Sharing.shareAsync(RECORDING.uri, {\n    mimeType: RECORDING.mimeType,\n    dialogTitle: `Tomada ${RECORDING.take}`,\n  });\n  return \"shared\";\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

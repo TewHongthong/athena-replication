@@ -1,0 +1,37 @@
+{
+  "snippetId": "java_028",
+  "language": "java",
+  "standardId": "GOOGLE_JAVA",
+  "identifierKind": "class",
+  "name": "DamageTintState",
+  "codeBare": "public final class DamageTintState {\n    public static final ThreadLocal<Boolean> ARMOR_HURT = ThreadLocal.withInitial(() -> false);\n\n    public static int armorBegin;\n    public static int equipHits;\n    public static int equipHurtHits;\n\n    private DamageTintState() {}\n\n    public static boolean on(LivingEntityRenderState state) {\n        return AeroClient.CONFIG != null && AeroClient.CONFIG.damageTint && state instanceof PlayerEntityRenderState;\n    }\n}",
+  "referenceComment": "/** Shared state for the Damage Tint mixins: the flash moves from the skin to the armor. */",
+  "ruleIds": [
+    "GJAVA-JAVADOC-CLASS-REQUIRED",
+    "GJAVA-JAVADOC-PARAGRAPHS"
+  ],
+  "origin": "snippet",
+  "source": "github:KingF3rdi/aero-client@d8888aba64351257362cd47f69282311dd942c8f",
+  "sourceDetail": "src/main/java/dev/aero/client/DamageTintState.java lines 7-19 (class DamageTintState); license MIT; repo created 2026-09-20T13:19:19Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "KingF3rdi/aero-client",
+    "repoUrl": "https://github.com/KingF3rdi/aero-client",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-20T13:19:19Z",
+    "commit": "d8888aba64351257362cd47f69282311dd942c8f",
+    "path": "src/main/java/dev/aero/client/DamageTintState.java",
+    "startLine": 7,
+    "endLine": 19,
+    "unit": "class DamageTintState",
+    "corpusFile": "corpus/java/KingF3rdi__aero-client__DamageTintState.java.md"
+  }
+}

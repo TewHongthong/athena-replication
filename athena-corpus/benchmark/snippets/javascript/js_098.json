@@ -1,0 +1,52 @@
+{
+  "id": "js_098",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/planning/distribute-study-plan.js lines 42-56 (function applyDailyPlanProposal); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function applyDailyPlanProposal({dailyPlans=[],proposal,operationId,now,idGenerator}={}){\n  if(proposal?.state!=='proposal'||!operationId||typeof idGenerator!=='function')return {createdItems:0,createdPlans:0};\n  const existing=new Set(dailyPlans.flatMap(plan=>(plan.items||[]).filter(item=>item.studyPlanId===proposal.studyPlanId&&item.studyPlanItemId).map(item=>`${item.studyPlanItemId}:${item.type}:${item.currentDate||plan.date}`)));\n  let createdItems=0,createdPlans=0;\n  proposal.days.forEach(day=>{\n    let plan=dailyPlans.find(item=>item.date===day.date);\n    if(!plan){plan={id:idGenerator('plan'),date:day.date,availableMinutes:day.availableMinutes,plannedMinutes:0,flexMinutes:day.availableMinutes,createdAt:now,updatedAt:now,studyPlanId:proposal.studyPlanId,generationOperationId:operationId,items:[]};dailyPlans.push(plan);createdPlans++}\n    day.items.forEach((source,index)=>{\n      const key=`${source.studyPlanItemId}:${source.type}:${day.date}`;if(existing.has(key))return;existing.add(key);\n      plan.items.push({id:idGenerator('plan-item'),subjectId:source.subjectId,topicId:source.topicId,subjectName:source.subjectName,topicName:source.topicName,type:source.type,plannedMinutes:source.minutes,executedSeconds:0,status:'planned',sessionIds:[],position:plan.items.length+1,statusIcon:'📅',statusLabel:'Plano semanal',reason:source.origin==='review'?'Revisão prevista para o período':'Distribuição confirmada do plano semanal',action:source.type==='questions'?'Resolver questões':source.type==='review'?'Revisar o tópico':'Estudar o tópico',recommendedQuestions:0,originalDate:day.date,currentDate:day.date,rescheduleCount:0,skippedReason:null,recommendationId:null,studyPlanId:proposal.studyPlanId,studyPlanItemId:source.studyPlanItemId,generationOperationId:operationId,createdAt:now});createdItems++;\n    });\n    plan.plannedMinutes=(plan.items||[]).filter(item=>!['skipped','replaced'].includes(item.status)).reduce((sum,item)=>sum+clampMinutes(item.plannedMinutes),0);plan.flexMinutes=Math.max(0,plan.availableMinutes-plan.plannedMinutes);plan.updatedAt=now;\n  });\n  return {createdItems,createdPlans,operationId};\n}",
+  "identifiers": [
+    {
+      "name": "applyDailyPlanProposal",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "existing",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "plan",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "day",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "source",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/planning/distribute-study-plan.js",
+    "startLine": 42,
+    "endLine": 56,
+    "unit": "function applyDailyPlanProposal",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__distribute-study-plan.js.md"
+  }
+}

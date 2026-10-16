@@ -1,0 +1,52 @@
+{
+  "id": "py_038",
+  "language": "python",
+  "source": "github:boongh/ml-exp@55667c29709eb5a612d32dbbc575550ed8a5a443",
+  "sourceDetail": "src/ml_exp/data.py lines 31-53 (method Dataset.get_batch); license MIT; repo created 2026-09-25T22:40:55Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def get_batch(self, type, block_size=16, batch_size=16):\n    if type == \"train\":\n        data = self.train_data\n    else:\n        data = self.val_data\n    \n    offsets = torch.randint(\n        0,\n        len(data) - block_size - 1,\n        (batch_size,)\n    )\n\n    x = torch.stack([\n        data[i:i + block_size]\n        for i in offsets\n    ])\n\n    y = torch.stack([\n        data[i + 1:i + block_size + 1]\n        for i in offsets\n    ])\n\n    return x, y",
+  "identifiers": [
+    {
+      "name": "get_batch",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "data",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "type",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "block_size",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "batch_size",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "offsets",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "boongh/ml-exp",
+    "repoUrl": "https://github.com/boongh/ml-exp",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T22:40:55Z",
+    "commit": "55667c29709eb5a612d32dbbc575550ed8a5a443",
+    "path": "src/ml_exp/data.py",
+    "startLine": 31,
+    "endLine": 53,
+    "unit": "method Dataset.get_batch",
+    "corpusFile": "corpus/python/boongh__ml-exp__data.py.md"
+  }
+}

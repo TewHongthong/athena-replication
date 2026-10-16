@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_079",
+  "language": "csharp",
+  "originalName": "duration",
+  "injectedName": "DURATION",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DURATION' does not match camelCase pattern",
+    "name 'DURATION' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private void StepRPS()\n{\n    bool spinningUp = targetRPS > CurrentRPS;\n    float DURATION = spinningUp ? spinUpTime : spinDownTime;\n    DURATION = Mathf.Max(DURATION, 0.0001f);\n\n    spinT = Mathf.MoveTowards(spinT, spinningUp ? 1f : 0f, Time.deltaTime / DURATION);\n\n    // Use the curve for spin-up character; spin-down stays linear (coasting/braking).\n    float shaped = spinningUp ? spinUpCurve.Evaluate(spinT) : spinT;\n    CurrentRPS = Mathf.Lerp(0f, maxRPS, shaped);\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

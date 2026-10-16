@@ -1,0 +1,52 @@
+{
+  "id": "java_081",
+  "language": "java",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/client/FurkinStatusIconRenderer.java lines 50-86 (method FurkinStatusIconRenderer.onRenderLevelStage); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@SubscribeEvent\npublic static void onRenderLevelStage(RenderLevelStageEvent event) {\n    if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_ENTITIES) {\n        return;\n    }\n    if (!FurkinClientConfig.SHOW_STATUS_ICON.get()) {\n        return;\n    }\n\n    Minecraft mc = Minecraft.getInstance();\n    if (mc.level == null || mc.player == null) {\n        return;\n    }\n\n    PoseStack pose = event.getPoseStack();\n    MultiBufferSource buffers = mc.renderBuffers().bufferSource();\n    Vec3 cam = event.getCamera().getPosition();\n\n    // 遍历在场实体，只画「已契约」的绒亲。\n    for (Entity entity : mc.level.entitiesForRendering()) {\n        if (!(entity instanceof LivingEntity living)) {\n            continue;\n        }\n        FurkinData data = FurkinAttachHandler.getData(living);\n        if (data == null || !data.isCompanion()) {\n            continue;\n        }\n\n        // 距离判定：与原版名牌同进同出（读实体自身 NAMETAG_DISTANCE 属性，\n        // 判定式与 ForgeHooksClient.isNameplateInRenderDistance 一致）。\n        if (!isWithinNameplateDistance(living)) {\n            continue;\n        }\n\n        renderIcon(pose, buffers, living, cam);\n    }\n}",
+  "identifiers": [
+    {
+      "name": "onRenderLevelStage",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "pose",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "event",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "buffers",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "cam",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "entity",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/client/FurkinStatusIconRenderer.java",
+    "startLine": 50,
+    "endLine": 86,
+    "unit": "method FurkinStatusIconRenderer.onRenderLevelStage",
+    "corpusFile": "corpus/java/wanancat__furkin__FurkinStatusIconRenderer.java.md"
+  }
+}

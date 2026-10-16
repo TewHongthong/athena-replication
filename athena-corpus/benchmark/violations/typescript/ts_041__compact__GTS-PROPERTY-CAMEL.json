@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_041",
+  "language": "typescript",
+  "originalName": "compact",
+  "injectedName": "COMPACT",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'COMPACT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface TakePosterProps {\n  recording: Pick<Recording, \"id\" | \"take\" | \"durationMs\">;\n  width: number;\n  height: number;\n  radius?: number;\n  COMPACT?: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

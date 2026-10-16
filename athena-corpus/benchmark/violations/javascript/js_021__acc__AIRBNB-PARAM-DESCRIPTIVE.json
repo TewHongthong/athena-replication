@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_021",
+  "language": "javascript",
+  "originalName": "acc",
+  "injectedName": "a",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'a' shorter than minLength=2",
+    "name 'a' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function walk(dir, a = []) {\n  for (const entry of readdirSync(dir, { withFileTypes: true })) {\n    const full = join(dir, entry.name)\n    if (entry.isDirectory()) {\n      walk(full, a)\n    } else if (entry.name.endsWith('.html') && entry.name !== '404.html') {\n      a.push(full)\n    }\n  }\n  return a\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

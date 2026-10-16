@@ -1,0 +1,52 @@
+{
+  "id": "java_031",
+  "language": "java",
+  "source": "github:KingF3rdi/aero-client@d8888aba64351257362cd47f69282311dd942c8f",
+  "sourceDetail": "src/main/java/dev/aero/client/Icons.java lines 38-51 (method Icons.tierColor); license MIT; repo created 2026-09-20T13:19:19Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public static int tierColor(String tier) {\n    boolean high = tier.contains(\"HT\");\n    int n = 5;\n    for (int i = tier.length() - 1; i >= 0; i--) {\n        if (Character.isDigit(tier.charAt(i))) {\n            n = tier.charAt(i) - '0';\n            break;\n        }\n    }\n    int[] highCols = {0xFFC94D, 0xFF9F43, 0xFF6B6B, 0xC77DFF, 0x9AA5B1};\n    int[] lowCols = {0xE8C86A, 0xE08A3A, 0xD05A5A, 0xA060D8, 0x7C8794};\n    int idx = Math.max(1, Math.min(5, n)) - 1;\n    return high ? highCols[idx] : lowCols[idx];\n}",
+  "identifiers": [
+    {
+      "name": "tierColor",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "high",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "tier",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "highCols",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "lowCols",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "idx",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "KingF3rdi/aero-client",
+    "repoUrl": "https://github.com/KingF3rdi/aero-client",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-20T13:19:19Z",
+    "commit": "d8888aba64351257362cd47f69282311dd942c8f",
+    "path": "src/main/java/dev/aero/client/Icons.java",
+    "startLine": 38,
+    "endLine": 51,
+    "unit": "method Icons.tierColor",
+    "corpusFile": "corpus/java/KingF3rdi__aero-client__Icons.java.md"
+  }
+}

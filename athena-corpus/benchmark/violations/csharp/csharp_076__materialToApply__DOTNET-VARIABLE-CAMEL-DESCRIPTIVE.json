@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_076",
+  "language": "csharp",
+  "originalName": "materialToApply",
+  "injectedName": "material_to_apply",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'material_to_apply' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public void SetActive(bool active)\n{\n    currentState = active;\n    Material material_to_apply = currentState ? activeMaterial : inactiveMaterial;\n\n    foreach (MeshRenderer mesh in targetMeshes)\n    {\n        if (mesh == null) continue;\n\n        Material[] mats = new Material[mesh.sharedMaterials.Length];\n        for (int i = 0; i < mats.Length; i++)\n        {\n            mats[i] = material_to_apply;\n        }\n        mesh.materials = mats;\n    }\n\n    if (active)\n    {\n        if (endActive != null)\n        {\n            StopCoroutine(endActive);\n            endActive = null;\n        }\n        isCounting = true;\n    }\n    else\n    {\n        if (endActive == null)\n        {\n            endActive = StartCoroutine(StopCountingAfterDelay());\n        }\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

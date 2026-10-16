@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_010",
+  "language": "typescript",
+  "originalName": "guard",
+  "injectedName": "GUARD",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'GUARD' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export async function GUARD(fn: () => Promise<CallToolResult>): Promise<CallToolResult> {\n  try {\n    return await fn();\n  } catch (error) {\n    if (error instanceof AppNotConnectedError) return errorResult(error.message);\n    if (error instanceof EvalTimeoutError) return errorResult(error.message);\n    if (error instanceof ScriptError) {\n      const where = error.scriptLine === undefined ? \"\" : ` (line ${error.scriptLine})`;\n      return errorResult(`Script failed in ${error.appId}${where}: ${error.message}`);\n    }\n    log.error(\"unhandled tool error\", error);\n    return errorResult(`Unexpected failure: ${error instanceof Error ? error.message : String(error)}`);\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

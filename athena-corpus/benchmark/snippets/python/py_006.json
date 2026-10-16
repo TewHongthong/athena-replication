@@ -1,0 +1,52 @@
+{
+  "id": "py_006",
+  "language": "python",
+  "source": "github:Ayush1860/SecureRag@a65d2f6f70fdc5dcb477d48353de0374853125e7",
+  "sourceDetail": "scripts/generate_corpus.py lines 109-118 (class DocRecord); license MIT; repo created 2026-09-02T18:22:54Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@dataclass\nclass DocRecord:\n    path: str\n    department: str\n    clearance: str\n    subject: str\n    doc_type: str\n    words: int\n    canary: str | None\n    injected: bool",
+  "identifiers": [
+    {
+      "name": "DocRecord",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "department",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "clearance",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "subject",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "doc_type",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Ayush1860/SecureRag",
+    "repoUrl": "https://github.com/Ayush1860/SecureRag",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-02T18:22:54Z",
+    "commit": "a65d2f6f70fdc5dcb477d48353de0374853125e7",
+    "path": "scripts/generate_corpus.py",
+    "startLine": 109,
+    "endLine": 118,
+    "unit": "class DocRecord",
+    "corpusFile": "corpus/python/Ayush1860__SecureRag__generate_corpus.py.md"
+  }
+}

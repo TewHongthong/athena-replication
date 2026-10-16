@@ -1,0 +1,52 @@
+{
+  "id": "csharp_050",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Viewer/Observation/WorldSelectionTelemetry.cs lines 3-20 (class WorldSelectionTelemetry); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public static partial class WorldSelectionTelemetry\n{\n    [LoggerMessage(EventId = 2260, Level = LogLevel.Information,\n        Message = \"world_selection outcome=created catalog_id={CatalogId} size={Size}\")]\n    public static partial void Created(ILogger logger, string catalogId, string size);\n\n    [LoggerMessage(EventId = 2261, Level = LogLevel.Information,\n        Message = \"world_selection outcome=selected catalog_id={CatalogId}\")]\n    public static partial void Selected(ILogger logger, string catalogId);\n\n    [LoggerMessage(EventId = 2262, Level = LogLevel.Warning,\n        Message = \"world_selection outcome=failed catalog_id={CatalogId} reason={Reason}\")]\n    public static partial void Failed(ILogger logger, string catalogId, string reason);\n\n    [LoggerMessage(EventId = 2263, Level = LogLevel.Information,\n        Message = \"world_preview outcome=generated width={Width} height={Height}\")]\n    public static partial void Previewed(ILogger logger, int width, int height);\n}",
+  "identifiers": [
+    {
+      "name": "WorldSelectionTelemetry",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "logger",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "catalogId",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "size",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "reason",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "Previewed",
+      "kind": "method",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Viewer/Observation/WorldSelectionTelemetry.cs",
+    "startLine": 3,
+    "endLine": 20,
+    "unit": "class WorldSelectionTelemetry",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__WorldSelectionTelemetry.cs.md"
+  }
+}

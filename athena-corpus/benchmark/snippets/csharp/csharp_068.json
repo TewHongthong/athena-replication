@@ -1,0 +1,37 @@
+{
+  "id": "csharp_068",
+  "language": "csharp",
+  "source": "github:teesofttech/SMSBridge@1b400e9c1804dc01402d0b9769db5475f76d3785",
+  "sourceDetail": "src/SmsBridge/Routing/FailoverSmsProviderRouter.cs lines 24-37 (method FailoverSmsProviderRouter.Resolve); license MIT; repo created 2026-06-13; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public ISmsProvider Resolve(SmsRoutingContext context)\n{\n    var providerName = context.ExplicitProvider ?? _options.DefaultProvider;\n\n    if (string.IsNullOrWhiteSpace(providerName))\n        throw new SmsBridgeException(\n            \"No provider could be resolved. Set 'SmsBridge:DefaultProvider' in configuration.\");\n\n    if (!_providers.TryGetValue(providerName, out var provider))\n        throw new SmsBridgeException(\n            $\"Provider '{providerName}' is not registered. Registered: [{string.Join(\", \", _providers.Keys)}].\");\n\n    return provider;\n}",
+  "identifiers": [
+    {
+      "name": "Resolve",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "providerName",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "context",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "teesofttech/SMSBridge",
+    "repoUrl": "https://github.com/teesofttech/SMSBridge",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-13",
+    "commit": "1b400e9c1804dc01402d0b9769db5475f76d3785",
+    "path": "src/SmsBridge/Routing/FailoverSmsProviderRouter.cs",
+    "startLine": 24,
+    "endLine": 37,
+    "unit": "method FailoverSmsProviderRouter.Resolve",
+    "corpusFile": "corpus/csharp/teesofttech__SMSBridge__FailoverSmsProviderRouter.cs.md"
+  }
+}

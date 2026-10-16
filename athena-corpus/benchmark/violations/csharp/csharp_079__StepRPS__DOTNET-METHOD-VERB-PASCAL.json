@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_079",
+  "language": "csharp",
+  "originalName": "StepRPS",
+  "injectedName": "step_rps",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'step_rps' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "private void step_rps()\n{\n    bool spinningUp = targetRPS > CurrentRPS;\n    float duration = spinningUp ? spinUpTime : spinDownTime;\n    duration = Mathf.Max(duration, 0.0001f);\n\n    spinT = Mathf.MoveTowards(spinT, spinningUp ? 1f : 0f, Time.deltaTime / duration);\n\n    // Use the curve for spin-up character; spin-down stays linear (coasting/braking).\n    float shaped = spinningUp ? spinUpCurve.Evaluate(spinT) : spinT;\n    CurrentRPS = Mathf.Lerp(0f, maxRPS, shaped);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

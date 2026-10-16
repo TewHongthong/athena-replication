@@ -1,0 +1,52 @@
+{
+  "id": "ts_029",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/capture/viewfinder.types.ts lines 15-21 (interface ViewfinderProps); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export interface ViewfinderProps {\n  ref: Ref<ViewfinderHandle>;\n  facing: Facing;\n  demo: boolean;\n  onReady: () => void;\n  onFailure: (message: string) => void;\n}",
+  "identifiers": [
+    {
+      "name": "ViewfinderProps",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "ref",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "facing",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "demo",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "onReady",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "onFailure",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/capture/viewfinder.types.ts",
+    "startLine": 15,
+    "endLine": 21,
+    "unit": "interface ViewfinderProps",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__viewfinder.types.ts.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_013",
+  "language": "typescript",
+  "originalName": "strokeWidth",
+  "injectedName": "stroke_width",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'stroke_width' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface MaskTargetOptions {\n  /** Stroke width of the mask geometry (Lucide's default is 2). */\n  stroke_width?: number;\n  /** Grid the icon's coordinates live on (Lucide/Iconify default: \"0 0 24 24\").\n   *  Used to map the geometry onto the element's box. */\n  viewBox?: string;\n  /** Set `background-color: currentColor` on first setup so the element shows\n   *  through the mask in the current text color, standalone (no icon class).\n   *  Turn off to keep an existing paint (e.g. a `bg-*` utility). Default true. */\n  paint?: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

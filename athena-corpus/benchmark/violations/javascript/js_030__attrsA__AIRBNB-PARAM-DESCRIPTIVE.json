@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_030",
+  "language": "javascript",
+  "originalName": "attrsA",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function diffFrontmatter(l, attrsB) {\n  const changes = {}\n  const allKeys = new Set([...Object.keys(l), ...Object.keys(attrsB)])\n\n  for (const key of allKeys) {\n    const valA = l[key]\n    const valB = attrsB[key]\n    if (JSON.stringify(valA) !== JSON.stringify(valB)) {\n      changes[key] = { from: valA, to: valB }\n    }\n  }\n\n  return changes\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

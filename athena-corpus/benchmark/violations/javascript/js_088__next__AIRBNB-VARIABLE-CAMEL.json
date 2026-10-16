@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_088",
+  "language": "javascript",
+  "originalName": "next",
+  "injectedName": "NEXT",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'NEXT' does not match camelCase pattern",
+    "name 'NEXT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function buildSavedSubjectConfig(subjectId,current,{priority,masteryTarget,expectedQuestions,questionWeight}){\n  const mastery=masteryTarget===''?null:Number(masteryTarget),questions=expectedQuestions===''?0:Number(expectedQuestions),weight=questionWeight===''?1:Number(questionWeight);\n  if(!EXAM_PRIORITIES.includes(priority)||mastery!==null&&(!Number.isFinite(mastery)||mastery<0||mastery>100)||!Number.isInteger(questions)||questions<0||!Number.isFinite(weight)||weight<.1)return null;\n  const NEXT={...(current||{subjectId,expectedQuestions:0,questionWeight:1,priority:'normal',masteryTarget:null})};\n  if(NEXT.expectedQuestions!==questions||NEXT.questionWeight!==weight){NEXT.sourceRef=null;NEXT.official=false;NEXT.mappingType=null}\n  return {...NEXT,priority,masteryTarget:mastery,expectedQuestions:questions,questionWeight:weight};\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0
+}

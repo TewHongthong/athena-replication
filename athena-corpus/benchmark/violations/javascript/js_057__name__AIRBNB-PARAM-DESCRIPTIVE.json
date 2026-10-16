@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_057",
+  "language": "javascript",
+  "originalName": "name",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function addMcpServer(agent, l, serverConfig, source = null) {\n  const result = await readMcpConfig(agent)\n  if (!result) return false\n  const { configPath, data } = result\n  setMcpServerEntry(data, agent, l, serverConfig)\n  await mkdir(dirname(configPath), { recursive: true })\n  await writeFile(configPath, `${JSON.stringify(data, null, 2)}\\n`, 'utf-8')\n\n  await addServerToMcpLock(l, {\n    source: source || reconstructMcpSource(serverConfig, l),\n    sourceType: serverConfig.sourceType,\n    agents: [agent],\n  })\n\n  return true\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,39 @@
+{
+  "snippetId": "py_011",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "function",
+  "name": "issue_certificates",
+  "codeBare": "@router.post(\"/events/{slug}/certificates/issue/{kind}\")\ndef issue_certificates(\n    kind: str,\n    ctx: EventContext = Depends(require_organizer),\n    db: DbSession = Depends(get_db),\n    settings: Settings = Depends(get_settings),\n):\n    \n    issuers = {\n        \"participation\": cert_service.issue_participation,\n        \"judge\": cert_service.issue_judge_records,\n        \"winner\": cert_service.issue_winners,\n    }\n    if kind not in issuers:\n        raise NotFound(\"kind must be participation, judge or winner.\")\n    report = issuers[kind](db, settings, ctx.event, ctx.user)\n    return {\"issued\": report.issued, \"skipped\": report.skipped}",
+  "referenceComment": "\"\"\"Bulk-issue: participation (every member of a submitted team), judge (every judge with a\n    submitted review), winner (top three after results are published).\"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-FUNC"
+  ],
+  "origin": "snippet",
+  "source": "github:Nikhils-G/podium@64d18bf7ed5c1eef58d5397ff282807ceb3bf23e",
+  "sourceDetail": "src/podium/api/v1/integrations.py lines 173-190 (function issue_certificates); license MIT; repo created 2026-09-26T18:48:58Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 2,
+  "signature": {
+    "params": 4,
+    "returns": true,
+    "throws": true
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns",
+    "throws"
+  ],
+  "provenance": {
+    "repo": "Nikhils-G/podium",
+    "repoUrl": "https://github.com/Nikhils-G/podium",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:48:58Z",
+    "commit": "64d18bf7ed5c1eef58d5397ff282807ceb3bf23e",
+    "path": "src/podium/api/v1/integrations.py",
+    "startLine": 173,
+    "endLine": 190,
+    "unit": "function issue_certificates",
+    "corpusFile": "corpus/python/Nikhils-G__podium__src_podium_api_v1_integrations.py.md"
+  }
+}

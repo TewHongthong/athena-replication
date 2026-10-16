@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_094",
+  "language": "csharp",
+  "originalName": "named",
+  "injectedName": "NAMED",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'NAMED' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed class Signals : IDisposable\n{\n    public const string Show = \"show\";\n    public static readonly string[] Commands = [\"toggle\", \"paste-last\", \"cancel\"];\n    static readonly string[] All = [Show, .. Commands];\n\n    // \"ShowWindow\" is the name versions before 2.6 listen on.\n    static string EventName(string signal) => signal == Show ? @\"Local\\BetterSTT.ShowWindow\" : $@\"Local\\BetterSTT.{signal}\";\n\n    readonly EventWaitHandle[] _handles;\n\n    /// <param name=\"named\">False for a private set that nothing else can signal (screenshot mode).</param>\n    public Signals(bool NAMED) =>\n        _handles = All.Select(s => new EventWaitHandle(false, EventResetMode.AutoReset, NAMED ? EventName(s) : null)).ToArray();\n\n    public static void Send(string signal)\n    {\n        try { EventWaitHandle.OpenExisting(EventName(signal)).Set(); }\n        catch { /* the running copy is too old to know this signal */ }\n    }\n\n    /// <summary>Blocks until a signal arrives and returns its name.</summary>\n    public string Wait() => All[WaitHandle.WaitAny(_handles)];\n\n    public void Dispose()\n    {\n        foreach (var h in _handles) h.Dispose();\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_039",
+  "language": "python",
+  "originalName": "head_size",
+  "injectedName": "HEAD_SIZE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HEAD_SIZE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class TransformerBlock(nn.Module):\n    def __init__(self, HEAD_SIZE, n_embed, n_head, rank_division = 1, dtype=torch.float32, causal=True, dropout_rate=0.1):\n        super().__init__()\n        self.attention = MultiHeadAttention(HEAD_SIZE, n_embed, n_head, dtype=dtype, causal=causal, dropout_rate=dropout_rate)\n        self.ffwdn = MLP_Lowrank(n_embed, n_embed // rank_division, dtype=dtype, dropout_rate=dropout_rate, activation=nn.GELU())\n        self.layer_norm1 = nn.LayerNorm(n_embed, dtype=dtype)\n        self.layer_norm2 = nn.LayerNorm(n_embed, dtype=dtype)\n        self.dropout = nn.Dropout(dropout_rate)\n\n    def forward(self, x):\n        x = self.dropout(x)\n        # x + self.attention() = residual connectiong\n        # Norm before sublayer -> Pre norm formulation\n        x = x + self.attention(self.layer_norm1(x))\n        x = x + self.ffwdn(self.layer_norm2(x))\n        return x",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

@@ -1,0 +1,39 @@
+{
+  "snippetId": "js_019",
+  "language": "javascript",
+  "standardId": "AIRBNB_JS",
+  "identifierKind": "function",
+  "name": "getTestCount",
+  "codeBare": "function getTestCount() {\n  if (_testCount !== null) return _testCount\n  let count = 0\n  function countTestsInDir(dir) {\n    try {\n      const entries = readdirSync(dir, { withFileTypes: true })\n      for (const entry of entries) {\n        const fullPath = join(dir, entry.name)\n        if (\n          entry.isDirectory() &&\n          entry.name !== 'node_modules' &&\n          entry.name !== '__fixtures__'\n        ) {\n          countTestsInDir(fullPath)\n        } else if (\n          entry.isFile() &&\n          (entry.name.endsWith('.test.js') || entry.name.endsWith('.test.mjs'))\n        ) {\n          const content = readFileSync(fullPath, 'utf-8')\n          const stripped = content.replace(/\\/\\/.*$/gm, '')\n          const itMatches = stripped.match(/\\bit\\b\\s*\\(/g)\n          const testMatches = stripped.match(/\\btest\\b\\s*\\(/g)\n          count += (itMatches?.length || 0) + (testMatches?.length || 0)\n        }\n      }\n    } catch {}\n  }\n  countTestsInDir(join(ROOT, 'src'))\n  countTestsInDir(join(ROOT, 'bin'))\n  countTestsInDir(join(ROOT, 'e2e'))\n  _testCount = count\n  return _testCount\n}",
+  "referenceComment": "/**\n * Count total test cases by scanning it()/test() calls in test files.\n * Uses word-boundary anchors to avoid false positives (e.g. submit(), wait()).\n * Strips single-line comments before matching.\n */",
+  "ruleIds": [
+    "AIRBNB-COMMENT-MULTILINE",
+    "AIRBNB-COMMENT-SPACING",
+    "AIRBNB-COMMENT-TODO"
+  ],
+  "origin": "snippet",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "scripts/generate-docs.js lines 20-52 (function getTestCount); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 5,
+  "signature": {
+    "params": 0,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "scripts/generate-docs.js",
+    "startLine": 20,
+    "endLine": 52,
+    "unit": "function getTestCount",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__generate-docs.js.md"
+  }
+}

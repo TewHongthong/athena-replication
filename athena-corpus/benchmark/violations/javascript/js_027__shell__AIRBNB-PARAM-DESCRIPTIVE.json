@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_027",
+  "language": "javascript",
+  "originalName": "shell",
+  "injectedName": "s",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 's' shorter than minLength=2",
+    "name 's' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function completionApi(s) {\n  switch (s) {\n    case 'bash':\n      return bashScript()\n    case 'zsh':\n      return zshScript()\n    case 'fish':\n      return fishScript()\n    default:\n      throw new Error(`Unknown shell: ${s}`)\n  }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

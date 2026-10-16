@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_051",
+  "language": "javascript",
+  "originalName": "content",
+  "injectedName": "c",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'c' shorter than minLength=2",
+    "name 'c' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function mdcToSkill(c, filename) {\n  const { attrs, body } = parseFrontmatter(c)\n\n  const desc = attrs.description || ''\n  const baseName = filename.replace(/\\.mdc$/i, '')\n  const name = desc || baseName || 'untitled'\n  const slug = attrs._slug || baseName.toLowerCase().replace(/[^a-z0-9]+/g, '-')\n\n  const skill = {\n    name,\n    slug,\n    owner: 'local',\n    description: desc,\n  }\n\n  if (attrs.mcp_servers) {\n    skill.mcp_servers = attrs.mcp_servers\n  }\n\n  return serializeFrontmatter(skill) + body\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

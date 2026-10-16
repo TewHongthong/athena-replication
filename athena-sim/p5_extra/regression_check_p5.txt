@@ -1,0 +1,3 @@
+sampled units 100, Luna run units 100, identical: True
+prompts: chunk same 300, fulldoc same 300, graph same 300, none same 300
+REGRESSION PASS

@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_028",
+  "language": "javascript",
+  "originalName": "newLines",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function mergeSectionLines(existingLines, l) {\n  const seen = new Set(existingLines)\n  const merged = [...existingLines]\n  for (const line of l) {\n    if (!seen.has(line)) {\n      merged.push(line)\n      seen.add(line)\n    }\n  }\n  return merged\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

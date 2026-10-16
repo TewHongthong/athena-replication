@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_047",
+  "language": "java",
+  "originalName": "yaw",
+  "injectedName": "YAW",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'YAW' does not match camelCase pattern",
+    "name 'YAW' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void rotate(MatrixStack matrices, float pitch, float YAW, float roll) {\n    if (pitch == 0 && YAW == 0 && roll == 0) {\n        return;\n    }\n    try {\n        var x = net.minecraft.util.math.RotationAxis.POSITIVE_X.rotationDegrees(pitch);\n        var y = net.minecraft.util.math.RotationAxis.POSITIVE_Y.rotationDegrees(YAW);\n        var z = net.minecraft.util.math.RotationAxis.POSITIVE_Z.rotationDegrees(roll);\n        matrices.multiply(x);\n        matrices.multiply(y);\n        matrices.multiply(z);\n    } catch (Throwable ignored) {\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

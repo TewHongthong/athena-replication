@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_041",
+  "language": "java",
+  "originalName": "DeviceCode",
+  "injectedName": "device_code",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'device_code' does not match PascalCase pattern",
+    "name 'device_code' matches forbidden pattern '^[a-z]'",
+    "name 'device_code' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public static final class device_code {\n    public String userCode = \"\";\n    public String deviceCode = \"\";\n    public String verificationUri = \"\";\n    public int interval = 5;\n    public int expiresIn = 900;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

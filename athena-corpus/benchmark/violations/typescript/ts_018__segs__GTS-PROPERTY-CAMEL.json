@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_018",
+  "language": "typescript",
+  "originalName": "segs",
+  "injectedName": "SEGS",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SEGS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface RawSubpath {\n  x0: number;\n  y0: number;\n  SEGS: RawSeg[];\n  closed: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

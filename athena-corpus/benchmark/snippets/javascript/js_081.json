@@ -1,0 +1,52 @@
+{
+  "id": "js_081",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/exam-intelligence/exam-registry.js lines 4-19 (function createExamRegistry); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function createExamRegistry({state,idGenerator}={}){\n  if(!state||!Array.isArray(state.exams)||!Array.isArray(state.examQuestions)||typeof idGenerator!=='function')throw new TypeError('Registro de provas requer estado e gerador de IDs.');\n  const addExam=input=>{\n    const exam=createExam({...input,id:input?.id||idGenerator('exam')});\n    if(state.exams.some(item=>item.id===exam.id))throw new RangeError('A prova já está cadastrada.');\n    state.exams.push(exam);return exam;\n  };\n  const addQuestion=input=>{\n    const question=createExamQuestion({...input,id:input?.id||idGenerator('exam-question')});\n    const subject=state.subjects.find(item=>item.id===question.subjectId);\n    if(!state.exams.some(item=>item.id===question.examId)||!subject?.topics?.some(item=>item.id===question.topicId))throw new RangeError('A questão precisa apontar para prova e tópico existentes.');\n    if(state.examQuestions.some(item=>item.id===question.id||item.examId===question.examId&&item.questionNumber===question.questionNumber))throw new RangeError('A questão já está cadastrada nesta prova.');\n    state.examQuestions.push(question);return question;\n  };\n  return Object.freeze({addExam,addQuestion});\n}",
+  "identifiers": [
+    {
+      "name": "createExamRegistry",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "exam",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "input",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "question",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "subject",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/exam-intelligence/exam-registry.js",
+    "startLine": 4,
+    "endLine": 19,
+    "unit": "function createExamRegistry",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__exam-registry.js.md"
+  }
+}

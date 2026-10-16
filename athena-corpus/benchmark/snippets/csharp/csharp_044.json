@@ -1,0 +1,52 @@
+{
+  "id": "csharp_044",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Viewer/Control/AgentPlacementLog.cs lines 5-18 (class AgentPlacementLog); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "internal static partial class AgentPlacementLog\n{\n    [LoggerMessage(EventId = 1710, Level = LogLevel.Information,\n        Message = \"AgentPlaced AgentId={AgentId} HouseholdId={HouseholdId} WorldTick={WorldTick} X={X} Y={Y}\")]\n    public static partial void Placed(ILogger logger, string agentId, string householdId, long worldTick, int x, int y);\n\n    [LoggerMessage(EventId = 1711, Level = LogLevel.Warning,\n        Message = \"AgentPlacementRejected AgentId={AgentId} Reason={Reason}\")]\n    public static partial void Rejected(ILogger logger, string agentId, string reason);\n\n    [LoggerMessage(EventId = 1712, Level = LogLevel.Information,\n        Message = \"AgentRenamed AgentId={AgentId} WorldTick={WorldTick}\")]\n    public static partial void Renamed(ILogger logger, string agentId, long worldTick);\n}",
+  "identifiers": [
+    {
+      "name": "AgentPlacementLog",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "Placed",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "logger",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "agentId",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "householdId",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "worldTick",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Viewer/Control/AgentPlacementLog.cs",
+    "startLine": 5,
+    "endLine": 18,
+    "unit": "class AgentPlacementLog",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__AgentPlacementLog.cs.md"
+  }
+}

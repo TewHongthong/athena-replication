@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_084",
+  "language": "java",
+  "originalName": "RemoteSummonFeedback",
+  "injectedName": "remote_summon_feedback",
+  "identifierKind": "interface",
+  "violatedRuleId": "GJAVA-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'remote_summon_feedback' does not match PascalCase pattern",
+    "name 'remote_summon_feedback' matches forbidden pattern '^[a-z]'",
+    "name 'remote_summon_feedback' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@FunctionalInterface\npublic interface remote_summon_feedback {\n\n    remote_summon_feedback NONE = (player, companionId, result) -> {\n    };\n\n    void onTerminal(ServerPlayer player, UUID companionId, RemoteSummonResult result);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

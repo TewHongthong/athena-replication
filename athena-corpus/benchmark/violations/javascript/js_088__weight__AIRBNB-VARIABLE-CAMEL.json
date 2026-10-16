@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_088",
+  "language": "javascript",
+  "originalName": "weight",
+  "injectedName": "WEIGHT",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'WEIGHT' does not match camelCase pattern",
+    "name 'WEIGHT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function buildSavedSubjectConfig(subjectId,current,{priority,masteryTarget,expectedQuestions,questionWeight}){\n  const mastery=masteryTarget===''?null:Number(masteryTarget),questions=expectedQuestions===''?0:Number(expectedQuestions),WEIGHT=questionWeight===''?1:Number(questionWeight);\n  if(!EXAM_PRIORITIES.includes(priority)||mastery!==null&&(!Number.isFinite(mastery)||mastery<0||mastery>100)||!Number.isInteger(questions)||questions<0||!Number.isFinite(WEIGHT)||WEIGHT<.1)return null;\n  const next={...(current||{subjectId,expectedQuestions:0,questionWeight:1,priority:'normal',masteryTarget:null})};\n  if(next.expectedQuestions!==questions||next.questionWeight!==WEIGHT){next.sourceRef=null;next.official=false;next.mappingType=null}\n  return {...next,priority,masteryTarget:mastery,expectedQuestions:questions,questionWeight:WEIGHT};\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

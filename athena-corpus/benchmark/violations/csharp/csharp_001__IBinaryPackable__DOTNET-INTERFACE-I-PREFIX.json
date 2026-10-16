@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_001",
+  "language": "csharp",
+  "originalName": "IBinaryPackable",
+  "injectedName": "i_binary_packable",
+  "identifierKind": "interface",
+  "violatedRuleId": "DOTNET-INTERFACE-I-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'i_binary_packable' does not match PascalCase pattern",
+    "name 'i_binary_packable' does not start with required prefix 'I'"
+  ],
+  "codeContextWithViolation": "public interface i_binary_packable\n{\n    /// <summary>Writes the type's binary representation to the supplied stream.</summary>\n    /// <param name=\"stream\">The destination binary stream.</param>\n    void Pack(IBinaryStream stream);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

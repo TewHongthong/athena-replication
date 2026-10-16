@@ -1,0 +1,52 @@
+{
+  "id": "csharp_013",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Entities/ItemImage.cs lines 4-12 (class ItemImageRole); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public enum ItemImageRole\n{\n    Front,\n    Back,\n    Detail,\n    Label,\n    Receipt,\n    Other\n}",
+  "identifiers": [
+    {
+      "name": "ItemImageRole",
+      "kind": "enum",
+      "isCompliant": true
+    },
+    {
+      "name": "Front",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Back",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Detail",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Label",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Receipt",
+      "kind": "enum_member",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Entities/ItemImage.cs",
+    "startLine": 4,
+    "endLine": 12,
+    "unit": "class ItemImageRole",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__ItemImage.cs.md"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_075",
+  "language": "javascript",
+  "originalName": "paceCard",
+  "injectedName": "pace_card",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'pace_card' does not match camelCase pattern",
+    "name 'pace_card' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function buildExecutiveSummary({readiness,daysToExam=null,pace={},topPriority=null,riskCount=0,weeklyGoal={},opportunityCount=0}={}){\n  const readinessValue=readiness?.value;\n  const general=readinessValue==null\n    ?{value:'—',label:'Aguardando dados',detail:'Registre atividades para calcular a prontidão.'}\n    :{value:`${readinessValue}/100`,label:`Confiança ${String(readiness.confidenceLabel||'baixa').toLowerCase()}`,detail:`${readiness.availableFactors?.length||0} de 5 fatores disponíveis`};\n  const exam=daysToExam===null\n    ?{value:'—',label:'Data da prova não definida',detail:'Configure a prova para avaliar o prazo.'}\n    :{value:String(Math.max(0,daysToExam)),label:daysToExam===1?'dia até a prova':'dias até a prova',detail:daysToExam<0?'A data informada já passou.':''};\n  const pace_card=pace.status==='ok'\n    ?{value:String(pace.remaining),label:'tópicos restantes',detail:pace.comparativo==='atrasado'?'Ritmo abaixo do necessário':pace.comparativo==='no-prazo'?'Ritmo compatível com o prazo':'Prazo ainda não comparado'}\n    :{value:pace.remaining==null?'—':String(pace.remaining),label:pace.status==='completo'?'Plano concluído':'Ritmo aguardando dados',detail:'Conclua tópicos para formar uma tendência.'};\n  const achieved=Number(weeklyGoal.achieved)||0,target=Number(weeklyGoal.target)||0;\n  const weekly={value:target?`${Math.round(achieved/target*100)}%`:'—',label:'meta semanal',detail:target?`${achieved} de ${target} tópicos`:'Meta não configurada'};\n  return {\n    cards:[general,exam,pace_card,weekly],\n    primaryAction:topPriority?{title:topPriority.recommendedAction,subject:topPriority.subjectName,topic:topPriority.topicName,duration:topPriority.estimatedMinutes,reason:topPriority.reason||'Prioridade calculada com os dados atuais'}:null,\n    riskCount:Math.max(0,Number(riskCount)||0),opportunityCount:Math.max(0,Number(opportunityCount)||0),\n    opportunityMessage:opportunityCount>0?`${opportunityCount} oportunidade${opportunityCount===1?'':'s'} com importância de prova configurada.`:'Ainda não há dados suficientes para identificar oportunidades. Configure os pesos da prova e registre questões.'\n  };\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

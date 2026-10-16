@@ -1,0 +1,37 @@
+{
+  "id": "py_076",
+  "language": "python",
+  "source": "github:sl2ver/wm811k-wafer-defect-classification@305dbf7387943b4dec4f4f41a38ff99bfe284796",
+  "sourceDetail": "scripts/split_variance.py lines 32-39 (function summarize); license MIT; repo created 2026-09-27T06:25:24Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def summarize(runs: list[dict]) -> dict:\n    f1 = np.array([r[\"test_macro_f1\"] for r in runs])\n    rec = {c: np.array([r[\"test_recall\"][c] for r in runs]) for c in CLASSES}\n    return {\"macro_f1_mean_std_min_max\": [round(float(f1.mean()), 4), round(float(f1.std(ddof=1)), 4),\n                                          float(f1.min()), float(f1.max())],\n            \"recall_mean_std_min_max\": {c: [round(float(v.mean()), 4), round(float(v.std(ddof=1)), 4),\n                                            float(v.min()), float(v.max())] for c, v in rec.items()},\n            \"seeds_with_all_recall_ge_0.50\": int(sum(min(r[\"test_recall\"].values()) >= 0.5 for r in runs))}",
+  "identifiers": [
+    {
+      "name": "summarize",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "rec",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "runs",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sl2ver/wm811k-wafer-defect-classification",
+    "repoUrl": "https://github.com/sl2ver/wm811k-wafer-defect-classification",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-27T06:25:24Z",
+    "commit": "305dbf7387943b4dec4f4f41a38ff99bfe284796",
+    "path": "scripts/split_variance.py",
+    "startLine": 32,
+    "endLine": 39,
+    "unit": "function summarize",
+    "corpusFile": "corpus/python/sl2ver__wm811k-wafer-defect-classification__split_variance.py.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_058",
+  "language": "python",
+  "originalName": "raw",
+  "injectedName": "RAW",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RAW' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def main(argv: list[str] | None = None) -> int:\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument(\n        \"--mode\",\n        default=None,\n        help=(\n            \"check (report only, default) or clean (strip in place). Falls back to \"\n            \"CLAUDE_PLUGIN_OPTION_HOOK_MODE, then WATERMARKS_HOOK_MODE, then check.\"\n        ),\n    )\n    args = parser.parse_args(argv)\n\n    RAW = sys.stdin.read()\n    if not RAW.strip():\n        return EXIT_QUIET\n    try:\n        payload = json.loads(RAW)\n    except json.JSONDecodeError:\n        eprint(\"watermarks-remover: hook payload was not valid JSON\")\n        return EXIT_HOOK_ERROR\n    if not isinstance(payload, dict):\n        eprint(\"watermarks-remover: hook payload was not a JSON object\")\n        return EXIT_HOOK_ERROR\n\n    path = target_path(payload)\n    if path is None or not path.is_file():\n        return EXIT_QUIET\n    if path.stat().st_size > MAX_INPUT_BYTES:\n        return EXIT_QUIET\n\n    mode = resolve_mode(args.mode)\n    try:\n        return run_clean(path) if mode == \"clean\" else run_check(path)\n    except OSError as error:\n        # A hook must never take the session down with it.\n        eprint(f\"watermarks-remover: hook failed on {path}: {error}\")\n        return EXIT_HOOK_ERROR",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

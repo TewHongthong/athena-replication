@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_086",
+  "language": "typescript",
+  "originalName": "text",
+  "injectedName": "TEXT",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TEXT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function slugify(TEXT: string) {\n  return TEXT\n    .toLowerCase()\n    .normalize(\"NFD\")\n    .replace(/[̀-ͯ]/g, \"\")\n    .replace(/[^a-z0-9]+/g, \"-\")\n    .replace(/^-|-$/g, \"\")\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

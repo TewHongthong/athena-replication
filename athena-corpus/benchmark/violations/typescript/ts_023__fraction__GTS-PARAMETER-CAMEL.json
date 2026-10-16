@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_023",
+  "language": "typescript",
+  "originalName": "fraction",
+  "injectedName": "FRACTION",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FRACTION' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function piePath(cx: number, cy: number, radius: number, FRACTION: number) {\n  const clamped = Math.min(Math.max(FRACTION, 0), 1);\n  if (clamped <= 0) return \"\";\n  if (clamped >= 1) {\n    return `M${round(cx)} ${round(cy - radius)}A${round(radius)} ${round(radius)} 0 1 1 ${round(cx)} ${round(cy + radius)}A${round(radius)} ${round(radius)} 0 1 1 ${round(cx)} ${round(cy - radius)}Z`;\n  }\n  const angle = clamped * Math.PI * 2;\n  const x = cx + Math.sin(angle) * radius;\n  const y = cy - Math.cos(angle) * radius;\n  const large = clamped > 0.5 ? 1 : 0;\n  return `M${round(cx)} ${round(cy)}L${round(cx)} ${round(cy - radius)}A${round(radius)} ${round(radius)} 0 ${large} 1 ${round(x)} ${round(y)}Z`;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

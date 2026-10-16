@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_080",
+  "language": "typescript",
+  "originalName": "foco",
+  "injectedName": "FOCO",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FOCO' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Veredicto({ color, superficie }: { color: Oklch; superficie: string }) {\n  const texto = textoSobre(color)\n  const FOCO = focoSobre(color, superficie)\n  const numero = (ratio: number) => ratio.toFixed(2).replace(\".\", \",\")\n  return (\n    <>\n      <div\n        className=\"flex h-10 items-center justify-center rounded-full text-button-14 shadow-button-accent sheen\"\n        style={{ backgroundColor: hexOfOklch(color), color: texto.hex }}\n      >\n        Así queda el botón\n      </div>\n      <div className=\"flex flex-wrap gap-1.5\">\n        <Badge color={texto.aa ? \"green\" : \"red\"} size=\"sm\">\n          {texto.aa ? <CheckIcon /> : <TriangleAlertIcon />}\n          Texto {texto.hex === \"#ffffff\" ? \"blanco\" : \"negro\"} · {numero(texto.ratio)}:1\n        </Badge>\n        <Badge color={FOCO.ok ? \"green\" : \"red\"} size=\"sm\">\n          {FOCO.ok ? <CheckIcon /> : <TriangleAlertIcon />}\n          Foco · {numero(FOCO.ratio)}:1\n        </Badge>\n      </div>\n      {(!texto.aa || !FOCO.ok) && (\n        <p className=\"text-copy-13 text-gray-900\">\n          {!texto.aa\n            ? \"Con este color ni el blanco ni el negro llegan a 4,5:1 encima. Bajale o subile la luminosidad.\"\n            : \"El anillo de foco no llega a 3:1 contra la superficie de este tema.\"}\n        </p>\n      )}\n    </>\n  )\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

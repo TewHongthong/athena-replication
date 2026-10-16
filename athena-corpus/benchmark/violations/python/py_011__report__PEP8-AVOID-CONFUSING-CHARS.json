@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_011",
+  "language": "python",
+  "originalName": "report",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "@router.post(\"/events/{slug}/certificates/issue/{kind}\")\ndef issue_certificates(\n    kind: str,\n    ctx: EventContext = Depends(require_organizer),\n    db: DbSession = Depends(get_db),\n    settings: Settings = Depends(get_settings),\n):\n    \"\"\"Bulk-issue: participation (every member of a submitted team), judge (every judge with a\n    submitted review), winner (top three after results are published).\"\"\"\n    issuers = {\n        \"participation\": cert_service.issue_participation,\n        \"judge\": cert_service.issue_judge_records,\n        \"winner\": cert_service.issue_winners,\n    }\n    if kind not in issuers:\n        raise NotFound(\"kind must be participation, judge or winner.\")\n    l = issuers[kind](db, settings, ctx.event, ctx.user)\n    return {\"issued\": l.issued, \"skipped\": l.skipped}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

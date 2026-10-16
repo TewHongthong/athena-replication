@@ -1,0 +1,36 @@
+{
+  "snippetId": "py_023",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "class",
+  "name": "FailureClass",
+  "codeBare": "class FailureClass(str, Enum):\n    \n\n    FABRICATED_SOURCE = \"fabricated_source\"\n    UNKNOWN_VARIANT = \"unknown_variant\"\n    SOURCE_MISMATCH = \"source_mismatch\"\n    STALE_EVIDENCE = \"stale_evidence\"\n    UNSUPPORTED_CLAIM = \"unsupported_claim\"\n    PRECONDITION_UNKNOWN = \"precondition_unknown\"\n    POLICY_VIOLATION = \"policy_violation\"\n    SCOPE_VIOLATION = \"scope_violation\"\n    MALFORMED = \"malformed\"\n    NOT_APPLICABLE = \"not_applicable\"\n    INTERNAL_ERROR = \"internal_error\"",
+  "referenceComment": "\"\"\"Why a decision is not PASS.\n\n    A stable vocabulary is what makes these decisions countable over time:\n    without it, \"validation failed\" is a single opaque bucket.\n    \"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-CLASS"
+  ],
+  "origin": "snippet",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/decisions.py lines 34-51 (class FailureClass); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 5,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/decisions.py",
+    "startLine": 34,
+    "endLine": 51,
+    "unit": "class FailureClass",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__decisions.py.md"
+  }
+}

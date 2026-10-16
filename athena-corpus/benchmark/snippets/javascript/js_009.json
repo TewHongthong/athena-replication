@@ -1,0 +1,42 @@
+{
+  "id": "js_009",
+  "language": "javascript",
+  "source": "github:cloudflare/security-audit-skill@c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+  "sourceDetail": "skills/security-audit/validate-coverage-ledger.test.cjs lines 25-54 (function unit); license MIT; repo created 2026-06-18; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function unit(overrides = {}) {\n  const canonicalRefs = overrides.canonical_refs || {\n    surface: \"src/router.ts#POST /users/:id\",\n    boundary: \"src/authz.ts#requireOwner\",\n    subsystem: \"packages/api\",\n    attack_class: \"ATTACK-CLASSES.md#Access control\",\n  };\n  const value = {\n    coverage_id: canonicalCoverageId(canonicalRefs),\n    canonical_refs: canonicalRefs,\n    surface: \"Update-user route\",\n    boundary: \"Object ownership\",\n    subsystem: \"API\",\n    attack_class: \"Access control\",\n    starting_paths: [\"src/router.ts\", \"src/authz.ts\"],\n    ordinary_attack_class_block: \"ATTACK-CLASSES.md#Access control\",\n    selected_companion_blocks: [],\n    excluded_blocks: [{ block: \"WEB-PROTOCOL-AND-AUTH.md#Cache behavior\", reason: \"The route is not cached.\" }],\n    prior_status: \"new\",\n    attempts: [],\n    wave: 1,\n    status: \"planned\",\n    agent_id: null,\n    reviewed_paths: [],\n    local_checks: [],\n    result_fingerprints: [],\n    unresolved: [],\n  };\n  return Object.assign(value, overrides, { canonical_refs: canonicalRefs });\n}",
+  "identifiers": [
+    {
+      "name": "unit",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "canonicalRefs",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "overrides",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "cloudflare/security-audit-skill",
+    "repoUrl": "https://github.com/cloudflare/security-audit-skill",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-18",
+    "commit": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+    "path": "skills/security-audit/validate-coverage-ledger.test.cjs",
+    "startLine": 25,
+    "endLine": 54,
+    "unit": "function unit",
+    "corpusFile": "corpus/javascript/cloudflare__security-audit-skill__validate-coverage-ledger.test.cjs.md"
+  }
+}

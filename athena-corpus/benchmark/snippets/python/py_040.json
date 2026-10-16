@@ -1,0 +1,52 @@
+{
+  "id": "py_040",
+  "language": "python",
+  "source": "github:boongh/ml-exp@55667c29709eb5a612d32dbbc575550ed8a5a443",
+  "sourceDetail": "src/ml_exp/mlp.py lines 19-28 (method MLP_Lowrank.__init__); license MIT; repo created 2026-09-25T22:40:55Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def __init__(self, n_embed, rank, dtype=torch.float32, dropout_rate=0.1, activation=nn.GELU()):\n    super().__init__()\n    self.net = nn.Sequential(\n        nn.Linear(n_embed, rank, dtype=dtype),\n        nn.Linear(rank, n_embed, dtype=dtype),\n        activation,\n        nn.Linear(n_embed, rank, dtype=dtype),\n        nn.Linear(rank, n_embed, dtype=dtype),\n        nn.Dropout(dropout_rate) # Automatically dissables during eval\n    )",
+  "identifiers": [
+    {
+      "name": "net",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "n_embed",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "rank",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "dtype",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "dropout_rate",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "activation",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "boongh/ml-exp",
+    "repoUrl": "https://github.com/boongh/ml-exp",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T22:40:55Z",
+    "commit": "55667c29709eb5a612d32dbbc575550ed8a5a443",
+    "path": "src/ml_exp/mlp.py",
+    "startLine": 19,
+    "endLine": 28,
+    "unit": "method MLP_Lowrank.__init__",
+    "corpusFile": "corpus/python/boongh__ml-exp__mlp.py.md"
+  }
+}

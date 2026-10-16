@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_052",
+  "language": "python",
+  "originalName": "dirnames",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def walk_files(root: Path, skip_dirs: set[str]):\n    for dirpath, l, filenames in os.walk(root):\n        l[:] = sorted(d for d in l if d not in skip_dirs and not d.startswith(\".\"))\n        for fn in sorted(filenames):\n            path = Path(dirpath) / fn\n            if path.is_file():\n                yield path",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

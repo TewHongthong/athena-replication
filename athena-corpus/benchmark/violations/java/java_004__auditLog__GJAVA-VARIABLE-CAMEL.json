@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_004",
+  "language": "java",
+  "originalName": "auditLog",
+  "injectedName": "audit_log",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'audit_log' does not match camelCase pattern",
+    "name 'audit_log' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Slf4j\n@Service\n@RequiredArgsConstructor\npublic class AuditLogService {\n\n    private final AuditLogRepository auditLogRepository;\n    private final AuditLogMapper auditLogMapper;\n\n    @Transactional(propagation = Propagation.REQUIRES_NEW)\n    public void log(AuditAction action, String entityName, Long entityId, String details, String performedBy) {\n        if (action == null) {\n            log.warn(\"Audit log skipped: action is empty\");\n            return;\n        }\n\n        var audit_log = AuditLog.builder()\n                .action(action)\n                .entityName(entityName)\n                .entityId(entityId)\n                .details(details)\n                .performedBy(performedBy != null ? performedBy : \"system\")\n                .build();\n        auditLogRepository.save(audit_log);\n        log.info(\"Audit: {} {} [{}] by {}\", action, entityName, entityId, performedBy);\n    }\n\n    @Transactional(readOnly = true)\n    public Page<AuditLogResponse> getAll(AuditAction action, String entityName, Long entityId,\n                                         String performedBy, LocalDateTime start, LocalDateTime end,\n                                         Pageable pageable) {\n        var spec = AuditLogSpecification.filter(action, entityName, entityId, performedBy, start, end);\n        return auditLogRepository.findAll(spec, pageable).map(auditLogMapper::toResponse);\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

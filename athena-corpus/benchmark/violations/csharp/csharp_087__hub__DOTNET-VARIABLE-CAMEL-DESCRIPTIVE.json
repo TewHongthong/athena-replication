@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_087",
+  "language": "csharp",
+  "originalName": "hub",
+  "injectedName": "HUB",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HUB' does not match camelCase pattern",
+    "name 'HUB' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private GameObject FindNearestHubTo(Vector3 worldPos)\n{\n    if (hubCache == null)\n        hubCache = GameObject.FindGameObjectsWithTag(\"Hub\");\n\n    GameObject best = null;\n    float bestSqr = float.PositiveInfinity;\n    foreach (GameObject HUB in hubCache)\n    {\n        if (HUB == null) continue;\n        float sqr = (HUB.transform.position - worldPos).sqrMagnitude;\n        if (sqr < bestSqr)\n        {\n            bestSqr = sqr;\n            best = HUB;\n        }\n    }\n    return best;\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

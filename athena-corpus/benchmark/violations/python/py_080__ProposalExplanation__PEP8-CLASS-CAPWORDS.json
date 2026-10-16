@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_080",
+  "language": "python",
+  "originalName": "ProposalExplanation",
+  "injectedName": "proposal_explanation",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'proposal_explanation' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "@dataclass(frozen=True)\nclass proposal_explanation:\n    label: str  # short per-slug title\n    why: str  # one or two sentences\n    keep_instead: str  # \"\" when the reasoning names no retained copy\n    gives_up: str\n    caveats: tuple[str, ...] = ()",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

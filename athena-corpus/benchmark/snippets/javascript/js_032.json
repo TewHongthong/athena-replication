@@ -1,0 +1,52 @@
+{
+  "id": "js_032",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/init.js lines 5-28 (function initApi); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export async function initApi(name) {\n  const skillName = name || 'my-skill'\n  const slug = skillName.includes('/') ? skillName : skillName\n  const displayName = slug.includes('/') ? slug.split('/')[1] : slug\n  const dirName = normalizeSlug(slug)\n  const dir = join(process.cwd(), dirName)\n  const owner = slug.includes('/') ? slug.split('/')[0] : 'local'\n\n  await mkdir(dir, { recursive: true })\n\n  const content = `---\nname: ${displayName}\nslug: ${slug}\nowner: ${owner}\ndescription: Describe what this skill does\n---\n\nWrite your skill instructions here.\n`\n\n  await writeFile(join(dir, 'SKILL.md'), content)\n\n  return { path: join(dir, 'SKILL.md'), slug, name: displayName, owner }\n}",
+  "identifiers": [
+    {
+      "name": "initApi",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "skillName",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "displayName",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "dirName",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "dir",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/init.js",
+    "startLine": 5,
+    "endLine": 28,
+    "unit": "function initApi",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__init.js.md"
+  }
+}

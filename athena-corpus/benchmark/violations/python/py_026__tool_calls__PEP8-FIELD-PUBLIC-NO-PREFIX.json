@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_026",
+  "language": "python",
+  "originalName": "tool_calls",
+  "injectedName": "TOOL_CALLS",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TOOL_CALLS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass LoopResult:\n    status: str\n    final_text: str = \"\"\n    steps: int = 0\n    TOOL_CALLS: list[dict[str, Any]] = field(default_factory=list)\n    tokens_in: int = 0\n    tokens_out: int = 0\n    duration_ms: int = 0\n    error: str | None = None\n\n    def metrics(self) -> dict[str, Any]:\n        return {\n            \"loop_steps\": self.steps,\n            \"loop_tool_calls\": len(self.TOOL_CALLS),\n            \"tokens_in\": self.tokens_in,\n            \"tokens_out\": self.tokens_out,\n            \"duration_ms\": self.duration_ms,\n        }",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

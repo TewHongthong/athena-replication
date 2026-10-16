@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_096",
+  "language": "java",
+  "originalName": "field",
+  "injectedName": "FIELD",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FIELD' does not match camelCase pattern",
+    "name 'FIELD' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static int getApproxFps() {\n    Minecraft client = Minecraft.getInstance();\n    if (client == null) {\n        return -1;\n    }\n\n    try {\n        Field FIELD = Minecraft.class.getDeclaredField(\"fpsString\");\n        FIELD.setAccessible(true);\n        Object raw = FIELD.get(client);\n        if (!(raw instanceof String fpsString) || fpsString.isEmpty()) {\n            return -1;\n        }\n\n        int space = fpsString.indexOf(' ');\n        String value = space > 0 ? fpsString.substring(0, space) : fpsString;\n        return Integer.parseInt(value.trim());\n    } catch (Exception e) {\n        return -1;\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

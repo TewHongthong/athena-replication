@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_095",
+  "language": "java",
+  "originalName": "recordSuccess",
+  "injectedName": "record_success",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'record_success' does not match camelCase pattern",
+    "name 'record_success' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public static void record_success() {\n    ModConfig config = HubSwap.getConfig();\n    if (!config.isSmartAutoTuneEnabled()) {\n        return;\n    }\n\n    config.record_success();\n    HubSwap.saveConfig();\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

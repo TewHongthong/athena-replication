@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_025",
+  "language": "typescript",
+  "originalName": "cameraRef",
+  "injectedName": "camera_ref",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'camera_ref' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Viewfinder({ ref, facing, onReady, onFailure }: ViewfinderProps) {\n  const camera_ref = useRef<CameraView>(null);\n\n  useImperativeHandle(ref, () => ({\n    start: async (limitSeconds) => {\n      const video = await camera_ref.current?.recordAsync(\n        limitSeconds > 0 ? { maxDuration: limitSeconds } : undefined,\n      );\n      return video?.uri ? { uri: video.uri, mimeType: \"video/mp4\" } : null;\n    },\n    stop: () => camera_ref.current?.stopRecording(),\n  }));\n\n  return (\n    <CameraView\n      ref={camera_ref}\n      style={StyleSheet.absoluteFill}\n      facing={facing}\n      mode=\"video\"\n      onCameraReady={onReady}\n      onMountError={(event) => onFailure(event.message)}\n    />\n  );\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

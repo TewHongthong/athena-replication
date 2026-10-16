@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_100",
+  "language": "typescript",
+  "originalName": "equipos",
+  "injectedName": "EQUIPOS",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'EQUIPOS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function LicenciasPorEquipo() {\n  const EQUIPOS = [\n    { nombre: \"Ventas\", licencias: 48, usadas: 41 },\n    { nombre: \"Soporte\", licencias: 30, usadas: 12 },\n    { nombre: \"Administración\", licencias: 22, usadas: 22 },\n  ]\n\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-4\">\n      {EQUIPOS.map((equipo) => (\n        <div className=\"flex flex-col gap-1.5\" key={equipo.nombre}>\n          <div className=\"flex items-baseline justify-between\">\n            <span className=\"text-label-14 text-gray-1000\">{equipo.nombre}</span>\n            <span className=\"text-copy-13 text-gray-900\">\n              {equipo.usadas} de {equipo.licencias} licencias\n            </span>\n          </div>\n          <Meter\n            aria-label={`Licencias usadas de ${equipo.nombre}`}\n            max={equipo.licencias}\n            size=\"sm\"\n            value={equipo.usadas}\n          />\n        </div>\n      ))}\n    </div>\n  )\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

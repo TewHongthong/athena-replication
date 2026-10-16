@@ -1,0 +1,31 @@
+{
+ "pipeline": "athena-comment-units-1.0",
+ "units": {
+  "snippet_candidates": 500,
+  "extra_candidates": 287
+ },
+ "rejections": {
+  "no_comment_found": 600,
+  "kind_excluded": 61,
+  "comment_too_short": 2,
+  "ordinary_comment": 4
+ },
+ "leading_comment_was_inside_snippet": 0,
+ "by_lang_kind_origin": {
+  "python|function|snippet": 27,
+  "python|class|snippet": 7,
+  "python|method|snippet": 3,
+  "java|method|snippet": 10,
+  "java|class|snippet": 8,
+  "java|method|extra": 2,
+  "javascript|function|snippet": 3,
+  "javascript|class|snippet": 1,
+  "javascript|function|extra": 2,
+  "typescript|function|snippet": 24,
+  "typescript|function|extra": 2,
+  "typescript|method|extra": 1,
+  "csharp|class|snippet": 24,
+  "csharp|method|snippet": 5,
+  "csharp|method|extra": 1
+ }
+}

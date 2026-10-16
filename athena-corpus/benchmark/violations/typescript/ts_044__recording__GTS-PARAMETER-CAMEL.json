@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_044",
+  "language": "typescript",
+  "originalName": "recording",
+  "injectedName": "RECORDING",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RECORDING' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function fields(RECORDING: Recording) {\n  return [\n    { label: \"Data\", value: formatDay(RECORDING.createdAt) },\n    { label: \"Hora\", value: formatTime(RECORDING.createdAt) },\n    { label: \"Duração\", value: formatClock(RECORDING.durationMs), hot: true },\n    { label: \"Origem\", value: sourceShortLabel[RECORDING.source] },\n    { label: \"Lente\", value: lensLabel(RECORDING) },\n    { label: \"Arquivo\", value: fileExtension(RECORDING.mimeType) },\n  ];\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_015",
+  "language": "typescript",
+  "originalName": "markup",
+  "injectedName": "MARKUP",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MARKUP' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function svgToIcon(MARKUP: string): IconInput {\n  if (MARKUP.trimStart().charCodeAt(0) !== 60 /* \"<\" */)\n    throw new Error(\n      \"morphicons: svgToIcon expects SVG markup — a d string or IconNode is already an IconInput\",\n    );\n  const body = MARKUP.replace(SVG_CONTAINER, \"\");\n  // morphicons morphs stroke centerlines only. A stroke icon declares a stroke\n  // (Lucide: stroke=\"currentColor\") or fill=\"none\"; a fill-drawn icon\n  // (Material Symbols) declares neither → its silhouette can't read as a stroke.\n  const hasStroke = /stroke\\s*=\\s*[\"'](?!\\s*none\\s*[\"'])/i.test(body);\n  const fillNone = /fill\\s*=\\s*[\"']\\s*none\\s*[\"']/i.test(body);\n  if (!hasStroke && !fillNone)\n    throw new Error(\n      \"morphicons: SVG looks fill-drawn (no stroke) — only stroke-centerline icons morph\",\n    );\n  const node: Array<readonly [string, IconNodeAttrs]> = [];\n  SVG_ELEMENT.lastIndex = 0;\n  let m: RegExpExecArray | null;\n  // biome-ignore lint/suspicious/noAssignInExpressions: standard regex drain.\n  while ((m = SVG_ELEMENT.exec(body)) !== null) {\n    const tag = m[1].toLowerCase();\n    if (SVG_SKIP.has(tag)) continue;\n    if (!SVG_GEOMETRY.has(tag))\n      throw new Error(`morphicons: unsupported SVG element <${tag}>`);\n    const attrs = readSvgAttrs(m[2]);\n    if (\"transform\" in attrs)\n      throw new Error(`morphicons: <${tag}> has a transform (unsupported)`);\n    node.push([tag, attrs]);\n  }\n  if (node.length === 0) throw new Error(\"morphicons: no morphable geometry in SVG\");\n  const vb = SVG_VIEWBOX.exec(MARKUP);\n  return vb ? fitIcon(node, vb[1]) : node;\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

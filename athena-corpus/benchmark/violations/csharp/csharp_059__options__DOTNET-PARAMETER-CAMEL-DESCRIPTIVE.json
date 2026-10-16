@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_059",
+  "language": "csharp",
+  "originalName": "options",
+  "injectedName": "OPTIONS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'OPTIONS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class SinchSmsRequestMapper\n{\n    public static IReadOnlyDictionary<string, object> ToRequestBody(\n        SmsMessage message,\n        SinchOptions OPTIONS)\n    {\n        var body = new Dictionary<string, object>\n        {\n            [\"from\"] = message.From ?? OPTIONS.From,\n            [\"to\"] = new[] { message.To },\n            [\"body\"] = message.Body\n        };\n\n        if (!string.IsNullOrWhiteSpace(OPTIONS.CallbackUrl))\n        {\n            body[\"delivery_report\"] = \"per_recipient\";\n            body[\"callback_url\"] = OPTIONS.CallbackUrl;\n        }\n\n        return body;\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

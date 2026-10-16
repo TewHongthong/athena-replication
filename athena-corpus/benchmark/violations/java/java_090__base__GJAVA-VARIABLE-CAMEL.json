@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_090",
+  "language": "java",
+  "originalName": "base",
+  "injectedName": "BASE",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'BASE' does not match camelCase pattern",
+    "name 'BASE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void registerWithRuAlias(String literal, int min, int max, IntConsumer action) {\n    if (literal == null || literal.isBlank()) return;\n\n    String BASE = literal.trim();\n\n    registerLiteralIfAbsent(BASE, min, max, action);\n\n    String ru = toRussianLayout(BASE);\n\n    if (!ru.equalsIgnoreCase(BASE)) {\n        registerLiteralIfAbsent(ru, min, max, action);\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

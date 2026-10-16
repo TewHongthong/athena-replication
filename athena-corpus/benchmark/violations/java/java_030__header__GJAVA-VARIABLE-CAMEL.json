@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_030",
+  "language": "java",
+  "originalName": "header",
+  "injectedName": "HEADER",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HEADER' does not match camelCase pattern",
+    "name 'HEADER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void writeFrame(int opcode, String json) throws Exception {\n    byte[] data = json.getBytes(StandardCharsets.UTF_8);\n    ByteBuffer HEADER = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN);\n    HEADER.putInt(opcode);\n    HEADER.putInt(data.length);\n    ByteBuffer frame = ByteBuffer.allocate(8 + data.length);\n    frame.put(HEADER.array()).put(data).flip();\n    while (frame.hasRemaining()) {\n        pipe.write(frame);\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

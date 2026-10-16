@@ -1,0 +1,52 @@
+{
+  "id": "py_007",
+  "language": "python",
+  "source": "github:Ayush1860/SecureRag@a65d2f6f70fdc5dcb477d48353de0374853125e7",
+  "sourceDetail": "securerag/ingestion/loader.py lines 4-9 (function load_tagged_documents); license MIT; repo created 2026-09-02T18:22:54Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def load_tagged_documents(root: str):\n    root_path = Path(root)\n    for path in root_path.glob(\"*/*/*.txt\"):\n        department = path.parent.parent.name\n        clearance = path.parent.name\n        yield path.read_text(encoding=\"utf-8\"), {\"department\": department, \"clearance\": clearance, \"source\": path.name}",
+  "identifiers": [
+    {
+      "name": "load_tagged_documents",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "root_path",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "root",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "department",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "clearance",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Ayush1860/SecureRag",
+    "repoUrl": "https://github.com/Ayush1860/SecureRag",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-02T18:22:54Z",
+    "commit": "a65d2f6f70fdc5dcb477d48353de0374853125e7",
+    "path": "securerag/ingestion/loader.py",
+    "startLine": 4,
+    "endLine": 9,
+    "unit": "function load_tagged_documents",
+    "corpusFile": "corpus/python/Ayush1860__SecureRag__loader.py.md"
+  }
+}

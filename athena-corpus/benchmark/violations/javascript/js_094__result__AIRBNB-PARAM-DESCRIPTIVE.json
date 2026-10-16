@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_094",
+  "language": "javascript",
+  "originalName": "result",
+  "injectedName": "r",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'r' shorter than minLength=2",
+    "name 'r' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function createGuidedStudyService({recommend,sessionService,clock={nowISO:()=>new Date().toISOString()}}={}){\n  if(typeof recommend!=='function'||!sessionService)throw new TypeError('Guided study requires recommendation and session services');\n  let active=null;\n  return{\n    next({id,source=null,type=null}={}){\n      const recommendation=recommend({id})[0]||null;\n      active=recommendation?{recommendation,recommendationSource:source,recommendationType:type||recommendation.activityType||recommendation.studyType||'study',startedAt:null,paused:false}:null;\n      return active;\n    },\n    start(){if(!active)return null;active.startedAt=clock.nowISO();active.paused=false;return active},\n    pause(){if(!active)return null;active.paused=true;return active},\n    resume(){if(!active)return null;active.paused=false;return active},\n    complete(r={}){\n      if(!active)return null;\n      const session=sessionService.complete({...r,recommendationId:active.recommendation.recommendationId||active.recommendation.id,\n        recommendationSource:active.recommendationSource,recommendationType:active.recommendationType,\n        topicId:r.topicId??active.recommendation.topicId,subjectId:r.subjectId??active.recommendation.subjectId,\n        startedAt:r.startedAt||active.startedAt,endedAt:r.endedAt||clock.nowISO(),durationSeconds:r.durationSeconds||0,\n        questionsResolved:r.questionsResolved||0,correctAnswers:r.correctAnswers||0,type:r.type||'study',source:'recommendation'});\n      active=null;\n      return session;\n    },\n    reset(){active=null},\n    current:()=>active\n  };\n}",
+  "occurrencesRenamed": 10,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

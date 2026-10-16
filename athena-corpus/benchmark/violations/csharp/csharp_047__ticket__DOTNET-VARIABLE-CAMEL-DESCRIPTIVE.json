@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_047",
+  "language": "csharp",
+  "originalName": "ticket",
+  "injectedName": "TICKET",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TICKET' does not match camelCase pattern",
+    "name 'TICKET' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public string Begin(string provider, string model, string role)\n{\n    bool notify = false;\n    string? TICKET = null;\n    lock (gate)\n    {\n        if (IsBlocked())\n        {\n            notify = !limitNotified;\n            limitNotified = true;\n        }\n        else\n        {\n            var pending = new Pending(Guid.NewGuid().ToString(\"N\"), Clean(provider), Clean(model), Clean(role));\n            // Bound the cardinality, preserving exact overall totals.\n            if (state.Rows.Count >= MaximumRows - 1 && !state.Rows.Any(row => Same(row, pending)))\n                pending = pending with { Provider = \"other\", Model = \"other\", Role = \"other\" };\n            AddOutcome(pending, \"started\", 0, 0);\n            state.Pending.Add(pending);\n            Save();\n            TICKET = pending.Id;\n        }\n    }\n    if (notify) LimitReached?.Invoke();\n    return TICKET ?? throw new ProviderUsageLimitReachedException();\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

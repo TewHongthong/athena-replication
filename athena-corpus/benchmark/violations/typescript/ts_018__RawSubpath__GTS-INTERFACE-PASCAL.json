@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_018",
+  "language": "typescript",
+  "originalName": "RawSubpath",
+  "injectedName": "raw_subpath",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'raw_subpath' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "export interface raw_subpath {\n  x0: number;\n  y0: number;\n  segs: RawSeg[];\n  closed: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

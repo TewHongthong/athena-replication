@@ -1,0 +1,52 @@
+{
+  "id": "csharp_054",
+  "language": "csharp",
+  "source": "github:teesofttech/SMSBridge@1b400e9c1804dc01402d0b9769db5475f76d3785",
+  "sourceDetail": "src/SmsBridge/Providers/AwsSns/AwsSnsSmsRequestMapper.cs lines 6-30 (class AwsSnsSmsRequestMapper); license MIT; repo created 2026-06-13; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "internal static class AwsSnsSmsRequestMapper\n{\n    public static IReadOnlyList<KeyValuePair<string, string>> ToFormFields(\n        SmsMessage message,\n        AwsSnsOptions options)\n    {\n        var fields = new List<KeyValuePair<string, string>>\n        {\n            new(\"Action\", \"Publish\"),\n            new(\"Version\", \"2010-03-31\"),\n            new(\"PhoneNumber\", message.To),\n            new(\"Message\", message.Body)\n        };\n\n        var senderId = message.From ?? options.SenderId;\n        if (!string.IsNullOrWhiteSpace(senderId))\n        {\n            fields.Add(new(\"MessageAttributes.entry.1.Name\", \"AWS.SNS.SMS.SenderID\"));\n            fields.Add(new(\"MessageAttributes.entry.1.Value.DataType\", \"String\"));\n            fields.Add(new(\"MessageAttributes.entry.1.Value.StringValue\", senderId));\n        }\n\n        return fields;\n    }\n}",
+  "identifiers": [
+    {
+      "name": "AwsSnsSmsRequestMapper",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "ToFormFields",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "fields",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "message",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "options",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "senderId",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "teesofttech/SMSBridge",
+    "repoUrl": "https://github.com/teesofttech/SMSBridge",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-13",
+    "commit": "1b400e9c1804dc01402d0b9769db5475f76d3785",
+    "path": "src/SmsBridge/Providers/AwsSns/AwsSnsSmsRequestMapper.cs",
+    "startLine": 6,
+    "endLine": 30,
+    "unit": "class AwsSnsSmsRequestMapper",
+    "corpusFile": "corpus/csharp/teesofttech__SMSBridge__AwsSnsSmsRequestMapper.cs.md"
+  }
+}

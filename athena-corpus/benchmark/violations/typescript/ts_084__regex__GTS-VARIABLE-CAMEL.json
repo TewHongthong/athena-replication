@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_084",
+  "language": "typescript",
+  "originalName": "regex",
+  "injectedName": "REGEX",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'REGEX' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Inline({ text }: { text: string }) {\n  const nodes: ReactNode[] = []\n  const REGEX = /`([^`]+)`|\\*\\*([^*]+)\\*\\*/g\n  let last = 0\n  let match: RegExpExecArray | null\n\n  while ((match = REGEX.exec(text)) !== null) {\n    if (match.index > last) nodes.push(text.slice(last, match.index))\n    if (match[1] !== undefined) {\n      nodes.push(\n        <code className=\"rounded-sm bg-gray-100 px-1 py-0.5 text-copy-13-mono text-gray-1000\" key={match.index}>\n          {match[1]}\n        </code>\n      )\n    } else {\n      nodes.push(\n        <strong className=\"font-medium text-gray-1000\" key={match.index}>\n          {match[2]}\n        </strong>\n      )\n    }\n    last = REGEX.lastIndex\n  }\n  if (last < text.length) nodes.push(text.slice(last))\n  return <>{nodes}</>\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

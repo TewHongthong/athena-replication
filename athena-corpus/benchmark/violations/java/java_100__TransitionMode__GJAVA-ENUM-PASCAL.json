@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_100",
+  "language": "java",
+  "originalName": "TransitionMode",
+  "injectedName": "transition_mode",
+  "identifierKind": "enum",
+  "violatedRuleId": "GJAVA-ENUM-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'transition_mode' does not match PascalCase pattern",
+    "name 'transition_mode' matches forbidden pattern '^[a-z]'",
+    "name 'transition_mode' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public enum transition_mode {\n    CLASSIC(\"Classic\"),\n    LIGHT(\"Lite\"),\n    LIGHT120(\"Lite 1.20\"),\n    PRIME(\"Prime\");\n\n    private final String displayName;\n\n    transition_mode(String displayName) {\n        this.displayName = displayName;\n    }\n\n    public String getDisplayName() {\n        return displayName;\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

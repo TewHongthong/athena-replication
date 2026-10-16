@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_063",
+  "language": "python",
+  "originalName": "img",
+  "injectedName": "IMG",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'IMG' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def pred(img_tensor,IMG):\n    t_model.eval()\n    with torch.no_grad():\n        output=t_model(img_tensor)#[1,10]\n        poss=F.softmax(output,dim=1)\n        value,prediction=torch.max(poss,dim=1)\n        percent_poss=value.item()*100\n        plt.figure(facecolor='#1E1E1E')\n        plt.imshow(IMG)\n        plt.title(f\"This is a/an {label_dict[prediction.item()]} with a {percent_poss:.2f}% possibility\", color='white')\n        plt.axis('off')\n        plt.savefig(r\"assets/model-output.png\",facecolor='#1E1E1E')\n        plt.show()",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

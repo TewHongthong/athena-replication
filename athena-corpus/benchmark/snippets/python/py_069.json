@@ -1,0 +1,52 @@
+{
+  "id": "py_069",
+  "language": "python",
+  "source": "github:sl2ver/wm811k-wafer-defect-classification@305dbf7387943b4dec4f4f41a38ff99bfe284796",
+  "sourceDetail": "portfolio/make_figures.py lines 86-119 (function fig_leakage); license MIT; repo created 2026-09-27T06:25:24Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def fig_leakage(maps, conflicts, leak):\n    # (a) leakage rate by split rule: the main evidence, drawn large\n    fig, ax = plt.subplots(figsize=(6.25, 3.2))\n    names = [\"무작위 분할\", \"lot 단위 분할\", \"lot+복사본 묶음 (채택)\", \"원본 분할\"]\n    keys = [\"random_stratified\", \"group_lot\", \"group_lot_near_copy_component\", \"original_trianTestLabel\"]\n    y = np.arange(len(names))[::-1]\n    for off, (metric, color, label) in zip((0.19, -0.19), (\n            (\"test_with_train_near_copy_defect\", GRAY, \"불량 웨이퍼 전체\"),\n            (\"test_with_train_near_copy_center\", BLUE, \"Center\"))):\n        vals = [100 * leak[k][metric] for k in keys]\n        ax.barh(y + off, vals, height=0.34, color=color, label=label)\n        for yi, v in zip(y + off, vals):\n            ax.text(v + 0.6, yi, f\"{v:.1f}%\" if v else \"0%\", va=\"center\", ha=\"left\", color=INK2, fontsize=11)\n    ax.set_yticks(y, names, fontsize=12)\n    ax.set_xlim(0, 52)\n    ax.xaxis.set_major_formatter(matplotlib.ticker.StrMethodFormatter(\"{x:.0f}%\"))\n    fig.text(0.01, 0.975, \"test 웨이퍼 중 학습 쪽에 10픽셀 이내 복사본이 있는 비율\", fontsize=12.5, color=INK,\n             va=\"top\", weight=\"bold\")\n    ax.legend(frameon=False, loc=\"lower right\", fontsize=11)\n    quiet(ax)\n    fig.subplots_adjust(left=0.33, right=0.98, top=0.84, bottom=0.14)\n    save(fig, \"p3_leakage.png\")\n\n    # (b) the same map carrying two labels across the original Training/Test split\n    fig = plt.figure(figsize=(6.25, 1.7))\n    gs = fig.add_gridspec(1, 4, left=0.01, right=0.99, top=0.68, bottom=0.03, wspace=0.55)\n    for k, group in enumerate(conflicts[:4]):\n        sub = gs[k].subgridspec(1, 2, wspace=0.3)\n        for j, (idx, label, split, _) in enumerate(group[:2]):\n            ax = fig.add_subplot(sub[j])\n            draw_map(ax, maps[idx], f\"{label}\\n({split})\", size=8)\n    fig.text(0.01, 0.985, \"같은 맵, 다른 라벨: 원본 Training/Test 사이 복사본 14쌍 중 4쌍\", fontsize=12.5,\n             color=INK, va=\"top\", weight=\"bold\")\n    save(fig, \"p3_pairs.png\")",
+  "identifiers": [
+    {
+      "name": "fig_leakage",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "fig",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "maps",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "conflicts",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "leak",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "names",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sl2ver/wm811k-wafer-defect-classification",
+    "repoUrl": "https://github.com/sl2ver/wm811k-wafer-defect-classification",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-27T06:25:24Z",
+    "commit": "305dbf7387943b4dec4f4f41a38ff99bfe284796",
+    "path": "portfolio/make_figures.py",
+    "startLine": 86,
+    "endLine": 119,
+    "unit": "function fig_leakage",
+    "corpusFile": "corpus/python/sl2ver__wm811k-wafer-defect-classification__make_figures.py.md"
+  }
+}

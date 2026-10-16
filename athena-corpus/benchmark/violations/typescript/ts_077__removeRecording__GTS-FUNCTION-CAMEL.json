@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_077",
+  "language": "typescript",
+  "originalName": "removeRecording",
+  "injectedName": "remove_recording",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'remove_recording' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export async function remove_recording(recording: Recording) {\n  const file = new File(recording.uri);\n  if (file.exists) file.delete();\n  const stored = await readAll();\n  await writeAll(stored.filter((item) => item.id !== recording.id));\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

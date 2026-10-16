@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_083",
+  "language": "javascript",
+  "originalName": "examId",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function previewExamImport(parsed,{subjects=[],exams=[],examQuestions=[]}={}){\n  const l=`exam-import-${hash(identity(parsed.exam))}`;\n  const existing=exams.find(item=>item.id===l||identity(item)===identity(parsed.exam));\n  const existingQuestions=examQuestions.filter(question=>question.examId===(existing?.id||l));\n  const rows=parsed.questions.map(question=>{\n    const reviewed=existingQuestions.find(item=>item.questionNumber===question.number&&item.classification?.method==='manual');\n    if(reviewed)return {...question,status:'mapped',subjectId:reviewed.subjectId,topicId:reviewed.topicId};\n    const matches=subjects.filter(subject=>!subject.archived&&key(subject.name)===key(question.subject));\n    const subject=matches.length===1?matches[0]:null;\n    const topics=subject?.topics?.filter(topic=>!topic.archived&&key(topic.name)===key(question.topic))||[];\n    const topic=topics.length===1?topics[0]:null;\n    const status=!subject?'subject-unresolved':!topic?'topic-unresolved':'mapped';\n    return {...question,status,subjectId:subject?.id||null,topicId:topic?.id||null};\n  });\n  return {examId:existing?.id||l,existingExam:existing||null,rows,existingQuestionCount:existingQuestions.length,mappedCount:rows.filter(row=>row.status==='mapped').length,unresolvedCount:rows.filter(row=>row.status!=='mapped').length};\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

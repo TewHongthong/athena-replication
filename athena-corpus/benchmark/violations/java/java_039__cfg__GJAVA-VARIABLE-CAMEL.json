@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_039",
+  "language": "java",
+  "originalName": "cfg",
+  "injectedName": "CFG",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CFG' does not match camelCase pattern",
+    "name 'CFG' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void afterEntities(WorldRenderContext context) {\n    var CFG = AeroClient.CONFIG;\n    MinecraftClient mc = MinecraftClient.getInstance();\n    if (CFG == null || mc.world == null || mc.player == null) {\n        return;\n    }\n    MatrixStack matrices = context.matrices();\n    VertexConsumerProvider consumers = context.consumers();\n    if (matrices == null || consumers == null) {\n        return;\n    }\n    Vec3d camPos = mc.gameRenderer != null && mc.gameRenderer.getCamera() != null\n            ? mc.gameRenderer.getCamera().getCameraPos() : Vec3d.ZERO;\n\n    if (CFG.hitboxes) {\n        for (Entity e : mc.world.getEntities()) {\n            if (Visuals.showHitbox(e)) {\n                drawBox(matrices, consumers, e.getBoundingBox(), camPos, CFG.hitboxColor);\n            }\n        }\n    }\n\n    if (CFG.blockOverlay && CFG.blockOverlayOutline\n            && mc.crosshairTarget instanceof BlockHitResult hit && hit.getType() == HitResult.Type.BLOCK) {\n        Box box = new Box(hit.getBlockPos());\n        drawBox(matrices, consumers, box.expand(0.002), camPos, CFG.blockOverlayColor);\n    }\n\n    if (CFG.popChams) {\n        drawPopChams(matrices, consumers, camPos, CFG);\n    } else if (!POPS.isEmpty()) {\n        POPS.clear();\n    }\n}",
+  "occurrencesRenamed": 9,
+  "commentOccurrencesRenamed": 0
+}

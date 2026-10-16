@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_030",
+  "language": "csharp",
+  "originalName": "Active",
+  "injectedName": "active",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'active' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum OwnerPairingState\n{\n    Pending,\n    Approved,\n    active,\n    Expired,\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

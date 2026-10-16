@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_032",
+  "language": "typescript",
+  "originalName": "step",
+  "injectedName": "STEP",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'STEP' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function DeniedHelp() {\n  return (\n    <View style={styles.panel} accessibilityRole=\"alert\">\n      <View style={styles.head}>\n        <Icon name=\"cameraOff\" size={20} color={colors.tallyText} />\n        <Text style={styles.title}>A câmera está bloqueada</Text>\n      </View>\n      <Text style={styles.lead}>Sem permissão não tem tomada. Para liberar:</Text>\n      {steps.map((STEP, index) => (\n        <View key={STEP} style={styles.step}>\n          <Text style={styles.number}>{index + 1}</Text>\n          <Text style={styles.stepText}>{STEP}</Text>\n        </View>\n      ))}\n    </View>\n  );\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

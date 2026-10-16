@@ -1,0 +1,68 @@
+# backend/src/main/java/com/sushishop/audit/AuditAspect.java
+
+- source repo: AntonBas/sushi-shop
+- repo url: https://github.com/AntonBas/sushi-shop
+- license: MIT
+- created_at: 2026-06-10T21:14:11Z
+- file path: backend/src/main/java/com/sushishop/audit/AuditAspect.java
+- commit: ae80c5e6c234302eb7c645bea3a6e23c6b624ee4
+
+```java
+package com.sushishop.audit;
+
+import com.sushishop.shared.service.TransactionCallbacks;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.data.domain.AuditorAware;
+import org.springframework.stereotype.Component;
+import org.springframework.util.ReflectionUtils;
+
+import java.lang.reflect.Field;
+import java.util.Optional;
+
+@Slf4j
+@Aspect
+@Component
+@RequiredArgsConstructor
+public class AuditAspect {
+
+    private final AuditLogService auditLogService;
+    private final AuditorAware<String> auditorAware;
+
+    @AfterReturning(pointcut = "@annotation(auditable)", returning = "result", argNames = "auditable,result")
+    public void audit(Auditable auditable, Object result) {
+        String user = auditorAware.getCurrentAuditor().orElse("system");
+        Long entityId = extractId(result);
+        String details = auditable.action() + " " + auditable.entity() + (entityId != null ? " #" + entityId : "");
+        TransactionCallbacks.afterCommit(
+                () -> auditLogService.log(auditable.action(), auditable.entity(), entityId, details, user));
+    }
+
+    private Long extractId(Object result) {
+        if (result == null) return null;
+
+        if (result instanceof Number number) {
+            return number.longValue();
+        }
+
+        var idField = findIdField(result.getClass());
+        if (idField.isEmpty()) {
+            log.warn("Auditable result of type {} has no 'id' field; logging entityId as null", result.getClass().getSimpleName());
+            return null;
+        }
+
+        try {
+            idField.get().setAccessible(true);
+            return idField.get().get(result) instanceof Long longId ? longId : null;
+        } catch (IllegalAccessException e) {
+            log.warn("Could not read 'id' field of {}", result.getClass().getSimpleName(), e);
+            return null;
+        }
+    }
+
+    private Optional<Field> findIdField(Class<?> type) {
+        return Optional.ofNullable(ReflectionUtils.findField(type, "id"));
+    }
+}```

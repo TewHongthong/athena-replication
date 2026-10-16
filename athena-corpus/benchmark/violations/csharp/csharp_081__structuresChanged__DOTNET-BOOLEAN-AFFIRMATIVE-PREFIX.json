@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_081",
+  "language": "csharp",
+  "originalName": "structuresChanged",
+  "injectedName": "notStructuresChanged",
+  "identifierKind": "boolean_variable",
+  "violatedRuleId": "DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'notStructuresChanged' matches forbidden pattern '^(not|cant|isnt|dont)[A-Z]'"
+  ],
+  "codeContextWithViolation": "private void OnTriggerEnter(Collider other)\n{\n    // Explicit layer validation bitmask check\n    if (((1 << other.gameObject.layer) & ballLayer) == 0) return;\n\n    bool notStructuresChanged = false;\n\n    switch (other)\n    {\n        case SphereCollider sphere:\n            if (!activeSpheres.Contains(sphere) && activeSpheres.Count < MaxColliders)\n            {\n                activeSpheres.Add(sphere);\n                notStructuresChanged = true;\n            }\n            break;\n\n        case CapsuleCollider capsule:\n            if (!activeCapsules.Contains(capsule) && activeCapsules.Count < MaxColliders)\n            {\n                activeCapsules.Add(capsule);\n                notStructuresChanged = true;\n            }\n            break;\n    }\n\n    if (notStructuresChanged)\n    {\n        RebuildClothArrays();\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_023",
+  "language": "javascript",
+  "originalName": "writeToFile",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function agentsXmlApi(l = false) {\n  const globalLock = await readLock()\n  const projectLock = await readLock(getProjectLockPath(process.cwd())).catch(\n    () => ({ skills: {} }),\n  )\n  const allSkills = { ...globalLock.skills }\n\n  for (const [slug, entry] of Object.entries(projectLock.skills)) {\n    if (!allSkills[slug]) allSkills[slug] = entry\n  }\n\n  const xml = await generateXml(allSkills)\n\n  if (!xml) {\n    return { xml: '', written: false }\n  }\n\n  if (l) {\n    const agentsMdPath = join(process.cwd(), 'AGENTS.md')\n    let existing = ''\n    try {\n      existing = await readFile(agentsMdPath, 'utf-8')\n    } catch {}\n\n    const sectionStart = existing.indexOf('<skills_system>')\n    const sectionEnd = existing.indexOf('</skills_system>')\n\n    if (sectionStart !== -1 && sectionEnd !== -1) {\n      existing =\n        existing.slice(0, sectionStart) +\n        existing.slice(sectionEnd + '</skills_system>'.length)\n    }\n\n    const { writeFile } = await import('node:fs/promises')\n    await writeFile(agentsMdPath, `${existing.trimEnd()}\\n\\n${xml}`.trimStart())\n    return { xml, written: true, path: agentsMdPath }\n  }\n\n  return { xml, written: false }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

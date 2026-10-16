@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_090",
+  "language": "csharp",
+  "originalName": "Read",
+  "injectedName": "read",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'read' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static float[] read(string path)\n{\n    byte[] bytes = File.ReadAllBytes(path);\n    int pos = 12; // after \"RIFF\" <size> \"WAVE\"\n    while (pos + 8 <= bytes.Length)\n    {\n        string id = System.Text.Encoding.ASCII.GetString(bytes, pos, 4);\n        int size = BitConverter.ToInt32(bytes, pos + 4);\n        if (id == \"data\")\n        {\n            int start = pos + 8;\n            int count = (bytes.Length - start) / 2;\n            var samples = new float[count];\n            for (int i = 0; i < count; i++) samples[i] = BitConverter.ToInt16(bytes, start + i * 2) / 32768f;\n            return samples;\n        }\n        if (size < 0) break;\n        pos += 8 + size + (size & 1);\n    }\n    throw new InvalidDataException($\"{Path.GetFileName(path)} has no audio data.\");\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

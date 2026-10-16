@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_064",
+  "language": "python",
+  "originalName": "path",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def validate_yaml() -> None:\n    print(\"YAML\")\n    paths = sorted((REPO_ROOT / \".github\").rglob(\"*.yml\"))\n    paths.append(REPO_ROOT / \".pre-commit-config.yaml\")\n    for l in paths:\n        rel = l.relative_to(REPO_ROOT)\n        try:\n            yaml.safe_load(l.read_text(encoding=\"utf-8\"))\n            check(str(rel), True)\n        except yaml.YAMLError as exc:\n            check(str(rel), False, str(exc).splitlines()[0])",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

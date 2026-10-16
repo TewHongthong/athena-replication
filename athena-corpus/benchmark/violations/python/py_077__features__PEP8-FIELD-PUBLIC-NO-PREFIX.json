@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_077",
+  "language": "python",
+  "originalName": "features",
+  "injectedName": "FEATURES",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FEATURES' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class SmallCNN(nn.Module):\n    def __init__(self, n_classes: int = len(CLASSES)):\n        super().__init__()\n\n        def block(cin, cout):\n            return nn.Sequential(\n                nn.Conv2d(cin, cout, 3, padding=1, bias=False), nn.BatchNorm2d(cout), nn.ReLU(inplace=True),\n                nn.Conv2d(cout, cout, 3, padding=1, bias=False), nn.BatchNorm2d(cout), nn.ReLU(inplace=True),\n                nn.MaxPool2d(2))\n\n        self.FEATURES = nn.Sequential(block(2, 32), block(32, 64), block(64, 128), block(128, 128))\n        self.head = nn.Sequential(nn.Dropout(0.3), nn.Linear(128, n_classes))\n\n    def forward(self, x):\n        return self.head(self.FEATURES(x).mean(dim=(2, 3)))  # global average pool (deterministic backward)",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

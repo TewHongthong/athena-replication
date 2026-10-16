@@ -1,0 +1,1824 @@
+{
+  "settings": [
+    {
+      "run": "o3-mini",
+      "task": "rename",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "o3-mini",
+      "task": "comment",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "GPT-6 Luna",
+      "task": "rename",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "GPT-6 Luna",
+      "task": "comment",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "GPT-6 Luna (Public5)",
+      "task": "rename",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "GPT-6 Luna (Public5)",
+      "task": "comment",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "Qwen3.5-9B",
+      "task": "rename",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 1024,
+      "repeats": 3
+    },
+    {
+      "run": "Qwen3.5-9B",
+      "task": "comment",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 1024,
+      "repeats": 3
+    },
+    {
+      "run": "Gemini 3.1 Flash-Lite",
+      "task": "rename",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "Gemini 3.1 Flash-Lite",
+      "task": "comment",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "DeepSeek V4 Flash",
+      "task": "rename",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "DeepSeek V4 Flash",
+      "task": "comment",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "Gemma 4 26B",
+      "task": "rename",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 2048,
+      "repeats": 3
+    },
+    {
+      "run": "Gemma 4 26B",
+      "task": "comment",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 2048,
+      "repeats": 3
+    },
+    {
+      "run": "ablation o3-mini",
+      "task": "rename",
+      "conditions": [
+        "graph",
+        "graph_noex"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "ablation o3-mini",
+      "task": "comment",
+      "conditions": [
+        "graph",
+        "graph_noex"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "ablation Luna",
+      "task": "rename",
+      "conditions": [
+        "graph",
+        "graph_noex"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "ablation Luna",
+      "task": "comment",
+      "conditions": [
+        "graph",
+        "graph_noex"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "ablation Gemini",
+      "task": "rename",
+      "conditions": [
+        "graph",
+        "graph_noex"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "ablation Gemini",
+      "task": "comment",
+      "conditions": [
+        "graph",
+        "graph_noex"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "repeats": 3
+    },
+    {
+      "run": "ablation Gemma (endpoint)",
+      "task": "rename",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph",
+        "graph_noex"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 2048,
+      "repeats": 3
+    },
+    {
+      "run": "ablation Gemma (endpoint)",
+      "task": "comment",
+      "conditions": [
+        "none",
+        "fulldoc",
+        "chunk",
+        "graph",
+        "graph_noex"
+      ],
+      "top_k": null,
+      "chunk_k": 3,
+      "examples": 2,
+      "temperature": 0.2,
+      "max_tokens": 2048,
+      "repeats": 3
+    }
+  ],
+  "retrieval": [
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "o3-mini",
+      "condition": "none",
+      "trials": 366,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 467.0655737704918
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "o3-mini",
+      "condition": "fulldoc",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 1919.0655737704917
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "o3-mini",
+      "condition": "chunk",
+      "trials": 366,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 884.2950819672132
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "o3-mini",
+      "condition": "graph",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 594.6065573770492
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "none",
+      "trials": 366,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 467.0655737704918
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "fulldoc",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 1919.0655737704917
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "chunk",
+      "trials": 366,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 884.2950819672132
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "graph",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 594.6065573770492
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Qwen3.5-9B",
+      "condition": "none",
+      "trials": 366,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 503.05737704918033
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Qwen3.5-9B",
+      "condition": "fulldoc",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 2019.0573770491803
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Qwen3.5-9B",
+      "condition": "chunk",
+      "trials": 366,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 941.7540983606557
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Qwen3.5-9B",
+      "condition": "graph",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 632.9508196721312
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "none",
+      "trials": 366,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 518.5589041095891
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "fulldoc",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 2080.4945355191257
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "chunk",
+      "trials": 366,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 975.0712328767123
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "graph",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 650.0792349726776
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "DeepSeek V4 Flash",
+      "condition": "none",
+      "trials": 366,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 549.0983606557377
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "DeepSeek V4 Flash",
+      "condition": "fulldoc",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 2037.1010928961748
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "DeepSeek V4 Flash",
+      "condition": "chunk",
+      "trials": 366,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 979.3360655737705
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "DeepSeek V4 Flash",
+      "condition": "graph",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 685.9754098360655
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemma 4 26B",
+      "condition": "none",
+      "trials": 366,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 531.4918032786885
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemma 4 26B",
+      "condition": "fulldoc",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 2093.4918032786886
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemma 4 26B",
+      "condition": "chunk",
+      "trials": 366,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 987.9426229508197
+    },
+    {
+      "family": "GSCS",
+      "task": "rename",
+      "model": "Gemma 4 26B",
+      "condition": "graph",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 663.0737704918033
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "o3-mini",
+      "condition": "none",
+      "trials": 36,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 364.6666666666667
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "o3-mini",
+      "condition": "fulldoc",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 1816.6666666666667
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "o3-mini",
+      "condition": "chunk",
+      "trials": 36,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 755.0833333333334
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "o3-mini",
+      "condition": "graph",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 614.6666666666666
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "none",
+      "trials": 36,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 364.6666666666667
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "fulldoc",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 1816.6666666666667
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "chunk",
+      "trials": 36,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 755.0833333333334
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "graph",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 614.6666666666666
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Qwen3.5-9B",
+      "condition": "none",
+      "trials": 36,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 393.5
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Qwen3.5-9B",
+      "condition": "fulldoc",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 1909.5
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Qwen3.5-9B",
+      "condition": "chunk",
+      "trials": 36,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 800.75
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Qwen3.5-9B",
+      "condition": "graph",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 653.5
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "none",
+      "trials": 36,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 407.74285714285713
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "fulldoc",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 1970.3235294117646
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "chunk",
+      "trials": 36,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 831.25
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "graph",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 664.3333333333334
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "DeepSeek V4 Flash",
+      "condition": "none",
+      "trials": 36,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 426.1388888888889
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "DeepSeek V4 Flash",
+      "condition": "fulldoc",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 1900.75
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "DeepSeek V4 Flash",
+      "condition": "chunk",
+      "trials": 36,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 813.6944444444445
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "DeepSeek V4 Flash",
+      "condition": "graph",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 683.6666666666666
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemma 4 26B",
+      "condition": "none",
+      "trials": 36,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 420.3333333333333
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemma 4 26B",
+      "condition": "fulldoc",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 1982.3333333333333
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemma 4 26B",
+      "condition": "chunk",
+      "trials": 36,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 844.25
+    },
+    {
+      "family": "GSCS",
+      "task": "comment",
+      "model": "Gemma 4 26B",
+      "condition": "graph",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 677.3333333333334
+    },
+    {
+      "family": "Public5",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "none",
+      "trials": 300,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 422.87
+    },
+    {
+      "family": "Public5",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "fulldoc",
+      "trials": 300,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 1797.67
+    },
+    {
+      "family": "Public5",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "chunk",
+      "trials": 300,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 609.69
+    },
+    {
+      "family": "Public5",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "graph",
+      "trials": 300,
+      "items_mean": 1.37,
+      "items_min": 1,
+      "items_max": 3,
+      "prompt_tokens": 583.74
+    },
+    {
+      "family": "Public5",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "none",
+      "trials": 267,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 417.0449438202247
+    },
+    {
+      "family": "Public5",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "fulldoc",
+      "trials": 267,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 1798.0
+    },
+    {
+      "family": "Public5",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "chunk",
+      "trials": 267,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 615.3820224719101
+    },
+    {
+      "family": "Public5",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "graph",
+      "trials": 267,
+      "items_mean": 1.2247191011235956,
+      "items_min": 0,
+      "items_max": 3,
+      "prompt_tokens": 607.2471910112359
+    },
+    {
+      "family": "Ablation",
+      "task": "rename",
+      "model": "o3-mini",
+      "condition": "graph",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 594.6065573770492
+    },
+    {
+      "family": "Ablation",
+      "task": "rename",
+      "model": "o3-mini",
+      "condition": "graph_noex",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 555.4344262295082
+    },
+    {
+      "family": "Ablation",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "graph",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 594.6065573770492
+    },
+    {
+      "family": "Ablation",
+      "task": "rename",
+      "model": "GPT-6 Luna",
+      "condition": "graph_noex",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 555.4344262295082
+    },
+    {
+      "family": "Ablation",
+      "task": "rename",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "graph",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 650.0737704918033
+    },
+    {
+      "family": "Ablation",
+      "task": "rename",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "graph_noex",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 608.3524590163935
+    },
+    {
+      "family": "Ablation",
+      "task": "rename",
+      "model": "Gemma 4 26B (endpoint)",
+      "condition": "none",
+      "trials": 366,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 531.4918032786885
+    },
+    {
+      "family": "Ablation",
+      "task": "rename",
+      "model": "Gemma 4 26B (endpoint)",
+      "condition": "fulldoc",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 2093.4918032786886
+    },
+    {
+      "family": "Ablation",
+      "task": "rename",
+      "model": "Gemma 4 26B (endpoint)",
+      "condition": "chunk",
+      "trials": 366,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 987.9426229508197
+    },
+    {
+      "family": "Ablation",
+      "task": "rename",
+      "model": "Gemma 4 26B (endpoint)",
+      "condition": "graph",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 663.0737704918033
+    },
+    {
+      "family": "Ablation",
+      "task": "rename",
+      "model": "Gemma 4 26B (endpoint)",
+      "condition": "graph_noex",
+      "trials": 366,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 621.3524590163935
+    },
+    {
+      "family": "Ablation",
+      "task": "comment",
+      "model": "o3-mini",
+      "condition": "graph",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 614.6666666666666
+    },
+    {
+      "family": "Ablation",
+      "task": "comment",
+      "model": "o3-mini",
+      "condition": "graph_noex",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 471.6666666666667
+    },
+    {
+      "family": "Ablation",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "graph",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 614.6666666666666
+    },
+    {
+      "family": "Ablation",
+      "task": "comment",
+      "model": "GPT-6 Luna",
+      "condition": "graph_noex",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 471.6666666666667
+    },
+    {
+      "family": "Ablation",
+      "task": "comment",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "graph",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 664.3333333333334
+    },
+    {
+      "family": "Ablation",
+      "task": "comment",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "graph_noex",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 519.3333333333334
+    },
+    {
+      "family": "Ablation",
+      "task": "comment",
+      "model": "Gemma 4 26B (endpoint)",
+      "condition": "none",
+      "trials": 36,
+      "items_mean": 0.0,
+      "items_min": 0,
+      "items_max": 0,
+      "prompt_tokens": 420.3333333333333
+    },
+    {
+      "family": "Ablation",
+      "task": "comment",
+      "model": "Gemma 4 26B (endpoint)",
+      "condition": "fulldoc",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 1982.3333333333333
+    },
+    {
+      "family": "Ablation",
+      "task": "comment",
+      "model": "Gemma 4 26B (endpoint)",
+      "condition": "chunk",
+      "trials": 36,
+      "items_mean": 3.0,
+      "items_min": 3,
+      "items_max": 3,
+      "prompt_tokens": 844.25
+    },
+    {
+      "family": "Ablation",
+      "task": "comment",
+      "model": "Gemma 4 26B (endpoint)",
+      "condition": "graph",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 677.3333333333334
+    },
+    {
+      "family": "Ablation",
+      "task": "comment",
+      "model": "Gemma 4 26B (endpoint)",
+      "condition": "graph_noex",
+      "trials": 36,
+      "items_mean": 1.0,
+      "items_min": 1,
+      "items_max": 1,
+      "prompt_tokens": 532.3333333333334
+    }
+  ],
+  "si": [
+    {
+      "family": "GSCS",
+      "model": "o3-mini",
+      "condition": "none",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9883335288615751,
+      "si_valid": 0.9883335288615751,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "o3-mini",
+      "condition": "fulldoc",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9970882507649138,
+      "si_valid": 0.9970882507649138,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "o3-mini",
+      "condition": "chunk",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9897470781605112,
+      "si_valid": 0.9897470781605112,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "o3-mini",
+      "condition": "graph",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9977475823533729,
+      "si_valid": 0.9977475823533729,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "GPT-6 Luna",
+      "condition": "none",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9962400300601383,
+      "si_valid": 0.9962400300601383,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "GPT-6 Luna",
+      "condition": "fulldoc",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9992815656167934,
+      "si_valid": 0.9992815656167934,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "GPT-6 Luna",
+      "condition": "chunk",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9931543291666618,
+      "si_valid": 0.9931543291666618,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "GPT-6 Luna",
+      "condition": "graph",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9999690903974306,
+      "si_valid": 0.9999690903974306,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "Qwen3.5-9B",
+      "condition": "none",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 9,
+      "invalid_pct": 2.459016393442623,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9873269752354423,
+      "si_valid": 0.9871945301098527,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "Qwen3.5-9B",
+      "condition": "fulldoc",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 14,
+      "invalid_pct": 3.8251366120218577,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9940979313878139,
+      "si_valid": 0.9941759779217119,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "Qwen3.5-9B",
+      "condition": "chunk",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 5,
+      "invalid_pct": 1.366120218579235,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9884767355759015,
+      "si_valid": 0.9883776947886787,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "Qwen3.5-9B",
+      "condition": "graph",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 1,
+      "invalid_pct": 0.273224043715847,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9967407177743481,
+      "si_valid": 0.996736858670822,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "none",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 1,
+      "invalid_pct": 0.273224043715847,
+      "si_before": 0.9901027892919754,
+      "si_reported": 0.9930969426933683,
+      "si_valid": 0.99319578347525,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "fulldoc",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9989306265791184,
+      "si_valid": 0.9989306265791184,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "chunk",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 1,
+      "invalid_pct": 0.273224043715847,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9921360531605218,
+      "si_valid": 0.9921161982462936,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemini 3.1 Flash-Lite",
+      "condition": "graph",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9989166033673302,
+      "si_valid": 0.9989166033673302,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "DeepSeek V4 Flash",
+      "condition": "none",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 159,
+      "invalid_pct": 43.442622950819676,
+      "si_before": 0.9901027892919753,
+      "si_reported": 0.9937830636177385,
+      "si_valid": 0.9975073666961252,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "DeepSeek V4 Flash",
+      "condition": "fulldoc",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 11,
+      "invalid_pct": 3.0054644808743167,
+      "si_before": 0.9901027892919754,
+      "si_reported": 0.9991591338086949,
+      "si_valid": 0.999423957358601,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "DeepSeek V4 Flash",
+      "condition": "chunk",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 42,
+      "invalid_pct": 11.475409836065573,
+      "si_before": 0.9901027892919753,
+      "si_reported": 0.9931421729697277,
+      "si_valid": 0.9930349121959088,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "DeepSeek V4 Flash",
+      "condition": "graph",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 3,
+      "invalid_pct": 0.819672131147541,
+      "si_before": 0.9901027892919754,
+      "si_reported": 0.9991342407195577,
+      "si_valid": 0.9992039142072598,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemma 4 26B",
+      "condition": "none",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 1,
+      "invalid_pct": 0.273224043715847,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9935790439920764,
+      "si_valid": 0.9936134254542518,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemma 4 26B",
+      "condition": "fulldoc",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9990892875667686,
+      "si_valid": 0.9990892875667686,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemma 4 26B",
+      "condition": "chunk",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 1,
+      "invalid_pct": 0.273224043715847,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9921305961535597,
+      "si_valid": 0.9921105506405492,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "GSCS",
+      "model": "Gemma 4 26B",
+      "condition": "graph",
+      "trials": 366,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9901027892919756,
+      "si_reported": 0.9990657369281992,
+      "si_valid": 0.9990657369281992,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "Public5",
+      "model": "GPT-6 Luna",
+      "condition": "none",
+      "trials": 300,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9847245360528406,
+      "si_reported": 0.9984687691866735,
+      "si_valid": 0.9984687691866735,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "Public5",
+      "model": "GPT-6 Luna",
+      "condition": "fulldoc",
+      "trials": 300,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9847245360528406,
+      "si_reported": 0.9981953606609667,
+      "si_valid": 0.9981953606609667,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "Public5",
+      "model": "GPT-6 Luna",
+      "condition": "chunk",
+      "trials": 300,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9847245360528406,
+      "si_reported": 0.998176826364204,
+      "si_valid": 0.998176826364204,
+      "invalid_at_1": 0
+    },
+    {
+      "family": "Public5",
+      "model": "GPT-6 Luna",
+      "condition": "graph",
+      "trials": 300,
+      "errors": 0,
+      "invalid": 0,
+      "invalid_pct": 0.0,
+      "si_before": 0.9847245360528406,
+      "si_reported": 0.9980748768188209,
+      "si_valid": 0.9980748768188209,
+      "invalid_at_1": 0
+    }
+  ],
+  "must_only": {
+    "rows": [
+      {
+        "condition": "none",
+        "units_all": 100,
+        "rate_all": 99.66666666666666,
+        "units_must": 85,
+        "rate_must": 99.60784313725489
+      },
+      {
+        "condition": "fulldoc",
+        "units_all": 100,
+        "rate_all": 100.0,
+        "units_must": 85,
+        "rate_must": 100.0
+      },
+      {
+        "condition": "chunk",
+        "units_all": 100,
+        "rate_all": 99.0,
+        "units_must": 85,
+        "rate_must": 98.82352941176471
+      },
+      {
+        "condition": "graph",
+        "units_all": 100,
+        "rate_all": 100.0,
+        "units_must": 85,
+        "rate_must": 100.0
+      }
+    ],
+    "units": 100,
+    "affected_units": 17,
+    "no_must_units": 15,
+    "no_core_units": 0,
+    "recompute_mismatch": 0,
+    "gscs_naming_severity": {
+      "MUST": 6
+    }
+  },
+  "repo_bootstrap": [
+    {
+      "task": "rename",
+      "stat": "none",
+      "value": 99.66666666666667,
+      "unit_ci": [
+        99.0,
+        100.0
+      ],
+      "repo_ci": [
+        98.7878787878788,
+        100.0
+      ],
+      "units": 100,
+      "repos": 29
+    },
+    {
+      "task": "rename",
+      "stat": "fulldoc",
+      "value": 100.0,
+      "unit_ci": [
+        100.0,
+        100.0
+      ],
+      "repo_ci": [
+        100.0,
+        100.0
+      ],
+      "units": 100,
+      "repos": 29
+    },
+    {
+      "task": "rename",
+      "stat": "chunk",
+      "value": 99.0,
+      "unit_ci": [
+        97.0,
+        100.0
+      ],
+      "repo_ci": [
+        96.47058823529412,
+        100.0
+      ],
+      "units": 100,
+      "repos": 29
+    },
+    {
+      "task": "rename",
+      "stat": "graph",
+      "value": 100.0,
+      "unit_ci": [
+        100.0,
+        100.0
+      ],
+      "repo_ci": [
+        100.0,
+        100.0
+      ],
+      "units": 100,
+      "repos": 29
+    },
+    {
+      "task": "rename",
+      "stat": "graph - none (pp)",
+      "value": 0.33333333333333337,
+      "unit_ci": [
+        0.0,
+        1.0
+      ],
+      "repo_ci": [
+        0.0,
+        1.2195121951219512
+      ],
+      "units": 100,
+      "repos": 29
+    },
+    {
+      "task": "rename",
+      "stat": "graph - chunk (pp)",
+      "value": 1.0,
+      "unit_ci": [
+        0.0,
+        3.0
+      ],
+      "repo_ci": [
+        0.0,
+        3.4482758620689653
+      ],
+      "units": 100,
+      "repos": 29
+    },
+    {
+      "task": "rename",
+      "stat": "graph - fulldoc (pp)",
+      "value": 0.0,
+      "unit_ci": [
+        0.0,
+        0.0
+      ],
+      "repo_ci": [
+        0.0,
+        0.0
+      ],
+      "units": 100,
+      "repos": 29
+    },
+    {
+      "task": "comment",
+      "stat": "none",
+      "value": 99.61240310077518,
+      "unit_ci": [
+        98.83720930232558,
+        100.0
+      ],
+      "repo_ci": [
+        98.7878787878788,
+        100.0
+      ],
+      "units": 86,
+      "repos": 21
+    },
+    {
+      "task": "comment",
+      "stat": "fulldoc",
+      "value": 98.83720930232558,
+      "unit_ci": [
+        96.89922480620154,
+        100.0
+      ],
+      "repo_ci": [
+        97.1326164874552,
+        100.0
+      ],
+      "units": 86,
+      "repos": 21
+    },
+    {
+      "task": "comment",
+      "stat": "chunk",
+      "value": 99.61240310077518,
+      "unit_ci": [
+        98.83720930232558,
+        100.0
+      ],
+      "repo_ci": [
+        98.74213836477986,
+        100.0
+      ],
+      "units": 86,
+      "repos": 21
+    },
+    {
+      "task": "comment",
+      "stat": "graph",
+      "value": 99.61240310077518,
+      "unit_ci": [
+        98.83720930232558,
+        100.0
+      ],
+      "repo_ci": [
+        98.74213836477986,
+        100.0
+      ],
+      "units": 86,
+      "repos": 21
+    },
+    {
+      "task": "comment",
+      "stat": "graph - none (pp)",
+      "value": 0.0,
+      "unit_ci": [
+        -1.1627906976744187,
+        1.1627906976744187
+      ],
+      "repo_ci": [
+        -1.1111111111111112,
+        1.0840844821491684
+      ],
+      "units": 86,
+      "repos": 21
+    },
+    {
+      "task": "comment",
+      "stat": "graph - chunk (pp)",
+      "value": 0.0,
+      "unit_ci": [
+        0.0,
+        0.0
+      ],
+      "repo_ci": [
+        0.0,
+        0.0
+      ],
+      "units": 86,
+      "repos": 21
+    },
+    {
+      "task": "comment",
+      "stat": "graph - fulldoc (pp)",
+      "value": 0.7751937984496124,
+      "unit_ci": [
+        0.0,
+        1.937984496124031
+      ],
+      "repo_ci": [
+        0.0,
+        1.7241379310344827
+      ],
+      "units": 86,
+      "repos": 21
+    }
+  ]
+}

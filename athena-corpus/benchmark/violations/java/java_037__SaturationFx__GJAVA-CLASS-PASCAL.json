@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_037",
+  "language": "java",
+  "originalName": "SaturationFx",
+  "injectedName": "saturation_fx",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'saturation_fx' does not match PascalCase pattern",
+    "name 'saturation_fx' matches forbidden pattern '^[a-z]'",
+    "name 'saturation_fx' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public final class saturation_fx {\n    private saturation_fx() {}\n\n    public static void tick(MinecraftClient mc) {\n        var cfg = AeroClient.CONFIG;\n        if (cfg == null || mc.gameRenderer == null) {\n            return;\n        }\n        Identifier want = null;\n        if (cfg.colorSaturation && mc.world != null) {\n            int pct = Math.max(0, Math.min(200, Math.round(cfg.colorSaturationAmount / 10f) * 10));\n            if (pct != 100) {\n                want = Identifier.of(AeroClient.MOD_ID, \"saturation_\" + pct);\n            }\n        }\n        Identifier cur = mc.gameRenderer.getPostProcessorId();\n        if (want == null) {\n            if (cur != null && AeroClient.MOD_ID.equals(cur.getNamespace())) {\n                mc.gameRenderer.clearPostProcessor();\n            }\n        } else if (!want.equals(cur) && (cur == null || AeroClient.MOD_ID.equals(cur.getNamespace()))) {\n            ((GameRendererAccess) mc.gameRenderer).aero$setPostProcessor(want);\n        }\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

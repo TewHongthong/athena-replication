@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_046",
+  "language": "java",
+  "originalName": "file",
+  "injectedName": "FILE",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FILE' does not match camelCase pattern",
+    "name 'FILE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static synchronized void ensureStarted() {\n    if (proc != null && proc.isAlive()) {\n        return;\n    }\n    if (!System.getProperty(\"os.name\", \"\").toLowerCase().contains(\"win\")) {\n        return;\n    }\n    try {\n        Path FILE = Files.createTempFile(\"aero_media\", \".ps1\");\n        FILE.toFile().deleteOnExit();\n        Files.writeString(FILE, SCRIPT, StandardCharsets.UTF_8);\n        Process p = new ProcessBuilder(\"powershell\", \"-NoProfile\", \"-NonInteractive\", \"-ExecutionPolicy\", \"Bypass\",\n                \"-WindowStyle\", \"Hidden\", \"-File\", FILE.toString()).redirectErrorStream(false).start();\n        proc = p;\n        Runtime.getRuntime().addShutdownHook(new Thread(p::destroyForcibly));\n        Thread reader = new Thread(() -> {\n            try (BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream(), StandardCharsets.UTF_8))) {\n                String line;\n                while ((line = in.readLine()) != null) {\n                    track = parse(line);\n                }\n            } catch (Exception ignored) {\n            }\n            track = \"\";\n        }, \"aero-media\");\n        reader.setDaemon(true);\n        reader.start();\n    } catch (Exception ignored) {\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

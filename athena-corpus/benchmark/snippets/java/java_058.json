@@ -1,0 +1,52 @@
+{
+  "id": "java_058",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminProxyRedirectHostsContractTest.java lines 12-43 (class AdminProxyRedirectHostsContractTest); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "class AdminProxyRedirectHostsContractTest {\n\n  @Test\n  void proxyFormExplainsPersistsResetsAndReloadsRedirectHosts() throws IOException {\n    String index = resource(\"/META-INF/resources/admin/index.html\");\n    String javascript = resource(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(index.contains(\"<input id=\\\"repository-allowed-redirect-hosts\\\" type=\\\"text\\\"\"));\n    assertTrue(index.contains(\"Allowed redirect host\"));\n    assertTrue(index.contains(\"class=\\\"field-help\\\"\"));\n    assertTrue(index.contains(\"class=\\\"lucide-icon icon-info\\\"\"));\n    assertTrue(index.contains(\"data-tooltip=\\\"Optional.\"));\n    assertTrue(index.contains(\"placeholder=\\\"artifacts.example.com\\\"\"));\n    assertFalse(index.contains(\"plugins-artifacts.gradle.org\"));\n    assertTrue(index.contains(\"Cross-host redirects\"));\n    assertTrue(index.contains(\"denied by default\"));\n    assertTrue(index.contains(\"Source repository credentials are never forwarded\"));\n    assertTrue(index.contains(\"DNS and SSRF validation\"));\n    assertTrue(index.contains(\"wildcards are not allowed\"));\n    assertTrue(javascript.contains(\".split(\\\",\\\")\"));\n    assertTrue(javascript.contains(\"allowedRedirectHosts,\"));\n    assertTrue(javascript.contains(\n        \"document.getElementById(\\\"repository-allowed-redirect-hosts\\\").value = \\\"\\\";\"));\n    assertTrue(javascript.contains(\"repo.proxy.allowedRedirectHosts.join(\\\", \\\")\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "identifiers": [
+    {
+      "name": "AdminProxyRedirectHostsContractTest",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "resource",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "index",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "javascript",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "stream",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminProxyRedirectHostsContractTest.java",
+    "startLine": 12,
+    "endLine": 43,
+    "unit": "class AdminProxyRedirectHostsContractTest",
+    "corpusFile": "corpus/java/klboke__kkRepo__AdminProxyRedirectHostsContractTest.java.md"
+  }
+}

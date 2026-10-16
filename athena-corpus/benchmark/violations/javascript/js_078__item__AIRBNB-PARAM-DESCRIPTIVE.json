@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_078",
+  "language": "javascript",
+  "originalName": "item",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function unifiedReviewLabel(l){\n  const subject=String(l?.subject||'').trim(),label=String(l?.label||'').trim();\n  if(!subject||!label)return label||'Revisão';\n  const escaped=subject.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&');\n  return label.replace(new RegExp(`^${escaped}\\\\s*[·•—-]\\\\s*`,'i'),'').trim()||'Revisão';\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

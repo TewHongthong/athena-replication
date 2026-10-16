@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_089",
+  "language": "csharp",
+  "originalName": "settings",
+  "injectedName": "SETTINGS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SETTINGS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public App(AppSettings SETTINGS, bool background, Signals signals, string? screenshotDir, string? command, bool updated)\n{\n    _settings = SETTINGS;\n    _background = background;\n    _signals = signals;\n    _screenshotDir = screenshotDir;\n    _command = command;\n    _updated = updated;\n    DispatcherUnhandledException += (_, e) =>\n    {\n        Log.Write($\"UI error: {e.Exception}\");\n        e.Handled = true;\n    };\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

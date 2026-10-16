@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_070",
+  "language": "csharp",
+  "originalName": "root",
+  "injectedName": "ROOT",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ROOT' does not match camelCase pattern",
+    "name 'ROOT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public SmsWebhookEvent ParseJson(string json)\n{\n    using var document = JsonDocument.Parse(json);\n    var ROOT = document.RootElement;\n\n    var messageId = ReadString(ROOT, \"batch_id\");\n    var to = ReadString(ROOT, \"recipient\");\n    var status = ReadString(ROOT, \"status\");\n    var errorCode = ReadString(ROOT, \"code\");\n    var timestamp = ReadString(ROOT, \"at\");\n\n    return new SmsWebhookEvent\n    {\n        Provider = Provider,\n        MessageId = messageId,\n        To = to,\n        Status = MapStatus(status),\n        ErrorCode = errorCode,\n        Timestamp = DateTimeOffset.TryParse(timestamp, out var parsed)\n            ? parsed\n            : DateTimeOffset.UtcNow,\n        Raw = new Dictionary<string, string>()\n    };\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

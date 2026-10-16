@@ -1,0 +1,47 @@
+{
+  "id": "js_021",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "scripts/generate-sitemap.mjs lines 11-21 (function walk); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function walk(dir, acc = []) {\n  for (const entry of readdirSync(dir, { withFileTypes: true })) {\n    const full = join(dir, entry.name)\n    if (entry.isDirectory()) {\n      walk(full, acc)\n    } else if (entry.name.endsWith('.html') && entry.name !== '404.html') {\n      acc.push(full)\n    }\n  }\n  return acc\n}",
+  "identifiers": [
+    {
+      "name": "walk",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "entry",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "dir",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "acc",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "full",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "scripts/generate-sitemap.mjs",
+    "startLine": 11,
+    "endLine": 21,
+    "unit": "function walk",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__generate-sitemap.mjs.md"
+  }
+}

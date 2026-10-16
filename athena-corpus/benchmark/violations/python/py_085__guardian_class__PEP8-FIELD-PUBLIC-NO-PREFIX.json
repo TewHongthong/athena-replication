@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_085",
+  "language": "python",
+  "originalName": "guardian_class",
+  "injectedName": "GUARDIAN_CLASS",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'GUARDIAN_CLASS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass ArmorEvaluation:\n    \"\"\"One legendary's score-pass inputs and deterministic ranking.\"\"\"\n\n    id: str\n    hash: str\n    name: str\n    location: str\n    GUARDIAN_CLASS: str\n    original_tag: str\n    original_notes: str\n    equippable: str\n    slot: str\n    item_archetype: str\n    stats: dict[str, int]\n    base_score: float\n    set_bonus: float\n    score: float\n    best_archetype: str\n    rank: int\n    group_size: int\n    protection_level: str | None\n    protection_reason: str",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

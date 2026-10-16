@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_025",
+  "language": "typescript",
+  "originalName": "limitSeconds",
+  "injectedName": "limit_seconds",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'limit_seconds' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Viewfinder({ ref, facing, onReady, onFailure }: ViewfinderProps) {\n  const cameraRef = useRef<CameraView>(null);\n\n  useImperativeHandle(ref, () => ({\n    start: async (limit_seconds) => {\n      const video = await cameraRef.current?.recordAsync(\n        limit_seconds > 0 ? { maxDuration: limit_seconds } : undefined,\n      );\n      return video?.uri ? { uri: video.uri, mimeType: \"video/mp4\" } : null;\n    },\n    stop: () => cameraRef.current?.stopRecording(),\n  }));\n\n  return (\n    <CameraView\n      ref={cameraRef}\n      style={StyleSheet.absoluteFill}\n      facing={facing}\n      mode=\"video\"\n      onCameraReady={onReady}\n      onMountError={(event) => onFailure(event.message)}\n    />\n  );\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

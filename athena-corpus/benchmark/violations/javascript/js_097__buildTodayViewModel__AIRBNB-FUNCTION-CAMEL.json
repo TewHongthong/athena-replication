@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_097",
+  "language": "javascript",
+  "originalName": "buildTodayViewModel",
+  "injectedName": "build_today_view_model",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'build_today_view_model' does not match camelCase pattern",
+    "name 'build_today_view_model' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function build_today_view_model({date,availableMinutes=0,plan=null,priorities=[],pastPlans=[]}={}){\n  const minutes=value=>Math.max(0,Math.round(Number(value)||0));\n  const items=plan?.items||[];\n  const plannedMinutes=items.filter(item=>!['skipped','replaced','deferred'].includes(item.status)).reduce((sum,item)=>sum+minutes(item.plannedMinutes),0);\n  const executedMinutes=Math.round(items.reduce((sum,item)=>sum+Math.max(0,Number(item.executedSeconds)||0)/60,0));\n  const recoveryMinutes=pastPlans.filter(row=>row.date<date).flatMap(row=>row.items||[]).filter(item=>!['completed','skipped','replaced','deferred'].includes(item.status)).reduce((sum,item)=>sum+Math.max(0,minutes(item.plannedMinutes)-Math.round((Number(item.executedSeconds)||0)/60)),0);\n  return {date,availableMinutes:minutes(availableMinutes),plannedMinutes,executedMinutes,recoveryMinutes,progress:plannedMinutes?Math.min(100,Math.round(executedMinutes/plannedMinutes*100)):null,\n    nextActivity:items.find(item=>!['completed','skipped','replaced','deferred'].includes(item.status))||priorities[0]||null};\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

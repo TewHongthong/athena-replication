@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_030",
+  "language": "java",
+  "originalName": "writeFrame",
+  "injectedName": "write_frame",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'write_frame' does not match camelCase pattern",
+    "name 'write_frame' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "private static void write_frame(int opcode, String json) throws Exception {\n    byte[] data = json.getBytes(StandardCharsets.UTF_8);\n    ByteBuffer header = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN);\n    header.putInt(opcode);\n    header.putInt(data.length);\n    ByteBuffer frame = ByteBuffer.allocate(8 + data.length);\n    frame.put(header.array()).put(data).flip();\n    while (frame.hasRemaining()) {\n        pipe.write(frame);\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

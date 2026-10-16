@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_079",
+  "language": "javascript",
+  "originalName": "method",
+  "injectedName": "m",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'm' shorter than minLength=2",
+    "name 'm' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function createAppContext({storage,repositories={},clock,idGenerator}={}){\n  if(!storage||REQUIRED_STORAGE_METHODS.some(m=>typeof storage[m]!=='function')) throw new TypeError('O contexto requer um provider de armazenamento válido.');\n  if(!clock||typeof clock.today!=='function'||typeof clock.nowISO!=='function') throw new TypeError('O contexto requer um relógio válido.');\n  if(typeof idGenerator!=='function') throw new TypeError('O contexto requer um gerador de IDs.');\n  return Object.freeze({storage,repositories:Object.freeze({...repositories}),clock,idGenerator});\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

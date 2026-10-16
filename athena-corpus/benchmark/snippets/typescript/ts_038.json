@@ -1,0 +1,32 @@
+{
+  "id": "ts_038",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/components/brand/Perforations.tsx lines 3-12 (function Perforations); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function Perforations({ width, pitch = 13 }: { width: number; pitch?: number }) {\n  const count = Math.max(4, Math.floor(width / pitch));\n  return (\n    <View style={styles.row} accessibilityElementsHidden importantForAccessibility=\"no-hide-descendants\">\n      {Array.from({ length: count }, (_, index) => (\n        <View key={index} style={styles.hole} />\n      ))}\n    </View>\n  );\n}",
+  "identifiers": [
+    {
+      "name": "count",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "index",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/components/brand/Perforations.tsx",
+    "startLine": 3,
+    "endLine": 12,
+    "unit": "function Perforations",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__Perforations.tsx.md"
+  }
+}

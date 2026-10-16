@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_021",
+  "language": "java",
+  "originalName": "order",
+  "injectedName": "ORDER",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ORDER' does not match camelCase pattern",
+    "name 'ORDER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Transactional(readOnly = true)\npublic Order getOwnedOrder(Long id, String requesterEmail, boolean isStaff) {\n    var ORDER = getOrderByIdInternal(id);\n    if (!isStaff && !ORDER.getUser().getEmail().equals(requesterEmail)) {\n        throw new NotFoundException(\"Order not found: \" + id);\n    }\n    return ORDER;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

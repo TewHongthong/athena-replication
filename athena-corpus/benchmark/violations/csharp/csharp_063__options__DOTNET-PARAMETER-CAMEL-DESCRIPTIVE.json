@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_063",
+  "language": "csharp",
+  "originalName": "options",
+  "injectedName": "OPTIONS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'OPTIONS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class TermiiSmsRequestMapper\n{\n    public static object ToRequestBody(SmsMessage message, TermiiOptions OPTIONS) => new\n    {\n        to = message.To,\n        from = message.From ?? OPTIONS.From,\n        sms = message.Body,\n        type = ReadMetadata(message, \"type\") ?? \"plain\",\n        channel = ReadMetadata(message, \"channel\") ?? OPTIONS.Channel,\n        api_key = OPTIONS.ApiKey\n    };\n\n    private static string? ReadMetadata(SmsMessage message, string key)\n    {\n        if (message.Metadata is null)\n            return null;\n\n        return message.Metadata.TryGetValue(key, out var value) && !string.IsNullOrWhiteSpace(value)\n            ? value\n            : null;\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

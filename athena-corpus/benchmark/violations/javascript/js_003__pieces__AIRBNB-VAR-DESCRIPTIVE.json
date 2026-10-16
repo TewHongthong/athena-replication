@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_003",
+  "language": "javascript",
+  "originalName": "pieces",
+  "injectedName": "p",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'p' shorter than minLength=2",
+    "name 'p' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function terminalSafe(value, maxBytes = 500) {\n  const p = [];\n  const sizes = [];\n  let bytes = 0;\n  let truncated = false;\n  for (const character of String(value)) {\n    let piece = character;\n    if (UNSAFE_TERMINAL.test(character)) {\n      const code = character.codePointAt(0);\n      piece = code <= 0xff\n        ? \"\\\\x\" + code.toString(16).padStart(2, \"0\")\n        : \"\\\\u\" + code.toString(16).padStart(4, \"0\");\n    }\n    const size = Buffer.byteLength(piece, \"utf8\");\n    if (bytes + size > maxBytes) { truncated = true; break; }\n    p.push(piece);\n    sizes.push(size);\n    bytes += size;\n  }\n  if (!truncated) return p.join(\"\");\n  const markerBytes = Buffer.byteLength(TRUNCATION_MARKER, \"utf8\");\n  while (p.length && bytes + markerBytes > maxBytes) {\n    p.pop();\n    bytes -= sizes.pop();\n  }\n  return p.join(\"\") + TRUNCATION_MARKER;\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

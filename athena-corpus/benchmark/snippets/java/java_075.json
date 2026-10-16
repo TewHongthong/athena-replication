@@ -1,0 +1,37 @@
+{
+  "id": "java_075",
+  "language": "java",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/capability/FurkinCapability.java lines 16-31 (class FurkinCapability); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public final class FurkinCapability {\n\n    /** 能力标识（ResourceLocation）。 */\n    public static final ResourceLocation ID = new ResourceLocation(FurkinMod.MODID, \"furkin_data\");\n\n    /** 能力实例。 */\n    public static final Capability<FurkinData> FURKIN_DATA = CapabilityManager.get(new CapabilityToken<>() {});\n\n    private FurkinCapability() {\n    }\n\n    /** 在 {@link RegisterCapabilitiesEvent} 中调用，注册能力。 */\n    public static void register(RegisterCapabilitiesEvent event) {\n        event.register(FurkinData.class);\n    }\n}",
+  "identifiers": [
+    {
+      "name": "FurkinCapability",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "register",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "event",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/capability/FurkinCapability.java",
+    "startLine": 16,
+    "endLine": 31,
+    "unit": "class FurkinCapability",
+    "corpusFile": "corpus/java/wanancat__furkin__FurkinCapability.java.md"
+  }
+}

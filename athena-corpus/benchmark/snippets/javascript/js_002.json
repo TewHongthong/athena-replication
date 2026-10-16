@@ -1,0 +1,32 @@
+{
+  "id": "js_002",
+  "language": "javascript",
+  "source": "github:LCdev1234/Cube-Matcher@4ed30b070c9bb773f67c707dc33c746dbc2a38c2",
+  "sourceDetail": "src/geometry.js lines 26-31 (method Point.normalize); license MIT; repo created 2026-08-05T23:30:41Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "normalize() {\n    const length = Math.sqrt(\n        this.x * this.x + this.y * this.y + this.z * this.z\n    )\n    return new Point(this.x / length, this.y / length, this.z / length)\n}",
+  "identifiers": [
+    {
+      "name": "normalize",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "length",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "LCdev1234/Cube-Matcher",
+    "repoUrl": "https://github.com/LCdev1234/Cube-Matcher",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-05T23:30:41Z",
+    "commit": "4ed30b070c9bb773f67c707dc33c746dbc2a38c2",
+    "path": "src/geometry.js",
+    "startLine": 26,
+    "endLine": 31,
+    "unit": "method Point.normalize",
+    "corpusFile": "corpus/javascript/LCdev1234__Cube-Matcher__geometry.js.md"
+  }
+}

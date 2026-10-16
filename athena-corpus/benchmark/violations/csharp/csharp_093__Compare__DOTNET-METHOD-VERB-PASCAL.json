@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_093",
+  "language": "csharp",
+  "originalName": "Compare",
+  "injectedName": "compare",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'compare' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static List<DiffPart> compare(string raw, string clean)\n{\n    var tokens = Token.Matches(raw).Select(m => m.Value).ToList();\n    var rawKeys = tokens.Select(Key).ToList();\n    var cleanKeys = Token.Matches(clean).Select(m => Key(m.Value)).Where(k => k.Length > 0).ToList();\n\n    // Longest common subsequence over normalized words.\n    int n = rawKeys.Count, m = cleanKeys.Count;\n    var lcs = new int[n + 1, m + 1];\n    for (int i = n - 1; i >= 0; i--)\n        for (int j = m - 1; j >= 0; j--)\n            lcs[i, j] = rawKeys[i].Length > 0 && rawKeys[i] == cleanKeys[j]\n                ? lcs[i + 1, j + 1] + 1\n                : Math.Max(lcs[i + 1, j], lcs[i, j + 1]);\n\n    var kept = new bool[n];\n    for (int i = 0, j = 0; i < n && j < m;)\n    {\n        if (rawKeys[i].Length > 0 && rawKeys[i] == cleanKeys[j]) { kept[i] = true; i++; j++; }\n        else if (lcs[i + 1, j] >= lcs[i, j + 1]) i++;\n        else j++;\n    }\n\n    var parts = new List<DiffPart>();\n    for (int i = 0; i < n; i++)\n    {\n        // Whitespace-only tokens never count as removed on their own.\n        bool removed = !kept[i] && rawKeys[i].Length > 0;\n        if (parts.Count > 0 && parts[^1].Removed == removed)\n            parts[^1] = new DiffPart(parts[^1].Text + tokens[i], removed);\n        else\n            parts.Add(new DiffPart(tokens[i], removed));\n    }\n    return parts;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

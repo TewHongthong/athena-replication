@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_003",
+  "language": "typescript",
+  "originalName": "jsStringLiteral",
+  "injectedName": "js_string_literal",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'js_string_literal' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function js_string_literal(value: string): string {\n  let out = '\"';\n  for (const ch of value) {\n    const mapped = SIMPLE_ESCAPES[ch];\n    if (mapped !== undefined) {\n      out += mapped;\n      continue;\n    }\n    const code = ch.codePointAt(0)!;\n    // U+2028 / U+2029 are JS line terminators; C0/C1 controls must not appear\n    // raw in source. All of these are in the BMP, so a 4-digit \\uXXXX escape is\n    // always sufficient (and ES3-valid). Everything else passes through.\n    if (code < 0x20 || (code >= 0x7f && code <= 0x9f) || code === 0x2028 || code === 0x2029) {\n      out += `\\\\u${code.toString(16).padStart(4, \"0\")}`;\n    } else {\n      out += ch;\n    }\n  }\n  return out + '\"';\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

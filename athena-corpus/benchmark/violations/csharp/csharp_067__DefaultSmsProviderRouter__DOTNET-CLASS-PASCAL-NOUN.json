@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_067",
+  "language": "csharp",
+  "originalName": "DefaultSmsProviderRouter",
+  "injectedName": "default_sms_provider_router",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'default_sms_provider_router' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "internal sealed class default_sms_provider_router : ISmsProviderRouter\n{\n    private readonly IReadOnlyDictionary<string, ISmsProvider> _providers;\n    private readonly SmsBridgeOptions _options;\n\n    public default_sms_provider_router(\n        IEnumerable<ISmsProvider> providers,\n        IOptions<SmsBridgeOptions> options)\n    {\n        _providers = providers.ToDictionary(p => p.Name, StringComparer.OrdinalIgnoreCase);\n        _options = options.Value;\n    }\n\n    public ISmsProvider Resolve(SmsRoutingContext context)\n    {\n        var providerName = context.ExplicitProvider ?? _options.DefaultProvider;\n\n        if (string.IsNullOrWhiteSpace(providerName))\n            throw new SmsBridgeException(\n                \"No provider could be resolved. Set 'SmsBridge:DefaultProvider' in configuration or supply a provider name on the message.\");\n\n        if (!_providers.TryGetValue(providerName, out var provider))\n            throw new SmsBridgeException(\n                $\"Provider '{providerName}' is not registered. Registered providers: [{string.Join(\", \", _providers.Keys)}].\");\n\n        return provider;\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_020",
+  "language": "csharp",
+  "originalName": "SpecialAttributeValueKind",
+  "injectedName": "special_attribute_value_kind",
+  "identifierKind": "enum",
+  "violatedRuleId": "DOTNET-ENUM-NO-ENUM-FLAGS-SUFFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'special_attribute_value_kind' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum special_attribute_value_kind\n{\n    Money,\n    Number,\n    Text,\n    Date\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

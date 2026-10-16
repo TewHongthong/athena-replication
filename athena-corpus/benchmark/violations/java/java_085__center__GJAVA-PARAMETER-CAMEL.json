@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_085",
+  "language": "java",
+  "originalName": "center",
+  "injectedName": "CENTER",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CENTER' does not match camelCase pattern",
+    "name 'CENTER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "RemoteSummonRequest(long requestId, UUID playerUuid, UUID companionId,\n                    UUID canonicalUuid, ResourceKey<Level> targetDimension,\n                    ChunkPos CENTER, int radius, long deadlineGameTime,\n                    RemoteSummonOrigin origin, RemoteSummonFeedback feedback) {\n    this.requestId = requestId;\n    this.playerUuid = playerUuid;\n    this.companionId = companionId;\n    this.canonicalUuid = canonicalUuid;\n    this.targetDimension = targetDimension;\n    this.center = CENTER;\n    this.radius = radius;\n    this.deadlineGameTime = deadlineGameTime;\n    this.origin = origin;\n    this.feedback = feedback;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

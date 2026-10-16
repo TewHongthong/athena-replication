@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_070",
+  "language": "csharp",
+  "originalName": "ParseJson",
+  "injectedName": "parse_json",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'parse_json' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public SmsWebhookEvent parse_json(string json)\n{\n    using var document = JsonDocument.Parse(json);\n    var root = document.RootElement;\n\n    var messageId = ReadString(root, \"batch_id\");\n    var to = ReadString(root, \"recipient\");\n    var status = ReadString(root, \"status\");\n    var errorCode = ReadString(root, \"code\");\n    var timestamp = ReadString(root, \"at\");\n\n    return new SmsWebhookEvent\n    {\n        Provider = Provider,\n        MessageId = messageId,\n        To = to,\n        Status = MapStatus(status),\n        ErrorCode = errorCode,\n        Timestamp = DateTimeOffset.TryParse(timestamp, out var parsed)\n            ? parsed\n            : DateTimeOffset.UtcNow,\n        Raw = new Dictionary<string, string>()\n    };\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

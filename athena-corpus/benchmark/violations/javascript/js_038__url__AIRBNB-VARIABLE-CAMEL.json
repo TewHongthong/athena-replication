@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_038",
+  "language": "javascript",
+  "originalName": "url",
+  "injectedName": "URL",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'URL' does not match camelCase pattern",
+    "name 'URL' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "async function searchSkillsSh(query) {\n  const URL = `https://skills.sh/api/search?q=${encodeURIComponent(query)}`\n  const response = await runFetch(URL, { signal: AbortSignal.timeout(10000) })\n  if (!response.ok) return { error: `skills.sh API error: ${response.status}` }\n  const data = await response.json()\n  return { items: data.skills || [] }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

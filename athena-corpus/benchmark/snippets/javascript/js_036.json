@@ -1,0 +1,52 @@
+{
+  "id": "js_036",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/remove.js lines 25-37 (function getTargetBaseDir); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function getTargetBaseDir(target, cwd) {\n  if (target === 'project') {\n    return join(cwd, '.agents', 'skills')\n  }\n\n  const agent =\n    getAgentByFlag(target) ||\n    agents.find((candidate) => candidate.name === target)\n\n  const baseDir = agent ? agent.getDir() : getAgentsDir()\n\n  return rebaseToCwd(baseDir, cwd)\n}",
+  "identifiers": [
+    {
+      "name": "getTargetBaseDir",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "agent",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "target",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "cwd",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "candidate",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "baseDir",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/remove.js",
+    "startLine": 25,
+    "endLine": 37,
+    "unit": "function getTargetBaseDir",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_api_remove.js.md"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "js_035",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/profile.js lines 12-40 (function apiProfileSave); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export async function apiProfileSave(name, options = {}) {\n  let agentsData\n  if (options.targets && options.targets.length > 0) {\n    agentsData = {}\n    for (const flag of options.targets) {\n      const entry = await captureAgentFull(flag)\n      if (entry) agentsData[flag] = entry\n    }\n  } else {\n    agentsData = await captureAllAgents()\n  }\n\n  if (Object.keys(agentsData).length === 0) {\n    throw new Error('No agent configurations found to save.')\n  }\n\n  if (options.dryRun) {\n    return { dryRun: true, name, agents: agentsData }\n  }\n\n  const profileData = {\n    name,\n    description: `Saved on ${new Date().toLocaleDateString()}`,\n    agents: agentsData,\n  }\n\n  await writeProfile(profileData)\n  return { name, agents: Object.keys(agentsData).length, profile: profileData }\n}",
+  "identifiers": [
+    {
+      "name": "apiProfileSave",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "agentsData",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "options",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "flag",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "entry",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "profileData",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/profile.js",
+    "startLine": 12,
+    "endLine": 40,
+    "unit": "function apiProfileSave",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_api_profile.js.md"
+  }
+}

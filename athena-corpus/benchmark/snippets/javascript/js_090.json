@@ -1,0 +1,52 @@
+{
+  "id": "js_090",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/goals/build-plan-impact-alignment.js lines 1-15 (function buildPlanImpactAlignment); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function buildPlanImpactAlignment({distribution,topics=[],impactForTopic}={}){\n  const planned=(distribution?.rows||[]).filter(row=>row.subjectId!=='unassigned'&&row.plannedMinutes>0);\n  if(planned.length<2)return {state:'insufficient',reason:'Planeje tempo para pelo menos duas disciplinas nesta semana.'};\n  const rows=planned.map(row=>{\n    const subjectTopics=topics.filter(topic=>topic.subjectId===row.subjectId);\n    const impacts=subjectTopics.map(impactForTopic).filter(value=>Number.isFinite(value)&&value>=0&&value<=100);\n    const coverage=subjectTopics.length?impacts.length/subjectTopics.length:0;\n    return {...row,topicCount:subjectTopics.length,impactCount:impacts.length,coverage,averageImpact:impacts.length?impacts.reduce((sum,value)=>sum+value,0)/impacts.length:null};\n  });\n  if(rows.some(row=>row.coverage<.5||row.impactCount<1))return {state:'insufficient',reason:'O impacto estimado cobre menos da metade dos tópicos de alguma disciplina planejada.'};\n  const impactTotal=rows.reduce((sum,row)=>sum+row.averageImpact,0);\n  const plannedTotal=rows.reduce((sum,row)=>sum+row.plannedMinutes,0);\n  if(!impactTotal)return {state:'insufficient',reason:'Ainda não há impacto estimado para comparar as disciplinas planejadas.'};\n  return {state:'ready',rows:rows.map(row=>({...row,plannedShare:row.plannedMinutes/plannedTotal*100,impactShare:row.averageImpact/impactTotal*100})),subjectCount:rows.length};\n}",
+  "identifiers": [
+    {
+      "name": "buildPlanImpactAlignment",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "planned",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "row",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "rows",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "subjectTopics",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "topic",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/goals/build-plan-impact-alignment.js",
+    "startLine": 1,
+    "endLine": 15,
+    "unit": "function buildPlanImpactAlignment",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__build-plan-impact-alignment.js.md"
+  }
+}

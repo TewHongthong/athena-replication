@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_008",
+  "language": "typescript",
+  "originalName": "log",
+  "injectedName": "LOG",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOG' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export const LOG = {\n  error: (message: string, detail?: unknown) => emit(\"error\", message, detail),\n  warn: (message: string, detail?: unknown) => emit(\"warn\", message, detail),\n  info: (message: string, detail?: unknown) => emit(\"info\", message, detail),\n  debug: (message: string, detail?: unknown) => emit(\"debug\", message, detail),\n};",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

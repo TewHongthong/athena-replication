@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_012",
+  "language": "java",
+  "originalName": "contentType",
+  "injectedName": "content_type",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'content_type' does not match camelCase pattern",
+    "name 'content_type' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Override\npublic String store(MultipartFile file) {\n    if (file == null || file.isEmpty()) {\n        return null;\n    }\n\n    if (file.getSize() > maxFileSize) {\n        throw new BadRequestException(\"File size exceeds maximum allowed size\");\n    }\n\n    String content_type = file.getContentType();\n    if (content_type == null || !allowedTypes.contains(content_type)) {\n        throw new BadRequestException(\"File type not allowed: \" + content_type);\n    }\n\n    try {\n        Map<?, ?> result = cloudinary.uploader().upload(file.getBytes(), ObjectUtils.asMap(\"folder\", \"products\"));\n        String url = (String) result.get(\"secure_url\");\n        log.info(\"File uploaded to Cloudinary: {}\", url);\n        return url;\n    } catch (IOException e) {\n        throw new InternalServerException(\"Failed to upload file to Cloudinary\", e);\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

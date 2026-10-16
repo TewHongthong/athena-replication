@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_055",
+  "language": "python",
+  "originalName": "ext",
+  "injectedName": "EXT",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'EXT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def save_image_bytes(image, output: Path) -> bytes:\n    \"\"\"Encode the regenerated image, honoring a JPEG output suffix.\"\"\"\n    EXT = output.suffix.lower()\n    buf = io.BytesIO()\n    if EXT in (\".jpg\", \".jpeg\", \".jpe\", \".jfif\"):\n        image = image.convert(\"RGB\")\n        image.save(buf, format=\"JPEG\", quality=95)\n    else:\n        image.save(buf, format=\"PNG\")\n    return buf.getvalue()",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

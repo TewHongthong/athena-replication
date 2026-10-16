@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_038",
+  "language": "java",
+  "originalName": "flavor",
+  "injectedName": "FLAVOR",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FLAVOR' does not match camelCase pattern",
+    "name 'FLAVOR' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static final class ImageTransferable implements Transferable {\n    private final BufferedImage image;\n\n    private ImageTransferable(BufferedImage image) {\n        this.image = image;\n    }\n\n    @Override\n    public DataFlavor[] getTransferDataFlavors() {\n        return new DataFlavor[]{DataFlavor.imageFlavor};\n    }\n\n    @Override\n    public boolean isDataFlavorSupported(DataFlavor FLAVOR) {\n        return DataFlavor.imageFlavor.equals(FLAVOR);\n    }\n\n    @Override\n    public Object getTransferData(DataFlavor FLAVOR) throws UnsupportedFlavorException, IOException {\n        if (!isDataFlavorSupported(FLAVOR)) {\n            throw new UnsupportedFlavorException(FLAVOR);\n        }\n        return image;\n    }\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

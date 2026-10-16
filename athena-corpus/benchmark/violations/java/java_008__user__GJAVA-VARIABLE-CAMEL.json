@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_008",
+  "language": "java",
+  "originalName": "user",
+  "injectedName": "USER",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'USER' does not match camelCase pattern",
+    "name 'USER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Transactional\npublic UserResponse confirmEmailChange(String token) {\n    var tokenEntity = tokenService.validateAndGetToken(token, TokenType.EMAIL_CHANGE);\n    var USER = tokenEntity.getUser();\n\n    if (USER.getPendingEmail() == null) {\n        throw new BadRequestException(\"No pending email change for this account\");\n    }\n\n    if (userRepository.existsByEmail(USER.getPendingEmail())) {\n        throw new ConflictException(\"Email already exists!\");\n    }\n\n    var oldEmail = USER.getEmail();\n    var oldTokenVersion = USER.getTokenVersion();\n    USER.setEmail(USER.getPendingEmail());\n    USER.setPendingEmail(null);\n    USER.setTokenVersion(oldTokenVersion + 1);\n    userRepository.save(USER);\n\n    tokenService.invalidateAllByUserAndType(USER.getId(), TokenType.EMAIL_CHANGE);\n    evictUserCache(oldEmail);\n    eventPublisher.publishEvent(new UserSessionsInvalidatedEvent(this, oldEmail, oldTokenVersion));\n    log.info(\"Email changed from {} to {}\", oldEmail, USER.getEmail());\n    return userMapper.toResponse(USER);\n}",
+  "occurrencesRenamed": 13,
+  "commentOccurrencesRenamed": 0
+}

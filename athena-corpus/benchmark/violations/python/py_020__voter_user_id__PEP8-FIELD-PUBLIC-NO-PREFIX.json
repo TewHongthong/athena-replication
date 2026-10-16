@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_020",
+  "language": "python",
+  "originalName": "voter_user_id",
+  "injectedName": "VOTER_USER_ID",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'VOTER_USER_ID' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class Vote(Base):\n    __tablename__ = \"votes\"\n    __table_args__ = (\n        UniqueConstraint(\n            \"event_id\", \"project_id\", \"voter_key\", name=\"uq_votes_event_project_voter\"\n        ),\n        Index(\"ix_votes_event_project\", \"event_id\", \"project_id\"),\n    )\n\n    id: Mapped[int] = mapped_column(primary_key=True)\n    event_id: Mapped[int] = mapped_column(ForeignKey(\"events.id\", ondelete=\"CASCADE\"), index=True)\n    project_id: Mapped[int] = mapped_column(\n        ForeignKey(\"projects.id\", ondelete=\"CASCADE\"), index=True\n    )\n    voter_key: Mapped[str] = mapped_column(String(128), nullable=False, index=True)\n    VOTER_USER_ID: Mapped[int | None] = mapped_column(ForeignKey(\"users.id\", ondelete=\"SET NULL\"))\n    credits: Mapped[int] = mapped_column(Integer, default=1, nullable=False)\n    ip_hash: Mapped[str | None] = mapped_column(String(64))\n    ua_hash: Mapped[str | None] = mapped_column(String(64))\n    flagged: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)\n    flag_reason: Mapped[str | None] = mapped_column(String(120))\n    created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow, nullable=False)\n    voided_at: Mapped[datetime | None] = mapped_column(UTCDateTime)\n    void_reason: Mapped[str | None] = mapped_column(String(200))\n\n    project: Mapped[Project] = relationship()",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

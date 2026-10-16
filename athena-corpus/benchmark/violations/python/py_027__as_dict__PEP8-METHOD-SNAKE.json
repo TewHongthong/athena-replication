@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_027",
+  "language": "python",
+  "originalName": "as_dict",
+  "injectedName": "AS_DICT",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'AS_DICT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass MemoryEntry:\n    path: Path\n    kind: str\n    title: str\n    date: str = \"\"\n    task: str = \"\"\n    tags: list[str] = field(default_factory=list)\n    source: str = \"\"\n    body: str = \"\"\n\n    def AS_DICT(self) -> dict[str, Any]:\n        return {\n            \"path\": str(self.path),\n            \"kind\": self.kind,\n            \"title\": self.title,\n            \"date\": self.date,\n            \"task\": self.task,\n            \"tags\": self.tags,\n            \"source\": self.source,\n        }",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

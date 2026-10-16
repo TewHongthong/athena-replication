@@ -1,0 +1,409 @@
+{
+ "pipeline": "athena-curation-1.0",
+ "ontology_sha256": "716026bb9e8fa0a620710ed5853ee9978816700ff6e88d303702864d22f016e2",
+ "ontology_nodes": 324,
+ "ontology_links": 500,
+ "per_language_quota": 100,
+ "files": {
+  "python": 148,
+  "java": 167,
+  "javascript": 168,
+  "typescript": 154,
+  "csharp": 155
+ },
+ "skipped_files": {},
+ "index_mismatch": [],
+ "units": {
+  "total": 4122,
+  "too_short": 1354,
+  "too_long": 473,
+  "fewer_than_2_eligible_targets": 416,
+  "noncompliant_identifier": 222,
+  "duplicate_code_dropped": 6,
+  "parse_error_in_unit": 1,
+  "fewer_than_2_targets_with_violation": 5
+ },
+ "unit_gate_failures_by_rule": {
+  "PEP8-EXCEPTION-ERROR-SUFFIX": 3,
+  "PEP8-VAR-SNAKE": 4,
+  "PEP8-CLASS-CAPWORDS": 3,
+  "PEP8-FUNC-SNAKE": 1,
+  "GJAVA-METHOD-CAMEL": 80,
+  "AIRBNB-PARAM-DESCRIPTIVE": 47,
+  "AIRBNB-VARIABLE-CAMEL": 5,
+  "AIRBNB-METHOD-CAMEL": 5,
+  "AIRBNB-CONST-LOCAL-CAMEL": 8,
+  "AIRBNB-VAR-DESCRIPTIVE": 32,
+  "AIRBNB-PROPERTY-CAMEL": 3,
+  "GTS-FUNCTION-CAMEL": 14,
+  "GTS-VARIABLE-CAMEL": 1,
+  "DOTNET-METHOD-VERB-PASCAL": 8,
+  "DOTNET-CONSTANT-PASCAL": 4,
+  "DOTNET-FIELD-PASCAL-NOPREFIX": 4
+ },
+ "target_rejects": {
+  "code_like_name_in_string": 98,
+  "name_in_fstring_expression": 267,
+  "name_in_multiple_namespaces": 65,
+  "no_verified_violation": 52,
+  "shorthand_property": 209
+ },
+ "rename_verify": {
+  "ok": 8024,
+  "shape_changed": 71
+ },
+ "decl_compliance": {
+  "python": {
+   "PEP8-VAR-SNAKE|checked": 3014,
+   "PEP8-AVOID-CONFUSING-CHARS|checked": 3014,
+   "PEP8-CONST-UPPER|checked": 248,
+   "PEP8-FUNC-SNAKE|checked": 523,
+   "PEP8-PARAM-SELF-CLS|checked": 1140,
+   "PEP8-CLASS-CAPWORDS|checked": 165,
+   "PEP8-FIELD-PUBLIC-NO-PREFIX|checked": 814,
+   "PEP8-METHOD-SNAKE|checked": 115,
+   "PEP8-PARAM-SELF-CLS|failed": 2,
+   "PEP8-EXCEPTION-ERROR-SUFFIX|checked": 40,
+   "PEP8-EXCEPTION-ERROR-SUFFIX|failed": 14,
+   "PEP8-VAR-SNAKE|failed": 20,
+   "PEP8-CLASS-CAPWORDS|failed": 3,
+   "PEP8-FUNC-SNAKE|failed": 1
+  },
+  "java": {
+   "GJAVA-CLASS-PASCAL|checked": 168,
+   "GJAVA-FIELD-CAMEL|checked": 262,
+   "GJAVA-FIELD-NO-HUNGARIAN|checked": 262,
+   "GJAVA-METHOD-CAMEL|checked": 618,
+   "GJAVA-PARAMETER-CAMEL|checked": 863,
+   "GJAVA-VARIABLE-CAMEL|checked": 927,
+   "GJAVA-IDENT-ASCII|checked": 927,
+   "GJAVA-CONSTANT-UPPER-SNAKE|checked": 29,
+   "GJAVA-INTERFACE-PASCAL|checked": 6,
+   "GJAVA-ENUM-PASCAL|checked": 7,
+   "GJAVA-ENUM-MEMBER-UPPER-SNAKE|checked": 52,
+   "GJAVA-FIELD-CAMEL|failed": 8,
+   "GJAVA-METHOD-CAMEL|failed": 78
+  },
+  "javascript": {
+   "AIRBNB-VARIABLE-CAMEL|checked": 2616,
+   "AIRBNB-VAR-DESCRIPTIVE|checked": 2616,
+   "AIRBNB-PARAM-DESCRIPTIVE|checked": 1740,
+   "AIRBNB-PARAM-DESCRIPTIVE|failed": 291,
+   "AIRBNB-VAR-DESCRIPTIVE|failed": 157,
+   "AIRBNB-CLASS-PASCAL|checked": 14,
+   "AIRBNB-PROPERTY-CAMEL|checked": 67,
+   "AIRBNB-METHOD-CAMEL|checked": 53,
+   "AIRBNB-VARIABLE-CAMEL|failed": 45,
+   "AIRBNB-METHOD-CAMEL|failed": 7,
+   "AIRBNB-FIELD-NO-UNDERSCORE|checked": 3,
+   "AIRBNB-FIELD-NO-UNDERSCORE|failed": 1,
+   "AIRBNB-PROPERTY-CAMEL|failed": 13,
+   "AIRBNB-CONST-LOCAL-CAMEL|checked": 110,
+   "AIRBNB-CONST-LOCAL-CAMEL|failed": 110,
+   "AIRBNB-FUNCTION-CAMEL|checked": 631,
+   "AIRBNB-CONST-UPPER|checked": 11,
+   "AIRBNB-FUNCTION-CAMEL|failed": 1
+  },
+  "typescript": {
+   "GTS-INTERFACE-PASCAL|checked": 49,
+   "GTS-PROPERTY-CAMEL|checked": 179,
+   "GTS-FUNCTION-CAMEL|checked": 155,
+   "GTS-PARAMETER-CAMEL|checked": 417,
+   "GTS-VARIABLE-CAMEL|checked": 623,
+   "GTS-CONSTANT-CASE|checked": 31,
+   "GTS-METHOD-CAMEL|checked": 20,
+   "GTS-CLASS-PASCAL|checked": 6,
+   "GTS-FIELD-CAMEL|checked": 4,
+   "GTS-VARIABLE-CAMEL|failed": 8,
+   "GTS-FUNCTION-CAMEL|failed": 18
+  },
+  "csharp": {
+   "DOTNET-INTERFACE-I-PREFIX|checked": 9,
+   "DOTNET-METHOD-VERB-PASCAL|checked": 777,
+   "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE|checked": 1083,
+   "DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX|checked": 87,
+   "DOTNET-PROPERTY-NOUN-PASCAL|checked": 395,
+   "DOTNET-CLASS-PASCAL-NOUN|checked": 395,
+   "DOTNET-ENUM-SINGULAR-OR-PLURAL|checked": 46,
+   "DOTNET-ENUM-NO-ENUM-FLAGS-SUFFIX|checked": 46,
+   "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX|checked": 183,
+   "DOTNET-FIELD-PASCAL-NOPREFIX|checked": 119,
+   "DOTNET-CONSTANT-PASCAL|checked": 71,
+   "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE|checked": 1215,
+   "DOTNET-NO-HUNGARIAN-NO-UNDERSCORE|checked": 1215,
+   "DOTNET-METHOD-VERB-PASCAL|failed": 11,
+   "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE|failed": 4,
+   "DOTNET-CONSTANT-PASCAL|failed": 13,
+   "DOTNET-CLASS-PASCAL-NOUN|failed": 1,
+   "DOTNET-FIELD-PASCAL-NOPREFIX|failed": 92,
+   "DOTNET-PROPERTY-NOUN-PASCAL|failed": 1
+  }
+ },
+ "decl_counts": {
+  "python": {
+   "variable": 3050,
+   "constant": 248,
+   "function": 523,
+   "parameter": 1330,
+   "class": 165,
+   "field": 844,
+   "method": 151
+  },
+  "java": {
+   "class": 168,
+   "field": 262,
+   "method": 648,
+   "parameter": 1051,
+   "variable": 927,
+   "constant": 92,
+   "interface": 6,
+   "enum": 7,
+   "enum_member": 52
+  },
+  "javascript": {
+   "variable": 2616,
+   "parameter": 1748,
+   "class": 14,
+   "property": 67,
+   "method": 54,
+   "field": 3,
+   "constant": 121,
+   "function": 645
+  },
+  "typescript": {
+   "interface": 49,
+   "property": 179,
+   "function": 321,
+   "parameter": 426,
+   "variable": 623,
+   "constant": 31,
+   "method": 20,
+   "class": 6,
+   "field": 4
+  },
+  "csharp": {
+   "interface": 9,
+   "method": 781,
+   "parameter": 2394,
+   "boolean_variable": 87,
+   "property": 352,
+   "class": 395,
+   "field": 458,
+   "enum": 46,
+   "enum_member": 183,
+   "variable": 1315,
+   "constant": 71
+  }
+ },
+ "exempt_counts": {
+  "python": {
+   "self_cls": 151,
+   "dunder": 68,
+   "underscore": 34,
+   "lambda_param": 39
+  },
+  "java": {
+   "record_component": 80,
+   "lambda_param": 108,
+   "ambiguous_constant": 63,
+   "test_method": 30
+  },
+  "javascript": {
+   "underscore": 8,
+   "react_component": 14,
+   "accessor": 1
+  },
+  "typescript": {
+   "param_property": 4,
+   "react_component": 166,
+   "underscore": 5
+  },
+  "csharp": {
+   "nonpublic_field": 347,
+   "record_component": 978,
+   "lambda_param": 333,
+   "pattern_var": 20,
+   "out_var": 116,
+   "local_function": 4
+  }
+ },
+ "candidates": {
+  "python": {
+   "files": 148,
+   "clean_candidate_units": 436,
+   "repos_with_candidates": 14,
+   "files_with_candidates": 124
+  },
+  "java": {
+   "files": 167,
+   "clean_candidate_units": 330,
+   "repos_with_candidates": 5,
+   "files_with_candidates": 118
+  },
+  "javascript": {
+   "files": 168,
+   "clean_candidate_units": 222,
+   "repos_with_candidates": 7,
+   "files_with_candidates": 86
+  },
+  "typescript": {
+   "files": 154,
+   "clean_candidate_units": 115,
+   "repos_with_candidates": 5,
+   "files_with_candidates": 78
+  },
+  "csharp": {
+   "files": 155,
+   "clean_candidate_units": 548,
+   "repos_with_candidates": 7,
+   "files_with_candidates": 143
+  }
+ },
+ "selected": {
+  "python": {
+   "snippets": 100,
+   "identifiers_by_kind": {
+    "class": 40,
+    "method": 28,
+    "field": 117,
+    "variable": 172,
+    "parameter": 133,
+    "function": 54,
+    "constant": 5
+   },
+   "snippets_by_repo": {
+    "Simon-zj1/agent-harness": 12,
+    "sl2ver/wm811k-wafer-defect-classification": 9,
+    "boongh/ml-exp": 8,
+    "Ayush1860/SecureRag": 9,
+    "vikasiec/AI-Trading-App": 9,
+    "Nikhils-G/podium": 12,
+    "divykr2005/photo-distributor": 3,
+    "determlab/bricks": 7,
+    "halileroglu711/CNN-classification": 4,
+    "guillaumemeyer/watermarks-remover": 8,
+    "mchittineni/repo-radar": 3,
+    "pcman-zhang/fin-data-platform": 2,
+    "tonym999/vault-cleaner": 11,
+    "zuohaisu/viva": 3
+   },
+   "violations": 721
+  },
+  "java": {
+   "snippets": 100,
+   "identifiers_by_kind": {
+    "class": 38,
+    "method": 105,
+    "field": 32,
+    "variable": 190,
+    "parameter": 150,
+    "constant": 2,
+    "enum": 4,
+    "enum_member": 15,
+    "interface": 4
+   },
+   "snippets_by_repo": {
+    "AntonBas/sushi-shop": 24,
+    "klboke/kkRepo": 21,
+    "xvDoshik/HubSwap": 12,
+    "wanancat/furkin": 20,
+    "KingF3rdi/aero-client": 23
+   },
+   "violations": 540
+  },
+  "javascript": {
+   "snippets": 100,
+   "identifiers_by_kind": {
+    "function": 100,
+    "method": 6,
+    "variable": 221,
+    "parameter": 184,
+    "property": 4
+   },
+   "snippets_by_repo": {
+    "vitoriapac/Extrato": 38,
+    "cloudflare/security-audit-skill": 8,
+    "rolecraft-sh/rolecraft": 45,
+    "Leonxlnx/unlazy": 4,
+    "LCdev1234/Cube-Matcher": 2,
+    "minichao9901/web-serial-rtt-tools": 1,
+    "maheeeeeeen/assurex-claim-engine": 2
+   },
+   "violations": 736
+  },
+  "typescript": {
+   "snippets": 100,
+   "identifiers_by_kind": {
+    "interface": 27,
+    "method": 6,
+    "property": 113,
+    "parameter": 95,
+    "function": 44,
+    "variable": 141,
+    "class": 1
+   },
+   "snippets_by_repo": {
+    "Brainferno/brainferno-mcp-bridge": 10,
+    "guillermolg00/morphicons": 11,
+    "leandromlmoreira/video-capture": 56,
+    "sebafermanelli/sebs7n-ui": 21,
+    "nguyentatkiem/sales-training": 2
+   },
+   "violations": 427
+  },
+  "csharp": {
+   "snippets": 100,
+   "identifiers_by_kind": {
+    "class": 48,
+    "method": 86,
+    "property": 54,
+    "boolean_variable": 23,
+    "parameter": 138,
+    "constant": 8,
+    "variable": 100,
+    "field": 4,
+    "enum": 10,
+    "enum_member": 46,
+    "interface": 6
+   },
+   "snippets_by_repo": {
+    "TrentBest/TheSingularityWorkshop.FSM_Serialization": 4,
+    "compoodment/ClankerWorld": 23,
+    "yello-gun/BetterSTT": 12,
+    "Wixely/Stashographer": 21,
+    "teesofttech/SMSBridge": 20,
+    "aakk007/RogueCleaner": 2,
+    "thecheetoman/ESim": 18
+   },
+   "violations": 533
+  }
+ },
+ "parity": {},
+ "selection_tier": {
+  "python": {
+   "tier": 0,
+   "base_repo_cap": 12,
+   "repos_with_candidates": 14
+  },
+  "java": {
+   "tier": 0,
+   "base_repo_cap": 32,
+   "repos_with_candidates": 5
+  },
+  "javascript": {
+   "tier": 1,
+   "base_repo_cap": 23,
+   "repos_with_candidates": 7
+  },
+  "typescript": {
+   "tier": 1,
+   "base_repo_cap": 32,
+   "repos_with_candidates": 5
+  },
+  "csharp": {
+   "tier": 0,
+   "base_repo_cap": 23,
+   "repos_with_candidates": 7
+  }
+ }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_080",
+  "language": "csharp",
+  "originalName": "other",
+  "injectedName": "OTHER",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'OTHER' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private void OnTriggerStay(Collider OTHER)\n{\n    if (!isEnabled) return;\n    if (!OTHER.CompareTag(\"GamePiece\")) return;\n\n    Rigidbody ballRb = OTHER.attachedRigidbody;\n    if (ballRb == null) return;\n\n    UpdateShootingMult();\n\n    Vector3 worldMoveDir = transform.TransformDirection(moveDirection).normalized;\n\n    // Only correct the component of velocity ALONG moveDirection -- this is\n    // the key fix vs. the original script. Instead of pulling the whole\n    // ball toward a fixed point (which can point straight into a wall\n    // depending on where the ball currently is), this only ever pushes\n    // along one fixed direction, so it can never aim itself into a wall.\n    // Sideways/vertical velocity (e.g. from gravity, other balls, or a\n    // wall bounce) is left alone.\n    Vector3 currentVelAlongDir = Vector3.Project(ballRb.velocity, worldMoveDir);\n    Vector3 desiredVel = worldMoveDir * (surfaceSpeed * shootingMult);\n    Vector3 correction = desiredVel - currentVelAlongDir;\n\n    ballRb.AddForce(correction * correctionForce, ForceMode.Acceleration);\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

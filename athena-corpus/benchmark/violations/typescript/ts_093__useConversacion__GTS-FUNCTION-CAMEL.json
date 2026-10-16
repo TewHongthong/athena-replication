@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_093",
+  "language": "typescript",
+  "originalName": "useConversacion",
+  "injectedName": "use_conversacion",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'use_conversacion' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function use_conversacion() {\n  const [mensajes, setMensajes] = useState<Mensaje[]>([])\n  const [respondiendo, setRespondiendo] = useState(false)\n  const espera = useRef<ReturnType<typeof setTimeout> | null>(null)\n  const proximo = useRef(1)\n\n  const enviar = (texto: string) => {\n    setMensajes((lista) => [...lista, { id: proximo.current++, from: \"user\", texto }])\n    setRespondiendo(true)\n    espera.current = setTimeout(() => {\n      const respuesta = RESPUESTAS[texto] ?? \"Eso no lo tengo a mano todavía.\"\n      setMensajes((lista) => [...lista, { id: proximo.current++, from: \"assistant\", texto: respuesta }])\n      setRespondiendo(false)\n    }, 1400)\n  }\n  const cortar = () => {\n    if (espera.current) clearTimeout(espera.current)\n    setRespondiendo(false)\n  }\n  const nueva = () => {\n    cortar()\n    setMensajes([])\n  }\n  return { mensajes, respondiendo, enviar, cortar, nueva }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

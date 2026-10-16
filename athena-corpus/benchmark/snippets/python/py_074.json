@@ -1,0 +1,52 @@
+{
+  "id": "py_074",
+  "language": "python",
+  "source": "github:sl2ver/wm811k-wafer-defect-classification@305dbf7387943b4dec4f4f41a38ff99bfe284796",
+  "sourceDetail": "scripts/make_splits.py lines 42-53 (function match); license MIT; repo created 2026-09-27T06:25:24Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def match(xa, nda, xb, ndb, hw: int, same: bool):\n    \"\"\"Index pairs (i of a, j of b) whose maps differ in <= max(NEAR_PX, REL_PX * larger defect count) dies.\"\"\"\n    ii_all, jj_all, px_all = [], [], []\n    for s in range(0, len(xa), 2048):\n        mismatch = hw - xa[s:s + 2048] @ xb.T\n        limit = np.maximum(NEAR_PX, REL_PX * np.maximum.outer(nda[s:s + 2048], ndb))\n        ii, jj = np.nonzero(mismatch <= limit + 0.5)\n        px = np.rint(mismatch[ii, jj]).astype(int)\n        ii = ii + s\n        keep = ii != jj if same else np.ones(len(ii), bool)\n        ii_all.append(ii[keep]), jj_all.append(jj[keep]), px_all.append(px[keep])\n    return np.concatenate(ii_all), np.concatenate(jj_all), np.concatenate(px_all)",
+  "identifiers": [
+    {
+      "name": "match",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "ii_all",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "nda",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "ndb",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "same",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "jj_all",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sl2ver/wm811k-wafer-defect-classification",
+    "repoUrl": "https://github.com/sl2ver/wm811k-wafer-defect-classification",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-27T06:25:24Z",
+    "commit": "305dbf7387943b4dec4f4f41a38ff99bfe284796",
+    "path": "scripts/make_splits.py",
+    "startLine": 42,
+    "endLine": 53,
+    "unit": "function match",
+    "corpusFile": "corpus/python/sl2ver__wm811k-wafer-defect-classification__make_splits.py.md"
+  }
+}

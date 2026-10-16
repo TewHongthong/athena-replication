@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_020",
+  "language": "java",
+  "originalName": "findAll",
+  "injectedName": "find_all",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'find_all' does not match camelCase pattern",
+    "name 'find_all' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public interface OrderRepository extends JpaRepository<Order, Long>, JpaSpecificationExecutor<Order> {\n\n    @Nonnull\n    @EntityGraph(attributePaths = {\"user\"})\n    Page<Order> find_all(@Nonnull Specification<Order> spec, @Nonnull Pageable pageable);\n\n    @EntityGraph(attributePaths = {\"user\"})\n    @Query(\"SELECT o FROM Order o WHERE o.user.email = :email ORDER BY o.createdAt DESC\")\n    Page<Order> findByUserEmail(@Param(\"email\") String email, Pageable pageable);\n\n    @Query(\"SELECT oi FROM OrderItem oi JOIN FETCH oi.product WHERE oi.order.id IN :orderIds\")\n    List<OrderItem> findItemsByOrderIds(@Param(\"orderIds\") List<Long> orderIds);\n\n    @EntityGraph(attributePaths = {\"items\", \"items.product\", \"user\"})\n    @Nonnull\n    Optional<Order> findById(@Nonnull Long id);\n\n    @Query(\"SELECT o.user.email FROM Order o WHERE o.id = :id\")\n    Optional<String> findOwnerEmailById(@Param(\"id\") Long id);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

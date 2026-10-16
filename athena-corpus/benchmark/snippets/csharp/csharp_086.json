@@ -1,0 +1,52 @@
+{
+  "id": "csharp_086",
+  "language": "csharp",
+  "source": "github:thecheetoman/ESim@59cde034d0041d0af0a43cdf7e43d979935b7db8",
+  "sourceDetail": "Assets/Scripts/Robot/Swervecontroller.cs lines 230-249 (method SwerveController.ApplyWheelForceAtContact); license MIT; repo created 2026-09-16T23:28:41Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "private void ApplyWheelForceAtContact(int moduleIndex, RaycastHit hit)\n{\n    var module = _swerveWheels[moduleIndex];\n    var setpoint = _swerveSetpoints[moduleIndex];\n\n    var realGroundSpeed = module.transform.InverseTransformVector(\n        _rb.GetPointVelocity(module.transform.position)).z;\n\n    var speedRatio = Mathf.Clamp01(Mathf.Abs(realGroundSpeed) / _maxSpeedMeters);\n    var falloff = GetFalloffFromLookup(speedRatio);\n\n    var forceMag = _accelerationForce * FEET_TO_METERS * setpoint.Velocity * falloff;\n\n    module.transform.localEulerAngles = new Vector3(0f, setpoint.Angle, 0f);\n\n    Vector3 propulsionForce = module.transform.forward * forceMag;\n    _rb.AddForceAtPosition(propulsionForce, hit.point, ForceMode.Impulse);\n\n    module.wheelAngle = module.transform.localRotation.eulerAngles.y;\n}",
+  "identifiers": [
+    {
+      "name": "ApplyWheelForceAtContact",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "module",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "moduleIndex",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "hit",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "setpoint",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "realGroundSpeed",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "thecheetoman/ESim",
+    "repoUrl": "https://github.com/thecheetoman/ESim",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-16T23:28:41Z",
+    "commit": "59cde034d0041d0af0a43cdf7e43d979935b7db8",
+    "path": "Assets/Scripts/Robot/Swervecontroller.cs",
+    "startLine": 230,
+    "endLine": 249,
+    "unit": "method SwerveController.ApplyWheelForceAtContact",
+    "corpusFile": "corpus/csharp/thecheetoman__ESim__Swervecontroller.cs.md"
+  }
+}

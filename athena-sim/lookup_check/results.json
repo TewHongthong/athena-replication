@@ -1,0 +1,105 @@
+{
+  "sets": [
+    {
+      "pack": "gscs",
+      "task": "rename",
+      "counts": {
+        "units": 122,
+        "same_set_live": 122,
+        "same_order_live": 122,
+        "same_examples_live": 122,
+        "same_text_live": 122,
+        "empty": 0,
+        "n_rules": 122,
+        "logged_units::runs/test_luna_gscs_rename": 122,
+        "logged_trials::runs/test_luna_gscs_rename": 366,
+        "same_text_logged::runs/test_luna_gscs_rename": 122,
+        "same_ids_logged::runs/test_luna_gscs_rename": 122,
+        "logged_units::runs/test_o3mini_gscs_rename": 122,
+        "logged_trials::runs/test_o3mini_gscs_rename": 366,
+        "same_text_logged::runs/test_o3mini_gscs_rename": 122,
+        "same_ids_logged::runs/test_o3mini_gscs_rename": 122
+      },
+      "distinct_keys": 24,
+      "mismatches": []
+    },
+    {
+      "pack": "gscs",
+      "task": "comment",
+      "counts": {
+        "units": 12,
+        "same_set_live": 12,
+        "same_order_live": 12,
+        "same_examples_live": 12,
+        "same_text_live": 12,
+        "empty": 0,
+        "n_rules": 12,
+        "logged_units::runs/test_luna_gscs_comment": 12,
+        "logged_trials::runs/test_luna_gscs_comment": 36,
+        "same_text_logged::runs/test_luna_gscs_comment": 12,
+        "same_ids_logged::runs/test_luna_gscs_comment": 12,
+        "logged_units::runs/test_o3mini_gscs_comment": 12,
+        "logged_trials::runs/test_o3mini_gscs_comment": 36,
+        "same_text_logged::runs/test_o3mini_gscs_comment": 12,
+        "same_ids_logged::runs/test_o3mini_gscs_comment": 12
+      },
+      "distinct_keys": 6,
+      "mismatches": []
+    },
+    {
+      "pack": "public5",
+      "task": "rename",
+      "counts": {
+        "units": 2157,
+        "same_set_live": 2157,
+        "same_order_live": 2157,
+        "same_examples_live": 2157,
+        "same_text_live": 2157,
+        "empty": 0,
+        "n_rules": 3478,
+        "logged_units::runs/test_luna_p5_rename": 100,
+        "logged_trials::runs/test_luna_p5_rename": 300,
+        "same_text_logged::runs/test_luna_p5_rename": 100,
+        "same_ids_logged::runs/test_luna_p5_rename": 100
+      },
+      "distinct_keys": 37,
+      "mismatches": []
+    },
+    {
+      "pack": "public5",
+      "task": "comment",
+      "counts": {
+        "units": 89,
+        "same_set_live": 89,
+        "same_order_live": 89,
+        "same_examples_live": 89,
+        "same_text_live": 89,
+        "empty": 1,
+        "n_rules": 109,
+        "logged_units::runs/test_luna_p5_comment": 89,
+        "logged_trials::runs/test_luna_p5_comment": 267,
+        "same_text_logged::runs/test_luna_p5_comment": 89,
+        "same_ids_logged::runs/test_luna_p5_comment": 89
+      },
+      "distinct_keys": 11,
+      "mismatches": []
+    }
+  ],
+  "relations_in_file": {
+    "gscs": {
+      "APPLIES_TO": 77,
+      "DEFINED_IN": 10,
+      "HAS_EXAMPLE": 27
+    },
+    "public5": {
+      "APPLIES_TO": 202,
+      "DEFINED_IN": 101,
+      "HAS_EXAMPLE": 197
+    }
+  },
+  "relations_read_by_retriever": [
+    "APPLIES_TO (rule->language, rule->kind; one hop)",
+    "DEFINED_IN (filter by standard)",
+    "HAS_EXAMPLE (examples)"
+  ]
+}

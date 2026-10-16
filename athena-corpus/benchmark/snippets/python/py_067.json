@@ -1,0 +1,52 @@
+{
+  "id": "py_067",
+  "language": "python",
+  "source": "github:pcman-zhang/fin-data-platform@9ef4803dec39d18237f80eb43213f6d15c7e8a81",
+  "sourceDetail": "src/fin_data_platform/api/deps.py lines 38-53 (function build_context); license MIT; repo created 2026-09-12T10:37:12Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def build_context(env: Mapping[str, str] | None = None) -> ApiContext:\n    source = env if env is not None else os.environ\n    config = StorageConfig.from_env(\n        host_override=source.get(\"FDP_DATABASE_HOST\")\n    )\n    writer_engine = create_write_engine(config)\n    read_engine = create_read_engine(config)\n    return ApiContext(\n        config=config,\n        writer_engine=writer_engine,\n        read_engine=read_engine,\n        meta=SqlMetaRepository(writer_engine),\n        algorithms=SqlAlgorithmStore(writer_engine),\n        registry=RegistryReader(read_engine),\n        specs=load_all(),\n    )",
+  "identifiers": [
+    {
+      "name": "build_context",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "source",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "env",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "config",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "writer_engine",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "read_engine",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "pcman-zhang/fin-data-platform",
+    "repoUrl": "https://github.com/pcman-zhang/fin-data-platform",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-12T10:37:12Z",
+    "commit": "9ef4803dec39d18237f80eb43213f6d15c7e8a81",
+    "path": "src/fin_data_platform/api/deps.py",
+    "startLine": 38,
+    "endLine": 53,
+    "unit": "function build_context",
+    "corpusFile": "corpus/python/pcman-zhang__fin-data-platform__deps.py.md"
+  }
+}

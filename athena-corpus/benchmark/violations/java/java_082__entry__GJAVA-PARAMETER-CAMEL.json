@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_082",
+  "language": "java",
+  "originalName": "entry",
+  "injectedName": "ENTRY",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ENTRY' does not match camelCase pattern",
+    "name 'ENTRY' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static boolean hasLoadedDuplicate(MinecraftServer server, FurkinArchiveEntry ENTRY) {\n    if (server == null || ENTRY == null || ENTRY.getCompanionId() == null) {\n        return false;\n    }\n    UUID companionId = ENTRY.getCompanionId();\n    UUID canonicalUuid = ENTRY.getEntityUuid();\n    Set<UUID> registered = LOADED_ENTITIES.get(companionId);\n    if (registered == null || registered.isEmpty()) {\n        LOADED_ENTITIES.remove(companionId);\n        return false;\n    }\n\n    boolean found = false;\n    Iterator<UUID> iterator = registered.iterator();\n    while (iterator.hasNext()) {\n        UUID entityUuid = iterator.next();\n        LivingEntity loaded = findLoaded(server, entityUuid);\n        if (loaded == null) {\n            iterator.remove();\n            continue;\n        }\n        FurkinData data = loaded.getCapability(FurkinCapability.FURKIN_DATA).orElse(null);\n        if (data == null || !companionId.equals(data.getCompanionId())) {\n            iterator.remove();\n            continue;\n        }\n        if (canonicalUuid == null || !canonicalUuid.equals(entityUuid)) {\n            found = true;\n        }\n    }\n    if (registered.isEmpty()) {\n        LOADED_ENTITIES.remove(companionId);\n    }\n    return found;\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

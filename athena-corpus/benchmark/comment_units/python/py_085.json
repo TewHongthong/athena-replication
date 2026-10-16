@@ -1,0 +1,36 @@
+{
+  "snippetId": "py_085",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "class",
+  "name": "ArmorEvaluation",
+  "codeBare": "@dataclass\nclass ArmorEvaluation:\n    \n\n    id: str\n    hash: str\n    name: str\n    location: str\n    guardian_class: str\n    original_tag: str\n    original_notes: str\n    equippable: str\n    slot: str\n    item_archetype: str\n    stats: dict[str, int]\n    base_score: float\n    set_bonus: float\n    score: float\n    best_archetype: str\n    rank: int\n    group_size: int\n    protection_level: str | None\n    protection_reason: str",
+  "referenceComment": "\"\"\"One legendary's score-pass inputs and deterministic ranking.\"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-CLASS"
+  ],
+  "origin": "snippet",
+  "source": "github:tonym999/vault-cleaner@1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+  "sourceDetail": "src/vault_cleaner/rules/armor.py lines 41-63 (class ArmorEvaluation); license MIT; repo created 2026-07-18T09:39:13Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "tonym999/vault-cleaner",
+    "repoUrl": "https://github.com/tonym999/vault-cleaner",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-18T09:39:13Z",
+    "commit": "1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+    "path": "src/vault_cleaner/rules/armor.py",
+    "startLine": 41,
+    "endLine": 63,
+    "unit": "class ArmorEvaluation",
+    "corpusFile": "corpus/python/tonym999__vault-cleaner__armor.py.md"
+  }
+}

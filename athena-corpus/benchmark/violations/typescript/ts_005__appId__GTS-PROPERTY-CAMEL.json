@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_005",
+  "language": "typescript",
+  "originalName": "appId",
+  "injectedName": "app_id",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'app_id' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface AppBridge {\n  readonly app_id: AppId;\n  /** Whether a host is currently reachable through this bridge. */\n  isConnected(): boolean;\n  /** Send a named command to the host and resolve with its result. */\n  execute(name: string, params?: JsonValue, options?: EvalOptions): Promise<JsonValue>;\n  /** Convenience wrapper for the generic `eval` command (params `{script}`). */\n  evaluate(script: string, options?: EvalOptions): Promise<JsonValue>;\n  close(): Promise<void>;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_008",
+  "language": "python",
+  "originalName": "resolved",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "@lru_cache(maxsize=4)\ndef get_encoder(model_name: str, device: str = \"auto\") -> Any:\n    from sentence_transformers import SentenceTransformer\n\n    l = resolve_device(device)\n    logger.info(\"Loading embedding model %s on %s\", model_name, l)\n    return SentenceTransformer(model_name, device=l)",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

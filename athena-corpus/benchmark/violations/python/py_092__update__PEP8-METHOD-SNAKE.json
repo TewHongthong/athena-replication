@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_092",
+  "language": "python",
+  "originalName": "update",
+  "injectedName": "UPDATE",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'UPDATE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class BarCache:\n    def __init__(self, max_bars: int = 80):\n        self.max_bars = max_bars\n        self._bars: dict[str, list[Bar]] = {}\n\n    def UPDATE(self, symbol: str, ltp: float, volume: int = 0, ts: datetime | None = None) -> None:\n        if ltp <= 0:\n            return\n        ts = ts or datetime.now(timezone.utc)\n        minute = ts.replace(second=0, microsecond=0)\n        series = self._bars.setdefault(symbol.upper(), [])\n        if series and series[-1].timestamp == minute:\n            last = series[-1]\n            series[-1] = Bar(\n                timestamp=minute,\n                open=last.open,\n                high=max(last.high, ltp),\n                low=min(last.low, ltp),\n                close=ltp,\n                volume=last.volume + max(0, volume),\n            )\n        else:\n            series.append(Bar(timestamp=minute, open=ltp, high=ltp, low=ltp, close=ltp, volume=max(0, volume)))\n            if len(series) > self.max_bars:\n                del series[: len(series) - self.max_bars]\n\n    def bars(self, symbol: str) -> list[Bar]:\n        return list(self._bars.get(symbol.upper(), []))",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

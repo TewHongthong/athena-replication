@@ -1,0 +1,52 @@
+{
+  "id": "js_025",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/bundle-internal.js lines 67-93 (function installBundleSources); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export async function installBundleSources(\n  sources,\n  options = {},\n  callbacks = {},\n) {\n  const results = []\n  const installOpts = {\n    scope: { global: true, project: true },\n    yes: options.yes ?? false,\n    noMcp: options.noMcp ?? false,\n  }\n  let installed = 0\n  let failed = 0\n  for (const [index, source] of sources.entries()) {\n    callbacks.onStart?.(source, index)\n    try {\n      const details = await apiInstallSkills(source, installOpts)\n      installed++\n      results.push({ source, status: 'ok', details })\n    } catch (error) {\n      failed++\n      results.push({ source, status: 'failed', error: error?.message })\n      callbacks.onError?.(source, error)\n    }\n  }\n  return { installed, failed, results }\n}",
+  "identifiers": [
+    {
+      "name": "installBundleSources",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "installOpts",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "sources",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "options",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "callbacks",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "error",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/bundle-internal.js",
+    "startLine": 67,
+    "endLine": 93,
+    "unit": "function installBundleSources",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__bundle-internal.js.md"
+  }
+}

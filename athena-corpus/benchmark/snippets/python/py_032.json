@@ -1,0 +1,52 @@
+{
+  "id": "py_032",
+  "language": "python",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/stepctx.py lines 18-53 (class StepContext); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@dataclass\nclass StepContext:\n    run_id: str\n    run_dir: Path\n    task_name: str\n    task_dir: Path\n    target_date: str\n    step_id: str\n    dry_run: bool\n    publish: bool\n    executor: str\n    compose_mode: str\n    context_strategy: str\n    memory_enabled: bool\n    trigger: str\n    experiment: str | None\n    arm: str | None\n    config: AgentConfig\n    tool_ctx: ToolContext\n    registry: Registry\n    logger: Any\n    env: dict[str, str]\n    task_raw: dict[str, Any]\n\n    def path(self, template: str) -> Path:\n        rendered = render(\n            template,\n            date=self.target_date,\n            run_dir=self.run_dir,\n            extra=self.tool_ctx.data.get(\"paths\", {}),\n        )\n        candidate = Path(rendered).expanduser()\n        return candidate if candidate.is_absolute() else (self.task_dir / rendered)\n\n    def artifact(self, path: Path | str) -> str:\n        return str(Path(path))",
+  "identifiers": [
+    {
+      "name": "StepContext",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "artifact",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "run_id",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "rendered",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "template",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "run_dir",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/stepctx.py",
+    "startLine": 18,
+    "endLine": 53,
+    "unit": "class StepContext",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__stepctx.py.md"
+  }
+}

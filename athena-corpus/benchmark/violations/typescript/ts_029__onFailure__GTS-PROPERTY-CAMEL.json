@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_029",
+  "language": "typescript",
+  "originalName": "onFailure",
+  "injectedName": "on_failure",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'on_failure' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface ViewfinderProps {\n  ref: Ref<ViewfinderHandle>;\n  facing: Facing;\n  demo: boolean;\n  onReady: () => void;\n  on_failure: (message: string) => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

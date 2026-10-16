@@ -1,0 +1,52 @@
+{
+  "id": "py_061",
+  "language": "python",
+  "source": "github:halileroglu711/CNN-classification@54aeaf0ec73f58b259321eb164e4d2b8033b2ba8",
+  "sourceDetail": "functions.py lines 13-23 (function get_data_loaders); license MIT; repo created 2026-09-22T18:54:11Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def get_data_loaders(batch_size=64):\n    transform=transforms.Compose([transforms.RandomCrop(32, padding=4),\n        transforms.RandomHorizontalFlip(),\n        transforms.ToTensor(),#converts image to tensor \n        transforms.Normalize(((0.5,0.5,0.5)),(0.5,0.5,0.5))#works only with tensors and normalizes it's pixels between dev(average) and std each number stands for rgb channels in order\n    ])\n    train_set=torchvision.datasets.CIFAR10(root=\"./data\",train=True,download=True,transform=transform)\n    test_set=torchvision.datasets.CIFAR10(root=\"./data\",train=False,download=True,transform=transform)\n    train_loader=torch.utils.data.DataLoader(train_set,batch_size=batch_size,shuffle=True)\n    test_loader=torch.utils.data.DataLoader(test_set,batch_size=batch_size,shuffle=False)\n    return train_loader,test_loader",
+  "identifiers": [
+    {
+      "name": "get_data_loaders",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "transform",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "batch_size",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "train_set",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "test_set",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "train_loader",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "halileroglu711/CNN-classification",
+    "repoUrl": "https://github.com/halileroglu711/CNN-classification",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T18:54:11Z",
+    "commit": "54aeaf0ec73f58b259321eb164e4d2b8033b2ba8",
+    "path": "functions.py",
+    "startLine": 13,
+    "endLine": 23,
+    "unit": "function get_data_loaders",
+    "corpusFile": "corpus/python/halileroglu711__CNN-classification__functions.py.md"
+  }
+}

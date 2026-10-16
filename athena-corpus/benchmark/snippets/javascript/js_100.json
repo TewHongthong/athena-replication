@@ -1,0 +1,32 @@
+{
+  "id": "js_100",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/planning/replan-service.js lines 1-19 (function createReplanService); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function createReplanService({repository,buildProposal,applyProposal,undoProposal,clock,idGenerator}={}){\n  if(!repository||typeof repository.saveAdjustment!=='function')throw new TypeError('Serviço de replanejamento requer repositório.');\n  return Object.freeze({\n    calculate:input=>buildProposal({...input,plans:input.plans||repository.getDailyPlans()}),\n    confirm:proposal=>{\n      if(proposal?.state!=='proposal'||!proposal.allocations?.length)return null;\n      const operationId=idGenerator('replan-operation'),appliedAt=clock.nowISO();\n      const result=applyProposal({dailyPlans:repository.getDailyPlans(),proposal,operationId,now:appliedAt,idGenerator});\n      const adjustment={...structuredClone(proposal),id:idGenerator('plan-adjustment'),operationId,confirmedAt:appliedAt,appliedAt,status:'applied',changes:result.changes,undoneAt:null};\n      repository.saveAdjustment(adjustment);return {result,adjustment};\n    },\n    undo:id=>{\n      const adjustment=repository.findAdjustment(id);if(!adjustment||adjustment.undoneAt)return null;\n      const result=undoProposal({dailyPlans:repository.getDailyPlans(),adjustment});\n      repository.saveAdjustment({...adjustment,status:result.complete?'undone':'partially_undone',undoneAt:result.complete?clock.nowISO():null,protectedItems:result.protectedItems});\n      return result;\n    }\n  });\n}",
+  "identifiers": [
+    {
+      "name": "createReplanService",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "input",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/planning/replan-service.js",
+    "startLine": 1,
+    "endLine": 19,
+    "unit": "function createReplanService",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__replan-service.js.md"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_028",
+  "language": "javascript",
+  "originalName": "mergeSectionLines",
+  "injectedName": "merge_section_lines",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'merge_section_lines' does not match camelCase pattern",
+    "name 'merge_section_lines' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "function merge_section_lines(existingLines, newLines) {\n  const seen = new Set(existingLines)\n  const merged = [...existingLines]\n  for (const line of newLines) {\n    if (!seen.has(line)) {\n      merged.push(line)\n      seen.add(line)\n    }\n  }\n  return merged\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

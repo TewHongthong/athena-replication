@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_085",
+  "language": "csharp",
+  "originalName": "OnTriggerStay",
+  "injectedName": "on_trigger_stay",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'on_trigger_stay' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "private void on_trigger_stay(Collider other)\n{\n    if (isEnabled && started && other.CompareTag(\"GamePiece\"))\n    {\n        Rigidbody ballRb = other.attachedRigidbody;\n        if (ballRb != null && targetPosition != null)\n        {\n            Vector3 directionToTarget = (targetPosition.position - other.transform.position).normalized;\n            ballRb.velocity = directionToTarget * surfaceVelocity;\n        }\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

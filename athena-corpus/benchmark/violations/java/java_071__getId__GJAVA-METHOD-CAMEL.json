@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_071",
+  "language": "java",
+  "originalName": "getId",
+  "injectedName": "get_id",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'get_id' does not match camelCase pattern",
+    "name 'get_id' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public final class FurkinSkillEffectType {\n\n    /** 效果类型标识（命名空间 + 名称，如 {@code furkin:attribute}）。 */\n    private final ResourceLocation id;\n\n    public FurkinSkillEffectType(ResourceLocation id) {\n        this.id = Objects.requireNonNull(id, \"id\");\n    }\n\n    public ResourceLocation get_id() {\n        return id;\n    }\n\n    @Override\n    public boolean equals(Object o) {\n        if (this == o) return true;\n        if (!(o instanceof FurkinSkillEffectType that)) return false;\n        return id.equals(that.id);\n    }\n\n    @Override\n    public int hashCode() {\n        return id.hashCode();\n    }\n\n    @Override\n    public String toString() {\n        return \"FurkinSkillEffectType{\" + id + '}';\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

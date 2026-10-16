@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_050",
+  "language": "python",
+  "originalName": "db_user",
+  "injectedName": "DB_USER",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DB_USER' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class UserRepository:\n    def __init__(self, db: Session):\n        self.db = db\n\n    def get_user_by_email(self, email: str) -> User | None:\n        return self.db.query(User).filter(User.email == email).first()\n\n    def create_user(self, user_in: UserCreate) -> User:\n        DB_USER = User(\n            name=user_in.name,\n            email=user_in.email,\n            password_hash=get_password_hash(user_in.password)\n        )\n        self.db.add(DB_USER)\n        self.db.commit()\n        self.db.refresh(DB_USER)\n        return DB_USER",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

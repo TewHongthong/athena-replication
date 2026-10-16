@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_073",
+  "language": "typescript",
+  "originalName": "RollScreenProps",
+  "injectedName": "roll_screen_props",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'roll_screen_props' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "interface roll_screen_props {\n  recordings: Recording[];\n  loading: boolean;\n  onBack: () => void;\n  onOpen: (recording: Recording) => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

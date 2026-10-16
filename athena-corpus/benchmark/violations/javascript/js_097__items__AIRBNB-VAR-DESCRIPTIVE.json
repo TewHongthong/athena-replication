@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_097",
+  "language": "javascript",
+  "originalName": "items",
+  "injectedName": "i",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildTodayViewModel({date,availableMinutes=0,plan=null,priorities=[],pastPlans=[]}={}){\n  const minutes=value=>Math.max(0,Math.round(Number(value)||0));\n  const i=plan?.items||[];\n  const plannedMinutes=i.filter(item=>!['skipped','replaced','deferred'].includes(item.status)).reduce((sum,item)=>sum+minutes(item.plannedMinutes),0);\n  const executedMinutes=Math.round(i.reduce((sum,item)=>sum+Math.max(0,Number(item.executedSeconds)||0)/60,0));\n  const recoveryMinutes=pastPlans.filter(row=>row.date<date).flatMap(row=>row.items||[]).filter(item=>!['completed','skipped','replaced','deferred'].includes(item.status)).reduce((sum,item)=>sum+Math.max(0,minutes(item.plannedMinutes)-Math.round((Number(item.executedSeconds)||0)/60)),0);\n  return {date,availableMinutes:minutes(availableMinutes),plannedMinutes,executedMinutes,recoveryMinutes,progress:plannedMinutes?Math.min(100,Math.round(executedMinutes/plannedMinutes*100)):null,\n    nextActivity:i.find(item=>!['completed','skipped','replaced','deferred'].includes(item.status))||priorities[0]||null};\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

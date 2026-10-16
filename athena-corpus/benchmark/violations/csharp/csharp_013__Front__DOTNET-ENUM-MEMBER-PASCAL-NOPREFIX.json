@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_013",
+  "language": "csharp",
+  "originalName": "Front",
+  "injectedName": "front",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'front' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum ItemImageRole\n{\n    front,\n    Back,\n    Detail,\n    Label,\n    Receipt,\n    Other\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

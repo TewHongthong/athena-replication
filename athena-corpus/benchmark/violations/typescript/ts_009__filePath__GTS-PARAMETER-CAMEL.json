@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_009",
+  "language": "typescript",
+  "originalName": "filePath",
+  "injectedName": "file_path",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'file_path' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export async function imageResult(file_path: string, mimeType: \"image/png\" | \"image/jpeg\", note?: string): Promise<CallToolResult> {\n  const text = { type: \"text\" as const, text: note === undefined ? file_path : `${note}\n${file_path}` };\n  if (previewMode === \"path\") return { content: [text] };\n  const data = (await readFile(file_path)).toString(\"base64\");\n  const image = { type: \"image\" as const, data, mimeType };\n  return { content: previewMode === \"inline\" ? [image] : [image, text] };\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

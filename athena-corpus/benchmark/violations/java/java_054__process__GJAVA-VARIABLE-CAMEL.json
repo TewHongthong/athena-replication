@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_054",
+  "language": "java",
+  "originalName": "process",
+  "injectedName": "PROCESS",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PROCESS' does not match camelCase pattern",
+    "name 'PROCESS' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static boolean nodeIsAvailable() {\n  try {\n    Process PROCESS = new ProcessBuilder(\"node\", \"--version\")\n        .redirectErrorStream(true)\n        .start();\n    boolean exited = PROCESS.waitFor(5, TimeUnit.SECONDS);\n    if (!exited) {\n      PROCESS.destroyForcibly();\n      return false;\n    }\n    return PROCESS.exitValue() == 0;\n  } catch (IOException exception) {\n    return false;\n  } catch (InterruptedException exception) {\n    Thread.currentThread().interrupt();\n    return false;\n  }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

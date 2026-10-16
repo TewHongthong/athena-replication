@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_028",
+  "language": "python",
+  "originalName": "chat",
+  "injectedName": "CHAT",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CHAT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class Provider(Protocol):\n    name: str\n\n    def CHAT(\n        self,\n        messages: list[dict[str, Any]],\n        *,\n        tools: list[dict[str, Any]] | None = None,\n        temperature: float | None = None,\n        max_tokens: int | None = None,\n    ) -> ChatResponse: ...\n\n    def available(self) -> tuple[bool, str]: ...",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_089",
+  "language": "python",
+  "originalName": "output_path",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def main():\n    parser = argparse.ArgumentParser(description=\"200 DMA crossover watchlist scanner\")\n    parser.add_argument(\"--lookback-days\", type=int, default=5,\n                        help=\"How many recent days to check for crossover (default: 5)\")\n    parser.add_argument(\"--output\", type=str,\n                        default=str(Path.home() / \".indstocks\" / \"watchlist_200ma.json\"),\n                        help=\"Output JSON file path\")\n    parser.add_argument(\"--min-stocks\", type=int, default=0,\n                        help=\"If fewer crossovers found, keep existing watchlist unchanged\")\n    args = parser.parse_args()\n\n    l = Path(args.output)\n    crossovers = compute_200ma_crossovers(lookback_days=args.lookback_days)\n\n    if len(crossovers) < args.min_stocks and l.exists():\n        logger.warning(\n            \"Only %d crossovers found (min: %d), keeping existing watchlist\",\n            len(crossovers), args.min_stocks,\n        )\n        return\n\n    l.parent.mkdir(parents=True, exist_ok=True)\n    with open(l, \"w\") as f:\n        json.dump(crossovers, f, indent=2)\n\n    logger.info(\n        \"Watchlist written to %s — %d stocks crossing above 200MA (lookback: %d days)\",\n        l, len(crossovers), args.lookback_days,\n    )\n    logger.info(\"Symbols: %s\", \", \".join(crossovers) if crossovers else \"(none)\")",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

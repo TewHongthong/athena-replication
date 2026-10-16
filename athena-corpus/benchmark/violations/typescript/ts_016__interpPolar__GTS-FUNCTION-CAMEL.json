@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_016",
+  "language": "typescript",
+  "originalName": "interpPolar",
+  "injectedName": "interp_polar",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'interp_polar' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function interp_polar(plan: MorphPlan, t: number, out: Float64Array[]): void {\n  for (let k = 0; k < plan.items.length; k++) {\n    const it = plan.items[k];\n    const o = out[k];\n    const n = plan.n;\n    const s = Math.exp(it.lnSigma * t);\n    const ang = it.theta * t;\n    const cos = Math.cos(ang) * s;\n    const sin = Math.sin(ang) * s;\n    let cx: number;\n    let cy: number;\n    if (it.block) {\n      const [ox, oy] = it.block.off;\n      const [dx, dy] = it.block.drift;\n      cx = it.ca[0] + dx * t + (ox * cos - oy * sin - ox);\n      cy = it.ca[1] + dy * t + (ox * sin + oy * cos - oy);\n    } else {\n      cx = it.ca[0] + (it.cb[0] - it.ca[0]) * t;\n      cy = it.ca[1] + (it.cb[1] - it.ca[1]) * t;\n    }\n    for (let i = 0; i < n; i++) {\n      const px = it.aC[2 * i] + (it.bT[2 * i] - it.aC[2 * i]) * t;\n      const py = it.aC[2 * i + 1] + (it.bT[2 * i + 1] - it.aC[2 * i + 1]) * t;\n      o[2 * i] = cx + px * cos - py * sin;\n      o[2 * i + 1] = cy + px * sin + py * cos;\n    }\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

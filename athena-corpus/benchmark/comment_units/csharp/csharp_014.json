@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_014",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "ItemKind",
+  "codeBare": "public class ItemKind\n{\n    public int Id { get; set; }\n\n    public required string Name { get; set; }\n\n    /// <summary>Icon key resolved via <c>IconCatalog</c> (e.g. \"Kitchen\", \"MenuBook\").</summary>\n    public string? Icon { get; set; }\n\n    /// <summary>\n    /// Suggested custom-attribute field names for this kind (e.g. Book → Author, Publisher).\n    /// Stored as a JSON array. Purely advisory — items may carry any attributes.\n    /// </summary>\n    public List<string> SuggestedAttributes { get; set; } = new();\n\n    /// <summary>Built-in kinds are seeded and cannot be deleted from the UI.</summary>\n    public bool IsSystem { get; set; }\n}",
+  "referenceComment": "/// <summary>\n/// A configurable category of thing (Grocery, Book, Tool, Electronics, …). Kinds are\n/// user-extensible and carry a suggested set of attribute field names so the item editor\n/// can prompt for the metadata that matters for that kind.\n/// </summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Entities/ItemKind.cs lines 8-25 (class ItemKind); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 5,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Entities/ItemKind.cs",
+    "startLine": 8,
+    "endLine": 25,
+    "unit": "class ItemKind",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__ItemKind.cs.md"
+  }
+}

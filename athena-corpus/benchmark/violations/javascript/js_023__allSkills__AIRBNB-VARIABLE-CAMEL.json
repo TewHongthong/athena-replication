@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_023",
+  "language": "javascript",
+  "originalName": "allSkills",
+  "injectedName": "all_skills",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'all_skills' does not match camelCase pattern",
+    "name 'all_skills' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export async function agentsXmlApi(writeToFile = false) {\n  const globalLock = await readLock()\n  const projectLock = await readLock(getProjectLockPath(process.cwd())).catch(\n    () => ({ skills: {} }),\n  )\n  const all_skills = { ...globalLock.skills }\n\n  for (const [slug, entry] of Object.entries(projectLock.skills)) {\n    if (!all_skills[slug]) all_skills[slug] = entry\n  }\n\n  const xml = await generateXml(all_skills)\n\n  if (!xml) {\n    return { xml: '', written: false }\n  }\n\n  if (writeToFile) {\n    const agentsMdPath = join(process.cwd(), 'AGENTS.md')\n    let existing = ''\n    try {\n      existing = await readFile(agentsMdPath, 'utf-8')\n    } catch {}\n\n    const sectionStart = existing.indexOf('<skills_system>')\n    const sectionEnd = existing.indexOf('</skills_system>')\n\n    if (sectionStart !== -1 && sectionEnd !== -1) {\n      existing =\n        existing.slice(0, sectionStart) +\n        existing.slice(sectionEnd + '</skills_system>'.length)\n    }\n\n    const { writeFile } = await import('node:fs/promises')\n    await writeFile(agentsMdPath, `${existing.trimEnd()}\\n\\n${xml}`.trimStart())\n    return { xml, written: true, path: agentsMdPath }\n  }\n\n  return { xml, written: false }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

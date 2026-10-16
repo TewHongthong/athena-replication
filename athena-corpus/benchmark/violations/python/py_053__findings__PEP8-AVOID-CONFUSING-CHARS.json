@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_053",
+  "language": "python",
+  "originalName": "findings",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def text_findings(report: Any) -> tuple[list[str], list[str], int]:\n    \"\"\"Flatten a TextInspectReport into finding strings + confidence lists.\"\"\"\n    l: list[str] = []\n    confidences: list[str] = []\n    for h in report.hits:\n        conf = text_hit_confidence(h.kind)\n        l.append(f\"layer-a [{h.kind}] {h.label} x{h.count}\")\n        confidences.append(conf)\n    return l, confidences, report.suspicious_total",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

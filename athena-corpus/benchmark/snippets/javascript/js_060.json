@@ -1,0 +1,52 @@
+{
+  "id": "js_060",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/utils/security.js lines 291-324 (function formatSecurityReport); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function formatSecurityReport({ score, issues }, skillName) {\n  const label = classifyScore(score)\n  const emoji = label === 'safe' ? '✅' : label === 'review' ? '⚠️' : '❌'\n  const header = skillName ? ` ${skillName}` : ''\n  const lines = [\n    `\\n${emoji}${header} Security scan: ${score}/100 — ${label.toUpperCase()}`,\n  ]\n\n  if (issues.length > 0) {\n    for (const issue of issues) {\n      const icon =\n        issue.severity === 'critical'\n          ? '❌'\n          : issue.severity === 'high'\n            ? '🔴'\n            : issue.severity === 'medium'\n              ? '🟡'\n              : '⚪'\n      const file = issue.file ? ` (${issue.file})` : ''\n      lines.push(`   ${icon} [${issue.severity}] ${issue.description}${file}`)\n    }\n    if (label === 'review') {\n      lines.push(`\\n   ⚠️  Recommendation: Review before installing`)\n    } else if (label === 'danger') {\n      lines.push(\n        `\\n   ❌ Recommendation: Blocking install — use --yes to force`,\n      )\n    }\n  } else {\n    lines.push(`   No issues found`)\n  }\n\n  return lines.join('\\n')\n}",
+  "identifiers": [
+    {
+      "name": "formatSecurityReport",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "label",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "skillName",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "emoji",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "header",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "lines",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/utils/security.js",
+    "startLine": 291,
+    "endLine": 324,
+    "unit": "function formatSecurityReport",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_utils_security.js.md"
+  }
+}

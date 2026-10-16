@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_041",
+  "language": "csharp",
+  "originalName": "Adolescent",
+  "injectedName": "adolescent",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'adolescent' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum SocietyAgeBand\n{\n    Infant,\n    Child,\n    adolescent,\n    Adult,\n    Elder,\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

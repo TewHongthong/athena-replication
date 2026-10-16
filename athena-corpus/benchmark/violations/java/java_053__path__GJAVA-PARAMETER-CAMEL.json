@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_053",
+  "language": "java",
+  "originalName": "path",
+  "injectedName": "PATH",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PATH' does not match camelCase pattern",
+    "name 'PATH' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "class AdminCondaRepositoryContractTest {\n\n  @Test\n  void configuresCondaDefaultRemoteAndNestedGroups() throws IOException {\n    String javascript = resource(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(javascript.contains(\"conda: \\\"Conda\\\"\"));\n    assertTrue(javascript.contains(\"conda: \\\"https://repo.anaconda.com/pkgs/main/\\\"\"));\n    assertTrue(javascript.contains(\"format === \\\"conda\\\"\"));\n  }\n\n  private String resource(String PATH) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(PATH)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

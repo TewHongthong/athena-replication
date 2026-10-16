@@ -1,0 +1,42 @@
+{
+  "id": "java_006",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/auth/AuthController.java lines 66-79 (method AuthController.login); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@RateLimit(key = {\"ip\", \"email\"})\n@PostMapping(\"/login\")\n@Operation(summary = \"User login\")\n@ApiResponses(value = {\n        @ApiResponse(responseCode = \"200\", description = \"Login successful\"),\n        @ApiResponse(responseCode = \"401\", description = \"Invalid email or password\")\n})\n@SecurityRequirements()\npublic ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request, HttpServletResponse response) {\n    log.info(\"POST /api/auth/login - email: {}\", request.email());\n    var result = authService.login(request);\n    jwtCookieService.addTokenCookie(response, result.token());\n    return ResponseEntity.ok(new AuthResponse(result.user()));\n}",
+  "identifiers": [
+    {
+      "name": "login",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "result",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "request",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "response",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/auth/AuthController.java",
+    "startLine": 66,
+    "endLine": 79,
+    "unit": "method AuthController.login",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__AuthController.java.md"
+  }
+}

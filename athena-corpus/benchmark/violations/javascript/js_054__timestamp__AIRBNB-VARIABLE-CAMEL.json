@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_054",
+  "language": "javascript",
+  "originalName": "timestamp",
+  "injectedName": "TIMESTAMP",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TIMESTAMP' does not match camelCase pattern",
+    "name 'TIMESTAMP' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export async function backupSkill(slug, fileContents) {\n  const backupDir = getBackupDir(slug)\n\n  await mkdir(backupDir, { recursive: true })\n\n  const TIMESTAMP = new Date().toISOString().replace(/[:.]/g, '-')\n\n  const backupFile = join(backupDir, `${TIMESTAMP}.json`)\n\n  await writeFile(backupFile, JSON.stringify(fileContents, null, 2), 'utf-8')\n\n  return TIMESTAMP\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

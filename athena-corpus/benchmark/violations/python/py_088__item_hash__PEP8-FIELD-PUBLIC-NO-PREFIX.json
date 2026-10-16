@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_088",
+  "language": "python",
+  "originalName": "item_hash",
+  "injectedName": "ITEM_HASH",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ITEM_HASH' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass(frozen=True)\nclass ItemEvidence:\n    ITEM_HASH: int\n    keep_matches: tuple[WishlistEntry, ...]  # source order, then file order\n    trash_matches: tuple[WishlistEntry, ...]\n    trash_kind: str | None  # \"whole-item\" | \"roll\" | None — same result as weapons.trash_match\n    keep_families: tuple[str, ...]  # sorted unique families with a keep match\n    trash_families: tuple[str, ...]\n    covered_families: tuple[str, ...]  # families with ANY entry for ITEM_HASH, regardless of perks\n    uncovered_families: tuple[str, ...]  # configured families with no entry for ITEM_HASH\n    stale_sources: tuple[str, ...]  # sources whose fetch status is the stale fallback AND that cover ITEM_HASH\n    tiers_by_family: tuple[tuple[str, tuple[str, ...]], ...]  # every covered family; () means tier unknown\n    conflicts: tuple[EvidenceConflict, ...]  # in the kind order above",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 3
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_017",
+  "language": "javascript",
+  "originalName": "toast",
+  "injectedName": "TOAST",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TOAST' does not match camelCase pattern",
+    "name 'TOAST' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function TOAST(msg, kind = 'info', ms = 3400){\n  const box = document.getElementById('toasts');\n  if (!box) return;\n  const el = document.createElement('div');\n  el.className = 'toast t-' + kind;\n  el.textContent = msg;\n  box.appendChild(el);\n  setTimeout(() => {\n    el.style.transition = 'opacity .25s';\n    el.style.opacity = '0';\n    setTimeout(() => el.remove(), 260);\n  }, ms);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

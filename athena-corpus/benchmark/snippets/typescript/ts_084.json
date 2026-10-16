@@ -1,0 +1,42 @@
+{
+  "id": "ts_084",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_components/inline.tsx lines 7-32 (function Inline); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function Inline({ text }: { text: string }) {\n  const nodes: ReactNode[] = []\n  const regex = /`([^`]+)`|\\*\\*([^*]+)\\*\\*/g\n  let last = 0\n  let match: RegExpExecArray | null\n\n  while ((match = regex.exec(text)) !== null) {\n    if (match.index > last) nodes.push(text.slice(last, match.index))\n    if (match[1] !== undefined) {\n      nodes.push(\n        <code className=\"rounded-sm bg-gray-100 px-1 py-0.5 text-copy-13-mono text-gray-1000\" key={match.index}>\n          {match[1]}\n        </code>\n      )\n    } else {\n      nodes.push(\n        <strong className=\"font-medium text-gray-1000\" key={match.index}>\n          {match[2]}\n        </strong>\n      )\n    }\n    last = regex.lastIndex\n  }\n  if (last < text.length) nodes.push(text.slice(last))\n  return <>{nodes}</>\n}",
+  "identifiers": [
+    {
+      "name": "nodes",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "regex",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "last",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "match",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_components/inline.tsx",
+    "startLine": 7,
+    "endLine": 32,
+    "unit": "function Inline",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__inline.tsx.md"
+  }
+}

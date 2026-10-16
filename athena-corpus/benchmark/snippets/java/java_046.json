@@ -1,0 +1,47 @@
+{
+  "id": "java_046",
+  "language": "java",
+  "source": "github:KingF3rdi/aero-client@d8888aba64351257362cd47f69282311dd942c8f",
+  "sourceDetail": "src/main/java/dev/aero/client/hud/MediaSession.java lines 48-77 (method MediaSession.ensureStarted); license MIT; repo created 2026-09-20T13:19:19Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public static synchronized void ensureStarted() {\n    if (proc != null && proc.isAlive()) {\n        return;\n    }\n    if (!System.getProperty(\"os.name\", \"\").toLowerCase().contains(\"win\")) {\n        return;\n    }\n    try {\n        Path file = Files.createTempFile(\"aero_media\", \".ps1\");\n        file.toFile().deleteOnExit();\n        Files.writeString(file, SCRIPT, StandardCharsets.UTF_8);\n        Process p = new ProcessBuilder(\"powershell\", \"-NoProfile\", \"-NonInteractive\", \"-ExecutionPolicy\", \"Bypass\",\n                \"-WindowStyle\", \"Hidden\", \"-File\", file.toString()).redirectErrorStream(false).start();\n        proc = p;\n        Runtime.getRuntime().addShutdownHook(new Thread(p::destroyForcibly));\n        Thread reader = new Thread(() -> {\n            try (BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream(), StandardCharsets.UTF_8))) {\n                String line;\n                while ((line = in.readLine()) != null) {\n                    track = parse(line);\n                }\n            } catch (Exception ignored) {\n            }\n            track = \"\";\n        }, \"aero-media\");\n        reader.setDaemon(true);\n        reader.start();\n    } catch (Exception ignored) {\n    }\n}",
+  "identifiers": [
+    {
+      "name": "ensureStarted",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "file",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "reader",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "line",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "ignored",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "KingF3rdi/aero-client",
+    "repoUrl": "https://github.com/KingF3rdi/aero-client",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-20T13:19:19Z",
+    "commit": "d8888aba64351257362cd47f69282311dd942c8f",
+    "path": "src/main/java/dev/aero/client/hud/MediaSession.java",
+    "startLine": 48,
+    "endLine": 77,
+    "unit": "method MediaSession.ensureStarted",
+    "corpusFile": "corpus/java/KingF3rdi__aero-client__MediaSession.java.md"
+  }
+}

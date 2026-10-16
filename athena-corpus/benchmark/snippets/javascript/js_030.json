@@ -1,0 +1,52 @@
+{
+  "id": "js_030",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/diff.js lines 20-33 (function diffFrontmatter); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function diffFrontmatter(attrsA, attrsB) {\n  const changes = {}\n  const allKeys = new Set([...Object.keys(attrsA), ...Object.keys(attrsB)])\n\n  for (const key of allKeys) {\n    const valA = attrsA[key]\n    const valB = attrsB[key]\n    if (JSON.stringify(valA) !== JSON.stringify(valB)) {\n      changes[key] = { from: valA, to: valB }\n    }\n  }\n\n  return changes\n}",
+  "identifiers": [
+    {
+      "name": "diffFrontmatter",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "changes",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "attrsA",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "attrsB",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "allKeys",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "key",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/diff.js",
+    "startLine": 20,
+    "endLine": 33,
+    "unit": "function diffFrontmatter",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__diff.js.md"
+  }
+}

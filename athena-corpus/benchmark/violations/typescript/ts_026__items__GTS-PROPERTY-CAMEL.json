@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_026",
+  "language": "typescript",
+  "originalName": "items",
+  "injectedName": "ITEMS",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ITEMS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface CaptureAccess {\n  ITEMS: AccessItem[];\n  mode: CaptureMode;\n  checking: boolean;\n  blocked: boolean;\n  supportsDemo: boolean;\n  request: () => Promise<void>;\n  openSettings: () => void;\n  enterDemo: () => void;\n  backToSetup: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

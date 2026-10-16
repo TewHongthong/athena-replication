@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_064",
+  "language": "java",
+  "originalName": "AdminToastLayerContractTest",
+  "injectedName": "admin_toast_layer_contract_test",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'admin_toast_layer_contract_test' does not match PascalCase pattern",
+    "name 'admin_toast_layer_contract_test' matches forbidden pattern '^[a-z]'",
+    "name 'admin_toast_layer_contract_test' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "class admin_toast_layer_contract_test {\n  private static final Pattern Z_INDEX = Pattern.compile(\"z-index:\\\\s*(\\\\d+)\");\n\n  @Test\n  void errorToastsRenderAboveRepositoryFormModal() throws IOException {\n    String stylesheet = resource(\"/META-INF/resources/admin/assets/admin.css\");\n\n    assertTrue(zIndex(stylesheet, \".toast-region\") > zIndex(stylesheet, \".form-modal\"),\n        \"repository save errors must remain visible while the form modal is open\");\n  }\n\n  private int zIndex(String stylesheet, String selector) {\n    int selectorStart = stylesheet.indexOf(selector + \" {\");\n    int blockEnd = stylesheet.indexOf('}', selectorStart);\n    assertTrue(selectorStart >= 0 && blockEnd > selectorStart,\n        \"missing CSS block for \" + selector);\n    Matcher matcher = Z_INDEX.matcher(stylesheet.substring(selectorStart, blockEnd));\n    assertTrue(matcher.find(), \"missing z-index for \" + selector);\n    return Integer.parseInt(matcher.group(1));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

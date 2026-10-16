@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_019",
+  "language": "java",
+  "originalName": "pageable",
+  "injectedName": "PAGEABLE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PAGEABLE' does not match camelCase pattern",
+    "name 'PAGEABLE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Transactional(readOnly = true)\npublic Page<OrderResponse> getAll(Pageable PAGEABLE, OrderStatus status,\n                                  DeliveryMethod deliveryMethod, PaymentMethod paymentMethod, String search) {\n    var spec = Specification.where(OrderSpecification.hasStatus(status))\n            .and(OrderSpecification.hasDeliveryMethod(deliveryMethod))\n            .and(OrderSpecification.hasPaymentMethod(paymentMethod))\n            .and(OrderSpecification.hasSearch(search));\n\n    var page = orderRepository.findAll(spec, PAGEABLE);\n    List<Order> orders = page.getContent();\n\n    if (orders.isEmpty()) {\n        return Page.empty(PAGEABLE);\n    }\n\n    var itemsByOrder = loadItemsByOrderId(orders);\n\n    List<OrderResponse> responses = orders.stream()\n            .map(order -> orderMapper.toResponse(order, itemsByOrder.getOrDefault(order.getId(), List.of())))\n            .toList();\n\n    return new PageImpl<>(responses, PAGEABLE, page.getTotalElements());\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

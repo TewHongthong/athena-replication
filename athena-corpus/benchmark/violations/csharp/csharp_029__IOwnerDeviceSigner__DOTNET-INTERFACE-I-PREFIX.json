@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_029",
+  "language": "csharp",
+  "originalName": "IOwnerDeviceSigner",
+  "injectedName": "i_owner_device_signer",
+  "identifierKind": "interface",
+  "violatedRuleId": "DOTNET-INTERFACE-I-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'i_owner_device_signer' does not match PascalCase pattern",
+    "name 'i_owner_device_signer' does not start with required prefix 'I'"
+  ],
+  "codeContextWithViolation": "public interface i_owner_device_signer : IDisposable\n{\n    string PublicKeySpkiBase64 { get; }\n\n    string PublicKeyFingerprint { get; }\n\n    string SignCanonicalProof(string canonicalProof);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

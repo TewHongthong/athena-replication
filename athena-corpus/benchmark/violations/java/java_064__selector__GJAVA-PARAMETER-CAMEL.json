@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_064",
+  "language": "java",
+  "originalName": "selector",
+  "injectedName": "SELECTOR",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SELECTOR' does not match camelCase pattern",
+    "name 'SELECTOR' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "class AdminToastLayerContractTest {\n  private static final Pattern Z_INDEX = Pattern.compile(\"z-index:\\\\s*(\\\\d+)\");\n\n  @Test\n  void errorToastsRenderAboveRepositoryFormModal() throws IOException {\n    String stylesheet = resource(\"/META-INF/resources/admin/assets/admin.css\");\n\n    assertTrue(zIndex(stylesheet, \".toast-region\") > zIndex(stylesheet, \".form-modal\"),\n        \"repository save errors must remain visible while the form modal is open\");\n  }\n\n  private int zIndex(String stylesheet, String SELECTOR) {\n    int selectorStart = stylesheet.indexOf(SELECTOR + \" {\");\n    int blockEnd = stylesheet.indexOf('}', selectorStart);\n    assertTrue(selectorStart >= 0 && blockEnd > selectorStart,\n        \"missing CSS block for \" + SELECTOR);\n    Matcher matcher = Z_INDEX.matcher(stylesheet.substring(selectorStart, blockEnd));\n    assertTrue(matcher.find(), \"missing z-index for \" + SELECTOR);\n    return Integer.parseInt(matcher.group(1));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

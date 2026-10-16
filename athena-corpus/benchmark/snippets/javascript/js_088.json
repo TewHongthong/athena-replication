@@ -1,0 +1,52 @@
+{
+  "id": "js_088",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/exams/save-subject-config.js lines 3-9 (function buildSavedSubjectConfig); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function buildSavedSubjectConfig(subjectId,current,{priority,masteryTarget,expectedQuestions,questionWeight}){\n  const mastery=masteryTarget===''?null:Number(masteryTarget),questions=expectedQuestions===''?0:Number(expectedQuestions),weight=questionWeight===''?1:Number(questionWeight);\n  if(!EXAM_PRIORITIES.includes(priority)||mastery!==null&&(!Number.isFinite(mastery)||mastery<0||mastery>100)||!Number.isInteger(questions)||questions<0||!Number.isFinite(weight)||weight<.1)return null;\n  const next={...(current||{subjectId,expectedQuestions:0,questionWeight:1,priority:'normal',masteryTarget:null})};\n  if(next.expectedQuestions!==questions||next.questionWeight!==weight){next.sourceRef=null;next.official=false;next.mappingType=null}\n  return {...next,priority,masteryTarget:mastery,expectedQuestions:questions,questionWeight:weight};\n}",
+  "identifiers": [
+    {
+      "name": "buildSavedSubjectConfig",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "mastery",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "current",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "questions",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "weight",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "next",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/exams/save-subject-config.js",
+    "startLine": 3,
+    "endLine": 9,
+    "unit": "function buildSavedSubjectConfig",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__save-subject-config.js.md"
+  }
+}

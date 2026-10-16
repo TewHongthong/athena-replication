@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_019",
+  "language": "typescript",
+  "originalName": "subs",
+  "injectedName": "SUBS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SUBS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function serialize(\n  SUBS: readonly Float64Array[],\n  closed?: readonly boolean[],\n): string {\n  let d = \"\";\n  for (let k = 0; k < SUBS.length; k++) {\n    const o = SUBS[k];\n    const n = o.length / 2;\n    d += `M${fmt(o[0])} ${fmt(o[1])}`;\n    for (let i = 1; i < n; i++) d += `L${fmt(o[2 * i])} ${fmt(o[2 * i + 1])}`;\n    if (closed?.[k]) d += \"Z\";\n  }\n  return d;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

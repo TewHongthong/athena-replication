@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_055",
+  "language": "csharp",
+  "originalName": "ToRequestBody",
+  "injectedName": "to_request_body",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'to_request_body' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class InfobipSmsRequestMapper\n{\n    public static object to_request_body(SmsMessage message, string defaultFrom) => new\n    {\n        messages = new[]\n        {\n            new\n            {\n                sender = message.From ?? defaultFrom,\n                destinations = new[]\n                {\n                    new { to = message.To.TrimStart('+') }\n                },\n                content = new\n                {\n                    text = message.Body\n                }\n            }\n        }\n    };\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

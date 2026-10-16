@@ -1,0 +1,52 @@
+{
+  "id": "java_090",
+  "language": "java",
+  "source": "github:xvDoshik/HubSwap@c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+  "sourceDetail": "src/main/java/ru/heldyy/hubswap/client/HubSwapClient.java lines 108-120 (method HubSwapClient.registerWithRuAlias); license MIT; repo created 2026-08-04T22:22:23Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "private static void registerWithRuAlias(String literal, int min, int max, IntConsumer action) {\n    if (literal == null || literal.isBlank()) return;\n\n    String base = literal.trim();\n\n    registerLiteralIfAbsent(base, min, max, action);\n\n    String ru = toRussianLayout(base);\n\n    if (!ru.equalsIgnoreCase(base)) {\n        registerLiteralIfAbsent(ru, min, max, action);\n    }\n}",
+  "identifiers": [
+    {
+      "name": "registerWithRuAlias",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "base",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "literal",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "min",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "max",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "action",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "xvDoshik/HubSwap",
+    "repoUrl": "https://github.com/xvDoshik/HubSwap",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-04T22:22:23Z",
+    "commit": "c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+    "path": "src/main/java/ru/heldyy/hubswap/client/HubSwapClient.java",
+    "startLine": 108,
+    "endLine": 120,
+    "unit": "method HubSwapClient.registerWithRuAlias",
+    "corpusFile": "corpus/java/xvDoshik__HubSwap__HubSwapClient.java.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_013",
+  "language": "csharp",
+  "originalName": "ItemImageRole",
+  "injectedName": "item_image_role",
+  "identifierKind": "enum",
+  "violatedRuleId": "DOTNET-ENUM-NO-ENUM-FLAGS-SUFFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'item_image_role' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum item_image_role\n{\n    Front,\n    Back,\n    Detail,\n    Label,\n    Receipt,\n    Other\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

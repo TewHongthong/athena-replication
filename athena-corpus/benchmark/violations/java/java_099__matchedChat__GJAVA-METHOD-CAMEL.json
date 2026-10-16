@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_099",
+  "language": "java",
+  "originalName": "matchedChat",
+  "injectedName": "matched_chat",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'matched_chat' does not match camelCase pattern",
+    "name 'matched_chat' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "private static boolean matched_chat(TransitionAttempt attempt) {\n    int index = 0;\n    for (String raw : RECENT_CHAT) {\n        if (index++ < chatCursor) {\n            continue;\n        }\n\n        String msg = normalize(raw);\n\n        if (attempt.getMode() == TransitionMode.CLASSIC) {\n            if (msg.contains(\"выполняется подключение\")\n                    || (msg.contains(\"рады вновь тебя видеть\") && msg.contains(\"приятной игры\"))) {\n                return true;\n            }\n        } else {\n            if (msg.contains(\"прямо сейчас идет набор\")\n                    || msg.contains(\"в команду проекта на должность стажера\")\n                    || msg.contains(\"в команду проекта на должность стажёра\")) {\n                return true;\n            }\n        }\n    }\n\n    return false;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

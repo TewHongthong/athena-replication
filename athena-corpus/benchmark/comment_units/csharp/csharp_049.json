@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_049",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "ViewerInhabitant",
+  "codeBare": "public sealed record ViewerInhabitant(\n    string Id,\n    string DisplayName,\n    string Lifecycle,\n    ViewerPosition Position,\n    int HungerBasisPoints,\n    IReadOnlyList<ViewerInventoryEntry> Inventory,\n    IReadOnlyList<ViewerDecisionFactor> DecisionFactors,\n    ViewerRoute Route,\n    ViewerSpatialKnowledge SpatialKnowledge,\n    bool IsDraft)\n{\n    public ViewerPublicIntention? PublicIntention { get; init; }\n\n    public ViewerProject? Project { get; init; }\n    public ViewerSurvival? Survival { get; init; }\n    public ViewerLesson? Lesson { get; init; }\n    public ViewerProficiency? Proficiency { get; init; }\n    public IReadOnlyList<ViewerSocialStanding> SocialStanding { get; init; } = [];\n\n    public IReadOnlyList<string> SocialNotes { get; init; } = [];\n\n    public IReadOnlyList<ViewerInhabitantRelationship> Relationships { get; init; } = [];\n\n    public IReadOnlyList<ViewerPrivateThought> RecentPrivateThoughts { get; init; } = [];\n\n    public IReadOnlyList<ViewerAgentMemory> RecentMemories { get; init; } = [];\n}",
+  "referenceComment": "/// <summary>\n/// An inspection projection, never an editable actor record. A founder draft\n/// is visible as such but is not a living simulation actor yet.\n/// </summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Viewer/Observation/ObservationContracts.cs lines 79-106 (class ViewerInhabitant); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 4,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Viewer/Observation/ObservationContracts.cs",
+    "startLine": 79,
+    "endLine": 106,
+    "unit": "class ViewerInhabitant",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__ObservationContracts.cs.md"
+  }
+}

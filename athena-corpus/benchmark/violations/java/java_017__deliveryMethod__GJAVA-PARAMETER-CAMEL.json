@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_017",
+  "language": "java",
+  "originalName": "deliveryMethod",
+  "injectedName": "delivery_method",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'delivery_method' does not match camelCase pattern",
+    "name 'delivery_method' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@GetMapping\n@PreAuthorize(\"hasAnyRole('\" + Roles.ADMIN + \"', '\" + Roles.COURIER + \"')\")\n@Operation(summary = \"Get all orders (admin, courier)\")\n@SecurityRequirement(name = \"bearerAuth\")\npublic ResponseEntity<Page<OrderResponse>> getAll(\n        @SortableFields({\"createdAt\", \"id\"}) @PageableDefault(size = 12, sort = {\"createdAt\", \"id\"}, direction = Sort.Direction.DESC) Pageable pageable,\n        @RequestParam(required = false) OrderStatus status,\n        @RequestParam(required = false) DeliveryMethod delivery_method,\n        @RequestParam(required = false) PaymentMethod paymentMethod,\n        @RequestParam(required = false) String search) {\n    log.info(\"GET /api/orders (admin/courier)\");\n    return ResponseEntity.ok(orderQueryService.getAll(pageable, status, delivery_method, paymentMethod, search));\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

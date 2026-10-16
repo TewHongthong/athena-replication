@@ -1,0 +1,52 @@
+{
+  "id": "py_036",
+  "language": "python",
+  "source": "github:boongh/ml-exp@55667c29709eb5a612d32dbbc575550ed8a5a443",
+  "sourceDetail": "src/ml_exp/__main__.py lines 74-89 (function generate_eval_outputs); license MIT; repo created 2026-09-25T22:40:55Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def generate_eval_outputs(max_new_tokens):\n    outputs = []\n    for prompt in eval_prompts:\n        prompt_tokens = torch.tensor(\n            [dataset.encode(prompt)],\n            dtype=torch.long,\n            device=device,\n        )\n        generated = dataset.decode(\n            model.generation(\n                prompt_tokens,\n                max_new_tokens=max_new_tokens,\n            )[0].tolist()\n        )\n        outputs.append({\"prompt\": prompt, \"generation\": generated})\n    return outputs",
+  "identifiers": [
+    {
+      "name": "generate_eval_outputs",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "outputs",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "max_new_tokens",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "prompt",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "prompt_tokens",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "generated",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "boongh/ml-exp",
+    "repoUrl": "https://github.com/boongh/ml-exp",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T22:40:55Z",
+    "commit": "55667c29709eb5a612d32dbbc575550ed8a5a443",
+    "path": "src/ml_exp/__main__.py",
+    "startLine": 74,
+    "endLine": 89,
+    "unit": "function generate_eval_outputs",
+    "corpusFile": "corpus/python/boongh__ml-exp____main__.py.md"
+  }
+}

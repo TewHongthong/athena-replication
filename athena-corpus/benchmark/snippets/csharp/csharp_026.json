@@ -1,0 +1,52 @@
+{
+  "id": "csharp_026",
+  "language": "csharp",
+  "source": "github:aakk007/RogueCleaner@683fe9c7b025099951acb655f9b1181a4bd0c01e",
+  "sourceDetail": "src/v2/ContextMenuTitleProbe.cs lines 322-333 (interface IExplorerCommand); license MIT; repo created 2026-07-20; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "[ComImport, Guid(\"A08CE4D0-FA25-44AB-B57C-C7B1C323E0B9\"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]\nprivate interface IExplorerCommand\n{\n    void GetTitle([MarshalAs(UnmanagedType.Interface)] object shellItemArray, out IntPtr name);\n    void GetIcon([MarshalAs(UnmanagedType.Interface)] object shellItemArray, out IntPtr icon);\n    void GetToolTip([MarshalAs(UnmanagedType.Interface)] object shellItemArray, out IntPtr toolTip);\n    void GetCanonicalName(out Guid commandName);\n    void GetState([MarshalAs(UnmanagedType.Interface)] object shellItemArray, [MarshalAs(UnmanagedType.Bool)] bool okToBeSlow, out EXPCMDSTATE state);\n    void Invoke([MarshalAs(UnmanagedType.Interface)] object shellItemArray, IntPtr bindContext);\n    void GetFlags(out int flags);\n    void EnumSubCommands(out IEnumExplorerCommand commands);\n}",
+  "identifiers": [
+    {
+      "name": "IExplorerCommand",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "GetTitle",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "shellItemArray",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "GetIcon",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "icon",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "aakk007/RogueCleaner",
+    "repoUrl": "https://github.com/aakk007/RogueCleaner",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-20",
+    "commit": "683fe9c7b025099951acb655f9b1181a4bd0c01e",
+    "path": "src/v2/ContextMenuTitleProbe.cs",
+    "startLine": 322,
+    "endLine": 333,
+    "unit": "interface IExplorerCommand",
+    "corpusFile": "corpus/csharp/aakk007__RogueCleaner__ContextMenuTitleProbe.cs.md"
+  }
+}

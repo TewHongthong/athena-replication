@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_039",
+  "language": "typescript",
+  "originalName": "size",
+  "injectedName": "SIZE",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SIZE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface SweepDiscProps {\n  SIZE: number;\n  progress: Animated.Value;\n  color: string;\n  handColor: string;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

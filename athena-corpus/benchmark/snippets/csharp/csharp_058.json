@@ -1,0 +1,52 @@
+{
+  "id": "csharp_058",
+  "language": "csharp",
+  "source": "github:teesofttech/SMSBridge@1b400e9c1804dc01402d0b9769db5475f76d3785",
+  "sourceDetail": "src/SmsBridge/Providers/Plivo/PlivoSmsResponseMapper.cs lines 6-42 (class PlivoSmsResponseMapper); license MIT; repo created 2026-06-13; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "internal static class PlivoSmsResponseMapper\n{\n    public static SmsSendResult FromResponse(string providerName, string json)\n    {\n        using var doc = JsonDocument.Parse(json);\n        var root = doc.RootElement;\n\n        var messageId = root.TryGetProperty(\"message_uuid\", out var uuidEl) &&\n                        uuidEl.ValueKind == JsonValueKind.Array &&\n                        uuidEl.GetArrayLength() > 0\n            ? uuidEl[0].GetString()\n            : null;\n\n        return SmsSendResult.Succeeded(providerName, messageId, SmsDeliveryStatus.Queued);\n    }\n\n    public static SmsSendResult FromErrorResponse(string providerName, int httpStatusCode, string json)\n    {\n        string? errorMessage = null;\n\n        try\n        {\n            using var doc = JsonDocument.Parse(json);\n            var root = doc.RootElement;\n            errorMessage = root.TryGetProperty(\"error\", out var errEl) ? errEl.GetString() : null;\n        }\n        catch (JsonException) { /* best-effort */ }\n\n        bool isTransient = httpStatusCode >= 500 || httpStatusCode == 429;\n        return SmsSendResult.Failed(\n            providerName,\n            null,\n            errorMessage ?? $\"HTTP {httpStatusCode}\",\n            isTransient,\n            mayHaveBeenAccepted: httpStatusCode >= 500);\n    }\n}",
+  "identifiers": [
+    {
+      "name": "PlivoSmsResponseMapper",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "FromResponse",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "isTransient",
+      "kind": "boolean_variable",
+      "isCompliant": true
+    },
+    {
+      "name": "doc",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "providerName",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "json",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "teesofttech/SMSBridge",
+    "repoUrl": "https://github.com/teesofttech/SMSBridge",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-13",
+    "commit": "1b400e9c1804dc01402d0b9769db5475f76d3785",
+    "path": "src/SmsBridge/Providers/Plivo/PlivoSmsResponseMapper.cs",
+    "startLine": 6,
+    "endLine": 42,
+    "unit": "class PlivoSmsResponseMapper",
+    "corpusFile": "corpus/csharp/teesofttech__SMSBridge__PlivoSmsResponseMapper.cs.md"
+  }
+}

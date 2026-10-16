@@ -1,0 +1,42 @@
+{
+  "id": "java_070",
+  "language": "java",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/api/event/FurkinLevelUpEvent.java lines 42-47 (constructor FurkinLevelUpEvent); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public FurkinLevelUpEvent(LivingEntity companion, ServerPlayer owner, int oldLevel, int newLevel) {\n    this.companion = companion;\n    this.owner = owner;\n    this.oldLevel = oldLevel;\n    this.newLevel = newLevel;\n}",
+  "identifiers": [
+    {
+      "name": "companion",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "owner",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "oldLevel",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "newLevel",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/api/event/FurkinLevelUpEvent.java",
+    "startLine": 42,
+    "endLine": 47,
+    "unit": "constructor FurkinLevelUpEvent",
+    "corpusFile": "corpus/java/wanancat__furkin__FurkinLevelUpEvent.java.md"
+  }
+}

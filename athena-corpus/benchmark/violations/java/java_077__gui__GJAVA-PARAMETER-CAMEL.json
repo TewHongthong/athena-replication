@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_077",
+  "language": "java",
+  "originalName": "gui",
+  "injectedName": "GUI",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'GUI' does not match camelCase pattern",
+    "name 'GUI' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Override\npublic void render(GuiGraphics GUI, int mouseX, int mouseY, float partialTick) {\n    renderBackground(GUI);\n    GUI.drawCenteredString(this.font, this.title, this.width / 2, this.height / 2 - 45, 0xFFFFFF);\n    super.render(GUI, mouseX, mouseY, partialTick);\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

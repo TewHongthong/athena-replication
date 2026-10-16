@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_001",
+  "language": "java",
+  "originalName": "audit",
+  "injectedName": "AUDIT",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'AUDIT' does not match camelCase pattern",
+    "name 'AUDIT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@AfterReturning(pointcut = \"@annotation(auditable)\", returning = \"result\", argNames = \"auditable,result\")\npublic void AUDIT(Auditable auditable, Object result) {\n    String user = auditorAware.getCurrentAuditor().orElse(\"system\");\n    Long entityId = extractId(result);\n    String details = auditable.action() + \" \" + auditable.entity() + (entityId != null ? \" #\" + entityId : \"\");\n    TransactionCallbacks.afterCommit(\n            () -> auditLogService.log(auditable.action(), auditable.entity(), entityId, details, user));\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

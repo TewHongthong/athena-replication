@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_034",
+  "language": "typescript",
+  "originalName": "progress",
+  "injectedName": "PROGRESS",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PROGRESS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface LeaderDialProps {\n  size: number;\n  digit: number | null;\n  PROGRESS: Animated.Value;\n  lit?: boolean;\n  reducedMotion?: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

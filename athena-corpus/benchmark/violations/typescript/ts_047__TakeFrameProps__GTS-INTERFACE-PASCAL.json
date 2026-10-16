@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_047",
+  "language": "typescript",
+  "originalName": "TakeFrameProps",
+  "injectedName": "take_frame_props",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'take_frame_props' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "interface take_frame_props {\n  recording: Recording;\n  width: number;\n  active: boolean;\n  onPress: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

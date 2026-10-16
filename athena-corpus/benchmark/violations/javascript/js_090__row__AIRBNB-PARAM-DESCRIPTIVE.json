@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_090",
+  "language": "javascript",
+  "originalName": "row",
+  "injectedName": "r",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'r' shorter than minLength=2",
+    "name 'r' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildPlanImpactAlignment({distribution,topics=[],impactForTopic}={}){\n  const planned=(distribution?.rows||[]).filter(r=>r.subjectId!=='unassigned'&&r.plannedMinutes>0);\n  if(planned.length<2)return {state:'insufficient',reason:'Planeje tempo para pelo menos duas disciplinas nesta semana.'};\n  const rows=planned.map(r=>{\n    const subjectTopics=topics.filter(topic=>topic.subjectId===r.subjectId);\n    const impacts=subjectTopics.map(impactForTopic).filter(value=>Number.isFinite(value)&&value>=0&&value<=100);\n    const coverage=subjectTopics.length?impacts.length/subjectTopics.length:0;\n    return {...r,topicCount:subjectTopics.length,impactCount:impacts.length,coverage,averageImpact:impacts.length?impacts.reduce((sum,value)=>sum+value,0)/impacts.length:null};\n  });\n  if(rows.some(r=>r.coverage<.5||r.impactCount<1))return {state:'insufficient',reason:'O impacto estimado cobre menos da metade dos tópicos de alguma disciplina planejada.'};\n  const impactTotal=rows.reduce((sum,r)=>sum+r.averageImpact,0);\n  const plannedTotal=rows.reduce((sum,r)=>sum+r.plannedMinutes,0);\n  if(!impactTotal)return {state:'insufficient',reason:'Ainda não há impacto estimado para comparar as disciplinas planejadas.'};\n  return {state:'ready',rows:rows.map(r=>({...r,plannedShare:r.plannedMinutes/plannedTotal*100,impactShare:r.averageImpact/impactTotal*100})),subjectCount:rows.length};\n}",
+  "occurrencesRenamed": 17,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_007",
+  "language": "javascript",
+  "originalName": "remaining",
+  "injectedName": "REMAINING",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'REMAINING' does not match camelCase pattern",
+    "name 'REMAINING' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "function createErrorList() {\n  const errors = [];\n  Object.defineProperty(errors, \"push\", {\n    value(...messages) {\n      const REMAINING = LIMITS.validationErrors - this.length;\n      if (REMAINING > 0) {\n        Array.prototype.push.apply(this, messages.slice(0, REMAINING).map(escapeUnsafeDiagnosticCharacters));\n      }\n      return this.length;\n    },\n  });\n  return errors;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

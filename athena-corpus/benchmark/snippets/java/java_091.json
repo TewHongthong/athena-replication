@@ -1,0 +1,42 @@
+{
+  "id": "java_091",
+  "language": "java",
+  "source": "github:xvDoshik/HubSwap@c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+  "sourceDetail": "src/main/java/ru/heldyy/hubswap/config/HotkeySlot.java lines 24-29 (constructor HotkeySlot); license MIT; repo created 2026-08-04T22:22:23Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public HotkeySlot(int keyCode, String mode, int serverNumber, boolean enabled) {\n    this.keyCode = keyCode;\n    this.mode = mode;\n    this.serverNumber = serverNumber;\n    this.enabled = enabled;\n}",
+  "identifiers": [
+    {
+      "name": "keyCode",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "mode",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "serverNumber",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "enabled",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "xvDoshik/HubSwap",
+    "repoUrl": "https://github.com/xvDoshik/HubSwap",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-04T22:22:23Z",
+    "commit": "c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+    "path": "src/main/java/ru/heldyy/hubswap/config/HotkeySlot.java",
+    "startLine": 24,
+    "endLine": 29,
+    "unit": "constructor HotkeySlot",
+    "corpusFile": "corpus/java/xvDoshik__HubSwap__HotkeySlot.java.md"
+  }
+}

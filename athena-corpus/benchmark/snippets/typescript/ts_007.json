@@ -1,0 +1,32 @@
+{
+  "id": "ts_007",
+  "language": "typescript",
+  "source": "github:Brainferno/brainferno-mcp-bridge@95695615162b4db4a3189be9dd0ebf9e7d80c129",
+  "sourceDetail": "packages/server/src/logging.ts lines 23-30 (function format); license Apache-2.0; repo created 2026-08-26; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "function format(detail: unknown): string {\n  if (detail instanceof Error) return `${detail.name}: ${detail.message}`;\n  try {\n    return JSON.stringify(detail);\n  } catch {\n    return String(detail);\n  }\n}",
+  "identifiers": [
+    {
+      "name": "format",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "detail",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Brainferno/brainferno-mcp-bridge",
+    "repoUrl": "https://github.com/Brainferno/brainferno-mcp-bridge",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-08-26",
+    "commit": "95695615162b4db4a3189be9dd0ebf9e7d80c129",
+    "path": "packages/server/src/logging.ts",
+    "startLine": 23,
+    "endLine": 30,
+    "unit": "function format",
+    "corpusFile": "corpus/typescript/Brainferno__brainferno-mcp-bridge__logging.ts.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_024",
+  "language": "python",
+  "originalName": "compose_mode",
+  "injectedName": "COMPOSE_MODE",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'COMPOSE_MODE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass Arm:\n    name: str\n    description: str = \"\"\n    COMPOSE_MODE: str | None = None\n    context_strategy: str = \"full\"\n    memory_enabled: bool = False\n    executor: str | None = None\n    publish: bool = False\n    requires: list[str] = field(default_factory=list)\n    skip_steps: list[str] | None = None",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

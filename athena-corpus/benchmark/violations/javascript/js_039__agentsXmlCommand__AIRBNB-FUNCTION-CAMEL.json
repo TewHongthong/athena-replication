@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_039",
+  "language": "javascript",
+  "originalName": "agentsXmlCommand",
+  "injectedName": "agents_xml_command",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'agents_xml_command' does not match camelCase pattern",
+    "name 'agents_xml_command' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export async function agents_xml_command(writeToFile = false) {\n  const result = await agentsXmlApi(writeToFile)\n\n  if (!result.xml) {\n    console.log('No skills found in lockfile.')\n    return\n  }\n\n  if (result.written) {\n    console.log(`✅ Wrote skills XML to ${result.path}`)\n  } else {\n    console.log(result.xml)\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

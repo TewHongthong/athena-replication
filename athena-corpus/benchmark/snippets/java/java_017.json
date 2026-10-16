@@ -1,0 +1,52 @@
+{
+  "id": "java_017",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/order/OrderController.java lines 75-87 (method OrderController.getAll); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@GetMapping\n@PreAuthorize(\"hasAnyRole('\" + Roles.ADMIN + \"', '\" + Roles.COURIER + \"')\")\n@Operation(summary = \"Get all orders (admin, courier)\")\n@SecurityRequirement(name = \"bearerAuth\")\npublic ResponseEntity<Page<OrderResponse>> getAll(\n        @SortableFields({\"createdAt\", \"id\"}) @PageableDefault(size = 12, sort = {\"createdAt\", \"id\"}, direction = Sort.Direction.DESC) Pageable pageable,\n        @RequestParam(required = false) OrderStatus status,\n        @RequestParam(required = false) DeliveryMethod deliveryMethod,\n        @RequestParam(required = false) PaymentMethod paymentMethod,\n        @RequestParam(required = false) String search) {\n    log.info(\"GET /api/orders (admin/courier)\");\n    return ResponseEntity.ok(orderQueryService.getAll(pageable, status, deliveryMethod, paymentMethod, search));\n}",
+  "identifiers": [
+    {
+      "name": "getAll",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "pageable",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "status",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "deliveryMethod",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "paymentMethod",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "search",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/order/OrderController.java",
+    "startLine": 75,
+    "endLine": 87,
+    "unit": "method OrderController.getAll",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__OrderController.java.md"
+  }
+}

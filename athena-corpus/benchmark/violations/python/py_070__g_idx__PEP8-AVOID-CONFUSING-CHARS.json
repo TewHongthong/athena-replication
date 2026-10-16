@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_070",
+  "language": "python",
+  "originalName": "g_idx",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def evaluate(y: np.ndarray, p: np.ndarray, groups: np.ndarray, rng: np.random.Generator) -> dict:\n    k = len(CLASSES)\n    cm = np.bincount(y * k + p, minlength=k * k).reshape(k, k)\n    point = scores(cm)\n    # cluster bootstrap: resample components (wafers in a component are correlated)\n    g_codes, l = np.unique(groups, return_inverse=True)\n    per_group = np.zeros((len(g_codes), k * k))\n    np.add.at(per_group, (l, y * k + p), 1)\n    boot = {\"macro_f1\": [], \"defect8_macro_f1\": [], \"balanced_acc\": [], \"recall\": []}\n    for _ in range(N_BOOT):\n        s = scores(per_group[rng.integers(0, len(g_codes), len(g_codes))].sum(0).reshape(k, k))\n        for key in boot:\n            boot[key].append(s[key])\n    ci = {key: np.percentile(np.array(v), [2.5, 97.5], axis=0) for key, v in boot.items()}\n    out = {key: round(float(point[key]), 4) for key in (\"macro_f1\", \"defect8_macro_f1\", \"balanced_acc\", \"accuracy\")}\n    out.update({f\"{key}_ci95\": [round(float(x), 4) for x in ci[key]] for key in (\"macro_f1\", \"defect8_macro_f1\",\n                                                                                  \"balanced_acc\")})\n    out[\"per_class\"] = {c: {\"recall\": round(float(point[\"recall\"][i]), 4),\n                            \"recall_ci95\": [round(float(ci[\"recall\"][0][i]), 4), round(float(ci[\"recall\"][1][i]), 4)],\n                            \"precision\": round(float(point[\"precision\"][i]), 4), \"f1\": round(float(point[\"f1\"][i]), 4),\n                            \"support\": int(cm[i].sum())} for i, c in enumerate(CLASSES)}\n    out[\"confusion\"] = cm.tolist()\n    return out",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_047",
+  "language": "typescript",
+  "originalName": "active",
+  "injectedName": "ACTIVE",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ACTIVE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface TakeFrameProps {\n  recording: Recording;\n  width: number;\n  ACTIVE: boolean;\n  onPress: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

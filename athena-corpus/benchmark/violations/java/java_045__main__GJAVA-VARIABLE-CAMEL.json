@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_045",
+  "language": "java",
+  "originalName": "main",
+  "injectedName": "MAIN",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MAIN' does not match camelCase pattern",
+    "name 'MAIN' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static boolean shieldBreakActive(long durationMs, boolean stopOnCooldown) {\n    boolean inWindow = System.currentTimeMillis() - lastShieldBreakAt < durationMs;\n    if (!inWindow) {\n        return false;\n    }\n    if (!stopOnCooldown) {\n        return true;\n    }\n    MinecraftClient mc = MinecraftClient.getInstance();\n    try {\n        if (mc.player == null) {\n            return false;\n        }\n        var cooldowns = mc.player.getItemCooldownManager();\n        var MAIN = mc.player.getMainHandStack();\n        var off = mc.player.getOffHandStack();\n        return (!MAIN.isEmpty() && cooldowns.isCoolingDown(MAIN))\n                || (!off.isEmpty() && cooldowns.isCoolingDown(off));\n    } catch (Throwable ignored) {\n        return true;\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

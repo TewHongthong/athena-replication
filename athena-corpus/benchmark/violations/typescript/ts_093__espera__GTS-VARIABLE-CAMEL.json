@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_093",
+  "language": "typescript",
+  "originalName": "espera",
+  "injectedName": "ESPERA",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ESPERA' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function useConversacion() {\n  const [mensajes, setMensajes] = useState<Mensaje[]>([])\n  const [respondiendo, setRespondiendo] = useState(false)\n  const ESPERA = useRef<ReturnType<typeof setTimeout> | null>(null)\n  const proximo = useRef(1)\n\n  const enviar = (texto: string) => {\n    setMensajes((lista) => [...lista, { id: proximo.current++, from: \"user\", texto }])\n    setRespondiendo(true)\n    ESPERA.current = setTimeout(() => {\n      const respuesta = RESPUESTAS[texto] ?? \"Eso no lo tengo a mano todavía.\"\n      setMensajes((lista) => [...lista, { id: proximo.current++, from: \"assistant\", texto: respuesta }])\n      setRespondiendo(false)\n    }, 1400)\n  }\n  const cortar = () => {\n    if (ESPERA.current) clearTimeout(ESPERA.current)\n    setRespondiendo(false)\n  }\n  const nueva = () => {\n    cortar()\n    setMensajes([])\n  }\n  return { mensajes, respondiendo, enviar, cortar, nueva }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

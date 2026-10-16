@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_015",
+  "language": "python",
+  "originalName": "event_id",
+  "injectedName": "EVENT_ID",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'EVENT_ID' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class AuditLog(Base):\n    \"\"\"Append-only, hash-chained: row_hash = sha256(prev_hash + canonical row).\"\"\"\n\n    __tablename__ = \"audit_log\"\n\n    id: Mapped[int] = mapped_column(primary_key=True)\n    EVENT_ID: Mapped[int | None] = mapped_column(\n        ForeignKey(\"events.id\", ondelete=\"SET NULL\"), index=True\n    )\n    actor_id: Mapped[int | None] = mapped_column(ForeignKey(\"users.id\", ondelete=\"SET NULL\"))\n    action: Mapped[str] = mapped_column(String(64), nullable=False, index=True)\n    entity_type: Mapped[str] = mapped_column(String(32), nullable=False)\n    entity_id: Mapped[str] = mapped_column(String(64), nullable=False)\n    meta: Mapped[dict] = mapped_column(JSON, default=dict, nullable=False)\n    ip_hash: Mapped[str | None] = mapped_column(String(64))\n    created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow, nullable=False)\n    prev_hash: Mapped[str] = mapped_column(String(64), nullable=False)\n    row_hash: Mapped[str] = mapped_column(String(64), nullable=False)",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

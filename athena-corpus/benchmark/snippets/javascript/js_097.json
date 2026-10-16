@@ -1,0 +1,52 @@
+{
+  "id": "js_097",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/planning/build-today-view-model.js lines 1-9 (function buildTodayViewModel); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function buildTodayViewModel({date,availableMinutes=0,plan=null,priorities=[],pastPlans=[]}={}){\n  const minutes=value=>Math.max(0,Math.round(Number(value)||0));\n  const items=plan?.items||[];\n  const plannedMinutes=items.filter(item=>!['skipped','replaced','deferred'].includes(item.status)).reduce((sum,item)=>sum+minutes(item.plannedMinutes),0);\n  const executedMinutes=Math.round(items.reduce((sum,item)=>sum+Math.max(0,Number(item.executedSeconds)||0)/60,0));\n  const recoveryMinutes=pastPlans.filter(row=>row.date<date).flatMap(row=>row.items||[]).filter(item=>!['completed','skipped','replaced','deferred'].includes(item.status)).reduce((sum,item)=>sum+Math.max(0,minutes(item.plannedMinutes)-Math.round((Number(item.executedSeconds)||0)/60)),0);\n  return {date,availableMinutes:minutes(availableMinutes),plannedMinutes,executedMinutes,recoveryMinutes,progress:plannedMinutes?Math.min(100,Math.round(executedMinutes/plannedMinutes*100)):null,\n    nextActivity:items.find(item=>!['completed','skipped','replaced','deferred'].includes(item.status))||priorities[0]||null};\n}",
+  "identifiers": [
+    {
+      "name": "buildTodayViewModel",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "items",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "minutes",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "sum",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/planning/build-today-view-model.js",
+    "startLine": 1,
+    "endLine": 9,
+    "unit": "function buildTodayViewModel",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__build-today-view-model.js.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_060",
+  "language": "typescript",
+  "originalName": "event",
+  "injectedName": "EVENT",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'EVENT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Tappable({ style, children, pressScale = 0.96, disabled, ...rest }: TappableProps) {\n  const scale = useRef(new Animated.Value(1)).current;\n  const [hovered, setHovered] = useState(false);\n  const [pressed, setPressed] = useState(false);\n  const state = { pressed, hovered: hovered && !disabled };\n\n  const animateTo = (value: number, duration: number) =>\n    Animated.timing(scale, { toValue: value, duration, easing: motion.out, useNativeDriver: motion.native }).start();\n\n  return (\n    <AnimatedPressable\n      {...rest}\n      disabled={disabled}\n      onHoverIn={() => setHovered(true)}\n      onHoverOut={() => setHovered(false)}\n      onPressIn={(EVENT) => {\n        setPressed(true);\n        animateTo(pressScale, 120);\n        rest.onPressIn?.(EVENT);\n      }}\n      onPressOut={(EVENT) => {\n        setPressed(false);\n        animateTo(1, 260);\n        rest.onPressOut?.(EVENT);\n      }}\n      style={[typeof style === \"function\" ? style(state) : style, { transform: [{ scale }] }]}\n    >\n      {typeof children === \"function\" ? children(state) : children}\n    </AnimatedPressable>\n  );\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ts_003",
+  "language": "typescript",
+  "source": "github:Brainferno/brainferno-mcp-bridge@95695615162b4db4a3189be9dd0ebf9e7d80c129",
+  "sourceDetail": "packages/server/src/bridge/script-escape.ts lines 28-47 (function jsStringLiteral); license Apache-2.0; repo created 2026-08-26; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function jsStringLiteral(value: string): string {\n  let out = '\"';\n  for (const ch of value) {\n    const mapped = SIMPLE_ESCAPES[ch];\n    if (mapped !== undefined) {\n      out += mapped;\n      continue;\n    }\n    const code = ch.codePointAt(0)!;\n    // U+2028 / U+2029 are JS line terminators; C0/C1 controls must not appear\n    // raw in source. All of these are in the BMP, so a 4-digit \\uXXXX escape is\n    // always sufficient (and ES3-valid). Everything else passes through.\n    if (code < 0x20 || (code >= 0x7f && code <= 0x9f) || code === 0x2028 || code === 0x2029) {\n      out += `\\\\u${code.toString(16).padStart(4, \"0\")}`;\n    } else {\n      out += ch;\n    }\n  }\n  return out + '\"';\n}",
+  "identifiers": [
+    {
+      "name": "jsStringLiteral",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "out",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "mapped",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "code",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Brainferno/brainferno-mcp-bridge",
+    "repoUrl": "https://github.com/Brainferno/brainferno-mcp-bridge",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-08-26",
+    "commit": "95695615162b4db4a3189be9dd0ebf9e7d80c129",
+    "path": "packages/server/src/bridge/script-escape.ts",
+    "startLine": 28,
+    "endLine": 47,
+    "unit": "function jsStringLiteral",
+    "corpusFile": "corpus/typescript/Brainferno__brainferno-mcp-bridge__script-escape.ts.md"
+  }
+}

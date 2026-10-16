@@ -1,0 +1,52 @@
+{
+  "id": "js_047",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/commands/profile.js lines 249-287 (function profileEditCommand); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export async function profileEditCommand(name) {\n  if (!name) {\n    console.error('Usage: rolecraft profile edit <name>')\n    throw new Error('Missing profile name.')\n  }\n\n  const data = await readProfile(name)\n  if (!data) throw new Error(`Profile \"${name}\" not found.`)\n\n  const editor = process.env.EDITOR || 'vi'\n  const tmpDir = mkdtempSync(join(tmpdir(), 'rolecraft-profile-'))\n  const tmpFile = join(tmpDir, `${name}.json`)\n  writeFileSync(tmpFile, `${JSON.stringify(data, null, 2)}\\n`, 'utf-8')\n\n  try {\n    const [editorCmd, ...editorArgs] = editor.split(/\\s+/)\n    const result = spawnSync(editorCmd, [...editorArgs, tmpFile], {\n      stdio: 'inherit',\n    })\n    if (result.error) throw result.error\n    if (result.status !== 0)\n      throw new Error(\n        `Command failed: ${editorCmd} exited with code ${result.status}`,\n      )\n    const edited = JSON.parse(readFileSync(tmpFile, 'utf-8'))\n    edited.name = name\n    await writeProfile(edited)\n    console.log(`\\n✅ Profile \"${name}\" updated.`)\n  } catch (err) {\n    if (err instanceof SyntaxError)\n      throw new Error(`Invalid JSON after editing. Profile not saved.`)\n    throw err\n  } finally {\n    try {\n      unlinkSync(tmpFile)\n      rmdirSync(tmpDir)\n    } catch {}\n  }\n}",
+  "identifiers": [
+    {
+      "name": "profileEditCommand",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "data",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "editor",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "tmpDir",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "tmpFile",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/commands/profile.js",
+    "startLine": 249,
+    "endLine": 287,
+    "unit": "function profileEditCommand",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_commands_profile.js.md"
+  }
+}

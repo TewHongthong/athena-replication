@@ -1,0 +1,47 @@
+{
+  "id": "py_002",
+  "language": "python",
+  "source": "github:Ayush1860/SecureRag@a65d2f6f70fdc5dcb477d48353de0374853125e7",
+  "sourceDetail": "app/streamlit_app.py lines 169-176 (function get_engine); license MIT; repo created 2026-09-02T18:22:54Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@st.cache_resource(show_spinner=\"Initializing SecureRAG Engine...\")\ndef get_engine():\n    \"\"\"Initializes and caches the SecureRAG pipeline components.\"\"\"\n    settings = get_settings()\n    encryptor = VectorStoreEncryptor()\n    stack = open_serving_stack(settings, encryptor)\n    engine = build_engine(settings, encryptor, stack)\n    return engine, stack.store, settings",
+  "identifiers": [
+    {
+      "name": "get_engine",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "settings",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "encryptor",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "stack",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "engine",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Ayush1860/SecureRag",
+    "repoUrl": "https://github.com/Ayush1860/SecureRag",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-02T18:22:54Z",
+    "commit": "a65d2f6f70fdc5dcb477d48353de0374853125e7",
+    "path": "app/streamlit_app.py",
+    "startLine": 169,
+    "endLine": 176,
+    "unit": "function get_engine",
+    "corpusFile": "corpus/python/Ayush1860__SecureRag__streamlit_app.py.md"
+  }
+}

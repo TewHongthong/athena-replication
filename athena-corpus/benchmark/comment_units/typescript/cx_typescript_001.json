@@ -1,0 +1,32 @@
+{
+  "snippetId": "cx_typescript_001",
+  "language": "typescript",
+  "standardId": "GOOGLE_TS",
+  "identifierKind": "function",
+  "name": "Lanzador",
+  "codeBare": "export function Lanzador() {\n  return (\n    <div className=\"relative flex h-40 w-full max-w-md items-end justify-end gap-6 p-4\">\n      <AiLauncher labelVisible />\n      {/* Con una respuesta en camino, el canto gira. */}\n      <AiLauncher active label=\"Respondiendo\" labelSide=\"right\" />\n    </div>\n  )\n}",
+  "referenceComment": "/**\n * El lanzador\n * El botón redondo que abre el asistente. Con `active`, el canto gira: hay una respuesta en camino. Acá va adentro de una caja para que se vea en la página; en una app flota con `className=\"fixed right-6 bottom-6\"`.\n */",
+  "ruleIds": [
+    "GTS-JSDOC-TOPLEVEL-EXPORT"
+  ],
+  "origin": "extra",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_demos/ai-button.tsx lines 44-52 (function Lanzador); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-comment-units-1.0",
+  "referenceCommentLines": 4,
+  "signature": {
+    "params": 0,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "path": "docs/site/app/_demos/ai-button.tsx",
+    "startLine": 44,
+    "endLine": 52,
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__ai-button.tsx.md"
+  }
+}

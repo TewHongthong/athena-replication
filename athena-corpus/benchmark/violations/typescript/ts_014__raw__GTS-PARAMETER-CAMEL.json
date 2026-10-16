@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_014",
+  "language": "typescript",
+  "originalName": "raw",
+  "injectedName": "RAW",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RAW' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function readSvgAttrs(RAW: string): IconNodeAttrs {\n  const attrs: IconNodeAttrs = {};\n  SVG_ATTR.lastIndex = 0;\n  let m: RegExpExecArray | null;\n  // biome-ignore lint/suspicious/noAssignInExpressions: standard regex drain.\n  while ((m = SVG_ATTR.exec(RAW)) !== null) {\n    const name = m[1] ?? m[3];\n    if (name) attrs[name] = m[2] ?? m[4] ?? \"\";\n  }\n  return attrs;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

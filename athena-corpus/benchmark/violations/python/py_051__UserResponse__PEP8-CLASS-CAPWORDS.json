@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_051",
+  "language": "python",
+  "originalName": "UserResponse",
+  "injectedName": "user_response",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'user_response' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "class user_response(UserBase):\n    id: UUID\n    created_at: datetime\n    updated_at: datetime\n\n    class Config:\n        from_attributes = True",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

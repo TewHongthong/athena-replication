@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_051",
+  "language": "javascript",
+  "originalName": "skill",
+  "injectedName": "SKILL",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SKILL' does not match camelCase pattern",
+    "name 'SKILL' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function mdcToSkill(content, filename) {\n  const { attrs, body } = parseFrontmatter(content)\n\n  const desc = attrs.description || ''\n  const baseName = filename.replace(/\\.mdc$/i, '')\n  const name = desc || baseName || 'untitled'\n  const slug = attrs._slug || baseName.toLowerCase().replace(/[^a-z0-9]+/g, '-')\n\n  const SKILL = {\n    name,\n    slug,\n    owner: 'local',\n    description: desc,\n  }\n\n  if (attrs.mcp_servers) {\n    SKILL.mcp_servers = attrs.mcp_servers\n  }\n\n  return serializeFrontmatter(SKILL) + body\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "py_025",
+  "language": "python",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/ledger.py lines 287-310 (method Ledger.list_runs); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def list_runs(\n    self,\n    *,\n    task: str | None = None,\n    limit: int = 20,\n    experiment: str | None = None,\n    experiment_prefix: str | None = None,\n) -> list[RunRow]:\n    clauses, params = [], []\n    if task:\n        clauses.append(\"task=?\")\n        params.append(task)\n    if experiment:\n        clauses.append(\"experiment=?\")\n        params.append(experiment)\n    if experiment_prefix:\n        clauses.append(\"experiment LIKE ?\")\n        params.append(f\"{experiment_prefix}%\")\n    where = f\"WHERE {' AND '.join(clauses)}\" if clauses else \"\"\n    cur = self._conn.execute(\n        f\"SELECT * FROM runs {where} ORDER BY started_at DESC LIMIT ?\",\n        (*params, limit),\n    )\n    return [_to_run_row(r) for r in cur.fetchall()]",
+  "identifiers": [
+    {
+      "name": "list_runs",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "params",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "task",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "limit",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "experiment",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "cur",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/ledger.py",
+    "startLine": 287,
+    "endLine": 310,
+    "unit": "method Ledger.list_runs",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__ledger.py.md"
+  }
+}

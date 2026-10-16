@@ -1,0 +1,52 @@
+{
+  "id": "java_082",
+  "language": "java",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/contract/FurkinDuplicateRegistry.java lines 79-113 (method FurkinDuplicateRegistry.hasLoadedDuplicate); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public static boolean hasLoadedDuplicate(MinecraftServer server, FurkinArchiveEntry entry) {\n    if (server == null || entry == null || entry.getCompanionId() == null) {\n        return false;\n    }\n    UUID companionId = entry.getCompanionId();\n    UUID canonicalUuid = entry.getEntityUuid();\n    Set<UUID> registered = LOADED_ENTITIES.get(companionId);\n    if (registered == null || registered.isEmpty()) {\n        LOADED_ENTITIES.remove(companionId);\n        return false;\n    }\n\n    boolean found = false;\n    Iterator<UUID> iterator = registered.iterator();\n    while (iterator.hasNext()) {\n        UUID entityUuid = iterator.next();\n        LivingEntity loaded = findLoaded(server, entityUuid);\n        if (loaded == null) {\n            iterator.remove();\n            continue;\n        }\n        FurkinData data = loaded.getCapability(FurkinCapability.FURKIN_DATA).orElse(null);\n        if (data == null || !companionId.equals(data.getCompanionId())) {\n            iterator.remove();\n            continue;\n        }\n        if (canonicalUuid == null || !canonicalUuid.equals(entityUuid)) {\n            found = true;\n        }\n    }\n    if (registered.isEmpty()) {\n        LOADED_ENTITIES.remove(companionId);\n    }\n    return found;\n}",
+  "identifiers": [
+    {
+      "name": "hasLoadedDuplicate",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "companionId",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "server",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "entry",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "canonicalUuid",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "registered",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/contract/FurkinDuplicateRegistry.java",
+    "startLine": 79,
+    "endLine": 113,
+    "unit": "method FurkinDuplicateRegistry.hasLoadedDuplicate",
+    "corpusFile": "corpus/java/wanancat__furkin__FurkinDuplicateRegistry.java.md"
+  }
+}

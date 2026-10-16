@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_032",
+  "language": "javascript",
+  "originalName": "name",
+  "injectedName": "n",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'n' shorter than minLength=2",
+    "name 'n' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function initApi(n) {\n  const skillName = n || 'my-skill'\n  const slug = skillName.includes('/') ? skillName : skillName\n  const displayName = slug.includes('/') ? slug.split('/')[1] : slug\n  const dirName = normalizeSlug(slug)\n  const dir = join(process.cwd(), dirName)\n  const owner = slug.includes('/') ? slug.split('/')[0] : 'local'\n\n  await mkdir(dir, { recursive: true })\n\n  const content = `---\nname: ${displayName}\nslug: ${slug}\nowner: ${owner}\ndescription: Describe what this skill does\n---\n\nWrite your skill instructions here.\n`\n\n  await writeFile(join(dir, 'SKILL.md'), content)\n\n  return { path: join(dir, 'SKILL.md'), slug, name: displayName, owner }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "csharp_025",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/ImageUrls.cs lines 8-19 (class ImageUrls); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public static class ImageUrls\n{\n    public static string? For(int? imageId, string? fallbackUrl = null, int? width = null)\n    {\n        if (imageId is { } id)\n            return width is { } w ? $\"/img/{id}?w={w}\" : $\"/img/{id}\";\n        return string.IsNullOrWhiteSpace(fallbackUrl) ? null : fallbackUrl;\n    }\n\n    public static bool Has(int? imageId, string? fallbackUrl = null) =>\n        imageId is not null || !string.IsNullOrWhiteSpace(fallbackUrl);\n}",
+  "identifiers": [
+    {
+      "name": "ImageUrls",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "imageId",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "fallbackUrl",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "width",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "Has",
+      "kind": "method",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/ImageUrls.cs",
+    "startLine": 8,
+    "endLine": 19,
+    "unit": "class ImageUrls",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__ImageUrls.cs.md"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ts_088",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_components/search.tsx lines 22-27 (function normalizar); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "function normalizar(texto: string) {\n  return texto\n    .toLowerCase()\n    .normalize(\"NFD\")\n    .replace(/[̀-ͯ]/g, \"\")\n}",
+  "identifiers": [
+    {
+      "name": "normalizar",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "texto",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_components/search.tsx",
+    "startLine": 22,
+    "endLine": 27,
+    "unit": "function normalizar",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__search.tsx.md"
+  }
+}

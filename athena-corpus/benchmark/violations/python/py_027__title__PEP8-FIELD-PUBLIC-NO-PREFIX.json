@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_027",
+  "language": "python",
+  "originalName": "title",
+  "injectedName": "TITLE",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TITLE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass MemoryEntry:\n    path: Path\n    kind: str\n    TITLE: str\n    date: str = \"\"\n    task: str = \"\"\n    tags: list[str] = field(default_factory=list)\n    source: str = \"\"\n    body: str = \"\"\n\n    def as_dict(self) -> dict[str, Any]:\n        return {\n            \"path\": str(self.path),\n            \"kind\": self.kind,\n            \"title\": self.TITLE,\n            \"date\": self.date,\n            \"task\": self.task,\n            \"tags\": self.tags,\n            \"source\": self.source,\n        }",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

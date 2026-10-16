@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_099",
+  "language": "python",
+  "originalName": "override",
+  "injectedName": "OVERRIDE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'OVERRIDE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def viva_home(OVERRIDE: str | Path | None = None) -> Path:\n    \"\"\"Return the Viva state root (explicit override > env > ~/.viva).\"\"\"\n    if OVERRIDE is not None:\n        return Path(OVERRIDE).expanduser()\n    from_env = os.environ.get(VIVA_HOME_ENV)\n    if from_env:\n        return Path(from_env).expanduser()\n    return Path.home() / DEFAULT_HOME_NAME",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

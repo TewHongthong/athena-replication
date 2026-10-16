@@ -1,0 +1,2 @@
+{"run_id": "test_luna_p5_rename", "event": "start", "backend": "openai:openai/gpt-6-luna", "rerun": false, "trials": 1200, "ts": "2026-09-28T17:46:44+00:00"}
+{"run_id": "test_luna_p5_rename", "event": "end", "status": "complete", "trials_ok": 1200, "trials_error": 0, "ts": "2026-09-28T18:03:47+00:00"}

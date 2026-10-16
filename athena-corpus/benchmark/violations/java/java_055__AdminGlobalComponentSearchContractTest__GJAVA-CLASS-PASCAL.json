@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_055",
+  "language": "java",
+  "originalName": "AdminGlobalComponentSearchContractTest",
+  "injectedName": "admin_global_component_search_contract_test",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'admin_global_component_search_contract_test' does not match PascalCase pattern",
+    "name 'admin_global_component_search_contract_test' matches forbidden pattern '^[a-z]'",
+    "name 'admin_global_component_search_contract_test' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "class admin_global_component_search_contract_test {\n\n  @Test\n  void administrationExposesTheSharedGlobalSearch() throws IOException {\n    String index = resource(\"/META-INF/resources/admin/index.html\");\n    String translations = resource(\"/META-INF/resources/login/assets/ui-i18n.js\");\n\n    assertTrue(index.contains(\"data-global-component-search action=\\\"/browse/\\\"\"));\n    assertTrue(index.indexOf(\"class=\\\"top-spacer\\\"\")\n        < index.indexOf(\"<form class=\\\"global-component-search\\\"\"));\n    assertTrue(index.contains(\"placeholder=\\\"Search components\\\"\"));\n    assertFalse(index.contains(\"<button type=\\\"submit\\\">Search</button>\"));\n    assertTrue(index.contains(\n        \"/browse/assets/global-component-search.css?v=20260819-topbar-control-height-1\"));\n    assertTrue(index.contains(\"/browse/assets/global-component-search.js\"));\n    assertTrue(translations.contains(\"\\\"Search components\\\": \\\"搜索组件\\\"\"));\n    assertTrue(translations.contains(\"\\\"All formats\\\": \\\"全部格式\\\"\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

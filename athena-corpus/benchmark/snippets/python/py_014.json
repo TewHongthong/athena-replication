@@ -1,0 +1,52 @@
+{
+  "id": "py_014",
+  "language": "python",
+  "source": "github:Nikhils-G/podium@64d18bf7ed5c1eef58d5397ff282807ceb3bf23e",
+  "sourceDetail": "src/podium/db.py lines 11-29 (function make_engine); license MIT; repo created 2026-09-26T18:48:58Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def make_engine(url: str) -> Engine:\n    is_sqlite = url.startswith(\"sqlite\")\n    engine = create_engine(\n        url,\n        connect_args={\"check_same_thread\": False} if is_sqlite else {},\n        pool_pre_ping=not is_sqlite,\n    )\n    if is_sqlite:\n\n        @event.listens_for(engine, \"connect\")\n        def _sqlite_pragmas(dbapi_connection, _record):  # pragma: no cover - driver hook\n            cursor = dbapi_connection.cursor()\n            cursor.execute(\"PRAGMA journal_mode=WAL\")\n            cursor.execute(\"PRAGMA foreign_keys=ON\")\n            cursor.execute(\"PRAGMA synchronous=NORMAL\")\n            cursor.execute(\"PRAGMA busy_timeout=5000\")\n            cursor.close()\n\n    return engine",
+  "identifiers": [
+    {
+      "name": "make_engine",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "is_sqlite",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "url",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "engine",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "dbapi_connection",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "cursor",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Nikhils-G/podium",
+    "repoUrl": "https://github.com/Nikhils-G/podium",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:48:58Z",
+    "commit": "64d18bf7ed5c1eef58d5397ff282807ceb3bf23e",
+    "path": "src/podium/db.py",
+    "startLine": 11,
+    "endLine": 29,
+    "unit": "function make_engine",
+    "corpusFile": "corpus/python/Nikhils-G__podium__db.py.md"
+  }
+}

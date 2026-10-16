@@ -1,0 +1,16 @@
+{
+  "judge": "haiku",
+  "label": "Anthropic Claude Haiku 4.5",
+  "backend": "hosted",
+  "model": "anthropic/claude-haiku-4.5",
+  "options": {
+    "temperature": 0,
+    "seed": 0,
+    "num_ctx": 4096,
+    "num_predict": 400
+  },
+  "max_tokens": 400,
+  "system": null,
+  "think": null,
+  "started": "2026-10-03T13:27:03Z"
+}

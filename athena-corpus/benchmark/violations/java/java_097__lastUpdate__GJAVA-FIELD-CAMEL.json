@@ -1,0 +1,15 @@
+{
+  "snippetId": "java_097",
+  "language": "java",
+  "originalName": "lastUpdate",
+  "injectedName": "last_update",
+  "identifierKind": "field",
+  "violatedRuleId": "GJAVA-FIELD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'last_update' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private static class AnimationState {\n    float alpha = 0.0f;\n    float offsetY = -20.0f;\n    float scale = 0.9f;\n    long last_update = 0L;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

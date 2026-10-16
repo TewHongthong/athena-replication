@@ -1,0 +1,36 @@
+{
+  "snippetId": "py_090",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "class",
+  "name": "INDstocksAuth",
+  "codeBare": "class INDstocksAuth:\n    \n\n    def __init__(self, cfg: INDstocksConfig):\n        self.cfg = cfg\n        self.cfg.token_cache_path.parent.mkdir(mode=0o700, parents=True, exist_ok=True)\n\n    def refresh_session(self) -> str:\n        totp_code = pyotp.TOTP(self.cfg.totp_secret).now()\n        resp = requests.post(\n            f\"{self.cfg.base_url}/generate/token\",\n            headers={\"x-api-key\": self.cfg.client_id, \"Content-Type\": \"application/json\"},\n            json={\"mpin\": self.cfg.mpin, \"totp\": totp_code},\n            timeout=10,\n        )\n        resp.raise_for_status()\n        body = resp.json()\n        if isinstance(body.get(\"data\"), dict):\n            token = body[\"data\"][\"token\"]\n        else:\n            token = body[\"token\"]\n        self._write_cache(token)\n        logger.info(\"INDstocks token refreshed, cached at %s\", self.cfg.token_cache_path)\n        return token\n\n    def _write_cache(self, token: str) -> None:\n        tmp_path = self.cfg.token_cache_path.with_suffix(\".tmp\")\n        with open(tmp_path, \"w\") as f:\n            json.dump({\"token\": token, \"issued_at\": time.time()}, f)\n        os.chmod(tmp_path, 0o600)\n        tmp_path.replace(self.cfg.token_cache_path)  # atomic on POSIX",
+  "referenceComment": "\"\"\"Owns TOTP-based token generation. Run from a single process only.\"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-CLASS"
+  ],
+  "origin": "snippet",
+  "source": "github:vikasiec/AI-Trading-App@beb8d00e020adcbdf2afc156bd87592daa40d881",
+  "sourceDetail": "src/jev_indstocks_trader/auth.py lines 32-62 (class INDstocksAuth); license MIT; repo created 2026-09-25T18:06:05Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "vikasiec/AI-Trading-App",
+    "repoUrl": "https://github.com/vikasiec/AI-Trading-App",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T18:06:05Z",
+    "commit": "beb8d00e020adcbdf2afc156bd87592daa40d881",
+    "path": "src/jev_indstocks_trader/auth.py",
+    "startLine": 32,
+    "endLine": 62,
+    "unit": "class INDstocksAuth",
+    "corpusFile": "corpus/python/vikasiec__AI-Trading-App__auth.py.md"
+  }
+}

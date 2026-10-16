@@ -1,0 +1,38 @@
+{
+  "snippetId": "py_084",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "function",
+  "name": "summarize",
+  "codeBare": "def summarize(sections: Iterable[tuple[str, list]]) -> str:\n    \n    groups: dict[tuple[str, str, str], list] = defaultdict(list)\n    for kind, decisions in sections:\n        for d in decisions:\n            action, slug = reason_slug(d.note)\n            groups[(action, kind, slug)].append(d)\n\n    n_junk = sum(len(v) for (a, _, _), v in groups.items() if a == \"junk\")\n    n_review = sum(len(v) for (a, _, _), v in groups.items() if a == \"review\")\n    lines = [f\"would junk {n_junk} item(s) and flag {n_review} for review\"]\n\n    ordered = sorted(\n        groups.items(),\n        key=lambda kv: (kv[0][0] != \"junk\", -len(kv[1]), kv[0]),\n    )\n    for (action, kind, slug), ds in ordered:\n        lines.append(\"\")\n        lines.append(f\"{action.upper()} {slug} ({kind}) — {len(ds)} item(s)\")\n        for d in ds:\n            line = (\n                f\"  {safe_fragment(d.name, limit=120)} \"\n                f\"(id {safe_fragment(d.id, limit=48)}, \"\n                f\"class {safe_fragment(d.guardian_class or kind, limit=80)}; \"\n                f\"location {safe_fragment(d.location, limit=80)})\"\n            )\n            if d.kept_id:\n                line += (\n                    \" — \"\n                    f\"{safe_fragment(note_tail(d.note), limit=_SUMMARY_TAIL_LIMIT, escape_structure=False)}\"\n                )\n            lines.append(line)\n    return \"\\n\".join(lines)",
+  "referenceComment": "\"\"\"Human-readable dry-run summary (PLAN.md M5).\n\n    `sections` is (kind, decisions) per pass, e.g. (\"weapons\", [...]).\n    Groups by action + reason with per-item lines beneath each group;\n    junk groups first, then review, largest first.\n    \"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-FUNC"
+  ],
+  "origin": "snippet",
+  "source": "github:tonym999/vault-cleaner@1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+  "sourceDetail": "src/vault_cleaner/report.py lines 43-80 (function summarize); license MIT; repo created 2026-07-18T09:39:13Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 6,
+  "signature": {
+    "params": 1,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "tonym999/vault-cleaner",
+    "repoUrl": "https://github.com/tonym999/vault-cleaner",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-18T09:39:13Z",
+    "commit": "1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+    "path": "src/vault_cleaner/report.py",
+    "startLine": 43,
+    "endLine": 80,
+    "unit": "function summarize",
+    "corpusFile": "corpus/python/tonym999__vault-cleaner__report.py.md"
+  }
+}

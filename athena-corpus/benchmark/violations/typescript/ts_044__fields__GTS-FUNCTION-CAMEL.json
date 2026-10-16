@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_044",
+  "language": "typescript",
+  "originalName": "fields",
+  "injectedName": "FIELDS",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FIELDS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function FIELDS(recording: Recording) {\n  return [\n    { label: \"Data\", value: formatDay(recording.createdAt) },\n    { label: \"Hora\", value: formatTime(recording.createdAt) },\n    { label: \"Duração\", value: formatClock(recording.durationMs), hot: true },\n    { label: \"Origem\", value: sourceShortLabel[recording.source] },\n    { label: \"Lente\", value: lensLabel(recording) },\n    { label: \"Arquivo\", value: fileExtension(recording.mimeType) },\n  ];\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

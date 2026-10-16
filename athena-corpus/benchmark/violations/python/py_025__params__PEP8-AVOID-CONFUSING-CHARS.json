@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_025",
+  "language": "python",
+  "originalName": "params",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def list_runs(\n    self,\n    *,\n    task: str | None = None,\n    limit: int = 20,\n    experiment: str | None = None,\n    experiment_prefix: str | None = None,\n) -> list[RunRow]:\n    clauses, l = [], []\n    if task:\n        clauses.append(\"task=?\")\n        l.append(task)\n    if experiment:\n        clauses.append(\"experiment=?\")\n        l.append(experiment)\n    if experiment_prefix:\n        clauses.append(\"experiment LIKE ?\")\n        l.append(f\"{experiment_prefix}%\")\n    where = f\"WHERE {' AND '.join(clauses)}\" if clauses else \"\"\n    cur = self._conn.execute(\n        f\"SELECT * FROM runs {where} ORDER BY started_at DESC LIMIT ?\",\n        (*l, limit),\n    )\n    return [_to_run_row(r) for r in cur.fetchall()]",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

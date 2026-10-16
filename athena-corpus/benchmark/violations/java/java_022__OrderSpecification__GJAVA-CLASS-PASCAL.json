@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_022",
+  "language": "java",
+  "originalName": "OrderSpecification",
+  "injectedName": "order_specification",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'order_specification' does not match PascalCase pattern",
+    "name 'order_specification' matches forbidden pattern '^[a-z]'",
+    "name 'order_specification' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public class order_specification {\n    public static Specification<Order> hasStatus(OrderStatus status) {\n        return (root, query, cb) -> status == null ? null : cb.equal(root.get(\"status\"), status);\n    }\n\n    public static Specification<Order> hasDeliveryMethod(DeliveryMethod method) {\n        return (root, query, cb) -> method == null ? null : cb.equal(root.get(\"deliveryMethod\"), method);\n    }\n\n    public static Specification<Order> hasPaymentMethod(PaymentMethod method) {\n        return (root, query, cb) -> method == null ? null : cb.equal(root.get(\"paymentMethod\"), method);\n    }\n\n    public static Specification<Order> hasSearch(String search) {\n        return (root, query, cb) -> {\n            if (search == null || search.isBlank()) return null;\n            return cb.or(\n                    cb.like(cb.lower(root.get(\"customerName\")), LikePattern.containsIgnoreCase(search), LikePattern.ESCAPE),\n                    cb.like(root.get(\"phone\"), LikePattern.contains(search), LikePattern.ESCAPE)\n            );\n        };\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

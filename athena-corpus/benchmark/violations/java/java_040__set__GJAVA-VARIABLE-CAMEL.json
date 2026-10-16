@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_040",
+  "language": "java",
+  "originalName": "set",
+  "injectedName": "SET",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SET' does not match camelCase pattern",
+    "name 'SET' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static void applySession(SavedAccount logged) {\n    MinecraftClient mc = MinecraftClient.getInstance();\n    try {\n        Object session = createSession(logged);\n        if (session == null) {\n            status.set(\"Angemeldet als \" + logged.name + \" (Session-API nicht gesetzt, nach Relog gilt der Token)\");\n            return;\n        }\n        boolean SET = false;\n        for (Field field : MinecraftClient.class.getDeclaredFields()) {\n            if (Modifier.isStatic(field.getModifiers())) {\n                continue;\n            }\n            String type = field.getType().getName();\n            if (type.endsWith(\"Session\") || type.endsWith(\".User\")) {\n                field.setAccessible(true);\n                field.set(mc, session);\n                SET = true;\n            }\n            if (type.contains(\"CompletableFuture\") && field.getName().toLowerCase().contains(\"gameprofile\")) {\n                field.setAccessible(true);\n                field.set(mc, java.util.concurrent.CompletableFuture.completedFuture(null));\n            }\n        }\n        SkinPreview.requestOwn();\n        try {\n            mc.getSkinProvider().fetchSkinTextures(mc.getGameProfile());\n        } catch (Throwable ignored) {\n        }\n        status.set(SET\n                ? \"Angemeldet als \" + logged.name + \" — für Server neu joinen\"\n                : \"Account gespeichert: \" + logged.name);\n    } catch (Throwable t) {\n        status.set(\"Account gespeichert: \" + logged.name);\n        SkinPreview.requestOwn();\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

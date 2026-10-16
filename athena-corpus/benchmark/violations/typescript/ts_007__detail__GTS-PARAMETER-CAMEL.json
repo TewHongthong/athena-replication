@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_007",
+  "language": "typescript",
+  "originalName": "detail",
+  "injectedName": "DETAIL",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DETAIL' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function format(DETAIL: unknown): string {\n  if (DETAIL instanceof Error) return `${DETAIL.name}: ${DETAIL.message}`;\n  try {\n    return JSON.stringify(DETAIL);\n  } catch {\n    return String(DETAIL);\n  }\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

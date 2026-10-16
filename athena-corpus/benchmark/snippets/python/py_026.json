@@ -1,0 +1,52 @@
+{
+  "id": "py_026",
+  "language": "python",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/loop.py lines 20-38 (class LoopResult); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@dataclass\nclass LoopResult:\n    status: str\n    final_text: str = \"\"\n    steps: int = 0\n    tool_calls: list[dict[str, Any]] = field(default_factory=list)\n    tokens_in: int = 0\n    tokens_out: int = 0\n    duration_ms: int = 0\n    error: str | None = None\n\n    def metrics(self) -> dict[str, Any]:\n        return {\n            \"loop_steps\": self.steps,\n            \"loop_tool_calls\": len(self.tool_calls),\n            \"tokens_in\": self.tokens_in,\n            \"tokens_out\": self.tokens_out,\n            \"duration_ms\": self.duration_ms,\n        }",
+  "identifiers": [
+    {
+      "name": "LoopResult",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "metrics",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "status",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "final_text",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "steps",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "tool_calls",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/loop.py",
+    "startLine": 20,
+    "endLine": 38,
+    "unit": "class LoopResult",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__loop.py.md"
+  }
+}

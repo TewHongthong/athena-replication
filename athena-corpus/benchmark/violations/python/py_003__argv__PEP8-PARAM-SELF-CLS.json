@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_003",
+  "language": "python",
+  "originalName": "argv",
+  "injectedName": "ARGV",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ARGV' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def main(ARGV: list[str] | None = None) -> int:\n    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)\n    parser.add_argument(\"--principal\", required=True)\n    parser.add_argument(\"--role\", required=True, choices=sorted(ROLE_POLICY))\n    parser.add_argument(\"--file\", help=\"keys file (default: API_KEYS_FILE)\")\n    args = parser.parse_args(ARGV)\n\n    path = Path(args.file or get_settings().api_keys_file)\n    data = json.loads(path.read_text(encoding=\"utf-8\")) if path.exists() else {\"keys\": []}\n    key = \"srag_\" + secrets.token_urlsafe(32)\n    key_id = f\"{args.principal}-{secrets.token_hex(3)}\"\n    data[\"keys\"].append({\n        \"id\": key_id,\n        \"hash\": hash_api_key(key),\n        \"principal\": args.principal,\n        \"role\": args.role,\n        \"created_at\": datetime.now(UTC).isoformat(timespec=\"seconds\"),\n    })\n    path.parent.mkdir(parents=True, exist_ok=True)\n    path.write_text(json.dumps(data, indent=2), encoding=\"utf-8\")\n    print(f\"Created key {key_id} for {args.principal} ({args.role}) in {path}\")\n    print(f\"API key (shown once): {key}\")\n    return 0",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

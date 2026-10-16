@@ -1,0 +1,52 @@
+{
+  "id": "csharp_066",
+  "language": "csharp",
+  "source": "github:teesofttech/SMSBridge@1b400e9c1804dc01402d0b9769db5475f76d3785",
+  "sourceDetail": "src/SmsBridge/Providers/Vonage/VonageSmsRequestMapper.cs lines 6-35 (class VonageSmsRequestMapper); license MIT; repo created 2026-06-13; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "internal static class VonageSmsRequestMapper\n{\n    /// <summary>Builds the form fields for the Vonage SMS API v1.</summary>\n    public static IReadOnlyDictionary<string, string> ToFormFields(SmsMessage message, VonageOptions options)\n    {\n        var fields = new Dictionary<string, string>\n        {\n            [\"from\"] = message.From ?? options.From,\n            [\"to\"] = message.To,\n            [\"text\"] = message.Body,\n            [\"api_key\"] = options.ApiKey,\n            [\"api_secret\"] = options.ApiSecret\n        };\n\n        if (!IsGsm7(message.Body))\n            fields[\"type\"] = \"unicode\";\n\n        return fields;\n    }\n\n    private static bool IsGsm7(string value) =>\n        value.All(character =>\n            Gsm7BasicCharacters.Contains(character) ||\n            Gsm7ExtensionCharacters.Contains(character));\n\n    private const string Gsm7BasicCharacters =\n        \"@£$¥èéùìòÇ\\nØø\\rÅåΔ_ΦΓΛΩΠΨΣΘΞ ÆæßÉ !\\\"#¤%&'()*+,-./0123456789:;<=>?¡ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÑÜ§¿abcdefghijklmnopqrstuvwxyzäöñüà\";\n\n    private const string Gsm7ExtensionCharacters = \"^{}\\\\[~]|€\";\n}",
+  "identifiers": [
+    {
+      "name": "VonageSmsRequestMapper",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "ToFormFields",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "Gsm7BasicCharacters",
+      "kind": "constant",
+      "isCompliant": true
+    },
+    {
+      "name": "fields",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "message",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "options",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "teesofttech/SMSBridge",
+    "repoUrl": "https://github.com/teesofttech/SMSBridge",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-13",
+    "commit": "1b400e9c1804dc01402d0b9769db5475f76d3785",
+    "path": "src/SmsBridge/Providers/Vonage/VonageSmsRequestMapper.cs",
+    "startLine": 6,
+    "endLine": 35,
+    "unit": "class VonageSmsRequestMapper",
+    "corpusFile": "corpus/csharp/teesofttech__SMSBridge__VonageSmsRequestMapper.cs.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_002",
+  "language": "python",
+  "originalName": "engine",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "@st.cache_resource(show_spinner=\"Initializing SecureRAG Engine...\")\ndef get_engine():\n    \"\"\"Initializes and caches the SecureRAG pipeline components.\"\"\"\n    settings = get_settings()\n    encryptor = VectorStoreEncryptor()\n    stack = open_serving_stack(settings, encryptor)\n    l = build_engine(settings, encryptor, stack)\n    return l, stack.store, settings",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_043",
+  "language": "java",
+  "originalName": "tick",
+  "injectedName": "TICK",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TICK' does not match camelCase pattern",
+    "name 'TICK' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void TICK(MinecraftClient client) {\n    try {\n        ClientPlayerEntity player = client.player;\n        if (player == null || client.world == null) {\n            havePos = false;\n            return;\n        }\n        double dx = player.getX() - lastX;\n        double dz = player.getZ() - lastZ;\n        double moved = havePos ? Math.sqrt(dx * dx + dz * dz) : 0;\n        lastX = player.getX();\n        lastZ = player.getZ();\n        havePos = true;\n        if (moved < 0.02) {\n            return;\n        }\n        String id = Cosmetics.equipped(Cosmetics.Kind.TRAIL);\n        if (!\"none\".equals(id)) {\n            FxWorld.trail(id, Cosmetics.equippedColor(Cosmetics.Kind.TRAIL), player.getX(), player.getY(), player.getZ());\n        }\n    } catch (Throwable ignored) {\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

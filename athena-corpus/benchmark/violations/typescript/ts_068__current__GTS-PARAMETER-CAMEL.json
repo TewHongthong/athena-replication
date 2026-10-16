@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_068",
+  "language": "typescript",
+  "originalName": "current",
+  "injectedName": "CURRENT",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CURRENT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function useRecordings() {\n  const [recordings, setRecordings] = useState<Recording[]>([]);\n  const [loading, setLoading] = useState(true);\n\n  useEffect(() => {\n    listRecordings()\n      .then(setRecordings)\n      .catch(() => setRecordings([]))\n      .finally(() => setLoading(false));\n  }, []);\n\n  const add = useCallback(async (input: NewRecording) => {\n    const recording = await addRecording(input);\n    setRecordings((CURRENT) => [recording, ...CURRENT]);\n    return recording;\n  }, []);\n\n  const remove = useCallback(async (recording: Recording) => {\n    await removeRecording(recording);\n    setRecordings((CURRENT) => CURRENT.filter((item) => item.id !== recording.id));\n  }, []);\n\n  return { recordings, loading, add, remove };\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

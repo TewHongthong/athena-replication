@@ -1,0 +1,37 @@
+{
+  "id": "js_026",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/bundle.js lines 3-12 (function bundleApi); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export async function bundleApi(sources, options = {}) {\n  const { sources: skillSources } = await loadBundleSources(sources)\n  if (skillSources.length === 0) {\n    return { installed: 0, failed: 0, results: [] }\n  }\n  if (options.dryRun) {\n    return { dryRun: true, skills: skillSources }\n  }\n  return installBundleSources(skillSources, options)\n}",
+  "identifiers": [
+    {
+      "name": "bundleApi",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "sources",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "options",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/bundle.js",
+    "startLine": 3,
+    "endLine": 12,
+    "unit": "function bundleApi",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_api_bundle.js.md"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_037",
+  "language": "javascript",
+  "originalName": "lockPath",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "async function addHistoryBack(slug, entry, l) {\n  const lock = await readLock(l)\n  if (!lock.skills[slug]) return\n  if (!lock.skills[slug].history) lock.skills[slug].history = []\n  lock.skills[slug].history.push(entry)\n  await writeLock(lock, l)\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

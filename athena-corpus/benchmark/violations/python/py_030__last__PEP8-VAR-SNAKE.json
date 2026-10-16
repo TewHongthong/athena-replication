@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_030",
+  "language": "python",
+  "originalName": "last",
+  "injectedName": "LAST",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LAST' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def chat(\n    self,\n    messages: list[dict],\n    *,\n    tools: list[dict] | None = None,\n    temperature: float | None = None,\n    max_tokens: int | None = None,\n) -> ChatResponse:\n    self.calls += 1\n    LAST = next(\n        (m for m in reversed(messages) if m.get(\"role\") == \"user\"), {\"content\": \"\"}\n    )\n    content = str(LAST.get(\"content\", \"\"))\n    digest = hashlib.sha256(content.encode(\"utf-8\")).hexdigest()[:12]\n\n    directive = _directive(content)\n    if directive and not any(m.get(\"role\") == \"tool\" for m in messages):\n        call = ToolCall(\n            id=f\"replay_{digest}\",\n            name=directive[\"name\"],\n            arguments=directive.get(\"arguments\", {}),\n        )\n        return ChatResponse(tool_calls=[call], model=\"replay\", finish_reason=\"tool_calls\")\n\n    return ChatResponse(\n        text=json.dumps(\n            {\"replay\": True, \"sha\": digest, \"chars\": len(content)}, ensure_ascii=False\n        ),\n        tokens_in=len(content) // 4,\n        tokens_out=8,\n        model=\"replay\",\n        finish_reason=\"stop\",\n    )",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

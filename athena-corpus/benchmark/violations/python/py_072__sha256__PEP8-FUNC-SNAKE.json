@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_072",
+  "language": "python",
+  "originalName": "sha256",
+  "injectedName": "SHA256",
+  "identifierKind": "function",
+  "violatedRuleId": "PEP8-FUNC-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SHA256' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def SHA256(path: Path) -> str:\n    h = hashlib.sha256()\n    with open(path, \"rb\") as f:\n        for chunk in iter(lambda: f.read(1 << 24), b\"\"):\n            h.update(chunk)\n    return h.hexdigest()",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

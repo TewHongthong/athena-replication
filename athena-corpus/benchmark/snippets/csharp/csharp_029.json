@@ -1,0 +1,47 @@
+{
+  "id": "csharp_029",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.GodotClient/Pairing/OwnerDeviceKey.cs lines 31-38 (interface IOwnerDeviceSigner); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public interface IOwnerDeviceSigner : IDisposable\n{\n    string PublicKeySpkiBase64 { get; }\n\n    string PublicKeyFingerprint { get; }\n\n    string SignCanonicalProof(string canonicalProof);\n}",
+  "identifiers": [
+    {
+      "name": "IOwnerDeviceSigner",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "SignCanonicalProof",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "PublicKeySpkiBase64",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "canonicalProof",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "PublicKeyFingerprint",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.GodotClient/Pairing/OwnerDeviceKey.cs",
+    "startLine": 31,
+    "endLine": 38,
+    "unit": "interface IOwnerDeviceSigner",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__OwnerDeviceKey.cs.md"
+  }
+}

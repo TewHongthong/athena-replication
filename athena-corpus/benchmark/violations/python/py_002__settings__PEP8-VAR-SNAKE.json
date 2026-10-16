@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_002",
+  "language": "python",
+  "originalName": "settings",
+  "injectedName": "SETTINGS",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SETTINGS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@st.cache_resource(show_spinner=\"Initializing SecureRAG Engine...\")\ndef get_engine():\n    \"\"\"Initializes and caches the SecureRAG pipeline components.\"\"\"\n    SETTINGS = get_settings()\n    encryptor = VectorStoreEncryptor()\n    stack = open_serving_stack(SETTINGS, encryptor)\n    engine = build_engine(SETTINGS, encryptor, stack)\n    return engine, stack.store, SETTINGS",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_038",
+  "language": "javascript",
+  "originalName": "query",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "async function searchSkillsSh(l) {\n  const url = `https://skills.sh/api/search?q=${encodeURIComponent(l)}`\n  const response = await runFetch(url, { signal: AbortSignal.timeout(10000) })\n  if (!response.ok) return { error: `skills.sh API error: ${response.status}` }\n  const data = await response.json()\n  return { items: data.skills || [] }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_052",
+  "language": "javascript",
+  "originalName": "timer",
+  "injectedName": "t",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 't' shorter than minLength=2",
+    "name 't' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function createDebouncer(waitMs) {\n  const timers = new Map()\n\n  function schedule(key, callback) {\n    cancel(key)\n\n    const t = setTimeout(() => {\n      timers.delete(key)\n      void Promise.resolve()\n        .then(callback)\n        .catch(() => {})\n    }, waitMs)\n\n    timers.set(key, t)\n  }\n\n  function cancel(key) {\n    const t = timers.get(key)\n    if (!t) return false\n\n    clearTimeout(t)\n    timers.delete(key)\n    return true\n  }\n\n  function cancelAll() {\n    for (const t of timers.values()) {\n      clearTimeout(t)\n    }\n    timers.clear()\n  }\n\n  return { schedule, cancel, cancelAll }\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0
+}

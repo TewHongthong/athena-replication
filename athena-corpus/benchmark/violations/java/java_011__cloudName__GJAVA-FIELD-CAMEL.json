@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_011",
+  "language": "java",
+  "originalName": "cloudName",
+  "injectedName": "CLOUD_NAME",
+  "identifierKind": "field",
+  "violatedRuleId": "GJAVA-FIELD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CLOUD_NAME' does not match camelCase pattern",
+    "name 'CLOUD_NAME' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Configuration\n@Profile(\"prod\")\npublic class CloudinaryConfig {\n\n    @Value(\"${app.upload.cloudinary.cloud-name}\")\n    private String CLOUD_NAME;\n\n    @Value(\"${app.upload.cloudinary.api-key}\")\n    private String apiKey;\n\n    @Value(\"${app.upload.cloudinary.api-secret}\")\n    private String apiSecret;\n\n    @Bean\n    public Cloudinary cloudinary() {\n        return new Cloudinary(ObjectUtils.asMap(\n                \"cloud_name\", CLOUD_NAME,\n                \"api_key\", apiKey,\n                \"api_secret\", apiSecret,\n                \"secure\", true\n        ));\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

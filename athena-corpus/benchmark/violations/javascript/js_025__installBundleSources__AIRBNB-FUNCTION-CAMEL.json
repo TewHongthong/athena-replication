@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_025",
+  "language": "javascript",
+  "originalName": "installBundleSources",
+  "injectedName": "install_bundle_sources",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'install_bundle_sources' does not match camelCase pattern",
+    "name 'install_bundle_sources' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export async function install_bundle_sources(\n  sources,\n  options = {},\n  callbacks = {},\n) {\n  const results = []\n  const installOpts = {\n    scope: { global: true, project: true },\n    yes: options.yes ?? false,\n    noMcp: options.noMcp ?? false,\n  }\n  let installed = 0\n  let failed = 0\n  for (const [index, source] of sources.entries()) {\n    callbacks.onStart?.(source, index)\n    try {\n      const details = await apiInstallSkills(source, installOpts)\n      installed++\n      results.push({ source, status: 'ok', details })\n    } catch (error) {\n      failed++\n      results.push({ source, status: 'failed', error: error?.message })\n      callbacks.onError?.(source, error)\n    }\n  }\n  return { installed, failed, results }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

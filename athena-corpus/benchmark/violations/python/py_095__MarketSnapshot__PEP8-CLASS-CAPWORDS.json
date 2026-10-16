@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_095",
+  "language": "python",
+  "originalName": "MarketSnapshot",
+  "injectedName": "market_snapshot",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'market_snapshot' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass market_snapshot:\n    symbol: str\n    ltp: float\n    day_change_pct: float\n    volume: int\n    headlines: list[str]  # already deduped/recent, upstream",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

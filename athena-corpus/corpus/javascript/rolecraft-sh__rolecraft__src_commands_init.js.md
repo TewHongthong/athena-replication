@@ -1,0 +1,78 @@
+# src/commands/init.js
+
+- source repo: rolecraft-sh/rolecraft
+- repo url: https://github.com/rolecraft-sh/rolecraft
+- license: MIT
+- created_at: 2026-06-12T15:31:13Z
+- file path: src/commands/init.js
+- commit: b74f936ad1dc051aa5b25ce3154fb532597e802a
+
+```javascript
+import { mkdir, writeFile } from 'node:fs/promises'
+import { dirname, join } from 'node:path'
+import {
+  getTemplateNames,
+  getTemplate,
+  generateSkill,
+} from '../utils/templates/index.js'
+import { normalizeSlug } from '../utils/lockfile.js'
+import { initApi } from '../api/init.js'
+
+export async function initCommand(name, options = {}) {
+  // Handle --list
+  if (options.list) {
+    console.log('\nAvailable templates:\n')
+    for (const t of getTemplateNames()) {
+      const tmpl = getTemplate(t)
+      console.log(`  ${t.padEnd(20)} ${tmpl.description}`)
+    }
+    console.log()
+    return
+  }
+
+  // Handle --template
+  if (options.template) {
+    const skillName = name || 'my-skill'
+    const slug = skillName.includes('/') ? skillName : skillName
+    const displayName = slug.includes('/') ? slug.split('/')[1] : slug
+    const dirName = normalizeSlug(slug)
+    const dir = join(process.cwd(), dirName)
+    const owner = slug.includes('/') ? slug.split('/')[0] : 'local'
+
+    const opts = {
+      name: displayName,
+      slug,
+      owner,
+      description: options.description || `Describe what this skill does`,
+      agents: options.agents || ['claude'],
+    }
+
+    const content = generateSkill(options.template, opts)
+    await mkdir(dir, { recursive: true })
+    await writeFile(join(dir, 'SKILL.md'), content)
+
+    console.log(
+      `\n✅ Created skill with "${options.template}" template at: ${dir}/SKILL.md`,
+    )
+    console.log(`   Slug: ${slug}`)
+    console.log(`   Name: ${displayName}\n`)
+    console.log('Next steps:')
+    console.log(`  1. Edit ${dir}/SKILL.md with your skill details`)
+    console.log(`  2. rolecraft install ${dir}`)
+    console.log()
+    return
+  }
+
+  // Default: basic scaffold (backward compatible)
+  const result = await initApi(name)
+  const dir = dirname(result.path)
+
+  console.log(`\n✅ Created skill scaffold at: ${dir}/SKILL.md`)
+  console.log(`   Slug: ${result.slug}`)
+  console.log(`   Name: ${result.name}\n`)
+  console.log('Next steps:')
+  console.log(`  1. Edit ${dir}/SKILL.md with your skill details`)
+  console.log(`  2. rolecraft install ${dir}`)
+  console.log()
+}
+```

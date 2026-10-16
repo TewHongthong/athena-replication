@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_001",
+  "language": "csharp",
+  "originalName": "Pack",
+  "injectedName": "pack",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'pack' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public interface IBinaryPackable\n{\n    /// <summary>Writes the type's binary representation to the supplied stream.</summary>\n    /// <param name=\"stream\">The destination binary stream.</param>\n    void pack(IBinaryStream stream);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

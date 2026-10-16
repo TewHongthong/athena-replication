@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_100",
+  "language": "python",
+  "originalName": "payload",
+  "injectedName": "PAYLOAD",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PAYLOAD' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def atomic_json_write(path: Path, PAYLOAD: dict[str, Any]) -> None:\n    \"\"\"Atomically replace *path* with *payload*; never expose a partial file.\"\"\"\n    ensure_private_dir(path.parent)\n    descriptor, temporary_name = tempfile.mkstemp(\n        prefix=f\".{path.name}.\", suffix=\".tmp\", dir=path.parent\n    )\n    temporary = Path(temporary_name)\n    try:\n        os.fchmod(descriptor, 0o600)\n        with os.fdopen(descriptor, \"w\", encoding=\"utf-8\") as output:\n            json.dump(PAYLOAD, output, ensure_ascii=False, indent=2, sort_keys=True)\n            output.write(\"\\n\")\n            output.flush()\n            os.fsync(output.fileno())\n        os.replace(temporary, path)\n        try:\n            path.chmod(0o600)\n        except OSError:\n            pass\n    except Exception:\n        try:\n            temporary.unlink(missing_ok=True)\n        except OSError:\n            pass\n        raise",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_011",
+  "language": "csharp",
+  "originalName": "OriginalName",
+  "injectedName": "original_name",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'original_name' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public class Image\n{\n    public int Id { get; set; }\n\n    /// <summary>On-disk filename of the original (a GUID plus the original extension).</summary>\n    public string StorageKey { get; set; } = string.Empty;\n\n    public string ContentType { get; set; } = \"application/octet-stream\";\n\n    public string? original_name { get; set; }\n\n    public int? Width { get; set; }\n    public int? Height { get; set; }\n    public long? ByteSize { get; set; }\n\n    /// <summary>SHA-256 of the original bytes, used to de-duplicate identical uploads.</summary>\n    public string? Sha256 { get; set; }\n\n    /// <summary>Populated when the image was downloaded from a URL.</summary>\n    public string? SourceUrl { get; set; }\n\n    public DateTimeOffset CreatedAt { get; set; }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

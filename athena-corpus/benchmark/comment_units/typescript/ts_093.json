@@ -1,0 +1,37 @@
+{
+  "snippetId": "ts_093",
+  "language": "typescript",
+  "standardId": "GOOGLE_TS",
+  "identifierKind": "function",
+  "name": "useConversacion",
+  "codeBare": "function useConversacion() {\n  const [mensajes, setMensajes] = useState<Mensaje[]>([])\n  const [respondiendo, setRespondiendo] = useState(false)\n  const espera = useRef<ReturnType<typeof setTimeout> | null>(null)\n  const proximo = useRef(1)\n\n  const enviar = (texto: string) => {\n    setMensajes((lista) => [...lista, { id: proximo.current++, from: \"user\", texto }])\n    setRespondiendo(true)\n    espera.current = setTimeout(() => {\n      const respuesta = RESPUESTAS[texto] ?? \"Eso no lo tengo a mano todavía.\"\n      setMensajes((lista) => [...lista, { id: proximo.current++, from: \"assistant\", texto: respuesta }])\n      setRespondiendo(false)\n    }, 1400)\n  }\n  const cortar = () => {\n    if (espera.current) clearTimeout(espera.current)\n    setRespondiendo(false)\n  }\n  const nueva = () => {\n    cortar()\n    setMensajes([])\n  }\n  return { mensajes, respondiendo, enviar, cortar, nueva }\n}",
+  "referenceComment": "/** Una conversación de mentira: responde después de un rato, y se puede cortar. */",
+  "ruleIds": [
+    "GTS-JSDOC-TOPLEVEL-EXPORT"
+  ],
+  "origin": "snippet",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_demos/chat.tsx lines 37-61 (function useConversacion); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 0,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_demos/chat.tsx",
+    "startLine": 37,
+    "endLine": 61,
+    "unit": "function useConversacion",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__chat.tsx.md"
+  }
+}

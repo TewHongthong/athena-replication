@@ -1,0 +1,34 @@
+{
+  "snippetId": "cx_java_002",
+  "language": "java",
+  "standardId": "GOOGLE_JAVA",
+  "identifierKind": "method",
+  "name": "isDisplayable",
+  "codeBare": "public static boolean isDisplayable(Attribute attribute) {\n    if (attribute == null) {\n        return false;\n    }\n    ResourceLocation id = ForgeRegistries.ATTRIBUTES.getKey(attribute);\n    return id != null && !HIDDEN_IDS.contains(id.toString());\n}",
+  "referenceComment": "    /** 该属性是否应当出现在面板里（未注册 / 在屏蔽表里 ⇒ 否）。 */",
+  "ruleIds": [
+    "GJAVA-JAVADOC-METHOD-REQUIRED",
+    "GJAVA-JAVADOC-SUMMARY-FRAGMENT"
+  ],
+  "origin": "extra",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/attribute/AttributeDisplay.java lines 97-103 (method AttributeDisplay.isDisplayable); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-comment-units-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 1,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "path": "src/main/java/com/wanancat/furkin/internal/attribute/AttributeDisplay.java",
+    "startLine": 97,
+    "endLine": 103,
+    "corpusFile": "corpus/java/wanancat__furkin__AttributeDisplay.java.md"
+  }
+}

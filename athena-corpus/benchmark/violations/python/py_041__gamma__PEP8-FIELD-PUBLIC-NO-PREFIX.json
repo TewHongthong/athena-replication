@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_041",
+  "language": "python",
+  "originalName": "gamma",
+  "injectedName": "GAMMA",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'GAMMA' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class SineusoidalPositionalEncoding(nn.Module):\n    def __init__(self, n_embed, dtype=torch.float32, sinusoidal_base = 10000.0, max_len=5000):\n        super().__init__()\n        pe = torch.zeros(max_len, n_embed, dtype=dtype)\n        self.GAMMA = nn.Parameter(torch.ones(1, n_embed, dtype=dtype))\n        position = torch.arange(0, max_len, dtype=dtype).unsqueeze(1)\n        div_term = torch.exp(torch.arange(0, n_embed, 2, dtype=dtype) * (-torch.log(torch.tensor(sinusoidal_base, dtype=dtype)) / n_embed))\n        pe[:, 0::2] = torch.sin(position * div_term)\n        pe[:, 1::2] = torch.cos(position * div_term)\n        pe = pe.unsqueeze(0)\n        self.register_buffer('pe', pe)\n\n    def forward(self, x):\n        # x shape = (B, T, n_embed)\n        # pe shape = (1, max_len, n_embed) -> sliced to match x.size(1)\n        return x + self.GAMMA * self.pe[:, :x.size(1), :]",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_068",
+  "language": "csharp",
+  "originalName": "providerName",
+  "injectedName": "provider_name",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'provider_name' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public ISmsProvider Resolve(SmsRoutingContext context)\n{\n    var provider_name = context.ExplicitProvider ?? _options.DefaultProvider;\n\n    if (string.IsNullOrWhiteSpace(provider_name))\n        throw new SmsBridgeException(\n            \"No provider could be resolved. Set 'SmsBridge:DefaultProvider' in configuration.\");\n\n    if (!_providers.TryGetValue(provider_name, out var provider))\n        throw new SmsBridgeException(\n            $\"Provider '{provider_name}' is not registered. Registered: [{string.Join(\", \", _providers.Keys)}].\");\n\n    return provider;\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

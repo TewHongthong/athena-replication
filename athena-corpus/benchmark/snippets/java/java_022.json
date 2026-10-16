@@ -1,0 +1,52 @@
+{
+  "id": "java_022",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/order/OrderSpecification.java lines 6-28 (class OrderSpecification); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public class OrderSpecification {\n    public static Specification<Order> hasStatus(OrderStatus status) {\n        return (root, query, cb) -> status == null ? null : cb.equal(root.get(\"status\"), status);\n    }\n\n    public static Specification<Order> hasDeliveryMethod(DeliveryMethod method) {\n        return (root, query, cb) -> method == null ? null : cb.equal(root.get(\"deliveryMethod\"), method);\n    }\n\n    public static Specification<Order> hasPaymentMethod(PaymentMethod method) {\n        return (root, query, cb) -> method == null ? null : cb.equal(root.get(\"paymentMethod\"), method);\n    }\n\n    public static Specification<Order> hasSearch(String search) {\n        return (root, query, cb) -> {\n            if (search == null || search.isBlank()) return null;\n            return cb.or(\n                    cb.like(cb.lower(root.get(\"customerName\")), LikePattern.containsIgnoreCase(search), LikePattern.ESCAPE),\n                    cb.like(root.get(\"phone\"), LikePattern.contains(search), LikePattern.ESCAPE)\n            );\n        };\n    }\n}",
+  "identifiers": [
+    {
+      "name": "OrderSpecification",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "hasStatus",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "status",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "hasDeliveryMethod",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "method",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "hasPaymentMethod",
+      "kind": "method",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/order/OrderSpecification.java",
+    "startLine": 6,
+    "endLine": 28,
+    "unit": "class OrderSpecification",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__OrderSpecification.java.md"
+  }
+}

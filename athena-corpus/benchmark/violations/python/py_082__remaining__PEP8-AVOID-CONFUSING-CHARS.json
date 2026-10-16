@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_082",
+  "language": "python",
+  "originalName": "remaining",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def strip_trailing_tool_clauses(notes: object) -> str:\n    \"\"\"Remove complete known vault-cleaner clauses from the Notes tail.\n\n    Repeated clauses are removed one at a time from the end.  A tool-looking\n    fragment with user text after it is intentionally left untouched because\n    its ownership is ambiguous.\n    \"\"\"\n    l = str(notes).strip()\n    while l:\n        markers = tuple(_MARKER_RE.finditer(l))\n        if not markers:\n            break\n        start = markers[-1].start(1)\n        suffix = l[start:]\n        if not any(pattern.fullmatch(suffix) for pattern in _GENERATED_CLAUSE_RES):\n            break\n        l = l[:start].rstrip()\n    return l",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0
+}

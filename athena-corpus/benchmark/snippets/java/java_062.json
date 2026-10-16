@@ -1,0 +1,52 @@
+{
+  "id": "java_062",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminSessionHydrationContractTest.java lines 12-35 (class AdminSessionHydrationContractTest); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "class AdminSessionHydrationContractTest {\n\n  @Test\n  void administrationHydratesCachedUserBeforeSessionProbeCompletes() throws IOException {\n    String javascript = resource(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(javascript.contains(\"function hydrateSessionControls()\"));\n    assertTrue(javascript.contains(\"hydrateSessionControls();\\nloadCurrentSession({ quiet: true })\"));\n  }\n\n  @Test\n  void passwordLoginRefreshesTheCurrentPageWithoutAFullReload() throws IOException {\n    String login = resource(\"/META-INF/resources/login/assets/login-modal.js\");\n\n    assertTrue(login.contains(\"new CustomEvent(\\\"kkrepo:login-success\\\"\"));\n    assertFalse(login.contains(\"window.location.reload()\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "identifiers": [
+    {
+      "name": "AdminSessionHydrationContractTest",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "resource",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "javascript",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "login",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "stream",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminSessionHydrationContractTest.java",
+    "startLine": 12,
+    "endLine": 35,
+    "unit": "class AdminSessionHydrationContractTest",
+    "corpusFile": "corpus/java/klboke__kkRepo__AdminSessionHydrationContractTest.java.md"
+  }
+}

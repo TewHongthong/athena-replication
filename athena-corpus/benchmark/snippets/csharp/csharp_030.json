@@ -1,0 +1,47 @@
+{
+  "id": "csharp_030",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.GodotClient/Pairing/OwnerPairingProtocol.cs lines 16-22 (class OwnerPairingState); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public enum OwnerPairingState\n{\n    Pending,\n    Approved,\n    Active,\n    Expired,\n}",
+  "identifiers": [
+    {
+      "name": "OwnerPairingState",
+      "kind": "enum",
+      "isCompliant": true
+    },
+    {
+      "name": "Pending",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Approved",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Active",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Expired",
+      "kind": "enum_member",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.GodotClient/Pairing/OwnerPairingProtocol.cs",
+    "startLine": 16,
+    "endLine": 22,
+    "unit": "class OwnerPairingState",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__OwnerPairingProtocol.cs.md"
+  }
+}

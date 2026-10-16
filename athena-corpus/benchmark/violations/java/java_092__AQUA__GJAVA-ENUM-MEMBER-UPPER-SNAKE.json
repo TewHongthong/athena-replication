@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_092",
+  "language": "java",
+  "originalName": "AQUA",
+  "injectedName": "aqua",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "GJAVA-ENUM-MEMBER-UPPER-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'aqua' does not match UPPER_SNAKE_CASE pattern",
+    "name 'aqua' matches forbidden pattern '[a-z]'"
+  ],
+  "codeContextWithViolation": "public enum ColorTheme {\n    aqua(\"Синяя\", ChatFormatting.aqua, 0x00d9ff),\n    RED(\"Красная\", ChatFormatting.RED, 0xff4444),\n    BLUE(\"Голубая\", ChatFormatting.BLUE, 0x5555ff),\n    GREEN(\"Зелёная\", ChatFormatting.GREEN, 0x55ff55),\n    LIGHT_PURPLE(\"Фиолетовая\", ChatFormatting.LIGHT_PURPLE, 0xff55ff),\n    GOLD(\"Золотая\", ChatFormatting.GOLD, 0xffaa00);\n\n    private final String displayName;\n    private final ChatFormatting formatting;\n    private final int rgbColor;\n\n    ColorTheme(String displayName, ChatFormatting formatting, int rgbColor) {\n        this.displayName = displayName;\n        this.formatting = formatting;\n        this.rgbColor = rgbColor;\n    }\n\n    public String getDisplayName() {\n        return displayName;\n    }\n\n    public ChatFormatting getFormatting() {\n        return formatting;\n    }\n\n    public int getRgbColor() {\n        return rgbColor;\n    }\n\n    public ColorTheme next() {\n        ColorTheme[] values = values();\n        return values[(this.ordinal() + 1) % values.length];\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_072",
+  "language": "csharp",
+  "originalName": "worldCenter",
+  "injectedName": "world_center",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'world_center' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "[MenuItem(\"Tools/Snap Selected Object to Child Mesh Center\")]\npublic static void AlignToCenter()\n{\n    GameObject activeObj = Selection.activeGameObject;\n    if (activeObj == null) return;\n\n    MeshFilter mf = activeObj.GetComponentInChildren<MeshFilter>();\n    if (mf == null || mf.sharedMesh == null)\n    {\n        Debug.LogWarning(\"No MeshFilter found in selected object or its children!\");\n        return;\n    }\n\n    Undo.RegisterFullObjectHierarchyUndo(activeObj, \"Snap To Mesh Center\");\n\n    // 1. Store and unparent all children so they don't move in world space\n    int childCount = activeObj.transform.childCount;\n    Transform[] children = new Transform[childCount];\n    for (int i = 0; i < childCount; i++)\n    {\n        children[i] = activeObj.transform.GetChild(i);\n    }\n\n    foreach (Transform child in children)\n    {\n        child.SetParent(null, true); // true = keep current world position\n    }\n\n    // 2. Move parent object to exact geometric center of the target CAD mesh\n    Vector3 world_center = mf.transform.TransformPoint(mf.sharedMesh.bounds.center);\n    activeObj.transform.position = world_center;\n\n    // 3. Re-parent children back to the newly positioned parent\n    foreach (Transform child in children)\n    {\n        child.SetParent(activeObj.transform, true);\n    }\n\n    Debug.Log($\"Pivot centered to {world_center} without shifting visuals!\");\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

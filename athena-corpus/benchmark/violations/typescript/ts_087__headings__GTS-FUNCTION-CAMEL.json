@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_087",
+  "language": "typescript",
+  "originalName": "headings",
+  "injectedName": "HEADINGS",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HEADINGS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function HEADINGS(markdown: string) {\n  return markdown\n    .split(\"\\n\")\n    .filter((line) => /^##\\s/.test(line))\n    .map((line) => {\n      const text = line.replace(/^##\\s+/, \"\").replace(/[*`]/g, \"\")\n      return { text, id: slugify(line.replace(/^##\\s+/, \"\")) }\n    })\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

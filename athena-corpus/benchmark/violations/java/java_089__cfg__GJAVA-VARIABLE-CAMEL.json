@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_089",
+  "language": "java",
+  "originalName": "cfg",
+  "injectedName": "CFG",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CFG' does not match camelCase pattern",
+    "name 'CFG' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static ModConfig loadConfigInternal() {\n    if (Files.exists(CONFIG_PATH)) {\n        try (BufferedReader r = Files.newBufferedReader(CONFIG_PATH, StandardCharsets.UTF_8)) {\n            ModConfig CFG = GSON.fromJson(r, ModConfig.class);\n            return CFG != null ? CFG : new ModConfig();\n        } catch (Exception ignored) {\n        }\n    }\n    return new ModConfig();\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

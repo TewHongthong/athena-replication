@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_098",
+  "language": "typescript",
+  "originalName": "invalido",
+  "injectedName": "INVALIDO",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INVALIDO' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Error() {\n  const id = useId()\n  const [valor, setValor] = useState(\"acme@\")\n  const INVALIDO = !/^[^@\\s]+@[^@\\s.]+\\.[^@\\s]+$/.test(valor)\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-2\">\n      <Label htmlFor={id}>Email</Label>\n      <Input\n        aria-describedby={INVALIDO ? `${id}-error` : undefined}\n        aria-invalid={INVALIDO || undefined}\n        id={id}\n        onChange={(event) => setValor(event.target.value)}\n        type=\"email\"\n        value={valor}\n      />\n      {INVALIDO && (\n        <p className=\"text-copy-13 text-red-900\" id={`${id}-error`}>\n          Escribí un email válido, con dominio.\n        </p>\n      )}\n    </div>\n  )\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

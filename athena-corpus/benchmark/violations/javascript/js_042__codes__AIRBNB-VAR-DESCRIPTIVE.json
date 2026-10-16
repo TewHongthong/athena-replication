@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_042",
+  "language": "javascript",
+  "originalName": "codes",
+  "injectedName": "c",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'c' shorter than minLength=2",
+    "name 'c' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function colorize(text, color, enabled) {\n  if (!enabled) return text\n  const c = {\n    green: '32',\n    yellow: '33',\n    cyan: '36',\n    bold: '1',\n  }\n  const code = c[color] || '0'\n  return `\\x1b[${code}m${text}\\x1b[0m`\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

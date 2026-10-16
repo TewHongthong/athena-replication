@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_013",
+  "language": "javascript",
+  "originalName": "findingsPath",
+  "injectedName": "findings_path",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'findings_path' does not match camelCase pattern",
+    "name 'findings_path' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "function runCli(contents, options = {}) {\n  const { nodeArgs = [], timeout = CLI_TIMEOUT_MS } = options;\n  const directory = fs.mkdtempSync(path.join(os.tmpdir(), \"validate-findings-\"));\n  const findings_path = path.join(directory, \"findings.json\");\n  try {\n    fs.writeFileSync(findings_path, contents);\n    return spawnSync(process.execPath, [...nodeArgs, validatorPath, findings_path], {\n      encoding: \"utf8\",\n      timeout,\n    });\n  } finally {\n    fs.rmSync(directory, { recursive: true, force: true });\n  }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

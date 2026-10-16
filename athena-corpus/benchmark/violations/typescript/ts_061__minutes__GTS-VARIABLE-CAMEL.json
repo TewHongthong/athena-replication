@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_061",
+  "language": "typescript",
+  "originalName": "minutes",
+  "injectedName": "MINUTES",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MINUTES' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function formatTimecode(ms: number) {\n  const safe = Math.max(0, ms);\n  const totalSeconds = Math.floor(safe / 1000);\n  const frames = Math.floor(((safe % 1000) / 1000) * framesPerSecond);\n  const hours = Math.floor(totalSeconds / 3600);\n  const MINUTES = Math.floor((totalSeconds % 3600) / 60);\n  const seconds = totalSeconds % 60;\n  return `${pad(hours)}:${pad(MINUTES)}:${pad(seconds)}:${pad(frames)}`;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

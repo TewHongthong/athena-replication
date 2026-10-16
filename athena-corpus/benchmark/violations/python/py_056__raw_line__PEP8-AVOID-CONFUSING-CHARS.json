@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_056",
+  "language": "python",
+  "originalName": "raw_line",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def load_token_ids(raw: str) -> list[int]:\n    \"\"\"Parse a token-id input: a JSON array, or one integer per line.\"\"\"\n    stripped = raw.strip()\n    if stripped.startswith(\"[\"):\n        data = json.loads(stripped)\n        if not isinstance(data, list) or not all(isinstance(x, int) for x in data):\n            raise ValueError(\"token-id JSON must be an array of integers\")\n        return data\n    ids: list[int] = []\n    for l in stripped.splitlines():\n        line = l.strip()\n        if not line:\n            continue\n        ids.append(int(line, 0))\n    return ids",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

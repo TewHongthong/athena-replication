@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_061",
+  "language": "java",
+  "originalName": "index",
+  "injectedName": "INDEX",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INDEX' does not match camelCase pattern",
+    "name 'INDEX' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "class AdminRepositoryRecipeComboboxContractTest {\n\n  @Test\n  void repositoryRecipeUsesAccessibleSearchableCombobox() throws IOException {\n    String INDEX = resource(\"/META-INF/resources/admin/index.html\");\n    String javascript = resource(\"/META-INF/resources/admin/assets/admin.js\");\n    String stylesheet = resource(\"/META-INF/resources/admin/assets/admin.css\");\n\n    assertTrue(INDEX.contains(\"id=\\\"repository-recipe\\\" name=\\\"recipe\\\" required hidden\"));\n    assertTrue(INDEX.contains(\"id=\\\"repository-recipe-trigger\\\"\"));\n    assertTrue(INDEX.contains(\"aria-haspopup=\\\"listbox\\\"\"));\n    assertTrue(INDEX.contains(\"id=\\\"repository-recipe-search\\\"\"));\n    assertTrue(INDEX.contains(\"role=\\\"combobox\\\"\"));\n    assertTrue(INDEX.contains(\"aria-autocomplete=\\\"list\\\"\"));\n    assertTrue(INDEX.contains(\"id=\\\"repository-recipe-options\\\"\"));\n    assertTrue(INDEX.contains(\"role=\\\"listbox\\\"\"));\n\n    assertTrue(javascript.contains(\"function bindRepositoryRecipeCombobox()\"));\n    assertTrue(javascript.contains(\"select.dispatchEvent(new Event(\\\"change\\\", { bubbles: true }))\"));\n    assertTrue(javascript.contains(\"event.key === \\\"ArrowDown\\\" || event.key === \\\"ArrowUp\\\"\"));\n    assertTrue(javascript.contains(\"event.key === \\\"Enter\\\"\"));\n    assertTrue(javascript.contains(\"event.key === \\\"Escape\\\"\"));\n    assertTrue(javascript.contains(\"closest(\\\"label, .form-field\\\")\"));\n    assertFalse(javascript.contains(\"<small>${escapeHtml(recipe?.name || \\\"\\\")}</small>\"));\n\n    assertTrue(stylesheet.contains(\".recipe-combobox-trigger\"));\n    assertTrue(stylesheet.contains(\".recipe-combobox-popover\"));\n    assertTrue(stylesheet.contains(\"z-index: 40;\\n  width: 100%;\"));\n    assertTrue(stylesheet.contains(\".recipe-combobox-option\"));\n    assertTrue(stylesheet.contains(\".recipe-combobox-trigger:disabled\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 9,
+  "commentOccurrencesRenamed": 0
+}

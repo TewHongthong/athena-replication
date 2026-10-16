@@ -1,0 +1,52 @@
+{
+  "id": "js_042",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/commands/compose.js lines 11-21 (function colorize); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function colorize(text, color, enabled) {\n  if (!enabled) return text\n  const codes = {\n    green: '32',\n    yellow: '33',\n    cyan: '36',\n    bold: '1',\n  }\n  const code = codes[color] || '0'\n  return `\\x1b[${code}m${text}\\x1b[0m`\n}",
+  "identifiers": [
+    {
+      "name": "colorize",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "codes",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "text",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "color",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "enabled",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "code",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/commands/compose.js",
+    "startLine": 11,
+    "endLine": 21,
+    "unit": "function colorize",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__compose.js.md"
+  }
+}

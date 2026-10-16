@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_053",
+  "language": "javascript",
+  "originalName": "message",
+  "injectedName": "m",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'm' shorter than minLength=2",
+    "name 'm' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export class UserError extends Error {\n  /**\n   * @param {string} message  Short, user-facing description of what went wrong.\n   * @param {object} [opts]\n   * @param {string} [opts.suggestion]  What the user should do next.\n   * @param {string} [opts.detail]      Technical detail (shown with --verbose).\n   * @param {string} [opts.code]        Machine-readable error code.\n   */\n  constructor(m, opts = {}) {\n    super(m)\n    this.name = 'UserError'\n    this.suggestion = opts.suggestion || ''\n    this.detail = opts.detail || ''\n    this.userCode = opts.code || ''\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

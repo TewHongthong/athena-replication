@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_007",
+  "language": "csharp",
+  "originalName": "Name",
+  "injectedName": "name",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'name' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed class BomRequirement\n{\n    public int Id { get; set; }\n    public int BomDefinitionId { get; set; }\n    public string name { get; set; } = string.Empty;\n    public decimal Quantity { get; set; } = 1;\n    public string? Unit { get; set; }\n    public bool IsOptional { get; set; }\n    public BomMatchMode MatchMode { get; set; }\n    public int? MatchItemKindId { get; set; }\n    public string? MatchText { get; set; }\n    public Dictionary<string, string> RequiredAttributes { get; set; } = new();\n    public List<int> CandidateItemIds { get; set; } = new();\n    public int SortOrder { get; set; }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

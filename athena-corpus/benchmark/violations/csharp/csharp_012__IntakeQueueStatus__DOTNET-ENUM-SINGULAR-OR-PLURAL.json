@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_012",
+  "language": "csharp",
+  "originalName": "IntakeQueueStatus",
+  "injectedName": "intake_queue_status",
+  "identifierKind": "enum",
+  "violatedRuleId": "DOTNET-ENUM-SINGULAR-OR-PLURAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'intake_queue_status' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum intake_queue_status\n{\n    Pending,\n    Processing,\n    ReadyForReview,\n    Failed,\n    Accepted,\n    Rejected,\n    Undone\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

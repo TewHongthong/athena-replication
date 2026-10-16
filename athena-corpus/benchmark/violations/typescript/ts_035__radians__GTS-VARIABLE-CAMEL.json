@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_035",
+  "language": "typescript",
+  "originalName": "radians",
+  "injectedName": "RADIANS",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RADIANS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function Graticule({ size }: { size: number }) {\n  const center = size / 2;\n  const inner = size * 0.36;\n  const ticks = Array.from({ length: 24 }, (_, index) => index * 15);\n  return (\n    <Svg width={size} height={size} style={StyleSheet.absoluteFill}>\n      <Line x1={0} y1={center} x2={size} y2={center} stroke={colors.bone} strokeOpacity={0.28} strokeWidth={1} />\n      <Line x1={center} y1={0} x2={center} y2={size} stroke={colors.bone} strokeOpacity={0.28} strokeWidth={1} />\n      <Circle cx={center} cy={center} r={center - 1} stroke={colors.bone} strokeOpacity={0.22} strokeWidth={1} fill=\"none\" />\n      <Circle cx={center} cy={center} r={size * 0.43} stroke={colors.bone} strokeOpacity={0.5} strokeWidth={1.5} fill=\"none\" />\n      <Circle cx={center} cy={center} r={inner} stroke={colors.bone} strokeWidth={Math.max(3, size * 0.022)} fill=\"none\" />\n      <G>\n        {ticks.map((angle) => {\n          const RADIANS = (angle * Math.PI) / 180;\n          const long = angle % 90 === 0;\n          const from = size * (long ? 0.43 : 0.45);\n          const to = size * 0.48;\n          return (\n            <Line\n              key={angle}\n              x1={center + Math.sin(RADIANS) * from}\n              y1={center - Math.cos(RADIANS) * from}\n              x2={center + Math.sin(RADIANS) * to}\n              y2={center - Math.cos(RADIANS) * to}\n              stroke={colors.bone}\n              strokeOpacity={long ? 0.7 : 0.35}\n              strokeWidth={long ? 2 : 1}\n            />\n          );\n        })}\n      </G>\n    </Svg>\n  );\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

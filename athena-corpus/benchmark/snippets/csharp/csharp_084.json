@@ -1,0 +1,37 @@
+{
+  "id": "csharp_084",
+  "language": "csharp",
+  "source": "github:thecheetoman/ESim@59cde034d0041d0af0a43cdf7e43d979935b7db8",
+  "sourceDetail": "Assets/Scripts/Robot/SlidingRack.cs lines 45-60 (method SlidingRack.Update); license MIT; repo created 2026-09-16T23:28:41Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "private void Update()\n{\n    if (!isEnabled) return;\n\n    bool deployPressed = Input.GetKeyDown(intakeKey)\n        || (PlayerInputHandler.Instance != null && PlayerInputHandler.Instance.DeployPressedThisFrame());\n\n    if (deployPressed)\n    {\n        isDeployed = !isDeployed;\n    }\n\n    Vector3 targetPosition = isDeployed ? extendedPosition : retractedPosition;\n\n    transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * lerpSpeed);\n}",
+  "identifiers": [
+    {
+      "name": "Update",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "deployPressed",
+      "kind": "boolean_variable",
+      "isCompliant": true
+    },
+    {
+      "name": "targetPosition",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "thecheetoman/ESim",
+    "repoUrl": "https://github.com/thecheetoman/ESim",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-16T23:28:41Z",
+    "commit": "59cde034d0041d0af0a43cdf7e43d979935b7db8",
+    "path": "Assets/Scripts/Robot/SlidingRack.cs",
+    "startLine": 45,
+    "endLine": 60,
+    "unit": "method SlidingRack.Update",
+    "corpusFile": "corpus/csharp/thecheetoman__ESim__SlidingRack.cs.md"
+  }
+}

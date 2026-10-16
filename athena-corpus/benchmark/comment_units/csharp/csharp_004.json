@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_004",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "StreamBinaryStream",
+  "codeBare": "public sealed class StreamBinaryStream : IBinaryStream\n{\n    private readonly Stream _stream;\n\n    /// <summary>Initializes a stream adapter.</summary>\n    /// <param name=\"stream\">The underlying .NET stream.</param>\n    public StreamBinaryStream(Stream stream)\n    {\n        _stream = stream ?? throw new ArgumentNullException(nameof(stream));\n    }\n\n    /// <inheritdoc />\n    public bool CanRead => _stream.CanRead;\n\n    /// <inheritdoc />\n    public bool CanWrite => _stream.CanWrite;\n\n    /// <inheritdoc />\n    public long Position\n    {\n        get => _stream.Position;\n        set => _stream.Position = value;\n    }\n\n    /// <inheritdoc />\n    public long Length => _stream.Length;\n\n    /// <inheritdoc />\n    public int Read(Span<byte> buffer) => _stream.Read(buffer);\n\n    /// <inheritdoc />\n    public void Write(ReadOnlySpan<byte> buffer) => _stream.Write(buffer);\n\n    /// <inheritdoc />\n    public void Flush() => _stream.Flush();\n\n    /// <inheritdoc />\n    public void Dispose() => _stream.Dispose();\n}",
+  "referenceComment": "/// <summary>\n/// Adapts a standard .NET <see cref=\"Stream\"/> to the <see cref=\"IBinaryStream\"/> contract.\n/// </summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:TrentBest/TheSingularityWorkshop.FSM_Serialization@b6ba826742ca6f4507323a478deeaa0b5d915aa9",
+  "sourceDetail": "src/StreamBinaryStream.cs lines 6-44 (class StreamBinaryStream); license MIT; repo created 2026-09-26T23:07:23Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 3,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "TrentBest/TheSingularityWorkshop.FSM_Serialization",
+    "repoUrl": "https://github.com/TrentBest/TheSingularityWorkshop.FSM_Serialization",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T23:07:23Z",
+    "commit": "b6ba826742ca6f4507323a478deeaa0b5d915aa9",
+    "path": "src/StreamBinaryStream.cs",
+    "startLine": 6,
+    "endLine": 44,
+    "unit": "class StreamBinaryStream",
+    "corpusFile": "corpus/csharp/TrentBest__TheSingularityWorkshop.FSM_Serialization__StreamBinaryStream.cs.md"
+  }
+}

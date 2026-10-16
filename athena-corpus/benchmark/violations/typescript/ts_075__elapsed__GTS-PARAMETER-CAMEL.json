@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_075",
+  "language": "typescript",
+  "originalName": "elapsed",
+  "injectedName": "ELAPSED",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ELAPSED' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function useFinalStretchCue(recording: boolean, limit: number, ELAPSED: number) {\n  const seconds = recording ? remainingWholeSeconds(limit, ELAPSED) : null;\n  useEffect(() => {\n    if (seconds !== null && seconds > 0 && seconds <= 5) cues.finalSecond();\n  }, [seconds]);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

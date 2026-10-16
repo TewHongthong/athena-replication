@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_073",
+  "language": "javascript",
+  "originalName": "day",
+  "injectedName": "d",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'd' shorter than minLength=2",
+    "name 'd' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildWeeklyCloseActionProposal({priorities=[],selectedIds=[],futureDays=[],snapshotId=null}={}){\n  const selected=priorities.filter((item,index)=>selectedIds.includes(item.priorityId||item.topicId||String(index)));\n  const capacity=(futureDays||[]).map(d=>({date:d.date,remaining:Math.max(0,Math.round(Number(d.availableMinutes)||0)),availableMinutes:Math.max(0,Math.round(Number(d.availableMinutes)||0))}));\n  const allocations=[];let unallocated=0;\n  selected.forEach((item,index)=>{let left=Math.max(0,Math.round(Number(item.estimatedMinutes)||0));for(const d of capacity){if(!left||!d.remaining)continue;const minutes=Math.min(left,d.remaining);allocations.push({priorityId:item.priorityId||item.topicId||String(index),topicId:item.topicId||null,subjectId:item.subjectId||null,minutes,date:d.date,action:item.action,reason:item.reason,snapshotId});left-=minutes;d.remaining-=minutes}unallocated+=left});\n  return{selectedCount:selected.length,allocations,unallocatedMinutes:unallocated,capacityByDay:capacity.map(d=>({date:d.date,availableMinutes:d.availableMinutes,allocatedMinutes:d.availableMinutes-d.remaining,remainingMinutes:d.remaining})),snapshotId};\n}",
+  "occurrencesRenamed": 15,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

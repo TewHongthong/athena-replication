@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_078",
+  "language": "csharp",
+  "originalName": "WorldAxis",
+  "injectedName": "world_axis",
+  "identifierKind": "enum",
+  "violatedRuleId": "DOTNET-ENUM-SINGULAR-OR-PLURAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'world_axis' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum world_axis\n{\n    PositiveZ,\n    PositiveX,\n    NegativeZ,\n    NegativeX,\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

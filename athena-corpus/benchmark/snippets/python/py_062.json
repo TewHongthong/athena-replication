@@ -1,0 +1,52 @@
+{
+  "id": "py_062",
+  "language": "python",
+  "source": "github:halileroglu711/CNN-classification@c8ca40297a5e6c45dbe3d78ad76760051705a210",
+  "sourceDetail": "main.py lines 4-30 (function train); license MIT; repo created 2026-09-22T18:54:11Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def train():\n    # 1 - Define the device\n    device=(\"cuda\"if torch.cuda.is_available()else \"cpu\")\n\n    # 2 - Define the model\n    model=CNN().to(device)\n    \n    # 3 - Get train and test loaders\n    train_loader,test_loader=get_data_loaders()\n    \n    # 4 - Get criterion and optimizer\n    criterion,optimizer=define_loss_and_optimizer(model)\n    \n    # 5 - Deploy Scheduler (in order to stop overfitting by decreasing learning rate progressively after each epoch)\n    scheduler=torch.optim.lr_scheduler.CosineAnnealingLR(optimizer,T_max=30)\n    \n    # 6 - Start training\n    train_model(model,5,train_loader,criterion,optimizer,scheduler,epochs=30)\n    \n    # 7 - Test the model with both test and train datasets. \n    train_accuracy=float(test_model(model,train_loader))\n    test_accuracy=float(test_model(model,test_loader))\n    \n    # 8 - Check both values in order to detect possible overfitting\n    print(f\"Train Accuracy: {train_accuracy} % \\n Test Accuracy: {test_accuracy} % \")\n    if train_accuracy-test_accuracy>10:\n        print(f\"Possible Overfitting has been detected. You might consider changing epoch number.\")",
+  "identifiers": [
+    {
+      "name": "train",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "device",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "model",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "train_loader",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "test_loader",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "criterion",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "halileroglu711/CNN-classification",
+    "repoUrl": "https://github.com/halileroglu711/CNN-classification",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T18:54:11Z",
+    "commit": "c8ca40297a5e6c45dbe3d78ad76760051705a210",
+    "path": "main.py",
+    "startLine": 4,
+    "endLine": 30,
+    "unit": "function train",
+    "corpusFile": "corpus/python/halileroglu711__CNN-classification__main.py.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_074",
+  "language": "typescript",
+  "originalName": "demo",
+  "injectedName": "DEMO",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DEMO' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface StudioScreenProps {\n  DEMO: boolean;\n  wide: boolean;\n  recordings: Recording[];\n  onCapture: (input: NewRecording) => Promise<Recording>;\n  onOpenRecording: (recording: Recording) => void;\n  onOpenRoll: () => void;\n  onEnterDemo?: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

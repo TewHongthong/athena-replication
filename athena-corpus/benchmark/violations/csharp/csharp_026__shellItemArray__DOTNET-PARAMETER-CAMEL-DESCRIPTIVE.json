@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_026",
+  "language": "csharp",
+  "originalName": "shellItemArray",
+  "injectedName": "shell_item_array",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'shell_item_array' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "[ComImport, Guid(\"A08CE4D0-FA25-44AB-B57C-C7B1C323E0B9\"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]\nprivate interface IExplorerCommand\n{\n    void GetTitle([MarshalAs(UnmanagedType.Interface)] object shell_item_array, out IntPtr name);\n    void GetIcon([MarshalAs(UnmanagedType.Interface)] object shell_item_array, out IntPtr icon);\n    void GetToolTip([MarshalAs(UnmanagedType.Interface)] object shell_item_array, out IntPtr toolTip);\n    void GetCanonicalName(out Guid commandName);\n    void GetState([MarshalAs(UnmanagedType.Interface)] object shell_item_array, [MarshalAs(UnmanagedType.Bool)] bool okToBeSlow, out EXPCMDSTATE state);\n    void Invoke([MarshalAs(UnmanagedType.Interface)] object shell_item_array, IntPtr bindContext);\n    void GetFlags(out int flags);\n    void EnumSubCommands(out IEnumExplorerCommand commands);\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

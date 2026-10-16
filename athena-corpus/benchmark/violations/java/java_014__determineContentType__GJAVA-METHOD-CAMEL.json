@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_014",
+  "language": "java",
+  "originalName": "determineContentType",
+  "injectedName": "determine_content_type",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'determine_content_type' does not match camelCase pattern",
+    "name 'determine_content_type' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public interface FileStorageService {\n\n    String store(MultipartFile file);\n\n    Resource load(String fileName);\n\n    String determine_content_type(String fileName);\n\n    void delete(String fileUrl);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

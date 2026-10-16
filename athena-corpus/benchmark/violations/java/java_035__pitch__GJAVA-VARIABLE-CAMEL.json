@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_035",
+  "language": "java",
+  "originalName": "pitch",
+  "injectedName": "PITCH",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PITCH' does not match camelCase pattern",
+    "name 'PITCH' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static void update(MinecraftClient mc) {\n    var cfg = AeroClient.CONFIG;\n    if (cfg == null || !cfg.motionBlur || mc.player == null || \"Simple\".equalsIgnoreCase(cfg.motionBlurStyle)) {\n        radius = 0;\n        speed = 0;\n        lastNanos = 0;\n        return;\n    }\n    long now = System.nanoTime();\n    float yaw = mc.player.getYaw();\n    float PITCH = mc.player.getPitch();\n    if (lastNanos == 0) {\n        lastNanos = now;\n        lastYaw = yaw;\n        lastPitch = PITCH;\n        return;\n    }\n    float dt = Math.max(0.0005f, Math.min(0.1f, (now - lastNanos) / 1_000_000_000f));\n    lastNanos = now;\n    float d = (float) Math.hypot(MathHelper.wrapDegrees(yaw - lastYaw), PITCH - lastPitch);\n    lastYaw = yaw;\n    lastPitch = PITCH;\n\n    // rise fast, fall over ~80 ms so a quick flick leaves a short trail instead of flickering\n    float inst = d / dt;\n    float rise = 1f - (float) Math.exp(-dt / 0.02f);\n    float fall = 1f - (float) Math.exp(-dt / 0.08f);\n    speed += (inst - speed) * (inst > speed ? rise : fall);\n\n    float preset = \"High\".equalsIgnoreCase(cfg.motionBlurStrength) ? 1.5f : \"Low\".equalsIgnoreCase(cfg.motionBlurStrength) ? 0.6f : 1f;\n    float amount = MathHelper.clamp(cfg.motionBlurAmount, 10, 100) / 50f * preset;\n    // ~0 up to 40 deg/s (slow aiming stays sharp), full blur around 900 deg/s\n    float t = MathHelper.clamp((speed - 40f) / 860f, 0f, 1f);\n    float target = t * t * (3f - 2f * t) * 14f * amount;\n    radius = Math.min(24f, target);\n    if (radius < 0.6f) {\n        radius = 0;\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

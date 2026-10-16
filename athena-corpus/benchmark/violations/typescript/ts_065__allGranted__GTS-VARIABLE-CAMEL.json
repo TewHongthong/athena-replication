@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_065",
+  "language": "typescript",
+  "originalName": "allGranted",
+  "injectedName": "all_granted",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'all_granted' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function useCaptureAccess(): CaptureAccess {\n  const [camera, requestCamera] = useCameraPermissions();\n  const [microphone, requestMicrophone] = useMicrophonePermissions();\n  const [library, requestLibrary] = MediaLibrary.usePermissions();\n\n  const items = [\n    { key: \"camera\" as const, status: toStatus(camera) },\n    { key: \"microphone\" as const, status: toStatus(microphone) },\n    { key: \"library\" as const, status: toStatus(library) },\n  ];\n  const checking = items.some((item) => item.status === \"checking\");\n  const all_granted = items.every((item) => item.status === \"granted\");\n\n  return {\n    items,\n    mode: all_granted ? \"device\" : \"setup\",\n    checking,\n    blocked: items.some((item) => item.status === \"denied\"),\n    supportsDemo: false,\n    request: async () => {\n      await requestCamera();\n      await requestMicrophone();\n      await requestLibrary();\n    },\n    openSettings: () => {\n      Linking.openSettings();\n    },\n    enterDemo: () => {},\n    backToSetup: () => {},\n  };\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

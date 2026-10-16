@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_033",
+  "language": "javascript",
+  "originalName": "scope",
+  "injectedName": "s",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 's' shorter than minLength=2",
+    "name 's' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function resolveTargets(s) {\n  const targets = []\n  if (s.global) targets.push('agents')\n  if (s.project) targets.push('project')\n\n  // Deduplicate agent targets by directory — skip alias agents\n  // that point to the same skill directory as a previously-added agent.\n  // This prevents redundant installs when --all is used (e.g. 8+ agents\n  // all sharing ~/.agents/skills).\n  const seenDirs = new Set()\n  for (const agent of agents) {\n    if (s[agent.flag]) {\n      const dir = agent.getDir()\n      if (!seenDirs.has(dir)) {\n        seenDirs.add(dir)\n        targets.push(agent.flag)\n      }\n    }\n  }\n  return targets\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

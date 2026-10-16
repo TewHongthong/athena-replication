@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_028",
+  "language": "typescript",
+  "originalName": "draw",
+  "injectedName": "DRAW",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DRAW' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function startDemoScene(canvas: HTMLCanvasElement) {\n  canvas.width = width;\n  canvas.height = height;\n  const context = canvas.getContext(\"2d\");\n  if (!context) return () => {};\n  let frame = 0;\n  const started = performance.now();\n\n  const DRAW = (now: number) => {\n    const time = (now - started) / 1000;\n    paintSky(context);\n    paintStars(context, time);\n    paintMoon(context, time);\n    ridges.forEach((ridge) => paintRidge(context, ridge, time));\n    frame = requestAnimationFrame(DRAW);\n  };\n\n  frame = requestAnimationFrame(DRAW);\n  return () => cancelAnimationFrame(frame);\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

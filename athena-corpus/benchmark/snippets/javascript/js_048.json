@@ -1,0 +1,52 @@
+{
+  "id": "js_048",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/commands/search.js lines 21-31 (function searchItemCard); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function searchItemCard(item, selected) {\n  const sel = selected ? theme.reverse(' > ') : '   '\n  const name = selected ? bold(item.full_name) : dim(item.full_name)\n  const desc = item.description || 'No description'\n  return [\n    `${sel}${name}`,\n    `   ${desc}`,\n    `   ⭐ ${item.stargazers_count} · ${item.language || 'N/A'}`,\n    `   rolecraft install ${item.full_name}`,\n  ]\n}",
+  "identifiers": [
+    {
+      "name": "searchItemCard",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "sel",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "selected",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "desc",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/commands/search.js",
+    "startLine": 21,
+    "endLine": 31,
+    "unit": "function searchItemCard",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__search.js.md"
+  }
+}

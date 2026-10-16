@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_050",
+  "language": "python",
+  "originalName": "create_user",
+  "injectedName": "CREATE_USER",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CREATE_USER' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class UserRepository:\n    def __init__(self, db: Session):\n        self.db = db\n\n    def get_user_by_email(self, email: str) -> User | None:\n        return self.db.query(User).filter(User.email == email).first()\n\n    def CREATE_USER(self, user_in: UserCreate) -> User:\n        db_user = User(\n            name=user_in.name,\n            email=user_in.email,\n            password_hash=get_password_hash(user_in.password)\n        )\n        self.db.add(db_user)\n        self.db.commit()\n        self.db.refresh(db_user)\n        return db_user",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

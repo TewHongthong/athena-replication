@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_006",
+  "language": "csharp",
+  "originalName": "JsonTypeHandler",
+  "injectedName": "json_type_handler",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'json_type_handler' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public class json_type_handler<T> : SqlMapper.TypeHandler<T> where T : new()\n{\n    private static readonly JsonSerializerOptions Options = new(JsonSerializerDefaults.Web);\n\n    public override void SetValue(IDbDataParameter parameter, T? value)\n    {\n        parameter.DbType = DbType.String;\n        parameter.Value = JsonSerializer.Serialize(value, Options);\n    }\n\n    public override T Parse(object? value) =>\n        value is string s && !string.IsNullOrWhiteSpace(s)\n            ? JsonSerializer.Deserialize<T>(s, Options) ?? new T()\n            : new T();\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

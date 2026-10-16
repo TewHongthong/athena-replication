@@ -1,0 +1,47 @@
+{
+  "id": "py_051",
+  "language": "python",
+  "source": "github:divykr2005/photo-distributor@56aac18393056585a8161c0b55610faf2900274e",
+  "sourceDetail": "backend/schemas/user.py lines 16-22 (class UserResponse); license MIT; repo created 2026-08-08T13:49:07Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class UserResponse(UserBase):\n    id: UUID\n    created_at: datetime\n    updated_at: datetime\n\n    class Config:\n        from_attributes = True",
+  "identifiers": [
+    {
+      "name": "UserResponse",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "created_at",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "updated_at",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "Config",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "from_attributes",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "divykr2005/photo-distributor",
+    "repoUrl": "https://github.com/divykr2005/photo-distributor",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-08T13:49:07Z",
+    "commit": "56aac18393056585a8161c0b55610faf2900274e",
+    "path": "backend/schemas/user.py",
+    "startLine": 16,
+    "endLine": 22,
+    "unit": "class UserResponse",
+    "corpusFile": "corpus/python/divykr2005__photo-distributor__user.py.md"
+  }
+}

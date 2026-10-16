@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_051",
+  "language": "csharp",
+  "originalName": "Failed",
+  "injectedName": "failed",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'failed' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static SmsSendResult failed(\n    string provider,\n    string? errorCode,\n    string? errorMessage,\n    bool isTransient = false,\n    SmsDeliveryStatus status = SmsDeliveryStatus.failed,\n    bool mayHaveBeenAccepted = false) =>\n    new()\n    {\n        Success = false,\n        Provider = provider,\n        ErrorCode = errorCode,\n        ErrorMessage = errorMessage,\n        IsTransientFailure = isTransient,\n        MayHaveBeenAccepted = mayHaveBeenAccepted,\n        Status = status\n    };",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

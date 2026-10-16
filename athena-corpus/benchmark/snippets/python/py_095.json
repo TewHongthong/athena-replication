@@ -1,0 +1,52 @@
+{
+  "id": "py_095",
+  "language": "python",
+  "source": "github:vikasiec/AI-Trading-App@beb8d00e020adcbdf2afc156bd87592daa40d881",
+  "sourceDetail": "src/jev_indstocks_trader/feature_prep.py lines 14-20 (class MarketSnapshot); license MIT; repo created 2026-09-25T18:06:05Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@dataclass\nclass MarketSnapshot:\n    symbol: str\n    ltp: float\n    day_change_pct: float\n    volume: int\n    headlines: list[str]  # already deduped/recent, upstream",
+  "identifiers": [
+    {
+      "name": "MarketSnapshot",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "symbol",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "ltp",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "day_change_pct",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "volume",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "headlines",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vikasiec/AI-Trading-App",
+    "repoUrl": "https://github.com/vikasiec/AI-Trading-App",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T18:06:05Z",
+    "commit": "beb8d00e020adcbdf2afc156bd87592daa40d881",
+    "path": "src/jev_indstocks_trader/feature_prep.py",
+    "startLine": 14,
+    "endLine": 20,
+    "unit": "class MarketSnapshot",
+    "corpusFile": "corpus/python/vikasiec__AI-Trading-App__feature_prep.py.md"
+  }
+}

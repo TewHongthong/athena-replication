@@ -1,0 +1,57 @@
+# backend/src/main/java/com/sushishop/audit/AuditLogController.java
+
+- source repo: AntonBas/sushi-shop
+- repo url: https://github.com/AntonBas/sushi-shop
+- license: MIT
+- created_at: 2026-06-10T21:14:11Z
+- file path: backend/src/main/java/com/sushishop/audit/AuditLogController.java
+- commit: ae80c5e6c234302eb7c645bea3a6e23c6b624ee4
+
+```java
+package com.sushishop.audit;
+
+import com.sushishop.audit.dto.AuditLogResponse;
+import com.sushishop.security.Roles;
+import com.sushishop.shared.enums.AuditAction;
+import com.sushishop.shared.web.SortableFields;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDateTime;
+
+@RestController
+@RequestMapping("/api/admin/audit")
+@RequiredArgsConstructor
+@PreAuthorize("hasRole('" + Roles.ADMIN + "')")
+@Tag(name = "Audit", description = "Audit log endpoints")
+@SecurityRequirement(name = "bearerAuth")
+public class AuditLogController {
+
+    private final AuditLogService auditLogService;
+
+    @GetMapping
+    @Operation(summary = "Get audit logs")
+    public ResponseEntity<Page<AuditLogResponse>> getAll(
+            @RequestParam(required = false) AuditAction action,
+            @RequestParam(required = false) String entityName,
+            @RequestParam(required = false) Long entityId,
+            @RequestParam(required = false) String performedBy,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end,
+            @SortableFields({"performedAt", "id"}) @PageableDefault(size = 20, sort = {"performedAt", "id"}, direction = Sort.Direction.DESC) Pageable pageable) {
+        return ResponseEntity.ok(auditLogService.getAll(action, entityName, entityId, performedBy, start, end, pageable));
+    }
+}```

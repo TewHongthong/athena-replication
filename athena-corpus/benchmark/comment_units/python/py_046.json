@@ -1,0 +1,36 @@
+{
+  "snippetId": "py_046",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "class",
+  "name": "BricksExecutionError",
+  "codeBare": "class BricksExecutionError(BricksError):\n    \n\n    def __init__(self, message: str, brick: str, step: str, cause: Exception) -> None:\n        \"\"\"Initialise the error.\n\n        Args:\n            message: Human-readable description.\n            brick: Name of the failing brick.\n            step: Name of the failing step.\n            cause: Original exception that was raised.\n        \"\"\"\n        super().__init__(message)\n        self.brick = brick\n        self.step = step\n        self.cause = cause",
+  "referenceComment": "\"\"\"Raised when a brick raises an exception at runtime.\n\n    Attributes:\n        brick: The brick name that failed.\n        step: The step name in the blueprint.\n        cause: The original exception.\n    \"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-CLASS"
+  ],
+  "origin": "snippet",
+  "source": "github:determlab/bricks@6d401933bb7ae3024637171f649f7066edf256b2",
+  "sourceDetail": "src/bricks/errors.py lines 35-56 (class BricksExecutionError); license MIT; repo created 2026-06-11T00:07:52Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 7,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "determlab/bricks",
+    "repoUrl": "https://github.com/determlab/bricks",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-11T00:07:52Z",
+    "commit": "6d401933bb7ae3024637171f649f7066edf256b2",
+    "path": "src/bricks/errors.py",
+    "startLine": 35,
+    "endLine": 56,
+    "unit": "class BricksExecutionError",
+    "corpusFile": "corpus/python/determlab__bricks__errors.py.md"
+  }
+}

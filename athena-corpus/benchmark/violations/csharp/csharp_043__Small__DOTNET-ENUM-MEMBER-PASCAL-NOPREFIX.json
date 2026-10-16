@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_043",
+  "language": "csharp",
+  "originalName": "Small",
+  "injectedName": "small",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'small' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum WorldSizePreset\n{\n    small,\n    Medium,\n    Large,\n    Huge,\n    Mega,\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

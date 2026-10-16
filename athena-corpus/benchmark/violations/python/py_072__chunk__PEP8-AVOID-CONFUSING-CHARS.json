@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_072",
+  "language": "python",
+  "originalName": "chunk",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def sha256(path: Path) -> str:\n    h = hashlib.sha256()\n    with open(path, \"rb\") as f:\n        for l in iter(lambda: f.read(1 << 24), b\"\"):\n            h.update(l)\n    return h.hexdigest()",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

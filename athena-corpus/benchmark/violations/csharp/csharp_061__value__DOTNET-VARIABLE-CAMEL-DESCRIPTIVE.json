@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_061",
+  "language": "csharp",
+  "originalName": "value",
+  "injectedName": "VALUE",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'VALUE' does not match camelCase pattern",
+    "name 'VALUE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void AddOptionalMetadata(\n    IDictionary<string, string> body,\n    SmsMessage message,\n    string key)\n{\n    var VALUE = ReadMetadata(message, key);\n    if (VALUE is not null)\n        body[key] = VALUE;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "py_094",
+  "language": "python",
+  "source": "github:vikasiec/AI-Trading-App@beb8d00e020adcbdf2afc156bd87592daa40d881",
+  "sourceDetail": "src/jev_indstocks_trader/costs.py lines 51-83 (function compute_round_trip_cost); license MIT; repo created 2026-09-25T18:06:05Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def compute_round_trip_cost(\n    buy_price: float,\n    sell_price: float,\n    qty: int,\n    product: str = \"INTRADAY\",\n    rates: CostRates = CostRates(),\n) -> RoundTripCost:\n    \"\"\"Cost of one BUY + one SELL of `qty` shares. `product` is \"INTRADAY\"\n    or \"CNC\" (delivery) -- STT and stamp duty differ between the two.\n    \"\"\"\n    buy_value = buy_price * qty\n    sell_value = sell_price * qty\n    turnover = buy_value + sell_value\n\n    brokerage = rates.brokerage_per_order * 2  # one order to enter, one to exit\n\n    if product == \"CNC\":\n        stt = (buy_value + sell_value) * rates.stt_delivery_pct\n        stamp_duty = buy_value * rates.stamp_duty_delivery_buy_pct\n    else:\n        stt = sell_value * rates.stt_intraday_sell_pct\n        stamp_duty = buy_value * rates.stamp_duty_intraday_buy_pct\n\n    exchange_txn = turnover * rates.exchange_txn_pct\n    sebi_turnover = turnover * rates.sebi_turnover_pct\n    gst = (brokerage + exchange_txn + sebi_turnover) * rates.gst_pct\n\n    total = brokerage + stt + exchange_txn + sebi_turnover + stamp_duty + gst\n\n    return RoundTripCost(\n        brokerage=brokerage, stt=stt, exchange_txn=exchange_txn,\n        sebi_turnover=sebi_turnover, stamp_duty=stamp_duty, gst=gst, total=total,\n    )",
+  "identifiers": [
+    {
+      "name": "compute_round_trip_cost",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "buy_value",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "buy_price",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "sell_price",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "qty",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "product",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vikasiec/AI-Trading-App",
+    "repoUrl": "https://github.com/vikasiec/AI-Trading-App",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T18:06:05Z",
+    "commit": "beb8d00e020adcbdf2afc156bd87592daa40d881",
+    "path": "src/jev_indstocks_trader/costs.py",
+    "startLine": 51,
+    "endLine": 83,
+    "unit": "function compute_round_trip_cost",
+    "corpusFile": "corpus/python/vikasiec__AI-Trading-App__costs.py.md"
+  }
+}

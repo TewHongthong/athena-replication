@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_099",
+  "language": "javascript",
+  "originalName": "start",
+  "injectedName": "s",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 's' shorter than minLength=2",
+    "name 's' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function createReplanController({service,repository,getState,clock,getDailyCapacity,onChanged=()=>{},onConfirmed=()=>{},onUndone=()=>{}}={}){\n  if(!service||!repository||typeof getState!=='function'||!clock)throw new TypeError('Controlador de replanejamento requer serviço, repositório, estado e relógio.');\n  let preview=null;\n  const view=()=>preview;\n  const calculate=()=>{const today=clock.today(),s=clock.startOfWeek(today),end=clock.addDays(s,6),state=getState(),futureDays=[];for(let date=clock.addDays(today,1);date<=end;date=clock.addDays(date,1)){const planned=state.dailyPlans.filter(plan=>plan.date===date).reduce((sum,plan)=>sum+(plan.items||[]).filter(item=>!['skipped','replaced','deferred'].includes(item.status)).reduce((total,item)=>total+(Number(item.plannedMinutes)||0),0),0);futureDays.push({date,availableMinutes:Math.max(0,getDailyCapacity(date)-planned)})}preview=service.calculate({plans:repository.getDailyPlans().filter(plan=>plan.date>=s&&plan.date<today),periodStart:s,periodEnd:end,futureDays});onChanged(preview);return preview};\n  const clear=()=>{preview=null;onChanged(null)};\n  const confirm=()=>{if(preview?.state!=='proposal')return null;const result=service.confirm(preview);preview=null;onConfirmed(result);return result};\n  const undo=id=>{const result=service.undo(id);if(result)onUndone(result);return result};\n  return Object.freeze({view,calculate,clear,confirm,undo});\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

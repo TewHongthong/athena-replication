@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_005",
+  "language": "typescript",
+  "originalName": "isConnected",
+  "injectedName": "is_connected",
+  "identifierKind": "method",
+  "violatedRuleId": "GTS-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'is_connected' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface AppBridge {\n  readonly appId: AppId;\n  /** Whether a host is currently reachable through this bridge. */\n  is_connected(): boolean;\n  /** Send a named command to the host and resolve with its result. */\n  execute(name: string, params?: JsonValue, options?: EvalOptions): Promise<JsonValue>;\n  /** Convenience wrapper for the generic `eval` command (params `{script}`). */\n  evaluate(script: string, options?: EvalOptions): Promise<JsonValue>;\n  close(): Promise<void>;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

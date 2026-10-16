@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_066",
+  "language": "csharp",
+  "originalName": "ToFormFields",
+  "injectedName": "to_form_fields",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'to_form_fields' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class VonageSmsRequestMapper\n{\n    /// <summary>Builds the form fields for the Vonage SMS API v1.</summary>\n    public static IReadOnlyDictionary<string, string> to_form_fields(SmsMessage message, VonageOptions options)\n    {\n        var fields = new Dictionary<string, string>\n        {\n            [\"from\"] = message.From ?? options.From,\n            [\"to\"] = message.To,\n            [\"text\"] = message.Body,\n            [\"api_key\"] = options.ApiKey,\n            [\"api_secret\"] = options.ApiSecret\n        };\n\n        if (!IsGsm7(message.Body))\n            fields[\"type\"] = \"unicode\";\n\n        return fields;\n    }\n\n    private static bool IsGsm7(string value) =>\n        value.All(character =>\n            Gsm7BasicCharacters.Contains(character) ||\n            Gsm7ExtensionCharacters.Contains(character));\n\n    private const string Gsm7BasicCharacters =\n        \"@£$¥èéùìòÇ\\nØø\\rÅåΔ_ΦΓΛΩΠΨΣΘΞ ÆæßÉ !\\\"#¤%&'()*+,-./0123456789:;<=>?¡ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÑÜ§¿abcdefghijklmnopqrstuvwxyzäöñüà\";\n\n    private const string Gsm7ExtensionCharacters = \"^{}\\\\[~]|€\";\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

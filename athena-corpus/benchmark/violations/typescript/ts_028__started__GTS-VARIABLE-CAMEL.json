@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_028",
+  "language": "typescript",
+  "originalName": "started",
+  "injectedName": "STARTED",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'STARTED' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function startDemoScene(canvas: HTMLCanvasElement) {\n  canvas.width = width;\n  canvas.height = height;\n  const context = canvas.getContext(\"2d\");\n  if (!context) return () => {};\n  let frame = 0;\n  const STARTED = performance.now();\n\n  const draw = (now: number) => {\n    const time = (now - STARTED) / 1000;\n    paintSky(context);\n    paintStars(context, time);\n    paintMoon(context, time);\n    ridges.forEach((ridge) => paintRidge(context, ridge, time));\n    frame = requestAnimationFrame(draw);\n  };\n\n  frame = requestAnimationFrame(draw);\n  return () => cancelAnimationFrame(frame);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

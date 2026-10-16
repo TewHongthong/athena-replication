@@ -1,0 +1,37 @@
+{
+  "id": "csharp_100",
+  "language": "csharp",
+  "source": "github:yello-gun/BetterSTT@e6ed41b232cfa71e6dcbbadeff51710527e31452",
+  "sourceDetail": "src/BetterSTT/UI/AddWordWindow.cs lines 96-124 (method AddWordWindow.Save); license MIT; repo created 2026-09-26T18:41:24Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "void Save()\n{\n    string word = _word.Text.Trim();\n    if (word.Length == 0)\n    {\n        ShowError(\"Type the word or name first.\");\n        return;\n    }\n    if (_replace.IsChecked == true)\n    {\n        if (DictionaryPage.AddFix(_c, word, _replacement.Text) is { } problem)\n        {\n            ShowError(problem);\n            return;\n        }\n        _c.Announce($\"From now on, “{word}” is typed as “{_replacement.Text.Trim()}”.\");\n    }\n    else\n    {\n        _c.Update(s =>\n        {\n            var words = s.Vocabulary.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList();\n            if (!words.Contains(word, StringComparer.OrdinalIgnoreCase)) words.Add(word);\n            s.Vocabulary = string.Join(\", \", words);\n        });\n        _c.Announce($\"Added “{word}” to the words BetterSTT should know.\");\n    }\n    Close();\n}",
+  "identifiers": [
+    {
+      "name": "Save",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "word",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "words",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "yello-gun/BetterSTT",
+    "repoUrl": "https://github.com/yello-gun/BetterSTT",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:41:24Z",
+    "commit": "e6ed41b232cfa71e6dcbbadeff51710527e31452",
+    "path": "src/BetterSTT/UI/AddWordWindow.cs",
+    "startLine": 96,
+    "endLine": 124,
+    "unit": "method AddWordWindow.Save",
+    "corpusFile": "corpus/csharp/yello-gun__BetterSTT__AddWordWindow.cs.md"
+  }
+}

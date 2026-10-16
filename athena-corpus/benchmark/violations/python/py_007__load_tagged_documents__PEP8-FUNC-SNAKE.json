@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_007",
+  "language": "python",
+  "originalName": "load_tagged_documents",
+  "injectedName": "LOAD_TAGGED_DOCUMENTS",
+  "identifierKind": "function",
+  "violatedRuleId": "PEP8-FUNC-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOAD_TAGGED_DOCUMENTS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def LOAD_TAGGED_DOCUMENTS(root: str):\n    root_path = Path(root)\n    for path in root_path.glob(\"*/*/*.txt\"):\n        department = path.parent.parent.name\n        clearance = path.parent.name\n        yield path.read_text(encoding=\"utf-8\"), {\"department\": department, \"clearance\": clearance, \"source\": path.name}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_094",
+  "language": "typescript",
+  "originalName": "valor",
+  "injectedName": "VALOR",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'VALOR' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function ServiciosDelPaquete() {\n  const [enviado, setEnviado] = useState<string[] | null>(null)\n\n  return (\n    <Form\n      className=\"w-full max-w-sm\"\n      onFormSubmit={(valores) => setEnviado(valores.servicios as string[])}\n    >\n      <Field\n        name=\"servicios\"\n        validate={(VALOR) => ((VALOR as string[]).length > 0 ? null : \"Elegí al menos un servicio\")}\n      >\n        <FieldLabel required>Servicios incluidos</FieldLabel>\n        <CheckboxGroup>\n          <CheckboxGroupItem value=\"soporte\">Soporte</CheckboxGroupItem>\n          <CheckboxGroupItem value=\"capacitacion\">Capacitación</CheckboxGroupItem>\n          <CheckboxGroupItem value=\"migracion\">Migración de los datos anteriores</CheckboxGroupItem>\n        </CheckboxGroup>\n        <FieldDescription>Se cotizan por separado.</FieldDescription>\n        <FieldError />\n      </Field>\n      <Button type=\"submit\">Cotizar</Button>\n      {enviado && <p className=\"text-copy-13-mono text-gray-900\">servicios: {JSON.stringify(enviado)}</p>}\n    </Form>\n  )\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_067",
+  "language": "java",
+  "originalName": "stream",
+  "injectedName": "STREAM",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'STREAM' does not match camelCase pattern",
+    "name 'STREAM' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "class LoginModalIconsContractTest {\n\n  @Test\n  void signInDialogUsesSharedLucideIconsWithoutObscuringPasswordControls() throws IOException {\n    String javascript = resource(\"/META-INF/resources/login/assets/login-modal.js\");\n    String stylesheet = resource(\"/META-INF/resources/login/assets/login-modal.css\");\n\n    assertFalse(javascript.contains(\"login-dialog-title-icon\"));\n    assertTrue(javascript.contains(\"login-dialog-field-icon lucide-icon icon-user-round\"));\n    assertTrue(javascript.contains(\"login-dialog-field-icon lucide-icon icon-lock\"));\n    assertTrue(javascript.contains(\"login-dialog-button-icon lucide-icon icon-shield-check\"));\n    assertTrue(javascript.contains(\"login-dialog-submit\\\" type=\\\"submit\\\"><span class=\\\"login-dialog-button-icon lucide-icon icon-log-in\\\"\"));\n    assertTrue(stylesheet.contains(\".login-dialog-input-wrap\"));\n    assertTrue(stylesheet.contains(\"padding: 0 42px 0 40px\"));\n    assertTrue(stylesheet.contains(\".login-dialog-input-wrap:focus-within .login-dialog-field-icon\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream STREAM = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(STREAM).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_015",
+  "language": "javascript",
+  "originalName": "authAPI",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export const l = {\n  login: (identifier, password) =>\n    api.post('/api/auth/login', { username: identifier, email: identifier, password }),\n\n  register: (userData) =>\n    api.post('/api/auth/register', userData),\n\n  getProfile: () =>\n    api.get('/api/auth/profile'),\n\n  updateProfile: (data) =>\n    api.put('/api/auth/profile', data),\n};",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

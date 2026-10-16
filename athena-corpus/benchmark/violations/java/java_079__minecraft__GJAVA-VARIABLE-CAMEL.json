@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_079",
+  "language": "java",
+  "originalName": "minecraft",
+  "injectedName": "MINECRAFT",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MINECRAFT' does not match camelCase pattern",
+    "name 'MINECRAFT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static void handleSyncFurkinData(SyncFurkinDataPacket packet) {\n    Minecraft MINECRAFT = Minecraft.getInstance();\n    if (MINECRAFT.level == null) {\n        return;\n    }\n    Entity entity = MINECRAFT.level.getEntity(packet.getEntityId());\n    if (!(entity instanceof LivingEntity living)) {\n        return;\n    }\n    FurkinData data = living.getCapability(FurkinCapability.FURKIN_DATA).orElse(null);\n    if (data == null) {\n        return;\n    }\n    CompoundTag nbt = packet.getData();\n    if (nbt != null && !nbt.isEmpty()) {\n        data.deserializeNBT(nbt);\n    } else {\n        // 空包 = 收回，清回 WILD。\n        data.setState(FurkinState.WILD);\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

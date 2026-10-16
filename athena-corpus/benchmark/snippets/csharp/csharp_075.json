@@ -1,0 +1,37 @@
+{
+  "id": "csharp_075",
+  "language": "csharp",
+  "source": "github:thecheetoman/ESim@59cde034d0041d0af0a43cdf7e43d979935b7db8",
+  "sourceDetail": "Assets/Scripts/Field/HubCounter.cs lines 9-24 (method HubCounter.OnTriggerEnter); license MIT; repo created 2026-09-16T23:28:41Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "private void OnTriggerEnter(Collider other)\n{\n    if (other.CompareTag(\"GamePiece\"))\n    {\n        bool wasLegal = false;\n        if (other.TryGetComponent<ShotData>(out ShotData shotData))\n        {\n            wasLegal = shotData.wasShotFromLegalZone;\n        }\n\n        if (hub != null)\n        {\n            hub.countFuel(wasLegal);\n        }\n    }\n}",
+  "identifiers": [
+    {
+      "name": "OnTriggerEnter",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "wasLegal",
+      "kind": "boolean_variable",
+      "isCompliant": true
+    },
+    {
+      "name": "other",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "thecheetoman/ESim",
+    "repoUrl": "https://github.com/thecheetoman/ESim",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-16T23:28:41Z",
+    "commit": "59cde034d0041d0af0a43cdf7e43d979935b7db8",
+    "path": "Assets/Scripts/Field/HubCounter.cs",
+    "startLine": 9,
+    "endLine": 24,
+    "unit": "method HubCounter.OnTriggerEnter",
+    "corpusFile": "corpus/csharp/thecheetoman__ESim__HubCounter.cs.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_062",
+  "language": "python",
+  "originalName": "train_loader",
+  "injectedName": "TRAIN_LOADER",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TRAIN_LOADER' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def train():\n    # 1 - Define the device\n    device=(\"cuda\"if torch.cuda.is_available()else \"cpu\")\n\n    # 2 - Define the model\n    model=CNN().to(device)\n    \n    # 3 - Get train and test loaders\n    TRAIN_LOADER,test_loader=get_data_loaders()\n    \n    # 4 - Get criterion and optimizer\n    criterion,optimizer=define_loss_and_optimizer(model)\n    \n    # 5 - Deploy Scheduler (in order to stop overfitting by decreasing learning rate progressively after each epoch)\n    scheduler=torch.optim.lr_scheduler.CosineAnnealingLR(optimizer,T_max=30)\n    \n    # 6 - Start training\n    train_model(model,5,TRAIN_LOADER,criterion,optimizer,scheduler,epochs=30)\n    \n    # 7 - Test the model with both test and train datasets. \n    train_accuracy=float(test_model(model,TRAIN_LOADER))\n    test_accuracy=float(test_model(model,test_loader))\n    \n    # 8 - Check both values in order to detect possible overfitting\n    print(f\"Train Accuracy: {train_accuracy} % \\n Test Accuracy: {test_accuracy} % \")\n    if train_accuracy-test_accuracy>10:\n        print(f\"Possible Overfitting has been detected. You might consider changing epoch number.\")",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,4191 @@
+[
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_001__MAX_GPAX__lower_camel",
+    "language": "cpp",
+    "gold": "constant",
+    "original": "MAX_GPAX",
+    "injected": "maxGpax",
+    "predA": "constant",
+    "whyA": "const float",
+    "predB": "constant",
+    "whyB": "const float",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_001__MAX_GPAX__title_snake",
+    "language": "cpp",
+    "gold": "constant",
+    "original": "MAX_GPAX",
+    "injected": "Max_Gpax",
+    "predA": "constant",
+    "whyA": "const float",
+    "predB": "constant",
+    "whyB": "const float",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_001__f_Calculate_Gpax__camel_no_prefix",
+    "language": "cpp",
+    "gold": "function",
+    "original": "f_Calculate_Gpax",
+    "injected": "calculateGpax",
+    "predA": "function",
+    "whyA": "float (float, float)",
+    "predB": "function",
+    "whyB": "float (float, float)",
+    "goldRules": [
+      "GSCS-FUNC-RETURN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_001__f_Calculate_Gpax__strip_prefix",
+    "language": "cpp",
+    "gold": "function",
+    "original": "f_Calculate_Gpax",
+    "injected": "Calculate_Gpax",
+    "predA": "function",
+    "whyA": "float (float, float)",
+    "predB": "function",
+    "whyB": "float (float, float)",
+    "goldRules": [
+      "GSCS-FUNC-RETURN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_001__f_credit_total__camel_no_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "f_credit_total",
+    "injected": "creditTotal",
+    "predA": "parameter",
+    "whyA": "float",
+    "predB": "parameter",
+    "whyB": "float",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_001__f_credit_total__strip_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "f_credit_total",
+    "injected": "credit_total",
+    "predA": "parameter",
+    "whyA": "float",
+    "predB": "parameter",
+    "whyB": "float",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_001__f_gpax__camel_no_prefix",
+    "language": "cpp",
+    "gold": "variable",
+    "original": "f_gpax",
+    "injected": "gpax",
+    "predA": "variable",
+    "whyA": "float",
+    "predB": "variable",
+    "whyB": "float",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_001__f_gpax__strip_prefix",
+    "language": "cpp",
+    "gold": "variable",
+    "original": "f_gpax",
+    "injected": "gpax",
+    "predA": "variable",
+    "whyA": "float",
+    "predB": "variable",
+    "whyB": "float",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_001__f_point_total__camel_no_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "f_point_total",
+    "injected": "pointTotal",
+    "predA": "parameter",
+    "whyA": "float",
+    "predB": "parameter",
+    "whyB": "float",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_001__f_point_total__strip_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "f_point_total",
+    "injected": "point_total",
+    "predA": "parameter",
+    "whyA": "float",
+    "predB": "parameter",
+    "whyB": "float",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_001__student_Type__glued_suffix",
+    "language": "cpp",
+    "gold": "class",
+    "original": "student_Type",
+    "injected": "studentType",
+    "predA": "class",
+    "whyA": "CXXRecordDecl",
+    "predB": "class",
+    "whyB": "CXXRecordDecl",
+    "goldRules": [
+      "GSCS-TYPE-SUFFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_002__MAX_NAME_LENGTH__lower_camel",
+    "language": "cpp",
+    "gold": "constant",
+    "original": "MAX_NAME_LENGTH",
+    "injected": "maxNameLength",
+    "predA": "constant",
+    "whyA": "const int",
+    "predB": "constant",
+    "whyB": "const int",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_002__MAX_NAME_LENGTH__title_snake",
+    "language": "cpp",
+    "gold": "constant",
+    "original": "MAX_NAME_LENGTH",
+    "injected": "Max_Name_Length",
+    "predA": "constant",
+    "whyA": "const int",
+    "predB": "constant",
+    "whyB": "const int",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_002__Print_Report__lower_camel",
+    "language": "cpp",
+    "gold": "procedure",
+    "original": "Print_Report",
+    "injected": "printReport",
+    "predA": "procedure",
+    "whyA": "void (std::string, float)",
+    "predB": "procedure",
+    "whyB": "void (std::string, float)",
+    "goldRules": [
+      "GSCS-PROC-VERB-OBJECT"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_002__Print_Report__lower_snake",
+    "language": "cpp",
+    "gold": "procedure",
+    "original": "Print_Report",
+    "injected": "print_report",
+    "predA": "procedure",
+    "whyA": "void (std::string, float)",
+    "predB": "procedure",
+    "whyB": "void (std::string, float)",
+    "goldRules": [
+      "GSCS-PROC-VERB-OBJECT"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_002__bln_Is_Name_Long__camel_no_prefix",
+    "language": "cpp",
+    "gold": "boolean_variable",
+    "original": "bln_Is_Name_Long",
+    "injected": "isNameLong",
+    "predA": "boolean_variable",
+    "whyA": "bool",
+    "predB": "boolean_variable",
+    "whyB": "bool",
+    "goldRules": [
+      "GSCS-BOOL-BLN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_002__bln_Is_Name_Long__strip_prefix",
+    "language": "cpp",
+    "gold": "boolean_variable",
+    "original": "bln_Is_Name_Long",
+    "injected": "Is_Name_Long",
+    "predA": "boolean_variable",
+    "whyA": "bool",
+    "predB": "boolean_variable",
+    "whyB": "bool",
+    "goldRules": [
+      "GSCS-BOOL-BLN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_002__f_gpax__camel_no_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "f_gpax",
+    "injected": "gpax",
+    "predA": "parameter",
+    "whyA": "float",
+    "predB": "parameter",
+    "whyB": "float",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_002__f_gpax__strip_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "f_gpax",
+    "injected": "gpax",
+    "predA": "parameter",
+    "whyA": "float",
+    "predB": "parameter",
+    "whyB": "float",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_002__str_student_name__camel_no_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "str_student_name",
+    "injected": "studentName",
+    "predA": "parameter",
+    "whyA": "std::string",
+    "predB": "parameter",
+    "whyB": "std::string",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_002__str_student_name__strip_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "str_student_name",
+    "injected": "student_name",
+    "predA": "parameter",
+    "whyA": "std::string",
+    "predB": "parameter",
+    "whyB": "std::string",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_004__MAX_NAME_SIZE__lower_camel",
+    "language": "cpp",
+    "gold": "constant",
+    "original": "MAX_NAME_SIZE",
+    "injected": "maxNameSize",
+    "predA": "constant",
+    "whyA": "const int",
+    "predB": "constant",
+    "whyB": "const int",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_004__MAX_NAME_SIZE__title_snake",
+    "language": "cpp",
+    "gold": "constant",
+    "original": "MAX_NAME_SIZE",
+    "injected": "Max_Name_Size",
+    "predA": "constant",
+    "whyA": "const int",
+    "predB": "constant",
+    "whyB": "const int",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_004__Set_Name__lower_camel",
+    "language": "cpp",
+    "gold": "procedure",
+    "original": "Set_Name",
+    "injected": "setName",
+    "predA": "procedure",
+    "whyA": "void (std::string)",
+    "predB": "procedure",
+    "whyB": "void (std::string)",
+    "goldRules": [
+      "GSCS-PROC-VERB-OBJECT"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_004__Set_Name__lower_snake",
+    "language": "cpp",
+    "gold": "procedure",
+    "original": "Set_Name",
+    "injected": "set_name",
+    "predA": "procedure",
+    "whyA": "void (std::string)",
+    "predB": "procedure",
+    "whyB": "void (std::string)",
+    "goldRules": [
+      "GSCS-PROC-VERB-OBJECT"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_004__bln_Is_Long__camel_no_prefix",
+    "language": "cpp",
+    "gold": "boolean_variable",
+    "original": "bln_Is_Long",
+    "injected": "isLong",
+    "predA": "boolean_variable",
+    "whyA": "bool",
+    "predB": "boolean_variable",
+    "whyB": "bool",
+    "goldRules": [
+      "GSCS-BOOL-BLN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_004__bln_Is_Long__strip_prefix",
+    "language": "cpp",
+    "gold": "boolean_variable",
+    "original": "bln_Is_Long",
+    "injected": "Is_Long",
+    "predA": "boolean_variable",
+    "whyA": "bool",
+    "predB": "boolean_variable",
+    "whyB": "bool",
+    "goldRules": [
+      "GSCS-BOOL-BLN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_004__pupil_Type__glued_suffix",
+    "language": "cpp",
+    "gold": "class",
+    "original": "pupil_Type",
+    "injected": "pupilType",
+    "predA": "class",
+    "whyA": "CXXRecordDecl",
+    "predB": "class",
+    "whyB": "CXXRecordDecl",
+    "goldRules": [
+      "GSCS-TYPE-SUFFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_004__pupil_Type__strip_suffix",
+    "language": "cpp",
+    "gold": "class",
+    "original": "pupil_Type",
+    "injected": "pupil",
+    "predA": "class",
+    "whyA": "CXXRecordDecl",
+    "predB": "class",
+    "whyB": "CXXRecordDecl",
+    "goldRules": [
+      "GSCS-TYPE-SUFFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_004__str_new_name__camel_no_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "str_new_name",
+    "injected": "newName",
+    "predA": "parameter",
+    "whyA": "std::string",
+    "predB": "parameter",
+    "whyB": "std::string",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_004__str_new_name__strip_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "str_new_name",
+    "injected": "new_name",
+    "predA": "parameter",
+    "whyA": "std::string",
+    "predB": "parameter",
+    "whyB": "std::string",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_004__str_student_name__camel_no_prefix",
+    "language": "cpp",
+    "gold": "field",
+    "original": "str_student_name",
+    "injected": "studentName",
+    "predA": "field",
+    "whyA": "std::string",
+    "predB": "field",
+    "whyB": "std::string",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_004__str_student_name__strip_prefix",
+    "language": "cpp",
+    "gold": "field",
+    "original": "str_student_name",
+    "injected": "student_name",
+    "predA": "field",
+    "whyA": "std::string",
+    "predB": "field",
+    "whyB": "std::string",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_005__f_Find_Maximum__camel_no_prefix",
+    "language": "cpp",
+    "gold": "function",
+    "original": "f_Find_Maximum",
+    "injected": "findMaximum",
+    "predA": "function",
+    "whyA": "float (const float *, int)",
+    "predB": "function",
+    "whyB": "float (const float *, int)",
+    "goldRules": [
+      "GSCS-FUNC-RETURN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_005__f_Find_Maximum__strip_prefix",
+    "language": "cpp",
+    "gold": "function",
+    "original": "f_Find_Maximum",
+    "injected": "Find_Maximum",
+    "predA": "function",
+    "whyA": "float (const float *, int)",
+    "predB": "function",
+    "whyB": "float (const float *, int)",
+    "goldRules": [
+      "GSCS-FUNC-RETURN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_005__f_maximum__glued_prefix",
+    "language": "cpp",
+    "gold": "variable",
+    "original": "f_maximum",
+    "injected": "fMaximum",
+    "predA": "variable",
+    "whyA": "float",
+    "predB": "variable",
+    "whyB": "float",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_005__f_value_list__camel_no_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "f_value_list",
+    "injected": "valueList",
+    "predA": "parameter",
+    "whyA": "const float *",
+    "predB": "parameter",
+    "whyB": "const float *",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_005__f_value_list__strip_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "f_value_list",
+    "injected": "value_list",
+    "predA": "parameter",
+    "whyA": "const float *",
+    "predB": "parameter",
+    "whyB": "const float *",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_005__i_index__camel_no_prefix",
+    "language": "cpp",
+    "gold": "variable",
+    "original": "i_index",
+    "injected": "index",
+    "predA": "variable",
+    "whyA": "int",
+    "predB": "variable",
+    "whyB": "int",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_005__i_index__strip_prefix",
+    "language": "cpp",
+    "gold": "variable",
+    "original": "i_index",
+    "injected": "index",
+    "predA": "variable",
+    "whyA": "int",
+    "predB": "variable",
+    "whyB": "int",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_005__i_value_total__camel_no_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "i_value_total",
+    "injected": "valueTotal",
+    "predA": "parameter",
+    "whyA": "int",
+    "predB": "parameter",
+    "whyB": "int",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_cpp_005__i_value_total__strip_prefix",
+    "language": "cpp",
+    "gold": "parameter",
+    "original": "i_value_total",
+    "injected": "value_total",
+    "predA": "parameter",
+    "whyA": "int",
+    "predB": "parameter",
+    "whyB": "int",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_001__MAX_GPAX__lower_camel",
+    "language": "java",
+    "gold": "constant",
+    "original": "MAX_GPAX",
+    "injected": "maxGpax",
+    "predA": "constant",
+    "whyA": "local_variable_declaration",
+    "predB": "constant",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_001__MAX_GPAX__title_snake",
+    "language": "java",
+    "gold": "constant",
+    "original": "MAX_GPAX",
+    "injected": "Max_Gpax",
+    "predA": "constant",
+    "whyA": "local_variable_declaration",
+    "predB": "constant",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_001__f_Calculate_Gpax__camel_no_prefix",
+    "language": "java",
+    "gold": "function",
+    "original": "f_Calculate_Gpax",
+    "injected": "calculateGpax",
+    "predA": "function",
+    "whyA": "method_declaration",
+    "predB": "function",
+    "whyB": "method_declaration",
+    "goldRules": [
+      "GSCS-FUNC-RETURN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_001__f_Calculate_Gpax__strip_prefix",
+    "language": "java",
+    "gold": "function",
+    "original": "f_Calculate_Gpax",
+    "injected": "Calculate_Gpax",
+    "predA": "function",
+    "whyA": "method_declaration",
+    "predB": "function",
+    "whyB": "method_declaration",
+    "goldRules": [
+      "GSCS-FUNC-RETURN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_001__f_credit_total__camel_no_prefix",
+    "language": "java",
+    "gold": "parameter",
+    "original": "f_credit_total",
+    "injected": "creditTotal",
+    "predA": "parameter",
+    "whyA": "formal_parameter",
+    "predB": "parameter",
+    "whyB": "formal_parameter",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_001__f_credit_total__strip_prefix",
+    "language": "java",
+    "gold": "parameter",
+    "original": "f_credit_total",
+    "injected": "credit_total",
+    "predA": "parameter",
+    "whyA": "formal_parameter",
+    "predB": "parameter",
+    "whyB": "formal_parameter",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_001__f_gpax__camel_no_prefix",
+    "language": "java",
+    "gold": "variable",
+    "original": "f_gpax",
+    "injected": "gpax",
+    "predA": "variable",
+    "whyA": "local_variable_declaration",
+    "predB": "variable",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_001__f_gpax__strip_prefix",
+    "language": "java",
+    "gold": "variable",
+    "original": "f_gpax",
+    "injected": "gpax",
+    "predA": "variable",
+    "whyA": "local_variable_declaration",
+    "predB": "variable",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_001__f_point_total__camel_no_prefix",
+    "language": "java",
+    "gold": "parameter",
+    "original": "f_point_total",
+    "injected": "pointTotal",
+    "predA": "parameter",
+    "whyA": "formal_parameter",
+    "predB": "parameter",
+    "whyB": "formal_parameter",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_001__f_point_total__strip_prefix",
+    "language": "java",
+    "gold": "parameter",
+    "original": "f_point_total",
+    "injected": "point_total",
+    "predA": "parameter",
+    "whyA": "formal_parameter",
+    "predB": "parameter",
+    "whyB": "formal_parameter",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_001__student_Type__glued_suffix",
+    "language": "java",
+    "gold": "class",
+    "original": "student_Type",
+    "injected": "studentType",
+    "predA": "class",
+    "whyA": "class_declaration",
+    "predB": "class",
+    "whyB": "class_declaration",
+    "goldRules": [
+      "GSCS-TYPE-SUFFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_002__MAX_NAME_LENGTH__lower_camel",
+    "language": "java",
+    "gold": "constant",
+    "original": "MAX_NAME_LENGTH",
+    "injected": "maxNameLength",
+    "predA": "constant",
+    "whyA": "local_variable_declaration",
+    "predB": "constant",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_002__MAX_NAME_LENGTH__title_snake",
+    "language": "java",
+    "gold": "constant",
+    "original": "MAX_NAME_LENGTH",
+    "injected": "Max_Name_Length",
+    "predA": "constant",
+    "whyA": "local_variable_declaration",
+    "predB": "constant",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_002__Print_Report__lower_camel",
+    "language": "java",
+    "gold": "procedure",
+    "original": "Print_Report",
+    "injected": "printReport",
+    "predA": "procedure",
+    "whyA": "method_declaration",
+    "predB": "procedure",
+    "whyB": "method_declaration",
+    "goldRules": [
+      "GSCS-PROC-VERB-OBJECT"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_002__Print_Report__lower_snake",
+    "language": "java",
+    "gold": "procedure",
+    "original": "Print_Report",
+    "injected": "print_report",
+    "predA": "procedure",
+    "whyA": "method_declaration",
+    "predB": "procedure",
+    "whyB": "method_declaration",
+    "goldRules": [
+      "GSCS-PROC-VERB-OBJECT"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_002__bln_Is_Name_Long__camel_no_prefix",
+    "language": "java",
+    "gold": "boolean_variable",
+    "original": "bln_Is_Name_Long",
+    "injected": "isNameLong",
+    "predA": "boolean_variable",
+    "whyA": "local_variable_declaration",
+    "predB": "boolean_variable",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-BOOL-BLN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_002__bln_Is_Name_Long__strip_prefix",
+    "language": "java",
+    "gold": "boolean_variable",
+    "original": "bln_Is_Name_Long",
+    "injected": "Is_Name_Long",
+    "predA": "boolean_variable",
+    "whyA": "local_variable_declaration",
+    "predB": "boolean_variable",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-BOOL-BLN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_002__f_gpax__camel_no_prefix",
+    "language": "java",
+    "gold": "parameter",
+    "original": "f_gpax",
+    "injected": "gpax",
+    "predA": "parameter",
+    "whyA": "formal_parameter",
+    "predB": "parameter",
+    "whyB": "formal_parameter",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_002__f_gpax__strip_prefix",
+    "language": "java",
+    "gold": "parameter",
+    "original": "f_gpax",
+    "injected": "gpax",
+    "predA": "parameter",
+    "whyA": "formal_parameter",
+    "predB": "parameter",
+    "whyB": "formal_parameter",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_002__report_Type__glued_suffix",
+    "language": "java",
+    "gold": "class",
+    "original": "report_Type",
+    "injected": "reportType",
+    "predA": "class",
+    "whyA": "class_declaration",
+    "predB": "class",
+    "whyB": "class_declaration",
+    "goldRules": [
+      "GSCS-TYPE-SUFFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_002__str_student_name__camel_no_prefix",
+    "language": "java",
+    "gold": "parameter",
+    "original": "str_student_name",
+    "injected": "studentName",
+    "predA": "parameter",
+    "whyA": "formal_parameter",
+    "predB": "parameter",
+    "whyB": "formal_parameter",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_002__str_student_name__strip_prefix",
+    "language": "java",
+    "gold": "parameter",
+    "original": "str_student_name",
+    "injected": "student_name",
+    "predA": "parameter",
+    "whyA": "formal_parameter",
+    "predB": "parameter",
+    "whyB": "formal_parameter",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_004__Deposit_Money__lower_camel",
+    "language": "java",
+    "gold": "procedure",
+    "original": "Deposit_Money",
+    "injected": "depositMoney",
+    "predA": "procedure",
+    "whyA": "method_declaration",
+    "predB": "procedure",
+    "whyB": "method_declaration",
+    "goldRules": [
+      "GSCS-PROC-VERB-OBJECT"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_004__Deposit_Money__lower_snake",
+    "language": "java",
+    "gold": "procedure",
+    "original": "Deposit_Money",
+    "injected": "deposit_money",
+    "predA": "procedure",
+    "whyA": "method_declaration",
+    "predB": "procedure",
+    "whyB": "method_declaration",
+    "goldRules": [
+      "GSCS-PROC-VERB-OBJECT"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_004__MIN_DEPOSIT__lower_camel",
+    "language": "java",
+    "gold": "constant",
+    "original": "MIN_DEPOSIT",
+    "injected": "minDeposit",
+    "predA": "constant",
+    "whyA": "local_variable_declaration",
+    "predB": "constant",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_004__MIN_DEPOSIT__title_snake",
+    "language": "java",
+    "gold": "constant",
+    "original": "MIN_DEPOSIT",
+    "injected": "Min_Deposit",
+    "predA": "constant",
+    "whyA": "local_variable_declaration",
+    "predB": "constant",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_004__account_Type__glued_suffix",
+    "language": "java",
+    "gold": "class",
+    "original": "account_Type",
+    "injected": "accountType",
+    "predA": "class",
+    "whyA": "class_declaration",
+    "predB": "class",
+    "whyB": "class_declaration",
+    "goldRules": [
+      "GSCS-TYPE-SUFFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_004__bln_Is_Valid__camel_no_prefix",
+    "language": "java",
+    "gold": "boolean_variable",
+    "original": "bln_Is_Valid",
+    "injected": "isValid",
+    "predA": "boolean_variable",
+    "whyA": "local_variable_declaration",
+    "predB": "boolean_variable",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-BOOL-BLN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_004__bln_Is_Valid__strip_prefix",
+    "language": "java",
+    "gold": "boolean_variable",
+    "original": "bln_Is_Valid",
+    "injected": "Is_Valid",
+    "predA": "boolean_variable",
+    "whyA": "local_variable_declaration",
+    "predB": "boolean_variable",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-BOOL-BLN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_004__d_amount__glued_prefix",
+    "language": "java",
+    "gold": "parameter",
+    "original": "d_amount",
+    "injected": "dAmount",
+    "predA": "parameter",
+    "whyA": "formal_parameter",
+    "predB": "parameter",
+    "whyB": "formal_parameter",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_004__d_balance__glued_prefix",
+    "language": "java",
+    "gold": "field",
+    "original": "d_balance",
+    "injected": "dBalance",
+    "predA": "field",
+    "whyA": "field_declaration",
+    "predB": "field",
+    "whyB": "field_declaration",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_005__FREEZING_POINT__lower_camel",
+    "language": "java",
+    "gold": "constant",
+    "original": "FREEZING_POINT",
+    "injected": "freezingPoint",
+    "predA": "constant",
+    "whyA": "local_variable_declaration",
+    "predB": "constant",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_005__FREEZING_POINT__title_snake",
+    "language": "java",
+    "gold": "constant",
+    "original": "FREEZING_POINT",
+    "injected": "Freezing_Point",
+    "predA": "constant",
+    "whyA": "local_variable_declaration",
+    "predB": "constant",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_005__f_Convert_Celsius__camel_no_prefix",
+    "language": "java",
+    "gold": "function",
+    "original": "f_Convert_Celsius",
+    "injected": "convertCelsius",
+    "predA": "function",
+    "whyA": "method_declaration",
+    "predB": "function",
+    "whyB": "method_declaration",
+    "goldRules": [
+      "GSCS-FUNC-RETURN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_005__f_Convert_Celsius__strip_prefix",
+    "language": "java",
+    "gold": "function",
+    "original": "f_Convert_Celsius",
+    "injected": "Convert_Celsius",
+    "predA": "function",
+    "whyA": "method_declaration",
+    "predB": "function",
+    "whyB": "method_declaration",
+    "goldRules": [
+      "GSCS-FUNC-RETURN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_005__f_celsius__camel_no_prefix",
+    "language": "java",
+    "gold": "variable",
+    "original": "f_celsius",
+    "injected": "celsius",
+    "predA": "variable",
+    "whyA": "local_variable_declaration",
+    "predB": "variable",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_005__f_celsius__strip_prefix",
+    "language": "java",
+    "gold": "variable",
+    "original": "f_celsius",
+    "injected": "celsius",
+    "predA": "variable",
+    "whyA": "local_variable_declaration",
+    "predB": "variable",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_005__f_fahrenheit__camel_no_prefix",
+    "language": "java",
+    "gold": "variable",
+    "original": "f_fahrenheit",
+    "injected": "fahrenheit",
+    "predA": "variable",
+    "whyA": "local_variable_declaration",
+    "predB": "variable",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_005__f_fahrenheit__strip_prefix",
+    "language": "java",
+    "gold": "variable",
+    "original": "f_fahrenheit",
+    "injected": "fahrenheit",
+    "predA": "variable",
+    "whyA": "local_variable_declaration",
+    "predB": "variable",
+    "whyB": "local_variable_declaration",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_005__str_text__glued_prefix",
+    "language": "java",
+    "gold": "parameter",
+    "original": "str_text",
+    "injected": "strText",
+    "predA": "parameter",
+    "whyA": "formal_parameter",
+    "predB": "parameter",
+    "whyB": "formal_parameter",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_java_005__temperature_Type__glued_suffix",
+    "language": "java",
+    "gold": "class",
+    "original": "temperature_Type",
+    "injected": "temperatureType",
+    "predA": "class",
+    "whyA": "class_declaration",
+    "predB": "class",
+    "whyB": "class_declaration",
+    "goldRules": [
+      "GSCS-TYPE-SUFFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_001__MAX_GPAX__lower_camel",
+    "language": "python",
+    "gold": "constant",
+    "original": "MAX_GPAX",
+    "injected": "maxGpax",
+    "predA": "variable",
+    "whyA": "assignment",
+    "predB": "constant",
+    "whyB": "bound once to a literal",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": false,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_001__MAX_GPAX__title_snake",
+    "language": "python",
+    "gold": "constant",
+    "original": "MAX_GPAX",
+    "injected": "Max_Gpax",
+    "predA": "variable",
+    "whyA": "assignment",
+    "predB": "constant",
+    "whyB": "bound once to a literal",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": false,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_001__f_Calculate_Gpax__camel_no_prefix",
+    "language": "python",
+    "gold": "function",
+    "original": "f_Calculate_Gpax",
+    "injected": "calculateGpax",
+    "predA": "function",
+    "whyA": "FunctionDef",
+    "predB": "function",
+    "whyB": "FunctionDef",
+    "goldRules": [
+      "GSCS-FUNC-RETURN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_001__f_Calculate_Gpax__strip_prefix",
+    "language": "python",
+    "gold": "function",
+    "original": "f_Calculate_Gpax",
+    "injected": "Calculate_Gpax",
+    "predA": "function",
+    "whyA": "FunctionDef",
+    "predB": "function",
+    "whyB": "FunctionDef",
+    "goldRules": [
+      "GSCS-FUNC-RETURN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_001__f_credit_total__camel_no_prefix",
+    "language": "python",
+    "gold": "parameter",
+    "original": "f_credit_total",
+    "injected": "creditTotal",
+    "predA": "parameter",
+    "whyA": "arg",
+    "predB": "parameter",
+    "whyB": "arg",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_001__f_credit_total__strip_prefix",
+    "language": "python",
+    "gold": "parameter",
+    "original": "f_credit_total",
+    "injected": "credit_total",
+    "predA": "parameter",
+    "whyA": "arg",
+    "predB": "parameter",
+    "whyB": "arg",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_001__f_gpax__camel_no_prefix",
+    "language": "python",
+    "gold": "variable",
+    "original": "f_gpax",
+    "injected": "gpax",
+    "predA": "variable",
+    "whyA": "assignment",
+    "predB": "variable",
+    "whyB": "assignment",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_001__f_gpax__strip_prefix",
+    "language": "python",
+    "gold": "variable",
+    "original": "f_gpax",
+    "injected": "gpax",
+    "predA": "variable",
+    "whyA": "assignment",
+    "predB": "variable",
+    "whyB": "assignment",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_001__f_point_total__camel_no_prefix",
+    "language": "python",
+    "gold": "parameter",
+    "original": "f_point_total",
+    "injected": "pointTotal",
+    "predA": "parameter",
+    "whyA": "arg",
+    "predB": "parameter",
+    "whyB": "arg",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_001__f_point_total__strip_prefix",
+    "language": "python",
+    "gold": "parameter",
+    "original": "f_point_total",
+    "injected": "point_total",
+    "predA": "parameter",
+    "whyA": "arg",
+    "predB": "parameter",
+    "whyB": "arg",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_001__student_Type__glued_suffix",
+    "language": "python",
+    "gold": "class",
+    "original": "student_Type",
+    "injected": "studentType",
+    "predA": "class",
+    "whyA": "ClassDef",
+    "predB": "class",
+    "whyB": "ClassDef",
+    "goldRules": [
+      "GSCS-TYPE-SUFFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_002__MAX_NAME_LENGTH__lower_camel",
+    "language": "python",
+    "gold": "constant",
+    "original": "MAX_NAME_LENGTH",
+    "injected": "maxNameLength",
+    "predA": "variable",
+    "whyA": "assignment",
+    "predB": "constant",
+    "whyB": "bound once to a literal",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": false,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_002__MAX_NAME_LENGTH__title_snake",
+    "language": "python",
+    "gold": "constant",
+    "original": "MAX_NAME_LENGTH",
+    "injected": "Max_Name_Length",
+    "predA": "variable",
+    "whyA": "assignment",
+    "predB": "constant",
+    "whyB": "bound once to a literal",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": false,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_002__Print_Report__lower_camel",
+    "language": "python",
+    "gold": "procedure",
+    "original": "Print_Report",
+    "injected": "printReport",
+    "predA": "procedure",
+    "whyA": "FunctionDef",
+    "predB": "procedure",
+    "whyB": "FunctionDef",
+    "goldRules": [
+      "GSCS-PROC-VERB-OBJECT"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_002__Print_Report__lower_snake",
+    "language": "python",
+    "gold": "procedure",
+    "original": "Print_Report",
+    "injected": "print_report",
+    "predA": "procedure",
+    "whyA": "FunctionDef",
+    "predB": "procedure",
+    "whyB": "FunctionDef",
+    "goldRules": [
+      "GSCS-PROC-VERB-OBJECT"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_002__bln_Is_Name_Long__camel_no_prefix",
+    "language": "python",
+    "gold": "boolean_variable",
+    "original": "bln_Is_Name_Long",
+    "injected": "isNameLong",
+    "predA": "boolean_variable",
+    "whyA": "bool values",
+    "predB": "boolean_variable",
+    "whyB": "bool values",
+    "goldRules": [
+      "GSCS-BOOL-BLN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_002__bln_Is_Name_Long__strip_prefix",
+    "language": "python",
+    "gold": "boolean_variable",
+    "original": "bln_Is_Name_Long",
+    "injected": "Is_Name_Long",
+    "predA": "boolean_variable",
+    "whyA": "bool values",
+    "predB": "boolean_variable",
+    "whyB": "bool values",
+    "goldRules": [
+      "GSCS-BOOL-BLN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_002__f_gpax__camel_no_prefix",
+    "language": "python",
+    "gold": "parameter",
+    "original": "f_gpax",
+    "injected": "gpax",
+    "predA": "parameter",
+    "whyA": "arg",
+    "predB": "parameter",
+    "whyB": "arg",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_002__f_gpax__strip_prefix",
+    "language": "python",
+    "gold": "parameter",
+    "original": "f_gpax",
+    "injected": "gpax",
+    "predA": "parameter",
+    "whyA": "arg",
+    "predB": "parameter",
+    "whyB": "arg",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_002__str_student_name__camel_no_prefix",
+    "language": "python",
+    "gold": "parameter",
+    "original": "str_student_name",
+    "injected": "studentName",
+    "predA": "parameter",
+    "whyA": "arg",
+    "predB": "parameter",
+    "whyB": "arg",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_002__str_student_name__strip_prefix",
+    "language": "python",
+    "gold": "parameter",
+    "original": "str_student_name",
+    "injected": "student_name",
+    "predA": "parameter",
+    "whyA": "arg",
+    "predB": "parameter",
+    "whyB": "arg",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_004__Add_Count__lower_camel",
+    "language": "python",
+    "gold": "procedure",
+    "original": "Add_Count",
+    "injected": "addCount",
+    "predA": "procedure",
+    "whyA": "FunctionDef",
+    "predB": "procedure",
+    "whyB": "FunctionDef",
+    "goldRules": [
+      "GSCS-PROC-VERB-OBJECT"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_004__Add_Count__lower_snake",
+    "language": "python",
+    "gold": "procedure",
+    "original": "Add_Count",
+    "injected": "add_count",
+    "predA": "procedure",
+    "whyA": "FunctionDef",
+    "predB": "procedure",
+    "whyB": "FunctionDef",
+    "goldRules": [
+      "GSCS-PROC-VERB-OBJECT"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_004__MAX_COUNT__lower_camel",
+    "language": "python",
+    "gold": "constant",
+    "original": "MAX_COUNT",
+    "injected": "maxCount",
+    "predA": "variable",
+    "whyA": "assignment",
+    "predB": "constant",
+    "whyB": "bound once to a literal",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": false,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_004__MAX_COUNT__title_snake",
+    "language": "python",
+    "gold": "constant",
+    "original": "MAX_COUNT",
+    "injected": "Max_Count",
+    "predA": "variable",
+    "whyA": "assignment",
+    "predB": "constant",
+    "whyB": "bound once to a literal",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": false,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_004__bln_Is_Full__camel_no_prefix",
+    "language": "python",
+    "gold": "boolean_variable",
+    "original": "bln_Is_Full",
+    "injected": "isFull",
+    "predA": "boolean_variable",
+    "whyA": "bool values",
+    "predB": "boolean_variable",
+    "whyB": "bool values",
+    "goldRules": [
+      "GSCS-BOOL-BLN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_004__bln_Is_Full__strip_prefix",
+    "language": "python",
+    "gold": "boolean_variable",
+    "original": "bln_Is_Full",
+    "injected": "Is_Full",
+    "predA": "boolean_variable",
+    "whyA": "bool values",
+    "predB": "boolean_variable",
+    "whyB": "bool values",
+    "goldRules": [
+      "GSCS-BOOL-BLN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_004__counter_Type__glued_suffix",
+    "language": "python",
+    "gold": "class",
+    "original": "counter_Type",
+    "injected": "counterType",
+    "predA": "class",
+    "whyA": "ClassDef",
+    "predB": "class",
+    "whyB": "ClassDef",
+    "goldRules": [
+      "GSCS-TYPE-SUFFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_004__i_count_total__camel_no_prefix",
+    "language": "python",
+    "gold": "field",
+    "original": "i_count_total",
+    "injected": "countTotal",
+    "predA": "field",
+    "whyA": "self attribute",
+    "predB": "field",
+    "whyB": "self attribute",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_004__i_count_total__strip_prefix",
+    "language": "python",
+    "gold": "field",
+    "original": "i_count_total",
+    "injected": "count_total",
+    "predA": "field",
+    "whyA": "self attribute",
+    "predB": "field",
+    "whyB": "self attribute",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_004__i_step_size__camel_no_prefix",
+    "language": "python",
+    "gold": "parameter",
+    "original": "i_step_size",
+    "injected": "stepSize",
+    "predA": "parameter",
+    "whyA": "arg",
+    "predB": "parameter",
+    "whyB": "arg",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_004__i_step_size__strip_prefix",
+    "language": "python",
+    "gold": "parameter",
+    "original": "i_step_size",
+    "injected": "step_size",
+    "predA": "parameter",
+    "whyA": "arg",
+    "predB": "parameter",
+    "whyB": "arg",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_005__MISSING_PRICE__lower_camel",
+    "language": "python",
+    "gold": "constant",
+    "original": "MISSING_PRICE",
+    "injected": "missingPrice",
+    "predA": "variable",
+    "whyA": "assignment",
+    "predB": "constant",
+    "whyB": "bound once to a literal",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": false,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_005__MISSING_PRICE__title_snake",
+    "language": "python",
+    "gold": "constant",
+    "original": "MISSING_PRICE",
+    "injected": "Missing_Price",
+    "predA": "variable",
+    "whyA": "assignment",
+    "predB": "constant",
+    "whyB": "bound once to a literal",
+    "goldRules": [
+      "GSCS-CONST-UPPER"
+    ],
+    "agreeA": false,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_005__f_Parse_Price__camel_no_prefix",
+    "language": "python",
+    "gold": "function",
+    "original": "f_Parse_Price",
+    "injected": "parsePrice",
+    "predA": "function",
+    "whyA": "FunctionDef",
+    "predB": "function",
+    "whyB": "FunctionDef",
+    "goldRules": [
+      "GSCS-FUNC-RETURN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_005__f_Parse_Price__strip_prefix",
+    "language": "python",
+    "gold": "function",
+    "original": "f_Parse_Price",
+    "injected": "Parse_Price",
+    "predA": "function",
+    "whyA": "FunctionDef",
+    "predB": "function",
+    "whyB": "FunctionDef",
+    "goldRules": [
+      "GSCS-FUNC-RETURN-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_005__f_price__glued_prefix",
+    "language": "python",
+    "gold": "variable",
+    "original": "f_price",
+    "injected": "fPrice",
+    "predA": "variable",
+    "whyA": "assignment",
+    "predB": "variable",
+    "whyB": "assignment",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_005__str_price_text__camel_no_prefix",
+    "language": "python",
+    "gold": "parameter",
+    "original": "str_price_text",
+    "injected": "priceText",
+    "predA": "parameter",
+    "whyA": "arg",
+    "predB": "parameter",
+    "whyB": "arg",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "gscs",
+    "unit_id": "gscs_python_005__str_price_text__strip_prefix",
+    "language": "python",
+    "gold": "parameter",
+    "original": "str_price_text",
+    "injected": "price_text",
+    "predA": "parameter",
+    "whyA": "arg",
+    "predB": "parameter",
+    "whyB": "arg",
+    "goldRules": [
+      "GSCS-VAR-TYPED-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_001__IBinaryPackable__DOTNET-INTERFACE-I-PREFIX",
+    "language": "csharp",
+    "gold": "interface",
+    "original": "IBinaryPackable",
+    "injected": "i_binary_packable",
+    "before": "interface",
+    "whyBefore": "decl",
+    "predA": "interface",
+    "whyA": "decl",
+    "predB": "interface",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-INTERFACE-I-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_002__CanRead__DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX",
+    "language": "csharp",
+    "gold": "boolean_variable",
+    "original": "CanRead",
+    "injected": "notCanRead",
+    "before": "boolean_variable",
+    "whyBefore": "decl",
+    "predA": "boolean_variable",
+    "whyA": "decl",
+    "predB": "boolean_variable",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_011__StorageKey__DOTNET-PROPERTY-NOUN-PASCAL",
+    "language": "csharp",
+    "gold": "property",
+    "original": "StorageKey",
+    "injected": "storage_key",
+    "before": "property",
+    "whyBefore": "decl",
+    "predA": "property",
+    "whyA": "decl",
+    "predB": "property",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-PROPERTY-NOUN-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_014__IsSystem__DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX",
+    "language": "csharp",
+    "gold": "boolean_variable",
+    "original": "IsSystem",
+    "injected": "notIsSystem",
+    "before": "boolean_variable",
+    "whyBefore": "decl",
+    "predA": "boolean_variable",
+    "whyA": "decl",
+    "predB": "boolean_variable",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_018__ModifyQueueStatus__DOTNET-ENUM-NO-ENUM-FLAGS-SUFFIX",
+    "language": "csharp",
+    "gold": "enum",
+    "original": "ModifyQueueStatus",
+    "injected": "modify_queue_status",
+    "before": "enum",
+    "whyBefore": "decl",
+    "predA": "enum",
+    "whyA": "decl",
+    "predB": "enum",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-ENUM-NO-ENUM-FLAGS-SUFFIX",
+      "DOTNET-ENUM-SINGULAR-OR-PLURAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_018__Pending__DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+    "language": "csharp",
+    "gold": "enum_member",
+    "original": "Pending",
+    "injected": "pending",
+    "before": "enum_member",
+    "whyBefore": "decl",
+    "predA": "enum_member",
+    "whyA": "decl",
+    "predB": "enum_member",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_024__Options__DOTNET-FIELD-PASCAL-NOPREFIX",
+    "language": "csharp",
+    "gold": "field",
+    "original": "Options",
+    "injected": "options",
+    "before": "field",
+    "whyBefore": "decl",
+    "predA": "field",
+    "whyA": "decl",
+    "predB": "field",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-FIELD-PASCAL-NOPREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_028__Load__DOTNET-METHOD-VERB-PASCAL",
+    "language": "csharp",
+    "gold": "method",
+    "original": "Load",
+    "injected": "load",
+    "before": "method",
+    "whyBefore": "decl",
+    "predA": "method",
+    "whyA": "decl",
+    "predB": "method",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-METHOD-VERB-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_028__preferences__DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+    "language": "csharp",
+    "gold": "parameter",
+    "original": "preferences",
+    "injected": "PREFERENCES",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_029__IOwnerDeviceSigner__DOTNET-INTERFACE-I-PREFIX",
+    "language": "csharp",
+    "gold": "interface",
+    "original": "IOwnerDeviceSigner",
+    "injected": "i_owner_device_signer",
+    "before": "interface",
+    "whyBefore": "decl",
+    "predA": "interface",
+    "whyA": "decl",
+    "predB": "interface",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-INTERFACE-I-PREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_033__MaximumBytes__DOTNET-CONSTANT-PASCAL",
+    "language": "csharp",
+    "gold": "constant",
+    "original": "MaximumBytes",
+    "injected": "maximum_bytes",
+    "before": "constant",
+    "whyBefore": "decl",
+    "predA": "constant",
+    "whyA": "decl",
+    "predB": "constant",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-CONSTANT-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_035__WorldAssetCacheResult__DOTNET-CLASS-PASCAL-NOUN",
+    "language": "csharp",
+    "gold": "class",
+    "original": "WorldAssetCacheResult",
+    "injected": "world_asset_cache_result",
+    "before": "class",
+    "whyBefore": "decl",
+    "predA": "class",
+    "whyA": "decl",
+    "predB": "class",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-CLASS-PASCAL-NOUN"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_039__TicksPerDay__DOTNET-CONSTANT-PASCAL",
+    "language": "csharp",
+    "gold": "constant",
+    "original": "TicksPerDay",
+    "injected": "ticks_per_day",
+    "before": "constant",
+    "whyBefore": "decl",
+    "predA": "constant",
+    "whyA": "decl",
+    "predB": "constant",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-CONSTANT-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_057__body__DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+    "language": "csharp",
+    "gold": "variable",
+    "original": "body",
+    "injected": "BODY",
+    "before": "variable",
+    "whyBefore": "decl",
+    "predA": "variable",
+    "whyA": "decl",
+    "predB": "variable",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-NO-HUNGARIAN-NO-UNDERSCORE",
+      "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_063__key__DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+    "language": "csharp",
+    "gold": "parameter",
+    "original": "key",
+    "injected": "KEY",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_065__AddOptionalMetadata__DOTNET-METHOD-VERB-PASCAL",
+    "language": "csharp",
+    "gold": "method",
+    "original": "AddOptionalMetadata",
+    "injected": "add_optional_metadata",
+    "before": null,
+    "whyBefore": "no declaration",
+    "predA": null,
+    "whyA": "no declaration",
+    "predB": null,
+    "whyB": "no declaration",
+    "goldRules": [
+      "DOTNET-METHOD-VERB-PASCAL"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": false,
+    "beforeAgree": false
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_066__VonageSmsRequestMapper__DOTNET-CLASS-PASCAL-NOUN",
+    "language": "csharp",
+    "gold": "class",
+    "original": "VonageSmsRequestMapper",
+    "injected": "vonage_sms_request_mapper",
+    "before": "class",
+    "whyBefore": "decl",
+    "predA": "class",
+    "whyA": "decl",
+    "predB": "class",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-CLASS-PASCAL-NOUN"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_078__NegativeX__DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+    "language": "csharp",
+    "gold": "enum_member",
+    "original": "NegativeX",
+    "injected": "negative_x",
+    "before": "enum_member",
+    "whyBefore": "decl",
+    "predA": "enum_member",
+    "whyA": "decl",
+    "predB": "enum_member",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_078__WorldAxis__DOTNET-ENUM-NO-ENUM-FLAGS-SUFFIX",
+    "language": "csharp",
+    "gold": "enum",
+    "original": "WorldAxis",
+    "injected": "world_axis",
+    "before": "enum",
+    "whyBefore": "decl",
+    "predA": "enum",
+    "whyA": "decl",
+    "predB": "enum",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-ENUM-NO-ENUM-FLAGS-SUFFIX",
+      "DOTNET-ENUM-SINGULAR-OR-PLURAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "csharp_099__Idle__DOTNET-FIELD-PASCAL-NOPREFIX",
+    "language": "csharp",
+    "gold": "field",
+    "original": "Idle",
+    "injected": "idle",
+    "before": "field",
+    "whyBefore": "decl",
+    "predA": "field",
+    "whyA": "decl",
+    "predB": "field",
+    "whyB": "decl",
+    "goldRules": [
+      "DOTNET-FIELD-PASCAL-NOPREFIX"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_002__details__GJAVA-FIELD-CAMEL",
+    "language": "java",
+    "gold": "field",
+    "original": "details",
+    "injected": "DETAILS",
+    "before": "field",
+    "whyBefore": "decl",
+    "predA": "field",
+    "whyA": "decl",
+    "predB": "field",
+    "whyB": "decl",
+    "goldRules": [
+      "GJAVA-FIELD-CAMEL",
+      "GJAVA-FIELD-NO-HUNGARIAN"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_004__AuditLogService__GJAVA-CLASS-PASCAL",
+    "language": "java",
+    "gold": "class",
+    "original": "AuditLogService",
+    "injected": "audit_log_service",
+    "before": "class",
+    "whyBefore": "decl",
+    "predA": "class",
+    "whyA": "decl",
+    "predB": "class",
+    "whyB": "decl",
+    "goldRules": [
+      "GJAVA-CLASS-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_011__CloudinaryConfig__GJAVA-CLASS-PASCAL",
+    "language": "java",
+    "gold": "class",
+    "original": "CloudinaryConfig",
+    "injected": "cloudinary_config",
+    "before": "class",
+    "whyBefore": "decl",
+    "predA": "class",
+    "whyA": "decl",
+    "predB": "class",
+    "whyB": "decl",
+    "goldRules": [
+      "GJAVA-CLASS-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_014__FileStorageService__GJAVA-INTERFACE-PASCAL",
+    "language": "java",
+    "gold": "interface",
+    "original": "FileStorageService",
+    "injected": "file_storage_service",
+    "before": "interface",
+    "whyBefore": "decl",
+    "predA": "interface",
+    "whyA": "decl",
+    "predB": "interface",
+    "whyB": "decl",
+    "goldRules": [
+      "GJAVA-INTERFACE-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_014__file__GJAVA-PARAMETER-CAMEL",
+    "language": "java",
+    "gold": "parameter",
+    "original": "file",
+    "injected": "FILE",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "GJAVA-PARAMETER-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_020__OrderRepository__GJAVA-INTERFACE-PASCAL",
+    "language": "java",
+    "gold": "interface",
+    "original": "OrderRepository",
+    "injected": "order_repository",
+    "before": "interface",
+    "whyBefore": "decl",
+    "predA": "interface",
+    "whyA": "decl",
+    "predB": "interface",
+    "whyB": "decl",
+    "goldRules": [
+      "GJAVA-INTERFACE-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_028__equipHits__GJAVA-FIELD-CAMEL",
+    "language": "java",
+    "gold": "field",
+    "original": "equipHits",
+    "injected": "equip_hits",
+    "before": "field",
+    "whyBefore": "decl",
+    "predA": "field",
+    "whyA": "decl",
+    "predB": "field",
+    "whyB": "decl",
+    "goldRules": [
+      "GJAVA-FIELD-CAMEL",
+      "GJAVA-FIELD-NO-HUNGARIAN"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_029__name__GJAVA-PARAMETER-CAMEL",
+    "language": "java",
+    "gold": "parameter",
+    "original": "name",
+    "injected": "NAME",
+    "before": null,
+    "whyBefore": "no declaration",
+    "predA": null,
+    "whyA": "no declaration",
+    "predB": null,
+    "whyB": "no declaration",
+    "goldRules": [
+      "GJAVA-PARAMETER-CAMEL"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": false,
+    "beforeAgree": false
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_031__tierColor__GJAVA-METHOD-CAMEL",
+    "language": "java",
+    "gold": "method",
+    "original": "tierColor",
+    "injected": "tier_color",
+    "before": null,
+    "whyBefore": "no declaration",
+    "predA": null,
+    "whyA": "no declaration",
+    "predB": null,
+    "whyB": "no declaration",
+    "goldRules": [
+      "GJAVA-METHOD-CAMEL"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": false,
+    "beforeAgree": false
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_035__now__GJAVA-VARIABLE-CAMEL",
+    "language": "java",
+    "gold": "variable",
+    "original": "now",
+    "injected": "NOW",
+    "before": null,
+    "whyBefore": "no declaration",
+    "predA": null,
+    "whyA": "no declaration",
+    "predB": null,
+    "whyB": "no declaration",
+    "goldRules": [
+      "GJAVA-IDENT-ASCII",
+      "GJAVA-VARIABLE-CAMEL"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": false,
+    "beforeAgree": false
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_047__rotate__GJAVA-METHOD-CAMEL",
+    "language": "java",
+    "gold": "method",
+    "original": "rotate",
+    "injected": "ROTATE",
+    "before": null,
+    "whyBefore": "no declaration",
+    "predA": null,
+    "whyA": "no declaration",
+    "predB": null,
+    "whyB": "no declaration",
+    "goldRules": [
+      "GJAVA-METHOD-CAMEL"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": false,
+    "beforeAgree": false
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_057__AdminProductVersionContractTest__GJAVA-CLASS-PASCAL",
+    "language": "java",
+    "gold": "class",
+    "original": "AdminProductVersionContractTest",
+    "injected": "admin_product_version_contract_test",
+    "before": "class",
+    "whyBefore": "decl",
+    "predA": "class",
+    "whyA": "decl",
+    "predB": "class",
+    "whyB": "decl",
+    "goldRules": [
+      "GJAVA-CLASS-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_057__PROJECT_URL__GJAVA-CONSTANT-UPPER-SNAKE",
+    "language": "java",
+    "gold": "constant",
+    "original": "PROJECT_URL",
+    "injected": "project_url",
+    "before": "constant",
+    "whyBefore": "decl",
+    "predA": "constant",
+    "whyA": "decl",
+    "predB": "constant",
+    "whyB": "decl",
+    "goldRules": [
+      "GJAVA-CONSTANT-UPPER-SNAKE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_057__RELEASES_URL__GJAVA-CONSTANT-UPPER-SNAKE",
+    "language": "java",
+    "gold": "constant",
+    "original": "RELEASES_URL",
+    "injected": "releases_url",
+    "before": "constant",
+    "whyBefore": "decl",
+    "predA": "constant",
+    "whyA": "decl",
+    "predB": "constant",
+    "whyB": "decl",
+    "goldRules": [
+      "GJAVA-CONSTANT-UPPER-SNAKE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_069__IFurkin__GJAVA-INTERFACE-PASCAL",
+    "language": "java",
+    "gold": "interface",
+    "original": "IFurkin",
+    "injected": "i_furkin",
+    "before": "interface",
+    "whyBefore": "decl",
+    "predA": "interface",
+    "whyA": "decl",
+    "predB": "interface",
+    "whyB": "decl",
+    "goldRules": [
+      "GJAVA-INTERFACE-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_081__entity__GJAVA-VARIABLE-CAMEL",
+    "language": "java",
+    "gold": "variable",
+    "original": "entity",
+    "injected": "ENTITY",
+    "before": null,
+    "whyBefore": "no declaration",
+    "predA": null,
+    "whyA": "no declaration",
+    "predB": null,
+    "whyB": "no declaration",
+    "goldRules": [
+      "GJAVA-IDENT-ASCII",
+      "GJAVA-VARIABLE-CAMEL"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": false,
+    "beforeAgree": false
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_088__slots__GJAVA-VARIABLE-CAMEL",
+    "language": "java",
+    "gold": "variable",
+    "original": "slots",
+    "injected": "SLOTS",
+    "before": null,
+    "whyBefore": "no declaration",
+    "predA": null,
+    "whyA": "no declaration",
+    "predB": null,
+    "whyB": "no declaration",
+    "goldRules": [
+      "GJAVA-IDENT-ASCII",
+      "GJAVA-VARIABLE-CAMEL"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": false,
+    "beforeAgree": false
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_090__min__GJAVA-PARAMETER-CAMEL",
+    "language": "java",
+    "gold": "parameter",
+    "original": "min",
+    "injected": "MIN",
+    "before": null,
+    "whyBefore": "no declaration",
+    "predA": null,
+    "whyA": "no declaration",
+    "predB": null,
+    "whyB": "no declaration",
+    "goldRules": [
+      "GJAVA-PARAMETER-CAMEL"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": false,
+    "beforeAgree": false
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_095__recordSuccess__GJAVA-METHOD-CAMEL",
+    "language": "java",
+    "gold": "method",
+    "original": "recordSuccess",
+    "injected": "record_success",
+    "before": null,
+    "whyBefore": "no declaration",
+    "predA": null,
+    "whyA": "no declaration",
+    "predB": null,
+    "whyB": "no declaration",
+    "goldRules": [
+      "GJAVA-METHOD-CAMEL"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": false,
+    "beforeAgree": false
+  },
+  {
+    "pack": "public5",
+    "unit_id": "java_097__offsetY__GJAVA-FIELD-CAMEL",
+    "language": "java",
+    "gold": "field",
+    "original": "offsetY",
+    "injected": "offset_y",
+    "before": "field",
+    "whyBefore": "decl",
+    "predA": "field",
+    "whyA": "decl",
+    "predB": "field",
+    "whyB": "decl",
+    "goldRules": [
+      "GJAVA-FIELD-CAMEL",
+      "GJAVA-FIELD-NO-HUNGARIAN"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_001__cross__AIRBNB-METHOD-CAMEL",
+    "language": "javascript",
+    "gold": "method",
+    "original": "cross",
+    "injected": "CROSS",
+    "before": null,
+    "whyBefore": "no declaration",
+    "predA": null,
+    "whyA": "no declaration",
+    "predB": null,
+    "whyB": "no declaration",
+    "goldRules": [
+      "AIRBNB-METHOD-CAMEL"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": false,
+    "beforeAgree": false
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_002__normalize__AIRBNB-METHOD-CAMEL",
+    "language": "javascript",
+    "gold": "method",
+    "original": "normalize",
+    "injected": "NORMALIZE",
+    "before": null,
+    "whyBefore": "no declaration",
+    "predA": null,
+    "whyA": "no declaration",
+    "predB": null,
+    "whyB": "no declaration",
+    "goldRules": [
+      "AIRBNB-METHOD-CAMEL"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": false,
+    "beforeAgree": false
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_008__validateStringArray__AIRBNB-FUNCTION-CAMEL",
+    "language": "javascript",
+    "gold": "function",
+    "original": "validateStringArray",
+    "injected": "validate_string_array",
+    "before": "function",
+    "whyBefore": "decl",
+    "predA": "function",
+    "whyA": "decl",
+    "predB": "function",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-FUNCTION-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_013__findingsPath__AIRBNB-VAR-DESCRIPTIVE",
+    "language": "javascript",
+    "gold": "variable",
+    "original": "findingsPath",
+    "injected": "l",
+    "before": "variable",
+    "whyBefore": "decl",
+    "predA": "variable",
+    "whyA": "decl",
+    "predB": "variable",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-VAR-DESCRIPTIVE",
+      "AIRBNB-VARIABLE-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_015__authAPI__AIRBNB-VAR-DESCRIPTIVE",
+    "language": "javascript",
+    "gold": "variable",
+    "original": "authAPI",
+    "injected": "l",
+    "before": "variable",
+    "whyBefore": "decl",
+    "predA": "variable",
+    "whyA": "decl",
+    "predB": "variable",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-VAR-DESCRIPTIVE",
+      "AIRBNB-VARIABLE-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_024__resolveBundleFile__AIRBNB-FUNCTION-CAMEL",
+    "language": "javascript",
+    "gold": "function",
+    "original": "resolveBundleFile",
+    "injected": "resolve_bundle_file",
+    "before": "function",
+    "whyBefore": "decl",
+    "predA": "function",
+    "whyA": "decl",
+    "predB": "function",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-FUNCTION-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_028__merged__AIRBNB-VAR-DESCRIPTIVE",
+    "language": "javascript",
+    "gold": "variable",
+    "original": "merged",
+    "injected": "m",
+    "before": "variable",
+    "whyBefore": "decl",
+    "predA": "variable",
+    "whyA": "decl",
+    "predB": "variable",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-VAR-DESCRIPTIVE",
+      "AIRBNB-VARIABLE-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_045__query__AIRBNB-PARAM-DESCRIPTIVE",
+    "language": "javascript",
+    "gold": "parameter",
+    "original": "query",
+    "injected": "q",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-PARAM-DESCRIPTIVE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_046__sel__AIRBNB-VAR-DESCRIPTIVE",
+    "language": "javascript",
+    "gold": "variable",
+    "original": "sel",
+    "injected": "s",
+    "before": "variable",
+    "whyBefore": "decl",
+    "predA": "variable",
+    "whyA": "decl",
+    "predB": "variable",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-VAR-DESCRIPTIVE",
+      "AIRBNB-VARIABLE-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_053__detail__AIRBNB-PROPERTY-CAMEL",
+    "language": "javascript",
+    "gold": "property",
+    "original": "detail",
+    "injected": "DETAIL",
+    "before": "property",
+    "whyBefore": "decl",
+    "predA": "property",
+    "whyA": "decl",
+    "predB": "property",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-PROPERTY-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_053__name__AIRBNB-PROPERTY-CAMEL",
+    "language": "javascript",
+    "gold": "property",
+    "original": "name",
+    "injected": "NAME",
+    "before": "property",
+    "whyBefore": "decl",
+    "predA": "property",
+    "whyA": "decl",
+    "predB": "property",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-PROPERTY-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_053__suggestion__AIRBNB-PROPERTY-CAMEL",
+    "language": "javascript",
+    "gold": "property",
+    "original": "suggestion",
+    "injected": "SUGGESTION",
+    "before": "property",
+    "whyBefore": "decl",
+    "predA": "property",
+    "whyA": "decl",
+    "predB": "property",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-PROPERTY-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_053__userCode__AIRBNB-PROPERTY-CAMEL",
+    "language": "javascript",
+    "gold": "property",
+    "original": "userCode",
+    "injected": "user_code",
+    "before": "property",
+    "whyBefore": "decl",
+    "predA": "property",
+    "whyA": "decl",
+    "predB": "property",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-PROPERTY-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_056__lockPath__AIRBNB-PARAM-DESCRIPTIVE",
+    "language": "javascript",
+    "gold": "parameter",
+    "original": "lockPath",
+    "injected": "l",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-PARAM-DESCRIPTIVE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_066__buildAchievementViewModel__AIRBNB-FUNCTION-CAMEL",
+    "language": "javascript",
+    "gold": "function",
+    "original": "buildAchievementViewModel",
+    "injected": "build_achievement_view_model",
+    "before": "function",
+    "whyBefore": "decl",
+    "predA": "function",
+    "whyA": "decl",
+    "predB": "function",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-FUNCTION-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_070__item__AIRBNB-PARAM-DESCRIPTIVE",
+    "language": "javascript",
+    "gold": "parameter",
+    "original": "item",
+    "injected": "i",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-PARAM-DESCRIPTIVE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_091__item__AIRBNB-PARAM-DESCRIPTIVE",
+    "language": "javascript",
+    "gold": "parameter",
+    "original": "item",
+    "injected": "i",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-PARAM-DESCRIPTIVE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_094__next__AIRBNB-METHOD-CAMEL",
+    "language": "javascript",
+    "gold": "method",
+    "original": "next",
+    "injected": "NEXT",
+    "before": "method",
+    "whyBefore": "decl",
+    "predA": "method",
+    "whyA": "decl",
+    "predB": "method",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-METHOD-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_094__start__AIRBNB-METHOD-CAMEL",
+    "language": "javascript",
+    "gold": "method",
+    "original": "start",
+    "injected": "START",
+    "before": "method",
+    "whyBefore": "decl",
+    "predA": "method",
+    "whyA": "decl",
+    "predB": "method",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-METHOD-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "js_095__records__AIRBNB-FUNCTION-CAMEL",
+    "language": "javascript",
+    "gold": "function",
+    "original": "records",
+    "injected": "RECORDS",
+    "before": "function",
+    "whyBefore": "decl",
+    "predA": "function",
+    "whyA": "decl",
+    "predB": "function",
+    "whyB": "decl",
+    "goldRules": [
+      "AIRBNB-FUNCTION-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_010__pid__PEP8-PARAM-SELF-CLS",
+    "language": "python",
+    "gold": "parameter",
+    "original": "pid",
+    "injected": "PID",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-PARAM-SELF-CLS"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_014__is_sqlite__PEP8-AVOID-CONFUSING-CHARS",
+    "language": "python",
+    "gold": "variable",
+    "original": "is_sqlite",
+    "injected": "l",
+    "before": "variable",
+    "whyBefore": "decl",
+    "predA": "variable",
+    "whyA": "decl",
+    "predB": "variable",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-AVOID-CONFUSING-CHARS",
+      "PEP8-VAR-SNAKE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_015__AuditLog__PEP8-CLASS-CAPWORDS",
+    "language": "python",
+    "gold": "class",
+    "original": "AuditLog",
+    "injected": "AUDIT_LOG",
+    "before": "class",
+    "whyBefore": "decl",
+    "predA": "class",
+    "whyA": "decl",
+    "predB": "class",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-CLASS-CAPWORDS"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_016__serial__PEP8-FIELD-PUBLIC-NO-PREFIX",
+    "language": "python",
+    "gold": "field",
+    "original": "serial",
+    "injected": "SERIAL",
+    "before": "field",
+    "whyBefore": "decl",
+    "predA": "constant",
+    "whyA": "decl",
+    "predB": "constant",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-FIELD-PUBLIC-NO-PREFIX"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": true,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_023__FABRICATED_SOURCE__PEP8-CONST-UPPER",
+    "language": "python",
+    "gold": "constant",
+    "original": "FABRICATED_SOURCE",
+    "injected": "FabricatedSource",
+    "before": "constant",
+    "whyBefore": "decl",
+    "predA": "field",
+    "whyA": "decl",
+    "predB": "field",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-CONST-UPPER"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": true,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_023__SOURCE_MISMATCH__PEP8-CONST-UPPER",
+    "language": "python",
+    "gold": "constant",
+    "original": "SOURCE_MISMATCH",
+    "injected": "SourceMismatch",
+    "before": "constant",
+    "whyBefore": "decl",
+    "predA": "field",
+    "whyA": "decl",
+    "predB": "field",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-CONST-UPPER"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": true,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_023__STALE_EVIDENCE__PEP8-CONST-UPPER",
+    "language": "python",
+    "gold": "constant",
+    "original": "STALE_EVIDENCE",
+    "injected": "StaleEvidence",
+    "before": "constant",
+    "whyBefore": "decl",
+    "predA": "field",
+    "whyA": "decl",
+    "predB": "field",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-CONST-UPPER"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": true,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_025__list_runs__PEP8-METHOD-SNAKE",
+    "language": "python",
+    "gold": "method",
+    "original": "list_runs",
+    "injected": "LIST_RUNS",
+    "before": "function",
+    "whyBefore": "decl",
+    "predA": "function",
+    "whyA": "decl",
+    "predB": "function",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-METHOD-SNAKE"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": false,
+    "beforeAgree": false
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_026__LoopResult__PEP8-CLASS-CAPWORDS",
+    "language": "python",
+    "gold": "class",
+    "original": "LoopResult",
+    "injected": "loop_result",
+    "before": "class",
+    "whyBefore": "decl",
+    "predA": "class",
+    "whyA": "decl",
+    "predB": "class",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-CLASS-CAPWORDS"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_032__run_dir__PEP8-FIELD-PUBLIC-NO-PREFIX",
+    "language": "python",
+    "gold": "field",
+    "original": "run_dir",
+    "injected": "RUN_DIR",
+    "before": "field",
+    "whyBefore": "decl",
+    "predA": "constant",
+    "whyA": "decl",
+    "predB": "constant",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-FIELD-PUBLIC-NO-PREFIX"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": true,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_039__n_head__PEP8-PARAM-SELF-CLS",
+    "language": "python",
+    "gold": "parameter",
+    "original": "n_head",
+    "injected": "N_HEAD",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-PARAM-SELF-CLS"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_044__BrickSelector__PEP8-CLASS-CAPWORDS",
+    "language": "python",
+    "gold": "class",
+    "original": "BrickSelector",
+    "injected": "brick_selector",
+    "before": "class",
+    "whyBefore": "decl",
+    "predA": "class",
+    "whyA": "decl",
+    "predB": "class",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-CLASS-CAPWORDS"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_050__db_user__PEP8-VAR-SNAKE",
+    "language": "python",
+    "gold": "variable",
+    "original": "db_user",
+    "injected": "DB_USER",
+    "before": "variable",
+    "whyBefore": "decl",
+    "predA": "variable",
+    "whyA": "decl",
+    "predB": "variable",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-AVOID-CONFUSING-CHARS",
+      "PEP8-VAR-SNAKE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_063__pred__PEP8-FUNC-SNAKE",
+    "language": "python",
+    "gold": "function",
+    "original": "pred",
+    "injected": "PRED",
+    "before": "function",
+    "whyBefore": "decl",
+    "predA": "function",
+    "whyA": "decl",
+    "predB": "function",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-FUNC-SNAKE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_085__original_tag__PEP8-FIELD-PUBLIC-NO-PREFIX",
+    "language": "python",
+    "gold": "field",
+    "original": "original_tag",
+    "injected": "ORIGINAL_TAG",
+    "before": "field",
+    "whyBefore": "decl",
+    "predA": "constant",
+    "whyA": "decl",
+    "predB": "constant",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-FIELD-PUBLIC-NO-PREFIX"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": true,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_089__main__PEP8-FUNC-SNAKE",
+    "language": "python",
+    "gold": "function",
+    "original": "main",
+    "injected": "MAIN",
+    "before": "function",
+    "whyBefore": "decl",
+    "predA": "function",
+    "whyA": "decl",
+    "predB": "function",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-FUNC-SNAKE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_097__observe__PEP8-METHOD-SNAKE",
+    "language": "python",
+    "gold": "method",
+    "original": "observe",
+    "injected": "OBSERVE",
+    "before": "method",
+    "whyBefore": "decl",
+    "predA": "method",
+    "whyA": "decl",
+    "predB": "method",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-METHOD-SNAKE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_097__roll_day__PEP8-METHOD-SNAKE",
+    "language": "python",
+    "gold": "method",
+    "original": "roll_day",
+    "injected": "ROLL_DAY",
+    "before": "method",
+    "whyBefore": "decl",
+    "predA": "method",
+    "whyA": "decl",
+    "predB": "method",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-METHOD-SNAKE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_098__name__PEP8-PARAM-SELF-CLS",
+    "language": "python",
+    "gold": "parameter",
+    "original": "name",
+    "injected": "NAME",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-PARAM-SELF-CLS"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "py_098__slugify__PEP8-FUNC-SNAKE",
+    "language": "python",
+    "gold": "function",
+    "original": "slugify",
+    "injected": "SLUGIFY",
+    "before": "function",
+    "whyBefore": "decl",
+    "predA": "function",
+    "whyA": "decl",
+    "predB": "function",
+    "whyB": "decl",
+    "goldRules": [
+      "PEP8-FUNC-SNAKE"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_005__AppBridge__GTS-INTERFACE-PASCAL",
+    "language": "typescript",
+    "gold": "interface",
+    "original": "AppBridge",
+    "injected": "app_bridge",
+    "before": "interface",
+    "whyBefore": "decl",
+    "predA": "interface",
+    "whyA": "decl",
+    "predB": "interface",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-INTERFACE-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_005__execute__GTS-METHOD-CAMEL",
+    "language": "typescript",
+    "gold": "method",
+    "original": "execute",
+    "injected": "EXECUTE",
+    "before": "method",
+    "whyBefore": "decl",
+    "predA": "method",
+    "whyA": "decl",
+    "predB": "method",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-METHOD-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_009__filePath__GTS-PARAMETER-CAMEL",
+    "language": "typescript",
+    "gold": "parameter",
+    "original": "filePath",
+    "injected": "file_path",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-PARAMETER-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_014__name__GTS-VARIABLE-CAMEL",
+    "language": "typescript",
+    "gold": "variable",
+    "original": "name",
+    "injected": "NAME",
+    "before": "variable",
+    "whyBefore": "decl",
+    "predA": "variable",
+    "whyA": "decl",
+    "predB": "variable",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-VARIABLE-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_016__interpPolar__GTS-FUNCTION-CAMEL",
+    "language": "typescript",
+    "gold": "function",
+    "original": "interpPolar",
+    "injected": "interp_polar",
+    "before": "function",
+    "whyBefore": "decl",
+    "predA": "function",
+    "whyA": "decl",
+    "predB": "function",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-FUNCTION-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_017__interpLinear__GTS-FUNCTION-CAMEL",
+    "language": "typescript",
+    "gold": "function",
+    "original": "interpLinear",
+    "injected": "interp_linear",
+    "before": "function",
+    "whyBefore": "decl",
+    "predA": "function",
+    "whyA": "decl",
+    "predB": "function",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-FUNCTION-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_019__subs__GTS-PARAMETER-CAMEL",
+    "language": "typescript",
+    "gold": "parameter",
+    "original": "subs",
+    "injected": "SUBS",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-PARAMETER-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_021__Spring__GTS-CLASS-PASCAL",
+    "language": "typescript",
+    "gold": "class",
+    "original": "Spring",
+    "injected": "spring",
+    "before": "class",
+    "whyBefore": "decl",
+    "predA": "class",
+    "whyA": "decl",
+    "predB": "class",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-CLASS-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_021__config__GTS-METHOD-CAMEL",
+    "language": "typescript",
+    "gold": "method",
+    "original": "config",
+    "injected": "CONFIG",
+    "before": "method",
+    "whyBefore": "decl",
+    "predA": "method",
+    "whyA": "decl",
+    "predB": "method",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-METHOD-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_021__step__GTS-METHOD-CAMEL",
+    "language": "typescript",
+    "gold": "method",
+    "original": "step",
+    "injected": "STEP",
+    "before": "method",
+    "whyBefore": "decl",
+    "predA": "method",
+    "whyA": "decl",
+    "predB": "method",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-METHOD-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_028__started__GTS-VARIABLE-CAMEL",
+    "language": "typescript",
+    "gold": "variable",
+    "original": "started",
+    "injected": "STARTED",
+    "before": "variable",
+    "whyBefore": "decl",
+    "predA": "variable",
+    "whyA": "decl",
+    "predB": "variable",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-VARIABLE-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_034__LeaderDialProps__GTS-INTERFACE-PASCAL",
+    "language": "typescript",
+    "gold": "interface",
+    "original": "LeaderDialProps",
+    "injected": "leader_dial_props",
+    "before": "interface",
+    "whyBefore": "decl",
+    "predA": "interface",
+    "whyA": "decl",
+    "predB": "interface",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-INTERFACE-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_044__recording__GTS-PARAMETER-CAMEL",
+    "language": "typescript",
+    "gold": "parameter",
+    "original": "recording",
+    "injected": "RECORDING",
+    "before": "parameter",
+    "whyBefore": "decl",
+    "predA": "parameter",
+    "whyA": "decl",
+    "predB": "parameter",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-PARAMETER-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_053__reducedMotion__GTS-PROPERTY-CAMEL",
+    "language": "typescript",
+    "gold": "property",
+    "original": "reducedMotion",
+    "injected": "reduced_motion",
+    "before": "property",
+    "whyBefore": "decl",
+    "predA": "property",
+    "whyA": "decl",
+    "predB": "property",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-PROPERTY-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_058__IconProps__GTS-INTERFACE-PASCAL",
+    "language": "typescript",
+    "gold": "interface",
+    "original": "IconProps",
+    "injected": "icon_props",
+    "before": "interface",
+    "whyBefore": "decl",
+    "predA": "interface",
+    "whyA": "decl",
+    "predB": "interface",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-INTERFACE-PASCAL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_070__useSweep__GTS-FUNCTION-CAMEL",
+    "language": "typescript",
+    "gold": "function",
+    "original": "useSweep",
+    "injected": "use_sweep",
+    "before": "function",
+    "whyBefore": "decl",
+    "predA": "function",
+    "whyA": "decl",
+    "predB": "function",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-FUNCTION-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_071__countdownSeconds__GTS-PROPERTY-CAMEL",
+    "language": "typescript",
+    "gold": "property",
+    "original": "countdownSeconds",
+    "injected": "countdown_seconds",
+    "before": "property",
+    "whyBefore": "decl",
+    "predA": "property",
+    "whyA": "decl",
+    "predB": "property",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-PROPERTY-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_073__loading__GTS-PROPERTY-CAMEL",
+    "language": "typescript",
+    "gold": "property",
+    "original": "loading",
+    "injected": "LOADING",
+    "before": "property",
+    "whyBefore": "decl",
+    "predA": "property",
+    "whyA": "decl",
+    "predB": "property",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-PROPERTY-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_085__cssDe__GTS-FUNCTION-CAMEL",
+    "language": "typescript",
+    "gold": "function",
+    "original": "cssDe",
+    "injected": "css_de",
+    "before": "function",
+    "whyBefore": "decl",
+    "predA": "function",
+    "whyA": "decl",
+    "predB": "function",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-FUNCTION-CAMEL"
+    ],
+    "agreeA": true,
+    "agreeB": true,
+    "nameDependent": false,
+    "beforeAgree": true
+  },
+  {
+    "pack": "public5",
+    "unit_id": "ts_092__motion__GTS-VARIABLE-CAMEL",
+    "language": "typescript",
+    "gold": "variable",
+    "original": "motion",
+    "injected": "MOTION",
+    "before": "variable",
+    "whyBefore": "decl",
+    "predA": "constant",
+    "whyA": "decl",
+    "predB": "constant",
+    "whyB": "decl",
+    "goldRules": [
+      "GTS-VARIABLE-CAMEL"
+    ],
+    "agreeA": false,
+    "agreeB": false,
+    "nameDependent": true,
+    "beforeAgree": true
+  }
+]

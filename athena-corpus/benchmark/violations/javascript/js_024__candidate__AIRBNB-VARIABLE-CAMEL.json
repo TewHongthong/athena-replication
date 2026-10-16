@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_024",
+  "language": "javascript",
+  "originalName": "candidate",
+  "injectedName": "CANDIDATE",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CANDIDATE' does not match camelCase pattern",
+    "name 'CANDIDATE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "async function resolveBundleFile(arg) {\n  const isFilePath =\n    arg.endsWith('.json') ||\n    arg.endsWith('.txt') ||\n    arg.startsWith('./') ||\n    arg.startsWith('../') ||\n    arg.startsWith('/') ||\n    arg.startsWith('~')\n  if (isFilePath) {\n    const resolvedPath = expandTilde(arg, process.env.HOME || '/tmp')\n    for (const CANDIDATE of [resolvedPath, join(process.cwd(), arg)]) {\n      try {\n        await readFile(CANDIDATE, 'utf-8')\n        return CANDIDATE\n      } catch {}\n    }\n    throw new Error(`Bundle file not found: ${arg}`)\n  }\n\n  const candidates = [\n    arg,\n    join(process.cwd(), arg),\n    `${arg}.json`,\n    `${arg}.txt`,\n    join(process.cwd(), `${arg}.json`),\n    join(process.cwd(), `${arg}.txt`),\n  ]\n\n  for (const CANDIDATE of candidates) {\n    try {\n      await readFile(CANDIDATE, 'utf-8')\n      return CANDIDATE\n    } catch {}\n  }\n  return null\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

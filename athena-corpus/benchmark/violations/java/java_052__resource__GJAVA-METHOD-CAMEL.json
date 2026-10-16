@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_052",
+  "language": "java",
+  "originalName": "resource",
+  "injectedName": "RESOURCE",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RESOURCE' does not match camelCase pattern",
+    "name 'RESOURCE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "class AdminConanRepositoryContractTest {\n  @Test\n  void exposesConanRecipesRemoteDefaultAndDurableStatus() throws IOException {\n    String index = RESOURCE(\"/META-INF/resources/admin/index.html\");\n    String javascript = RESOURCE(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(index.contains(\"id=\\\"repository-conan-fields\\\"\"));\n    assertTrue(index.contains(\"conanmanifest.txt\"));\n    assertTrue(javascript.contains(\"conan: \\\"Conan 2\\\"\"));\n    assertTrue(javascript.contains(\"conan: \\\"https://center2.conan.io/\\\"\"));\n    assertTrue(javascript.contains(\"function loadConanStatus\"));\n    assertTrue(javascript.contains(\"/conan/status\"));\n    assertTrue(javascript.contains(\"open upload sessions\"));\n  }\n\n  private String RESOURCE(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

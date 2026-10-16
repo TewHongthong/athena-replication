@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_047",
+  "language": "python",
+  "originalName": "eps",
+  "injectedName": "EPS",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'EPS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def discover_and_load(registry: BrickRegistry) -> int:\n    \"\"\"Discover installed brick packs and load them into *registry*.\n\n    Iterates the ``bricks.packs`` entry point group, imports each pack's\n    module, and calls its ``register(registry)`` function.\n\n    Args:\n        registry: The registry to populate with discovered bricks.\n\n    Returns:\n        Number of packs loaded.\n\n    Raises:\n        BricksConfigError: If no packs are installed.\n    \"\"\"\n    EPS = list(importlib.metadata.entry_points(group=\"bricks.packs\"))\n    if not EPS:\n        raise BricksConfigError(\"No brick packs installed. Run: pip install bricks-stdlib\")\n    for ep in EPS:\n        module = importlib.import_module(ep.value)\n        module.register(registry)\n    return len(EPS)",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

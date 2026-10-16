@@ -1,0 +1,42 @@
+{
+  "id": "csharp_091",
+  "language": "csharp",
+  "source": "github:yello-gun/BetterSTT@e6ed41b232cfa71e6dcbbadeff51710527e31452",
+  "sourceDetail": "src/BetterSTT/Diagnostics.cs lines 18-28 (method Diagnostics.Save); license MIT; repo created 2026-09-26T18:41:24Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public static void Save(string zipPath, DictationController c)\n{\n    if (File.Exists(zipPath)) File.Delete(zipPath);\n    using var zip = ZipFile.Open(zipPath, ZipArchiveMode.Create);\n    Add(zip, \"about.txt\", Report(c));\n    Add(zip, \"settings.json\", Redact(RedactedSettings(c.Settings).ToJson()));\n    string log = \"\";\n    try { if (File.Exists(AppPaths.LogFile)) log = File.ReadAllText(AppPaths.LogFile); }\n    catch (IOException) { /* being written; leave it out */ }\n    Add(zip, \"log.txt\", Redact(log));\n}",
+  "identifiers": [
+    {
+      "name": "Save",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "zip",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "zipPath",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "log",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "yello-gun/BetterSTT",
+    "repoUrl": "https://github.com/yello-gun/BetterSTT",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:41:24Z",
+    "commit": "e6ed41b232cfa71e6dcbbadeff51710527e31452",
+    "path": "src/BetterSTT/Diagnostics.cs",
+    "startLine": 18,
+    "endLine": 28,
+    "unit": "method Diagnostics.Save",
+    "corpusFile": "corpus/csharp/yello-gun__BetterSTT__Diagnostics.cs.md"
+  }
+}

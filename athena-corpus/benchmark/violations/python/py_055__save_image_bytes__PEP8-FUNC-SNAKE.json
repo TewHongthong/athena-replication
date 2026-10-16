@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_055",
+  "language": "python",
+  "originalName": "save_image_bytes",
+  "injectedName": "SAVE_IMAGE_BYTES",
+  "identifierKind": "function",
+  "violatedRuleId": "PEP8-FUNC-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SAVE_IMAGE_BYTES' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def SAVE_IMAGE_BYTES(image, output: Path) -> bytes:\n    \"\"\"Encode the regenerated image, honoring a JPEG output suffix.\"\"\"\n    ext = output.suffix.lower()\n    buf = io.BytesIO()\n    if ext in (\".jpg\", \".jpeg\", \".jpe\", \".jfif\"):\n        image = image.convert(\"RGB\")\n        image.save(buf, format=\"JPEG\", quality=95)\n    else:\n        image.save(buf, format=\"PNG\")\n    return buf.getvalue()",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

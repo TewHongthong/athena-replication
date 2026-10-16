@@ -1,0 +1,52 @@
+{
+  "id": "py_070",
+  "language": "python",
+  "source": "github:sl2ver/wm811k-wafer-defect-classification@305dbf7387943b4dec4f4f41a38ff99bfe284796",
+  "sourceDetail": "scripts/baseline.py lines 98-120 (function evaluate); license MIT; repo created 2026-09-27T06:25:24Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def evaluate(y: np.ndarray, p: np.ndarray, groups: np.ndarray, rng: np.random.Generator) -> dict:\n    k = len(CLASSES)\n    cm = np.bincount(y * k + p, minlength=k * k).reshape(k, k)\n    point = scores(cm)\n    # cluster bootstrap: resample components (wafers in a component are correlated)\n    g_codes, g_idx = np.unique(groups, return_inverse=True)\n    per_group = np.zeros((len(g_codes), k * k))\n    np.add.at(per_group, (g_idx, y * k + p), 1)\n    boot = {\"macro_f1\": [], \"defect8_macro_f1\": [], \"balanced_acc\": [], \"recall\": []}\n    for _ in range(N_BOOT):\n        s = scores(per_group[rng.integers(0, len(g_codes), len(g_codes))].sum(0).reshape(k, k))\n        for key in boot:\n            boot[key].append(s[key])\n    ci = {key: np.percentile(np.array(v), [2.5, 97.5], axis=0) for key, v in boot.items()}\n    out = {key: round(float(point[key]), 4) for key in (\"macro_f1\", \"defect8_macro_f1\", \"balanced_acc\", \"accuracy\")}\n    out.update({f\"{key}_ci95\": [round(float(x), 4) for x in ci[key]] for key in (\"macro_f1\", \"defect8_macro_f1\",\n                                                                                  \"balanced_acc\")})\n    out[\"per_class\"] = {c: {\"recall\": round(float(point[\"recall\"][i]), 4),\n                            \"recall_ci95\": [round(float(ci[\"recall\"][0][i]), 4), round(float(ci[\"recall\"][1][i]), 4)],\n                            \"precision\": round(float(point[\"precision\"][i]), 4), \"f1\": round(float(point[\"f1\"][i]), 4),\n                            \"support\": int(cm[i].sum())} for i, c in enumerate(CLASSES)}\n    out[\"confusion\"] = cm.tolist()\n    return out",
+  "identifiers": [
+    {
+      "name": "evaluate",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "point",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "groups",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "rng",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "g_codes",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "g_idx",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sl2ver/wm811k-wafer-defect-classification",
+    "repoUrl": "https://github.com/sl2ver/wm811k-wafer-defect-classification",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-27T06:25:24Z",
+    "commit": "305dbf7387943b4dec4f4f41a38ff99bfe284796",
+    "path": "scripts/baseline.py",
+    "startLine": 98,
+    "endLine": 120,
+    "unit": "function evaluate",
+    "corpusFile": "corpus/python/sl2ver__wm811k-wafer-defect-classification__baseline.py.md"
+  }
+}

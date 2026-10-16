@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_058",
+  "language": "javascript",
+  "originalName": "agentFlag",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function captureInstructions(l) {\n  const paths = AGENT_INSTRUCTION_PATHS[l]\n  if (!paths) return null\n\n  const result = []\n  for (const [scope, getPath] of Object.entries(paths)) {\n    const content = await readFileIfExists(getPath())\n    if (content !== null) {\n      const filePath = getPath()\n      result.push({ file: filePath, contentSha: null, scope })\n    }\n  }\n\n  return result.length > 0 ? result : null\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

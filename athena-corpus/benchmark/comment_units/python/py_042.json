@@ -1,0 +1,37 @@
+{
+  "snippetId": "py_042",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "method",
+  "name": "save_result",
+  "codeBare": "def save_result(self, key: str, value: Any) -> None:\n    \n    self._results[key] = value",
+  "referenceComment": "\"\"\"Store a step result for later reference.\n\n    Args:\n        key: The save_as name from the step definition.\n        value: The result value to store.\n    \"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-METHOD"
+  ],
+  "origin": "snippet",
+  "source": "github:determlab/bricks@6d401933bb7ae3024637171f649f7066edf256b2",
+  "sourceDetail": "src/bricks/core/context.py lines 35-42 (method ExecutionContext.save_result); license MIT; repo created 2026-06-11T00:07:52Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 6,
+  "signature": {
+    "params": 2,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params"
+  ],
+  "provenance": {
+    "repo": "determlab/bricks",
+    "repoUrl": "https://github.com/determlab/bricks",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-11T00:07:52Z",
+    "commit": "6d401933bb7ae3024637171f649f7066edf256b2",
+    "path": "src/bricks/core/context.py",
+    "startLine": 35,
+    "endLine": 42,
+    "unit": "method ExecutionContext.save_result",
+    "corpusFile": "corpus/python/determlab__bricks__context.py.md"
+  }
+}

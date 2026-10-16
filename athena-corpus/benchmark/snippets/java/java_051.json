@@ -1,0 +1,47 @@
+{
+  "id": "java_051",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminAnsibleGalaxyRepositoryContractTest.java lines 11-27 (class AdminAnsibleGalaxyRepositoryContractTest); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "class AdminAnsibleGalaxyRepositoryContractTest {\n\n  @Test\n  void configuresDefaultRemoteAndNestedGroups() throws IOException {\n    String javascript = resource(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(javascript.contains(\"ansiblegalaxy: \\\"Ansible Galaxy\\\"\"));\n    assertTrue(javascript.contains(\"ansiblegalaxy: \\\"https://galaxy.ansible.com/\\\"\"));\n    assertTrue(javascript.contains(\"format === \\\"ansiblegalaxy\\\"\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "identifiers": [
+    {
+      "name": "AdminAnsibleGalaxyRepositoryContractTest",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "resource",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "javascript",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "stream",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminAnsibleGalaxyRepositoryContractTest.java",
+    "startLine": 11,
+    "endLine": 27,
+    "unit": "class AdminAnsibleGalaxyRepositoryContractTest",
+    "corpusFile": "corpus/java/klboke__kkRepo__AdminAnsibleGalaxyRepositoryContractTest.java.md"
+  }
+}

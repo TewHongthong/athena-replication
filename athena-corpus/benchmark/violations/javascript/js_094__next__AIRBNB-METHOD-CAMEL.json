@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_094",
+  "language": "javascript",
+  "originalName": "next",
+  "injectedName": "NEXT",
+  "identifierKind": "method",
+  "violatedRuleId": "AIRBNB-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'NEXT' does not match camelCase pattern",
+    "name 'NEXT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function createGuidedStudyService({recommend,sessionService,clock={nowISO:()=>new Date().toISOString()}}={}){\n  if(typeof recommend!=='function'||!sessionService)throw new TypeError('Guided study requires recommendation and session services');\n  let active=null;\n  return{\n    NEXT({id,source=null,type=null}={}){\n      const recommendation=recommend({id})[0]||null;\n      active=recommendation?{recommendation,recommendationSource:source,recommendationType:type||recommendation.activityType||recommendation.studyType||'study',startedAt:null,paused:false}:null;\n      return active;\n    },\n    start(){if(!active)return null;active.startedAt=clock.nowISO();active.paused=false;return active},\n    pause(){if(!active)return null;active.paused=true;return active},\n    resume(){if(!active)return null;active.paused=false;return active},\n    complete(result={}){\n      if(!active)return null;\n      const session=sessionService.complete({...result,recommendationId:active.recommendation.recommendationId||active.recommendation.id,\n        recommendationSource:active.recommendationSource,recommendationType:active.recommendationType,\n        topicId:result.topicId??active.recommendation.topicId,subjectId:result.subjectId??active.recommendation.subjectId,\n        startedAt:result.startedAt||active.startedAt,endedAt:result.endedAt||clock.nowISO(),durationSeconds:result.durationSeconds||0,\n        questionsResolved:result.questionsResolved||0,correctAnswers:result.correctAnswers||0,type:result.type||'study',source:'recommendation'});\n      active=null;\n      return session;\n    },\n    reset(){active=null},\n    current:()=>active\n  };\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

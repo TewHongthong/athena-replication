@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_095",
+  "language": "python",
+  "originalName": "headlines",
+  "injectedName": "HEADLINES",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HEADLINES' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass MarketSnapshot:\n    symbol: str\n    ltp: float\n    day_change_pct: float\n    volume: int\n    HEADLINES: list[str]  # already deduped/recent, upstream",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

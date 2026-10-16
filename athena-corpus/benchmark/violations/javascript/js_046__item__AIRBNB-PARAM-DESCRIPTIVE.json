@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_046",
+  "language": "javascript",
+  "originalName": "item",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function mcpItemCard(i, selected, sourceType) {\n  const sel = selected ? theme.reverse(' > ') : '   '\n  const name = selected ? theme.bold(i.name) : theme.dim(i.name)\n  const desc = i.description || 'No description'\n  const installCmd =\n    sourceType === 'npm'\n      ? `rolecraft mcp install npm:${i.name}`\n      : `rolecraft mcp install gh:${i.name}`\n  return [\n    `${sel}${name}`,\n    `   ${desc}`,\n    `   ${sourceType === 'npm' ? '📦 npm' : '🟢 github'} · ${installCmd}`,\n  ]\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

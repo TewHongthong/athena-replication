@@ -1,0 +1,42 @@
+{
+  "id": "csharp_074",
+  "language": "csharp",
+  "source": "github:thecheetoman/ESim@59cde034d0041d0af0a43cdf7e43d979935b7db8",
+  "sourceDetail": "Assets/Scripts/Field/GameManager.cs lines 271-306 (method GameManager.ScorePoint); license MIT; repo created 2026-09-16T23:28:41Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public void ScorePoint(bool isBlueHub, bool wasShotFromLegalZone)\n{\n    if (!gameStarted || isMatchOver) return;\n\n    if (isBlueHub)\n    {\n        if (!isBlueHubActive) return;\n\n        bool isPenalty = !wasShotFromLegalZone;\n\n        if (isPenalty)\n        {\n            scoreRed += 10;\n            scoreBlue += 1;\n            if (isAutoPhase)\n            {\n                autoScoreRed += 10;\n                autoScoreBlue += 1;\n            }\n        }\n        else\n        {\n            scoreBlue += 1;\n            if (isAutoPhase) autoScoreBlue += 1;\n        }\n    }\n    else\n    {\n        if (!isRedHubActive) return;\n\n        scoreRed += 6;\n        if (isAutoPhase) autoScoreRed += 6;\n    }\n\n    UpdateScoreUI();\n}",
+  "identifiers": [
+    {
+      "name": "ScorePoint",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "isPenalty",
+      "kind": "boolean_variable",
+      "isCompliant": true
+    },
+    {
+      "name": "isBlueHub",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "wasShotFromLegalZone",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "thecheetoman/ESim",
+    "repoUrl": "https://github.com/thecheetoman/ESim",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-16T23:28:41Z",
+    "commit": "59cde034d0041d0af0a43cdf7e43d979935b7db8",
+    "path": "Assets/Scripts/Field/GameManager.cs",
+    "startLine": 271,
+    "endLine": 306,
+    "unit": "method GameManager.ScorePoint",
+    "corpusFile": "corpus/csharp/thecheetoman__ESim__GameManager.cs.md"
+  }
+}

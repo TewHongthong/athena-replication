@@ -1,0 +1,52 @@
+{
+  "id": "csharp_037",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Simulation/Kernel/DeterministicMovement.cs lines 214-245 (class NonAuthoritativeRouteCache); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public sealed class NonAuthoritativeRouteCache\n{\n    private readonly Dictionary<RouteCacheKey, GridPoint[]> routes = [];\n\n    public int ComputationCount { get; private set; }\n\n    public IReadOnlyList<GridPoint> GetOrCompute(SeededMap map, RouteCacheKey key)\n    {\n        ArgumentNullException.ThrowIfNull(map);\n        ArgumentNullException.ThrowIfNull(key);\n        ValidateKey(key);\n        if (routes.TryGetValue(key, out var cached))\n        {\n            return cached.ToArray();\n        }\n\n        var route = DeterministicRouteFinder.Find(map, key.Origin, key.Destination).ToArray();\n        routes.Add(key, route);\n        ComputationCount++;\n        return route.ToArray();\n    }\n\n    private static void ValidateKey(RouteCacheKey key)\n    {\n        ArgumentException.ThrowIfNullOrWhiteSpace(key.MovementProfileId);\n        ArgumentException.ThrowIfNullOrWhiteSpace(key.RouteConfigurationVersion);\n        ArgumentException.ThrowIfNullOrWhiteSpace(key.SimulationVersion);\n        ArgumentOutOfRangeException.ThrowIfNegative(key.ActorCapabilityEpoch);\n        ArgumentOutOfRangeException.ThrowIfNegative(key.TransportEpoch);\n        ArgumentOutOfRangeException.ThrowIfNegative(key.TopologyEpoch);\n    }\n}",
+  "identifiers": [
+    {
+      "name": "NonAuthoritativeRouteCache",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "GetOrCompute",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "ComputationCount",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "route",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "map",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "key",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Simulation/Kernel/DeterministicMovement.cs",
+    "startLine": 214,
+    "endLine": 245,
+    "unit": "class NonAuthoritativeRouteCache",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__DeterministicMovement.cs.md"
+  }
+}

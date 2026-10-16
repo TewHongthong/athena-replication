@@ -1,0 +1,37 @@
+{
+  "snippetId": "ts_096",
+  "language": "typescript",
+  "standardId": "GOOGLE_TS",
+  "identifierKind": "function",
+  "name": "Recientes",
+  "codeBare": "export function Recientes() {\n  const id = useId()\n  const [color, setColor] = useState<Oklch>([0.573, 0.214, 258])\n  const [recientes, setRecientes] = useState<Oklch[]>([\n    [0.55, 0.16, 35],\n    [0.515, 0.099, 183],\n    [0.53, 0.13, 162],\n  ])\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-2\">\n      <Label htmlFor={id}>Color de la etiqueta</Label>\n      <ColorPicker\n        id={id}\n        onOpenChange={(abierto) => {\n          if (abierto) return\n          // El más nuevo adelante, sin repetidos, y ocho como mucho.\n          setRecientes((lista) => [color, ...lista.filter((otro) => hexOfOklch(otro) !== hexOfOklch(color))].slice(0, 8))\n        }}\n        onValueChange={setColor}\n        recent={recientes}\n        value={color}\n      />\n    </div>\n  )\n}",
+  "referenceComment": "/**\n * Con recientes\n * El componente muestra la lista, no la guarda. Acá se suma el color al cerrar el panel: elegí uno, cerrá, y volvé a abrir.\n */",
+  "ruleIds": [
+    "GTS-JSDOC-TOPLEVEL-EXPORT"
+  ],
+  "origin": "snippet",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_demos/color-picker.tsx lines 12-36 (function Recientes); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 4,
+  "signature": {
+    "params": 0,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_demos/color-picker.tsx",
+    "startLine": 12,
+    "endLine": 36,
+    "unit": "function Recientes",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__docs_site_app__demos_color-picker.tsx.md"
+  }
+}

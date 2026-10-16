@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_036",
+  "language": "python",
+  "originalName": "generated",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def generate_eval_outputs(max_new_tokens):\n    outputs = []\n    for prompt in eval_prompts:\n        prompt_tokens = torch.tensor(\n            [dataset.encode(prompt)],\n            dtype=torch.long,\n            device=device,\n        )\n        l = dataset.decode(\n            model.generation(\n                prompt_tokens,\n                max_new_tokens=max_new_tokens,\n            )[0].tolist()\n        )\n        outputs.append({\"prompt\": prompt, \"generation\": l})\n    return outputs",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

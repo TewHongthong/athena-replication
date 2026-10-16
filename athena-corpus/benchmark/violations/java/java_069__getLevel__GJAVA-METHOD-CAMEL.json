@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_069",
+  "language": "java",
+  "originalName": "getLevel",
+  "injectedName": "get_level",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'get_level' does not match camelCase pattern",
+    "name 'get_level' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public interface IFurkin {\n\n    /** 宠物身份 UUID（跨实体唯一档案主键）。 */\n    UUID getCompanionId();\n\n    /** 主人 UUID。 */\n    UUID getOwnerUuid();\n\n    /** 当前等级。 */\n    int get_level();\n\n    /** 当前经验。 */\n    int getXp();\n\n    /** 可用技能点。 */\n    int getSkillPoints();\n\n    /** 当前状态机状态（未契约 / 已契约 / 已倒下）。 */\n    String getState();\n\n    /** 是否已契约。 */\n    boolean isCompanion();\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

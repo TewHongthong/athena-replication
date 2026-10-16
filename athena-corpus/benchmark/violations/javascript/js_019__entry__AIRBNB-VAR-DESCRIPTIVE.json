@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_019",
+  "language": "javascript",
+  "originalName": "entry",
+  "injectedName": "e",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'e' shorter than minLength=2",
+    "name 'e' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function getTestCount() {\n  if (_testCount !== null) return _testCount\n  let count = 0\n  function countTestsInDir(dir) {\n    try {\n      const entries = readdirSync(dir, { withFileTypes: true })\n      for (const e of entries) {\n        const fullPath = join(dir, e.name)\n        if (\n          e.isDirectory() &&\n          e.name !== 'node_modules' &&\n          e.name !== '__fixtures__'\n        ) {\n          countTestsInDir(fullPath)\n        } else if (\n          e.isFile() &&\n          (e.name.endsWith('.test.js') || e.name.endsWith('.test.mjs'))\n        ) {\n          const content = readFileSync(fullPath, 'utf-8')\n          const stripped = content.replace(/\\/\\/.*$/gm, '')\n          const itMatches = stripped.match(/\\bit\\b\\s*\\(/g)\n          const testMatches = stripped.match(/\\btest\\b\\s*\\(/g)\n          count += (itMatches?.length || 0) + (testMatches?.length || 0)\n        }\n      }\n    } catch {}\n  }\n  countTestsInDir(join(ROOT, 'src'))\n  countTestsInDir(join(ROOT, 'bin'))\n  countTestsInDir(join(ROOT, 'e2e'))\n  _testCount = count\n  return _testCount\n}",
+  "occurrencesRenamed": 8,
+  "commentOccurrencesRenamed": 0
+}

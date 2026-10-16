@@ -1,0 +1,47 @@
+{
+  "id": "ts_093",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_demos/chat.tsx lines 37-61 (function useConversacion); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "function useConversacion() {\n  const [mensajes, setMensajes] = useState<Mensaje[]>([])\n  const [respondiendo, setRespondiendo] = useState(false)\n  const espera = useRef<ReturnType<typeof setTimeout> | null>(null)\n  const proximo = useRef(1)\n\n  const enviar = (texto: string) => {\n    setMensajes((lista) => [...lista, { id: proximo.current++, from: \"user\", texto }])\n    setRespondiendo(true)\n    espera.current = setTimeout(() => {\n      const respuesta = RESPUESTAS[texto] ?? \"Eso no lo tengo a mano todavía.\"\n      setMensajes((lista) => [...lista, { id: proximo.current++, from: \"assistant\", texto: respuesta }])\n      setRespondiendo(false)\n    }, 1400)\n  }\n  const cortar = () => {\n    if (espera.current) clearTimeout(espera.current)\n    setRespondiendo(false)\n  }\n  const nueva = () => {\n    cortar()\n    setMensajes([])\n  }\n  return { mensajes, respondiendo, enviar, cortar, nueva }\n}",
+  "identifiers": [
+    {
+      "name": "useConversacion",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "espera",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "lista",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "proximo",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "respuesta",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_demos/chat.tsx",
+    "startLine": 37,
+    "endLine": 61,
+    "unit": "function useConversacion",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__chat.tsx.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_031",
+  "language": "csharp",
+  "originalName": "handshakeUri",
+  "injectedName": "handshake_uri",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'handshake_uri' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed class WorldObservationClient(HttpClient httpClient)\n{\n    private static readonly JsonSerializerOptions JsonOptions = new()\n    {\n        PropertyNameCaseInsensitive = true,\n    };\n\n    public async Task<WorldObservation> ReconnectAsync(Uri worldBaseUri, long afterEventId, CancellationToken cancellationToken)\n    {\n        ArgumentNullException.ThrowIfNull(worldBaseUri);\n        ArgumentOutOfRangeException.ThrowIfNegative(afterEventId);\n\n        var handshake_uri = new Uri(worldBaseUri, \"/api/v1/handshake\");\n        var reconnectUri = new Uri(worldBaseUri, $\"/api/v1/reconnect?afterEventId={afterEventId}\");\n        var handshakeTask = httpClient.GetFromJsonAsync<WorldHandshake>(handshake_uri, JsonOptions, cancellationToken);\n        var reconnectTask = httpClient.GetFromJsonAsync<WorldReconnectBaseline>(reconnectUri, JsonOptions, cancellationToken);\n        await Task.WhenAll(handshakeTask, reconnectTask);\n\n        var handshake = await handshakeTask ?? throw new InvalidDataException(\"Server returned an empty handshake.\");\n        var baseline = await reconnectTask ?? throw new InvalidDataException(\"Server returned an empty reconnect baseline.\");\n        return new WorldObservation(handshake, baseline);\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

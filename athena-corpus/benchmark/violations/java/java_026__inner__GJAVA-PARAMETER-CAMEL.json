@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_026",
+  "language": "java",
+  "originalName": "inner",
+  "injectedName": "INNER",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INNER' does not match camelCase pattern",
+    "name 'INNER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static VertexConsumerProvider wrap(Entity entity, VertexConsumerProvider INNER) {\n    if (INNER == null) {\n        return INNER;\n    }\n    float alpha = Math.min(Math.min(Visuals.transparentPlayerAlpha(entity, false), Visuals.crystalAlpha(entity)),\n            Visuals.deathFadeAlpha(entity));\n    float tintStrength = Visuals.damageTintStrength(entity);\n    if (alpha >= 0.999f && tintStrength <= 0f) {\n        return INNER;\n    }\n    if (alpha <= 0.01f) {\n        return layer -> INNER.getBuffer(layer);\n    }\n    int tintRgb = tintStrength > 0f ? Visuals.damageTintRgb() : 0;\n    try {\n        return layer -> tint(INNER.getBuffer(layer), alpha, tintStrength, tintRgb);\n    } catch (Throwable ignored) {\n        return INNER;\n    }\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0
+}

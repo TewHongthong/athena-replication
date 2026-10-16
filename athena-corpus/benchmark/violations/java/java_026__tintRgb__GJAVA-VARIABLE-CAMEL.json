@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_026",
+  "language": "java",
+  "originalName": "tintRgb",
+  "injectedName": "tint_rgb",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'tint_rgb' does not match camelCase pattern",
+    "name 'tint_rgb' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public static VertexConsumerProvider wrap(Entity entity, VertexConsumerProvider inner) {\n    if (inner == null) {\n        return inner;\n    }\n    float alpha = Math.min(Math.min(Visuals.transparentPlayerAlpha(entity, false), Visuals.crystalAlpha(entity)),\n            Visuals.deathFadeAlpha(entity));\n    float tintStrength = Visuals.damageTintStrength(entity);\n    if (alpha >= 0.999f && tintStrength <= 0f) {\n        return inner;\n    }\n    if (alpha <= 0.01f) {\n        return layer -> inner.getBuffer(layer);\n    }\n    int tint_rgb = tintStrength > 0f ? Visuals.damageTintRgb() : 0;\n    try {\n        return layer -> tint(inner.getBuffer(layer), alpha, tintStrength, tint_rgb);\n    } catch (Throwable ignored) {\n        return inner;\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

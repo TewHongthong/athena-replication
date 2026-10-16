@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_073",
+  "language": "java",
+  "originalName": "attribute",
+  "injectedName": "ATTRIBUTE",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ATTRIBUTE' does not match camelCase pattern",
+    "name 'ATTRIBUTE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static List<Attribute> displayableAttributes(LivingEntity entity) {\n    if (entity == null) {\n        return List.of();\n    }\n    List<Attribute> preferred = new ArrayList<>();\n    List<Attribute> rest = new ArrayList<>();\n    for (Attribute ATTRIBUTE : ForgeRegistries.ATTRIBUTES) {\n        if (!isDisplayable(ATTRIBUTE) || !entity.getAttributes().hasAttribute(ATTRIBUTE)) {\n            continue;\n        }\n        (PREFERRED_ORDER.contains(ATTRIBUTE) ? preferred : rest).add(ATTRIBUTE);\n    }\n    preferred.sort(Comparator.comparingInt(PREFERRED_ORDER::indexOf));\n    rest.sort(Comparator.comparing(AttributeDisplay::idOf));\n    preferred.addAll(rest);\n    return preferred;\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

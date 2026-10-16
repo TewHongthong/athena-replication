@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_011",
+  "language": "java",
+  "originalName": "CloudinaryConfig",
+  "injectedName": "cloudinary_config",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'cloudinary_config' does not match PascalCase pattern",
+    "name 'cloudinary_config' matches forbidden pattern '^[a-z]'",
+    "name 'cloudinary_config' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Configuration\n@Profile(\"prod\")\npublic class cloudinary_config {\n\n    @Value(\"${app.upload.cloudinary.cloud-name}\")\n    private String cloudName;\n\n    @Value(\"${app.upload.cloudinary.api-key}\")\n    private String apiKey;\n\n    @Value(\"${app.upload.cloudinary.api-secret}\")\n    private String apiSecret;\n\n    @Bean\n    public Cloudinary cloudinary() {\n        return new Cloudinary(ObjectUtils.asMap(\n                \"cloud_name\", cloudName,\n                \"api_key\", apiKey,\n                \"api_secret\", apiSecret,\n                \"secure\", true\n        ));\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

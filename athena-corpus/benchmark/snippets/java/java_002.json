@@ -1,0 +1,52 @@
+{
+  "id": "java_002",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/audit/AuditLog.java lines 25-63 (class AuditLog); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Entity\n@Getter\n@Setter\n@NoArgsConstructor\n@AllArgsConstructor\n@Builder\n@Table(name = \"audit_logs\", indexes = {\n        @Index(name = \"idx_audit_log_entity\", columnList = \"entity_name, entity_id\"),\n        @Index(name = \"idx_audit_log_performed_at\", columnList = \"performed_at\")\n})\npublic class AuditLog {\n\n    @Id\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\n    private Long id;\n\n    @NotBlank\n    @Column(nullable = false)\n    private String entityName;\n\n    private Long entityId;\n\n    @Size(max = 1000)\n    @Column(columnDefinition = \"TEXT\")\n    private String details;\n\n    @NotBlank\n    @Column(nullable = false)\n    private String performedBy;\n\n    @NotNull\n    @Enumerated(EnumType.STRING)\n    @Column(nullable = false)\n    private AuditAction action;\n\n    @CreationTimestamp\n    @Column(nullable = false)\n    private LocalDateTime performedAt;\n}",
+  "identifiers": [
+    {
+      "name": "AuditLog",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "entityName",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "entityId",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "details",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "performedBy",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "action",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/audit/AuditLog.java",
+    "startLine": 25,
+    "endLine": 63,
+    "unit": "class AuditLog",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__AuditLog.java.md"
+  }
+}

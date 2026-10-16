@@ -1,0 +1,32 @@
+{
+  "id": "js_050",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/commands/watch.js lines 5-32 (function printEvent); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function printEvent(event) {\n  switch (event.type) {\n    case 'start':\n      console.log(\n        `\\n👀 Watching ${event.slugs.length} skill(s) for changes...\\n`,\n      )\n      break\n    case 'skip':\n      console.log(`   Skipping \"${event.slug}\" (${event.sourceType} source)`)\n      break\n    case 'watching':\n      console.log(`   ✓ ${event.slug} → watching ${event.path}`)\n      break\n    case 'error':\n      console.error(`   ✗ ${event.slug}: cannot watch (${event.error.message})`)\n      break\n    case 'syncing':\n      console.log(\n        `  [${event.startedAt.toLocaleTimeString()}] ${event.slug}: ${event.filename} changed, syncing...`,\n      )\n      break\n    case 'synced':\n      console.log(\n        `  [${event.startedAt.toLocaleTimeString()}] ${event.slug}: ${event.ok ? 'synced successfully' : 'sync failed'}`,\n      )\n      break\n  }\n}",
+  "identifiers": [
+    {
+      "name": "printEvent",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "event",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/commands/watch.js",
+    "startLine": 5,
+    "endLine": 32,
+    "unit": "function printEvent",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__watch.js.md"
+  }
+}

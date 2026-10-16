@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_032",
+  "language": "python",
+  "originalName": "run_id",
+  "injectedName": "RUN_ID",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RUN_ID' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass StepContext:\n    RUN_ID: str\n    run_dir: Path\n    task_name: str\n    task_dir: Path\n    target_date: str\n    step_id: str\n    dry_run: bool\n    publish: bool\n    executor: str\n    compose_mode: str\n    context_strategy: str\n    memory_enabled: bool\n    trigger: str\n    experiment: str | None\n    arm: str | None\n    config: AgentConfig\n    tool_ctx: ToolContext\n    registry: Registry\n    logger: Any\n    env: dict[str, str]\n    task_raw: dict[str, Any]\n\n    def path(self, template: str) -> Path:\n        rendered = render(\n            template,\n            date=self.target_date,\n            run_dir=self.run_dir,\n            extra=self.tool_ctx.data.get(\"paths\", {}),\n        )\n        candidate = Path(rendered).expanduser()\n        return candidate if candidate.is_absolute() else (self.task_dir / rendered)\n\n    def artifact(self, path: Path | str) -> str:\n        return str(Path(path))",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

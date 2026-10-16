@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_084",
+  "language": "javascript",
+  "originalName": "exam",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function reviewExamClassification({exams=[],examQuestions=[],subjects=[]},{examId,questionNumber,topicId,confidence,now,idGenerator}={}){\n  const l=exams.find(item=>item.id===examId),subject=subjects.find(item=>!item.archived&&(item.topics||[]).some(topic=>topic.id===topicId&&!topic.archived&&isTopicInExamScope(topic,l?.examTags||[])));\n  if(!l||!subject||!Number.isInteger(questionNumber)||questionNumber<1||!Number.isFinite(confidence)||confidence<0||confidence>1||!Number.isFinite(Date.parse(now))||typeof idGenerator!=='function')throw new TypeError('Escolha uma prova, questão, tópico e confiança válidos.');\n  const existing=examQuestions.find(item=>item.examId===examId&&item.questionNumber===questionNumber);\n  const pending=(l.unresolvedQuestions||[]).find(item=>item.number===questionNumber);\n  if(!existing&&!pending)throw new TypeError('Questão histórica não encontrada.');\n  const question=createExamQuestion({id:existing?.id||idGenerator('exam-question'),examId,subjectId:subject.id,topicId,questionNumber,weight:existing?.weight??pending?.weight??null,source:existing?.source||l.sourceReference||'',classification:{method:'manual',confidence,reviewedAt:now}});\n  const nextQuestions=examQuestions.map(item=>item===existing?question:item);\n  if(!existing)nextQuestions.push(question);\n  const unresolvedQuestions=(l.unresolvedQuestions||[]).filter(item=>item.number!==questionNumber);\n  const count=l.importedQuestionCount==null?null:Math.max(l.importedQuestionCount,new Set(nextQuestions.filter(item=>item.examId===examId).map(item=>item.questionNumber)).size+unresolvedQuestions.length);\n  const coverage=l.declaredCoverage==='complete'&&!unresolvedQuestions.length&&(l.expectedQuestionCount==null||count===l.expectedQuestionCount)?'complete':l.coverage;\n  const nextExam=createExam({...l,coverage,importedQuestionCount:count,unresolvedQuestions});\n  return {exams:exams.map(item=>item===l?nextExam:item),examQuestions:nextQuestions,question};\n}",
+  "occurrencesRenamed": 14,
+  "commentOccurrencesRenamed": 0
+}

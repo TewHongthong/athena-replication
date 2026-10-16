@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_080",
+  "language": "python",
+  "originalName": "label",
+  "injectedName": "LABEL",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LABEL' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass(frozen=True)\nclass ProposalExplanation:\n    LABEL: str  # short per-slug title\n    why: str  # one or two sentences\n    keep_instead: str  # \"\" when the reasoning names no retained copy\n    gives_up: str\n    caveats: tuple[str, ...] = ()",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

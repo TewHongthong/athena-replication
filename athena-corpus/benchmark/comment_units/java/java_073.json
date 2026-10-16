@@ -1,0 +1,39 @@
+{
+  "snippetId": "java_073",
+  "language": "java",
+  "standardId": "GOOGLE_JAVA",
+  "identifierKind": "method",
+  "name": "displayableAttributes",
+  "codeBare": "public static List<Attribute> displayableAttributes(LivingEntity entity) {\n    if (entity == null) {\n        return List.of();\n    }\n    List<Attribute> preferred = new ArrayList<>();\n    List<Attribute> rest = new ArrayList<>();\n    for (Attribute attribute : ForgeRegistries.ATTRIBUTES) {\n        if (!isDisplayable(attribute) || !entity.getAttributes().hasAttribute(attribute)) {\n            continue;\n        }\n        (PREFERRED_ORDER.contains(attribute) ? preferred : rest).add(attribute);\n    }\n    preferred.sort(Comparator.comparingInt(PREFERRED_ORDER::indexOf));\n    rest.sort(Comparator.comparing(AttributeDisplay::idOf));\n    preferred.addAll(rest);\n    return preferred;\n}",
+  "referenceComment": "    /**\n     * 客户端要显示的属性清单 = <b>注册表 ∩ 该生物实有 ∩ 未被屏蔽</b>，顺序见 {@link #PREFERRED_ORDER}。\n     *\n     * <p>实体不可得（已卸载 / entityId 缺失）时返回空表 —— 此时面板其余字段本来就已降级为\n     * 占位，不该凭空列一堆读不出值的属性。</p>\n     */",
+  "ruleIds": [
+    "GJAVA-JAVADOC-METHOD-REQUIRED",
+    "GJAVA-JAVADOC-SUMMARY-FRAGMENT"
+  ],
+  "origin": "snippet",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/attribute/AttributeDisplay.java lines 127-143 (method AttributeDisplay.displayableAttributes); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 6,
+  "signature": {
+    "params": 1,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/attribute/AttributeDisplay.java",
+    "startLine": 127,
+    "endLine": 143,
+    "unit": "method AttributeDisplay.displayableAttributes",
+    "corpusFile": "corpus/java/wanancat__furkin__AttributeDisplay.java.md"
+  }
+}

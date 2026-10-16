@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_047",
+  "language": "python",
+  "originalName": "registry",
+  "injectedName": "REGISTRY",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'REGISTRY' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def discover_and_load(REGISTRY: BrickRegistry) -> int:\n    \"\"\"Discover installed brick packs and load them into *registry*.\n\n    Iterates the ``bricks.packs`` entry point group, imports each pack's\n    module, and calls its ``register(registry)`` function.\n\n    Args:\n        registry: The registry to populate with discovered bricks.\n\n    Returns:\n        Number of packs loaded.\n\n    Raises:\n        BricksConfigError: If no packs are installed.\n    \"\"\"\n    eps = list(importlib.metadata.entry_points(group=\"bricks.packs\"))\n    if not eps:\n        raise BricksConfigError(\"No brick packs installed. Run: pip install bricks-stdlib\")\n    for ep in eps:\n        module = importlib.import_module(ep.value)\n        module.register(REGISTRY)\n    return len(eps)",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

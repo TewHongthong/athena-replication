@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_090",
+  "language": "python",
+  "originalName": "token",
+  "injectedName": "TOKEN",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TOKEN' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class INDstocksAuth:\n    \"\"\"Owns TOTP-based token generation. Run from a single process only.\"\"\"\n\n    def __init__(self, cfg: INDstocksConfig):\n        self.cfg = cfg\n        self.cfg.token_cache_path.parent.mkdir(mode=0o700, parents=True, exist_ok=True)\n\n    def refresh_session(self) -> str:\n        totp_code = pyotp.TOTP(self.cfg.totp_secret).now()\n        resp = requests.post(\n            f\"{self.cfg.base_url}/generate/token\",\n            headers={\"x-api-key\": self.cfg.client_id, \"Content-Type\": \"application/json\"},\n            json={\"mpin\": self.cfg.mpin, \"totp\": totp_code},\n            timeout=10,\n        )\n        resp.raise_for_status()\n        body = resp.json()\n        if isinstance(body.get(\"data\"), dict):\n            TOKEN = body[\"data\"][\"token\"]\n        else:\n            TOKEN = body[\"token\"]\n        self._write_cache(TOKEN)\n        logger.info(\"INDstocks token refreshed, cached at %s\", self.cfg.token_cache_path)\n        return TOKEN\n\n    def _write_cache(self, TOKEN: str) -> None:\n        tmp_path = self.cfg.token_cache_path.with_suffix(\".tmp\")\n        with open(tmp_path, \"w\") as f:\n            json.dump({\"token\": TOKEN, \"issued_at\": time.time()}, f)\n        os.chmod(tmp_path, 0o600)\n        tmp_path.replace(self.cfg.token_cache_path)  # atomic on POSIX",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

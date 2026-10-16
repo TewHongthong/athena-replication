@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_017",
+  "language": "csharp",
+  "originalName": "MealPlan",
+  "injectedName": "meal_plan",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'meal_plan' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed class meal_plan\n{\n    public int Id { get; set; }\n    public string Name { get; set; } = string.Empty;\n    public DateOnly StartDate { get; set; }\n    public DateOnly EndDate { get; set; }\n    public string? Notes { get; set; }\n    public List<MealPlanEntry> Entries { get; set; } = [];\n    public DateTimeOffset CreatedAt { get; set; }\n    public DateTimeOffset UpdatedAt { get; set; }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

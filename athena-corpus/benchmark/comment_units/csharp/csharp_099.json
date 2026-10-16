@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_099",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "TrayIcons",
+  "codeBare": "public static class TrayIcons\n{\n    public static readonly Icon Idle = Make(Color.FromArgb(0x4B, 0x8B, 0xF5));\n    public static readonly Icon Recording = Make(Color.FromArgb(0xE5, 0x48, 0x4D));\n    public static readonly Icon Busy = Make(Color.FromArgb(0xF0, 0xA0, 0x20));\n    public static readonly Icon Loading = Make(Color.FromArgb(0x8A, 0x8F, 0x98));\n\n    static Icon Make(Color color)\n    {\n        using var bmp = new Bitmap(32, 32);\n        using (var g = Graphics.FromImage(bmp))\n        {\n            g.SmoothingMode = SmoothingMode.AntiAlias;\n            using (var fill = new SolidBrush(color)) g.FillEllipse(fill, 1, 1, 30, 30);\n            using var white = new SolidBrush(Color.White);\n            using var pen = new Pen(Color.White, 2.4f) { StartCap = LineCap.Round, EndCap = LineCap.Round };\n            using (var capsule = new GraphicsPath())\n            {\n                capsule.AddArc(12.5f, 6, 7, 7, 180, 180);\n                capsule.AddArc(12.5f, 12, 7, 7, 0, 180);\n                capsule.CloseFigure();\n                g.FillPath(white, capsule);\n            }\n            g.DrawArc(pen, 9, 9.5f, 14, 13, 0, 180);\n            g.DrawLine(pen, 16, 22.5f, 16, 26);\n        }\n        IntPtr handle = bmp.GetHicon();\n        var icon = (Icon)Icon.FromHandle(handle).Clone();\n        DestroyIcon(handle);\n        return icon;\n    }\n\n    [DllImport(\"user32.dll\")]\n    static extern bool DestroyIcon(IntPtr handle);\n}",
+  "referenceComment": "/// <summary>Tray icons drawn in code: a colored disc with a white microphone.</summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:yello-gun/BetterSTT@e6ed41b232cfa71e6dcbbadeff51710527e31452",
+  "sourceDetail": "src/BetterSTT/Tray.cs lines 10-44 (class TrayIcons); license MIT; repo created 2026-09-26T18:41:24Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "yello-gun/BetterSTT",
+    "repoUrl": "https://github.com/yello-gun/BetterSTT",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:41:24Z",
+    "commit": "e6ed41b232cfa71e6dcbbadeff51710527e31452",
+    "path": "src/BetterSTT/Tray.cs",
+    "startLine": 10,
+    "endLine": 44,
+    "unit": "class TrayIcons",
+    "corpusFile": "corpus/csharp/yello-gun__BetterSTT__Tray.cs.md"
+  }
+}

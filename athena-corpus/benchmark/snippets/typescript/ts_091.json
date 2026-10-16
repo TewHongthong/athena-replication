@@ -1,0 +1,42 @@
+{
+  "id": "ts_091",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_demos/chart.tsx lines 26-56 (function Area1); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function Area1() {\n  const motion = useChartMotion()\n  const data = [186, 305, 237, 273, 209, 314].map((facturado, i) => ({ mes: MESES[i], facturado: facturado * 1000 }))\n  const config = { facturado: { label: \"Facturado\" } } satisfies ChartConfig\n  return (\n    <Card className=\"w-full max-w-lg\" size=\"sm\">\n      <CardHeader>\n        <CardTitle>Facturado por mes</CardTitle>\n        <CardDescription>Primer semestre, en pesos.</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <ChartContainer className=\"aspect-[2/1]\" config={config}>\n          <AreaChart data={data} margin={{ left: 4, right: 4, top: 8 }} responsive>\n            <CartesianGrid vertical={false} />\n            <XAxis axisLine={false} dataKey=\"mes\" tickLine={false} tickMargin={8} />\n            <ChartTooltip content={<ChartTooltipContent formatter={pesos} indicator=\"line\" />} cursor />\n            <Area\n              dataKey=\"facturado\"\n              fill=\"var(--color-facturado)\"\n              fillOpacity={0.1}\n              stroke=\"var(--color-facturado)\"\n              strokeWidth={2}\n              type=\"monotone\"\n              {...motion}\n            />\n          </AreaChart>\n        </ChartContainer>\n      </CardContent>\n    </Card>\n  )\n}",
+  "identifiers": [
+    {
+      "name": "motion",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "facturado",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "data",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "config",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_demos/chart.tsx",
+    "startLine": 26,
+    "endLine": 56,
+    "unit": "function Area1",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__chart.tsx.md"
+  }
+}

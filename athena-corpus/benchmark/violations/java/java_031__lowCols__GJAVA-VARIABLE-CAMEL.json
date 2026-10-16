@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_031",
+  "language": "java",
+  "originalName": "lowCols",
+  "injectedName": "low_cols",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'low_cols' does not match camelCase pattern",
+    "name 'low_cols' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public static int tierColor(String tier) {\n    boolean high = tier.contains(\"HT\");\n    int n = 5;\n    for (int i = tier.length() - 1; i >= 0; i--) {\n        if (Character.isDigit(tier.charAt(i))) {\n            n = tier.charAt(i) - '0';\n            break;\n        }\n    }\n    int[] highCols = {0xFFC94D, 0xFF9F43, 0xFF6B6B, 0xC77DFF, 0x9AA5B1};\n    int[] low_cols = {0xE8C86A, 0xE08A3A, 0xD05A5A, 0xA060D8, 0x7C8794};\n    int idx = Math.max(1, Math.min(5, n)) - 1;\n    return high ? highCols[idx] : low_cols[idx];\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

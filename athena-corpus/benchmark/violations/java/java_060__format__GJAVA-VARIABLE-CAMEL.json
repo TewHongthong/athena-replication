@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_060",
+  "language": "java",
+  "originalName": "format",
+  "injectedName": "FORMAT",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FORMAT' does not match camelCase pattern",
+    "name 'FORMAT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "class AdminRepositoryFormatIconsContractTest {\n  private static final List<String> FORMATS = List.of(\n      \"maven2\", \"npm\", \"pypi\", \"cargo\", \"pub\", \"composer\", \"terraform\", \"swift\",\n      \"ansiblegalaxy\", \"conda\", \"conan\", \"apt\", \"alpine\", \"huggingface\", \"go\",\n      \"helm\", \"docker\", \"nuget\", \"rubygems\", \"yum\", \"raw\");\n\n  @Test\n  void repositoryFormatColumnUsesSharedBrandIcons() throws IOException {\n    String index = resource(\"/META-INF/resources/admin/index.html\");\n    String javascript = resource(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(index.contains(\"/browse/assets/format-icons.css\"));\n    assertTrue(javascript.contains(\"<td>${formatBadge(repo.format)}</td>\"));\n    for (String FORMAT : FORMATS) {\n      assertTrue(javascript.contains(FORMAT + \": \\\"\" + iconName(FORMAT) + \"\\\"\"), FORMAT);\n    }\n  }\n\n  private static String iconName(String FORMAT) {\n    return \"maven2\".equals(FORMAT) ? \"maven\" : FORMAT;\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0
+}

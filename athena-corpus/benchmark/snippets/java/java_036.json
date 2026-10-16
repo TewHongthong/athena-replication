@@ -1,0 +1,47 @@
+{
+  "id": "java_036",
+  "language": "java",
+  "source": "github:KingF3rdi/aero-client@d8888aba64351257362cd47f69282311dd942c8f",
+  "sourceDetail": "src/main/java/dev/aero/client/Optimizer.java lines 155-162 (method Optimizer.heldIs); license MIT; repo created 2026-09-20T13:19:19Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public static boolean heldIs(PlayerEntity player, String needle) {\n    if (player == null) {\n        return false;\n    }\n    String main = player.getMainHandStack().getItem().toString().toLowerCase();\n    String off = player.getOffHandStack().getItem().toString().toLowerCase();\n    return main.contains(needle) || off.contains(needle);\n}",
+  "identifiers": [
+    {
+      "name": "heldIs",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "main",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "player",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "needle",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "off",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "KingF3rdi/aero-client",
+    "repoUrl": "https://github.com/KingF3rdi/aero-client",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-20T13:19:19Z",
+    "commit": "d8888aba64351257362cd47f69282311dd942c8f",
+    "path": "src/main/java/dev/aero/client/Optimizer.java",
+    "startLine": 155,
+    "endLine": 162,
+    "unit": "method Optimizer.heldIs",
+    "corpusFile": "corpus/java/KingF3rdi__aero-client__Optimizer.java.md"
+  }
+}

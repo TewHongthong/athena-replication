@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_074",
+  "language": "csharp",
+  "originalName": "isBlueHub",
+  "injectedName": "is_blue_hub",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'is_blue_hub' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public void ScorePoint(bool is_blue_hub, bool wasShotFromLegalZone)\n{\n    if (!gameStarted || isMatchOver) return;\n\n    if (is_blue_hub)\n    {\n        if (!isBlueHubActive) return;\n\n        bool isPenalty = !wasShotFromLegalZone;\n\n        if (isPenalty)\n        {\n            scoreRed += 10;\n            scoreBlue += 1;\n            if (isAutoPhase)\n            {\n                autoScoreRed += 10;\n                autoScoreBlue += 1;\n            }\n        }\n        else\n        {\n            scoreBlue += 1;\n            if (isAutoPhase) autoScoreBlue += 1;\n        }\n    }\n    else\n    {\n        if (!isRedHubActive) return;\n\n        scoreRed += 6;\n        if (isAutoPhase) autoScoreRed += 6;\n    }\n\n    UpdateScoreUI();\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

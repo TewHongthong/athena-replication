@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_081",
+  "language": "csharp",
+  "originalName": "OnTriggerEnter",
+  "injectedName": "on_trigger_enter",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'on_trigger_enter' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "private void on_trigger_enter(Collider other)\n{\n    // Explicit layer validation bitmask check\n    if (((1 << other.gameObject.layer) & ballLayer) == 0) return;\n\n    bool structuresChanged = false;\n\n    switch (other)\n    {\n        case SphereCollider sphere:\n            if (!activeSpheres.Contains(sphere) && activeSpheres.Count < MaxColliders)\n            {\n                activeSpheres.Add(sphere);\n                structuresChanged = true;\n            }\n            break;\n\n        case CapsuleCollider capsule:\n            if (!activeCapsules.Contains(capsule) && activeCapsules.Count < MaxColliders)\n            {\n                activeCapsules.Add(capsule);\n                structuresChanged = true;\n            }\n            break;\n    }\n\n    if (structuresChanged)\n    {\n        RebuildClothArrays();\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

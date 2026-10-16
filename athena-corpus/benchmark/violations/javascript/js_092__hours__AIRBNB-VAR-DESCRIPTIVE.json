@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_092",
+  "language": "javascript",
+  "originalName": "hours",
+  "injectedName": "h",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'h' shorter than minLength=2",
+    "name 'h' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function createGoalService({repository,getDayOfWeek}={}){\n  if(!repository||typeof repository.getGoals!=='function')throw new TypeError('Serviço de metas requer repositório.');\n  return Object.freeze({\n    hoursForDay:day=>clamp(repository.getGoals()?.horasPorDia?.[String(day)]??repository.getGoals()?.horasDiarias,0,24),\n    hoursForDate:date=>clamp(repository.getGoals()?.horasPorDia?.[String(getDayOfWeek(date))]??repository.getGoals()?.horasDiarias,0,24),\n    updateDailyHours:(day,value,{isToday=false}={})=>{const h=clamp(value,0,24);repository.updateDailyHours(day,h);if(isToday)repository.updateGoal('horasDiarias',h);return h},\n    applyHoursToEveryDay:value=>{const h=clamp(value,0,24);for(let day=0;day<7;day++)repository.updateDailyHours(day,h);repository.updateGoal('horasDiarias',h);return h},\n    clearWeekend:()=>{repository.updateDailyHours(0,0);repository.updateDailyHours(6,0)},\n    update:(key,value)=>repository.updateGoal(key,key==='metaAprovacao'?clamp(value,0,100):clamp(value))\n  });\n}",
+  "occurrencesRenamed": 8,
+  "commentOccurrencesRenamed": 0
+}

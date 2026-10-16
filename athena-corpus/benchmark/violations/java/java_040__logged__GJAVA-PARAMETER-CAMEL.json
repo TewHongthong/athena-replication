@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_040",
+  "language": "java",
+  "originalName": "logged",
+  "injectedName": "LOGGED",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOGGED' does not match camelCase pattern",
+    "name 'LOGGED' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static void applySession(SavedAccount LOGGED) {\n    MinecraftClient mc = MinecraftClient.getInstance();\n    try {\n        Object session = createSession(LOGGED);\n        if (session == null) {\n            status.set(\"Angemeldet als \" + LOGGED.name + \" (Session-API nicht gesetzt, nach Relog gilt der Token)\");\n            return;\n        }\n        boolean set = false;\n        for (Field field : MinecraftClient.class.getDeclaredFields()) {\n            if (Modifier.isStatic(field.getModifiers())) {\n                continue;\n            }\n            String type = field.getType().getName();\n            if (type.endsWith(\"Session\") || type.endsWith(\".User\")) {\n                field.setAccessible(true);\n                field.set(mc, session);\n                set = true;\n            }\n            if (type.contains(\"CompletableFuture\") && field.getName().toLowerCase().contains(\"gameprofile\")) {\n                field.setAccessible(true);\n                field.set(mc, java.util.concurrent.CompletableFuture.completedFuture(null));\n            }\n        }\n        SkinPreview.requestOwn();\n        try {\n            mc.getSkinProvider().fetchSkinTextures(mc.getGameProfile());\n        } catch (Throwable ignored) {\n        }\n        status.set(set\n                ? \"Angemeldet als \" + LOGGED.name + \" — für Server neu joinen\"\n                : \"Account gespeichert: \" + LOGGED.name);\n    } catch (Throwable t) {\n        status.set(\"Account gespeichert: \" + LOGGED.name);\n        SkinPreview.requestOwn();\n    }\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

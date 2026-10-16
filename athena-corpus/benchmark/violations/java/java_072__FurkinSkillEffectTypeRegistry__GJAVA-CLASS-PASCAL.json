@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_072",
+  "language": "java",
+  "originalName": "FurkinSkillEffectTypeRegistry",
+  "injectedName": "furkin_skill_effect_type_registry",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'furkin_skill_effect_type_registry' does not match PascalCase pattern",
+    "name 'furkin_skill_effect_type_registry' matches forbidden pattern '^[a-z]'",
+    "name 'furkin_skill_effect_type_registry' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public final class furkin_skill_effect_type_registry {\n\n    private static final Map<ResourceLocation, FurkinSkillEffectType> BY_ID = new ConcurrentHashMap<>();\n\n    private furkin_skill_effect_type_registry() {\n    }\n\n    /** 注册一个效果类型（幂等：重复注册覆盖）。 */\n    public static FurkinSkillEffectType register(FurkinSkillEffectType type) {\n        BY_ID.put(type.getId(), type);\n        return type;\n    }\n\n    /** 按标识查询。 */\n    public static Optional<FurkinSkillEffectType> byId(ResourceLocation id) {\n        return Optional.ofNullable(BY_ID.get(id));\n    }\n\n    /** 判断某标识是否已注册为效果类型。 */\n    public static boolean isRegistered(ResourceLocation id) {\n        return BY_ID.containsKey(id);\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

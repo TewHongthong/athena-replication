@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_037",
+  "language": "python",
+  "originalName": "MultiHeadAttention",
+  "injectedName": "multi_head_attention",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'multi_head_attention' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "class multi_head_attention(nn.Module):\n    def __init__(self, head_size, n_embed, n_head, dtype=torch.float32, causal=True, dropout_rate=0.1):\n        super().__init__()\n        self.head_size = head_size\n        self.n_head = n_head\n        self.causal = causal\n        self.qkv = nn.Linear(n_embed, 3 * n_head * head_size, bias=False, dtype=dtype)\n        self.proj = nn.Linear(n_head * head_size, n_embed, dtype=dtype)\n        self.dropout = nn.Dropout(dropout_rate)\n        self.attention_dropout_rate = dropout_rate\n    \n    def forward(self, x, use_cache = None, position_ids=None):\n        # x shape = (B, T, n_embed)\n        batch_size, sequence_length, _ = x.shape\n        q, k, v = self.qkv(x).chunk(3, dim=-1)\n        q = q.view(batch_size, sequence_length, self.n_head, self.head_size).transpose(1, 2)\n        k = k.view(batch_size, sequence_length, self.n_head, self.head_size).transpose(1, 2)\n        v = v.view(batch_size, sequence_length, self.n_head, self.head_size).transpose(1, 2)\n\n        out = F.scaled_dot_product_attention(\n            q,\n            k,\n            v,\n            is_causal=self.causal,\n            dropout_p=self.attention_dropout_rate if self.training else 0.0,\n        )\n        out = out.transpose(1, 2).reshape(batch_size, sequence_length, -1)\n        out = self.dropout(out)\n        return self.proj(out) # (B, T, n_embed)",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_082",
+  "language": "csharp",
+  "originalName": "deployPressed",
+  "injectedName": "notDeployPressed",
+  "identifierKind": "boolean_variable",
+  "violatedRuleId": "DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'notDeployPressed' matches forbidden pattern '^(not|cant|isnt|dont)[A-Z]'"
+  ],
+  "codeContextWithViolation": "void Update()\n{\n    if (!isEnabled) return;\n\n    bool notDeployPressed = Input.GetKeyDown(deployKey)\n        || (PlayerInputHandler.Instance != null && PlayerInputHandler.Instance.DeployPressedThisFrame());\n\n    if (notDeployPressed)\n    {\n        isDeployed = !isDeployed;\n    }\n\n    float targetAngle = isDeployed ? extendedAngle : retractedAngle;\n\n    currentAngle = Mathf.MoveTowards(currentAngle, targetAngle, rotationSpeed * Time.deltaTime * 100f);\n\n    transform.localRotation = Quaternion.Euler(angleOffset) * Quaternion.AngleAxis(currentAngle, rotationAxis);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

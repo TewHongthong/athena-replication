@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_053",
+  "language": "python",
+  "originalName": "report",
+  "injectedName": "REPORT",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'REPORT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def text_findings(REPORT: Any) -> tuple[list[str], list[str], int]:\n    \"\"\"Flatten a TextInspectReport into finding strings + confidence lists.\"\"\"\n    findings: list[str] = []\n    confidences: list[str] = []\n    for h in REPORT.hits:\n        conf = text_hit_confidence(h.kind)\n        findings.append(f\"layer-a [{h.kind}] {h.label} x{h.count}\")\n        confidences.append(conf)\n    return findings, confidences, REPORT.suspicious_total",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

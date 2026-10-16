@@ -1,0 +1,15 @@
+{
+  "snippetId": "java_097",
+  "language": "java",
+  "originalName": "offsetY",
+  "injectedName": "offset_y",
+  "identifierKind": "field",
+  "violatedRuleId": "GJAVA-FIELD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'offset_y' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private static class AnimationState {\n    float alpha = 0.0f;\n    float offset_y = -20.0f;\n    float scale = 0.9f;\n    long lastUpdate = 0L;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

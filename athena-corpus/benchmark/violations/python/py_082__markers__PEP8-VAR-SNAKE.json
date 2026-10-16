@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_082",
+  "language": "python",
+  "originalName": "markers",
+  "injectedName": "MARKERS",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MARKERS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def strip_trailing_tool_clauses(notes: object) -> str:\n    \"\"\"Remove complete known vault-cleaner clauses from the Notes tail.\n\n    Repeated clauses are removed one at a time from the end.  A tool-looking\n    fragment with user text after it is intentionally left untouched because\n    its ownership is ambiguous.\n    \"\"\"\n    remaining = str(notes).strip()\n    while remaining:\n        MARKERS = tuple(_MARKER_RE.finditer(remaining))\n        if not MARKERS:\n            break\n        start = MARKERS[-1].start(1)\n        suffix = remaining[start:]\n        if not any(pattern.fullmatch(suffix) for pattern in _GENERATED_CLAUSE_RES):\n            break\n        remaining = remaining[:start].rstrip()\n    return remaining",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

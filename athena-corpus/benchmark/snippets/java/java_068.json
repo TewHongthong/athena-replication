@@ -1,0 +1,37 @@
+{
+  "id": "java_068",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "browse-ui/src/main/java/com/github/klboke/kkrepo/browseui/BrowseUiResourceConfiguration.java lines 7-15 (class BrowseUiResourceConfiguration); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Configuration\npublic class BrowseUiResourceConfiguration implements WebMvcConfigurer {\n  @Override\n  public void addResourceHandlers(ResourceHandlerRegistry registry) {\n    registry\n        .addResourceHandler(\"/browse/**\")\n        .addResourceLocations(\"classpath:/META-INF/resources/browse/\");\n  }\n}",
+  "identifiers": [
+    {
+      "name": "BrowseUiResourceConfiguration",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "addResourceHandlers",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "registry",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "browse-ui/src/main/java/com/github/klboke/kkrepo/browseui/BrowseUiResourceConfiguration.java",
+    "startLine": 7,
+    "endLine": 15,
+    "unit": "class BrowseUiResourceConfiguration",
+    "corpusFile": "corpus/java/klboke__kkRepo__BrowseUiResourceConfiguration.java.md"
+  }
+}

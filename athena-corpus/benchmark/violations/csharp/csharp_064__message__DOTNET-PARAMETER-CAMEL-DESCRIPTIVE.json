@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_064",
+  "language": "csharp",
+  "originalName": "message",
+  "injectedName": "MESSAGE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MESSAGE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class TwilioSmsRequestMapper\n{\n    /// <summary>Maps a <see cref=\"SmsMessage\"/> to Twilio REST API form fields.</summary>\n    public static IEnumerable<KeyValuePair<string, string>> ToFormFields(\n        SmsMessage MESSAGE,\n        TwilioOptions options)\n    {\n        yield return new KeyValuePair<string, string>(\"To\", MESSAGE.To);\n        yield return new KeyValuePair<string, string>(\"From\", MESSAGE.From ?? options.From);\n        yield return new KeyValuePair<string, string>(\"Body\", MESSAGE.Body);\n\n        if (!string.IsNullOrWhiteSpace(options.StatusCallbackUrl))\n            yield return new KeyValuePair<string, string>(\"StatusCallback\", options.StatusCallbackUrl);\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_031",
+  "language": "typescript",
+  "originalName": "done",
+  "injectedName": "DONE",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DONE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function AccessRow({ item }: { item: AccessItem }) {\n  const info = copy[item.key];\n  const status = statusCopy[item.status];\n  const DONE = item.status === \"granted\" || item.status === \"not-needed\";\n  const blocked = item.status === \"denied\";\n  return (\n    <View style={styles.row} accessibilityLabel={`${info.title}: ${status.label}`}>\n      <View style={[styles.icon, DONE && styles.iconDone, blocked && styles.iconBlocked]}>\n        <Icon name={DONE ? \"check\" : info.icon} size={19} color={DONE ? colors.peak : blocked ? colors.tallyText : colors.bone} />\n      </View>\n      <View style={styles.text}>\n        <Text style={styles.title}>{info.title}</Text>\n        <Text style={styles.description}>{info.description}</Text>\n      </View>\n      <View style={styles.status}>\n        <Tag label={status.label} tone={status.tone} />\n      </View>\n    </View>\n  );\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

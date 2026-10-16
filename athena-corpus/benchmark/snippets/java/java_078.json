@@ -1,0 +1,47 @@
+{
+  "id": "java_078",
+  "language": "java",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/client/ForceUnbindConfirmScreen.java lines 65-81 (method ForceUnbindConfirmScreen.render); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Override\npublic void render(GuiGraphics gui, int mouseX, int mouseY, float partialTick) {\n    renderBackground(gui);\n    int cx = this.width / 2;\n    int y = this.height / 2 - 48;\n    gui.drawCenteredString(this.font, this.title, cx, y, 0xFFFFFF);\n    gui.drawCenteredString(this.font,\n            Component.translatable(\"furkin.screen.force_unbind.line1\"),\n            cx, y + 24, 0xFFDDDD);\n    gui.drawCenteredString(this.font,\n            Component.translatable(\"furkin.screen.force_unbind.line2\"),\n            cx, y + 38, 0xFFDDDD);\n    gui.drawCenteredString(this.font,\n            Component.translatable(\"furkin.screen.force_unbind.line3\"),\n            cx, y + 52, 0xFFDDDD);\n    super.render(gui, mouseX, mouseY, partialTick);\n}",
+  "identifiers": [
+    {
+      "name": "render",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "gui",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "mouseX",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "mouseY",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "partialTick",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/client/ForceUnbindConfirmScreen.java",
+    "startLine": 65,
+    "endLine": 81,
+    "unit": "method ForceUnbindConfirmScreen.render",
+    "corpusFile": "corpus/java/wanancat__furkin__ForceUnbindConfirmScreen.java.md"
+  }
+}

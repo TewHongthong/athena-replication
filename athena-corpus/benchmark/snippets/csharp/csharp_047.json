@@ -1,0 +1,52 @@
+{
+  "id": "csharp_047",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Viewer/Control/ProviderUsageStore.cs lines 108-133 (method ProviderUsageStore.Begin); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public string Begin(string provider, string model, string role)\n{\n    bool notify = false;\n    string? ticket = null;\n    lock (gate)\n    {\n        if (IsBlocked())\n        {\n            notify = !limitNotified;\n            limitNotified = true;\n        }\n        else\n        {\n            var pending = new Pending(Guid.NewGuid().ToString(\"N\"), Clean(provider), Clean(model), Clean(role));\n            // Bound the cardinality, preserving exact overall totals.\n            if (state.Rows.Count >= MaximumRows - 1 && !state.Rows.Any(row => Same(row, pending)))\n                pending = pending with { Provider = \"other\", Model = \"other\", Role = \"other\" };\n            AddOutcome(pending, \"started\", 0, 0);\n            state.Pending.Add(pending);\n            Save();\n            ticket = pending.Id;\n        }\n    }\n    if (notify) LimitReached?.Invoke();\n    return ticket ?? throw new ProviderUsageLimitReachedException();\n}",
+  "identifiers": [
+    {
+      "name": "Begin",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "notify",
+      "kind": "boolean_variable",
+      "isCompliant": true
+    },
+    {
+      "name": "ticket",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "provider",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "model",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "role",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Viewer/Control/ProviderUsageStore.cs",
+    "startLine": 108,
+    "endLine": 133,
+    "unit": "method ProviderUsageStore.Begin",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__ProviderUsageStore.cs.md"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "csharp_087",
+  "language": "csharp",
+  "source": "github:thecheetoman/ESim@59cde034d0041d0af0a43cdf7e43d979935b7db8",
+  "sourceDetail": "Assets/Scripts/Robot/Turret.cs lines 257-275 (method Turret.FindNearestHubTo); license MIT; repo created 2026-09-16T23:28:41Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "private GameObject FindNearestHubTo(Vector3 worldPos)\n{\n    if (hubCache == null)\n        hubCache = GameObject.FindGameObjectsWithTag(\"Hub\");\n\n    GameObject best = null;\n    float bestSqr = float.PositiveInfinity;\n    foreach (GameObject hub in hubCache)\n    {\n        if (hub == null) continue;\n        float sqr = (hub.transform.position - worldPos).sqrMagnitude;\n        if (sqr < bestSqr)\n        {\n            bestSqr = sqr;\n            best = hub;\n        }\n    }\n    return best;\n}",
+  "identifiers": [
+    {
+      "name": "FindNearestHubTo",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "best",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "worldPos",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "bestSqr",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "hub",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "sqr",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "thecheetoman/ESim",
+    "repoUrl": "https://github.com/thecheetoman/ESim",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-16T23:28:41Z",
+    "commit": "59cde034d0041d0af0a43cdf7e43d979935b7db8",
+    "path": "Assets/Scripts/Robot/Turret.cs",
+    "startLine": 257,
+    "endLine": 275,
+    "unit": "method Turret.FindNearestHubTo",
+    "corpusFile": "corpus/csharp/thecheetoman__ESim__Turret.cs.md"
+  }
+}

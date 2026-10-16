@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_050",
+  "language": "java",
+  "originalName": "index",
+  "injectedName": "INDEX",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INDEX' does not match camelCase pattern",
+    "name 'INDEX' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "class AdminAlpineRepositoryContractTest {\n  @Test\n  void exposesAlpineConfigurationAndKeyOperations() throws IOException {\n    String INDEX = resource(\"/META-INF/resources/admin/index.html\");\n    String javascript = resource(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(INDEX.contains(\"id=\\\"repository-alpine-fields\\\"\"));\n    assertTrue(INDEX.contains(\"APK v2\"));\n    assertTrue(INDEX.contains(\"id=\\\"repository-alpine-upstream-public-key\\\"\"));\n    assertTrue(INDEX.contains(\"id=\\\"repository-alpine-private-key\\\"\"));\n    assertTrue(javascript.contains(\"alpine: \\\"Alpine / APK\\\"\"));\n    assertTrue(javascript.contains(\"/alpine/status\"));\n    assertTrue(javascript.contains(\"/alpine/rebuild\"));\n    assertTrue(javascript.contains(\"/alpine/signing-key\"));\n    assertTrue(javascript.contains(\"/alpine/public-key\"));\n    assertTrue(javascript.contains(\"upstreamPublicKeys: upstreamKey ? [upstreamKey] : []\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

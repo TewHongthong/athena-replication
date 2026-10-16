@@ -1,0 +1,532 @@
+{
+  "rows": {
+    "GPT-6 Luna (frozen run)|none": {
+      "trials": 300,
+      "units": 100,
+      "valid": 100.0,
+      "core": 99.66666666666667,
+      "ci": [
+        99.0,
+        100.0
+      ],
+      "exact_ci": false,
+      "core_valid": 99.66666666666667,
+      "exact": 89.0,
+      "screened": 98.0,
+      "si": 0.9984687691866735
+    },
+    "GPT-6 Luna (frozen run)|fulldoc": {
+      "trials": 300,
+      "units": 100,
+      "valid": 100.0,
+      "core": 100.0,
+      "ci": [
+        96.37833073548235,
+        100.0
+      ],
+      "exact_ci": true,
+      "core_valid": 100.0,
+      "exact": 87.0,
+      "screened": 99.0,
+      "si": 0.9981953606609668
+    },
+    "GPT-6 Luna (frozen run)|chunk": {
+      "trials": 300,
+      "units": 100,
+      "valid": 100.0,
+      "core": 99.0,
+      "ci": [
+        97.0,
+        100.0
+      ],
+      "exact_ci": false,
+      "core_valid": 99.0,
+      "exact": 86.0,
+      "screened": 98.0,
+      "si": 0.9981768263642042
+    },
+    "GPT-6 Luna (frozen run)|graph": {
+      "trials": 300,
+      "units": 100,
+      "valid": 100.0,
+      "core": 100.0,
+      "ci": [
+        96.37833073548235,
+        100.0
+      ],
+      "exact_ci": true,
+      "core_valid": 100.0,
+      "exact": 88.0,
+      "screened": 99.0,
+      "si": 0.9980748768188209
+    },
+    "Gemini 3.1 Flash-Lite|none": {
+      "trials": 300,
+      "units": 100,
+      "valid": 100.0,
+      "core": 100.0,
+      "ci": [
+        96.37833073548235,
+        100.0
+      ],
+      "exact_ci": true,
+      "core_valid": 100.0,
+      "exact": 80.66666666666667,
+      "screened": 99.33333333333333,
+      "si": 0.997348721082621
+    },
+    "Gemini 3.1 Flash-Lite|fulldoc": {
+      "trials": 300,
+      "units": 100,
+      "valid": 100.0,
+      "core": 100.0,
+      "ci": [
+        96.37833073548235,
+        100.0
+      ],
+      "exact_ci": true,
+      "core_valid": 100.0,
+      "exact": 88.33333333333333,
+      "screened": 100.0,
+      "si": 0.9981934235435017
+    },
+    "Gemini 3.1 Flash-Lite|chunk": {
+      "trials": 300,
+      "units": 100,
+      "valid": 100.0,
+      "core": 100.0,
+      "ci": [
+        96.37833073548235,
+        100.0
+      ],
+      "exact_ci": true,
+      "core_valid": 100.0,
+      "exact": 82.66666666666667,
+      "screened": 100.0,
+      "si": 0.9974025555251994
+    },
+    "Gemini 3.1 Flash-Lite|graph": {
+      "trials": 300,
+      "units": 100,
+      "valid": 100.0,
+      "core": 100.0,
+      "ci": [
+        96.37833073548235,
+        100.0
+      ],
+      "exact_ci": true,
+      "core_valid": 100.0,
+      "exact": 86.0,
+      "screened": 100.0,
+      "si": 0.9975268307238798
+    },
+    "Gemma 4 26B (endpoint)|none": {
+      "trials": 300,
+      "units": 100,
+      "valid": 100.0,
+      "core": 100.0,
+      "ci": [
+        96.37833073548235,
+        100.0
+      ],
+      "exact_ci": true,
+      "core_valid": 100.0,
+      "exact": 87.66666666666667,
+      "screened": 99.0,
+      "si": 0.9982599752226109
+    },
+    "Gemma 4 26B (endpoint)|fulldoc": {
+      "trials": 300,
+      "units": 100,
+      "valid": 100.0,
+      "core": 100.0,
+      "ci": [
+        96.37833073548235,
+        100.0
+      ],
+      "exact_ci": true,
+      "core_valid": 100.0,
+      "exact": 90.0,
+      "screened": 99.0,
+      "si": 0.9983253813811643
+    },
+    "Gemma 4 26B (endpoint)|chunk": {
+      "trials": 300,
+      "units": 100,
+      "valid": 100.0,
+      "core": 98.0,
+      "ci": [
+        95.0,
+        100.0
+      ],
+      "exact_ci": false,
+      "core_valid": 98.0,
+      "exact": 88.66666666666667,
+      "screened": 97.0,
+      "si": 0.9982957552761809
+    },
+    "Gemma 4 26B (endpoint)|graph": {
+      "trials": 300,
+      "units": 100,
+      "valid": 99.66666666666667,
+      "core": 99.66666666666667,
+      "ci": [
+        99.0,
+        100.0
+      ],
+      "exact_ci": false,
+      "core_valid": 100.0,
+      "exact": 91.33333333333333,
+      "screened": 98.66666666666667,
+      "si": 0.9987615902917105
+    },
+    "DeepSeek V4 Flash|none": {
+      "trials": 300,
+      "units": 100,
+      "valid": 100.0,
+      "core": 100.0,
+      "ci": [
+        96.37833073548235,
+        100.0
+      ],
+      "exact_ci": true,
+      "core_valid": 100.0,
+      "exact": 90.33333333333333,
+      "screened": 99.0,
+      "si": 0.9987468839221091
+    },
+    "DeepSeek V4 Flash|fulldoc": {
+      "trials": 300,
+      "units": 100,
+      "valid": 99.33333333333333,
+      "core": 99.33333333333333,
+      "ci": [
+        98.0,
+        100.0
+      ],
+      "exact_ci": false,
+      "core_valid": 100.0,
+      "exact": 91.66666666666667,
+      "screened": 98.33333333333333,
+      "si": 0.9987442592942664
+    },
+    "DeepSeek V4 Flash|chunk": {
+      "trials": 300,
+      "units": 100,
+      "valid": 99.66666666666667,
+      "core": 99.66666666666667,
+      "ci": [
+        99.0,
+        100.0
+      ],
+      "exact_ci": false,
+      "core_valid": 100.0,
+      "exact": 90.66666666666667,
+      "screened": 98.0,
+      "si": 0.9987047103547358
+    },
+    "DeepSeek V4 Flash|graph": {
+      "trials": 300,
+      "units": 100,
+      "valid": 99.66666666666667,
+      "core": 99.66666666666667,
+      "ci": [
+        99.0,
+        100.0
+      ],
+      "exact_ci": false,
+      "core_valid": 100.0,
+      "exact": 91.66666666666667,
+      "screened": 98.66666666666667,
+      "si": 0.9986657344758707
+    }
+  },
+  "tests": [
+    [
+      "GPT-6 Luna (frozen run)",
+      "none",
+      0.33333333333332993,
+      1,
+      0,
+      1.0,
+      1.0
+    ],
+    [
+      "GPT-6 Luna (frozen run)",
+      "fulldoc",
+      0.0,
+      0,
+      0,
+      1.0,
+      1.0
+    ],
+    [
+      "GPT-6 Luna (frozen run)",
+      "chunk",
+      1.0000000000000009,
+      1,
+      0,
+      1.0,
+      1.0
+    ],
+    [
+      "Gemini 3.1 Flash-Lite",
+      "none",
+      0.0,
+      0,
+      0,
+      1.0,
+      1.0
+    ],
+    [
+      "Gemini 3.1 Flash-Lite",
+      "fulldoc",
+      0.0,
+      0,
+      0,
+      1.0,
+      1.0
+    ],
+    [
+      "Gemini 3.1 Flash-Lite",
+      "chunk",
+      0.0,
+      0,
+      0,
+      1.0,
+      1.0
+    ],
+    [
+      "Gemma 4 26B (endpoint)",
+      "none",
+      -0.33333333333334103,
+      0,
+      1,
+      1.0,
+      1.0
+    ],
+    [
+      "Gemma 4 26B (endpoint)",
+      "fulldoc",
+      -0.33333333333334103,
+      0,
+      1,
+      1.0,
+      1.0
+    ],
+    [
+      "Gemma 4 26B (endpoint)",
+      "chunk",
+      1.6666666666666607,
+      2,
+      1,
+      1.0,
+      1.0
+    ],
+    [
+      "DeepSeek V4 Flash",
+      "none",
+      -0.33333333333332993,
+      0,
+      1,
+      1.0,
+      1.0
+    ],
+    [
+      "DeepSeek V4 Flash",
+      "fulldoc",
+      0.33333333333332993,
+      1,
+      1,
+      1.0,
+      1.0
+    ],
+    [
+      "DeepSeek V4 Flash",
+      "chunk",
+      1.1102230246251565e-14,
+      1,
+      1,
+      1.0,
+      1.0
+    ]
+  ],
+  "languages": [
+    [
+      "GPT-6 Luna (frozen run)",
+      "none",
+      {
+        "csharp": 100.0,
+        "java": 100.0,
+        "javascript": 98.33333333333333,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "GPT-6 Luna (frozen run)",
+      "fulldoc",
+      {
+        "csharp": 100.0,
+        "java": 100.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "GPT-6 Luna (frozen run)",
+      "chunk",
+      {
+        "csharp": 100.0,
+        "java": 95.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "GPT-6 Luna (frozen run)",
+      "graph",
+      {
+        "csharp": 100.0,
+        "java": 100.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "Gemini 3.1 Flash-Lite",
+      "none",
+      {
+        "csharp": 100.0,
+        "java": 100.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "Gemini 3.1 Flash-Lite",
+      "fulldoc",
+      {
+        "csharp": 100.0,
+        "java": 100.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "Gemini 3.1 Flash-Lite",
+      "chunk",
+      {
+        "csharp": 100.0,
+        "java": 100.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "Gemini 3.1 Flash-Lite",
+      "graph",
+      {
+        "csharp": 100.0,
+        "java": 100.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "Gemma 4 26B (endpoint)",
+      "none",
+      {
+        "csharp": 100.0,
+        "java": 100.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "Gemma 4 26B (endpoint)",
+      "fulldoc",
+      {
+        "csharp": 100.0,
+        "java": 100.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "Gemma 4 26B (endpoint)",
+      "chunk",
+      {
+        "csharp": 100.0,
+        "java": 90.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "Gemma 4 26B (endpoint)",
+      "graph",
+      {
+        "csharp": 98.33333333333333,
+        "java": 100.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "DeepSeek V4 Flash",
+      "none",
+      {
+        "csharp": 100.0,
+        "java": 100.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "DeepSeek V4 Flash",
+      "fulldoc",
+      {
+        "csharp": 96.66666666666667,
+        "java": 100.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "DeepSeek V4 Flash",
+      "chunk",
+      {
+        "csharp": 98.33333333333333,
+        "java": 100.0,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ],
+    [
+      "DeepSeek V4 Flash",
+      "graph",
+      {
+        "csharp": 100.0,
+        "java": 98.33333333333333,
+        "javascript": 100.0,
+        "python": 100.0,
+        "typescript": 100.0
+      }
+    ]
+  ]
+}

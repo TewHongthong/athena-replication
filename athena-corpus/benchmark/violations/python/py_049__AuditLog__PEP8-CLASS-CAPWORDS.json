@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_049",
+  "language": "python",
+  "originalName": "AuditLog",
+  "injectedName": "audit_log",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'audit_log' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "class audit_log(Base):\n    __tablename__ = \"audit_logs\"\n\n    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)\n    guest_id = Column(UUID(as_uuid=True), index=True, nullable=True)\n    event_id = Column(UUID(as_uuid=True), index=True, nullable=True)\n    action = Column(String(255), nullable=False)\n    timestamp = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

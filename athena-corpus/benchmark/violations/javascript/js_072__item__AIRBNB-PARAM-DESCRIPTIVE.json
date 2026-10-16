@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_072",
+  "language": "javascript",
+  "originalName": "item",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildWeeklyStrategicFocus({sessions=[],candidates=[],recommendations=[],start,end}={}){\n  const relevantSessions=sessions.filter(i=>i.date>=start&&i.date<=end);\n  const candidatesByTopic=new Map(candidates.filter(i=>i.topicId).map(i=>[i.topicId,i]));\n  const totalSeconds=seconds(relevantSessions);\n  const highImpactSeconds=seconds(relevantSessions.filter(i=>isHighImpact(candidatesByTopic.get(i.topicId)?.examImpact)));\n  const unknownSeconds=seconds(relevantSessions.filter(i=>!i.topicId||candidatesByTopic.get(i.topicId)?.examImpact==null));\n  const workedIds=new Set(relevantSessions.filter(i=>{\n    const candidate=candidatesByTopic.get(i.topicId);\n    return isStrategicGap(candidate);\n  }).map(i=>i.topicId));\n  const outcomes=new Map();\n  for(const i of recommendations){\n    if(!workedIds.has(i.topicId)||i.date<start||i.date>end)continue;\n    const measuredDate=localDateFromTimestamp(i.outcome?.measuredAt);\n    if(!measuredDate||measuredDate<start||measuredDate>end)continue;\n    const state=i.outcome?.state;\n    if(!['positive','neutral','negative'].includes(state))continue;\n    const previous=outcomes.get(i.topicId);\n    if(previous!=='positive'&&(state==='positive'||previous!=='negative'))outcomes.set(i.topicId,state);\n  }\n  const values=[...outcomes.values()];\n  return {state:totalSeconds?'available':'insufficient',totalMinutes:Math.round(totalSeconds/60),highImpactMinutes:Math.round(highImpactSeconds/60),unknownMinutes:Math.round(unknownSeconds/60),highImpactPercent:totalSeconds?Math.round(highImpactSeconds/totalSeconds*100):null,workedGaps:workedIds.size,improved:values.filter(value=>value==='positive').length,stable:values.filter(value=>value==='neutral').length,declined:values.filter(value=>value==='negative').length,unmeasured:workedIds.size-outcomes.size};\n}",
+  "occurrencesRenamed": 25,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

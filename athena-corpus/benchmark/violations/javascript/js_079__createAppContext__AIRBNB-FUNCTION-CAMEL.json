@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_079",
+  "language": "javascript",
+  "originalName": "createAppContext",
+  "injectedName": "create_app_context",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'create_app_context' does not match camelCase pattern",
+    "name 'create_app_context' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function create_app_context({storage,repositories={},clock,idGenerator}={}){\n  if(!storage||REQUIRED_STORAGE_METHODS.some(method=>typeof storage[method]!=='function')) throw new TypeError('O contexto requer um provider de armazenamento válido.');\n  if(!clock||typeof clock.today!=='function'||typeof clock.nowISO!=='function') throw new TypeError('O contexto requer um relógio válido.');\n  if(typeof idGenerator!=='function') throw new TypeError('O contexto requer um gerador de IDs.');\n  return Object.freeze({storage,repositories:Object.freeze({...repositories}),clock,idGenerator});\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

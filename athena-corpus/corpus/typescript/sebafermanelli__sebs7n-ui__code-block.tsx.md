@@ -1,0 +1,54 @@
+# docs/site/app/_components/code-block.tsx
+
+- source repo: sebafermanelli/sebs7n-ui
+- repo url: https://github.com/sebafermanelli/sebs7n-ui
+- license: MIT
+- created_at: 2026-09-23T02:47:39Z
+- file path: docs/site/app/_components/code-block.tsx
+- commit: a774dd4d3e4c02918772d5c3182b80ce0a86db3b
+
+```typescript
+"use client"
+
+import { CheckIcon, CopyIcon } from "lucide-react"
+import { useState } from "react"
+import { Button } from "sebs7n-ui/button"
+
+/**
+ * Un bloque de código con su botón de copiar.
+ *
+ * El botón vive **al lado** del `<pre>`, no encima: antes era `absolute` sobre
+ * un `<pre>` con scroll horizontal, y un comando largo pasaba por debajo —el
+ * fondo translúcido del hover dejaba ver el texto a través del botón—. Además
+ * el `top-2` fijo no lo centraba con la única línea de texto. Con flex, el
+ * `<pre>` es el que scrollea, el botón queda centrado a su altura y el texto
+ * nunca lo alcanza.
+ */
+export function CodeBlock({ code, label = "Copiar el código" }: { code: string; label?: string }) {
+  const [copiado, setCopiado] = useState(false)
+  return (
+    <div className="flex items-center gap-2 rounded-surface border border-gray-alpha-400 bg-gray-alpha-100 pr-2 shadow-track">
+      <pre className="min-w-0 flex-1 overflow-x-auto p-4">
+        <code className="text-copy-13-mono text-gray-1000">{code}</code>
+      </pre>
+      <Button
+        aria-label={copiado ? "Copiado" : label}
+        className="shrink-0"
+        onClick={async () => {
+          try {
+            await navigator.clipboard.writeText(code)
+            setCopiado(true)
+            setTimeout(() => setCopiado(false), 1600)
+          } catch {
+            setCopiado(false)
+          }
+        }}
+        size="icon-sm"
+        variant="outline"
+      >
+        {copiado ? <CheckIcon className="text-green-900" /> : <CopyIcon />}
+      </Button>
+    </div>
+  )
+}
+```

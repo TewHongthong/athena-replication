@@ -1,0 +1,47 @@
+{
+  "id": "csharp_021",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Entities/Tag.cs lines 4-11 (class Tag); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public sealed class Tag\n{\n    public int Id { get; set; }\n    public string Name { get; set; } = string.Empty;\n    public int ItemCount { get; set; }\n    public DateTimeOffset CreatedAt { get; set; }\n    public DateTimeOffset UpdatedAt { get; set; }\n}",
+  "identifiers": [
+    {
+      "name": "Tag",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "Name",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "ItemCount",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "CreatedAt",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "UpdatedAt",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Entities/Tag.cs",
+    "startLine": 4,
+    "endLine": 11,
+    "unit": "class Tag",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__Tag.cs.md"
+  }
+}

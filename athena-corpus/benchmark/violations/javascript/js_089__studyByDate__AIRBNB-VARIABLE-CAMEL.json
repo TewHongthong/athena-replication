@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_089",
+  "language": "javascript",
+  "originalName": "studyByDate",
+  "injectedName": "study_by_date",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'study_by_date' does not match camelCase pattern",
+    "name 'study_by_date' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function buildPlanExecution({today,dailyPlans=[],sessions=[],hoursByDay={},historyWeeks=8}={}){\n  const start=weekStart(today);\n  if(!start)return {state:'empty',days:[],history:[]};\n  const plansByDate=new Map(),study_by_date=new Map();\n  for(const plan of dailyPlans){\n    if(!plan.date)continue;\n    const row=plansByDate.get(plan.date)||{count:0,minutes:0};\n    row.count++;row.minutes+=plannedFor(plan);plansByDate.set(plan.date,row);\n  }\n  for(const session of sessions){\n    if(!session.date)continue;\n    study_by_date.set(session.date,(study_by_date.get(session.date)||0)+Math.max(0,Number(session.durationSeconds)||0)/60);\n  }\n  const days=Array.from({length:7},(_,index)=>{\n    const date=addLocalDays(start,index),plan=plansByDate.get(date);\n    return {date,plannedMinutes:plan?plan.minutes:null,studiedMinutes:minutes(study_by_date.get(date)),future:date>today};\n  });\n  const history=Array.from({length:historyWeeks},(_,index)=>{\n    const week=addLocalDays(start,-7*(historyWeeks-index)),dates=Array.from({length:7},(_,day)=>addLocalDays(week,day));\n    const planned=dates.reduce((sum,date)=>sum+(plansByDate.get(date)?.minutes||0),0);\n    const studied=dates.reduce((sum,date)=>sum+minutes(study_by_date.get(date)),0);\n    return {start:week,end:addLocalDays(week,6),plannedMinutes:planned,studiedMinutes:studied,\n      adherence:planned?Math.round(studied/planned*100):null};\n  });\n  const capacityMinutes=Object.values(hoursByDay).reduce((sum,hours)=>sum+Math.max(0,Math.min(24,Number(hours)||0))*60,0);\n  const plannedMinutes=days.reduce((sum,day)=>sum+(day.plannedMinutes||0),0);\n  const studiedMinutes=days.filter(day=>!day.future).reduce((sum,day)=>sum+day.studiedMinutes,0);\n  return {state:plannedMinutes?'ready':'unplanned',days,history,capacityMinutes:minutes(capacityMinutes),plannedMinutes,studiedMinutes,\n    completedWeeks:history.filter(item=>item.adherence!==null).length};\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

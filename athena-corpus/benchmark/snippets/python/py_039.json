@@ -1,0 +1,52 @@
+{
+  "id": "py_039",
+  "language": "python",
+  "source": "github:boongh/ml-exp@55667c29709eb5a612d32dbbc575550ed8a5a443",
+  "sourceDetail": "src/ml_exp/langmodel.py lines 9-24 (class TransformerBlock); license MIT; repo created 2026-09-25T22:40:55Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class TransformerBlock(nn.Module):\n    def __init__(self, head_size, n_embed, n_head, rank_division = 1, dtype=torch.float32, causal=True, dropout_rate=0.1):\n        super().__init__()\n        self.attention = MultiHeadAttention(head_size, n_embed, n_head, dtype=dtype, causal=causal, dropout_rate=dropout_rate)\n        self.ffwdn = MLP_Lowrank(n_embed, n_embed // rank_division, dtype=dtype, dropout_rate=dropout_rate, activation=nn.GELU())\n        self.layer_norm1 = nn.LayerNorm(n_embed, dtype=dtype)\n        self.layer_norm2 = nn.LayerNorm(n_embed, dtype=dtype)\n        self.dropout = nn.Dropout(dropout_rate)\n\n    def forward(self, x):\n        x = self.dropout(x)\n        # x + self.attention() = residual connectiong\n        # Norm before sublayer -> Pre norm formulation\n        x = x + self.attention(self.layer_norm1(x))\n        x = x + self.ffwdn(self.layer_norm2(x))\n        return x",
+  "identifiers": [
+    {
+      "name": "TransformerBlock",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "forward",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "attention",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "head_size",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "n_embed",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "n_head",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "boongh/ml-exp",
+    "repoUrl": "https://github.com/boongh/ml-exp",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T22:40:55Z",
+    "commit": "55667c29709eb5a612d32dbbc575550ed8a5a443",
+    "path": "src/ml_exp/langmodel.py",
+    "startLine": 9,
+    "endLine": 24,
+    "unit": "class TransformerBlock",
+    "corpusFile": "corpus/python/boongh__ml-exp__langmodel.py.md"
+  }
+}

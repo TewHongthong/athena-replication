@@ -1,0 +1,47 @@
+{
+  "id": "csharp_005",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Components/Pages/QueueTabSelection.cs lines 3-14 (class QueueTabSelection); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "internal static class QueueTabSelection\n{\n    public static int InitialIndex(string? requestedTab, int intakeOpen, int modifyOpen)\n    {\n        if (string.Equals(requestedTab, \"history\", StringComparison.OrdinalIgnoreCase)) return 2;\n        return string.Equals(requestedTab, \"modify\", StringComparison.OrdinalIgnoreCase)\n               || (!string.Equals(requestedTab, \"intake\", StringComparison.OrdinalIgnoreCase)\n                   && intakeOpen == 0 && modifyOpen > 0)\n            ? 1\n            : 0;\n    }\n}",
+  "identifiers": [
+    {
+      "name": "QueueTabSelection",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "InitialIndex",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "requestedTab",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "intakeOpen",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "modifyOpen",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Components/Pages/QueueTabSelection.cs",
+    "startLine": 3,
+    "endLine": 14,
+    "unit": "class QueueTabSelection",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__QueueTabSelection.cs.md"
+  }
+}

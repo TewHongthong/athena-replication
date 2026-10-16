@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_027",
+  "language": "typescript",
+  "originalName": "seed",
+  "injectedName": "SEED",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SEED' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "const stars = Array.from({ length: 90 }, (_, index) => {\n  const SEED = Math.sin(index * 91.7) * 10000;\n  const random = SEED - Math.floor(SEED);\n  const seedY = Math.sin(index * 47.3) * 10000;\n  const randomY = seedY - Math.floor(seedY);\n  return { x: random * width, y: randomY * horizon * 0.8, size: 0.6 + (index % 3) * 0.5, phase: index * 0.7 };\n});",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_030",
+  "language": "python",
+  "originalName": "tools",
+  "injectedName": "TOOLS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TOOLS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def chat(\n    self,\n    messages: list[dict],\n    *,\n    TOOLS: list[dict] | None = None,\n    temperature: float | None = None,\n    max_tokens: int | None = None,\n) -> ChatResponse:\n    self.calls += 1\n    last = next(\n        (m for m in reversed(messages) if m.get(\"role\") == \"user\"), {\"content\": \"\"}\n    )\n    content = str(last.get(\"content\", \"\"))\n    digest = hashlib.sha256(content.encode(\"utf-8\")).hexdigest()[:12]\n\n    directive = _directive(content)\n    if directive and not any(m.get(\"role\") == \"tool\" for m in messages):\n        call = ToolCall(\n            id=f\"replay_{digest}\",\n            name=directive[\"name\"],\n            arguments=directive.get(\"arguments\", {}),\n        )\n        return ChatResponse(tool_calls=[call], model=\"replay\", finish_reason=\"tool_calls\")\n\n    return ChatResponse(\n        text=json.dumps(\n            {\"replay\": True, \"sha\": digest, \"chars\": len(content)}, ensure_ascii=False\n        ),\n        tokens_in=len(content) // 4,\n        tokens_out=8,\n        model=\"replay\",\n        finish_reason=\"stop\",\n    )",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

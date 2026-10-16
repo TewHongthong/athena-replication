@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_008",
+  "language": "csharp",
+  "originalName": "WhereaboutsNote",
+  "injectedName": "whereabouts_note",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'whereabouts_note' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public class CheckoutRecord\n{\n    public int Id { get; set; }\n\n    public int ItemId { get; set; }\n\n    /// <summary>Item name, populated by the data layer for list views.</summary>\n    public string? ItemName { get; set; }\n\n    /// <summary>Who has it (a person's name).</summary>\n    public string CheckedOutBy { get; set; } = string.Empty;\n\n    /// <summary>Where it went / any note about its whereabouts.</summary>\n    public string? whereabouts_note { get; set; }\n\n    public DateTimeOffset CheckedOutAt { get; set; }\n\n    public DateOnly? DueDate { get; set; }\n\n    public DateTimeOffset? ReturnedAt { get; set; }\n\n    public string? Notes { get; set; }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

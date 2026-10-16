@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_088",
+  "language": "csharp",
+  "originalName": "FeedBallIntoTurret",
+  "injectedName": "feed_ball_into_turret",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'feed_ball_into_turret' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public void feed_ball_into_turret(GameObject ball)\n{\n    if (!isEnabled || !isReadyToShoot) return;\n\n    Rigidbody ballRb = ball.GetComponent<Rigidbody>();\n    Collider ballCollider = ball.GetComponent<Collider>();\n\n    if (ballRb != null)\n    {\n        StartCoroutine(PropelThroughHood(ball, ballRb, ballCollider));\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

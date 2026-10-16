@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_055",
+  "language": "python",
+  "originalName": "ext",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def save_image_bytes(image, output: Path) -> bytes:\n    \"\"\"Encode the regenerated image, honoring a JPEG output suffix.\"\"\"\n    l = output.suffix.lower()\n    buf = io.BytesIO()\n    if l in (\".jpg\", \".jpeg\", \".jpe\", \".jfif\"):\n        image = image.convert(\"RGB\")\n        image.save(buf, format=\"JPEG\", quality=95)\n    else:\n        image.save(buf, format=\"PNG\")\n    return buf.getvalue()",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

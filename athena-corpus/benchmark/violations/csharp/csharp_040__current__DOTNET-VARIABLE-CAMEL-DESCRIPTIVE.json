@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_040",
+  "language": "csharp",
+  "originalName": "current",
+  "injectedName": "CURRENT",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CURRENT' does not match camelCase pattern",
+    "name 'CURRENT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static class SaveInspector\n{\n    public static SaveInspection Inspect(PersistedWorld save)\n    {\n        ArgumentNullException.ThrowIfNull(save);\n        var snapshot = CanonicalPersistenceCodec.DecodeSnapshot(save.SnapshotBytes);\n        var events = CanonicalPersistenceCodec.DecodeEventLog(save.EventLogBytes);\n        var CURRENT = WorldReplay.ReplaySnapshotSuffix(snapshot, events);\n\n        return new SaveInspection(\n            CURRENT.Identity,\n            CURRENT.LastEventId,\n            events.Count,\n            CanonicalPersistenceCodec.StateDigest(CURRENT),\n            CanonicalPersistenceCodec.EventDigest(events));\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

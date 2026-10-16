@@ -1,0 +1,37 @@
+{
+  "id": "py_066",
+  "language": "python",
+  "source": "github:mchittineni/repo-radar@940230885e4de2998792843235af48bb676401af",
+  "sourceDetail": "scripts/sync_repos.py lines 255-294 (function main); license MIT; repo created 2026-08-19T15:35:28Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def main() -> int:\n    \"\"\"Main function to sync the repository list\"\"\"\n    args = parse_arguments()\n\n    if args.verbose:\n        logger.setLevel(logging.DEBUG)\n\n    logger.info(\"Starting repository list sync\")\n\n    if not GH_TOKEN:\n        logger.warning(\"GH_TOKEN not set; only public repositories are visible and requests are rate limited\")\n\n    try:\n        repos = fetch_all_repos(args.user)\n        names = filter_repos(\n            repos,\n            include_forks=args.include_forks,\n            include_archived=args.include_archived,\n            include_private=args.include_private,\n        )\n\n        if not names:\n            logger.error(f\"No repositories matched the filters for {args.user}\")\n            return 1\n\n        if args.dry_run:\n            logger.info(f\"Dry run: {len(names)} repositories would be written to {args.config}\")\n            for name in names:\n                print(name)\n            return 0\n\n        write_config(args.config, args.user, names)\n        return 0\n\n    except requests.RequestException as e:\n        logger.error(f\"GitHub API request failed: {e}\")\n        return 2\n    except Exception as e:\n        logger.error(f\"Unhandled exception: {e}\")\n        return 3",
+  "identifiers": [
+    {
+      "name": "main",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "repos",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "mchittineni/repo-radar",
+    "repoUrl": "https://github.com/mchittineni/repo-radar",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-19T15:35:28Z",
+    "commit": "940230885e4de2998792843235af48bb676401af",
+    "path": "scripts/sync_repos.py",
+    "startLine": 255,
+    "endLine": 294,
+    "unit": "function main",
+    "corpusFile": "corpus/python/mchittineni__repo-radar__sync_repos.py.md"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_030",
+  "language": "java",
+  "originalName": "json",
+  "injectedName": "JSON",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'JSON' does not match camelCase pattern",
+    "name 'JSON' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void writeFrame(int opcode, String JSON) throws Exception {\n    byte[] data = JSON.getBytes(StandardCharsets.UTF_8);\n    ByteBuffer header = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN);\n    header.putInt(opcode);\n    header.putInt(data.length);\n    ByteBuffer frame = ByteBuffer.allocate(8 + data.length);\n    frame.put(header.array()).put(data).flip();\n    while (frame.hasRemaining()) {\n        pipe.write(frame);\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

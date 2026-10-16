@@ -1,0 +1,38 @@
+{
+  "snippetId": "py_057",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "function",
+  "name": "classify",
+  "codeBare": "def classify(path: Path) -> Kind:\n    \n    ext = path.suffix.lower()\n    if ext in IMAGE_EXTS:\n        return \"image\"\n    if ext in CONTAINER_EXTS:\n        return \"container\"\n    if ext in TEXT_EXTS:\n        return \"text\"\n    if ext in AV_EXTS:\n        return \"av\"\n    with path.open(\"rb\") as fh:\n        head = fh.read(CLASSIFY_HEADER_BYTES)\n    if detect_image_format(head) in (\"png\", \"jpeg\", \"webp\", \"avif\", \"heic\", \"bmp\", \"gif\", \"tiff\"):\n        return \"image\"\n    if detect_av_format(head) != \"unknown\":\n        return \"av\"\n    if head:\n        data = path.read_bytes() if head[:4] == b\"PK\\x03\\x04\" else head\n        sniff_path = Path(\"input\") if not ext else Path(f\"input{ext}\")\n        if detect_container_format(sniff_path, data) != \"unknown\":\n            return \"container\"\n    return \"unknown\"",
+  "referenceComment": "\"\"\"Classify a file on disk by extension, then by its bytes.\n\n    Known extensions are routed without reading the file. For unknown\n    extensions a 4096-byte header is sniffed once; only when the header is a\n    zip local header (PK) is the whole file read, because the container\n    signature (docx/xlsx/pptx/odt/epub) lives in the central directory at\n    the end of the archive.\n    \"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-FUNC"
+  ],
+  "origin": "snippet",
+  "source": "github:guillaumemeyer/watermarks-remover@258cf20cdc2906e24398b3d6f3bc3cbcfd578245",
+  "sourceDetail": "service/scripts/format_dispatch.py lines 160-189 (function classify); license MIT; repo created 2026-08-11; curated by athena-curation-1.0",
+  "referenceCommentLines": 8,
+  "signature": {
+    "params": 1,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "guillaumemeyer/watermarks-remover",
+    "repoUrl": "https://github.com/guillaumemeyer/watermarks-remover",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-11",
+    "commit": "258cf20cdc2906e24398b3d6f3bc3cbcfd578245",
+    "path": "service/scripts/format_dispatch.py",
+    "startLine": 160,
+    "endLine": 189,
+    "unit": "function classify",
+    "corpusFile": "corpus/python/guillaumemeyer__watermarks-remover__format_dispatch.py.md"
+  }
+}

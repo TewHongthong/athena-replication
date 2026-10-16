@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_067",
+  "language": "javascript",
+  "originalName": "score",
+  "injectedName": "s",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 's' shorter than minLength=2",
+    "name 's' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function presentDiagnosisItem(item,{type,reason,action,confidence=null,insufficient=false,evidence=[],explanation=[],secondaryReasons=[]}={}){\n  const confidenceValue=numericValue(confidence);\n  const normalizedConfidence=confidenceValue==null?null:Math.max(0,Math.min(1,confidenceValue));\n  const limited=insufficient||(normalizedConfidence!=null&&normalizedConfidence<.35);\n  const s=Number(item.risk?.value??item.severity??item.opportunityScore??item.reviewUrgency);\n  const severity=type==='focus'?'info':severityFor(Number.isFinite(s)?s:0,limited);\n  const signalLabel=limited?'Evidência limitada':type==='focus'?'Distribuição sugerida':type==='review'?'Revisão prioritária':type==='opportunity'\n    ?s>=70?'Retorno alto':s>=45?'Retorno moderado':'Retorno potencial'\n    :severity==='high'?'Risco alto':severity==='medium'?'Risco moderado':'Risco baixo';\n  const validEvidence=evidence.filter(Boolean),validExplanation=[...evidence,...explanation].filter(Boolean);\n  const explanationSummary={\n    bottleneck:'A leitura combina domínio, retenção, tendência, recência e impacto na prova quando esses dados estão disponíveis.',\n    opportunity:'O potencial considera a lacuna de domínio, a relevância na prova e o esforço estimado quando configurados.',\n    review:'A urgência considera o tempo sem contato, a retenção e o domínio disponíveis para este tópico.',\n    focus:'A distribuição usa a prioridade das disciplinas e a disponibilidade semanal informada.'\n  }[type];\n  return {...item,diagnosisExplanation:validExplanation,diagnosisExplanationSummary:explanationSummary,signalLabel,signalTone:severity==='insufficient'?'neutral':severity==='high'?'high':severity==='medium'?'medium':'low',presentation:{\n    type,severity,confidence:normalizedConfidence,title:titleFor(item),summary:reason,primaryReason:reason,\n    secondaryReasons:secondaryReasons.filter(Boolean).slice(0,2),evidence:validEvidence.slice(0,2),\n    recommendedAction:{label:action.label,type:'navigate',targetId:action.tab}\n  }};\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

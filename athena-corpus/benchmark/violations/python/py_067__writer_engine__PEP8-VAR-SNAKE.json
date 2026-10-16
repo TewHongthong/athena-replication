@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_067",
+  "language": "python",
+  "originalName": "writer_engine",
+  "injectedName": "WRITER_ENGINE",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'WRITER_ENGINE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def build_context(env: Mapping[str, str] | None = None) -> ApiContext:\n    source = env if env is not None else os.environ\n    config = StorageConfig.from_env(\n        host_override=source.get(\"FDP_DATABASE_HOST\")\n    )\n    WRITER_ENGINE = create_write_engine(config)\n    read_engine = create_read_engine(config)\n    return ApiContext(\n        config=config,\n        writer_engine=WRITER_ENGINE,\n        read_engine=read_engine,\n        meta=SqlMetaRepository(WRITER_ENGINE),\n        algorithms=SqlAlgorithmStore(WRITER_ENGINE),\n        registry=RegistryReader(read_engine),\n        specs=load_all(),\n    )",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

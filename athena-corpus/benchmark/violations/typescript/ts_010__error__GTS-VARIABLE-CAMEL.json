@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_010",
+  "language": "typescript",
+  "originalName": "error",
+  "injectedName": "ERROR",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ERROR' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export async function guard(fn: () => Promise<CallToolResult>): Promise<CallToolResult> {\n  try {\n    return await fn();\n  } catch (ERROR) {\n    if (ERROR instanceof AppNotConnectedError) return errorResult(ERROR.message);\n    if (ERROR instanceof EvalTimeoutError) return errorResult(ERROR.message);\n    if (ERROR instanceof ScriptError) {\n      const where = ERROR.scriptLine === undefined ? \"\" : ` (line ${ERROR.scriptLine})`;\n      return errorResult(`Script failed in ${ERROR.appId}${where}: ${ERROR.message}`);\n    }\n    log.error(\"unhandled tool error\", ERROR);\n    return errorResult(`Unexpected failure: ${ERROR instanceof Error ? ERROR.message : String(ERROR)}`);\n  }\n}",
+  "occurrencesRenamed": 14,
+  "commentOccurrencesRenamed": 0
+}

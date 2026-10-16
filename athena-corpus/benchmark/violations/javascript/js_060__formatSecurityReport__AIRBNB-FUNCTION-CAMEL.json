@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_060",
+  "language": "javascript",
+  "originalName": "formatSecurityReport",
+  "injectedName": "format_security_report",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'format_security_report' does not match camelCase pattern",
+    "name 'format_security_report' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function format_security_report({ score, issues }, skillName) {\n  const label = classifyScore(score)\n  const emoji = label === 'safe' ? '✅' : label === 'review' ? '⚠️' : '❌'\n  const header = skillName ? ` ${skillName}` : ''\n  const lines = [\n    `\\n${emoji}${header} Security scan: ${score}/100 — ${label.toUpperCase()}`,\n  ]\n\n  if (issues.length > 0) {\n    for (const issue of issues) {\n      const icon =\n        issue.severity === 'critical'\n          ? '❌'\n          : issue.severity === 'high'\n            ? '🔴'\n            : issue.severity === 'medium'\n              ? '🟡'\n              : '⚪'\n      const file = issue.file ? ` (${issue.file})` : ''\n      lines.push(`   ${icon} [${issue.severity}] ${issue.description}${file}`)\n    }\n    if (label === 'review') {\n      lines.push(`\\n   ⚠️  Recommendation: Review before installing`)\n    } else if (label === 'danger') {\n      lines.push(\n        `\\n   ❌ Recommendation: Blocking install — use --yes to force`,\n      )\n    }\n  } else {\n    lines.push(`   No issues found`)\n  }\n\n  return lines.join('\\n')\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

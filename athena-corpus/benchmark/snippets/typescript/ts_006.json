@@ -1,0 +1,52 @@
+{
+  "id": "ts_006",
+  "language": "typescript",
+  "source": "github:Brainferno/brainferno-mcp-bridge@95695615162b4db4a3189be9dd0ebf9e7d80c129",
+  "sourceDetail": "packages/server/src/index.ts lines 9-42 (function main); license Apache-2.0; repo created 2026-08-26; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "async function main(): Promise<void> {\n  const migrated = migrateLegacyUserDir();\n  if (migrated) log.info(`copied settings from ${migrated} to ~/.brainferno-mcp-bridge (the old folder can be deleted)`);\n  const config = loadConfig();\n\n  const rt = buildRuntime(config);\n  await rt.bridge.ready();\n\n  const server = createMcpServer(rt);\n  const transport = new StdioServerTransport();\n  await server.connect(transport);\n  log.info(\"MCP server ready on stdio\");\n\n  let remote: RunningHttpServer | null = null;\n  if (config.httpPort > 0) {\n    remote = await startHttpServer(() => createMcpServer(rt), { host: config.httpHost, port: config.httpPort, token: config.httpToken });\n  }\n\n  const shutdown = (signal: string) => {\n    void (async () => {\n      log.info(`received ${signal}, shutting down`);\n      await server.close().catch((error: unknown) => log.warn(\"error closing MCP server\", error));\n      if (remote) await remote.close().catch((error: unknown) => log.warn(\"error closing remote listener\", error));\n      await rt.bridge.close().catch((error: unknown) => log.warn(\"error closing bridge\", error));\n      await rt.illustratorDelegate.close().catch((error: unknown) => log.warn(\"error closing delegate\", error));\n      await rt.illustratorBridge.close().catch((error: unknown) => log.warn(\"error closing illustrator bridge\", error));\n      await rt.mediaEncoder.stop().catch((error: unknown) => log.warn(\"error stopping Media Encoder service\", error));\n      process.exit(0);\n    })();\n  };\n\n  process.on(\"SIGINT\", () => shutdown(\"SIGINT\"));\n  process.on(\"SIGTERM\", () => shutdown(\"SIGTERM\"));\n}",
+  "identifiers": [
+    {
+      "name": "main",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "migrated",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "signal",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "config",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "server",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "transport",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Brainferno/brainferno-mcp-bridge",
+    "repoUrl": "https://github.com/Brainferno/brainferno-mcp-bridge",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-08-26",
+    "commit": "95695615162b4db4a3189be9dd0ebf9e7d80c129",
+    "path": "packages/server/src/index.ts",
+    "startLine": 9,
+    "endLine": 42,
+    "unit": "function main",
+    "corpusFile": "corpus/typescript/Brainferno__brainferno-mcp-bridge__packages__server__src__index.ts.md"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "java_069",
+  "language": "java",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/api/companion/IFurkin.java lines 11-33 (interface IFurkin); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public interface IFurkin {\n\n    /** 宠物身份 UUID（跨实体唯一档案主键）。 */\n    UUID getCompanionId();\n\n    /** 主人 UUID。 */\n    UUID getOwnerUuid();\n\n    /** 当前等级。 */\n    int getLevel();\n\n    /** 当前经验。 */\n    int getXp();\n\n    /** 可用技能点。 */\n    int getSkillPoints();\n\n    /** 当前状态机状态（未契约 / 已契约 / 已倒下）。 */\n    String getState();\n\n    /** 是否已契约。 */\n    boolean isCompanion();\n}",
+  "identifiers": [
+    {
+      "name": "IFurkin",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "getCompanionId",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "getOwnerUuid",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "getLevel",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "getXp",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "getSkillPoints",
+      "kind": "method",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/api/companion/IFurkin.java",
+    "startLine": 11,
+    "endLine": 33,
+    "unit": "interface IFurkin",
+    "corpusFile": "corpus/java/wanancat__furkin__IFurkin.java.md"
+  }
+}

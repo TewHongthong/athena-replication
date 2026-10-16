@@ -1,0 +1,52 @@
+{
+  "id": "csharp_027",
+  "language": "csharp",
+  "source": "github:aakk007/RogueCleaner@683fe9c7b025099951acb655f9b1181a4bd0c01e",
+  "sourceDetail": "src/v2/ContextMenuTitleProbe.cs lines 335-342 (interface IEnumExplorerCommand); license MIT; repo created 2026-07-20; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "[ComImport, Guid(\"A88826F8-186F-4987-AADE-EA0CEF8FBFE8\"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]\nprivate interface IEnumExplorerCommand\n{\n    [PreserveSig] int Next(uint count, out IExplorerCommand command, out uint fetched);\n    [PreserveSig] int Skip(uint count);\n    void Reset();\n    void Clone(out IEnumExplorerCommand clone);\n}",
+  "identifiers": [
+    {
+      "name": "IEnumExplorerCommand",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "Next",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "count",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "command",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "fetched",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "Skip",
+      "kind": "method",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "aakk007/RogueCleaner",
+    "repoUrl": "https://github.com/aakk007/RogueCleaner",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-20",
+    "commit": "683fe9c7b025099951acb655f9b1181a4bd0c01e",
+    "path": "src/v2/ContextMenuTitleProbe.cs",
+    "startLine": 335,
+    "endLine": 342,
+    "unit": "interface IEnumExplorerCommand",
+    "corpusFile": "corpus/csharp/aakk007__RogueCleaner__ContextMenuTitleProbe.cs.md"
+  }
+}

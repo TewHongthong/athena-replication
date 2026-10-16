@@ -1,0 +1,52 @@
+{
+  "id": "java_092",
+  "language": "java",
+  "source": "github:xvDoshik/HubSwap@c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+  "sourceDetail": "src/main/java/ru/heldyy/hubswap/config/ModConfig.java lines 209-243 (class ColorTheme); license MIT; repo created 2026-08-04T22:22:23Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public enum ColorTheme {\n    AQUA(\"Синяя\", ChatFormatting.AQUA, 0x00d9ff),\n    RED(\"Красная\", ChatFormatting.RED, 0xff4444),\n    BLUE(\"Голубая\", ChatFormatting.BLUE, 0x5555ff),\n    GREEN(\"Зелёная\", ChatFormatting.GREEN, 0x55ff55),\n    LIGHT_PURPLE(\"Фиолетовая\", ChatFormatting.LIGHT_PURPLE, 0xff55ff),\n    GOLD(\"Золотая\", ChatFormatting.GOLD, 0xffaa00);\n\n    private final String displayName;\n    private final ChatFormatting formatting;\n    private final int rgbColor;\n\n    ColorTheme(String displayName, ChatFormatting formatting, int rgbColor) {\n        this.displayName = displayName;\n        this.formatting = formatting;\n        this.rgbColor = rgbColor;\n    }\n\n    public String getDisplayName() {\n        return displayName;\n    }\n\n    public ChatFormatting getFormatting() {\n        return formatting;\n    }\n\n    public int getRgbColor() {\n        return rgbColor;\n    }\n\n    public ColorTheme next() {\n        ColorTheme[] values = values();\n        return values[(this.ordinal() + 1) % values.length];\n    }\n}",
+  "identifiers": [
+    {
+      "name": "ColorTheme",
+      "kind": "enum",
+      "isCompliant": true
+    },
+    {
+      "name": "getDisplayName",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "AQUA",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "values",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "RED",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "BLUE",
+      "kind": "enum_member",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "xvDoshik/HubSwap",
+    "repoUrl": "https://github.com/xvDoshik/HubSwap",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-04T22:22:23Z",
+    "commit": "c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+    "path": "src/main/java/ru/heldyy/hubswap/config/ModConfig.java",
+    "startLine": 209,
+    "endLine": 243,
+    "unit": "class ColorTheme",
+    "corpusFile": "corpus/java/xvDoshik__HubSwap__ModConfig.java.md"
+  }
+}

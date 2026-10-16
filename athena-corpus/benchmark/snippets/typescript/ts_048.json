@@ -1,0 +1,42 @@
+{
+  "id": "ts_048",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/components/roll/TakeFrame.tsx lines 20-33 (function useArrival); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "function useArrival(createdAt: number) {\n  const fresh = useRef(Date.now() - createdAt < freshWindowMs).current;\n  const arrival = useRef(new Animated.Value(fresh ? 0 : 1)).current;\n\n  useEffect(() => {\n    if (!fresh) return;\n    Animated.timing(arrival, { toValue: 1, duration: 520, easing: motion.shutter, useNativeDriver: motion.native }).start();\n  }, []);\n\n  return {\n    opacity: arrival,\n    transform: [{ translateY: arrival.interpolate({ inputRange: [0, 1], outputRange: [14, 0] }) }],\n  };\n}",
+  "identifiers": [
+    {
+      "name": "useArrival",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "fresh",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "createdAt",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "arrival",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/components/roll/TakeFrame.tsx",
+    "startLine": 20,
+    "endLine": 33,
+    "unit": "function useArrival",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__TakeFrame.tsx.md"
+  }
+}

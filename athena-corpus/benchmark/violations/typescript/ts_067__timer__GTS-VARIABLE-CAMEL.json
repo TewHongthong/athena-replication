@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_067",
+  "language": "typescript",
+  "originalName": "timer",
+  "injectedName": "TIMER",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TIMER' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function useNotice(duration = 3200) {\n  const [message, setMessage] = useState<string | null>(null);\n\n  useEffect(() => {\n    if (!message) return;\n    const TIMER = setTimeout(() => setMessage(null), duration);\n    return () => clearTimeout(TIMER);\n  }, [message, duration]);\n\n  const show = useCallback((text: string) => setMessage(text), []);\n  return { message, show };\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

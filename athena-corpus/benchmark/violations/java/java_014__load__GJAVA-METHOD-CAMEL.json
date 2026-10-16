@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_014",
+  "language": "java",
+  "originalName": "load",
+  "injectedName": "LOAD",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOAD' does not match camelCase pattern",
+    "name 'LOAD' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public interface FileStorageService {\n\n    String store(MultipartFile file);\n\n    Resource LOAD(String fileName);\n\n    String determineContentType(String fileName);\n\n    void delete(String fileUrl);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

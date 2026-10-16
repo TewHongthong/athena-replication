@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_024",
+  "language": "typescript",
+  "originalName": "text",
+  "injectedName": "TEXT",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TEXT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function hashSeed(TEXT: string) {\n  let hash = 2166136261;\n  for (let index = 0; index < TEXT.length; index += 1) {\n    hash ^= TEXT.charCodeAt(index);\n    hash = Math.imul(hash, 16777619);\n  }\n  return (hash >>> 0) / 4294967295;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

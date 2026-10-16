@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_085",
+  "language": "javascript",
+  "originalName": "buildTopicScopeIndex",
+  "injectedName": "build_topic_scope_index",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'build_topic_scope_index' does not match camelCase pattern",
+    "name 'build_topic_scope_index' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function build_topic_scope_index(subjects=[]){\n  const index=new Map();\n  for(const subject of subjects||[])for(const topic of subject?.topics||[]){\n    if(topic?.id)index.set(topic.id,normalizeExamTags(topic.examTags));\n  }\n  return index;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

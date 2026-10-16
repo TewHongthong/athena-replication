@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_055",
+  "language": "csharp",
+  "originalName": "message",
+  "injectedName": "MESSAGE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MESSAGE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class InfobipSmsRequestMapper\n{\n    public static object ToRequestBody(SmsMessage MESSAGE, string defaultFrom) => new\n    {\n        messages = new[]\n        {\n            new\n            {\n                sender = MESSAGE.From ?? defaultFrom,\n                destinations = new[]\n                {\n                    new { to = MESSAGE.To.TrimStart('+') }\n                },\n                content = new\n                {\n                    text = MESSAGE.Body\n                }\n            }\n        }\n    };\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

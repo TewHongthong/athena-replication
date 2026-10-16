@@ -1,0 +1,42 @@
+{
+  "id": "ts_054",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/components/studio/RecordButton.tsx lines 21-33 (function useLoop); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "function useLoop(value: Animated.Value, running: boolean, duration: number) {\n  useEffect(() => {\n    if (!running) {\n      value.setValue(0);\n      return;\n    }\n    const loop = Animated.loop(\n      Animated.timing(value, { toValue: 1, duration, easing: Easing.out(Easing.quad), useNativeDriver: motion.native }),\n    );\n    loop.start();\n    return () => loop.stop();\n  }, [running]);\n}",
+  "identifiers": [
+    {
+      "name": "useLoop",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "loop",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "running",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/components/studio/RecordButton.tsx",
+    "startLine": 21,
+    "endLine": 33,
+    "unit": "function useLoop",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__RecordButton.tsx.md"
+  }
+}

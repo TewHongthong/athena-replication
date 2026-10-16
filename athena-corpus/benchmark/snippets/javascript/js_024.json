@@ -1,0 +1,52 @@
+{
+  "id": "js_024",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/bundle-internal.js lines 22-57 (function resolveBundleFile); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "async function resolveBundleFile(arg) {\n  const isFilePath =\n    arg.endsWith('.json') ||\n    arg.endsWith('.txt') ||\n    arg.startsWith('./') ||\n    arg.startsWith('../') ||\n    arg.startsWith('/') ||\n    arg.startsWith('~')\n  if (isFilePath) {\n    const resolvedPath = expandTilde(arg, process.env.HOME || '/tmp')\n    for (const candidate of [resolvedPath, join(process.cwd(), arg)]) {\n      try {\n        await readFile(candidate, 'utf-8')\n        return candidate\n      } catch {}\n    }\n    throw new Error(`Bundle file not found: ${arg}`)\n  }\n\n  const candidates = [\n    arg,\n    join(process.cwd(), arg),\n    `${arg}.json`,\n    `${arg}.txt`,\n    join(process.cwd(), `${arg}.json`),\n    join(process.cwd(), `${arg}.txt`),\n  ]\n\n  for (const candidate of candidates) {\n    try {\n      await readFile(candidate, 'utf-8')\n      return candidate\n    } catch {}\n  }\n  return null\n}",
+  "identifiers": [
+    {
+      "name": "resolveBundleFile",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "isFilePath",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "arg",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "resolvedPath",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "candidate",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "candidates",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/bundle-internal.js",
+    "startLine": 22,
+    "endLine": 57,
+    "unit": "function resolveBundleFile",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__bundle-internal.js.md"
+  }
+}

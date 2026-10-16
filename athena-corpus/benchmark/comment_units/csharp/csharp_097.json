@@ -1,0 +1,39 @@
+{
+  "snippetId": "csharp_097",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "method",
+  "name": "RemoveWords",
+  "codeBare": "static string RemoveWords(string s, Regex rx, bool requireBoundaries) => rx.Replace(s, m =>\n{\n    bool hasPre = m.Groups[\"pre\"].Success;\n    string post = m.Groups[\"post\"].Success ? m.Groups[\"post\"].Value.Trim() : \"\";\n    bool sentenceStart = !hasPre && IsSentenceStart(s, m.Index);\n    bool boundaryBefore = hasPre || PreviousChar(s, m.Index) == Pause;\n    var rest = s.AsSpan(m.Index + m.Length).TrimStart(' ');\n    bool boundaryAfter = post.Length > 0 || rest.IsEmpty || rest[0] == Pause;\n\n    if (requireBoundaries && !((boundaryBefore || sentenceStart) && boundaryAfter))\n        return m.Value;\n\n    string endPunct = post.Replace(\",\", \"\");\n    if (endPunct.Length > 0) return sentenceStart ? \" \" : endPunct + \" \";\n    return sentenceStart ? \" \" + Cap : \" \";\n});",
+  "referenceComment": "    /// <param name=\"requireBoundaries\">\n    /// When true (verbal fillers like \"like\" / \"you know\"), a phrase is only removed if it stands alone as its\n    /// own clause, e.g. \"It was, like, huge\" or \"You know, I think\". \"I like pizza\" is left alone.\n    /// </param>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-METHOD-FULL",
+    "DOTNET-XMLDOC-METHOD-EXCEPTION"
+  ],
+  "origin": "snippet",
+  "source": "github:yello-gun/BetterSTT@e6ed41b232cfa71e6dcbbadeff51710527e31452",
+  "sourceDetail": "src/BetterSTT/TextCleaner.cs lines 321-336 (method TextCleaner.RemoveWords); license MIT; repo created 2026-09-26T18:41:24Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 4,
+  "signature": {
+    "params": 3,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "param",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "yello-gun/BetterSTT",
+    "repoUrl": "https://github.com/yello-gun/BetterSTT",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:41:24Z",
+    "commit": "e6ed41b232cfa71e6dcbbadeff51710527e31452",
+    "path": "src/BetterSTT/TextCleaner.cs",
+    "startLine": 321,
+    "endLine": 336,
+    "unit": "method TextCleaner.RemoveWords",
+    "corpusFile": "corpus/csharp/yello-gun__BetterSTT__TextCleaner.cs.md"
+  }
+}

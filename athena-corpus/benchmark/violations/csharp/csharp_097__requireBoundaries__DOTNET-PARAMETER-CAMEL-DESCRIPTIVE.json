@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_097",
+  "language": "csharp",
+  "originalName": "requireBoundaries",
+  "injectedName": "require_boundaries",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'require_boundaries' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "static string RemoveWords(string s, Regex rx, bool require_boundaries) => rx.Replace(s, m =>\n{\n    bool hasPre = m.Groups[\"pre\"].Success;\n    string post = m.Groups[\"post\"].Success ? m.Groups[\"post\"].Value.Trim() : \"\";\n    bool sentenceStart = !hasPre && IsSentenceStart(s, m.Index);\n    bool boundaryBefore = hasPre || PreviousChar(s, m.Index) == Pause;\n    var rest = s.AsSpan(m.Index + m.Length).TrimStart(' ');\n    bool boundaryAfter = post.Length > 0 || rest.IsEmpty || rest[0] == Pause;\n\n    if (require_boundaries && !((boundaryBefore || sentenceStart) && boundaryAfter))\n        return m.Value;\n\n    string endPunct = post.Replace(\",\", \"\");\n    if (endPunct.Length > 0) return sentenceStart ? \" \" : endPunct + \" \";\n    return sentenceStart ? \" \" + Cap : \" \";\n});",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_008",
+  "language": "typescript",
+  "originalName": "detail",
+  "injectedName": "DETAIL",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DETAIL' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export const log = {\n  error: (message: string, DETAIL?: unknown) => emit(\"error\", message, DETAIL),\n  warn: (message: string, DETAIL?: unknown) => emit(\"warn\", message, DETAIL),\n  info: (message: string, DETAIL?: unknown) => emit(\"info\", message, DETAIL),\n  debug: (message: string, DETAIL?: unknown) => emit(\"debug\", message, DETAIL),\n};",
+  "occurrencesRenamed": 8,
+  "commentOccurrencesRenamed": 0
+}

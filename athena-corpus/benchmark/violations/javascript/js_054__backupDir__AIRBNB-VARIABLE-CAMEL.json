@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_054",
+  "language": "javascript",
+  "originalName": "backupDir",
+  "injectedName": "backup_dir",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'backup_dir' does not match camelCase pattern",
+    "name 'backup_dir' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export async function backupSkill(slug, fileContents) {\n  const backup_dir = getBackupDir(slug)\n\n  await mkdir(backup_dir, { recursive: true })\n\n  const timestamp = new Date().toISOString().replace(/[:.]/g, '-')\n\n  const backupFile = join(backup_dir, `${timestamp}.json`)\n\n  await writeFile(backupFile, JSON.stringify(fileContents, null, 2), 'utf-8')\n\n  return timestamp\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

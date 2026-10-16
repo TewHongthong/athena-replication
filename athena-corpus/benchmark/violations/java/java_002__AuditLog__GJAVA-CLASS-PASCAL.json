@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_002",
+  "language": "java",
+  "originalName": "AuditLog",
+  "injectedName": "audit_log",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'audit_log' does not match PascalCase pattern",
+    "name 'audit_log' matches forbidden pattern '^[a-z]'",
+    "name 'audit_log' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Entity\n@Getter\n@Setter\n@NoArgsConstructor\n@AllArgsConstructor\n@Builder\n@Table(name = \"audit_logs\", indexes = {\n        @Index(name = \"idx_audit_log_entity\", columnList = \"entity_name, entity_id\"),\n        @Index(name = \"idx_audit_log_performed_at\", columnList = \"performed_at\")\n})\npublic class audit_log {\n\n    @Id\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\n    private Long id;\n\n    @NotBlank\n    @Column(nullable = false)\n    private String entityName;\n\n    private Long entityId;\n\n    @Size(max = 1000)\n    @Column(columnDefinition = \"TEXT\")\n    private String details;\n\n    @NotBlank\n    @Column(nullable = false)\n    private String performedBy;\n\n    @NotNull\n    @Enumerated(EnumType.STRING)\n    @Column(nullable = false)\n    private AuditAction action;\n\n    @CreationTimestamp\n    @Column(nullable = false)\n    private LocalDateTime performedAt;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_034",
+  "language": "csharp",
+  "originalName": "CanExport",
+  "injectedName": "notCanExport",
+  "identifierKind": "boolean_variable",
+  "violatedRuleId": "DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'notCanExport' matches forbidden pattern '^(not|cant|isnt|dont)[A-Z]'"
+  ],
+  "codeContextWithViolation": "public sealed record ContentPackageArtifact(\n    ContentPackageManifest Manifest,\n    IReadOnlyList<AssetProvenanceManifest> Assets)\n{\n    public string ManifestDigest => ContentPackageManifestCodec.ComputeManifestDigest(Manifest);\n\n    public bool notCanExport => Assets.All(asset => asset.notCanExport);\n\n    public static ContentPackageArtifact From(\n        ContentPackageManifest manifest,\n        IEnumerable<NormalizedInertRasterAsset> assets)\n    {\n        ArgumentNullException.ThrowIfNull(manifest);\n        ArgumentNullException.ThrowIfNull(assets);\n        return new(manifest, assets.Select(AssetProvenanceManifest.From).ToArray());\n    }\n\n    public void Validate() => ContentPackageArtifactCodec.Validate(this);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

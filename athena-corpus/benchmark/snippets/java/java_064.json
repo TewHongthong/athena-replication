@@ -1,0 +1,52 @@
+{
+  "id": "java_064",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminToastLayerContractTest.java lines 13-39 (class AdminToastLayerContractTest); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "class AdminToastLayerContractTest {\n  private static final Pattern Z_INDEX = Pattern.compile(\"z-index:\\\\s*(\\\\d+)\");\n\n  @Test\n  void errorToastsRenderAboveRepositoryFormModal() throws IOException {\n    String stylesheet = resource(\"/META-INF/resources/admin/assets/admin.css\");\n\n    assertTrue(zIndex(stylesheet, \".toast-region\") > zIndex(stylesheet, \".form-modal\"),\n        \"repository save errors must remain visible while the form modal is open\");\n  }\n\n  private int zIndex(String stylesheet, String selector) {\n    int selectorStart = stylesheet.indexOf(selector + \" {\");\n    int blockEnd = stylesheet.indexOf('}', selectorStart);\n    assertTrue(selectorStart >= 0 && blockEnd > selectorStart,\n        \"missing CSS block for \" + selector);\n    Matcher matcher = Z_INDEX.matcher(stylesheet.substring(selectorStart, blockEnd));\n    assertTrue(matcher.find(), \"missing z-index for \" + selector);\n    return Integer.parseInt(matcher.group(1));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "identifiers": [
+    {
+      "name": "AdminToastLayerContractTest",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "zIndex",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "stylesheet",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "selector",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "selectorStart",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "blockEnd",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminToastLayerContractTest.java",
+    "startLine": 13,
+    "endLine": 39,
+    "unit": "class AdminToastLayerContractTest",
+    "corpusFile": "corpus/java/klboke__kkRepo__AdminToastLayerContractTest.java.md"
+  }
+}

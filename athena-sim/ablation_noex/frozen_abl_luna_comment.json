@@ -1,0 +1,49 @@
+{
+  "harness_version": "0.1.0",
+  "code_sha256": {
+    "athena/__init__.py": "4b17cf5c0b303903fc4cfe9a3f4b66a7e852812c84b1b87967ba25973a1cd388",
+    "athena/evaluate.py": "266c34e882404bdfba342c70cc0bc39607ced957ae349ca31addc43efc8e50f6",
+    "athena/freeze.py": "dadaca398c13e65a1225f92687edcc0495f078b224e990d64e3e853ebc16f4bc",
+    "athena/llm.py": "0c891ba3cbdc5ea2de374ebd9741f7ec56d9da2c2a4ab80df0d1c4bab3787ffb",
+    "athena/ontology.py": "228123fed0bdcc58280328b7dab171aa6d7aa9148f689998524f14ac8cbc3b41",
+    "athena/packs.py": "518bafabcea41bc928b847bbbd8b35ec1a804674d8baa8b78abb67885259f1bc",
+    "athena/prompts.py": "3f31801e2f9c1055ab978d2d2ee9eb11b91dbc8eb7370521f028888091ffadb9",
+    "athena/report.py": "767efc68a66c67c48b412e26ff5ceff24e355945eab8fd189cbbf7c8126512c0",
+    "athena/retrieval.py": "4e6fb3428060b76802a5f0492374c3fbcaf63c0522f6ac3278abb5da0c139d7f",
+    "athena/runner.py": "b36650fbb439700f5d65d4e7ebe0bb50c7997072e9d834e6cd2ef733ccfda20c",
+    "athena_sim.py": "5c9d300a7d97cc9d992959f111235c1101dba5b4cc3c24f4a0158965d00920b1",
+    "vendor/output_validator.py": "d154237dfca677eacfbed82cf0db332eee19519a70557ff5065d67e0a6aa14da",
+    "ALL": "e8b1091bf62bdb94cdecb3fcaefab8416cdaa29c0bc8a30af75bd0d3640ea0f1"
+  },
+  "pack": {
+    "pack": "gscs",
+    "ontology": "gscs_ontology.json",
+    "ontology_sha256": "99b5ba83efb7b5254bd33069fe172ea45e0a8a036f5b62f4fe62c9bfc7e234a4",
+    "source_sha256": "6c77e8f8365df031a9e4142ed9f5f20a57127b92aa0e83352ad962d514d32281",
+    "units_sha256": "ab3b7fe233c2f51f20fd8aa8ae4878db0a72d9f607aaafe7349b1b4e63dd160e"
+  },
+  "settings": {
+    "pack": "gscs",
+    "task": "comment",
+    "conditions": [
+      "graph",
+      "graph_noex"
+    ],
+    "languages": null,
+    "per_language": 0,
+    "limit": 0,
+    "seed": 42,
+    "top_k": null,
+    "chunk_k": 3,
+    "examples": 2,
+    "backend": "openai:openai/gpt-6-luna",
+    "temperature": 0.2,
+    "max_tokens": 8192,
+    "reasoning_effort": null,
+    "repeats": 3,
+    "split": "test"
+  },
+  "hypotheses_sha256": "cc857a88db2533fe86ccd141d5cd96556018208f89f6f9a8e03848cf8b1ff588",
+  "frozen_at": "2026-10-02T15:31:30+00:00",
+  "note": "ablation graph_noex (ADDENDUM.md): GPT-6 Luna via a hosted OpenAI-compatible API, temperature 0.2, max_tokens 8192"
+}

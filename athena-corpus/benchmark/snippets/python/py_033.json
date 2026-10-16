@@ -1,0 +1,52 @@
+{
+  "id": "py_033",
+  "language": "python",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/taskspec.py lines 72-78 (method TaskSpec.path_for); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def path_for(self, template: str, *, date: str, run_dir: Path | None = None) -> Path:\n    \"\"\"Resolve a task-relative, `{date}`/`{run_dir}` templated path.\"\"\"\n    rendered = render(template, date=date, run_dir=run_dir, extra=self.vars(date=date, run_dir=run_dir))\n    path = Path(rendered).expanduser()\n    if not path.is_absolute():\n        path = self.dir / path\n    return path",
+  "identifiers": [
+    {
+      "name": "path_for",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "rendered",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "template",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "date",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "run_dir",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/taskspec.py",
+    "startLine": 72,
+    "endLine": 78,
+    "unit": "method TaskSpec.path_for",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__taskspec.py.md"
+  }
+}

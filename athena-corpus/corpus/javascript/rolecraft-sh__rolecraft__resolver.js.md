@@ -1,0 +1,635 @@
+# src/utils/resolver.js
+
+- source repo: rolecraft-sh/rolecraft
+- repo url: https://github.com/rolecraft-sh/rolecraft
+- license: MIT
+- created_at: 2026-06-12T15:31:13Z
+- file path: src/utils/resolver.js
+- commit: b74f936ad1dc051aa5b25ce3154fb532597e802a
+
+```javascript
+import { readFile, readdir, stat, rm } from 'node:fs/promises'
+import { createWriteStream } from 'node:fs'
+import { Writable } from 'node:stream'
+import { join, dirname, basename } from 'node:path'
+import { tmpdir } from 'node:os'
+import { execSync as defaultExecSync, spawnSync } from 'node:child_process'
+import { mkdtempSync } from 'node:fs'
+import { get as defaultHttpsGet } from 'node:https'
+import { computeContentHash } from './lockfile.js'
+import { parseFrontmatter } from './converter.js'
+import { UserError } from './errors.js'
+import { expandTilde } from './paths.js'
+
+const SCAN_MAX_DEPTH = 3
+
+let _runExec = defaultExecSync
+let runHttpsGet = defaultHttpsGet
+
+export function setExecSync(fn) {
+  _runExec = fn
+}
+
+export function setHttpsGet(fn) {
+  runHttpsGet = fn
+}
+
+let runSpawn = spawnSync
+
+export function setSpawnSync(fn) {
+  runSpawn = fn
+}
+
+function runGit(args, opts = {}) {
+  const result = runSpawn('git', args, {
+    stdio: 'pipe',
+    timeout: 30000,
+    ...opts,
+  })
+  if (result.error) throw result.error
+  if (result.status !== 0) {
+    const msg =
+      result.stderr?.toString() ||
+      result.stdout?.toString() ||
+      `git exited with code ${result.status}`
+    throw new Error(msg)
+  }
+  return result
+}
+
+export function isGitHubRef(source) {
+  return (
+    /^[\w.-]+\/[\w.-]+$/.test(source) &&
+    !source.startsWith('/') &&
+    !source.startsWith('.')
+  )
+}
+
+function isLocalPath(source) {
+  return (
+    source.startsWith('/') || source.startsWith('.') || source.startsWith('~')
+  )
+}
+
+function parseMetadata(content) {
+  let name, slug, owner, description, category, mcpServers
+
+  const { attrs } = parseFrontmatter(content)
+  if (attrs && Object.keys(attrs).length > 0) {
+    name = attrs.name ? String(attrs.name).trim() : 'unknown'
+    slug = attrs.slug ? String(attrs.slug).trim() : name
+    owner = attrs.owner ? String(attrs.owner).trim() : 'local'
+    description = attrs.description
+      ? String(attrs.description)
+          .trim()
+          .replace(/^["'](.*)["']$/, '$1')
+      : undefined
+    category = attrs.category
+      ? String(attrs.category).trim()
+      : attrs.metadata?.category
+        ? String(attrs.metadata.category).trim()
+        : undefined
+    mcpServers = Array.isArray(attrs.mcp_servers)
+      ? attrs.mcp_servers
+      : undefined
+  }
+
+  if (!slug) {
+    const oldSlugMatch = content.match(/^# slug:\s*(\S+)$/m)
+    const oldNameMatch = content.match(/^name:\s*(\S+)$/m)
+    const oldOwnerMatch = content.match(/^# owner:\s*(\S+)$/m)
+
+    name = oldNameMatch?.[1] || oldSlugMatch?.[1]?.split('/')?.[1] || 'unknown'
+    slug = oldSlugMatch?.[1] || name
+    owner = oldOwnerMatch?.[1] || 'local'
+  }
+
+  return { name, slug, owner, description, category, mcpServers }
+}
+
+async function readFileContents(skillDir) {
+  let entries
+  try {
+    entries = await readdir(skillDir, { withFileTypes: true, recursive: true })
+  } catch {
+    return {}
+  }
+  const files = entries
+    .filter((e) => e.isFile() && !e.name.startsWith('.git'))
+    .map((e) => e.name)
+  const fileContents = {}
+  for (const f of files) {
+    try {
+      fileContents[f] = await readFile(join(skillDir, f), 'utf-8')
+    } catch {}
+  }
+  return fileContents
+}
+
+async function enrichSkill(found) {
+  const fileContents = await readFileContents(found.dir)
+  const files = Object.keys(fileContents)
+  return {
+    name: found.name,
+    slug: found.slug,
+    owner: found.owner,
+    description: found.description,
+    category: found.category,
+    mcpServers: found.mcpServers,
+    content: found.content,
+    files,
+    fileContents,
+    contentSha: computeContentHash(fileContents),
+    skillDir: found.dir,
+  }
+}
+
+async function scanForSkill(dir, maxDepth = SCAN_MAX_DEPTH) {
+  const results = []
+  const seenDirs = new Set()
+
+  async function tryAddSkill(skillDir) {
+    if (seenDirs.has(skillDir)) return
+    const skillPath = join(skillDir, 'SKILL.md')
+    try {
+      const c = await readFile(skillPath, 'utf-8')
+      const meta = parseMetadata(c)
+      seenDirs.add(skillDir)
+      results.push({ dir: skillDir, ...meta, content: c })
+    } catch {
+      // skip unreadable or missing files
+    }
+  }
+
+  const containerCandidates = [
+    join(dir, 'skills'),
+    join(dir, '.agents', 'skills'),
+    join(dir, '.claude', 'skills'),
+    join(dir, '.cursor', 'skills'),
+  ]
+
+  for (const containerDir of containerCandidates) {
+    let entries
+    try {
+      entries = await readdir(containerDir, { withFileTypes: true })
+    } catch {
+      continue
+    }
+    for (const entry of entries) {
+      if (!entry.isDirectory() || entry.name === '.git') continue
+      const skillDir = join(containerDir, entry.name)
+      await tryAddSkill(skillDir)
+      if (!seenDirs.has(skillDir)) {
+        let subEntries
+        try {
+          subEntries = await readdir(skillDir, { withFileTypes: true })
+        } catch {
+          continue
+        }
+        for (const sub of subEntries) {
+          if (!sub.isDirectory() || sub.name === '.git') continue
+          await tryAddSkill(join(skillDir, sub.name))
+        }
+      }
+    }
+  }
+
+  async function scan(currentDir, depth = 0) {
+    if (depth > maxDepth) return
+    let entries
+    try {
+      entries = await readdir(currentDir, { withFileTypes: true })
+    } catch {
+      return
+    }
+    for (const entry of entries) {
+      if (entry.name === '.git') continue
+      const fullPath = join(currentDir, entry.name)
+      if (entry.isDirectory()) {
+        await scan(fullPath, depth + 1)
+      } else if (entry.name === 'SKILL.md') {
+        const skillDir = dirname(fullPath)
+        if (!seenDirs.has(skillDir)) {
+          try {
+            const c = await readFile(fullPath, 'utf-8')
+            const meta = parseMetadata(c)
+            seenDirs.add(skillDir)
+            results.push({ dir: skillDir, ...meta, content: c })
+          } catch {
+            // skip unreadable files
+          }
+        }
+      }
+    }
+  }
+
+  await scan(dir)
+  return results
+}
+
+async function resolveLocalInternal(source) {
+  const expanded = expandTilde(source)
+
+  let skillDir
+  try {
+    const st = await stat(expanded)
+    if (st.isDirectory()) {
+      skillDir = expanded
+    } else if (st.isFile() && basename(expanded) === 'SKILL.md') {
+      skillDir = dirname(expanded)
+    } else {
+      throw new Error(
+        `Source must be a SKILL.md file or a directory containing one`,
+      )
+    }
+  } catch (e) {
+    if (e.message?.startsWith('Source must be')) throw e
+    throw new UserError(`Source not found: "${expanded}"`, {
+      suggestion:
+        'Check that the path exists. You can use a local path (./ or /), GitHub ref (owner/repo), or npm package (npm:package).',
+      code: 'SOURCE_NOT_FOUND',
+    })
+  }
+
+  const directPath = join(skillDir, 'SKILL.md')
+  try {
+    const content = await readFile(directPath, 'utf-8')
+    const meta = parseMetadata(content)
+    const fileContents = await readFileContents(skillDir)
+    const files = Object.keys(fileContents)
+    return {
+      skills: [
+        {
+          ...meta,
+          content,
+          files,
+          fileContents,
+          contentSha: computeContentHash(fileContents),
+          skillDir,
+        },
+      ],
+      sourcePath: source,
+      sourceType: 'local',
+    }
+  } catch {
+    // direct SKILL.md not found, scan recursively
+  }
+
+  const found = await scanForSkill(skillDir)
+  if (found.length === 0) {
+    throw new UserError(`No SKILL.md found in "${skillDir}"`, {
+      suggestion:
+        'Create a SKILL.md file in that directory, or point to a different source.',
+      code: 'NO_SKILL_LOCAL',
+    })
+  }
+
+  const enriched = await Promise.all(found.map(enrichSkill))
+  return { skills: enriched, sourcePath: source, sourceType: 'local' }
+}
+
+async function resolveGitHubInternal(source) {
+  const tmpDir = mkdtempSync(join(tmpdir(), 'rolecraft-gh-'))
+  const url = `https://github.com/${source}.git`
+
+  try {
+    runGit(['clone', '--depth', '1', url, tmpDir])
+  } catch {
+    await rm(tmpDir, { recursive: true, force: true }).catch(() => {})
+    throw new UserError(`Could not download "${source}" from GitHub.`, {
+      suggestion:
+        'Check that the repository exists and is public. If it requires a token, set GITHUB_TOKEN.',
+      code: 'GITHUB_CLONE_FAILED',
+    })
+  }
+
+  try {
+    const found = await scanForSkill(tmpDir)
+
+    if (found.length === 0) {
+      throw new UserError(`No SKILL.md found in GitHub repo "${source}".`, {
+        suggestion:
+          'Make sure the repository contains a SKILL.md file in its root or a subdirectory.',
+        code: 'NO_SKILL_FOUND',
+      })
+    }
+
+    const owner = source.split('/')[0]
+    const enriched = await Promise.all(
+      found.map(async (f) => {
+        const e = await enrichSkill(f)
+        return {
+          ...e,
+          owner: e.owner === 'local' ? owner : e.owner,
+          slug:
+            e.slug === 'unknown' || e.slug === e.name
+              ? `${owner}/${e.name}`
+              : e.slug,
+        }
+      }),
+    )
+    return { skills: enriched, sourcePath: source, sourceType: 'github' }
+  } finally {
+    await rm(tmpDir, { recursive: true, force: true }).catch(() => {})
+  }
+}
+
+function isGitUrl(source) {
+  if (/^https?:\/\/(gitlab|bitbucket)\.com\//.test(source)) return true
+  if (/^git@[\w.-]+:[\w.-]+\/[\w.-]+(\.git)?$/.test(source)) return true
+  if (/^https?:\/\/[\w.-]+\/[\w.-]+\/[\w.-]+(\.git)?$/.test(source)) return true
+  return false
+}
+
+function normalizeGitUrl(source) {
+  if (/^git@/.test(source)) {
+    return source.replace(/^git@([^:]+):/, 'https://$1/')
+  }
+  return source
+}
+
+async function resolveGitUrlInternal(source) {
+  const tmpDir = mkdtempSync(join(tmpdir(), 'rolecraft-git-'))
+  const url = normalizeGitUrl(source)
+
+  try {
+    runGit(['clone', '--depth', '1', url, tmpDir])
+  } catch {
+    throw new Error(`Failed to clone repository from ${source}`)
+  }
+
+  const found = await scanForSkill(tmpDir)
+
+  if (found.length === 0) {
+    await rm(tmpDir, { recursive: true, force: true }).catch(() => {})
+    throw new Error(`No SKILL.md found in repository ${source}`)
+  }
+
+  const enriched = await Promise.all(
+    found.map(async (f) => {
+      const e = await enrichSkill(f)
+      return {
+        ...e,
+        owner: e.owner === 'local' ? 'remote' : e.owner,
+        slug:
+          e.slug === 'unknown' || e.slug === e.name
+            ? `remote/${e.name}`
+            : e.slug,
+      }
+    }),
+  )
+
+  await rm(tmpDir, { recursive: true, force: true }).catch(() => {})
+
+  return { skills: enriched, sourcePath: source, sourceType: 'git' }
+}
+
+function isNpmRef(source) {
+  return source.startsWith('npm:')
+}
+
+function parseNpmRef(source) {
+  const npmPart = source.slice(4)
+  if (!npmPart) throw new Error(`Invalid npm reference: "${source}"`)
+  let pkgName, version
+
+  if (npmPart.startsWith('@')) {
+    const slashIdx = npmPart.indexOf('/')
+    if (slashIdx === -1) throw new Error(`Invalid npm reference: "${source}"`)
+    const rest = npmPart.slice(slashIdx + 1)
+    const atIdx = rest.indexOf('@')
+    if (atIdx > 0) {
+      pkgName = npmPart.slice(0, slashIdx + 1 + atIdx)
+      version = rest.slice(atIdx + 1)
+    } else {
+      pkgName = npmPart
+      version = 'latest'
+    }
+  } else {
+    const atIdx = npmPart.lastIndexOf('@')
+    if (atIdx > 0) {
+      pkgName = npmPart.slice(0, atIdx)
+      version = npmPart.slice(atIdx + 1)
+    } else {
+      pkgName = npmPart
+      version = 'latest'
+    }
+  }
+
+  return { pkgName, version }
+}
+
+function fetchJson(url) {
+  const parsed = new URL(url)
+  const hostname = parsed.hostname
+  if (!hostname.endsWith('.npmjs.org') && hostname !== 'npmjs.org') {
+    throw new Error(`Fetch not allowed from ${hostname}`)
+  }
+  const cleanUrl = `https://${hostname}${parsed.pathname}${parsed.search}`
+  return new Promise((resolve, reject) => {
+    const req = runHttpsGet(
+      cleanUrl,
+      { headers: { Accept: 'application/json' } },
+      (res) => {
+        let data = ''
+        res.on('data', (chunk) => {
+          data += chunk.toString()
+        })
+        res.on('end', () => {
+          if (res.statusCode !== 200) {
+            reject(
+              new Error(
+                `npm registry returned HTTP ${res.statusCode} for ${cleanUrl}`,
+              ),
+            )
+            return
+          }
+          try {
+            resolve(JSON.parse(data))
+          } catch (e) {
+            reject(new Error(`Invalid JSON from npm registry: ${e.message}`))
+          }
+        })
+        res.on('error', reject)
+      },
+    )
+    req.on('error', reject)
+  })
+}
+
+async function downloadFile(url, dest) {
+  const parsed = new URL(url)
+  const dlHost = parsed.hostname
+  if (dlHost !== 'registry.npmjs.org') {
+    throw new Error(`Download not allowed from ${dlHost}`)
+  }
+  const dlUrl = `https://${dlHost}${parsed.pathname}${parsed.search}`
+
+  const response = await fetch(dlUrl)
+  if (!response.ok) {
+    throw new Error(`Failed to download: HTTP ${response.status}`)
+  }
+
+  const fileStream = createWriteStream(dest)
+  const writable = Writable.toWeb(fileStream)
+  await response.body.pipeTo(writable)
+}
+
+async function resolveNpmInternal(source) {
+  const { pkgName, version } = parseNpmRef(source)
+  const encodedName = encodeURIComponent(pkgName)
+
+  let metadata
+  try {
+    metadata = await fetchJson(`https://registry.npmjs.org/${encodedName}`)
+  } catch (e) {
+    throw new UserError(`Could not fetch npm package "${pkgName}".`, {
+      suggestion:
+        'Check that the package name is correct and your internet is working.',
+      detail: e.message,
+      code: 'NPM_FETCH_FAILED',
+    })
+  }
+
+  const ver = version === 'latest' ? metadata['dist-tags']?.latest : version
+  if (!ver)
+    throw new UserError(`No "latest" tag found for npm package "${pkgName}".`, {
+      suggestion: 'Specify a version explicitly (e.g. npm:package@1.0.0).',
+      code: 'NPM_NO_LATEST',
+    })
+
+  const pkgVersionData = metadata.versions?.[ver]
+  if (!pkgVersionData)
+    throw new Error(`Version "${ver}" not found for npm package "${pkgName}"`)
+
+  const tarballUrl = pkgVersionData.dist?.tarball
+  if (!tarballUrl)
+    throw new UserError(
+      `No download URL found for npm package "${pkgName}@${ver}".`,
+      {
+        suggestion: 'The package may have been unpublished or removed.',
+        code: 'NPM_NO_TARBALL',
+      },
+    )
+
+  const tmpDir = mkdtempSync(join(tmpdir(), 'rolecraft-npm-'))
+  const tarballPath = join(tmpDir, 'package.tgz')
+
+  try {
+    await downloadFile(tarballUrl, tarballPath)
+
+    // Validate tarball entries before extraction (prevent path traversal)
+    const listResult = runSpawn('tar', ['-tf', tarballPath], {
+      stdio: 'pipe',
+      timeout: 10000,
+    })
+    if (listResult.status === 0) {
+      const entries = listResult.stdout.toString().split('\n').filter(Boolean)
+      const dangerous = entries.some(
+        (e) => e.includes('..') || e.startsWith('/'),
+      )
+      if (dangerous) {
+        throw new Error(
+          `Tarball contains unsafe path entries: ${entries.find((e) => e.includes('..') || e.startsWith('/'))}`,
+        )
+      }
+    }
+
+    const tarResult = runSpawn('tar', ['-xzf', tarballPath, '-C', tmpDir], {
+      stdio: 'pipe',
+      timeout: 30000,
+    })
+    if (tarResult.error) throw tarResult.error
+    if (tarResult.status !== 0)
+      throw new Error(`tar extraction failed with code ${tarResult.status}`)
+  } catch (e) {
+    await rm(tmpDir, { recursive: true, force: true }).catch(() => {})
+    throw new UserError(`Could not process npm package "${pkgName}@${ver}".`, {
+      suggestion:
+        'The package may be corrupted. Try again or use a different version.',
+      detail: e.message,
+      code: 'NPM_DOWNLOAD_FAILED',
+    })
+  }
+
+  let packageDir
+  try {
+    packageDir = join(tmpDir, 'package')
+    const found = await scanForSkill(packageDir)
+
+    if (found.length === 0) {
+      throw new UserError(
+        `No SKILL.md found in npm package "${pkgName}@${ver}".`,
+        {
+          suggestion:
+            'This npm package does not contain a SKILL.md file. Check the package contents on npmjs.com.',
+          code: 'NPM_NO_SKILL',
+        },
+      )
+    }
+
+    const enriched = await Promise.all(
+      found.map(async (f) => {
+        const e = await enrichSkill(f)
+        return {
+          ...e,
+          owner: e.owner === 'local' ? pkgName : e.owner,
+          slug:
+            e.slug === 'unknown' || e.slug === e.name
+              ? `${pkgName}/${e.name}`
+              : e.slug,
+        }
+      }),
+    )
+    return { skills: enriched, sourcePath: source, sourceType: 'npm' }
+  } finally {
+    await rm(tmpDir, { recursive: true, force: true }).catch(() => {})
+  }
+}
+
+function pickFirst({ skills, sourcePath, sourceType }) {
+  if (skills.length === 0) {
+    throw new UserError('No skills found in the given source.', {
+      suggestion:
+        'Make sure the source contains at least one SKILL.md file with valid frontmatter.',
+      code: 'NO_SKILLS',
+    })
+  }
+  return { ...skills[0], sourcePath, sourceType }
+}
+
+async function resolveAll(source) {
+  if (isNpmRef(source)) {
+    return await resolveNpmInternal(source)
+  }
+  if (isGitHubRef(source)) {
+    return await resolveGitHubInternal(source)
+  }
+  if (isLocalPath(source)) {
+    return await resolveLocalInternal(source)
+  }
+  if (isGitUrl(source)) {
+    return await resolveGitUrlInternal(source)
+  }
+
+  throw new UserError(`Invalid source: "${source}"`, {
+    suggestion:
+      'Use a local path (./my-skill), GitHub ref (owner/repo), git URL, or npm package (npm:package).',
+    code: 'INVALID_SOURCE',
+  })
+}
+
+export async function resolveSource(source) {
+  const result = await resolveAll(source)
+  return pickFirst(result)
+}
+
+export async function resolveSkills(source) {
+  const result = await resolveAll(source)
+  return result.skills.map((s) => ({
+    ...s,
+    sourcePath: result.sourcePath,
+    sourceType: result.sourceType,
+  }))
+}
+```

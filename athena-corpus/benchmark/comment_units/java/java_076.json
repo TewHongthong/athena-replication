@@ -1,0 +1,37 @@
+{
+  "snippetId": "java_076",
+  "language": "java",
+  "standardId": "GOOGLE_JAVA",
+  "identifierKind": "class",
+  "name": "FurkinProvider",
+  "codeBare": "public final class FurkinProvider implements ICapabilitySerializable<CompoundTag> {\n\n    private final FurkinData data = new FurkinData();\n    private final LazyOptional<FurkinData> holder = LazyOptional.of(() -> data);\n\n    @NotNull\n    @Override\n    public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {\n        if (cap == FurkinCapability.FURKIN_DATA) {\n            return holder.cast();\n        }\n        return LazyOptional.empty();\n    }\n\n    @Override\n    public CompoundTag serializeNBT() {\n        return data.serializeNBT();\n    }\n\n    @Override\n    public void deserializeNBT(CompoundTag nbt) {\n        data.deserializeNBT(nbt);\n    }\n\n    /** 使能力失效（实体被移除时调用）。 */\n    public void invalidate() {\n        holder.invalidate();\n    }\n}",
+  "referenceComment": "/**\n * {@link FurkinData} 的 provider，挂到实体上暴露能力。\n *\n * <p>每个实体持有一个独立的 {@link FurkinData} 实例，随实体生命周期走。</p>\n */",
+  "ruleIds": [
+    "GJAVA-JAVADOC-CLASS-REQUIRED",
+    "GJAVA-JAVADOC-PARAGRAPHS"
+  ],
+  "origin": "snippet",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/capability/FurkinProvider.java lines 17-45 (class FurkinProvider); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 5,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/capability/FurkinProvider.java",
+    "startLine": 17,
+    "endLine": 45,
+    "unit": "class FurkinProvider",
+    "corpusFile": "corpus/java/wanancat__furkin__FurkinProvider.java.md"
+  }
+}

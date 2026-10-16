@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_082",
+  "language": "typescript",
+  "originalName": "radios",
+  "injectedName": "Radios",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'Radios' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function variables(config: GlassConfig): Record<string, string> {\n  const salida: Record<string, string> = {}\n  if (config.brand) {\n    salida[\"--brand-base\"] = cssOfOklch(config.brand)\n    salida[\"--brand-contrast\"] = textoSobre(config.brand).hex\n  }\n  // Sin un brand propio para oscuro, el oscuro usa el de claro: es lo que hace el paquete\n  // (`--brand-base-dark: var(--brand-base)`), pero el sitio lo pisa en su globals.css y por eso\n  // acá hay que escribirlo.\n  const oscuro = config.brandDark ?? config.brand\n  if (oscuro) {\n    salida[\"--brand-base-dark\"] = cssOfOklch(oscuro)\n    salida[\"--brand-contrast-dark\"] = textoSobre(oscuro).hex\n  }\n  if (config.glass !== DEFAULTS.glass) salida[\"--glass\"] = String(config.glass)\n  if (config.tint !== DEFAULTS.tint) salida[\"--glass-tint\"] = String(config.tint)\n  if (config.ambient && config.luz !== DEFAULTS.luz) salida[\"--ambient\"] = String(config.luz)\n  if (config.radios !== DEFAULTS.radios) {\n    const Radios = RADIOS[config.radios]\n    salida[\"--radius-control\"] = Radios.control\n    salida[\"--radius-surface\"] = Radios.surface\n    salida[\"--radius-panel\"] = Radios.panel\n  }\n  return salida\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

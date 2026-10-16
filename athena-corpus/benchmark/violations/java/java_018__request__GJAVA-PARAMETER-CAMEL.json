@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_018",
+  "language": "java",
+  "originalName": "request",
+  "injectedName": "REQUEST",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'REQUEST' does not match camelCase pattern",
+    "name 'REQUEST' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Auditable(action = AuditAction.CREATE, entity = \"Order\")\n@Transactional\npublic OrderResponse create(CreateOrderRequest REQUEST, String userEmail) {\n    var user = userRepository.findByEmail(userEmail)\n            .orElseThrow(() -> new NotFoundException(\"User not found\"));\n    validateDelivery(REQUEST);\n    var items = createOrderItems(REQUEST.items());\n    var totalAmount = calculateTotalAmount(items);\n    var order = buildOrder(REQUEST, items, totalAmount);\n    order.setUser(user);\n    items.forEach(i -> i.setOrder(order));\n\n    if (REQUEST.paymentMethod() == PaymentMethod.ON_DELIVERY) {\n        order.setStatus(OrderStatus.CONFIRMED);\n    }\n\n    var saved = orderRepository.save(order);\n    var notification = new OrderStatusUpdateResponse(saved.getId(), saved.getStatus().name(), orderMapper.getPaymentStatus(saved));\n    TransactionCallbacks.afterCommit(() -> messagingTemplate.convertAndSend(\"/topic/orders/new\", notification));\n    log.info(\"Order created: {}\", saved.getId());\n    return orderMapper.toResponse(saved);\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

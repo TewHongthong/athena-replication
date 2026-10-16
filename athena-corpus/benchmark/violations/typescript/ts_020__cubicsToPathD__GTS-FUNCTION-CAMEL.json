@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_020",
+  "language": "typescript",
+  "originalName": "cubicsToPathD",
+  "injectedName": "cubics_to_path_d",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'cubics_to_path_d' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function cubics_to_path_d(paths: readonly CubicPath[]): string {\n  let d = \"\";\n  for (const { pts, closed } of paths) {\n    d += `M${fmtCanon(pts[0])} ${fmtCanon(pts[1])}`;\n    for (let i = 2; i < pts.length; i += 6) {\n      d += `C${fmtCanon(pts[i])} ${fmtCanon(pts[i + 1])} ${fmtCanon(pts[i + 2])} ${fmtCanon(\n        pts[i + 3],\n      )} ${fmtCanon(pts[i + 4])} ${fmtCanon(pts[i + 5])}`;\n    }\n    if (closed) d += \"Z\";\n  }\n  return d;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

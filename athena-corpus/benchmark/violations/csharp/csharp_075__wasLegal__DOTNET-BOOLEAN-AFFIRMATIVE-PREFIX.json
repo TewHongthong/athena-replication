@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_075",
+  "language": "csharp",
+  "originalName": "wasLegal",
+  "injectedName": "notWasLegal",
+  "identifierKind": "boolean_variable",
+  "violatedRuleId": "DOTNET-BOOLEAN-AFFIRMATIVE-PREFIX",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'notWasLegal' matches forbidden pattern '^(not|cant|isnt|dont)[A-Z]'"
+  ],
+  "codeContextWithViolation": "private void OnTriggerEnter(Collider other)\n{\n    if (other.CompareTag(\"GamePiece\"))\n    {\n        bool notWasLegal = false;\n        if (other.TryGetComponent<ShotData>(out ShotData shotData))\n        {\n            notWasLegal = shotData.wasShotFromLegalZone;\n        }\n\n        if (hub != null)\n        {\n            hub.countFuel(notWasLegal);\n        }\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

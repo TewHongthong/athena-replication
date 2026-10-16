@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_059",
+  "language": "java",
+  "originalName": "resource",
+  "injectedName": "RESOURCE",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RESOURCE' does not match camelCase pattern",
+    "name 'RESOURCE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "class AdminPypiRemoteIndexPathContractTest {\n\n  @Test\n  void pypiProxyFormPreservesAnEmptyRemoteIndexPath() throws IOException {\n    String index = RESOURCE(\"/META-INF/resources/admin/index.html\");\n    String javascript = RESOURCE(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(index.contains(\"id=\\\"repository-pypi-index-path\\\"\"));\n    assertTrue(index.contains(\"<span class=\\\"field-label\\\">Remote Index Path\"));\n    assertTrue(index.contains(\"data-tooltip=\\\"PyPI proxy only.\"));\n    assertTrue(index.contains(\"Leave this empty\"));\n    assertTrue(index.contains(\"Client URLs remain under /simple\"));\n    assertFalse(index.contains(\"id=\\\"repository-pypi-index-path-note\\\"\"));\n    assertTrue(javascript.contains(\"format === \\\"pypi\\\" && type === \\\"PROXY\\\"\"));\n    assertFalse(javascript.contains(\"repository-pypi-index-path-note\"));\n    assertTrue(javascript.contains(\"payload.pypi = {\"));\n    assertTrue(javascript.contains(\"repo.pypi?.indexPath ?? \\\"/simple\\\"\"));\n    assertTrue(javascript.contains(\n        \"document.getElementById(\\\"repository-pypi-index-path\\\").value = \\\"/simple\\\";\"));\n  }\n\n  private String RESOURCE(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

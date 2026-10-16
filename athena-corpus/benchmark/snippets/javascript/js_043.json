@@ -1,0 +1,52 @@
+{
+  "id": "js_043",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/commands/convert.js lines 74-110 (function convertSingleFile); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "async function convertSingleFile(inputPath, format, outDir, options) {\n  const content = await readFile(inputPath, 'utf-8')\n  if (!content.trim()) {\n    throw new Error(`Source is empty: ${inputPath}`)\n  }\n\n  if (options.dryRun) {\n    console.log(`  Would convert: ${inputPath}`)\n    if (format === 'skill') {\n      const parsed = parseFrontmatter(content)\n      const slug = parsed.attrs.slug || parsed.attrs.name || 'skill'\n      console.log(`  To:           ${join(outDir, `${slug}.mdc`)}`)\n    } else {\n      console.log(`  To:           ${join(outDir, 'SKILL.md')}`)\n    }\n    return\n  }\n\n  await mkdir(outDir, { recursive: true })\n\n  if (format === 'skill') {\n    const parsed = parseFrontmatter(content)\n    const slug = (parsed.attrs.slug || parsed.attrs.name || 'skill').replace(\n      /\\//g,\n      '-',\n    )\n    const outPath = join(outDir, `${slug}.mdc`)\n    await writeFile(outPath, skillToMdc(content), 'utf-8')\n    console.log(`  Converted:    ${inputPath}`)\n    console.log(`  To:           ${outPath}`)\n  } else {\n    const outPath = join(outDir, 'SKILL.md')\n    await writeFile(outPath, mdcToSkill(content, basename(inputPath)), 'utf-8')\n    console.log(`  Converted:    ${inputPath}`)\n    console.log(`  To:           ${outPath}`)\n  }\n}",
+  "identifiers": [
+    {
+      "name": "convertSingleFile",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "content",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "inputPath",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "format",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "outDir",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "options",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/commands/convert.js",
+    "startLine": 74,
+    "endLine": 110,
+    "unit": "function convertSingleFile",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_commands_convert.js.md"
+  }
+}

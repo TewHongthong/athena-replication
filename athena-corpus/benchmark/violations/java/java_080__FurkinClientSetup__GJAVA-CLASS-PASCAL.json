@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_080",
+  "language": "java",
+  "originalName": "FurkinClientSetup",
+  "injectedName": "furkin_client_setup",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'furkin_client_setup' does not match PascalCase pattern",
+    "name 'furkin_client_setup' matches forbidden pattern '^[a-z]'",
+    "name 'furkin_client_setup' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Mod.EventBusSubscriber(modid = FurkinMod.MODID, value = Dist.CLIENT,\n        bus = Mod.EventBusSubscriber.Bus.MOD)\npublic final class furkin_client_setup {\n\n    private furkin_client_setup() {\n    }\n\n    @SubscribeEvent\n    public static void onClientSetup(FMLClientSetupEvent event) {\n        // enqueueWork：屏幕注册表不是线程安全的，官方要求在客户端主线程里注册。\n        event.enqueueWork(() -> MenuScreens.register(\n                ModMenus.FURKIN_POUCH.get(), FurkinPanelScreen::new));\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

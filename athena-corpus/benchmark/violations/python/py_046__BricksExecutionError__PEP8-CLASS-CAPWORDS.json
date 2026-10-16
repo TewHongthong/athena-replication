@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_046",
+  "language": "python",
+  "originalName": "BricksExecutionError",
+  "injectedName": "bricks_execution_error",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'bricks_execution_error' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "class bricks_execution_error(BricksError):\n    \"\"\"Raised when a brick raises an exception at runtime.\n\n    Attributes:\n        brick: The brick name that failed.\n        step: The step name in the blueprint.\n        cause: The original exception.\n    \"\"\"\n\n    def __init__(self, message: str, brick: str, step: str, cause: Exception) -> None:\n        \"\"\"Initialise the error.\n\n        Args:\n            message: Human-readable description.\n            brick: Name of the failing brick.\n            step: Name of the failing step.\n            cause: Original exception that was raised.\n        \"\"\"\n        super().__init__(message)\n        self.brick = brick\n        self.step = step\n        self.cause = cause",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

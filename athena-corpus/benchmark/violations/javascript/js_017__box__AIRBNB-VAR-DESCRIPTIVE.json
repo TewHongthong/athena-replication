@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_017",
+  "language": "javascript",
+  "originalName": "box",
+  "injectedName": "b",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'b' shorter than minLength=2",
+    "name 'b' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function toast(msg, kind = 'info', ms = 3400){\n  const b = document.getElementById('toasts');\n  if (!b) return;\n  const el = document.createElement('div');\n  el.className = 'toast t-' + kind;\n  el.textContent = msg;\n  b.appendChild(el);\n  setTimeout(() => {\n    el.style.transition = 'opacity .25s';\n    el.style.opacity = '0';\n    setTimeout(() => el.remove(), 260);\n  }, ms);\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

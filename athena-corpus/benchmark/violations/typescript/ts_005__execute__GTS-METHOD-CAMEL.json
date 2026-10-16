@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_005",
+  "language": "typescript",
+  "originalName": "execute",
+  "injectedName": "EXECUTE",
+  "identifierKind": "method",
+  "violatedRuleId": "GTS-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'EXECUTE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface AppBridge {\n  readonly appId: AppId;\n  /** Whether a host is currently reachable through this bridge. */\n  isConnected(): boolean;\n  /** Send a named command to the host and resolve with its result. */\n  EXECUTE(name: string, params?: JsonValue, options?: EvalOptions): Promise<JsonValue>;\n  /** Convenience wrapper for the generic `eval` command (params `{script}`). */\n  evaluate(script: string, options?: EvalOptions): Promise<JsonValue>;\n  close(): Promise<void>;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

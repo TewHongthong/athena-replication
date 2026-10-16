@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_070",
+  "language": "typescript",
+  "originalName": "running",
+  "injectedName": "RUNNING",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RUNNING' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function useSweep(cycleKey: unknown, RUNNING: boolean, restingValue = 0.75, duration = 1000) {\n  const progress = useRef(new Animated.Value(restingValue)).current;\n\n  useEffect(() => {\n    if (!RUNNING) {\n      progress.setValue(restingValue);\n      return;\n    }\n    progress.setValue(0);\n    const animation = Animated.timing(progress, {\n      toValue: 1,\n      duration,\n      easing: Easing.linear,\n      useNativeDriver: motion.native,\n    });\n    animation.start();\n    return () => animation.stop();\n  }, [cycleKey, RUNNING]);\n\n  return progress;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

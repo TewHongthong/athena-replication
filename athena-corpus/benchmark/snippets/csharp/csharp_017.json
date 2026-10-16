@@ -1,0 +1,52 @@
+{
+  "id": "csharp_017",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Entities/MealPlan.cs lines 10-20 (class MealPlan); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public sealed class MealPlan\n{\n    public int Id { get; set; }\n    public string Name { get; set; } = string.Empty;\n    public DateOnly StartDate { get; set; }\n    public DateOnly EndDate { get; set; }\n    public string? Notes { get; set; }\n    public List<MealPlanEntry> Entries { get; set; } = [];\n    public DateTimeOffset CreatedAt { get; set; }\n    public DateTimeOffset UpdatedAt { get; set; }\n}",
+  "identifiers": [
+    {
+      "name": "MealPlan",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "Name",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "StartDate",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "EndDate",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "Notes",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "Entries",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Entities/MealPlan.cs",
+    "startLine": 10,
+    "endLine": 20,
+    "unit": "class MealPlan",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__MealPlan.cs.md"
+  }
+}

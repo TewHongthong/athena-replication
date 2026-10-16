@@ -1,0 +1,42 @@
+{
+  "id": "csharp_023",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/SqliteConnectionFactory.cs lines 16-29 (class SqliteConnectionFactory); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public class SqliteConnectionFactory(string connectionString) : IDbConnectionFactory\n{\n    public async Task<IDbConnection> OpenAsync(CancellationToken ct = default)\n    {\n        var conn = new SqliteConnection(connectionString);\n        await conn.OpenAsync(ct);\n        await using (var pragma = conn.CreateCommand())\n        {\n            pragma.CommandText = \"PRAGMA foreign_keys = ON;\";\n            await pragma.ExecuteNonQueryAsync(ct);\n        }\n        return conn;\n    }\n}",
+  "identifiers": [
+    {
+      "name": "SqliteConnectionFactory",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "OpenAsync",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "conn",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "pragma",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/SqliteConnectionFactory.cs",
+    "startLine": 16,
+    "endLine": 29,
+    "unit": "class SqliteConnectionFactory",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__SqliteConnectionFactory.cs.md"
+  }
+}

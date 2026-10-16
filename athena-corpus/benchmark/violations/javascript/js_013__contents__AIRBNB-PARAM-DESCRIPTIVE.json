@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_013",
+  "language": "javascript",
+  "originalName": "contents",
+  "injectedName": "c",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'c' shorter than minLength=2",
+    "name 'c' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function runCli(c, options = {}) {\n  const { nodeArgs = [], timeout = CLI_TIMEOUT_MS } = options;\n  const directory = fs.mkdtempSync(path.join(os.tmpdir(), \"validate-findings-\"));\n  const findingsPath = path.join(directory, \"findings.json\");\n  try {\n    fs.writeFileSync(findingsPath, c);\n    return spawnSync(process.execPath, [...nodeArgs, validatorPath, findingsPath], {\n      encoding: \"utf8\",\n      timeout,\n    });\n  } finally {\n    fs.rmSync(directory, { recursive: true, force: true });\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

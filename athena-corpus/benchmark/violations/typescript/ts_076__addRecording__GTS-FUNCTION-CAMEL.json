@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_076",
+  "language": "typescript",
+  "originalName": "addRecording",
+  "injectedName": "add_recording",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'add_recording' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export async function add_recording(input: NewRecording) {\n  const stored = await readAll();\n  const id = createId();\n  const target = new File(takesDirectory(), `${id}.${fileExtension(input.mimeType)}`);\n  await new File(input.uri).move(target);\n  const recording: Recording = {\n    id,\n    take: nextTake(stored),\n    uri: target.uri,\n    mimeType: input.mimeType,\n    createdAt: Date.now(),\n    durationMs: input.durationMs,\n    facing: input.facing,\n    source: input.source,\n  };\n  await writeAll([recording, ...stored]);\n  return recording;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

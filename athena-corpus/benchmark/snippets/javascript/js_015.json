@@ -1,0 +1,42 @@
+{
+  "id": "js_015",
+  "language": "javascript",
+  "source": "github:maheeeeeeen/assurex-claim-engine@efe52055e383877d0555a86bb366271c74bec50b",
+  "sourceDetail": "frontend/src/api/auth.js lines 10-22 (const authAPI); license MIT; repo created 2026-09-25T19:19:10Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export const authAPI = {\n  login: (identifier, password) =>\n    api.post('/api/auth/login', { username: identifier, email: identifier, password }),\n\n  register: (userData) =>\n    api.post('/api/auth/register', userData),\n\n  getProfile: () =>\n    api.get('/api/auth/profile'),\n\n  updateProfile: (data) =>\n    api.put('/api/auth/profile', data),\n};",
+  "identifiers": [
+    {
+      "name": "authAPI",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "identifier",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "userData",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "data",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "maheeeeeeen/assurex-claim-engine",
+    "repoUrl": "https://github.com/maheeeeeeen/assurex-claim-engine",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T19:19:10Z",
+    "commit": "efe52055e383877d0555a86bb366271c74bec50b",
+    "path": "frontend/src/api/auth.js",
+    "startLine": 10,
+    "endLine": 22,
+    "unit": "const authAPI",
+    "corpusFile": "corpus/javascript/maheeeeeeen__assurex-claim-engine__auth.js.md"
+  }
+}

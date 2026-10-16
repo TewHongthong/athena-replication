@@ -1,0 +1,47 @@
+{
+  "id": "js_037",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/rollback.js lines 134-140 (function addHistoryBack); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "async function addHistoryBack(slug, entry, lockPath) {\n  const lock = await readLock(lockPath)\n  if (!lock.skills[slug]) return\n  if (!lock.skills[slug].history) lock.skills[slug].history = []\n  lock.skills[slug].history.push(entry)\n  await writeLock(lock, lockPath)\n}",
+  "identifiers": [
+    {
+      "name": "addHistoryBack",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "lock",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "slug",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "entry",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "lockPath",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/rollback.js",
+    "startLine": 134,
+    "endLine": 140,
+    "unit": "function addHistoryBack",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__rollback.js.md"
+  }
+}

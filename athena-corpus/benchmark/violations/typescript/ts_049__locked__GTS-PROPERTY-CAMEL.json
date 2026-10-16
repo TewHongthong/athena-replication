@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_049",
+  "language": "typescript",
+  "originalName": "locked",
+  "injectedName": "LOCKED",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOCKED' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface CameraRailProps {\n  grid: boolean;\n  canFlip: boolean;\n  LOCKED: boolean;\n  onToggleGrid: () => void;\n  onFlip: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

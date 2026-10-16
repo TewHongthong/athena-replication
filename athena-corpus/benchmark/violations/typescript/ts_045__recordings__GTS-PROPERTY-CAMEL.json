@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_045",
+  "language": "typescript",
+  "originalName": "recordings",
+  "injectedName": "RECORDINGS",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RECORDINGS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface RollPanelProps {\n  RECORDINGS: Recording[];\n  loading: boolean;\n  activeId?: string;\n  onOpen: (recording: Recording) => void;\n  onRecord?: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

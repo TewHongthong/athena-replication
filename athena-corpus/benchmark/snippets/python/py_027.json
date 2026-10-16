@@ -1,0 +1,52 @@
+{
+  "id": "py_027",
+  "language": "python",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/memory.py lines 22-42 (class MemoryEntry); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@dataclass\nclass MemoryEntry:\n    path: Path\n    kind: str\n    title: str\n    date: str = \"\"\n    task: str = \"\"\n    tags: list[str] = field(default_factory=list)\n    source: str = \"\"\n    body: str = \"\"\n\n    def as_dict(self) -> dict[str, Any]:\n        return {\n            \"path\": str(self.path),\n            \"kind\": self.kind,\n            \"title\": self.title,\n            \"date\": self.date,\n            \"task\": self.task,\n            \"tags\": self.tags,\n            \"source\": self.source,\n        }",
+  "identifiers": [
+    {
+      "name": "MemoryEntry",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "as_dict",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "kind",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "title",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "date",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/memory.py",
+    "startLine": 22,
+    "endLine": 42,
+    "unit": "class MemoryEntry",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__memory.py.md"
+  }
+}

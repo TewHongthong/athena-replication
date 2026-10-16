@@ -1,0 +1,42 @@
+{
+  "id": "py_044",
+  "language": "python",
+  "source": "github:determlab/bricks@6d401933bb7ae3024637171f649f7066edf256b2",
+  "sourceDetail": "src/bricks/core/selector.py lines 20-41 (class BrickSelector); license MIT; repo created 2026-06-11T00:07:52Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class BrickSelector(ABC):\n    \"\"\"Protocol for selecting relevant bricks from a registry for a given task.\n\n    Stage 1 of the two-stage architecture. Narrows a large registry\n    down to a small pool of bricks relevant to the task at hand.\n\n    Concrete implementations:\n    - AllBricksSelector: returns everything (default, for small registries)\n    \"\"\"\n\n    @abstractmethod\n    def select(self, task: str, registry: BrickRegistry) -> BrickRegistry:\n        \"\"\"Select relevant bricks for a task.\n\n        Args:\n            task: Natural language task description.\n            registry: Full brick registry to select from.\n\n        Returns:\n            A new BrickRegistry containing only the selected bricks.\n        \"\"\"\n        ...",
+  "identifiers": [
+    {
+      "name": "BrickSelector",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "select",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "task",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "registry",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "determlab/bricks",
+    "repoUrl": "https://github.com/determlab/bricks",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-11T00:07:52Z",
+    "commit": "6d401933bb7ae3024637171f649f7066edf256b2",
+    "path": "src/bricks/core/selector.py",
+    "startLine": 20,
+    "endLine": 41,
+    "unit": "class BrickSelector",
+    "corpusFile": "corpus/python/determlab__bricks__selector.py.md"
+  }
+}

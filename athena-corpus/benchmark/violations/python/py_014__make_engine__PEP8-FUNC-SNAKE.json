@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_014",
+  "language": "python",
+  "originalName": "make_engine",
+  "injectedName": "MAKE_ENGINE",
+  "identifierKind": "function",
+  "violatedRuleId": "PEP8-FUNC-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MAKE_ENGINE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def MAKE_ENGINE(url: str) -> Engine:\n    is_sqlite = url.startswith(\"sqlite\")\n    engine = create_engine(\n        url,\n        connect_args={\"check_same_thread\": False} if is_sqlite else {},\n        pool_pre_ping=not is_sqlite,\n    )\n    if is_sqlite:\n\n        @event.listens_for(engine, \"connect\")\n        def _sqlite_pragmas(dbapi_connection, _record):  # pragma: no cover - driver hook\n            cursor = dbapi_connection.cursor()\n            cursor.execute(\"PRAGMA journal_mode=WAL\")\n            cursor.execute(\"PRAGMA foreign_keys=ON\")\n            cursor.execute(\"PRAGMA synchronous=NORMAL\")\n            cursor.execute(\"PRAGMA busy_timeout=5000\")\n            cursor.close()\n\n    return engine",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

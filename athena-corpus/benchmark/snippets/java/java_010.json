@@ -1,0 +1,52 @@
+{
+  "id": "java_010",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/auth/PasswordResetService.java lines 58-76 (method PasswordResetService.resetPassword); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Transactional\npublic void resetPassword(String resetToken, String newPassword) {\n    var tokenEntity = tokenService.validateAndGetToken(resetToken, TokenType.PASSWORD_RESET);\n    var user = tokenEntity.getUser();\n\n    if (passwordEncoder.matches(newPassword, user.getPassword())) {\n        throw new BadRequestException(\"New password must be different from old password\");\n    }\n\n    var oldTokenVersion = user.getTokenVersion();\n    user.setPassword(passwordEncoder.encode(newPassword));\n    user.setTokenVersion(oldTokenVersion + 1);\n    userRepository.save(user);\n\n    tokenService.invalidateAllByUserAndType(user.getId(), TokenType.PASSWORD_RESET);\n    eventPublisher.publishEvent(new UserSessionsInvalidatedEvent(this, user.getEmail(), oldTokenVersion));\n    mailService.sendPasswordChangedNotification(user.getEmail());\n    log.info(\"Password reset for {}\", user.getEmail());\n}",
+  "identifiers": [
+    {
+      "name": "resetPassword",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "tokenEntity",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "resetToken",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "newPassword",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "user",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "oldTokenVersion",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/auth/PasswordResetService.java",
+    "startLine": 58,
+    "endLine": 76,
+    "unit": "method PasswordResetService.resetPassword",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__PasswordResetService.java.md"
+  }
+}

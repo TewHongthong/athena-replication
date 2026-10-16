@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_084",
+  "language": "csharp",
+  "originalName": "Update",
+  "injectedName": "update",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'update' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "private void update()\n{\n    if (!isEnabled) return;\n\n    bool deployPressed = Input.GetKeyDown(intakeKey)\n        || (PlayerInputHandler.Instance != null && PlayerInputHandler.Instance.DeployPressedThisFrame());\n\n    if (deployPressed)\n    {\n        isDeployed = !isDeployed;\n    }\n\n    Vector3 targetPosition = isDeployed ? extendedPosition : retractedPosition;\n\n    transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * lerpSpeed);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

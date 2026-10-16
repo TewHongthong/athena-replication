@@ -1,0 +1,37 @@
+{
+  "id": "ts_081",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_components/docs-nav.tsx lines 10-26 (function DocsNav); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function DocsNav({ nav }: { nav: Grupo[] }) {\n  const pathname = usePathname()\n  return (\n    <>\n      {nav.map((grupo) => (\n        <SidebarGroup key={grupo.id}>\n          <SidebarGroupLabel>{grupo.title}</SidebarGroupLabel>\n          {grupo.items.map((item) => (\n            <SidebarItem active={pathname === item.href} key={item.href} render={<Link href={item.href} />}>\n              {item.title}\n            </SidebarItem>\n          ))}\n        </SidebarGroup>\n      ))}\n    </>\n  )\n}",
+  "identifiers": [
+    {
+      "name": "pathname",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "grupo",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_components/docs-nav.tsx",
+    "startLine": 10,
+    "endLine": 26,
+    "unit": "function DocsNav",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__docs-nav.tsx.md"
+  }
+}

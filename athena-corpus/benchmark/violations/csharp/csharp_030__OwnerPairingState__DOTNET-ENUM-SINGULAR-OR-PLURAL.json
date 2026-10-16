@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_030",
+  "language": "csharp",
+  "originalName": "OwnerPairingState",
+  "injectedName": "owner_pairing_state",
+  "identifierKind": "enum",
+  "violatedRuleId": "DOTNET-ENUM-SINGULAR-OR-PLURAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'owner_pairing_state' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum owner_pairing_state\n{\n    Pending,\n    Approved,\n    Active,\n    Expired,\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

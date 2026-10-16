@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_071",
+  "language": "typescript",
+  "originalName": "limitSeconds",
+  "injectedName": "limit_seconds",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'limit_seconds' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface TakeRecorderOptions {\n  viewfinder: RefObject<ViewfinderHandle | null>;\n  limit_seconds: number;\n  countdownSeconds: number;\n  facing: Facing;\n  source: CaptureSource;\n  onCapture: (input: NewRecording) => Promise<Recording>;\n  onFinished: (recording: Recording) => void;\n  onError: (message: string) => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

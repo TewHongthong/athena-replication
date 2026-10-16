@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_068",
+  "language": "javascript",
+  "originalName": "item",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildErrorAnalysisViewModel({current,previous=null,periodLabel=''}={}){\n  if(!current||current.state==='empty')return {state:'empty',totalErrors:0,items:[],message:'Nenhum erro registrado neste recorte.'};\n  const items=[...Object.keys(LABELS).map(key=>({key,label:LABELS[key],icon:ICONS[key],value:current.categories[key]||0,previous:previous?.categories?.[key]||0})),{key:'uncategorized',label:'Sem categoria',icon:'○',value:current.uncategorized||0,previous:previous?.uncategorized||0}].map(i=>({...i,delta:i.value-i.previous}));\n  const dominant=current.dominant,diagnosis=dominant?dominant.share+'% dos erros categorizados vêm de '+LABELS[dominant.key].toLowerCase()+'.':'Ainda não há evidência suficiente para definir uma causa dominante.';\n  const action=dominant?dominant.recommendation.action:'Continue categorizando os erros para receber uma ação confiável.';\n  return {state:current.state,totalErrors:current.totalErrors,categorizedErrors:current.categorizedErrors,coverage:current.coverage,confidence:current.confidence,periodLabel,items,dominant,diagnosis,action,recommendedMode:current.recommendedMode,hasPrevious:Boolean(previous?.totalErrors),algorithmVersion:current.algorithmVersion};\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

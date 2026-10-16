@@ -1,0 +1,6 @@
+{"run_id": "dsv4f_gscs_rename", "event": "start", "backend": "openai:deepseek/deepseek-v4-flash", "rerun": false, "trials": 1464, "ts": "2026-10-01T03:13:05+00:00"}
+{"run_id": "dsv4f_gscs_rename", "event": "end", "status": "interrupted (resume with --run-id dsv4f_gscs_rename)", "trials_ok": 47, "trials_error": 0, "ts": "2026-10-01T03:19:28+00:00"}
+{"run_id": "dsv4f_gscs_rename", "event": "start", "backend": "openai:deepseek/deepseek-v4-flash", "rerun": false, "trials": 1464, "ts": "2026-10-01T03:20:02+00:00"}
+{"run_id": "dsv4f_gscs_rename", "event": "end", "status": "complete", "trials_ok": 1412, "trials_error": 5, "ts": "2026-10-01T04:05:03+00:00"}
+{"run_id": "dsv4f_gscs_rename", "event": "start", "backend": "openai:deepseek/deepseek-v4-flash", "rerun": false, "trials": 1464, "ts": "2026-10-01T04:37:45+00:00"}
+{"run_id": "dsv4f_gscs_rename", "event": "end", "status": "complete", "trials_ok": 5, "trials_error": 0, "ts": "2026-10-01T04:38:31+00:00"}

@@ -1,0 +1,39 @@
+{
+  "snippetId": "py_056",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "function",
+  "name": "load_token_ids",
+  "codeBare": "def load_token_ids(raw: str) -> list[int]:\n    \n    stripped = raw.strip()\n    if stripped.startswith(\"[\"):\n        data = json.loads(stripped)\n        if not isinstance(data, list) or not all(isinstance(x, int) for x in data):\n            raise ValueError(\"token-id JSON must be an array of integers\")\n        return data\n    ids: list[int] = []\n    for raw_line in stripped.splitlines():\n        line = raw_line.strip()\n        if not line:\n            continue\n        ids.append(int(line, 0))\n    return ids",
+  "referenceComment": "\"\"\"Parse a token-id input: a JSON array, or one integer per line.\"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-FUNC"
+  ],
+  "origin": "snippet",
+  "source": "github:guillaumemeyer/watermarks-remover@258cf20cdc2906e24398b3d6f3bc3cbcfd578245",
+  "sourceDetail": "service/scripts/detect_gumbel.py lines 74-88 (function load_token_ids); license MIT; repo created 2026-08-11; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 1,
+    "returns": true,
+    "throws": true
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns",
+    "throws"
+  ],
+  "provenance": {
+    "repo": "guillaumemeyer/watermarks-remover",
+    "repoUrl": "https://github.com/guillaumemeyer/watermarks-remover",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-11",
+    "commit": "258cf20cdc2906e24398b3d6f3bc3cbcfd578245",
+    "path": "service/scripts/detect_gumbel.py",
+    "startLine": 74,
+    "endLine": 88,
+    "unit": "function load_token_ids",
+    "corpusFile": "corpus/python/guillaumemeyer__watermarks-remover__detect_gumbel.py.md"
+  }
+}

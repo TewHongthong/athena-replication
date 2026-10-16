@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_054",
+  "language": "typescript",
+  "originalName": "loop",
+  "injectedName": "LOOP",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOOP' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function useLoop(value: Animated.Value, running: boolean, duration: number) {\n  useEffect(() => {\n    if (!running) {\n      value.setValue(0);\n      return;\n    }\n    const LOOP = Animated.loop(\n      Animated.timing(value, { toValue: 1, duration, easing: Easing.out(Easing.quad), useNativeDriver: motion.native }),\n    );\n    LOOP.start();\n    return () => LOOP.stop();\n  }, [running]);\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

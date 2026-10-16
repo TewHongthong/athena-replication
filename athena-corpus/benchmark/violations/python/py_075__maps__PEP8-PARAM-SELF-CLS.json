@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_075",
+  "language": "python",
+  "originalName": "maps",
+  "injectedName": "MAPS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MAPS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def cnn_predict(MAPS: list, final: dict, bias: np.ndarray) -> np.ndarray:\n    dev = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\n    model = SmallCNN().to(dev)\n    model.load_state_dict(torch.load(CNN_DIR / final[\"run\"] / \"model.pt\", map_location=dev))\n    model.eval()\n    x = torch.from_numpy(np.stack([resize(m) for m in MAPS])).to(dev)\n    with torch.no_grad():\n        logp = torch.cat([torch.log_softmax(model(to_input(x[i:i + 1024])), 1) for i in range(0, len(x), 1024)])\n    return (logp.cpu().numpy() + (bias if final[\"variant\"] == \"calibrated\" else 0)).argmax(1)",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

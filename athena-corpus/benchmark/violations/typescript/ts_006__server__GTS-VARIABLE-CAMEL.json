@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_006",
+  "language": "typescript",
+  "originalName": "server",
+  "injectedName": "SERVER",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SERVER' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "async function main(): Promise<void> {\n  const migrated = migrateLegacyUserDir();\n  if (migrated) log.info(`copied settings from ${migrated} to ~/.brainferno-mcp-bridge (the old folder can be deleted)`);\n  const config = loadConfig();\n\n  const rt = buildRuntime(config);\n  await rt.bridge.ready();\n\n  const SERVER = createMcpServer(rt);\n  const transport = new StdioServerTransport();\n  await SERVER.connect(transport);\n  log.info(\"MCP server ready on stdio\");\n\n  let remote: RunningHttpServer | null = null;\n  if (config.httpPort > 0) {\n    remote = await startHttpServer(() => createMcpServer(rt), { host: config.httpHost, port: config.httpPort, token: config.httpToken });\n  }\n\n  const shutdown = (signal: string) => {\n    void (async () => {\n      log.info(`received ${signal}, shutting down`);\n      await SERVER.close().catch((error: unknown) => log.warn(\"error closing MCP server\", error));\n      if (remote) await remote.close().catch((error: unknown) => log.warn(\"error closing remote listener\", error));\n      await rt.bridge.close().catch((error: unknown) => log.warn(\"error closing bridge\", error));\n      await rt.illustratorDelegate.close().catch((error: unknown) => log.warn(\"error closing delegate\", error));\n      await rt.illustratorBridge.close().catch((error: unknown) => log.warn(\"error closing illustrator bridge\", error));\n      await rt.mediaEncoder.stop().catch((error: unknown) => log.warn(\"error stopping Media Encoder service\", error));\n      process.exit(0);\n    })();\n  };\n\n  process.on(\"SIGINT\", () => shutdown(\"SIGINT\"));\n  process.on(\"SIGTERM\", () => shutdown(\"SIGTERM\"));\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

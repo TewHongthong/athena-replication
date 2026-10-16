@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_078",
+  "language": "python",
+  "originalName": "destination",
+  "injectedName": "DESTINATION",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DESTINATION' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def copy_tracked_source(DESTINATION: Path) -> int:\n    \"\"\"Copy current bytes for tracked paths into an isolated source tree.\"\"\"\n    listing = subprocess.run(\n        [\"git\", \"ls-files\", \"-z\"],\n        cwd=ROOT,\n        check=True,\n        capture_output=True,\n    ).stdout\n    copied = 0\n    for raw_path in listing.split(b\"\\0\"):\n        if not raw_path:\n            continue\n        relative = Path(os.fsdecode(raw_path))\n        if relative.is_absolute() or \"..\" in relative.parts:\n            raise RuntimeError(f\"git returned an unsafe tracked path: {relative}\")\n        source = ROOT / relative\n        if not source.is_file():\n            # A deleted tracked file is part of the current working tree too;\n            # do not resurrect its contents from HEAD.\n            continue\n        target = DESTINATION / relative\n        target.parent.mkdir(parents=True, exist_ok=True)\n        shutil.copyfile(source, target)\n        shutil.copymode(source, target)\n        copied += 1\n    if copied == 0:\n        raise RuntimeError(\"git returned no current tracked source files\")\n    return copied",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

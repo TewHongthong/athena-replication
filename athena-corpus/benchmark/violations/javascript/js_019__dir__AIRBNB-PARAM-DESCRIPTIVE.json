@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_019",
+  "language": "javascript",
+  "originalName": "dir",
+  "injectedName": "d",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'd' shorter than minLength=2",
+    "name 'd' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function getTestCount() {\n  if (_testCount !== null) return _testCount\n  let count = 0\n  function countTestsInDir(d) {\n    try {\n      const entries = readdirSync(d, { withFileTypes: true })\n      for (const entry of entries) {\n        const fullPath = join(d, entry.name)\n        if (\n          entry.isDirectory() &&\n          entry.name !== 'node_modules' &&\n          entry.name !== '__fixtures__'\n        ) {\n          countTestsInDir(fullPath)\n        } else if (\n          entry.isFile() &&\n          (entry.name.endsWith('.test.js') || entry.name.endsWith('.test.mjs'))\n        ) {\n          const content = readFileSync(fullPath, 'utf-8')\n          const stripped = content.replace(/\\/\\/.*$/gm, '')\n          const itMatches = stripped.match(/\\bit\\b\\s*\\(/g)\n          const testMatches = stripped.match(/\\btest\\b\\s*\\(/g)\n          count += (itMatches?.length || 0) + (testMatches?.length || 0)\n        }\n      }\n    } catch {}\n  }\n  countTestsInDir(join(ROOT, 'src'))\n  countTestsInDir(join(ROOT, 'bin'))\n  countTestsInDir(join(ROOT, 'e2e'))\n  _testCount = count\n  return _testCount\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

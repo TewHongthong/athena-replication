@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_065",
+  "language": "python",
+  "originalName": "details_pattern",
+  "injectedName": "DETAILS_PATTERN",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DETAILS_PATTERN' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def extract_repo_sections(content: str) -> tuple[list[dict[str, str]], list[str]]:\n    \"\"\"\n    Extract repository sections from README content.\n\n    Supports both the current <details> format and the legacy ## 📂 format.\n    \"\"\"\n    repo_info = []\n    raw_sections = []\n\n    DETAILS_PATTERN = r'<!-- repo:(.*?) -->\\s*<details>[\\s\\S]*?</details>'\n    for match in re.finditer(DETAILS_PATTERN, content):\n        repo_name = match.group(1).strip()\n        section_text = match.group(0)\n        raw_sections.append(section_text)\n        repo_info.append({\n            \"name\": repo_name,\n            \"url\": \"\",\n            \"text\": section_text,\n        })\n\n    if repo_info:\n        return repo_info, raw_sections\n\n    section_pattern = r'## 📂 \\[(.*?)\\]\\((.*?)\\)[\\s\\S]*?(?=## 📂|<!-- repo:|\\Z)'\n    for match in re.finditer(section_pattern, content):\n        section_text = match.group(0)\n        raw_sections.append(section_text)\n        repo_info.append({\n            \"name\": match.group(1),\n            \"url\": match.group(2),\n            \"text\": section_text,\n        })\n\n    return repo_info, raw_sections",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

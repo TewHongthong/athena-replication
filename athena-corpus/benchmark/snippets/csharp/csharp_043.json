@@ -1,0 +1,52 @@
+{
+  "id": "csharp_043",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Simulation/World/GeographyGenerator.cs lines 7-14 (class WorldSizePreset); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public enum WorldSizePreset\n{\n    Small,\n    Medium,\n    Large,\n    Huge,\n    Mega,\n}",
+  "identifiers": [
+    {
+      "name": "WorldSizePreset",
+      "kind": "enum",
+      "isCompliant": true
+    },
+    {
+      "name": "Small",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Medium",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Large",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Huge",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Mega",
+      "kind": "enum_member",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Simulation/World/GeographyGenerator.cs",
+    "startLine": 7,
+    "endLine": 14,
+    "unit": "class WorldSizePreset",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__GeographyGenerator.cs.md"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_010",
+  "language": "javascript",
+  "originalName": "runCli",
+  "injectedName": "run_cli",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'run_cli' does not match camelCase pattern",
+    "name 'run_cli' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "function run_cli(contents, options = {}) {\n  const { nodeArgs = [], timeout = CLI_TIMEOUT_MS } = options;\n  const directory = fs.mkdtempSync(path.join(os.tmpdir(), \"validate-coverage-ledger-\"));\n  const ledgerPath = path.join(directory, \"coverage-ledger.json\");\n  try {\n    fs.writeFileSync(ledgerPath, contents);\n    return spawnSync(process.execPath, [...nodeArgs, validatorPath, ledgerPath], {\n      encoding: \"utf8\",\n      timeout,\n    });\n  } finally {\n    fs.rmSync(directory, { recursive: true, force: true });\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_045",
+  "language": "java",
+  "originalName": "stopOnCooldown",
+  "injectedName": "stop_on_cooldown",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'stop_on_cooldown' does not match camelCase pattern",
+    "name 'stop_on_cooldown' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public static boolean shieldBreakActive(long durationMs, boolean stop_on_cooldown) {\n    boolean inWindow = System.currentTimeMillis() - lastShieldBreakAt < durationMs;\n    if (!inWindow) {\n        return false;\n    }\n    if (!stop_on_cooldown) {\n        return true;\n    }\n    MinecraftClient mc = MinecraftClient.getInstance();\n    try {\n        if (mc.player == null) {\n            return false;\n        }\n        var cooldowns = mc.player.getItemCooldownManager();\n        var main = mc.player.getMainHandStack();\n        var off = mc.player.getOffHandStack();\n        return (!main.isEmpty() && cooldowns.isCoolingDown(main))\n                || (!off.isEmpty() && cooldowns.isCoolingDown(off));\n    } catch (Throwable ignored) {\n        return true;\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

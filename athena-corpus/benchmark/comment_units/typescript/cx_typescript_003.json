@@ -1,0 +1,33 @@
+{
+  "snippetId": "cx_typescript_003",
+  "language": "typescript",
+  "standardId": "GOOGLE_TS",
+  "identifierKind": "method",
+  "name": "step",
+  "codeBare": "step(dt: number): boolean {\n  const h = 1 / 240;\n  const steps = Math.max(1, Math.min(16, Math.ceil(dt / h)));\n  const s = dt / steps;\n  for (let i = 0; i < steps; i++) {\n    const a = this.k * (1 - this.x) - this.c * this.v;\n    this.v += a * s;\n    this.x += this.v * s;\n  }\n  return Math.abs(1 - this.x) < 0.001 && Math.abs(this.v) < 0.02;\n}",
+  "referenceComment": "  /** Advances dt seconds. Returns true on settle (|1−x| < 0.001 ∧ |v| < 0.02). */",
+  "ruleIds": [
+    "GTS-JSDOC-METHOD-PARAMS"
+  ],
+  "origin": "extra",
+  "source": "github:guillermolg00/morphicons@38d2a7221633a453eeafebd872ee3649b9274b22",
+  "sourceDetail": "src/core/spring.ts lines 25-35 (method Spring.step); license MIT; repo created 2026-08-01; curated by athena-comment-units-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 1,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "guillermolg00/morphicons",
+    "path": "src/core/spring.ts",
+    "startLine": 25,
+    "endLine": 35,
+    "corpusFile": "corpus/typescript/guillermolg00__morphicons__spring.ts.md"
+  }
+}

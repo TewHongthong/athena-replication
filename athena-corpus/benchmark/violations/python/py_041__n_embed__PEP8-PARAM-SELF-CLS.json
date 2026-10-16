@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_041",
+  "language": "python",
+  "originalName": "n_embed",
+  "injectedName": "N_EMBED",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'N_EMBED' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class SineusoidalPositionalEncoding(nn.Module):\n    def __init__(self, N_EMBED, dtype=torch.float32, sinusoidal_base = 10000.0, max_len=5000):\n        super().__init__()\n        pe = torch.zeros(max_len, N_EMBED, dtype=dtype)\n        self.gamma = nn.Parameter(torch.ones(1, N_EMBED, dtype=dtype))\n        position = torch.arange(0, max_len, dtype=dtype).unsqueeze(1)\n        div_term = torch.exp(torch.arange(0, N_EMBED, 2, dtype=dtype) * (-torch.log(torch.tensor(sinusoidal_base, dtype=dtype)) / N_EMBED))\n        pe[:, 0::2] = torch.sin(position * div_term)\n        pe[:, 1::2] = torch.cos(position * div_term)\n        pe = pe.unsqueeze(0)\n        self.register_buffer('pe', pe)\n\n    def forward(self, x):\n        # x shape = (B, T, N_EMBED)\n        # pe shape = (1, max_len, N_EMBED) -> sliced to match x.size(1)\n        return x + self.gamma * self.pe[:, :x.size(1), :]",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 2,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

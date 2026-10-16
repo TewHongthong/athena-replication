@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_017",
+  "language": "typescript",
+  "originalName": "out",
+  "injectedName": "OUT",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'OUT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function interpLinear(plan: MorphPlan, t: number, OUT: Float64Array[]): void {\n  for (let k = 0; k < plan.items.length; k++) {\n    const it = plan.items[k];\n    const o = OUT[k];\n    const n = plan.n;\n    for (let i = 0; i < n; i++) {\n      o[2 * i] = it.a[2 * i] + (it.bO[2 * i] - it.a[2 * i]) * t;\n      o[2 * i + 1] = it.a[2 * i + 1] + (it.bO[2 * i + 1] - it.a[2 * i + 1]) * t;\n    }\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

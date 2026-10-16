@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_019",
+  "language": "java",
+  "originalName": "spec",
+  "injectedName": "SPEC",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SPEC' does not match camelCase pattern",
+    "name 'SPEC' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Transactional(readOnly = true)\npublic Page<OrderResponse> getAll(Pageable pageable, OrderStatus status,\n                                  DeliveryMethod deliveryMethod, PaymentMethod paymentMethod, String search) {\n    var SPEC = Specification.where(OrderSpecification.hasStatus(status))\n            .and(OrderSpecification.hasDeliveryMethod(deliveryMethod))\n            .and(OrderSpecification.hasPaymentMethod(paymentMethod))\n            .and(OrderSpecification.hasSearch(search));\n\n    var page = orderRepository.findAll(SPEC, pageable);\n    List<Order> orders = page.getContent();\n\n    if (orders.isEmpty()) {\n        return Page.empty(pageable);\n    }\n\n    var itemsByOrder = loadItemsByOrderId(orders);\n\n    List<OrderResponse> responses = orders.stream()\n            .map(order -> orderMapper.toResponse(order, itemsByOrder.getOrDefault(order.getId(), List.of())))\n            .toList();\n\n    return new PageImpl<>(responses, pageable, page.getTotalElements());\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_039",
+  "language": "csharp",
+  "originalName": "KernelClock",
+  "injectedName": "kernel_clock",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'kernel_clock' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed record kernel_clock(long WorldTick, long DayIndex, int DayOfYear, int MinuteOfDay)\n{\n    public const int TicksPerMinute = 1;\n    public const int TicksPerDay = 1_440;\n    public const int DaysPerYear = 365;\n    public const int ScheduledTicksPerSecond = 6;\n\n    public static kernel_clock FromWorldTick(long worldTick)\n    {\n        ArgumentOutOfRangeException.ThrowIfNegative(worldTick);\n\n        var dayIndex = worldTick / TicksPerDay;\n        return new kernel_clock(\n            worldTick,\n            dayIndex,\n            (int)(dayIndex % DaysPerYear),\n            (int)(worldTick % TicksPerDay));\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

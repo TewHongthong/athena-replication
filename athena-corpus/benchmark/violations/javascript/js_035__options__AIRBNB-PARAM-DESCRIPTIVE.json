@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_035",
+  "language": "javascript",
+  "originalName": "options",
+  "injectedName": "o",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'o' shorter than minLength=2",
+    "name 'o' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function apiProfileSave(name, o = {}) {\n  let agentsData\n  if (o.targets && o.targets.length > 0) {\n    agentsData = {}\n    for (const flag of o.targets) {\n      const entry = await captureAgentFull(flag)\n      if (entry) agentsData[flag] = entry\n    }\n  } else {\n    agentsData = await captureAllAgents()\n  }\n\n  if (Object.keys(agentsData).length === 0) {\n    throw new Error('No agent configurations found to save.')\n  }\n\n  if (o.dryRun) {\n    return { dryRun: true, name, agents: agentsData }\n  }\n\n  const profileData = {\n    name,\n    description: `Saved on ${new Date().toLocaleDateString()}`,\n    agents: agentsData,\n  }\n\n  await writeProfile(profileData)\n  return { name, agents: Object.keys(agentsData).length, profile: profileData }\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "csharp_061",
+  "language": "csharp",
+  "source": "github:teesofttech/SMSBridge@1b400e9c1804dc01402d0b9769db5475f76d3785",
+  "sourceDetail": "src/SmsBridge/Providers/SmartSms/SmartSmsSmsRequestMapper.cs lines 30-38 (method SmartSmsSmsRequestMapper.AddOptionalMetadata); license MIT; repo created 2026-06-13; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "private static void AddOptionalMetadata(\n    IDictionary<string, string> body,\n    SmsMessage message,\n    string key)\n{\n    var value = ReadMetadata(message, key);\n    if (value is not null)\n        body[key] = value;\n}",
+  "identifiers": [
+    {
+      "name": "AddOptionalMetadata",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "body",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "message",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "key",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "teesofttech/SMSBridge",
+    "repoUrl": "https://github.com/teesofttech/SMSBridge",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-13",
+    "commit": "1b400e9c1804dc01402d0b9769db5475f76d3785",
+    "path": "src/SmsBridge/Providers/SmartSms/SmartSmsSmsRequestMapper.cs",
+    "startLine": 30,
+    "endLine": 38,
+    "unit": "method SmartSmsSmsRequestMapper.AddOptionalMetadata",
+    "corpusFile": "corpus/csharp/teesofttech__SMSBridge__SmartSmsSmsRequestMapper.cs.md"
+  }
+}

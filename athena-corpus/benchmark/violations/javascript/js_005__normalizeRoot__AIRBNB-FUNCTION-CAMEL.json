@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_005",
+  "language": "javascript",
+  "originalName": "normalizeRoot",
+  "injectedName": "normalize_root",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'normalize_root' does not match camelCase pattern",
+    "name 'normalize_root' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function windowsTaskkillPath(env = process.env) {\n  const normalize_root = (value) => String(value || \"\").replace(/\\//g, \"\\\\\").replace(/\\\\+$/, \"\");\n  const systemRoot = normalize_root(env.SystemRoot);\n  const windir = normalize_root(env.WINDIR);\n  const systemDrive = String(env.SystemDrive || \"\").replace(/[\\\\/]+$/, \"\").toUpperCase();\n  const driveRoot = /^[A-Za-z]:\\\\Windows$/i;\n  // Require the three standard Windows launcher values to identify the same\n  // drive-root directory. A single arbitrary absolute variable must not select\n  // an executable, and disagreement fails closed to the ChildProcess handle.\n  if (driveRoot.test(systemRoot) && driveRoot.test(windir) &&\n      systemRoot.toLowerCase() === windir.toLowerCase() &&\n      systemDrive === systemRoot.slice(0, 2).toUpperCase()) {\n    return win32.join(systemRoot, \"System32\", \"taskkill.exe\");\n  }\n  // A bare executable name consults cwd/PATH, which are controlled by the\n  // CHECK environment. If neither trusted system root exists, skip the helper\n  // and use the already-held ChildProcess handle instead.\n  return null;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

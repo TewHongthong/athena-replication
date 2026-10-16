@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_008",
+  "language": "javascript",
+  "originalName": "seen",
+  "injectedName": "s",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 's' shorter than minLength=2",
+    "name 's' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function validateStringArray(value, location, errors, options = {}) {\n  const { allowEmpty = true, fingerprint = false, pathValue = false } = options;\n  if (!Array.isArray(value)) {\n    errors.push(`${location}: expected array`);\n    return;\n  }\n  if (!allowEmpty && value.length === 0) errors.push(`${location}: must not be empty`);\n  if (value.length > MAX_LIST_ITEMS) errors.push(`${location}: exceeds ${MAX_LIST_ITEMS} entries`);\n  const s = new Set();\n  value.slice(0, MAX_LIST_ITEMS).forEach((entry, index) => {\n    const entryLocation = `${location}[${index}]`;\n    const valid = pathValue ? isSafeRelativePath(entry) : isVisibleText(entry);\n    if (!valid) errors.push(`${entryLocation}: invalid ${pathValue ? \"repository-relative path\" : \"text\"}`);\n    if (fingerprint && typeof entry === \"string\" && !FINGERPRINT_PATTERN.test(entry)) {\n      errors.push(`${entryLocation}: invalid fingerprint`);\n    }\n    if (typeof entry === \"string\" && s.has(entry)) errors.push(`${entryLocation}: duplicate entry`);\n    if (typeof entry === \"string\") s.add(entry);\n  });\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

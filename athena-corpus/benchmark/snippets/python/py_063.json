@@ -1,0 +1,52 @@
+{
+  "id": "py_063",
+  "language": "python",
+  "source": "github:halileroglu711/CNN-classification@c8ca40297a5e6c45dbe3d78ad76760051705a210",
+  "sourceDetail": "test.py lines 29-41 (function pred); license MIT; repo created 2026-09-22T18:54:11Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def pred(img_tensor,img):\n    t_model.eval()\n    with torch.no_grad():\n        output=t_model(img_tensor)#[1,10]\n        poss=F.softmax(output,dim=1)\n        value,prediction=torch.max(poss,dim=1)\n        percent_poss=value.item()*100\n        plt.figure(facecolor='#1E1E1E')\n        plt.imshow(img)\n        plt.title(f\"This is a/an {label_dict[prediction.item()]} with a {percent_poss:.2f}% possibility\", color='white')\n        plt.axis('off')\n        plt.savefig(r\"assets/model-output.png\",facecolor='#1E1E1E')\n        plt.show()",
+  "identifiers": [
+    {
+      "name": "pred",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "output",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "img_tensor",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "img",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "poss",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "halileroglu711/CNN-classification",
+    "repoUrl": "https://github.com/halileroglu711/CNN-classification",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T18:54:11Z",
+    "commit": "c8ca40297a5e6c45dbe3d78ad76760051705a210",
+    "path": "test.py",
+    "startLine": 29,
+    "endLine": 41,
+    "unit": "function pred",
+    "corpusFile": "corpus/python/halileroglu711__CNN-classification__test.py.md"
+  }
+}

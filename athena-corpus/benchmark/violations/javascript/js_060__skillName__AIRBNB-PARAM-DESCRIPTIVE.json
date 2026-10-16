@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_060",
+  "language": "javascript",
+  "originalName": "skillName",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function formatSecurityReport({ score, issues }, l) {\n  const label = classifyScore(score)\n  const emoji = label === 'safe' ? '✅' : label === 'review' ? '⚠️' : '❌'\n  const header = l ? ` ${l}` : ''\n  const lines = [\n    `\\n${emoji}${header} Security scan: ${score}/100 — ${label.toUpperCase()}`,\n  ]\n\n  if (issues.length > 0) {\n    for (const issue of issues) {\n      const icon =\n        issue.severity === 'critical'\n          ? '❌'\n          : issue.severity === 'high'\n            ? '🔴'\n            : issue.severity === 'medium'\n              ? '🟡'\n              : '⚪'\n      const file = issue.file ? ` (${issue.file})` : ''\n      lines.push(`   ${icon} [${issue.severity}] ${issue.description}${file}`)\n    }\n    if (label === 'review') {\n      lines.push(`\\n   ⚠️  Recommendation: Review before installing`)\n    } else if (label === 'danger') {\n      lines.push(\n        `\\n   ❌ Recommendation: Blocking install — use --yes to force`,\n      )\n    }\n  } else {\n    lines.push(`   No issues found`)\n  }\n\n  return lines.join('\\n')\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

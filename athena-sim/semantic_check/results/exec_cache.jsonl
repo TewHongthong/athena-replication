@@ -1,0 +1,894 @@
+{"h": "76f379eabf776add7421aa5e6a4c2b0652c7d5cfb95bb099c8a96f0a6ea7a56a", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "85621fb6031ea2a29e1b7473f4e7629918e73315f60c3c7077f54123a25c5fd6", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "1c3eaf57abe230bfc40cca4cd4f8275347fa8983225cd26e6023301979dba419", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "cf3124a636fe52c5ef571337bf7c3e399dcd35faccb00b9816ec72c0727b374b", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "1514e05dbf6eb2e4d40574bbb5c9b6dca57364b1dca60d37013b9b1708d92e48", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "8d46c345413a10c55858b73b1936ff9855546e0332fe83b5844564ebafc1204c", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "1ae0eec5155664685de697469187e5025dcdea24b83be6ccc4dc8eb50dfd922e", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "03783436f19729cbb7d84d66192c8d6050e142125e8df7fb77623ceb13190994", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "6d960f11b402da1f1a605eef78c23446580c336ed46c3a8f56a02e4acfcfd9e4", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "79c20c7554cf3f31e2e8d47842d2a85641cf2d0acb471aebf1218719680e2c57", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "59bb1d04edda02dd0678841d2e52e13102da4ba33783ee3a0da0d0357738bb51", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "83190bf392e072fd893a706ccdad8d105409b1e534668e4d277647348dc7d110", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "f6255d998a0f1957f0eaa317cf8a4c1c6445fbbff2599b2a1bf2642c9cd53ac6", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "5b5d6d2fa1254106218ed0573aac3c7fbe5c03a476ae00a3d5077410d21728d9", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "33455a9e3b7daca0bcd888b55ede4a8067de38e2c8207e9d83cdfdf38c142ab6", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "a57d1bc48be780572897bb7de5c9ae6d1e1666217dae9a2f6d13c11bd1a48296", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "a61b82948e34941324dc0c1a25ee4776e33c0fee6f051b28e6d76a3c24c0f426", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "fc49641121e6e2520d499466a85346971ee3551ecbfc97214ff0155c799ffe19", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "247877805576e871aac52ad1a6ab8af5bd31a92b4831ab8fd65ed89a4a626166", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "531c394285ddf4de4573fa61cc7dac6e46fcfdf03311db815b48be4a03b4d03b", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "c84623eb8141d25eb32e1e24f6e118ecc2e9788ce9a116e6c49e009f68522756", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "5490f237957a95b699954b9fc4bf2b0e32fb70a43c6f0160f77eeabe92ecf25f", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "2661d5fafe70225328c83bcaee4901b6cb0edefd8c5a2807dfa06e0986c0e19e", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "ef3309cd8e2a224af48f2bd86a698cd6f248f359f962dfd5c2e4e5f74cce0fc9", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "290876eeff5c369d2b14aad553bb037e49b948e1d166efb1271948f8e4a1d87f", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "06a00abf596e0a35dd57ee59a990876ee36b4aa41bbcf49bdc04d0f6ebcb3674", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "6c5558f851bf4204a3839e3831201e51b8c1f23fc708e72c25d2c0dff58619c2", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "9a5b60ca876d7bd5894192a192c41d10c0c35b1dd18c35958e36084ac0ee1730", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "fe932ff0335ce87e5bbec0046e18854bbd348bfc0ae4836ab1f665dded714add", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "a4aa63bd2bb0d48952a382799c4968e1b83af88a7d88aa0f5f0876d4b6885834", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "a993a8c4a75acd782b9333d227e0f604ec012c036f51bb6037df8a9299ce6838", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "bf6cf0f238f3f5f2190ca24db19ef71c4d0b5bac730b995be966181bb65400aa", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "7036645c050dc2e202774125d37c1068e67f3a4474f1f4f9f1bbf20fae006d35", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "bc01b3d2c2dc21a1f6ec6479f84c4cb42fdbbfba7453f3c48e2badfec0bd919d", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "4b50877547a80112ddafb7ebdd0d997f954d154459a40b5fb9ccc49f7e52dddd", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "f729f5573a29b65fef4e2be23911414ebe1e0a16b82384563630331a77638d77", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "856868a5b211782660c92fb02cc9fed60007b57dea3c669666955ec49bb7333b", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "3749e7269e5f8cbccab8708c7bae4027e8b58bd5ef25954ef1425534c5b9683c", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "51e5d132c179f8c236bdc80865d1169f73d6a30189444a13a672ecb72588adee", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "10e97ba17774b1e817d598f768b92d945f6baaf3770c6118e7ffae584f9510df", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "8b03653299ba734cc1ed62ebbaa5ff6cf6de047fdd0677f6425dc4483f8d59a0", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "7bf74c286950a2c93e27ecd48b211b25bb6b3e738fcec9956e1110675c4d8391", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "fbebc83888113bdfb8bddad067e1c760bee4668dfcf36af556d82792189197dc", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "263e29e2a4203505945fb6f5a4ab99a697c87076cb1bd76889fa071cf5339c40", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "2934d213b6994458ebc5cdd1b62dff6c1f1e47e9eb974d22757dd5760778d3c3", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "c7bf0037213c7e768310f484fa63ebbae0b1f4acbc4bdef5c027afd13b1ec78a", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "65ef711df4117181611ac97f383de51311e4ea844ca9b5c03add30e671ccc5c5", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "ca3cb24f3da67fc615ecea046c31c7f85d576f9ef43405fe5a9768bef734faa8", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "d3151038efa31cef7280126b0c42c7341322f2fc09fd9fdc42e21bc2a8d93492", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "5a1813f91bf14365714f3506e40426bd3f09ad0d71b3b76df86249a2ba2842ab", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "44f061436c0917bcc554a1ec234b34c8ac96b981b87f327caa7d4f0f02257db2", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "c4e38da64d74da1841c92470ab015f071ce40e348149222b4b00bb6dca1087a3", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "8c7f33d8f10d9f75aa41d07fb8ff5dffaca0d15aa7890231fc7dd73571298e19", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "92a5056760147c28eaf32019f2f177430cde78f97e687da39acd5cd048c842de", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "d7c75bac9e24b498c18f3d01802da67a462e893b876df3cfa36c49de1943926e", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "ec7ae682e5586f41251eeb9693766155431696b2ee4dce1d49052bc9c571d338", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "7eeaa9b7b53f07627fba7bc17e89611af31191a41ebed66284483e7256853dd1", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "1cbdfeebfd9f68828721ac0300bd836e8bd277c2ace61bcfbe1849dda96a3cec", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "cbfd3b700ba5f059deb53d44ff09f039e2ba5c0fcea614773bb281e2bcba0461", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "7ab5dd4bdaaedeed722c89ce41ef49763fb13a2bc15eea10790697182da7febd", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "8fa39c53eabf6e10eba83d959a103535d6df64f5481eb0edf759248313564bea", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "61842934d7a2e28fc98148e8dceeca1690b846f43dab52d05c5eb50b862aa542", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "7efe8b783db864c90c881c6a3062c49752fb47f5db1705ef0cb6640420a98e8d", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "dfb5494b2dd6b6c80609010d0cab5173495b00ffd0e3d32ef13c7d923b7218e3", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "c028d0c81fbd00b569adcb2424a5db270674c80af1ce21356a589a57ce34dd1b", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "ce4c7197b942d9e03f6eabaf5a3696b086e20f4ba59400eda46dbc69e55507c4", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "487f0c13f768b8bd1523eeff4c624c52b4ccbaddc0d83a41cbcdc1316840efe4", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "8716504b8ac7294c9a55e9c6a80ca07fb03d597a281a1b83fc2dd7f077b80ffc", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "dfc26c0927525e27af2a6fbe1d0052df34798669f729b9af19aa46e9be338a19", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "557a03da141478dbf3dc74c39e9890346c34ab8dad05b938b6639a4fd6f07b7d", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "69268d3a8febe458fa173921a02961aeab2fecc3db90fc5292169b992d604907", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d2ffe01109bf8972c6a21e37f91f06fb73ababfee41656d496ba84c6d107cb25", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "be88a6bfe29ec2ddcfe2496318c79fba55b37ee78cb7d2dfb82cc297f5e9cfad", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "f6440c318d15f8897bc940657bbc35fc4531e76b4a59746fcacf0b7756baaf6c", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "1888e14bb64ce50b50bc09001e383c7bc4cc1c0c1f33248dc80c9901845a2680", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "f0c0e5c11a4d7d0c54a53e14b567db83842070d225d0eddde3f7c01d3079fefa", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "ccea447c1f76aeca80daeb3b7a10c112e4d8680369a6fce594f54e3c3604b34b", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "837701eada93ff2a2cda69f1514117186bbdd9adc89b69e8062295fee5d8f40e", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "de7b410bf36052617d7afe4ebb11184555379bee1c423d038de600a458d0d1a7", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "1b0fd502d886394951b62b62f8ed1314bcc87f96ec584d09a10b442c3aff454e", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "e9f31dcfba756c345bb894fb5908ffbc5bb9ad612764fece9ceb8f51f5c273f7", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "c0d62da09e9dcea35d0e2cb041aec0f9f8aee4e36e890b10dd1e8f306fceeb99", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "380849f8554ff1c8b7cd90fb03580959543e257cc56d32bfe99de17ae163a0a5", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "2315bbaf510ddf07d4abc612c88873f5b4746ea73f5b22daf7a73604897bbee9", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "73a8c325ac5afaed54125b5d340cd42a5cf2d5cab24952df9b16c4b4194bc77c", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "9d2f4e76a5f62b7ef38e9baae2c83d06238f55528ebc2be183e26a86ca3200ce", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "832ef9774e1ca5b64389ce20052d2fa1fe38f3d04f1242b2e53273fea1c00a30", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "de31f16377d61fb06e38bce5f470a1b49bb7c28cf26bd999b3e8abf5c8721c63", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "a1ae5f666bb008595cd14cae724918cfaf57cf504e45ca2741bab1fea3296be0", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "22b22bc786bb3484cc90c9ec1ebf1b32d73c8377a000a4d765ffbbab497da257", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "99f6d74c37dba37bd88136462a7f32eec38b8f2d3091cd645753139583f7e3ea", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "5d851e33a6b100e2cf4a3a4e0df099e01cbb6d5e7db45b56e5d58b24da2e390d", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "39b2b1c380f07fa057738220cd15557c688c20fab7ab1ec225d8b020c2d9411b", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "5d720ce242ab1fc341b807a921617f0a8de432a8648914b53807fa535820406e", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "b871381e9ed1c457868040320a6ddb73cc2a15a8f90a700f5acc42db65f247ac", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "a0ad5174afb9f596a9bf261eccaddb8a06b8a4e3dad566e0892eb28b27945ee0", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "1f955d47bbda900d895f3994ebe77a8337b6d4d5ed15c67bc7670feeff482285", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "662cdaf7a289063ebf38b0637fc3dea27ab8020e007e5bc26072660baf6230d8", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "6c7131e4fa8ee349e15ba565fffcaf8af692153db5531ab247bc2fd1efa111aa", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "9f9200be21900554e939fd36ba98ed12bdee8ec0f70d65a8e7adb15d17ecba8a", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "287329a8031eb9ba24130fab6baa3d04291f02a84db68742c3eb7185cd99bf76", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3579685d772816b9a80d2eb58b8fec5b55b42152a990289a7ad4c580368692f3", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e623ca7a20c9dbdd62f9c7a43ddb2bdb13d2b282bee37837f9ef2f860471e6b4", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "556aeeca87f738ab8ee60e6dcfeb0af829ea8224cda9cacc7c50afbe93a4e14b", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "bb9a68597c59f2467cec7d3bbe5816c5508398a846974565b34f1b8d3b546ac3", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "da9bed36dc72a8ab117aae5a2d8c3d5ea75bdac5e4922d61cc72538430db2488", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "2bf12c9de3433e6b97401e96e510bf25baad72a2cb4e16079f67e482230f4b1e", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "8378d71fcf2f8b74862acb85b1a15b1f7122a8c6f1514cbf6bba5a6636b29b2a", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "1ee2dc87f0004a43f8d1f68d46af62ad9f5d9fb44e138868f1e41ba81caeb673", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "e54773bcfa9fc409d32dc4493c2d74f41eaafbc873b62d1877ce049764e65602", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "cef2daa28eded201e7047839e82caa83a17b8c82cf0c134e4f0523257985d840", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "58d7ef8cc63b2ed5a39379e98ff78d115844e84a929f553e8a25c033c0862894", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "3f08866f4552394f7eb378edc5d880dea157cf92a31788bbb5186b0708dae3ca", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "2d717e05dc57bbec2f013e641e33a76d40bc505c76f3ab6fe6789b789d4852db", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "d5a71e3f4a443eb5115a57022112494831aec01f76f59b21253286c98771cf6a", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "d7f0f285f2b66df0e8b847fbbb5907191a870a096d3b82e200e1682a57a82690", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "0cc8b8e64be822527cab4ff35ba5d389598258ef9fd2e2cf4b72e74e885988e4", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "915e131ea3a8dde6fc6d98640dace6b5e1c753234de79acb8f88abc30ac8f4ca", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "83dd43310b1375fdae83b3158d0111d2e4629434e97085849ef2600dcc3eb6b6", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "a940a5e2951e8e327e213fc2aa55f3e2a72a38272f70455e5debe318ff5fd9da", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "7f3898125ffc8f3c763bef41327d7e9960373680242210dc0cbdadd5894aa63f", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "50fb8c119ace2b8d7f8eed3ec3a6cd395dfbff6d52fea8c60c5fa078e9c2c5d4", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "25c7aeba2e4504c751fadcc53f53ed009d407d330c7cd5ea0c3d4b99e6d4fc5b", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "57c89b5d3d44efbf0727343dadb85ff5f6fac33251d886e561eb3d30a5c6be46", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "66b482aae59a8183044ac1dd55706c1f9dadd833471659738a41148eec16b11e", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "643d57e96915631cc60d847e3f755ca3ded57d56700269b26846336cb5d3c878", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "5cc04505e3f5e8ecce2e4df6cae019ada70d6941f73746e302f36fc22d8845de", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e015082ec386cc7b35d0fcdcde50ee03d7fab7516e37e43da90183ed26f3fa60", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "773a84cc1a1915238bce85c3d9320a9e7c43ddb81e01859b29b5156b165f80f8", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "aecb3c33888361329242c799f7827fa4a622a77da04191931aed4b426821dbbc", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "e092350bae95ac2118ba283f49f9e28a62635b61db31d785fc33326411a05ef2", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "a709908cf7cf980a7a4c86a778bbfbe6753e20f5722070486a54f40b1c6f5984", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "5e312eda60e05cb96b17edb68c8545b5bc0adc6b060336272200897180a3856a", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "be72a9a5a758e7b1da6ee095792914b1ebcc405b2628a82908559c53ccbfbed7", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "915baf3c43ae72ab4e0bff775f87b578d8ed73c262425d4bb2a6419b02db55c7", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "7a2f5af47c5cbd4b0af22a3bf44400b3e1d9cc1df13ce5297290126e48a14ac7", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "c37bdf96c0bcdc0bfe45a51ff299000d8ab52a822493c9dc76ac122ed477406a", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "3370cf64d1881e23fe9726582550f24eac8409bd8cd817e54fc5ddbe3762d546", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "361c315224260c2423245720f3a612b1c96dbc6e1bbabf0fd4de34f595406411", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "ab738db507dabea2cb6b2ebe814476919582fab754f8c5bf3cf70f2f9c23e530", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "1d9c0ce86147204036419116c6285857decbf5c843676fea1888c8de4a587fc5", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "c175566dd2939077fd43dc97ee92ebe39a4f2ff1b837a341c104e7c441189ed7", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "3f83e4389291b2784e4c88efcbd2af09d4a077a3186d0d16d7c09bfb13f82660", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "a3db1dde4576896a34d5aee878330e5aeee612c323872623af1963bcaae3ca5d", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "9bf073a22b3d67bff1dbaace437e01b3fa543c7d02e6886feef4e093e680607b", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "7a6fb8fc8efe108a52f6262c91f915a2a471ad0b1ebaa2d99fea0b1c456c21f0", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "c3218fe5f2568240c7a2250d75553998f57ea96be8ca6c326627464c5f5f1963", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "baddef1bbf7a6fd78c4c3d0cf06f99e22eaab68d813d419a1157f919896631ca", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "64e0fd70188715462417c60a881a86538141dd0fe5ea00517b03a84577a6823a", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "4566b09b6e9422b961d9fa174ad26b47d3b6cfcc15a314f68acc2ccfe2126e8e", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "bb624a49d7a947b21a2f78939fa07709f726da06c98a43e69f61569586d6128a", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d9b9111fe093b6b5e22f4919d49924617384c90576884280eca063ec038941c6", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d9d2d782e6384fad9d47f07315b655723b0a799353b6a3f2d7680b6f0a1da1a4", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "a305d6df05b6855c4385cda8fac6f0643b056e2b4b1755307c4e1a77b42c0171", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "af407048535f30bd23795b0df0ab736ba797aa25f84467f94457e5d3402af899", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "f14a2bfc65f5329d99b21eae5bf027723eb1b26d99279e5c8227cd9c226a9ddd", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "842c1b00c1c2ff8575dc7ee10c3880b67a2738bdd35b7a6eb1b996cebe616e41", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "c35f5e1017f1d0651ba1838f9221e624e2d9b401c3d68ef2349227c52417d108", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "71678d3f1f65189d9fcecdfa46187757ff5dc13089a42c234135ef89ddcee425", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "59fe9bdc20d6a844c8e422d362b638ae57940d8025dce739a8d3f659c2a7815f", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "f42912f62e8eef6e1fcb1b921c636f78bc2019c51da4e16f426f27154559e6aa", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f290dcb35749ee8cec5297851f432907a7ef5c09686ae7f4e07e6088da4aa6e2", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "5f88dcfcd8c69c81bd206b5940e0b6736388087038491455aa6d0050bdde570e", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "ebf58a1f21cf77fc743f2cbcf23a939b2d40af1fe8b4fdd80e594b0f800c2223", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e526d309ef1de88acb03ed5683523a7562747b44b436b606581c63a8006e5df0", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "6640be39e1113a615f7625f4df131db545f4320f54e8e9c1aacfb38a84eaeb6a", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "6f2d58a389d40220c13d3995bced1c289e8cfabcbc1811321a5cf358e2fde9c4", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "2ed9519fe4f9b159d82b104ec06e03f8e47e83bd1f52798982950c7bd1c01a9a", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d3276eea281f687706f6bd24d61aea081d5d33e2a66a36f060447ad66af1b0c4", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "028303bda52b5c1efeb800532636085dff6627510cc703f2446270911a25c08f", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "55836345a994b75fa822cace53d2885600500add0b7332c1e69fc85fed27036b", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "9607f5a181ef5536a63e7eb483bb6e3a7c602d2ee7f0f6af2c95afc3119d78f6", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "52914104c472b1ab624e8649d464c286cc489ab007185a79a6760eab2c5fa7ff", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "5e929e20cd158076af84be7e0cfdd6f5016f0b3e31df176bcdb84bfbf45879ba", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "351ed107d61c14754669d2370af16f6f7d593ec79f8698a43dbb2e15fabf5552", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "d996a631fdce47fef74f82c35a077fbb154c9148398921f9500c6865afdc00b1", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3ad9e923c9e1f100de0ed46e97905f7c012c0cf049a5658c516fd89dae95ba41", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "3e2007175c8bc33254b95abfcacaa2bba2662761e6f5c91c81e25ca350b675ae", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "7a3ad3b56ccc05a2752d4fc6e919dc30e267f1a3aafdb872ee33491049038e4c", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "697cad6f180f3dda672ec1dffb4c8001fe43e646e8b0751068fd527966b9e9be", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "0220c481fa196c1d132038374f6f968590b4f62e610770da5728a9994e9d706d", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "1006173ab2872b06b4f8d080bcf3e7c59d327dd66edc94ace8d9b817019dabc9", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "d2a46e601bfe0eb24f5f777c1af97e8981e0abbaa2f05d793e175b07150e8e13", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "693e406ef39fb98cb734706e70f3bdcb4617fc6a342eebf5995da1514c6dab93", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "b13bc9e25d1e0d23897fddcf8d69cf583d876e6dcfd384c9ade7c126af62684b", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "5e4553e4dc02ceadd975388e2058eb1928b6284de6374f1cb4b43a0856ab8697", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e3515e6aa61f43006070efea43ca1f2dbab60ff453070c53668307c1de3dc80f", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "eed60463e041b385c22dab035b1542cecc8da55d770627eeeb0edb671ef28a7f", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "0d92728f49dea110bf55cd7bc4320d49495255878d9b86a5b24500016119833a", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "38ba4c2a160ca5690fb05b286ffc85729baeecf89a98925e01c55c5c3c0437ba", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "8a0e25ecbc551aff3111044f7486a7f748baa85d1fa58c793e77954507ebf7e0", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "88cb93b220e2bcacf1428a29b70a38f650dc0a4c57ed34370fcc7a86d6218fd7", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "6608eca7a3eb048d61f7d6d1127a54600dc3137f4c3a4ab64aaa591ba8c094f2", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "efd30c3541954899a52006d15571f0393c95193274efedc5e57c8e230c1d8ad0", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "f0701e513f8b277f50ec753cfcdb0f435212ad3f0cea2cb6c94cbef562db2422", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "fca49c05d9a8fb2405c2884e7a2b7e09b2cbc85e42b3ac7e5bcba6d5690ab107", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "69928164b9580494066372d234495093a492358d0cf1ad7577aa9829171f2429", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "3c8ffe842677f905f6b01685abbda64c2f1bd8bd1fd9358e17a3dac0d292077e", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "5ca077c2ab738c85030d99178755193fc44467e54f709eaa500097e00021d169", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "92017675817998ca7b31961a68646e9946b09b2e038b1c5228cb26ad24e8600e", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "e12727b1315ee066caf3d05bda5881c4d247350312e47c1b2102506d4880c00d", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "08388a489561ff10443d8e73d652f00b980c73a7d7db432458fb5d6487ae9f40", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "eb3e854b10a19f582f806dbf22f599849e559d3d33db128bd315f5dcf446cbd6", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "e83904eb654545490dd8e3177a9b199db6b28242b0e622f8ed5c7777b78f5dfe", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "0c5ba77dbe3c2e4cb56aaf3aa963e04032bc5739b5507617d2dc869137dc7819", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "7a6a490ce4c18be21b29fcedcaec4b2d4792ece7e958ce38ca98fe52ea820240", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "dfacf2229591c0da5092bdb07d6f8b47112e4164b2c122bc70efb1eac9fbf9db", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "ae020afc1eeb318d7dbb8820b8dbb7a801102f4a555621da43741da69ede2fc1", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "4ea0297d795420165f4a64a8a5425ba7579c6cfa57b8cf484ea8d328260402d5", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "9edede828ef94bf77e689707dbdb9b92c41b1b28879bc76bf255363802f715c1", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "e3c1b498c68a0848e9531b7214209df33f1b0db268524335fa2c561fc59d5b85", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "5ea25de9e02b4fe751d8c0d74fb1a674dc0eaa34a37c5b057f06f724b558e3bb", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "12ff1c36b292d05db83054a8b9deee7ccc6c8de1548751f9c87d67a41215ab95", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "8a2b3eb35ad2e64f38d266c0870799475a6ba9e00313077fecf37453d18aefce", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "efc1c9d0286887c041b3bef8c4babb2343686a04e172fef398cac0880630fac2", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "33764e15e0e86692034c7dead223484aec1952c81a4e15dd75ac4c35c1fe25c3", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "2cacc8ab0730c335be35b532c0b8c47ce96d2c2435c3da0604e64d5c8cd51b7a", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "9b9f21142b64359e7d8162845cbaea4fa0fa609836f1a8cb50163239cbf6f4dc", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "63b5c301484eb2ccab62be4c0a08992c27161ff4a980eb2c12f5e578cf9c2ca2", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "7c139809ff61b10ee57d33bab5d886e1e4949a9f5403d13219a2be58f122b36c", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "856c4bf2871e9bea4fe1d96e03ac2ef1cc2755b42b5bf961acb621f3602ff5b1", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "0ae5d0ec5b8bf8e123b0eaf6f0e2f2103f3b68f4b71994aa3d2885cd05f048c1", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "4ee64c3eda2543668841675775a22a46727c63de35b1e53511b3d476d1beb459", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d4bec29c3f57f5f521a25f4a8af912b69d4d1c9777dff0aa67eebb605055b6ea", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "8511fae841cb16045194a7756e9432f57709f6486aae078dc84c2fe4ed69d4e2", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "01f3e8a7aacc1f1d7a0fb58e1609f1ecff755e704931da5d03a208145b671cc1", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "bcc6535542e9c16988f9bec1187f92080ca29984a5a7087611d2b3c5080c4fbb", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "abf62f76f32e4880d4510710560353fa18f5a8e8952aa8e9fc067039c3041d69", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "054e2ee6ea485ef8d06b77458bc5d485e4f22dd2dcac40ad48e6ff682099e7a2", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "603fe7c7f15c4cd4f06334538dbf9d8911637fad88768399fb8f0ce831360d78", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "15ec19dd79ebfffd65bd903cfc783f2c283bf6e8e0646f18c7773ced0e6c12f4", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "f432fd2b9145cda6d9c92d9d94065f27710505bc3848dbdb278c91797a0774b6", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "9610997285032698184fad7dfef563b26ea09713a950a4ce592db85e9074510c", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "a9fad206129868c7cbb6e140bc277f1003fd45c230533cfd89107e8c25f66d82", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "703ea7b4538cd9d21832283bf47149330b861eaad6b1b14e92a74c2686643310", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "38c04a5acdfb24e635e3d21bdff73bf3b8ce917a5d94887786e5fdb04d25da50", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "821ecac614eaf67606073f0a31d7aa524ef59320652fa0d385d543b3734fa01f", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "bdbef8e5aceeef9f2a7499f27bd0a62ecce00416ce3e38645469301a78d0dbd3", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "2b0d0f63a5dd4010bdf547924e9d2569da7b3359af727ebcbad2da443304884e", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "e8ae4967b701f6dff145201d5f944d9d5a565d1663d156adc42317c57733f829", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "654f64a660d4342ce4e75b6b9357d0aefd7ae343c280f5b448797324d3d3cc74", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "64e7dd9116c4e7041f681792026f304399bb742f95c8da869c9455150d68314f", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "96a35b0a5c678c637406c0d49ee8784a6a05835e24ec4e4e10b81573168b4487", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "63da73715964fae75344192dc2fb2d4b3f0183e6c2683b7be91a173080be068d", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "5371c6909844bd37a54a943eb4d8ac49cfadfb62c19df4994c68d5bbe5328b2f", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "cea7e68db1017441aff440216893d8e84aaea0e9dbb0316b443ff196569f8203", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "861d8c6a6622591d8583ab25a3c7c6a769ac1723cd7662d9cfae9365bb8efd08", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "479659554a93e2cf0f5ed67921708859bf0d492661bc6a23169ca149e1289746", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f3de08eb04532ff6b051f928c249e2106459b36fba45e3ed087bb3a8beaa20fe", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "7b9af542defc57f84222cfb8ec510f48c326bf3545bdac4c19fe722987122e5d", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3df20436be799e81905e54e7d1b5374045da4626260197c2bb91fac9448bfbdf", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "e57aca6a2a463f429e9c4b8cc6e818ea69212afa98032974719316d03e76eb9b", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "5a47905b7a318ba4aa345db2bad203df7cbbb93a10fc509bc014ab4bee82e061", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "12f693b5a95bb77da5703ecdbaad305ae995b1c6bfdc17e19f9bd28859e2c007", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "4c0e3655554ae12c75d48f966f47f686b157ca5b830701cb11b90a25d7dafedb", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "96827dc08b08229ce14f35b6fe08a6bb412da61703d7d393bcec387f9d16e732", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "db24398c61552699de6bd80199df846fe7e6ec3ab76c1005d8471fbd63740c5f", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "1fd3ac221778cd8ac8c049f954c210f2233a7e548b3d7d23d993022399e87b16", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "c71c5c3ed61e79fb80509bc7bee0a8bb5cceeafdba672b765e5b19ed104dcd29", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "99ccf70f8400372280102eec58eeffcd81936ebea787a94da0dc1011c73655d7", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "f4709b4a31cf4667137667b1ab63332108b73e93f5e83ee55eb18ab481913522", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "d2584309b7a04d700b8b01e2cd638c8fe405867f5b49c56f522a944667d576a3", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "3c651528d8eca417a5f930f6aea694d0f276a813cc02cd2465e1c37827c042fe", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "ae2a9bf7acbaab7d93e2ab028d0858879200d13b1b88dcb4cb120fae70b2c2db", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "902f355afdb54f3e019d862005c2c86a61353e6195c7252e011876c8f4a5fa29", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "719ac0f6893ee9e69b8088ece12f24805c4d3af8b8d580a0c83be4263b77b31b", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "ed85f6e0edb92faeb4416fb5596a7e1ba132d55f46591f8a625c383250f56d5e", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "b07e010062852c29668b6b5459e18b48920ac5bd5e3ffc8c0d89223391171219", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "40d2840e01f17b6a9ac3b9d87e18a2b211e5a210ca83338aaffb3dafe41af6e8", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "8b694b3bd30455360fa38365d7f6c61b875c5c22afc00a0e279d4cae3eb44b44", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "ba398ded3eea699c77480564033ee714fec0c74d5e42927b9f77b97491e18b78", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "e354c9286cde215000cf72575a982ab55733abd81b1cdc360435759a10f34c39", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "bbcb3ced3988ea30270b733b30335eccaa443b0dcc1d57f5e4c8bc120442e820", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "4296316c0ad830479095239619f169f383b22ec0262cd2494d80356f603f494e", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "4a3b44346a68e8cbb4fed8415e2877bebb2538a13a5c351d7eac84f3b1ec38d1", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "4b44fe6f716459ad301041e97389de9ca6a5dcec7db92d9c24a601fa7aed4764", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "437e93ac479aeff4da56b00adddce67654f5fff44ed100d414dde50a4792cb55", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "122a5aa91ee68198dec163959bcf9a9b712f128a1724b2b322b3aa963dfd6ba1", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "c473a11dfa84f3b61bc68eb4391a2c36b998a2cda383153825b1269f50c33f38", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "32c3f16f1cca2ff4374825f0cb260b8c897d35887cec83b5656c066a878543fa", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "f9a4bdd2fe59c4a574b531521c74e971f3e459e14d2d318744b39f963da7842b", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "e7b2f10e58918cf1bb7ef40b4733b010c06c8cc11e77b658fa46100af39e118f", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "ddc80ecf64d9c5ef3a041aa834c2d74e7ce507a795da9011c7f02b6668a30b6a", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "e69b03c2e7f64c21a861cba0388ba45618c8a320ce5d3277953017e7a9ac3a64", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3cbf45f0617a8b222b40795350d4b5b87960495ecc76428dbed390f91f326e9b", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "c9522f16d8175441ab52e2de5d8199f0ef69e29259af8253ae96e0f99ea43c72", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "ca64015fa8cfb34bdc7f20197726b3c38d8231973e97f3a57c94d9f0c8006b12", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "567f3a5cf214ef3b8c18cb494df4967b575ef779d1f117c779b6bff094c53ba2", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "b6ce064f61a8e20fc85a70fd9693462b21f1e402b849618973a249ce509bb81a", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "5a08e7743f937ed350955bfd058898103b1fa40404715a26df71af6d800f0a8d", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "a7bd10335b7038f17dfe0a9a0bb5abd8f296f65798c4b3c043aeb4a92edc38f3", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "96b5cb44f457c329f4e14d58ad09c4c14795d76a8bd7a4bd9ff2df69ae473da6", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "292bbcd6ecf333dfdd31b810523c2b4e98e4b4fd635a1a0b04e8d30b8226da49", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "97c5d86ebf1d0f6a1c9194880ca0acbeb3f9aab491f1062f177e64c403110152", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "6c27f0b8cd7ce59bcb9e6c3935d2c9e6039625c93e0d7e81ab8f359600a17b1c", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "b8a5d9c689fca650489d643b5fd8321f45edbc2c9ff48f1b3e4af24acad1eb72", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3cb4fd203ad4ff8f4240f6976b8d00eccd79df3b770031a32141e646ac76aaec", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "ea5145a9260747a2c453e0fdff9b44eba87f3635080c733308ef79a83d76c08e", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "296b02e7e7c4753b318c980e394c6c86ca85b88fa67d1e096daae8a490337a21", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "b9262a91772831f63f236fffa9e779b079f3b7b6446ca28deb82dc254f0d6b11", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "a4a8568fd823d5a0cb6ca30973cea5c8f2f18ca0562ade38bf36eefaeedaf639", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "4f6aa2b035c53224c0c591a29094bb899a3b7dcac75a129a591c4ee81fd204d2", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "76f1bf6b7e8afda0e05cdcc406de6770fec595138bd481c8aeb1830e65ae17c2", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "bdaf668cef93b85095a251f777b0639b2ae3cf381b379aad2b384c1abfaa2dde", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "f8582685b7d8b6bfbaf65789abf488726de67125c27101e92fa1978b358c1f44", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "c089e1b277bc21683be89e1630551d71759500b8edc66b2413fe0e006925657f", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "57cc8a43d1d34e97e522de9342220b051d4796810619a17718e19667f862a634", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "ca8f38e63a7ecb74ca268fbbe289282f64d2731b13055d8134167d9e97cbbbc7", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "6a7b2a3537f144e95ed7bfa3af078a256bbbab11e78b6d0af97c6943c6a59b1d", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f3edf5ca896ea658768217f15a818c7a3180353459979a6baaa97f27f95dd90f", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f0e25c3cd4c4992baa303acefa7e2f0a641370b6280e2cdfcf64fe73931f96c4", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "4c6318b69ba75dd69152972c952fcd97c600399f9c1c747536a0098c3d967786", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "489938c8b230bdc64bf50ca8c2450bf5187fbf982425f486e74093228f7f6b5f", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "68da78cd7ccb94f7aa441d2d05f8fa29b93782f271823024957023cc7af6b02d", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "1588484d86314ecef366b3cdf1ef9f8c12d97817fdd9d2df68bdc7f3abbf6db8", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "8dab2b80f71f96c44543f40a69202103ee6592870a0f47daf0785cc18bfefffb", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "0997c7a3d21bedaf877403f0163193192f5c241891ff14ff7b8cecf981d90011", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3c54c93e9cfc0b2fa89141448a5c29096e83e4d7148380c7fb850bb51e189dae", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e2d8f554ec0781477db641c8fc86807c9492d7bdd5c3a9fc66256b4c708221ae", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "d17c3eea430207efb52479c0be24511b3e87ee88385c8cdeb6cfce6923dd2c22", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "d7f06fc64d1332968a025650d9050007f4f1a9c2ea38708329f29379a555c337", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "857fe63c242113a163c6fc6a2b0d0411b714d29ad838aaf4e4a232784998492f", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "bf17298fd9345bc66df7bb29c5d1f6a04fb1d58a3a41615fa13108d4cf412239", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "24aa2a929e31908d9587266114f8415fdfa6f71959823b6ea2609efaf89982cc", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "860027b6957209fde933d399854e916c9df10714b64291ab5543947cd084f773", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "b094ea4dd8e77dc1c05d70171013ff964791280f56688e49389aad131deb1a71", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "c2f75d3de2c762c6db0f8ba6ce9e6067aadc770f22a188cafff8a7543d923617", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "4fe5584141e71b3d82dbc74a91b30283d9841930c9c5f064b2b5bcd9276b5dbb", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e1eaaedac7874a44f91e9d5d587abc89b9367f3a87744efbf28d021f4157164e", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "cf042d8bb5866eceafb7485c55d2a859e557223f68c55b9b64370f8c386d7be7", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "fcdf632fd9cf5b0a51e3ad56cf69f5a2fd36d511d50784b95b4f81fd309e2bc9", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "589c6894143c6f4fa0d247d78da82670bc26d05ca8b9a5ef676dac3ae64061a4", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "8a96597935a4026c2f4439d7c72ace0af62be199897353145d3b5b81a236e493", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "673f26ac15a51951cc21903ac139dfe49853df26750b4389c399b48a910bc727", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "aae032d9117c51566d88f8f751245d9762c906596fcbee154767138a3c74820b", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "4d9e5e8eac85565f49e026a15f7118103a102218441cbcb2b0dd97ed1ca4027f", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "da87e8aa45d2a19874b3427c48db5f858a0b46f21fad7574b5b67a56f9242ac5", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "a316a2795c6a64281fe2807fec529afb86b01ff0894f201cb26404e3d1f6857d", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "645579d57e9883a653d9d717b01c65f64271c6517d9ffd7c35d0a393f85d3598", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "a4d48bf8f032aabdcac1c5176d55afa28b656921d8ae1bb6ffe1b858702e9d7b", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "cf786fe197aee77e7bd915ec54357a456c44cb009a1b8d0217d3c5ad8309a0ac", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "a561bf036402b790e5b4430eedd834945f87ef83a6fd4259a4da87c8b82c9f75", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "79eab658ea225b26e478fb8432f7afd162f7ed804f072506338711266e48e29d", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "249e45a5090ccd9c3bdec3c1ef4f414dc3c91d7ef5ad1039707fc4dfb9d4d6e7", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "bc235db00a22892244bc6829f40ee663e25a66607147fa4ec6806a3108972284", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "9070cce04130477cdd31105345a7e8aa1b1037a8dded125949a911bef9f49f20", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "cd1e8e34d8a2ed0b4f6332f0c67380a2bb7f41c70d991f1fb237b4e3192515d0", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "2117148979ac3e56813f5de6079003f7f12e7fc3f0ffd13c5f5e1e48e1f398d3", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "acd894e73a274c7546edc3493a5bbbcb0bf495cac221b94b945d8e560211a8fc", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "00383cf6100c8e6d43128d82828653572fffe55652c5efa30d06a7af2fbabce8", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "9fadb5d1a02c6a05629cb22e24bc8b41d239e6617b58e46b9a893d4d9fd5868c", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "7971a92d26da9717dc72e897c6b3c63ab91f1a724c005fd332a3a6bf37c51e6c", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "8480bff9ecbe62e3e017e5f6b4ccb9fd98408d1d8104e3705f9bd8e842e4100f", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "af35bf35a868a5dd68caf2cd3819e52cbc6a01f996222c962ecf50b4620c4c2b", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "32b28c65d72aaa15fe82a73d6c0cdb345a8cac697edf74efd64aac0ee50a6ad3", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "5a3ce4be9aa9d97d4b7aaf8bbd827c3b06ba738fbedc2b9cf98b8be4e8ae90f4", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "32735c3a7b9669c0ec7f42643fbf6a4f9f32e29b0ff017c7065b2955ba7f739e", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "9ae8a8a4931334488a2408d9807b9ed979afb1975cab1399f1da6490223dd859", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "5b4e7a0718de4c28635021bff45b4cb07de3b91a8dca44de0d672af24e75ca37", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "6d6ea1a04973ff008fbffa51304db76c3a9e664e7aae1ad8b8ebcb815bf474f5", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "c47900fe863f291e67888e5ef06c2acf7995bb73c1177b689b80691bbf059576", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "457c0ac9da6e52dae5d75407fca40efb191b0a18c3f5fa196eb32c851e6e46d7", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "a73afa1baef1d035a0c06b1b7f528a592d5ab782b63d8045d5fd0d113f4d4686", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "ef40be76a5ee26485ce44057e2281c905311240251fb65e157a48eb098fd7a97", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "b58290958d3bbb5d1798146d7252ec6928dafc9c088830ef44bf808ec73df1af", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d238b4de3e1f40b17beb2d6f7226bcc1c6787d9ae3c4a283dfb990cb9469892d", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "83fbd4a880f2310760a9f912c0d0114579e8165bbf7f9c4b8d46354d40c053ab", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "d480119e63e0825fec9c52dfacdbfde49e78019282a94e7dac6a8d00b4fb82f8", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "d895a6ae7e3d9a7f519f9a9a651b984786f308d9e4a923a9d888f5da20b50614", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "06367fd250d57674e61f2db1729ca8343b22d0c54722a94d0fdf3f4767e2a1b0", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "cd4ed1a445898884d12caadd5ef3eea89df0a51d79840c06955583e8e3ccd1bd", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d940de3966101a7c53f5a46b3dfc91486108d803df7d3ecb09e8a3bda9f80d12", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "dac1a6d0189eecea8f2fce3ad4c6d9480f5e63d4571120aac148f72a52459920", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "482cf58289ba71a0e26dacb479de77c3cdfc3ff9377541492e9fc394ff5a2c47", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "4a8ecd6d456fac10e014c9b8885eafb4e6d2405f97b42a497669d4be714ab266", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "50b13111c41605ab9f6c191546b0fd321c114b1f54cc6dc505df37422ddae489", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "81e403c3456bbb8df012feb2c85a4a767d8cb5d42c1d543e842479717f9fd8d0", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "a1319f34fe75cc2e6b631bef2faa79ad5eeac231c7d2c43c6ffbe605d6483074", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d0fd13b3e87f7f52a3065f73c97cee9de139b95a2c0c2e4473e3ac292aad6644", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "793efa2eef7ef51ee295693996ef0cccb9801cffe203a84cc3c0fd241b83f51a", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3bc126909b275fe9eca2980237fa7d51c756aaaa8b818afe8f4eed03d2c9750c", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "6c91a546ab6f23c5b802a34cb9330d454ca164aed39b77fe96c11d8cf4ef8d8b", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "541842781c263c0b712614bbdad6e6e0fee59b7d398f148588bbd35909339508", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "02e9ef7cd7f9419efeb05a34dd7086d37ce851c084f3ec4d284291fec94951e2", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "8ca23aeafc988059f7d394a2191392360da0aeb6bfb0863c16f9e7a1110601de", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "732daeabb1c1b033fd76a34dcd9c26ebccb0909f5ee8ea35bc683541063885bb", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "2cdbadd432ef8c16077b8eb0444b658725e6c99e84956c507fc12e20fb17c4f1", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e761ef58cb5be9dbe021fde4190309c132977a3c8e6b955d54dcbf5d7c01e120", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "1b03ec0b45a760d50d096f9ae81d8b368d9fe3f713b223481cbd81168f0c2973", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "5d4f6258fedebd678301b425ca67f1124dfacb2ea1214efe3d5999e923c40c9c", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "dc57157dc86a1f07de41049551886f90c8d3c45e7e4f83dcac6fa42b7f46d54f", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "59af2c8418466abfb8e8162d1830f937ae7b5a47df6cf52f6a42f6862916193c", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "9f542f42f3c3074c33fd555b17b1fc1a92c54cf73cb0d8fd801ecb546ea45dd3", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "e9847f14a98e73e02077a5d9bc3ec3ee13c8fa180541d53cdf2856f54b1cbf5d", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "49ea346a4111a6999948f9a3881ac95a65701fb1cd955b4a6ec177d3ffaa93dc", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "d3902b301acc927f751ba0b00c8674ae0a6851ad21f16a849cee3a372d2898f8", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "41edd305ba7d46f968b205720a0c7ecc9e241d6c1f0c29e03eb4e2866412f66a", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "950133582a5ae3959fa40af31331dc03b1e3441edfbc2b19f04449d3a1f0b3d8", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "feac576ed3b26abab058e66ca8f951f78cdf7a6d25357cc3191c9666d2e2795c", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "f099ded0ca370f7f43f6a36ce251e540af9be76a7aed4b662160bb20335191b1", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "a848d8d473fc15af7127a425b06af866d89f79e88677a2dca3946a5d53bbc6d8", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "ee5243ac9ebe41276d335cd8b3f8fc3e1ad447c96dcddcf90543e7c6db082735", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "2afd10d1881beb445b29593e62f618c9d0cbc0d9a169064aa56a3b2a5c80f233", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "5aeee3d4014cd23c53c82d5e7893b3ba2ea66497ed914f22e8d1c59e3fdd6082", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "b6ba6d23fd796cba5ccf9aec27952b22247f30f802f9c07a627b6c060caaa194", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "4124524ab82beda21dfed4202718356f3f93a54835a89b1fbe698333d7906a8c", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "2c86299c5b526877b97797e992bef812fa9bc07bd732ede802fda0c2202fef67", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "c5bd732d653e6c2bea79252e24ea251c4b72d0a6a64e4f2214ff06bcbb9862ac", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "a84138f916c309bb23c0a3a64f3aa289f8e08c9bc462c09a192d540bc41d07de", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "51d078a53f2d663bb4bbf134a8a9a3e1755b80e10bbb6ea92fc7af82d1092bff", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d7d1ac5aaccc740be51b785f3b5fe3e34fb865ff593c0b9a59be3f5f1f8465c1", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "cbd613c6f966a2d2a37ac8b448f280c3cd4d8e8f7eaf40eac76abc331ebd8a0c", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "481f04e6bfc1c4b3fa7d237756fe0d7585f8d8cb54e1eb895f10d632c8fe209e", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "92d45a1561712202201d62d0d5770fade1a708ac6abc4eb488946dca8e7c3a6a", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "16c4c2b01b4de91bb9f84632f77a8c8c5863bdca2cc9a484d65577c8c2d0640a", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "1198aa4f0e2811445637ae6d786e0ccdbb6e8b34d49b802a732f29ccd138f316", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "a1935b5db279b26b3ad30051379e0476d48e61a72e23079d7edc89d9b4836adc", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "e721dc1b55ba061e3ce9f9319328ca49c3e25109a4329fa54ffdca393242cdc0", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "24fd485ae636c260622ed01cf400a9735ce282f0d592d5f88fee90aba8c9c983", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "95d8d151a8aa180157fd118065232f045fcd858ca73162ec7913a9825c336489", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "9ac9da503317ad4d56f87ea7cc34aa85d588ad6de9ca6c1c13f472ff22ee88e6", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "573857ae53be865812188f3cfb379d80b931a7a3d7493496d6593b7105eec9f9", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "fa407f0beeb265e5ad3a8193cbda1b3af68d0f70cc6879521e2d95ba8bbeec84", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f63259597a5f727d5fac1186e8da41707251bee46ef00366c536bab48ec4821d", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "4d9a31f79a9c7c9580d1732132b9c94100ccdb7bd2826ff6595c811fa767573f", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "8cd4184b39f710a0406868377b07c4e70992f0949630f799a7db16f65c0c0a1d", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "4a4299a92ae9478c482944cb612a80065746f9f5022ca093cb6289e168732afe", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "c28ad929df9ecfa22fa497e3bde059dc820944a243f859cec51970eeb14d4e00", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "0a8b81ed369672f30880a0602f02b4e51785ead4de7361f2df10314c62f725cd", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "a23a3f048acd1c6284260fa3355667c3f07740ef7ccb8859342a5128daeb8d51", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "2fc91871d9a91e42405f9b68c35f29a95d9e1a82bff8931311fa8fceb83cd72f", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "594bfc70275fb426290a1a5ce44677cd7c8658e6c21c7f301e7369a469748ed1", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "50907618b84f7325b1ecb8e13ab50c02d4c7d6ba111aa088de9ae76c7a9ef49d", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "da87b0bfaaf2e618d71d224438e6d08b0fceaf5060f5b5d5565d76affebcd0fc", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "5dc964860b60f334a5a56aedeb46f6e2dc5c6016cab752f3450948eb88744204", "lang": "cpp", "status": "ran", "stdout": "\n 0\n", "detail": ""}
+{"h": "38990b82a8d478b5855443573adcfe242d16b4f942e6f0bc593f6e90a81abfe2", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "a00bb85f1843fde7f8ae4585df9391bad54a3109a5a61719f3ea3f6c228061be", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "d3317de75c1fc3fc6a38162af407a3b552ccf04df72da36d6cf9b10472e2e5c2", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e4f192bb33f9cb36851a33455724efba275164b0c697b2cab33a56abbb854084", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d38525909f5db54299bffc134d17d66af29696cf8c3971fd8d350710920a4065", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "7e55768f8bca7d530327ff87e7eafec6769377b3ad85f83878eab92a18d51640", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "826e173ca9a9458264302ebe9216debe5084b1bf8736692bff033a50010ad6cc", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "d94f001b6b29320a87e4c99f02369d328c1a1ea1e7043391989e0a841c27159b", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "1ae07a9aa3f6e45f86ad4c0fa48d6aea0fef139a7dda7bbd450f52ab7f915715", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "41fb6c8c692a48071870a028bb2199b3665fadd0788cb879bbd3d49ab19445d7", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e11fc137bd64ef7ed6467d7755b40737439e46d20895993b846b6262b3dc0094", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "43c189cdcbbb2a63fab4dc735429416ffffeda12d6944f8e349f3f0def082d9c", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "800ceadb4d58f9b45fcfb213c8a0200e4f92fb60bf0bfc971c5e176d4a983011", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "2d935b8b6e949436c1e49b092b8a9c1bac57a370f469adf35fa12e8153a47e3e", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "345425a33095ea408d4d1d26dcff4fb886a8f4b70063055523bdbf435436abf8", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "14bdce8cbb38555ffb0711f369de155e2f71347fc5e783145b027ca41153cca9", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "2fc3eeb9466cc4fac455400bbe7bcac34ebe8fba30560e28f32a35eb0af92e03", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "fb929aaa970de1ff1654e90f474a5b233e29d8c18e26522531227f95d7e75f69", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "868b62d91e47521dbaf49d6edbb7243a5be0b23d436379be4aa8c84e46f18c91", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "7cb768ee6f14acf84e2f44ea55f45aa603cfe52e12ecdf23a543deb5878b2f27", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "27a2f65b049d1a8a0e47a7c4211eebf3b6ac466068f81721161c2b1019a242e4", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "5ad7def4244defb6acc03116508a75f6262fdf45429ac42be416276ffdce3dec", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "72cf5229789636d1c9fc6055c756e7db5875161834c53c20908a91b8ee14aeec", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "70213fa2ff60028a1ddaacc3a82183c25c6a8b0d701d2f99440f52e697deda2b", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "5d1330f9a400e7ec2a8ede5c1dc606c82fc2f885912a99403c854971e50c0f35", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "9e78b386defcf2cdc5de3af3c88d1102bf342275c3b3f72f7bd92c2be0ca9881", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "1a8a9c9e521e37ea8b05164fff26ba49b0fcf745fbe8f77c7c0d61af9dbeb726", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "2fa882c2c41e77256dd2c7464b8e2a60412bb24c2f7e399fa9ab425c13f44bcc", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "611214e2a199908a71da27d27904b0dd09df375955f71be4ad961beae3e5085e", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "61f9261479a2b300f39877496f952923911cbc50d191b0df57a5a888f8cfacb5", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "5ea94752c24fbda648a7362afcde0027683114b6f13605cf2c97e20ed456be3d", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "58d16cb8280d887295bed88f2341112b8fc4542912596075543b364c1d7a3813", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "5d6d571f2a3d782ca20716f2a97de75fe02dbe2697b76e6b5e709ad3774230d0", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "04edde177c1e8cba9096aa16a210bcc09b81a9f8be3c84f2fa79ca7dd0304171", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "3734489579c2bc371fb6fee2e1adfee8ad739e9889e6ff6ea0f4d2a84c17ec7d", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "7fed6173c2b676ab18176240a73f989b17785ff7630023e4e8932acdfb251b7e", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "613e0646a6694f17c55e55f1e1a4709762a69c7b407e98dfe0e503a86bc445f3", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "f51d35defbf955089d87097352f3be0867b676e71a379832432653554cdf17a6", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "5382b1e3ed16329996bc86cb89307ae65a7ed9e26d5cf5fc657afdfada858b57", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "3e790f71f161b7d8b6ff94a1ddfa3c4fe5fd013a09cef9441d92cca659e58cfe", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "0131429a25e0ee0f68794fb5b3767618f8d6b9c55a57ebae1ca4a93e86b332d8", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "cea642c8ed96f0e32e1cba5657d7b4e6e2397bf6ace9a3c5683ac1d4cf6c3108", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "2fbb74f1a0003183ca3a08752e922f541e71a84997b72f40d4d267941eff0842", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "3c6eb21e2a46d545793f879a718ab7f703183e879e8de937e907eb58c6272b9b", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "e516f226a543d85b37c8e1401257021e00820c156b5a7216c2755e25f02cda8d", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "c7b0c83c30ca53d78b82f2e6f842a836bf48f750842e0b378506c19f1151a165", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "7ec0267ee1fe89bd4347e72ea8d5cfc0de44c11f0ea75f428bc3861658355885", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "394e38beb2998f2fed8a937b29a84a3120b4bc276bf6c36ef88f25c95b1b40da", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "1a44c9f2068462bf555bb76f879e24f5182fc66d68d4258ac5d9f14348d52883", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "39b98e1f07d5d5249c9df8f8a3ecf321a85b0827b92ab7a3d14d1cdb8526942e", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "037950d0ddaf7aada88811b167807fbfbec477b91833ea3b6e4311a242977a4a", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "f94c98aebac515bd80b69804c44f3378cbc75ea7ce788abcbc0cb28abe60434e", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "bbfab45dc5fdec5e33ad517c63a97b55c4067033b882ddc6ef7b6b154da0f321", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "9b36631a84d14f8be0f64af8fc0211bdd467d9560cfb97b31e8fc1d38974f591", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "40a5849402c4fcefb4330b55a7bb51c839f0976aae86905dc36d518f3710e7a6", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "413fa646328bf9079d904216c4499cd4c0980ca0bea15067adba814ebb0aad8b", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "55b85767024370df0ee00424dadfd123714f43d34a5caa4c95b64cca141def51", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "58319939492de785b6e20564deca3b145f08cab4a3f4afa53ebb535547f8db75", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "fd93988c129566b58cb5c52150b70721333c86ab055151e23c68ab8a8c5bad1d", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f40313ce8eab0eeaf6fa3d679e2f196970792f913706ddff6f47cc5e3ef52359", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "61a75f354768b11f770f2430fe74cc9161a7617bbe45097100369eb8c63d24da", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "a5447957ff5f4e97d992670f3c4591e0b2b5e31a4f8ce544740e298feaa4042b", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "ada2d47a6701a80b069496cf8da7137223d0738bba6e0214e499258faeb22197", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "ae8298d18b9dbe767418b977718ab5fa8b08d502d8290bb0275697c134d7bebe", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "680d1d88b5d7da82b233829ac0a0f3a061bb660f55d379a4d0fa101dd5bf324d", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "4c6df6abcdc52e303f52f62ef1dcd061a2330c0d26ea0232cc27506fde03253c", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "72f7ecb397988f47a84f6c7408d74eaa9a30a4ee2f5f555e28121d071792c65c", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "d07a26dd18217f12330115b17c644090fc63b2985c1144cb682deb55e3abcc00", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "8a7d76bbc4fe6dd7ca08289f7634d0eca0f2a32e7acd67447f6e3f62624c5695", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "af92bed4d7418d5c9e6ba2f26096352ad8fee2e19f645551bc01f2e506244062", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "cede2f36f99c8bcba61afcac616ba815d403bcbb7936771749f1d838650f6cc1", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "c184dbac201402c27385bc5583f88e27eb88c5942c5b0a2ecb22206fc487246c", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "1d23cb2a7857a41db8f37dc1eda400b84bcabdd942e9e3cb3673e2abab2339a4", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "8eb1c03258b1f32ea4459d96394513036225d3d8d6d2705eea5002d284d28c75", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "06facbc4ad061555046a92d9dc09ac9a802d269b7f45442341cbb5c4909929b2", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "f5788ccac526ca5b643e4fc0d7cd0d28b687d87ddc3ff3aeb38458399a484ccb", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "de4191b2a438d3f45b73c47dd31c6341bb5de81a87761d9f17c68961c2df8fe8", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "650ee39d87e41fb7b58bd2c4edbd476b8e357928a0c9eba6aaff699cb1c62bba", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "bac16316ae23ecb0177134c13e368c048b33f6cb5fc8ff07055f6dc83e79d9d4", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "410aa52e605a9fab3effb37a09b113638611a97ec06ec08ed5d646e4d07524ca", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "27e6a87e0ce531ce25d6a29ee9715a0e1eb9e8231a6085cfcf39e16d59ecf166", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "ffe31fa9fc05e08412a567f0444b2d822b9b37f377ab14eafd3e851987554d1d", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "7b1015196fc9401dcee81116233bd26dfda219c00cd2f9d6e6b5497967bb275f", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "bff2d8457e7df6ef36aaf436cc4fc21184042c31278bd01eec42310c21b8c09c", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "44af7dd312b9cdef25fa0aceab92caea7ad602cbd9dc3beaa98f943ad965d71f", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "cd662664c6c3970fcb867b89305937cbe5f9319754e84b7ff51859561ba52ad6", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "78c6d557b55a2e6ebd3b8e339d937b9ccfc8426e20761b6c9a2c4a3381c49d89", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "fda528a398facde8653ffbce6a3b2546c414f3c94c3e57d8872b88564b5bbfd1", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "20c93b7322b39803e28b416398c5bc3a88ab627438900179ff6e5fd5183b5d15", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "acd0dd37941946105dcec24bfd74b50504433bffcfcd7dc634ad2113f20dc4db", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "a4b65f1aa283dcb60f5ec26b8f8a14f1ff0069d5ae8a6c4d06ed9ef390e0e6b6", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f4da3358b16309dd173e5d0cc105fea541b253f234bc745eeefe29e4f8948404", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "718c691f219c5903a2efa19e6f3cdf688cbb45be45a6a963749e8409d889f06a", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e0945068cb7d66edb72aa55dd53c292611ee284799b6fe17e63cb2eb49f4f822", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "83889e5de9a3cf52f4945c008fb81506c130a2f3f4dfaf81c63b5e40462f90f0", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f6cb057e57e78d6fd7e03fea0debad2f11352d2884d879b2b91f7cc78d750220", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "361cdd7ed2f31b0f14818da5e90ad96aeb325b1afc26e2e6f32f5c1a0469fc33", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "ad953d5ad188c05597df3da9a27fa00569da67d9bb11a1dd0a81795dec10b513", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "978648187c4c6180bc820b0a4689e37097e190f76ce8c9b8e35c22bbd1fcb111", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "535c0995828c298b313b58f80719f94d6f24a959868648a761369ee7ccd6dc4c", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e6a48dea16e382bb53fa2585df40def84e8fbf8fa2f8b36bc417e67e84482f71", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "5bbe2a71f776b1c5e6c3e227bc8460b5cf35825ce7923b2b1443900a8ae15b45", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "05c454cb0aa242fbad1c87adde828e11dce749bd5f0eee3a7d211823ec285dfe", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "b648d784b5857bbb2afcf5c15b25a5ed8e4def88dad16d300fa8a48deb422e5d", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "665c6f8ce570413ecbe9dd10fa8d2bd729483b96f9634a0282947228d318b1bf", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "1e2ceace979537b383d30d065473e86fe4b4dacb5170ff6949494e8fe675acb1", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "6a958d5750d25404fbfe6e891a494d5d30030bb8dbf08b9a48299234c4c6ae5e", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "3b3decb660eca623647bd749e06ba0ea8773c8e3a13a5eb7a1499c501406efc9", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "da8bb933d07f79ac3589d17fba40ae3a9db533828ddb384163fea54d64648d4f", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "0af54e480c9ed460914c29688ece73f92a2a7f3528e9332fff3d31cdbb4dd5e6", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "de19f4bf81dc76a56f8fc3f2c5b11426822b857124fdb40dc62612023f9919e7", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "8f8e3f634cf5cbd134eb2e2a5864a66f45e52fa0d47d66c43943a01c7b6bef16", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "b20b3ee91ca42d33421ba51da5bb20c28b0ce7fce7281304a71ad0b74134620d", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "f96360cb5966d68ac1907f0933c40c0fa26b6f428cd7ff68027a392b476f0c5f", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "4ed8442660024fc0ddb49ef9706095896214fdbb4c5ad5497ce47fd123e05c89", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "f2864980ac0d48d209330f2d04713bbd3342e0b15c6403de917c4252fcf4dde0", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "d209046bf23a32b554facd7c7181721195a0ad1ca301458840ef4ee925afffea", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "5bfd618e9e361c3ca4a74cbd13cf22c2551bd04e8e4dc0b11c527fee3f558755", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "e3ff6626a47bfe2e5347dbe53530ad3a6abdfe790a782e00a9c21198e78c06e2", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "323db3c4929c90e3522869b0eda3245ea532d5ffd565e6e85db8a1e681ced70b", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "07b99928cc2bb9f245f9f2d51c76b71d9500b115328e235b00b7787a3821a669", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "56632c43a2c5bf48f9d3a4235602ae1f6791b49de2fc9520d8be7e8243ae3076", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "6b5fa801a6888e48e929b061c0f4d552692263b2aba45bcce3b63182e50146a4", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "6844252b9c1bff1afa53058fd97d7c797d28e3300e1a5ba9c02b29c6efc8615e", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "eecfa731e4cb5c781c42304460308e3d2ee868820f40cb8c0660685ee6b99a66", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "fe07bd99c2cd90db74cebfab3e7c839adbeb48ec3a090c60a93d266df4dece84", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "be677950df3db7c276d8c00bcf1da820f9ca9243e7a852ed458882f04972e871", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "75096e59622acf0beb82d0818a11cd7969be7547d429fbb5681c43155418696b", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "5a3a0c61ce71d63ccbb85cd87f16363810064e131e23d90b326152cc393f3d72", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "030a83d8cff997b7a768d681c2befb85d1986cc429194e3ec07fb7129a476ca5", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "fa547e9e958a32dbb315b4c33d6ebc2db5c532d00aceac201d159f9ddc4f9756", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "f80475b8a55f748bc3b5445e95f156b6932e319b6f52104ba636b605b2f9df08", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "1eba4a8a09f9ba9812c36811b6f4212d07cee27a1aa86ac4813c58e22c9b186e", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "fc538bd7eac6bf96e76136881ccd323d584fac0d3b0fb83aa16910eff9292a3f", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "a49e184c0a2040134ea78a7d2e3a1376258cf5dc7523ed628df52b498ef8231a", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "ea36be1afc584763ff4bc0d971317fe08f3e527ec4f7ff087eb4cb38fa9d3978", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "01ae250c16ef619c9be510e31c321a49fdcfcea15acebd8a7664091251e09445", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "f8d0c39c4cf226485ebee3b23851f606315c80158d5ddd45d8404fa1020bbb8f", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "167427b51b50645be1569201d9c0bc339f69fafc3ca3327ae9eecfc9251ca01d", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "a22e843ace80064d6117ba783580c000a28827633c94bd9c46f114c7c130ec32", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "5854a7009141f715cd348cfd2a0b819a23f4ae5098ea23756ac5a4313fc30484", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "bb4a68f985b8428b6f4f07d1107f1c7fb3b07c79e1c10314e5b116857818beb1", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "9fc5bb722d7fed09cac22cc855f1e469e6daba989063a5a02c18238a41e749d4", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "417d59fdfb9d5d2e771468c3445be038f00b3b23e2414874b763994486906d8c", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "f131bb8df76cbecb711155fa5d7f91db01ba8487346f6bc11c8b7636953bf9ab", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "2bb22129788cc486d78470e314060f758f3cddea28828712a212e1b8cc2e827c", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "63d26570614b088baadf1cdecfc5fb790b49d2fdf4a097c888a17c10228ec5ea", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "94d2038960a535da97db4089f12573cceb8ed97bb0f75a32db463eaa162c3ac0", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "0dc2a077f19ecf3eebf0633a7eb6367321748a8e5133f5bab65fa840f7155dfd", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "0cfc91128135dfda3f308e5e699cd69d9438fa1a037146d20d890f7a536ad6bc", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "070b01fa9f2b0df80350d0b6fe7bef583ff73b2a27dd45de43b21f4a28995e68", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "81bdc349313d1f59bb1d1e982156153f8cf53fe3a836afa258cecf3efed3a96b", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "47b1acbcf7eb6ad9e43c93831d30258a05f1f0eb0b5c4e72af4b4ff6e8b7e28c", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "d84f0b4178ae0f15fcf026c31ddf2eacd0bffdb386275829424a72ee596e70fa", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "46c687dbbaa1da208c035c1b0f95dc4bc732f9d72ed62f0b70ca2ddb7f277d7b", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "6285de5fd2bbc3b933e29c21bae75f7575fefc800ad58e870504786bf5029f37", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "ef28a7bd8674e0be9c55d16b3ca0bbdcc1318a31a14fa5c23581e9f80c7a7990", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "516e222b3d68f75f96c9085231a84a86648bd7b156600f8604c5ba831e1c59d3", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3ea982399bfd255c6278a872735fc6da9edd16c8ffd178fb9ace78cc9f071622", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "737057ccb42bc0677f02122d9a18d99c3592851b7bfef8904b26324011d6cad7", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e4763973ff9c1773269a760412b6e935bdef298ebf38a6cfccf3d0d2d1f5d560", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "02fb8f3986c4ce58d7b69c1aca75e014a21b411e5f4379bba39f18bf7bb7da55", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "f4c12263dbf50530eb482524f9d0751348d20c12726a999605b48cdc7eee8313", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "66e5f8be0eaeaf825c2178793e6aeae09ac4c34aba284e8bda696251dec6bb87", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "99c236738899404698f02ca9c9269fa807cc758f2101e7f91c4fd912c0b4ff2a", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "a0d8d83977b9aae829e117f1f23416933b282e86c716554ebba0d61d2d9c2417", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "484d308d5e96d3acfeee585eb2ce1ec6bf19b7d58d1b2486996809bd1ec8e92e", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "2bb761e4c62cc686120bae3bfc06dde07cc589986428112c64140460773562cf", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "70313d22d7391fd8651b61ccafab8a227963f36891f735161b10b4781a0aba75", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "49653f99b717970b0d7cd45e8a74ddc0726e690e924bc102ff80a287118044fc", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "5e90a4102f81a5b85666ab9f2b6c261e2b375390527013d825fa32d98efe4f2a", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "71f97dfbc0fd07ad381edb6d3be81ac631dafd18b9cb0589460372e0c6ee4683", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "1d193f8e81fb494a849afd22284158ba2546ea233fd24190485014cf30673e2a", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "133c41a34fab2abea66835f38579e99410119fb58dc18d53ffe2a17e23bc364d", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "ee66aad9897c7f21aed24e096edfe726707e0f6c46fc1b218f21ae37107b72d7", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "fcf518decccea6c010ffb2dfb4b76528fdeca0e7c6b84f1d26458528df768011", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "d13b49ab8739f744574600654a46f6f99f02390c42e77ae5485029df8a03a5c2", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "a5470ed90bcc8d95f9b748362a72da50650583825055981342f5b0b912816038", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "f75ddccfa7b57ca8ffdb388bb9e372d8072ef913e4976b39702d5e4fc3cd9d26", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "afac73936621cf481c83f5a385bd7d2286b76f916abb0ec5a617387c99a8c31a", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "4439fa30d003df210f6f35f120555b20ddb5328537509ff0dc1bddfe17256609", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "d950d901362bc65da2634532a2bb41a28a03e927f9fa625551ba271b7cd870c7", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "ed5c057b73c63026147ca78767e88ddfbd3f16202b327359dbe618b20a9711fc", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3c3f748c4b58082e3582f5dfb9d4ad8e0072a7443c88e393e25ea7d380825028", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "8747864aeb9e40587b77585fc6bb50894b218424b0b4f998476fca2f36ac14a2", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "b6d0ab53797220f916682c02d961fdf5d78cbf887a739e3cd910e139dad90e28", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "b82814b5747701ccb61f5c884e9901670b81ca5417c70ad88803fa2f2d09744a", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "60d165ec4e3e4c2941a74d60703dffdad1b887a12660f07344d604ae0bd27565", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "cc713870559ce07a0e5464ad6800e17586d42e889233eb999e140f36ede0894a", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "56411036a0aea6eff30a5bfb6c885a947c3696b64b7f997761bed9dca9557e73", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "78393a59b9e63a5dea3958a4defb11f89df7ecf01d5bcacbbcc56b9d096efb89", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "bb5187263aaa217e906c4e0752bf8ff4b2fe4c574e7ce90ee7079b7b86e72b13", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "03aa8e1593da403c74d878cf6d06795cb6a491de05906e50e71ddca7301b778c", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "82c59ec4b300a2e4e9ee0625c57a082fd9d44cc98e1dc52ebb53793906c80530", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "a39061a6dcb7a1ed99f6fb2238a2841c36169e435fa4371fff42a8ccd3c48416", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "08215bdb42c717a07df3ef5e74d15b37025f22f28d9d393ab6d07303cd7b638c", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "32a6fdfc36644246a9860075cf5d81ffbce899e20fb449fd5557c6f323b02ff2", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "ab32522ccbcc39c4eb8a8287de973a514b4df8d430698d74edaad4390bdd8072", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "29ca4afc4e972e7cdc4078a2ddfe6a20989934ebe571aa65b7592d1c22ed2f89", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "dd4b645b91e3ddda7a5f76c852e12192dd09120210f8f778d0f88c279139f789", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "2d9c8a85bb6c7d8e2ae2e71350f327265a0f3a69080d22e9383e8f5d8f4749ec", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "3957fea49d7cd6ec56e8e8c0cc7036197aef34c60a13e3f35ecbdabadbadc575", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "4e5125a4efa3ffbc407d64ad4390f490ca63c492f80a50a811b572328ee50f08", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "8d6b296064dd5aae79a6d1e6843291b9dc36a7a6ca1dc94c822faec9b3266d28", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "dfedaf0b8d60122d104aa94eae47506fe03d9f573b9820768a0f36d7bcc8fa40", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "50953e6226b4cd0d17df45b7c22d6fe4804d5de86c50f2cebee44cdfe343eb31", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "332a71b2cd0cb053a2143b9318ad7c9cfab7deab83fe005040b475ecf90f1c26", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "53400a3bb9af42dbd554a37281c6259a3427abd05c85ced4815529568e7dfe82", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "6ce4777e8140cd5187f6ad7b66a24ac03536b842accbfb1105f09f4381e31244", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "dd55bce3917131d7bac2763035efccfa1b941c9ff192fd0c5550538a152c55b7", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "b0355ba3826950a8b6720a2bf0a37ff2833c086b0994e6ae98d1354839d5b579", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "16b80758401c6df1b2abf1456b83a3c76dc0641365079a436a0dc1911681cc5a", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "53ce4e5a4fa602825e6e107392de11c0097f824c1e78dc1c789a925ca2ef5922", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "5b2acb3ac5983da0356494f01331d91a4ef7f9c305b349f2dc29ca7bf5bc6fb4", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "abd799f35ec52f8f6e2eedf0afc1e4a3fd9311e38edd915eae42cb7dd3725f4b", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "c53f4744d6652368680e59840fb67e1412c9f7b700f3547cc53bcdf4060e928d", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "5b6e04d380306f5a6908bc83fb8d7d9719b9fd5d283b882e81dec9ee86bdd31d", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "aa98933620dcdd02ec3a58a38e6e21f0163726d0ce0f3b3510e35baa445a3220", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "2a46614f7eecdb4efc665df0aff9b7ac04218b7b321cd7c46df30e90602429f1", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "95c7aeafbc59efa26cf74a8480996c0fd1022cd2922132d9922aa44c85c6d8e3", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "417b969cbb0bbb2e5556a540a011a08a3b406d24e615f38e30cbdaa00ff80eb8", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "eafe5cf6cad4e8611fa68f107b361926492548a1fc0d06251bf94f356006d5e0", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "f6be89f5cc08757ae3cc7d8235272b38bbde809caf8074866b11cdcb2ec3a68d", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "b829c92aed2beef9826194e8d1d29cb1b7730693c91d7133939869d213b83ce0", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "98291fc2f068cd3b0f13406b03f446c88e2eb3f284bd1a96522004226d566233", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "ae185e81c3d8950481fc53beae196a8c6228c27a711df12970ef80acebd13415", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "fe45f528fbb22a449cba5338e12e75240db75ccadf73f72d9c015563150b7fa2", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "8ec05d28d593fa5af981109e920345e97cce64d491b1f503b6a7f60d02be9a59", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "70d70a32231021b68889081dac7910e51e3cbec7cf87af02d7c18bb7bcc3becf", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "b21b6e62c11c168d5e56e364ffa2db7bb8813d0813fa5977764d1d90fec8ca01", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "4153ecf2bf86909cb610e5d2cd65d5d42613941e2049e5c734667ac6ebdb3211", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "acbb0601531d16a58d83dc36ae24bc945e64ec76f768eceb66e56b2781e07eb1", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e495e6c8853e1b5efd20cce254272f88bee0867341ca10f9b622acc72c77e5a0", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "c7373c357b08eb6bd67768ced1dee7bb864cf017176ab4838186517eb5778470", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "ed13fed1820311963e664fd4a9f439e85bb7fa8913498c16c307a7faf1276414", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "8bbde42f0d7d4af1378876b6c8b3f2a86e0b7ecbb461bd3494da7bddc3a77a90", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "82f333f2fb30594d538d5a8bf27d200c3e47e77b60b6f54e78ff026c7bfcf2b5", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "486a1a9bc78955daf1d74ffb302e0c95a63771de0e2a717dd7d004f6c98bd385", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "337ad0a08e5d18a80c08f241094ab12e6f8917568885897b5011f2ef6a954e6d", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "712e0556f995e3ff6cf2cae4d2602b3d3c3a8458519fa7f4d76bc401993860fa", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "b49388fff6a00c1a8ab174ac9a576050e332869c357baae4002d7176d8177c89", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "3a3c140902408386dae71e3c184f6cc6c9a94cb2a90f100087d1dc3e7d52bbe0", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "ccb5e0cd0a75aaf5b8b589c6da32109496d539c97c77f39c9fd28de0f2c0c154", "lang": "python", "status": "ran", "stdout": "0.0\n0.0\n0.0\n", "detail": ""}
+{"h": "fd1c00493dbcf8d705a07f087dcebdab15d8a8ce09ad61fbc6e4093aa4793081", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3d83a58948caae017846197160b3cb4af68c8729a7d0991b8a7eae1396454d01", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "035d36d81f0f8d6363f57303ef6fe56a6c937a58566fd18c0f7b2f9fdfb7001e", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "387c644858b3200c689f425ca0da49644ed97a24adf628cba873f43eb1247950", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "7f98c0268553c22f99c443ebd61b6a2393e372272876e81917ada6253c8b6245", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "54e33489b03c5ee0eeccf8c56b6a97388966acf092f21a3fe749bc13f2fa9a07", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "fabefa61ec33df07b713ea96d88eba5b7025a54ddf75efa5f018c6d3ef501d74", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "b9839b730f3b7d3adcd262e877f81493299f1e641f13f08266a6db73958ea11d", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "3c866420812575e9ec2f03a65078fdef61d76159a88ffbe37a25c53817a96f3a", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "e8bcc072be46bb9bb956503ba9f6922f520e85f402e47d65d1f0ffdcc09e6fc1", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "76b4df7496c7a4eae6e1c1a32973133e4f9c750c326698b8dbd5dcfe3be7a7d6", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "a01f8d35f8bb5361c26280e4634b1e5b81dc2d2c405e1bdc62998e994801d53f", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "8c8df112e4f3d705203687946e5b137129d5a8fafe3addf8649e2f7eba08a20e", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "83c39e530daf0b368fc34968f89e0f6115bfe20d79f9b65dc8849079dfb11e97", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "b3b79b107d8fe14a0a3fc44bd7c9bcf1ece7e3692f3ff2813073d92c47073d39", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "05034d66b15e417f7b6b4c48150753673fe030cd9962b5f1f650966483862efa", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "c0e501e492cbce7a51f5ce2587a8eb13344c33a32d15359215cf9ecf0e35d099", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "eb435346d7e6ff1fb9920f5072a504524a26aeba095d54be5510b634b4035b82", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "c2a0efd2050a138965ee63b07b5f7bdeb4ba950d4d7f268c3b6ee2b1cb49e223", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "885d2b094c833835c064039b5eddf638140181e6eebc812e70f2bd70d996b5e5", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "edeb7ca191f2908e3de8ce6c38d77d759e305068d21d84042070a00968f41258", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "f6913cc8e15b351ecc957444bff02f7d0d26e3d8b0afbf8540bef6e7b7eda7d8", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "58e52ddc070c50cc8c343e08474ff167cff8824dafd23ea3e75d4ab8338b2433", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "3e79851a867d5c0fd9e642ece41b6089d15bbfda8eda816f98d4993763fdb2dd", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "18a1b4742d85d7b3e931cc15a573a0bb393fa3a63aab77ebb7928a933ecd3ec6", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "cb8be3bac94e36afce9f74d076273f2555b2bec9eb2142579f86288bff321f47", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "acd9d31ba2ca78dd26c8ad58bacc3156ff20da8cc0b0cedd2ff5183f2ceeb3da", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "c53ca93c6626556ec1d52934a30659d77d92f5f3215c6f2522275b4e4bc3391b", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "31aaf3060ffc3e1d1c7c8194dd2dd3983bdb115c46cfb2bf376568fe4b3208dc", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "7d949abf09b399c8f2bebc592ad418abaa77eeeb868020c65a946d0da9a6bcec", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "6f3224b084dc8905d224262b3482d273403f8512f8a39532728d948574aba36f", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "2fab90b9f9ecb7370d4397fd077aa96f6620735ecc323e1f187868d14a9a33a2", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "6b45ba26263b107a65b6356f9862bd47ce126f72f1b1023767a6a3b9536cf0a0", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "5bb957dad0e24a0c8d7f79e875dafe0be4b481ce570bc33b50ae72b7e2d173e6", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "4cae0eaa7633b6709faa12ee3948519c9252fe96268f8b5e80f1cb35fc1a58e9", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f98070facd5a8653280e329aefab321293c9c914025cba8d703a9bf40f4e622f", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3cbbbb38836eb8fb76c49719948abd001109a45b4a3427941b7ecd1c4cab5fd7", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "ba0fbe52ace807657d8dd71f18fccaa7cd90c47fdb980590534a495d8d3c929d", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "872bf4d07be8203c89ab9a4419b72970dc4ed9973e78a23566e9d0bc7deb00f3", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "167ea8d380ce8f7fc1943862a761e52e8458414455131e7d4f09a314a946b440", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "a71b29e87a2d3e4220919d693e414b2e87b3f6606e5ab3345591332ea8a4388c", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "7d137bed57f4e428920aa68cbd9795f2f90c5e189feae228ad4f510e6926ffc3", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "248721428d10addda23ae8e4bf7225a6c6a3a87437fcd4f2406837ede89159c6", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "9666dea99d4a501b363bd7823914c799424b34addd55dca23c4d7a79c0aab1a0", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "4f8496c35b430869a99e917f2125197230afb932731caac2f500cb0d954af822", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "afb54e1bc579cfb23c6c69209d1697d7afeac5c1527a01c4a6eb20a8e7e5c561", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "fc5fda246cd79001085ec9cc9cf166ab755ad21a2bb9c0824e72477da031ad33", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "b752288be9c61e7b1e0c709ad28e17475fe1751cb3e8cfb0412e5ff8014e815f", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "2934ef5648b9e501a3ab63cf0a1e3503800c77fdf9a8ff2e0f74902063d66b60", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "79c7636afcd00814dbd415219d45b805d73cf4a054c5cf33e3899f62a37f00bf", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "03fdbd1ea8536755c978bebff2437c632e733fc975dbf0895d080c4f17787342", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "0fdb2513ae058a2e04afeab5a75088583a98dc123f3cdbedaa36d3f9e62a774f", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "2966df336bba745d9b3c0258cdc53f13968ee661a1c8aa4fac6d763dc82379a7", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "42e33f5864dcd075d864ca8e3c5eedc1971080b0c3269557ef333b539657491b", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "f83a114f2109a3655716d35c9a102be93ce455e0a5d1238b9d04a9029012b6b3", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "bc42535fc564b012d111b537c378b1f365d90876cb2113ad8a854dbd04fb37c0", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "0980b9de636f6dabb5db0b1a5291935ced8b132481e4fbe392b61a1139f56ae1", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "f23c75c7d52e88593f36235f0de0ac97f58027dfe51f556b215977cb1c5d1127", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "a70afc9c8394f1ba47cbf2e454b26ac97c2bd7a07dfe640339ab59c77c302b99", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "03477c19c060e1260711cdb48f384127f2692e5cbdc30f31e5e7252f65a8e5b4", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "039e4ce5d358f84af4e89a8747e13412d64af88819f0448e026c2bfd9e011660", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "4fa231c35e443018a174738f8995b324dedb878de2c1f1b27e06e922effb30a1", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "5b18e2cf5f71379008ec0110affdec63c5fe87a8a496d7fc42fbed216b4261ba", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "b8680595f811a9bd4f38c5d23d53b8b26dec58f93c8c2eeee86d20a905122f5c", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "d912fcf79667c63600fea20c223325a8ac1d199c941ea83b4d05918903541b79", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "b3e73f8d4c07844539301e80c1f921ce792542868eff53d33cb79c361ad034ac", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "43e3906c328b80716102e6d5bf0cc82d050446e790e24d0860bd1c92a54e978e", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "8f0bd68f034a06a00072279b805c52dffbee82f90d2a2a30391bce64429427ed", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "578c564c61f4524ff4ccc87afa3b0107a5cf2c0452ab773b77184202c9ea93cd", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "5a9d04b670302640918af74428ad9223d09a9851cbc65ecf1e2bcdaa1dbef994", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "bd2175a58ecd08983f88f6dd9b056d559906008b4075eea6af245f20f907a23b", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "af480dbaa95924f32c203d2d92087a25a92388c83be6b5ac121c92a67353f9f8", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "0005e271117f98a2d7deea92804154e9a40e002acad719a0b23b1f6b7c92c632", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "01117f678de000ba18e092f63e27e51f2e073c800e18427f89f075dd1708efd4", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "b34144aad35b33702fa82d7c8d9f59a7b9369e91ffda372234c731248366cfea", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "201ce80dbd72b494834e53ecc500ba07c80725bc561c176f7424a432b61e42c6", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "15b4a3b9fc4bdefd9b9d01329d3b10726a8931049eb51da9ea28ab25b7445a88", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e1c7d0468d72b08225bc7c837c691a425c45f4624c140ade44cf75c8051e3d24", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "1d7c952f1fde1ce9abe2da012449d40a947dda1e47589e14a65bbc60bbb3dccb", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "348bef2395708bcd2658a54672c0d80f858821b012ff365c4666dad593a526a6", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "8f871aa239feeff30e792c2130e99d25f38fa5bd2e1789630ee520b12ae52772", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f3e94cc202817fa4dc653616a5cbac0f208bf06aafb5f55b2e0f5f2f055d1127", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "ff811b1dfa6cd1a422adc883c67e281287c5568ef750916a71f5e8873835276d", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "94a4923a56e6a380a6385c27cdc45da7e872e99fa2dede0cf5422aaf3cef438e", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "fef8e611bc22549006ccce2ac6b0a2bd8fd5805b8981342a460737dd9ab2f268", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "9cc9e2a2b40916a20e2b1517dac213b4f8490792ce7b2fe8375947ab0185dab5", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "87ab74be89b4f9ce6c1409297318d382c427d1a4a9a75f36bf88d8da5a4fac05", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "2154a32bc02ce60096fc8624543a1839940fe4d194269dcab7fe51f6e7c17561", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "30c2530e4fbc1a1e5bed084f1faa9ee26b5e16b330792f49f9f388850ef895dd", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "bf98bd5b65c2f9884228849dda8c0214022f8f5366355a4f48adba15ed16fe2e", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "ca06dbebbf311a6bcc709e9950280d4850da0ab4152af8ab53ac526b517b588b", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "fd4284e1b0dcccc261351b84ef13675d6c5fbb4af7dc5711b0688ff232041353", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "4d6eb43793afd99085c7d2ff73197be1427a954a64895e361f4e09dfb37c6f30", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "0ee7add28e889f8890ac47b8c16af949912f8772b1a318f2e28501e6442c64d1", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "39b8edd0868b344cf0184eabd50a63c72dcacbed94b1ad70a95a619b3c4cb4c9", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d0157906ff37542496cee71158aa5fd2a4b0ee01afd826b31c9bd607adf00739", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "fbd2066cec1d548c4d14fa43dfef753295f5e832458f107405ba0ce166a33472", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f85f2037eb0fbbab22463566322b8e40e67cf7f298daf2a9e659abdf21c8e891", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "562c1665790ed39a25e59afdab020caee8b4583814dcb81aafe302b0eea496ba", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "07483aff7b62eb94e1f929f8dd40e6227ea0735ee970011f507a11eefc635526", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "cdd708a7b168ad5f511789bd04be1beaf51f9c567ab0a7e378f36ef2f6a7e9fb", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "9cd550b7bea0bafa3003320af8d9b548a30dd951a6cd3eba0616dd93d2fd2c92", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e53e9e962f293fc1219a886376f1092d9f18e379a394a36ca725972c9d7b90b5", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "3fb5af1ad2222ac45eed3eff528c815537fda493f3ec1792d196fd24791527d0", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "4ac68d9ff2cb79b0484a2778873a40aaf3dec9060f2b2ef5c9f2697ee4619c38", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "d5f96abd8daeecc3239623f0b9b0235b38283123e82e1b3378b7325c5cec6080", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "2b67200822186562da42d9adef13ee2c826177daa70b198d75174fb78cbed11a", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e6bc244d0c6d60c3e46c4d2deb0fa402ffe9d206185243655238be15f0b45cd4", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "9130afcdb3bb3b9919510dc0466e6cb37c1f0ebb1e9553f026a5a08eda2e1fdb", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "399881eb1dbf2876b94c0b999b3162cd85f8507072776f44393720144c08b4d1", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d2ecd6d3cf38dc678913c2d11d14e71ef5ba78ec4c5157a399abfe3d0d56834b", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3982a6b8825cff8817f12a1e2d39d381bf8c1807ab14453f1f4d6fafb7f35c7a", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "28964f9342b86220d3eb45fc943751aa811761245a8f4c4bf50850f7af4b32f2", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "91fac0aa05dceee58dd20969cd05f21c94ffcdf10e8193f520b0146c2f898ddf", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "d1c2992e161d27757a2dd819e6cc206d4d2be0c9875d57a10a5cfe4f751582d5", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "2a91ade7d16c40e1fb330d66dc14fb1eca0d17e9a3e16d87d2f168129c0c2f3f", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "d13f8f7e858065a525607a66d9115a91f26e53de529751a48368f4e1608e1c49", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d906dc5c62dfbcc806b125658e9a775705311cf09563da0bb84a765d770e3836", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "7e60030357f18ff6fc81825c30173774e94f622ab48b483c3cff298b1d2c18c2", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "0fd9303c3452703c02f76bafafde8e7f5a96089b2cd327d79b37a1c007eb3560", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "89e58e9c650a00160084b70b9391ad348b31d86e464d57e938c649fed74948b3", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "6ca9e0e85aaae6ad55f9b148ab5e25a96e17adbc42037ba24d8cce5e0bcff7e3", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "78ff925e3d4b869da4d2d4ef4c0fc535fb78de959dc783f19c59f7c274c46e65", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "1a505e2124c391043e5319b791b447b20beb533598c2b97ecd7ce5b12cb0163c", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "8523ce28846198926597d9c74f3acaf3697eb231145de6c5971e2f9c37c4652b", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "03aa62d4f3fc24274297951787db1e30ea462f95b541ce6d42438d9490b159e5", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "81f1e66e0387aafc1c023f7ec93b32bda25f3931832960e3a6bd848bedd1fd48", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "b74ba0ddaed2667615a34b75a80c94bb616449a3e8348efad866ae56ffcb6b1c", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "43c5d9441404d10c618bd1019b6ab1a6fd92a7f759c8f8343fefffb1cad84358", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "fef5fc08d1acf3a9e7595c15ef6bda66c1b7f6ee4016b012be3c9680cd0f4dcf", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "fc60ae3fa34ba57b843dfa0ef6bb56846b6ef7366ba86e58ae7c9656cfa367df", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "a65a6fecf4d7f960a924734e63b65034e168fb7d0756054ee7bef0157b94de03", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "49ef0970fbe273d5cac4acfefd5e232d441306264151dafd50ec4a31640ba03b", "lang": "python", "status": "ran", "stdout": "12.35\n0.0\n7.0\n", "detail": ""}
+{"h": "227d999cf6969672925ae878305d9fa66e2f164a1fe2dba78a841b670b5dcc47", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "8511cbf259eb4b91a8556b4e11bb2a76b78e6bd4d77ecde5ffbdfd0cb6c4ab6f", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "79c10f8da9c633d73833db3417f7249566dd0133c9490bd5b761494cb58ada47", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "b2defdd1921070a78ba1a957d50e4479ea496325f1b50ef1c7826df2bf036bdc", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "b0d0153cc2a523dee91cf549a68bfb5aa63b68c63723d8e90c2cca41a63c901b", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "b6d4e07a6db771ca9f3408ad95bbb40ba117bb93a2215162ad0d581d655b24b3", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "c3e76edd4708ed98a6bb024f38e35ee0c002d323e6c2edca2bb0ed550c6905a3", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "3660dcee12cbb70464e5be7ae27b44a2395f59319e63e143546d3fc285d8bbc4", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "1e8f5450252c1aa6fad4f39c6daf30dd26541c151d3edc48f7bbe6e9a99be6dc", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "0cf9fb0c5a98821feaa093cb76cc191c2d9243795e8df4c267df21886dd639ee", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "02eb013793d4fa8ff74c2d853e823f7ced7c8f9555c8c2adcdb8e507e7197fc9", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "fee251e9601010584dfb5aa6a50884dea17273dbd0a227aaa83cc99e5db46bbb", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "426841509573f4ce24e02040772435a05435b6679715206642f424ef72fd25c2", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "e765e3fd9bb325b0e464fd72acfba5a861e6eb1efa3b59d73a8960a0a1fc96ab", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "74b6942ae7514590bb501fe246b91243c7462a06c031239242d3e0ba36e87439", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "a0ccaec2cdc33ebbbb0659910ebf176403ae235c25e935ab1061a4cf49c0fdbc", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d05dd63ccaae36beb51a1b2f984a55f398143eec09cb74ba977ec828616c2ff8", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "6a5b0175a67a996a310637e62172aa9a308b930258d48ed2b43db635a761dc64", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "6011686f05077201d7d624cc87d01e6984578eb541320779124427eea7626356", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "c9c43b202c1b31853a4a0a84478f3321ac09dc55b42bd8c9c821288df5cd81eb", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "8ce8265198dfeb6b7768dad56fcc48d43965d67a58c9c25e7597d78c1f76c42b", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d55791b2b1166c1540e723c18c5fa5faed635bd490130fd9b2a9c5349693fbaf", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "77d564beee1b0ccca4cb075d2e0f9933f73d6924367c9765d283f621efbafb46", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "9259bd8cca7321b461c78ef2a6d405fa90ef63fefbf96c2aeddb61a8bf86f3af", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "1619f0cb46b8214d71d671e353517646c812f99bf49cc2f7c2df4bb9f694c8d5", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "62fc0f02a39eb43a23615ba3183a6755bb433ef728b6fe36a1d0f03ea203affc", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "9ed653486fc3905d9b1baab9bcb207fd3e358471b898c8e3b43cf4b1e9ef7937", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "2c842d12647c9688ccb8b3593a4b9fb3c2b6b6ea58852826b1de385110959322", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "f7903d716d7107a5a1715bd1fec039e209a096e2689b23a6fe492e86108be079", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "b70596329ae7048fe086209c14f7ac03e545a7effc16ee4f11040f8cc12027fd", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "400a5704c3f163e24c5d8c32d47f6e3b9826d14fef9785a392d10fd8ef2965a3", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "7f22b7fad745cefbc59dd0579c42db16fbc86476428835b66950c56108e436a1", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "1d8cce112f23087098dbadd570953259739eb6daf96862821433d995930ddee8", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "def4df2a0d238c082d388f48a9ffec832424f33677ab563c0b6f1adfc8f37c52", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "bb9482d081a38380e16f7653c98649536d4ecb87e5d89a409910c380bdc6852c", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "1fb2fccad0aa005eae411de471e428eac563c2b04a415c3d3c063893e911547b", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "9aa9b7a0bf2b06d25e6c4a2c591025e15c10a4fcd17af1aeb863ebcc989e7d6e", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "7118b370947da88b1faf1f9701afa6da8587310f91d5900ac680f96dec4a8c0c", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "43b1ee80bb77c0d449e523425224d664cfd239748dd7f39bc6cea1d0fc306709", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "2e9fdeb21c6cbde12fbee181f087891352eefe1a4f997cada258661b84adceb9", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "b8eca8014daeb7e5bc4204d678cf85d1426fd68e6c5d21f2a8cb72be17003e9d", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "092993f77ceba380cad718a4aa852b4e5670add77f3abde5a5b749abd0289323", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "bbd87cc0a5a3d43db8d8e0dec9ac56a8f7d7471b946df6823ca97f23152562de", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "e42be1bb73e0df2fe68192dc4ab3a10790827f48e44df09fa5252d13c06cbf16", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d1e768796deab61e843eb54c309661ae3bb22c3836d1e200c53481760355ce0b", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "1989bb54ef9070675fb572d33176b2a09570114d71c4724ebae676174978fb3d", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "2cdea09a538070612c42bc1b2a1d1155c0fb3ccd9e8dacc4af170c8d1bfa0fdc", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "9660e94d6e276fec6bd6068b5d9014d7b6348d9860bffda5741d64e04cd2f2ae", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f64962796f24a01129ea1e8ed999af477b1a5b3e914a8edc5e49784002a2d836", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "511a2982878847f2ccf298786ee3785d3b91be69f742834b2d831347e49ce7ff", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "f38925593d75cda68d836c55a119c93d016d1608fa3306d3a637e06e81bba7c1", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "4b25d3b202ef06b570f8d7679e627f00df82f317b14b4a0c162b99ec90b97299", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "301c4f0e32a8429a9719b0fe035562b2bf6531148a75459bffdf9004580e78cd", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "7e2e996eabf114705b9b227a393d043b2889ade2c5c3f82305cfcc24bcc363eb", "lang": "cpp", "status": "ran", "stdout": "9.2500\n-2.0000\n3.5000\n", "detail": ""}
+{"h": "0cd63408c8f4ea6d45a1b637126a1b6c1f0936e7b6e7647e61be6296083fea9c", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "73a79c1a257c3f6b17295daf7a78d715a9070f6152de4fb7f5141f35a8d34078", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "d138fab511337b141d0de60f1f1f431e0cbef523c718ba82150ee120193be010", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "4e370b064e92371683f69f4a32db074d1a9e79757692b45084f6bab46d26818c", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "d733148bf3873527ab7a0c81b967babbcc5e2fc88b94cb67f4aed73de8634a95", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "1b65c4b550370c5b187bf46308297e3f212df06792a271ad5cbae4f331c55326", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "9da8c207a58fb6e7a67118a607455a7d9547d75a96d502aab5a35beec1a4f15f", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "4f68da8f909a94f95395265835778c6ecfb95333f882489220090d73ccf3f04f", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "4731dd02af0fe7caa053b1d608bdbf245c6f2463bb2f4ff9e535adcdf2072e88", "lang": "python", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "0aa9bf2f5ed02bc68ee00734f4a71300253e47167036eb263998ea0fe4538259", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "cafe2f70b75a4c8e81e105d141ec92de6c2e14fa1a07c7b9092fed06c2b19b04", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "bb0cce57c5ab15cb5a4a566d5629111a5963b7433151d12e3efde2cd0f98f3f7", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "ea81cdc86619dbb378c4457f19e7d18e2c2413e6405b6ae18680d22a5f26c95b", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "2758245f35632adb30b93da71ea7ebb21f31845950b646b20911208d7a086d72", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f106fcf3bc33f640487ed3ac2ff512fc55ae6293af661eca164b9879df2e84d9", "lang": "cpp", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "a54515b0391c5c747edbc9f6a6bb7e683e6601ec6b7a6cd5df127927f43bc1ab", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "c265f5f2afc7bf5cca0cb2ac393e16231f98c548e0170c8bcca76136d81207a4", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "f736d121637377a61d28c98ad5b73b60d309027fe6a0b8ec69b21105e4b2aa28", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "6dfd6ea41f90601c7dfb0090d2df415a137d6a3d997d1dcd725302839bd4544f", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "966a41e0d343bcc92cd4d3c1fffe5235c35c3d493a59b5cfba141faa69ed238f", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}
+{"h": "0980c1b1dfd2a1adbb409b1407281eb23d508e1a4f818ee9343b5bd74f8af88c", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "f60ecb6885aeaf5c1f4f0bfeb1aa0cd0f8c285378d7965dc8f2f8524f3fdd651", "lang": "cpp", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "c8d60f3234d690c0e45fefec4abd8ffcc5835a8a22a0c2796392fabdbe3288d5", "lang": "cpp", "status": "ran", "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n", "detail": ""}
+{"h": "ce8b710b5e168ff078e8b6b0964662a2b0d8b7075cb28503ee0461be5c8d1dda", "lang": "java", "status": "ran", "stdout": "7.25\n", "detail": ""}
+{"h": "01a7d1068ad97b25356709abc68f48cc849051216888d329e5f7d00d16b0513a", "lang": "java", "status": "ran", "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n", "detail": ""}
+{"h": "7444a8acab277701a9e44b4bbf26dd2720d67564974650d9b10e86430bba723b", "lang": "java", "status": "ran", "stdout": "100.0000\n0.0000\n37.0000\n", "detail": ""}
+{"h": "8a364bf301021341cd8e0af98265b639799374a17606a60c5158a09e76918120", "lang": "java", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "a0b1ba8d0cb7fd1ff17f10b90dede45c09c9a9a972c8d3b6c715425a63adc380", "lang": "python", "status": "ran", "stdout": "3.3333\n0.0000\n4.0000\n", "detail": ""}
+{"h": "2584860002c35cf3c0ab197dda3eba6e4f51ed8f0d71936cff1ce70ae81d136d", "lang": "python", "status": "ran", "stdout": "30\n100\n100\n", "detail": ""}

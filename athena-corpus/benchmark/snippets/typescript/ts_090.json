@@ -1,0 +1,32 @@
+{
+  "id": "ts_090",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_demos/accordion.tsx lines 44-67 (function Multiple); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function Multiple() {\n  const secciones = [\n    { id: \"pendientes\", titulo: \"Pendientes\", cantidad: 3, color: \"amber\" as const, detalle: \"0012 Acme · 0014 Bruma · 0015 Cortina\" },\n    { id: \"vencidas\", titulo: \"Vencidas\", cantidad: 1, color: \"red\" as const, detalle: \"0009 Delta, vencida el 12/08.\" },\n    { id: \"pagadas\", titulo: \"Pagadas este mes\", cantidad: 8, color: \"green\" as const, detalle: \"$ 1.284.000 acreditados.\" },\n  ]\n  return (\n    <Accordion className=\"w-full max-w-lg\" defaultValue={[\"pendientes\", \"vencidas\"]} multiple>\n      {secciones.map((seccion) => (\n        <AccordionItem key={seccion.id} value={seccion.id}>\n          <AccordionTrigger>\n            <span className=\"flex items-center gap-2\">\n              {seccion.titulo}\n              <Badge color={seccion.color} size=\"sm\">\n                {seccion.cantidad}\n              </Badge>\n            </span>\n          </AccordionTrigger>\n          <AccordionContent>{seccion.detalle}</AccordionContent>\n        </AccordionItem>\n      ))}\n    </Accordion>\n  )\n}",
+  "identifiers": [
+    {
+      "name": "secciones",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "seccion",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_demos/accordion.tsx",
+    "startLine": 44,
+    "endLine": 67,
+    "unit": "function Multiple",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__accordion.tsx.md"
+  }
+}

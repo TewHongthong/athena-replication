@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_020",
+  "language": "javascript",
+  "originalName": "output",
+  "injectedName": "o",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'o' shorter than minLength=2",
+    "name 'o' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function getPackageSizeTokens() {\n  if (_packageSizeTokens) return _packageSizeTokens\n  // Use `npm pack --dry-run --json`: sizes are emitted as clean JSON on stdout\n  // (the noisy tarball listing goes to stderr), avoiding the intermittent\n  // truncation flakiness of piping the merged `npm pack` output. Retry once for\n  // transient failures and throw on persistent failure rather than writing a\n  // \"?\" into the docs (which would silently corrupt them).\n  const kB = (bytes) => `${(bytes / 1000).toFixed(1)} kB`\n  let lastError = null\n  for (let attempt = 0; attempt < 2; attempt++) {\n    try {\n      const o = execSync('npm pack --dry-run --json 2>/dev/null', {\n        encoding: 'utf-8',\n        cwd: ROOT,\n      })\n      const [entry] = JSON.parse(o)\n      if (entry && typeof entry.size === 'number' && entry.unpackedSize) {\n        _packageSizeTokens = {\n          package_size: kB(entry.size),\n          unpacked_size: kB(entry.unpackedSize),\n        }\n        return _packageSizeTokens\n      }\n      lastError = new Error('npm pack --dry-run --json output missing sizes')\n    } catch (error) {\n      lastError = error\n    }\n  }\n  throw new Error(\n    `Could not determine package sizes. Run \\`npm pack --dry-run --json\\` manually to debug. ${lastError?.message ?? ''}`,\n  )\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

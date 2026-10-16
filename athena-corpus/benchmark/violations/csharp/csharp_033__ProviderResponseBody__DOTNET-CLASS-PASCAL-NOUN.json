@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_033",
+  "language": "csharp",
+  "originalName": "ProviderResponseBody",
+  "injectedName": "provider_response_body",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'provider_response_body' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static class provider_response_body\n{\n    public const int MaximumBytes = 256 * 1024;\n\n    public static async Task<string> ReadAsync(HttpContent content, CancellationToken cancellationToken = default)\n    {\n        ArgumentNullException.ThrowIfNull(content);\n        cancellationToken.ThrowIfCancellationRequested();\n        if (content.Headers.ContentLength > MaximumBytes)\n        {\n            throw new InvalidDataException(\"The provider response exceeds the byte limit.\");\n        }\n\n        using var source = await content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);\n        using var body = new MemoryStream();\n        var buffer = new byte[8192];\n        while (true)\n        {\n            var count = await source.ReadAsync(buffer.AsMemory(0, Math.Min(buffer.Length, MaximumBytes + 1 - checked((int)body.Length))), cancellationToken).ConfigureAwait(false);\n            if (count == 0)\n            {\n                return Encoding.UTF8.GetString(body.GetBuffer(), 0, checked((int)body.Length));\n            }\n            if (body.Length + count > MaximumBytes)\n            {\n                throw new InvalidDataException(\"The provider response exceeds the byte limit.\");\n            }\n            body.Write(buffer, 0, count);\n        }\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

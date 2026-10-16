@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_061",
+  "language": "javascript",
+  "originalName": "available",
+  "injectedName": "AVAILABLE",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'AVAILABLE' does not match camelCase pattern",
+    "name 'AVAILABLE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function getTemplate(name) {\n  const tmpl = TEMPLATES[name]\n  if (!tmpl) {\n    const AVAILABLE = getTemplateNames().join(', ')\n    throw new Error(\n      `Unknown template: \"${name}\". Available templates: ${AVAILABLE}`,\n    )\n  }\n  return {\n    name,\n    description: tmpl.description,\n    generate: tmpl.generate,\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

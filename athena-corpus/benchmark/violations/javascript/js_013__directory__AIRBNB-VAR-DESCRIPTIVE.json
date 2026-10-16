@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_013",
+  "language": "javascript",
+  "originalName": "directory",
+  "injectedName": "d",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'd' shorter than minLength=2",
+    "name 'd' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function runCli(contents, options = {}) {\n  const { nodeArgs = [], timeout = CLI_TIMEOUT_MS } = options;\n  const d = fs.mkdtempSync(path.join(os.tmpdir(), \"validate-findings-\"));\n  const findingsPath = path.join(d, \"findings.json\");\n  try {\n    fs.writeFileSync(findingsPath, contents);\n    return spawnSync(process.execPath, [...nodeArgs, validatorPath, findingsPath], {\n      encoding: \"utf8\",\n      timeout,\n    });\n  } finally {\n    fs.rmSync(d, { recursive: true, force: true });\n  }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,42 @@
+{
+  "id": "ts_085",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_components/playground.tsx lines 61-66 (function cssDe); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "function cssDe(pisadas: Record<string, string>): string {\n  const lineas = Object.entries(pisadas)\n  if (!lineas.length) return \"/* Todo en su default: no hace falta escribir nada. */\"\n  const ancho = Math.max(...lineas.map(([nombre]) => nombre.length))\n  return [\":root {\", ...lineas.map(([nombre, valor]) => `  ${`${nombre}:`.padEnd(ancho + 1)} ${valor};`), \"}\"].join(\"\\n\")\n}",
+  "identifiers": [
+    {
+      "name": "cssDe",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "lineas",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "pisadas",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "ancho",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_components/playground.tsx",
+    "startLine": 61,
+    "endLine": 66,
+    "unit": "function cssDe",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__playground.tsx.md"
+  }
+}

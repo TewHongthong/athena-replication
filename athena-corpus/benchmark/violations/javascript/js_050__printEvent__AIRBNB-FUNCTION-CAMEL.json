@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_050",
+  "language": "javascript",
+  "originalName": "printEvent",
+  "injectedName": "print_event",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'print_event' does not match camelCase pattern",
+    "name 'print_event' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "function print_event(event) {\n  switch (event.type) {\n    case 'start':\n      console.log(\n        `\\n👀 Watching ${event.slugs.length} skill(s) for changes...\\n`,\n      )\n      break\n    case 'skip':\n      console.log(`   Skipping \"${event.slug}\" (${event.sourceType} source)`)\n      break\n    case 'watching':\n      console.log(`   ✓ ${event.slug} → watching ${event.path}`)\n      break\n    case 'error':\n      console.error(`   ✗ ${event.slug}: cannot watch (${event.error.message})`)\n      break\n    case 'syncing':\n      console.log(\n        `  [${event.startedAt.toLocaleTimeString()}] ${event.slug}: ${event.filename} changed, syncing...`,\n      )\n      break\n    case 'synced':\n      console.log(\n        `  [${event.startedAt.toLocaleTimeString()}] ${event.slug}: ${event.ok ? 'synced successfully' : 'sync failed'}`,\n      )\n      break\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,17 @@
+{
+  "snippetId": "csharp_052",
+  "language": "csharp",
+  "originalName": "SectionName",
+  "injectedName": "section_name",
+  "identifierKind": "constant",
+  "violatedRuleId": "DOTNET-CONSTANT-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'section_name' does not match PascalCase pattern",
+    "name 'section_name' matches forbidden pattern '^[a-z]'",
+    "name 'section_name' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public sealed class SmsBridgeOptions\n{\n    public const string section_name = \"SmsBridge\";\n\n    /// <summary>The name of the default provider. Must match a key in <see cref=\"Providers\"/>.</summary>\n    public string DefaultProvider { get; set; } = string.Empty;\n\n    /// <summary>When true and the primary provider returns a transient failure, the failover provider is tried.</summary>\n    public bool EnableFailover { get; set; }\n\n    /// <summary>The name of the failover provider. Must match a key in <see cref=\"Providers\"/> when failover is enabled.</summary>\n    public string? FailoverProvider { get; set; }\n\n    /// <summary>Named provider configurations keyed by provider name.</summary>\n    public Dictionary<string, SmsProviderOptions> Providers { get; set; } = new(StringComparer.OrdinalIgnoreCase);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

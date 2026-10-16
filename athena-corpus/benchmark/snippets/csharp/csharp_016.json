@@ -1,0 +1,42 @@
+{
+  "id": "csharp_016",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Entities/Location.cs lines 8-21 (class Location); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public class Location\n{\n    public int Id { get; set; }\n\n    public string Name { get; set; } = string.Empty;\n\n    public string? Description { get; set; }\n\n    /// <summary>Primary stored image, served at <c>/img/{id}</c>.</summary>\n    public int? ImageId { get; set; }\n\n    /// <summary>Populated by the data layer when locations are loaded with their containers.</summary>\n    public List<Container> Containers { get; set; } = new();\n}",
+  "identifiers": [
+    {
+      "name": "Location",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "Name",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "Description",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "ImageId",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Entities/Location.cs",
+    "startLine": 8,
+    "endLine": 21,
+    "unit": "class Location",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__Location.cs.md"
+  }
+}

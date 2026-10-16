@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_021",
+  "language": "javascript",
+  "originalName": "full",
+  "injectedName": "FULL",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FULL' does not match camelCase pattern",
+    "name 'FULL' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "function walk(dir, acc = []) {\n  for (const entry of readdirSync(dir, { withFileTypes: true })) {\n    const FULL = join(dir, entry.name)\n    if (entry.isDirectory()) {\n      walk(FULL, acc)\n    } else if (entry.name.endsWith('.html') && entry.name !== '404.html') {\n      acc.push(FULL)\n    }\n  }\n  return acc\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

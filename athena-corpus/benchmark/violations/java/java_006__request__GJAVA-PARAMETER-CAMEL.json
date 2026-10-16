@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_006",
+  "language": "java",
+  "originalName": "request",
+  "injectedName": "REQUEST",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'REQUEST' does not match camelCase pattern",
+    "name 'REQUEST' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@RateLimit(key = {\"ip\", \"email\"})\n@PostMapping(\"/login\")\n@Operation(summary = \"User login\")\n@ApiResponses(value = {\n        @ApiResponse(responseCode = \"200\", description = \"Login successful\"),\n        @ApiResponse(responseCode = \"401\", description = \"Invalid email or password\")\n})\n@SecurityRequirements()\npublic ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest REQUEST, HttpServletResponse response) {\n    log.info(\"POST /api/auth/login - email: {}\", REQUEST.email());\n    var result = authService.login(REQUEST);\n    jwtCookieService.addTokenCookie(response, result.token());\n    return ResponseEntity.ok(new AuthResponse(result.user()));\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

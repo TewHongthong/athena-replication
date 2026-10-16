@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_002",
+  "language": "javascript",
+  "originalName": "normalize",
+  "injectedName": "NORMALIZE",
+  "identifierKind": "method",
+  "violatedRuleId": "AIRBNB-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'NORMALIZE' does not match camelCase pattern",
+    "name 'NORMALIZE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "NORMALIZE() {\n    const length = Math.sqrt(\n        this.x * this.x + this.y * this.y + this.z * this.z\n    )\n    return new Point(this.x / length, this.y / length, this.z / length)\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

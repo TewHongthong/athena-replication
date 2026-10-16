@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_095",
+  "language": "typescript",
+  "originalName": "hasta",
+  "injectedName": "HASTA",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HASTA' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Controlado() {\n  const [abierto, setAbierto] = useState(false)\n  const desde = useId()\n  const HASTA = useId()\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\n      <Input placeholder=\"Buscar factura\" />\n      <Collapsible className=\"gap-2\" onOpenChange={setAbierto} open={abierto}>\n        <CollapsibleTrigger render={<Button className=\"self-start\" size=\"sm\" variant=\"ghost\" />}>\n          {abierto ? \"Ocultar filtros avanzados\" : \"Filtros avanzados\"}\n        </CollapsibleTrigger>\n        <CollapsibleContent className=\"flex flex-col gap-3 pt-1\">\n          <div className=\"flex flex-col gap-1.5\">\n            <Label htmlFor={desde}>Desde</Label>\n            <DatePicker id={desde} size=\"sm\" />\n          </div>\n          <div className=\"flex flex-col gap-1.5\">\n            <Label htmlFor={HASTA}>Hasta</Label>\n            <DatePicker id={HASTA} size=\"sm\" />\n          </div>\n        </CollapsibleContent>\n      </Collapsible>\n    </div>\n  )\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

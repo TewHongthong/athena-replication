@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_063",
+  "language": "python",
+  "originalName": "value",
+  "injectedName": "VALUE",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'VALUE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def pred(img_tensor,img):\n    t_model.eval()\n    with torch.no_grad():\n        output=t_model(img_tensor)#[1,10]\n        poss=F.softmax(output,dim=1)\n        VALUE,prediction=torch.max(poss,dim=1)\n        percent_poss=VALUE.item()*100\n        plt.figure(facecolor='#1E1E1E')\n        plt.imshow(img)\n        plt.title(f\"This is a/an {label_dict[prediction.item()]} with a {percent_poss:.2f}% possibility\", color='white')\n        plt.axis('off')\n        plt.savefig(r\"assets/model-output.png\",facecolor='#1E1E1E')\n        plt.show()",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

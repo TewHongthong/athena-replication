@@ -1,0 +1,52 @@
+{
+  "id": "csharp_034",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Simulation/Content/ContentPackageArtifact.cs lines 12-30 (class ContentPackageArtifact); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public sealed record ContentPackageArtifact(\n    ContentPackageManifest Manifest,\n    IReadOnlyList<AssetProvenanceManifest> Assets)\n{\n    public string ManifestDigest => ContentPackageManifestCodec.ComputeManifestDigest(Manifest);\n\n    public bool CanExport => Assets.All(asset => asset.CanExport);\n\n    public static ContentPackageArtifact From(\n        ContentPackageManifest manifest,\n        IEnumerable<NormalizedInertRasterAsset> assets)\n    {\n        ArgumentNullException.ThrowIfNull(manifest);\n        ArgumentNullException.ThrowIfNull(assets);\n        return new(manifest, assets.Select(AssetProvenanceManifest.From).ToArray());\n    }\n\n    public void Validate() => ContentPackageArtifactCodec.Validate(this);\n}",
+  "identifiers": [
+    {
+      "name": "ContentPackageArtifact",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "ManifestDigest",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "CanExport",
+      "kind": "boolean_variable",
+      "isCompliant": true
+    },
+    {
+      "name": "manifest",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "assets",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "Validate",
+      "kind": "method",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Simulation/Content/ContentPackageArtifact.cs",
+    "startLine": 12,
+    "endLine": 30,
+    "unit": "class ContentPackageArtifact",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__ContentPackageArtifact.cs.md"
+  }
+}

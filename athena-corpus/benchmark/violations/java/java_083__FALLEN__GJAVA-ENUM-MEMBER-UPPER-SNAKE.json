@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_083",
+  "language": "java",
+  "originalName": "FALLEN",
+  "injectedName": "fallen",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "GJAVA-ENUM-MEMBER-UPPER-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'fallen' does not match UPPER_SNAKE_CASE pattern",
+    "name 'fallen' matches forbidden pattern '[a-z]'"
+  ],
+  "codeContextWithViolation": "public enum FurkinState {\n    /** 未契约（含原版已驯服但尚未被绒亲契约的个体）。 */\n    WILD,\n    /** 已契约，即「绒亲」。 */\n    COMPANION,\n    /** 已倒下（死亡待复活），留下魂石。 */\n    fallen\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_083",
+  "language": "python",
+  "originalName": "WeaponPipelineResult",
+  "injectedName": "weapon_pipeline_result",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'weapon_pipeline_result' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass weapon_pipeline_result:\n    decisions: list[Decision]\n    keep_trash_conflicts: int\n    wishlists_used: bool\n    wishlist_sources: tuple[WishlistSourceIdentity, ...] = ()\n    manifest: ManifestIdentity | None = None\n    coverage: CoverageSummary | None = None",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

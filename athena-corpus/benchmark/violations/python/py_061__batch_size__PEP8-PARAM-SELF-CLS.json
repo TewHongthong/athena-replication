@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_061",
+  "language": "python",
+  "originalName": "batch_size",
+  "injectedName": "BATCH_SIZE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'BATCH_SIZE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def get_data_loaders(BATCH_SIZE=64):\n    transform=transforms.Compose([transforms.RandomCrop(32, padding=4),\n        transforms.RandomHorizontalFlip(),\n        transforms.ToTensor(),#converts image to tensor \n        transforms.Normalize(((0.5,0.5,0.5)),(0.5,0.5,0.5))#works only with tensors and normalizes it's pixels between dev(average) and std each number stands for rgb channels in order\n    ])\n    train_set=torchvision.datasets.CIFAR10(root=\"./data\",train=True,download=True,transform=transform)\n    test_set=torchvision.datasets.CIFAR10(root=\"./data\",train=False,download=True,transform=transform)\n    train_loader=torch.utils.data.DataLoader(train_set,batch_size=BATCH_SIZE,shuffle=True)\n    test_loader=torch.utils.data.DataLoader(test_set,batch_size=BATCH_SIZE,shuffle=False)\n    return train_loader,test_loader",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

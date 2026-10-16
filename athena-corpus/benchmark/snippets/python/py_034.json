@@ -1,0 +1,52 @@
+{
+  "id": "py_034",
+  "language": "python",
+  "source": "github:boongh/ml-exp@55667c29709eb5a612d32dbbc575550ed8a5a443",
+  "sourceDetail": "data/epub-to-text.py lines 7-38 (function epub_to_raw_text); license MIT; repo created 2026-09-25T22:40:55Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def epub_to_raw_text(epub_path, output_txt_path=None):\n    # Read the EPUB file (suppressing internal warnings)\n    book = epub.read_epub(epub_path)\n    text_content = []\n\n    # Iterate through each item in the EPUB file\n    for item in book.get_items():\n        # EPUB document content is stored as HTML/XHTML items\n        if item.get_type() == ebooklib.ITEM_DOCUMENT:\n            # Parse HTML content\n            soup = BeautifulSoup(item.get_content(), \"html.parser\")\n\n            # Remove images, SVG elements, style tags, and scripts\n            for element in soup([\"script\", \"style\", \"img\", \"svg\", \"figure\"]):\n                element.decompose()\n\n            # Extract pure text with line breaks preserved\n            text = soup.get_text(separator=\" \", strip=True)\n\n            if text:\n                text_content.append(text)\n\n    # Combine all extracted chapter segments with single newline breaks\n    full_text = \"\\n\".join(text_content)\n\n    # Save to file if output path provided, otherwise return text\n    if output_txt_path:\n        with open(output_txt_path, \"w\", encoding=\"utf-8\") as f:\n            f.write(full_text)\n        print(f\"Successfully extracted raw text to: {output_txt_path}\")\n\n    return full_text",
+  "identifiers": [
+    {
+      "name": "epub_to_raw_text",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "book",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "epub_path",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "text_content",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "soup",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "boongh/ml-exp",
+    "repoUrl": "https://github.com/boongh/ml-exp",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T22:40:55Z",
+    "commit": "55667c29709eb5a612d32dbbc575550ed8a5a443",
+    "path": "data/epub-to-text.py",
+    "startLine": 7,
+    "endLine": 38,
+    "unit": "function epub_to_raw_text",
+    "corpusFile": "corpus/python/boongh__ml-exp__epub-to-text.py.md"
+  }
+}

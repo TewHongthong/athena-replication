@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_085",
+  "language": "typescript",
+  "originalName": "ancho",
+  "injectedName": "ANCHO",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ANCHO' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function cssDe(pisadas: Record<string, string>): string {\n  const lineas = Object.entries(pisadas)\n  if (!lineas.length) return \"/* Todo en su default: no hace falta escribir nada. */\"\n  const ANCHO = Math.max(...lineas.map(([nombre]) => nombre.length))\n  return [\":root {\", ...lineas.map(([nombre, valor]) => `  ${`${nombre}:`.padEnd(ANCHO + 1)} ${valor};`), \"}\"].join(\"\\n\")\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "py_016",
+  "language": "python",
+  "source": "github:Nikhils-G/podium@64d18bf7ed5c1eef58d5397ff282807ceb3bf23e",
+  "sourceDetail": "src/podium/models/certificates.py lines 16-30 (class Certificate); license MIT; repo created 2026-09-26T18:48:58Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class Certificate(Base):\n    __tablename__ = \"certificates\"\n\n    id: Mapped[int] = mapped_column(primary_key=True)\n    event_id: Mapped[int] = mapped_column(ForeignKey(\"events.id\", ondelete=\"CASCADE\"), index=True)\n    kind: Mapped[CertificateKind] = mapped_column(\n        Enum(CertificateKind, native_enum=False, length=20, validate_strings=True), nullable=False\n    )\n    user_id: Mapped[int | None] = mapped_column(ForeignKey(\"users.id\", ondelete=\"SET NULL\"))\n    team_id: Mapped[int | None] = mapped_column(ForeignKey(\"teams.id\", ondelete=\"SET NULL\"))\n    serial: Mapped[str] = mapped_column(String(40), unique=True, index=True, nullable=False)\n    payload: Mapped[dict] = mapped_column(JSON, default=dict, nullable=False)\n    signature: Mapped[str] = mapped_column(Text, nullable=False)\n    issued_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow, nullable=False)\n    revoked_at: Mapped[datetime | None] = mapped_column(UTCDateTime)",
+  "identifiers": [
+    {
+      "name": "Certificate",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "event_id",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "kind",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "user_id",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "team_id",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "serial",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Nikhils-G/podium",
+    "repoUrl": "https://github.com/Nikhils-G/podium",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:48:58Z",
+    "commit": "64d18bf7ed5c1eef58d5397ff282807ceb3bf23e",
+    "path": "src/podium/models/certificates.py",
+    "startLine": 16,
+    "endLine": 30,
+    "unit": "class Certificate",
+    "corpusFile": "corpus/python/Nikhils-G__podium__certificates.py.md"
+  }
+}

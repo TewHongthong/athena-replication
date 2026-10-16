@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_084",
+  "language": "python",
+  "originalName": "ordered",
+  "injectedName": "ORDERED",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ORDERED' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def summarize(sections: Iterable[tuple[str, list]]) -> str:\n    \"\"\"Human-readable dry-run summary (PLAN.md M5).\n\n    `sections` is (kind, decisions) per pass, e.g. (\"weapons\", [...]).\n    Groups by action + reason with per-item lines beneath each group;\n    junk groups first, then review, largest first.\n    \"\"\"\n    groups: dict[tuple[str, str, str], list] = defaultdict(list)\n    for kind, decisions in sections:\n        for d in decisions:\n            action, slug = reason_slug(d.note)\n            groups[(action, kind, slug)].append(d)\n\n    n_junk = sum(len(v) for (a, _, _), v in groups.items() if a == \"junk\")\n    n_review = sum(len(v) for (a, _, _), v in groups.items() if a == \"review\")\n    lines = [f\"would junk {n_junk} item(s) and flag {n_review} for review\"]\n\n    ORDERED = sorted(\n        groups.items(),\n        key=lambda kv: (kv[0][0] != \"junk\", -len(kv[1]), kv[0]),\n    )\n    for (action, kind, slug), ds in ORDERED:\n        lines.append(\"\")\n        lines.append(f\"{action.upper()} {slug} ({kind}) — {len(ds)} item(s)\")\n        for d in ds:\n            line = (\n                f\"  {safe_fragment(d.name, limit=120)} \"\n                f\"(id {safe_fragment(d.id, limit=48)}, \"\n                f\"class {safe_fragment(d.guardian_class or kind, limit=80)}; \"\n                f\"location {safe_fragment(d.location, limit=80)})\"\n            )\n            if d.kept_id:\n                line += (\n                    \" — \"\n                    f\"{safe_fragment(note_tail(d.note), limit=_SUMMARY_TAIL_LIMIT, escape_structure=False)}\"\n                )\n            lines.append(line)\n    return \"\\n\".join(lines)",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

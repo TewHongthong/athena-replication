@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_010",
+  "language": "csharp",
+  "originalName": "Box",
+  "injectedName": "box",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'box' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum ContainerType\n{\n    box,\n    Shelf,\n    Drawer,\n    Bin,\n    Cupboard,\n    Other\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

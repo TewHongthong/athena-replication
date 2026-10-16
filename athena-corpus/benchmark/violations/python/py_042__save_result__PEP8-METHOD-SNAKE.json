@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_042",
+  "language": "python",
+  "originalName": "save_result",
+  "injectedName": "SAVE_RESULT",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SAVE_RESULT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def SAVE_RESULT(self, key: str, value: Any) -> None:\n    \"\"\"Store a step result for later reference.\n\n    Args:\n        key: The save_as name from the step definition.\n        value: The result value to store.\n    \"\"\"\n    self._results[key] = value",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

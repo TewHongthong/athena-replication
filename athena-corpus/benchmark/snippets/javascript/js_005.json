@@ -1,0 +1,52 @@
+{
+  "id": "js_005",
+  "language": "javascript",
+  "source": "github:Leonxlnx/unlazy@16671491f6679ad9378f52604d3bc2415b4120c7",
+  "sourceDetail": "scripts/lib/process-tree.mjs lines 9-27 (function windowsTaskkillPath); license MIT; repo created 2026-08-09; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function windowsTaskkillPath(env = process.env) {\n  const normalizeRoot = (value) => String(value || \"\").replace(/\\//g, \"\\\\\").replace(/\\\\+$/, \"\");\n  const systemRoot = normalizeRoot(env.SystemRoot);\n  const windir = normalizeRoot(env.WINDIR);\n  const systemDrive = String(env.SystemDrive || \"\").replace(/[\\\\/]+$/, \"\").toUpperCase();\n  const driveRoot = /^[A-Za-z]:\\\\Windows$/i;\n  // Require the three standard Windows launcher values to identify the same\n  // drive-root directory. A single arbitrary absolute variable must not select\n  // an executable, and disagreement fails closed to the ChildProcess handle.\n  if (driveRoot.test(systemRoot) && driveRoot.test(windir) &&\n      systemRoot.toLowerCase() === windir.toLowerCase() &&\n      systemDrive === systemRoot.slice(0, 2).toUpperCase()) {\n    return win32.join(systemRoot, \"System32\", \"taskkill.exe\");\n  }\n  // A bare executable name consults cwd/PATH, which are controlled by the\n  // CHECK environment. If neither trusted system root exists, skip the helper\n  // and use the already-held ChildProcess handle instead.\n  return null;\n}",
+  "identifiers": [
+    {
+      "name": "windowsTaskkillPath",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "systemRoot",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "env",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "normalizeRoot",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "windir",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Leonxlnx/unlazy",
+    "repoUrl": "https://github.com/Leonxlnx/unlazy",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-09",
+    "commit": "16671491f6679ad9378f52604d3bc2415b4120c7",
+    "path": "scripts/lib/process-tree.mjs",
+    "startLine": 9,
+    "endLine": 27,
+    "unit": "function windowsTaskkillPath",
+    "corpusFile": "corpus/javascript/Leonxlnx__unlazy__process-tree.mjs.md"
+  }
+}

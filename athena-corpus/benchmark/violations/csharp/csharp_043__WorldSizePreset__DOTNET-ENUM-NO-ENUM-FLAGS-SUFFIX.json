@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_043",
+  "language": "csharp",
+  "originalName": "WorldSizePreset",
+  "injectedName": "world_size_preset",
+  "identifierKind": "enum",
+  "violatedRuleId": "DOTNET-ENUM-NO-ENUM-FLAGS-SUFFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'world_size_preset' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum world_size_preset\n{\n    Small,\n    Medium,\n    Large,\n    Huge,\n    Mega,\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,32 @@
+{
+  "id": "js_027",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/completions.js lines 3-14 (function completionApi); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function completionApi(shell) {\n  switch (shell) {\n    case 'bash':\n      return bashScript()\n    case 'zsh':\n      return zshScript()\n    case 'fish':\n      return fishScript()\n    default:\n      throw new Error(`Unknown shell: ${shell}`)\n  }\n}",
+  "identifiers": [
+    {
+      "name": "completionApi",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "shell",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/completions.js",
+    "startLine": 3,
+    "endLine": 14,
+    "unit": "function completionApi",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__completions.js.md"
+  }
+}

@@ -1,0 +1,141 @@
+# src/main/java/ru/heldyy/hubswap/gui/MinecraftStatsHelper.java
+
+- source repo: xvDoshik/HubSwap
+- repo url: https://github.com/xvDoshik/HubSwap
+- license: MIT
+- created_at: 2026-08-04T22:22:23Z
+- file path: src/main/java/ru/heldyy/hubswap/gui/MinecraftStatsHelper.java
+- commit: c6967c6dadcae0fd21acdf29749ea597bf6c7ad9
+
+```java
+package ru.heldyy.hubswap.gui;
+
+import net.minecraft.client.Minecraft;
+
+import java.lang.reflect.Field;
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public final class MinecraftStatsHelper {
+    private static final int MAX_SAMPLES = 15;
+    private static final Deque<Integer> PING_SAMPLES = new ArrayDeque<>();
+
+    private static int lastKnownPing = -1;
+    private static long lastPollAt = 0L;
+
+    private MinecraftStatsHelper() {
+    }
+
+    public static void onClientTick() {
+        long now = System.currentTimeMillis();
+        if (now - lastPollAt < 500L) {
+            return;
+        }
+        lastPollAt = now;
+
+        int ping = readPing();
+        if (ping >= 0) {
+            lastKnownPing = ping;
+            PING_SAMPLES.addLast(ping);
+            while (PING_SAMPLES.size() > MAX_SAMPLES) {
+                PING_SAMPLES.removeFirst();
+            }
+        }
+    }
+
+    public static int getApproxPing() {
+        int ping = readPing();
+        if (ping >= 0) {
+            lastKnownPing = ping;
+            PING_SAMPLES.addLast(ping);
+            while (PING_SAMPLES.size() > MAX_SAMPLES) {
+                PING_SAMPLES.removeFirst();
+            }
+            return ping;
+        }
+        return lastKnownPing;
+    }
+
+    public static int getAveragePing() {
+        if (PING_SAMPLES.isEmpty()) {
+            return getApproxPing();
+        }
+
+        int sum = 0;
+        int count = 0;
+        for (int value : PING_SAMPLES) {
+            if (value >= 0) {
+                sum += value;
+                count++;
+            }
+        }
+        return count > 0 ? sum / count : -1;
+    }
+
+    public static int getJitter() {
+        if (PING_SAMPLES.isEmpty()) {
+            return 0;
+        }
+
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        boolean found = false;
+
+        for (int value : PING_SAMPLES) {
+            if (value >= 0) {
+                min = Math.min(min, value);
+                max = Math.max(max, value);
+                found = true;
+            }
+        }
+
+        return found ? Math.max(0, max - min) : 0;
+    }
+
+    public static int getSampleCount() {
+        return PING_SAMPLES.size();
+    }
+
+    public static int getApproxFps() {
+        Minecraft client = Minecraft.getInstance();
+        if (client == null) {
+            return -1;
+        }
+
+        try {
+            Field field = Minecraft.class.getDeclaredField("fpsString");
+            field.setAccessible(true);
+            Object raw = field.get(client);
+            if (!(raw instanceof String fpsString) || fpsString.isEmpty()) {
+                return -1;
+            }
+
+            int space = fpsString.indexOf(' ');
+            String value = space > 0 ? fpsString.substring(0, space) : fpsString;
+            return Integer.parseInt(value.trim());
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
+    private static int readPing() {
+        Minecraft client = Minecraft.getInstance();
+        if (client == null || client.player == null || client.getConnection() == null) {
+            return -1;
+        }
+
+        try {
+            var entry = client.getConnection().getPlayerInfo(client.player.getUUID());
+            if (entry != null) {
+                int latency = entry.getLatency();
+                if (latency > 0) {
+                    return latency;
+                }
+            }
+        } catch (Exception ignored) {
+        }
+
+        return -1;
+    }
+}
+```

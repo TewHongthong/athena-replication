@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_073",
+  "language": "typescript",
+  "originalName": "loading",
+  "injectedName": "LOADING",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOADING' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface RollScreenProps {\n  recordings: Recording[];\n  LOADING: boolean;\n  onBack: () => void;\n  onOpen: (recording: Recording) => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

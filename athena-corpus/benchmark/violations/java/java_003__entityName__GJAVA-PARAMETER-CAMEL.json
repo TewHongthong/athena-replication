@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_003",
+  "language": "java",
+  "originalName": "entityName",
+  "injectedName": "entity_name",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'entity_name' does not match camelCase pattern",
+    "name 'entity_name' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@RestController\n@RequestMapping(\"/api/admin/audit\")\n@RequiredArgsConstructor\n@PreAuthorize(\"hasRole('\" + Roles.ADMIN + \"')\")\n@Tag(name = \"Audit\", description = \"Audit log endpoints\")\n@SecurityRequirement(name = \"bearerAuth\")\npublic class AuditLogController {\n\n    private final AuditLogService auditLogService;\n\n    @GetMapping\n    @Operation(summary = \"Get audit logs\")\n    public ResponseEntity<Page<AuditLogResponse>> getAll(\n            @RequestParam(required = false) AuditAction action,\n            @RequestParam(required = false) String entity_name,\n            @RequestParam(required = false) Long entityId,\n            @RequestParam(required = false) String performedBy,\n            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,\n            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end,\n            @SortableFields({\"performedAt\", \"id\"}) @PageableDefault(size = 20, sort = {\"performedAt\", \"id\"}, direction = Sort.Direction.DESC) Pageable pageable) {\n        return ResponseEntity.ok(auditLogService.getAll(action, entity_name, entityId, performedBy, start, end, pageable));\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

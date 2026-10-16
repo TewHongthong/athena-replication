@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_068",
+  "language": "java",
+  "originalName": "BrowseUiResourceConfiguration",
+  "injectedName": "browse_ui_resource_configuration",
+  "identifierKind": "class",
+  "violatedRuleId": "GJAVA-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'browse_ui_resource_configuration' does not match PascalCase pattern",
+    "name 'browse_ui_resource_configuration' matches forbidden pattern '^[a-z]'",
+    "name 'browse_ui_resource_configuration' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "@Configuration\npublic class browse_ui_resource_configuration implements WebMvcConfigurer {\n  @Override\n  public void addResourceHandlers(ResourceHandlerRegistry registry) {\n    registry\n        .addResourceHandler(\"/browse/**\")\n        .addResourceLocations(\"classpath:/META-INF/resources/browse/\");\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

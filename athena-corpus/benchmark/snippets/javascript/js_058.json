@@ -1,0 +1,52 @@
+{
+  "id": "js_058",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/utils/profile.js lines 342-356 (function captureInstructions); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export async function captureInstructions(agentFlag) {\n  const paths = AGENT_INSTRUCTION_PATHS[agentFlag]\n  if (!paths) return null\n\n  const result = []\n  for (const [scope, getPath] of Object.entries(paths)) {\n    const content = await readFileIfExists(getPath())\n    if (content !== null) {\n      const filePath = getPath()\n      result.push({ file: filePath, contentSha: null, scope })\n    }\n  }\n\n  return result.length > 0 ? result : null\n}",
+  "identifiers": [
+    {
+      "name": "captureInstructions",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "paths",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "agentFlag",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "result",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "content",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "filePath",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/utils/profile.js",
+    "startLine": 342,
+    "endLine": 356,
+    "unit": "function captureInstructions",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__profile.js.md"
+  }
+}

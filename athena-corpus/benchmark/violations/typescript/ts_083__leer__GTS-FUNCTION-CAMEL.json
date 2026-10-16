@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_083",
+  "language": "typescript",
+  "originalName": "leer",
+  "injectedName": "LEER",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LEER' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function LEER(): GlassConfig {\n  try {\n    const crudo = localStorage.getItem(CLAVE)\n    return crudo ? { ...DEFAULTS, ...(JSON.parse(crudo) as Partial<GlassConfig>) } : DEFAULTS\n  } catch {\n    // Modo privado, almacenamiento bloqueado o un JSON viejo: el sitio anda igual con los defaults.\n    return DEFAULTS\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

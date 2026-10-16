@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_039",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "KernelClock",
+  "codeBare": "public sealed record KernelClock(long WorldTick, long DayIndex, int DayOfYear, int MinuteOfDay)\n{\n    public const int TicksPerMinute = 1;\n    public const int TicksPerDay = 1_440;\n    public const int DaysPerYear = 365;\n    public const int ScheduledTicksPerSecond = 6;\n\n    public static KernelClock FromWorldTick(long worldTick)\n    {\n        ArgumentOutOfRangeException.ThrowIfNegative(worldTick);\n\n        var dayIndex = worldTick / TicksPerDay;\n        return new KernelClock(\n            worldTick,\n            dayIndex,\n            (int)(dayIndex % DaysPerYear),\n            (int)(worldTick % TicksPerDay));\n    }\n}",
+  "referenceComment": "/// <summary>\n/// Saved integer clock arithmetic. No host wall-clock data participates.\n/// </summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Simulation/Kernel/StagedTickKernel.cs lines 26-44 (class KernelClock); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 3,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Simulation/Kernel/StagedTickKernel.cs",
+    "startLine": 26,
+    "endLine": 44,
+    "unit": "class KernelClock",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__StagedTickKernel.cs.md"
+  }
+}

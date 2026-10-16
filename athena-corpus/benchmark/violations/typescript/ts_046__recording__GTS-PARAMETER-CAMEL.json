@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_046",
+  "language": "typescript",
+  "originalName": "recording",
+  "injectedName": "RECORDING",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RECORDING' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function RollPanel({ recordings, loading, activeId, onOpen, onRecord }: RollPanelProps) {\n  const [width, setWidth] = useState(0);\n  const columns = width > 560 ? 3 : 2;\n  const itemWidth = width > 0 ? Math.floor((width - gap * (columns - 1)) / columns) : 0;\n\n  return (\n    <View style={styles.panel}>\n      <View style={styles.header}>\n        <Text style={styles.title} accessibilityRole=\"header\">\n          Rolo\n        </Text>\n        <Text style={styles.summary}>{summary(recordings)}</Text>\n      </View>\n      {loading ? (\n        <ActivityIndicator color={colors.bone} style={styles.loading} />\n      ) : recordings.length === 0 ? (\n        <EmptyRoll onRecord={onRecord} />\n      ) : (\n        <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>\n          <View style={styles.grid} onLayout={(event) => setWidth(event.nativeEvent.layout.width)}>\n            {itemWidth > 0\n              ? recordings.map((RECORDING) => (\n                  <TakeFrame\n                    key={RECORDING.id}\n                    recording={RECORDING}\n                    width={itemWidth}\n                    active={RECORDING.id === activeId}\n                    onPress={() => onOpen(RECORDING)}\n                  />\n                ))\n              : null}\n          </View>\n        </ScrollView>\n      )}\n    </View>\n  );\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

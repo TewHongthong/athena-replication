@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_056",
+  "language": "javascript",
+  "originalName": "serverName",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function addServerToMcpLock(\n  l,\n  entry,\n  lockPath = getMcpLockPath(),\n) {\n  const lock = await readMcpLock(lockPath)\n  const existing = lock.servers[l]\n\n  const mergedAgents = existing?.agents\n    ? [...new Set([...existing.agents, ...(entry.agents || [])])]\n    : entry.agents || []\n\n  lock.servers[l] = {\n    ...entry,\n    agents: mergedAgents,\n  }\n\n  await writeMcpLock(lock, lockPath)\n\n  return lock\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

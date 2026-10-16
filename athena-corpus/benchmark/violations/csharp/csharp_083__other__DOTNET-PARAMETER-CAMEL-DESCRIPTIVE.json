@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_083",
+  "language": "csharp",
+  "originalName": "other",
+  "injectedName": "OTHER",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'OTHER' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private void OnTriggerStay(Collider OTHER)\n{\n    if (!isEnabled) return;\n    if (!OTHER.CompareTag(\"GamePiece\")) return;\n\n    Rigidbody ballRb = OTHER.attachedRigidbody;\n    if (ballRb == null) return;\n\n    bool activationPressed = Input.GetKey(activationKey)\n        || (PlayerInputHandler.Instance != null && PlayerInputHandler.Instance.Shoot);\n\n    if (activationPressed)\n    {\n        if (targetPoint != null)\n        {\n            Vector3 forceDirection = (targetPoint.position - transform.position).normalized;\n            ballRb.AddForce(forceDirection * indexerForce, ForceMode.Force);\n        }\n    }\n    else\n    {\n        if (inactiveTarget != null)\n        {\n            Vector3 forceDirection = (inactiveTarget.position - transform.position).normalized;\n            ballRb.AddForce(forceDirection * reverseForce, ForceMode.Force);\n        }\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

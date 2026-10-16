@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_005",
+  "language": "java",
+  "originalName": "filter",
+  "injectedName": "FILTER",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FILTER' does not match camelCase pattern",
+    "name 'FILTER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public class AuditLogSpecification {\n\n    public static Specification<AuditLog> FILTER(AuditAction action, String entityName, Long entityId,\n                                                 String performedBy, LocalDateTime start, LocalDateTime end) {\n        return (root, query, cb) -> {\n            var predicates = new ArrayList<Predicate>();\n\n            if (action != null) {\n                predicates.add(cb.equal(root.get(\"action\"), action));\n            }\n            if (entityName != null && !entityName.isBlank()) {\n                predicates.add(cb.equal(cb.lower(root.get(\"entityName\")), entityName.toLowerCase(Locale.ROOT)));\n            }\n            if (entityId != null) {\n                predicates.add(cb.equal(root.get(\"entityId\"), entityId));\n            }\n            if (performedBy != null && !performedBy.isBlank()) {\n                predicates.add(cb.equal(cb.lower(root.get(\"performedBy\")), performedBy.toLowerCase(Locale.ROOT)));\n            }\n            if (start != null) {\n                predicates.add(cb.greaterThanOrEqualTo(root.get(\"performedAt\"), start));\n            }\n            if (end != null) {\n                predicates.add(cb.lessThanOrEqualTo(root.get(\"performedAt\"), end));\n            }\n\n            return cb.and(predicates.toArray(new Predicate[0]));\n        };\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

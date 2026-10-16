@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_029",
+  "language": "python",
+  "originalName": "chat",
+  "injectedName": "CHAT",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CHAT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def CHAT(\n    self,\n    messages: list[dict],\n    *,\n    tools: list[dict] | None = None,\n    temperature: float | None = None,\n    max_tokens: int | None = None,\n) -> ChatResponse:\n    payload: dict = {\n        \"model\": self.config.model,\n        \"messages\": messages,\n        \"temperature\": self.config.temperature if temperature is None else temperature,\n    }\n    if tools:\n        payload[\"tools\"] = tools\n    limit = max_tokens or self.config.max_output_tokens\n    if limit:\n        payload[\"max_tokens\"] = limit\n\n    last_error: Exception | None = None\n    for attempt in range(self.config.max_retries + 1):\n        try:\n            body = self._post(\"/chat/completions\", payload)\n            return self._parse(body)\n        except ProviderError as exc:\n            last_error = exc\n            status = getattr(exc, \"status\", 0)\n            if status not in RETRY_STATUS or attempt == self.config.max_retries:\n                raise\n            time.sleep(min(2 ** attempt, 8))\n        except (urllib.error.URLError, TimeoutError) as exc:\n            last_error = ProviderError(f\"network failure calling {self.base_url}: {exc}\")\n            if attempt == self.config.max_retries:\n                raise last_error\n            time.sleep(min(2 ** attempt, 8))\n    raise ProviderError(f\"provider {self.name} failed: {last_error}\")",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

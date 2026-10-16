@@ -1,0 +1,47 @@
+{
+  "id": "js_091",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/goals/build-result-goals-view-model.js lines 3-21 (function buildResultGoalsViewModel); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function buildResultGoalsViewModel({ goals = {}, achieved = {}, period = {} } = {}) {\n  const definitions = [\n    { id: 'weeklyTopics', key: 'semanal', label: 'Tópicos na semana', description: 'Tópicos concluídos nesta semana' },\n    { id: 'monthlyTopics', key: 'mensal', label: 'Tópicos no mês', description: 'Tópicos concluídos neste mês' },\n    { id: 'questions', key: 'questoesSemanal', label: 'Questões na semana', description: 'Questões resolvidas nesta semana' },\n    { id: 'simulations', key: 'simuladosSemanal', label: 'Simulados na semana', description: 'Simulados registrados nesta semana' },\n    { id: 'accuracy', key: 'metaAprovacao', label: 'Meta de acerto', description: 'Taxa de acerto observada' }\n  ];\n  const items = definitions.map(item => {\n    const target = goals[item.key] == null ? null : Math.max(0, number(goals[item.key]));\n    const current = Math.max(0, number(achieved[item.id]));\n    const measured = item.id !== 'accuracy' || achieved.accuracy != null;\n    const value = item.id === 'accuracy' ? (measured ? number(achieved.accuracy) : null) : current;\n    const progress = measured && target > 0 ? Math.round(value / target * 100) : null;\n    const remaining = measured && target != null ? Math.max(0, target - value) : null;\n    return { ...item, target, current: value, measured, progress, progressClamped: progress == null ? 0 : Math.min(100, progress), remaining, state: !measured || target == null || target <= 0 ? 'insufficient' : value >= target ? 'achieved' : 'in_progress' };\n  });\n  return { period, items, algorithmVersion: '1.0.0' };\n}",
+  "identifiers": [
+    {
+      "name": "buildResultGoalsViewModel",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "definitions",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "current",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/goals/build-result-goals-view-model.js",
+    "startLine": 3,
+    "endLine": 21,
+    "unit": "function buildResultGoalsViewModel",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__build-result-goals-view-model.js.md"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "js_055",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/utils/lockfile.js lines 101-127 (function addSkillToLock); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export async function addSkillToLock(\n  slug,\n  entry,\n  lockPath = getGlobalLockPath(),\n) {\n  const lock = await readLock(lockPath)\n  const existing = lock.skills[slug]\n\n  const mergedAgents = existing?.agents\n    ? [...new Set([...existing.agents, ...(entry.agents || [])])]\n    : entry.agents || []\n\n  pushHistory(lock, slug, entry)\n\n  const history = lock.skills[slug]?.history || []\n\n  lock.skills[slug] = {\n    ...entry,\n    agents: mergedAgents,\n    installedAt: new Date().toISOString(),\n    history,\n  }\n\n  await writeLock(lock, lockPath)\n\n  return lock\n}",
+  "identifiers": [
+    {
+      "name": "addSkillToLock",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "lock",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "slug",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "entry",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "lockPath",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "existing",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/utils/lockfile.js",
+    "startLine": 101,
+    "endLine": 127,
+    "unit": "function addSkillToLock",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__lockfile.js.md"
+  }
+}

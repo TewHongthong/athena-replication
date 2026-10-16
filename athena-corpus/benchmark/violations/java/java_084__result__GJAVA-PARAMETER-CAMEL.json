@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_084",
+  "language": "java",
+  "originalName": "result",
+  "injectedName": "RESULT",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RESULT' does not match camelCase pattern",
+    "name 'RESULT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@FunctionalInterface\npublic interface RemoteSummonFeedback {\n\n    RemoteSummonFeedback NONE = (player, companionId, RESULT) -> {\n    };\n\n    void onTerminal(ServerPlayer player, UUID companionId, RemoteSummonResult RESULT);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

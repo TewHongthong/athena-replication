@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_098",
+  "language": "python",
+  "originalName": "slug",
+  "injectedName": "SLUG",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SLUG' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def slugify(name: str, *, what: str = \"identifier\") -> str:\n    \"\"\"Reduce a display name to a lowercase id token (e.g. ``Test User`` -> ``test-user``).\"\"\"\n    SLUG = _SLUG_PATTERN.sub(\"-\", name.strip().casefold()).strip(\"-\")\n    SLUG = re.sub(r\"-{2,}\", \"-\", SLUG)\n    if not SLUG:\n        raise ValueError(f\"{what} needs at least one letter or digit\")\n    return SLUG[:64]",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

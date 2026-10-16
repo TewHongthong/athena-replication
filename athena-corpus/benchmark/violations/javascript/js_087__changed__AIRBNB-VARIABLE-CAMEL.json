@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_087",
+  "language": "javascript",
+  "originalName": "changed",
+  "injectedName": "CHANGED",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CHANGED' does not match camelCase pattern",
+    "name 'CHANGED' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function setActiveExamTags(state,tags=[],{configuredAt=null}={}){\n  if(!state?.examBlueprint)throw new TypeError('Estado da prova inválido.');\n  const next=normalizeExamTags(tags),CHANGED=JSON.stringify(next)!==JSON.stringify(normalizeExamTags(state.examBlueprint.activeExamTags));\n  if(!CHANGED)return false;\n  state.examBlueprint.activeExamTags=next;\n  if(configuredAt)state.examBlueprint.configuredAt=configuredAt;\n  for(const field of DERIVED_FIELDS)if(field in state)state[field]=null;\n  return true;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

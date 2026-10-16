@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_018",
+  "language": "csharp",
+  "originalName": "ReadyForReview",
+  "injectedName": "ready_for_review",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ready_for_review' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum ModifyQueueStatus\n{\n    Pending,\n    Processing,\n    ready_for_review,\n    Failed,\n    Applied,\n    Dismissed\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

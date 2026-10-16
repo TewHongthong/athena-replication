@@ -1,0 +1,52 @@
+{
+  "id": "js_044",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/commands/diff.js lines 10-23 (function colorize); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function colorize(text, color, enabled) {\n  if (!enabled) return text\n  const codes = {\n    red: '31',\n    green: '32',\n    yellow: '33',\n    cyan: '36',\n    gray: '90',\n    bold: '1',\n    dim: '2',\n  }\n  const code = codes[color] || '0'\n  return `\\x1b[${code}m${text}\\x1b[0m`\n}",
+  "identifiers": [
+    {
+      "name": "colorize",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "codes",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "text",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "color",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "enabled",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "code",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/commands/diff.js",
+    "startLine": 10,
+    "endLine": 23,
+    "unit": "function colorize",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_commands_diff.js.md"
+  }
+}

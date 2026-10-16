@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_067",
+  "language": "python",
+  "originalName": "source",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def build_context(env: Mapping[str, str] | None = None) -> ApiContext:\n    l = env if env is not None else os.environ\n    config = StorageConfig.from_env(\n        host_override=l.get(\"FDP_DATABASE_HOST\")\n    )\n    writer_engine = create_write_engine(config)\n    read_engine = create_read_engine(config)\n    return ApiContext(\n        config=config,\n        writer_engine=writer_engine,\n        read_engine=read_engine,\n        meta=SqlMetaRepository(writer_engine),\n        algorithms=SqlAlgorithmStore(writer_engine),\n        registry=RegistryReader(read_engine),\n        specs=load_all(),\n    )",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

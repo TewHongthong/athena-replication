@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_018",
+  "language": "javascript",
+  "originalName": "agent",
+  "injectedName": "a",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'a' shorter than minLength=2",
+    "name 'a' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function formatDirLabel(a) {\n  if (a.name === 'copilot') {\n    return './.github/skills/ or ~/.copilot/skills/'\n  }\n  if (DUAL_PATH_AGENTS.has(a.name)) {\n    const homePath = a.label\n    const projName = NAME_TO_DIR[a.name] || a.name\n    const projPath = `./.${projName}/skills/`\n    return `${homePath} or ${projPath}`\n  }\n  return a.label\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,39 @@
+{
+  "snippetId": "py_081",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "function",
+  "name": "discover_export",
+  "codeBare": "def discover_export(kind: str, input_dir: str | Path) -> Path:\n    \n    directory = Path(input_dir)\n    pattern = EXPORT_PATTERNS[kind]\n    try:\n        entries = directory.iterdir()\n        candidates = sorted(\n            (\n                entry\n                for entry in entries\n                if pattern.fullmatch(entry.name) and entry.is_file()\n            ),\n            key=lambda entry: entry.name,\n        )\n    except FileNotFoundError:\n        candidates = []\n    except OSError as e:\n        raise ExportDiscoveryError(\n            f\"could not search for {kind} exports in {directory}: {e}\"\n        ) from e\n\n    if not candidates:\n        raise MissingExportError(kind, directory)\n    if len(candidates) > 1:\n        raise AmbiguousExportError(\n            kind,\n            directory,\n            tuple(candidate.name for candidate in candidates),\n        )\n    return candidates[0]",
+  "referenceComment": "\"\"\"Return the sole matching export, refusing zero or multiple matches.\"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-FUNC"
+  ],
+  "origin": "snippet",
+  "source": "github:tonym999/vault-cleaner@1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+  "sourceDetail": "src/vault_cleaner/export_discovery.py lines 71-100 (function discover_export); license MIT; repo created 2026-07-18T09:39:13Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 2,
+    "returns": true,
+    "throws": true
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns",
+    "throws"
+  ],
+  "provenance": {
+    "repo": "tonym999/vault-cleaner",
+    "repoUrl": "https://github.com/tonym999/vault-cleaner",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-18T09:39:13Z",
+    "commit": "1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+    "path": "src/vault_cleaner/export_discovery.py",
+    "startLine": 71,
+    "endLine": 100,
+    "unit": "function discover_export",
+    "corpusFile": "corpus/python/tonym999__vault-cleaner__export_discovery.py.md"
+  }
+}

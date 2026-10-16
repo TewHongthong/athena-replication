@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_077",
+  "language": "csharp",
+  "originalName": "Update",
+  "injectedName": "update",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'update' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "void update()\n{\n    float robotY = robot.eulerAngles.y;\n    if (robot != null)\n    {\n        // Get the Y rotation angle from the target object\n\n        // Apply it to the 2D object's Z axis (multiplied if needed)\n        transform.rotation = Quaternion.Euler(0f, 0f, -robotY + offsetRobot);\n    }\n    if (turret != null)\n    {\n        float turretY = turret.eulerAngles.y;\n        turretSprite.transform.rotation = Quaternion.Euler(0f, 0f, -turretY + turretOffset);\n    }\n    float sOffset = -robotY+offsetRobot;\n    FRS.transform.rotation = Quaternion.Euler(0f, 0f, -FR.wheelAngle + sOffset);\n    FLS.transform.rotation = Quaternion.Euler(0f, 0f, -FL.wheelAngle + sOffset);\n    RRS.transform.rotation = Quaternion.Euler(0f, 0f, -RR.wheelAngle + sOffset);\n    RLS.transform.rotation = Quaternion.Euler(0f, 0f, -RL.wheelAngle + sOffset);\n\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

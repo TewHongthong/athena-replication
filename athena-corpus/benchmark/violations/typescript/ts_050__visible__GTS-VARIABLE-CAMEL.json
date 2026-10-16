@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_050",
+  "language": "typescript",
+  "originalName": "visible",
+  "injectedName": "VISIBLE",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'VISIBLE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function CountdownOverlay({ digit }: CountdownOverlayProps) {\n  const { width, height } = useWindowDimensions();\n  const reduced = useReducedMotion();\n  const VISIBLE = digit !== null;\n  const presence = useRef(new Animated.Value(0)).current;\n  const progress = useSweep(digit, VISIBLE && !reduced);\n  const size = Math.min(300, Math.min(width, height) * 0.62);\n\n  useEffect(() => {\n    Animated.timing(presence, {\n      toValue: VISIBLE ? 1 : 0,\n      duration: VISIBLE ? 200 : 160,\n      easing: motion.out,\n      useNativeDriver: motion.native,\n    }).start();\n  }, [VISIBLE]);\n\n  return (\n    <Animated.View pointerEvents=\"none\" style={[styles.layer, { opacity: presence }]} accessibilityLiveRegion=\"assertive\">\n      <Svg width=\"100%\" height=\"100%\" style={StyleSheet.absoluteFill}>\n        <Line x1=\"0\" x2=\"100%\" y1=\"50%\" y2=\"50%\" stroke={colors.bone} strokeOpacity={0.16} />\n        <Line y1=\"0\" y2=\"100%\" x1=\"50%\" x2=\"50%\" stroke={colors.bone} strokeOpacity={0.16} />\n      </Svg>\n      <View style={styles.center}>\n        <Text style={styles.caption}>GRAVANDO EM</Text>\n        <LeaderDial size={size} digit={digit} progress={progress} reducedMotion={reduced} />\n        <Text style={styles.hint}>Toque em parar para cancelar</Text>\n      </View>\n    </Animated.View>\n  );\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

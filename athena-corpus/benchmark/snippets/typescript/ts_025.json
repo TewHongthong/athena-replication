@@ -1,0 +1,42 @@
+{
+  "id": "ts_025",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/capture/Viewfinder.tsx lines 6-29 (function Viewfinder); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function Viewfinder({ ref, facing, onReady, onFailure }: ViewfinderProps) {\n  const cameraRef = useRef<CameraView>(null);\n\n  useImperativeHandle(ref, () => ({\n    start: async (limitSeconds) => {\n      const video = await cameraRef.current?.recordAsync(\n        limitSeconds > 0 ? { maxDuration: limitSeconds } : undefined,\n      );\n      return video?.uri ? { uri: video.uri, mimeType: \"video/mp4\" } : null;\n    },\n    stop: () => cameraRef.current?.stopRecording(),\n  }));\n\n  return (\n    <CameraView\n      ref={cameraRef}\n      style={StyleSheet.absoluteFill}\n      facing={facing}\n      mode=\"video\"\n      onCameraReady={onReady}\n      onMountError={(event) => onFailure(event.message)}\n    />\n  );\n}",
+  "identifiers": [
+    {
+      "name": "cameraRef",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "limitSeconds",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "video",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "event",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/capture/Viewfinder.tsx",
+    "startLine": 6,
+    "endLine": 29,
+    "unit": "function Viewfinder",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__Viewfinder.tsx.md"
+  }
+}

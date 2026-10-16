@@ -1,0 +1,52 @@
+{
+  "id": "ts_045",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/components/roll/RollPanel.tsx lines 9-15 (interface RollPanelProps); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "interface RollPanelProps {\n  recordings: Recording[];\n  loading: boolean;\n  activeId?: string;\n  onOpen: (recording: Recording) => void;\n  onRecord?: () => void;\n}",
+  "identifiers": [
+    {
+      "name": "RollPanelProps",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "recordings",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "loading",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "activeId",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "onOpen",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "onRecord",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/components/roll/RollPanel.tsx",
+    "startLine": 9,
+    "endLine": 15,
+    "unit": "interface RollPanelProps",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__RollPanel.tsx.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_010",
+  "language": "typescript",
+  "originalName": "where",
+  "injectedName": "WHERE",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'WHERE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export async function guard(fn: () => Promise<CallToolResult>): Promise<CallToolResult> {\n  try {\n    return await fn();\n  } catch (error) {\n    if (error instanceof AppNotConnectedError) return errorResult(error.message);\n    if (error instanceof EvalTimeoutError) return errorResult(error.message);\n    if (error instanceof ScriptError) {\n      const WHERE = error.scriptLine === undefined ? \"\" : ` (line ${error.scriptLine})`;\n      return errorResult(`Script failed in ${error.appId}${WHERE}: ${error.message}`);\n    }\n    log.error(\"unhandled tool error\", error);\n    return errorResult(`Unexpected failure: ${error instanceof Error ? error.message : String(error)}`);\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

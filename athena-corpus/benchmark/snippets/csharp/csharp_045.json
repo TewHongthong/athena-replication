@@ -1,0 +1,52 @@
+{
+  "id": "csharp_045",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Viewer/Control/OwnerBuildingDesign.cs lines 114-127 (class PreviewIdleProvider); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "private sealed class PreviewIdleProvider : IDecisionProvider\n{\n    public DecisionProviderKind Kind => DecisionProviderKind.Deterministic;\n    public long ProviderEpoch => 0;\n\n    public ValueTask<CognitionDecisionResponse> DecideAsync(CognitionDecisionRequest request, CancellationToken cancellationToken = default)\n    {\n        cancellationToken.ThrowIfCancellationRequested();\n        return ValueTask.FromResult(new CognitionDecisionResponse(request.RequestId, request.Observation.InhabitantId,\n            Kind, ProviderEpoch, request.Observation.RunEpoch, request.Observation.DecisionGeneration,\n            request.Observation.ObservationDigest, \"safe_idle\", 1,\n            request.Observation.Candidates.ToDictionary(candidate => candidate.Id, candidate => candidate.Id == \"safe_idle\" ? 1d : 0d, StringComparer.Ordinal)));\n    }\n}",
+  "identifiers": [
+    {
+      "name": "PreviewIdleProvider",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "DecideAsync",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "Kind",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "request",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "ProviderEpoch",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "cancellationToken",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Viewer/Control/OwnerBuildingDesign.cs",
+    "startLine": 114,
+    "endLine": 127,
+    "unit": "class PreviewIdleProvider",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__OwnerBuildingDesign.cs.md"
+  }
+}

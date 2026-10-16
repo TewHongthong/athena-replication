@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_078",
+  "language": "csharp",
+  "originalName": "PositiveZ",
+  "injectedName": "positive_z",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'positive_z' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum WorldAxis\n{\n    positive_z,\n    PositiveX,\n    NegativeZ,\n    NegativeX,\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

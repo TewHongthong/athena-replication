@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_086",
+  "language": "python",
+  "originalName": "decisions",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def run(ghosts: pd.DataFrame) -> list[Decision]:\n    l: list[Decision] = []\n    for _, row in ghosts.iterrows():\n        if protection_reason(row) is not None:\n            continue\n        hashtag = \"#vc-junk: ghost-unprotected-surplus\"\n        l.append(\n            Decision(\n                id=row[\"Id\"], hash=row[\"Hash\"], name=row[\"Name\"],\n                location=row.get(\"Owner\", \"\"), guardian_class=\"\",\n                action=\"junk\", tag=\"junk\",\n                note=append_tool_clause(row[\"Notes\"], hashtag), kept_id=\"\",\n            )\n        )\n    return l",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

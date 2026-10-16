@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_082",
+  "language": "csharp",
+  "originalName": "targetAngle",
+  "injectedName": "target_angle",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'target_angle' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "void Update()\n{\n    if (!isEnabled) return;\n\n    bool deployPressed = Input.GetKeyDown(deployKey)\n        || (PlayerInputHandler.Instance != null && PlayerInputHandler.Instance.DeployPressedThisFrame());\n\n    if (deployPressed)\n    {\n        isDeployed = !isDeployed;\n    }\n\n    float target_angle = isDeployed ? extendedAngle : retractedAngle;\n\n    currentAngle = Mathf.MoveTowards(currentAngle, target_angle, rotationSpeed * Time.deltaTime * 100f);\n\n    transform.localRotation = Quaternion.Euler(angleOffset) * Quaternion.AngleAxis(currentAngle, rotationAxis);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

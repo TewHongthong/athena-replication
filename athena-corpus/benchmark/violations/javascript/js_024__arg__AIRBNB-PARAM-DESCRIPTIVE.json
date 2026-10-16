@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_024",
+  "language": "javascript",
+  "originalName": "arg",
+  "injectedName": "a",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'a' shorter than minLength=2",
+    "name 'a' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "async function resolveBundleFile(a) {\n  const isFilePath =\n    a.endsWith('.json') ||\n    a.endsWith('.txt') ||\n    a.startsWith('./') ||\n    a.startsWith('../') ||\n    a.startsWith('/') ||\n    a.startsWith('~')\n  if (isFilePath) {\n    const resolvedPath = expandTilde(a, process.env.HOME || '/tmp')\n    for (const candidate of [resolvedPath, join(process.cwd(), a)]) {\n      try {\n        await readFile(candidate, 'utf-8')\n        return candidate\n      } catch {}\n    }\n    throw new Error(`Bundle file not found: ${a}`)\n  }\n\n  const candidates = [\n    a,\n    join(process.cwd(), a),\n    `${a}.json`,\n    `${a}.txt`,\n    join(process.cwd(), `${a}.json`),\n    join(process.cwd(), `${a}.txt`),\n  ]\n\n  for (const candidate of candidates) {\n    try {\n      await readFile(candidate, 'utf-8')\n      return candidate\n    } catch {}\n  }\n  return null\n}",
+  "occurrencesRenamed": 16,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

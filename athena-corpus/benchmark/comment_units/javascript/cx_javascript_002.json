@@ -1,0 +1,34 @@
+{
+  "snippetId": "cx_javascript_002",
+  "language": "javascript",
+  "standardId": "AIRBNB_JS",
+  "identifierKind": "function",
+  "name": "ensureSelectOption",
+  "codeBare": "export function ensureSelectOption(sel, value, label){\n  const v = String(value ?? '');\n  if (!sel || v === '' || [...sel.options].some(o => o.value === v)) return;\n  const o = document.createElement('option');\n  o.value = v;\n  o.textContent = label || v;\n  sel.appendChild(o);\n}",
+  "referenceComment": "/**\n * 给下拉框补一个\"当前值\"选项。\n * localStorage 里可能存着老版本的值（比如 8000/12000/20000 —— 新候选里没有），\n * 不补的话 select 会显示成空白或跳回第一项，等于**悄悄改了用户的设置**。\n */",
+  "ruleIds": [
+    "AIRBNB-COMMENT-MULTILINE",
+    "AIRBNB-COMMENT-SPACING",
+    "AIRBNB-COMMENT-TODO"
+  ],
+  "origin": "extra",
+  "source": "github:minichao9901/web-serial-rtt-tools@f64bcb46aa6899341636bcdf14851cb66800698a",
+  "sourceDetail": "app/ui/dom.js lines 60-67 (function ensureSelectOption); license Apache-2.0; repo created 2026-09-26; curated by athena-comment-units-1.0",
+  "referenceCommentLines": 5,
+  "signature": {
+    "params": 3,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params"
+  ],
+  "provenance": {
+    "repo": "minichao9901/web-serial-rtt-tools",
+    "path": "app/ui/dom.js",
+    "startLine": 60,
+    "endLine": 67,
+    "corpusFile": "corpus/javascript/minichao9901__web-serial-rtt-tools__dom.js.md"
+  }
+}

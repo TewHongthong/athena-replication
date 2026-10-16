@@ -1,0 +1,52 @@
+{
+  "id": "java_007",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/auth/AuthService.java lines 47-73 (method AuthService.login); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Transactional(readOnly = true)\npublic AuthResult login(LoginRequest request) {\n    log.info(\"Login attempt for email: {}\", request.email());\n\n    var user = userRepository.findByEmail(request.email())\n            .orElseThrow(() -> new BadCredentialsException(\"Unknown email\"));\n\n    if (user.getPassword() == null) {\n        throw new BadRequestException(\"This account uses Google sign-in and has no password set. Sign in with Google, or use \\\"Forgot password?\\\" to set one.\",\n                PASSWORD_NOT_SET_CODE);\n    }\n\n    var authentication = authenticationManager.authenticate(\n            new UsernamePasswordAuthenticationToken(request.email(), request.password()));\n\n    if (!user.isEmailVerified()) {\n        throw new BadRequestException(\"Please verify your email before login\", EMAIL_NOT_VERIFIED_CODE);\n    }\n\n    var authority = authentication.getAuthorities().iterator().next().getAuthority();\n    String role = authority != null ? authority.replace(\"ROLE_\", \"\") : \"CUSTOMER\";\n    String jwt = jwtUtil.generateToken(request.email(), role, user.getTokenVersion());\n\n    var userResponse = userMapper.toResponse(user);\n    log.info(\"Login successful for email: {}\", request.email());\n    return new AuthResult(jwt, userResponse);\n}",
+  "identifiers": [
+    {
+      "name": "login",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "user",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "request",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "authentication",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "authority",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "role",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/auth/AuthService.java",
+    "startLine": 47,
+    "endLine": 73,
+    "unit": "method AuthService.login",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__AuthService.java.md"
+  }
+}

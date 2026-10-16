@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_041",
+  "language": "typescript",
+  "originalName": "width",
+  "injectedName": "WIDTH",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'WIDTH' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface TakePosterProps {\n  recording: Pick<Recording, \"id\" | \"take\" | \"durationMs\">;\n  WIDTH: number;\n  height: number;\n  radius?: number;\n  compact?: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

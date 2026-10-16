@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_093",
+  "language": "java",
+  "originalName": "recordSwitch",
+  "injectedName": "record_switch",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'record_switch' does not match camelCase pattern",
+    "name 'record_switch' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public void record_switch(String mode, int number) {\n    totalSwitches++;\n    sessionSwitches++;\n    String key = mode + \"_\" + number;\n    serverCounts.merge(key, 1L, Long::sum);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

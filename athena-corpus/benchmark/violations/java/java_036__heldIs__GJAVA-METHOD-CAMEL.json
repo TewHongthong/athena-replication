@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_036",
+  "language": "java",
+  "originalName": "heldIs",
+  "injectedName": "held_is",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'held_is' does not match camelCase pattern",
+    "name 'held_is' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public static boolean held_is(PlayerEntity player, String needle) {\n    if (player == null) {\n        return false;\n    }\n    String main = player.getMainHandStack().getItem().toString().toLowerCase();\n    String off = player.getOffHandStack().getItem().toString().toLowerCase();\n    return main.contains(needle) || off.contains(needle);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

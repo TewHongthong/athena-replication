@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_017",
+  "language": "python",
+  "originalName": "event_id",
+  "injectedName": "EVENT_ID",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'EVENT_ID' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class JudgeInvite(Base):\n    __tablename__ = \"judge_invites\"\n\n    id: Mapped[int] = mapped_column(primary_key=True)\n    EVENT_ID: Mapped[int] = mapped_column(ForeignKey(\"events.id\", ondelete=\"CASCADE\"), index=True)\n    email: Mapped[str] = mapped_column(String(254), nullable=False)\n    token_hash: Mapped[str] = mapped_column(String(64), unique=True, nullable=False)\n    track_public_ids: Mapped[list] = mapped_column(JSON, default=list, nullable=False)\n    invited_by: Mapped[int | None] = mapped_column(ForeignKey(\"users.id\", ondelete=\"SET NULL\"))\n    created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow, nullable=False)\n    expires_at: Mapped[datetime] = mapped_column(UTCDateTime, nullable=False)\n    accepted_at: Mapped[datetime | None] = mapped_column(UTCDateTime)\n    accepted_user_id: Mapped[int | None] = mapped_column(\n        ForeignKey(\"users.id\", ondelete=\"SET NULL\")\n    )",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

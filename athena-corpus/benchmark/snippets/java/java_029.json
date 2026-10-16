@@ -1,0 +1,47 @@
+{
+  "id": "java_029",
+  "language": "java",
+  "source": "github:KingF3rdi/aero-client@d8888aba64351257362cd47f69282311dd942c8f",
+  "sourceDetail": "src/main/java/dev/aero/client/DevShot.java lines 51-65 (method DevShot.shot); license MIT; repo created 2026-09-20T13:19:19Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "private static void shot(MinecraftClient mc, String name) {\n    try {\n        Path dir = mc.runDirectory.toPath().resolve(\"shots\");\n        Files.createDirectories(dir);\n        Path out = dir.resolve(name + \".png\");\n        ScreenshotRecorder.takeScreenshot(mc.getFramebuffer(), img -> {\n            try {\n                img.writeTo(out);\n            } catch (Exception ignored) {\n            }\n        });\n    } catch (Exception e) {\n        e.printStackTrace();\n    }\n}",
+  "identifiers": [
+    {
+      "name": "shot",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "dir",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "out",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "ignored",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "KingF3rdi/aero-client",
+    "repoUrl": "https://github.com/KingF3rdi/aero-client",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-20T13:19:19Z",
+    "commit": "d8888aba64351257362cd47f69282311dd942c8f",
+    "path": "src/main/java/dev/aero/client/DevShot.java",
+    "startLine": 51,
+    "endLine": 65,
+    "unit": "method DevShot.shot",
+    "corpusFile": "corpus/java/KingF3rdi__aero-client__DevShot.java.md"
+  }
+}

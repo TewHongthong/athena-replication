@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_035",
+  "language": "python",
+  "originalName": "escape_latex",
+  "injectedName": "ESCAPE_LATEX",
+  "identifierKind": "function",
+  "violatedRuleId": "PEP8-FUNC-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ESCAPE_LATEX' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def ESCAPE_LATEX(text: str) -> str:\n    \"\"\"Escape special LaTeX characters.\"\"\"\n    replacements = {\n        \"\\\\\": r\"\\textbackslash{}\",\n        \"&\": r\"\\&\",\n        \"%\": r\"\\%\",\n        \"$\": r\"\\$\",\n        \"#\": r\"\\#\",\n        \"_\": r\"\\_\",\n        \"{\": r\"\\{\",\n        \"}\": r\"\\}\",\n        \"~\": r\"\\textasciitilde{}\",\n        \"^\": r\"\\textasciicircum{}\",\n    }\n    for char, escaped in replacements.items():\n        text = text.replace(char, escaped)\n    return text",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

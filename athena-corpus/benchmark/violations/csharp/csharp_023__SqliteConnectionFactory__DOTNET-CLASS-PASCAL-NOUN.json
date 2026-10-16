@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_023",
+  "language": "csharp",
+  "originalName": "SqliteConnectionFactory",
+  "injectedName": "sqlite_connection_factory",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'sqlite_connection_factory' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public class sqlite_connection_factory(string connectionString) : IDbConnectionFactory\n{\n    public async Task<IDbConnection> OpenAsync(CancellationToken ct = default)\n    {\n        var conn = new SqliteConnection(connectionString);\n        await conn.OpenAsync(ct);\n        await using (var pragma = conn.CreateCommand())\n        {\n            pragma.CommandText = \"PRAGMA foreign_keys = ON;\";\n            await pragma.ExecuteNonQueryAsync(ct);\n        }\n        return conn;\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

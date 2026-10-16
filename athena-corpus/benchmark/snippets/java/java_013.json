@@ -1,0 +1,47 @@
+{
+  "id": "java_013",
+  "language": "java",
+  "source": "github:AntonBas/sushi-shop@ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+  "sourceDetail": "backend/src/main/java/com/sushishop/file/FileController.java lines 20-48 (class FileController); license MIT; repo created 2026-06-10T21:14:11Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Slf4j\n@RestController\n@RequestMapping(\"/api/files\")\n@RequiredArgsConstructor\n@Tag(name = \"Files\", description = \"File serving endpoints\")\npublic class FileController {\n\n    private final FileStorageService fileStorageService;\n\n    @GetMapping(\"/{fileName}\")\n    @Operation(summary = \"Get file by name\")\n    @ApiResponses(value = {\n            @ApiResponse(responseCode = \"200\", description = \"File found\"),\n            @ApiResponse(responseCode = \"404\", description = \"File not found\")\n    })\n    public ResponseEntity<Resource> getFile(@PathVariable String fileName) {\n        Resource resource = fileStorageService.load(fileName);\n\n        if (resource == null) {\n            return ResponseEntity.notFound().build();\n        }\n\n        String contentType = fileStorageService.determineContentType(fileName);\n        return ResponseEntity.ok()\n                .contentType(MediaType.parseMediaType(contentType))\n                .cacheControl(CacheControl.maxAge(365, TimeUnit.DAYS).cachePublic().immutable())\n                .body(resource);\n    }\n}",
+  "identifiers": [
+    {
+      "name": "FileController",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "getFile",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "fileStorageService",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "resource",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "contentType",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "AntonBas/sushi-shop",
+    "repoUrl": "https://github.com/AntonBas/sushi-shop",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-10T21:14:11Z",
+    "commit": "ae80c5e6c234302eb7c645bea3a6e23c6b624ee4",
+    "path": "backend/src/main/java/com/sushishop/file/FileController.java",
+    "startLine": 20,
+    "endLine": 48,
+    "unit": "class FileController",
+    "corpusFile": "corpus/java/AntonBas__sushi-shop__FileController.java.md"
+  }
+}

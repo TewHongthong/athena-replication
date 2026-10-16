@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_094",
+  "language": "python",
+  "originalName": "sell_price",
+  "injectedName": "SELL_PRICE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SELL_PRICE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def compute_round_trip_cost(\n    buy_price: float,\n    SELL_PRICE: float,\n    qty: int,\n    product: str = \"INTRADAY\",\n    rates: CostRates = CostRates(),\n) -> RoundTripCost:\n    \"\"\"Cost of one BUY + one SELL of `qty` shares. `product` is \"INTRADAY\"\n    or \"CNC\" (delivery) -- STT and stamp duty differ between the two.\n    \"\"\"\n    buy_value = buy_price * qty\n    sell_value = SELL_PRICE * qty\n    turnover = buy_value + sell_value\n\n    brokerage = rates.brokerage_per_order * 2  # one order to enter, one to exit\n\n    if product == \"CNC\":\n        stt = (buy_value + sell_value) * rates.stt_delivery_pct\n        stamp_duty = buy_value * rates.stamp_duty_delivery_buy_pct\n    else:\n        stt = sell_value * rates.stt_intraday_sell_pct\n        stamp_duty = buy_value * rates.stamp_duty_intraday_buy_pct\n\n    exchange_txn = turnover * rates.exchange_txn_pct\n    sebi_turnover = turnover * rates.sebi_turnover_pct\n    gst = (brokerage + exchange_txn + sebi_turnover) * rates.gst_pct\n\n    total = brokerage + stt + exchange_txn + sebi_turnover + stamp_duty + gst\n\n    return RoundTripCost(\n        brokerage=brokerage, stt=stt, exchange_txn=exchange_txn,\n        sebi_turnover=sebi_turnover, stamp_duty=stamp_duty, gst=gst, total=total,\n    )",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

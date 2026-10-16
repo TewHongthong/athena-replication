@@ -1,0 +1,47 @@
+{
+  "id": "py_049",
+  "language": "python",
+  "source": "github:divykr2005/photo-distributor@56aac18393056585a8161c0b55610faf2900274e",
+  "sourceDetail": "backend/models/audit_log.py lines 8-15 (class AuditLog); license MIT; repo created 2026-08-08T13:49:07Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class AuditLog(Base):\n    __tablename__ = \"audit_logs\"\n\n    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)\n    guest_id = Column(UUID(as_uuid=True), index=True, nullable=True)\n    event_id = Column(UUID(as_uuid=True), index=True, nullable=True)\n    action = Column(String(255), nullable=False)\n    timestamp = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)",
+  "identifiers": [
+    {
+      "name": "AuditLog",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "guest_id",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "event_id",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "action",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "timestamp",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "divykr2005/photo-distributor",
+    "repoUrl": "https://github.com/divykr2005/photo-distributor",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-08T13:49:07Z",
+    "commit": "56aac18393056585a8161c0b55610faf2900274e",
+    "path": "backend/models/audit_log.py",
+    "startLine": 8,
+    "endLine": 15,
+    "unit": "class AuditLog",
+    "corpusFile": "corpus/python/divykr2005__photo-distributor__audit_log.py.md"
+  }
+}

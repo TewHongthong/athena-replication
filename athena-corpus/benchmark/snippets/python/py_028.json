@@ -1,0 +1,52 @@
+{
+  "id": "py_028",
+  "language": "python",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/providers/base.py lines 29-41 (class Provider); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class Provider(Protocol):\n    name: str\n\n    def chat(\n        self,\n        messages: list[dict[str, Any]],\n        *,\n        tools: list[dict[str, Any]] | None = None,\n        temperature: float | None = None,\n        max_tokens: int | None = None,\n    ) -> ChatResponse: ...\n\n    def available(self) -> tuple[bool, str]: ...",
+  "identifiers": [
+    {
+      "name": "Provider",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "chat",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "messages",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "tools",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "temperature",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/providers/base.py",
+    "startLine": 29,
+    "endLine": 41,
+    "unit": "class Provider",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__base.py.md"
+  }
+}

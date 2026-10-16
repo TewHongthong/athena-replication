@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_007",
+  "language": "python",
+  "originalName": "root_path",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def load_tagged_documents(root: str):\n    l = Path(root)\n    for path in l.glob(\"*/*/*.txt\"):\n        department = path.parent.parent.name\n        clearance = path.parent.name\n        yield path.read_text(encoding=\"utf-8\"), {\"department\": department, \"clearance\": clearance, \"source\": path.name}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

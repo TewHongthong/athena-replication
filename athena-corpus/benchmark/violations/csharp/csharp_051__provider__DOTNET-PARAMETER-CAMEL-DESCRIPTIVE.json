@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_051",
+  "language": "csharp",
+  "originalName": "provider",
+  "injectedName": "PROVIDER",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PROVIDER' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public static SmsSendResult Failed(\n    string PROVIDER,\n    string? errorCode,\n    string? errorMessage,\n    bool isTransient = false,\n    SmsDeliveryStatus status = SmsDeliveryStatus.Failed,\n    bool mayHaveBeenAccepted = false) =>\n    new()\n    {\n        Success = false,\n        Provider = PROVIDER,\n        ErrorCode = errorCode,\n        ErrorMessage = errorMessage,\n        IsTransientFailure = isTransient,\n        MayHaveBeenAccepted = mayHaveBeenAccepted,\n        Status = status\n    };",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

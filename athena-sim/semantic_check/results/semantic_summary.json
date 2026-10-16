@@ -1,0 +1,370 @@
+{
+  "cells": {
+    "o3-mini|none": {
+      "n": 366,
+      "core": 89,
+      "cap": 89,
+      "applied": 366,
+      "build": 366,
+      "pass": 366,
+      "failures": {}
+    },
+    "o3-mini|fulldoc": {
+      "n": 366,
+      "core": 358,
+      "cap": 358,
+      "applied": 366,
+      "build": 366,
+      "pass": 366,
+      "failures": {}
+    },
+    "o3-mini|chunk": {
+      "n": 366,
+      "core": 229,
+      "cap": 229,
+      "applied": 366,
+      "build": 366,
+      "pass": 366,
+      "failures": {}
+    },
+    "o3-mini|graph": {
+      "n": 366,
+      "core": 366,
+      "cap": 366,
+      "applied": 366,
+      "build": 366,
+      "pass": 366,
+      "failures": {}
+    },
+    "GPT-6 Luna|none": {
+      "n": 366,
+      "core": 170,
+      "cap": 170,
+      "applied": 366,
+      "build": 366,
+      "pass": 366,
+      "failures": {}
+    },
+    "GPT-6 Luna|fulldoc": {
+      "n": 366,
+      "core": 364,
+      "cap": 364,
+      "applied": 366,
+      "build": 366,
+      "pass": 366,
+      "failures": {}
+    },
+    "GPT-6 Luna|chunk": {
+      "n": 366,
+      "core": 281,
+      "cap": 281,
+      "applied": 366,
+      "build": 366,
+      "pass": 366,
+      "failures": {}
+    },
+    "GPT-6 Luna|graph": {
+      "n": 366,
+      "core": 366,
+      "cap": 366,
+      "applied": 366,
+      "build": 366,
+      "pass": 366,
+      "failures": {}
+    },
+    "Qwen3.5-9B|none": {
+      "n": 366,
+      "core": 74,
+      "cap": 74,
+      "applied": 354,
+      "build": 354,
+      "pass": 354,
+      "failures": {}
+    },
+    "Qwen3.5-9B|fulldoc": {
+      "n": 366,
+      "core": 320,
+      "cap": 316,
+      "applied": 349,
+      "build": 349,
+      "pass": 345,
+      "failures": {
+        "wrong_output": 4
+      }
+    },
+    "Qwen3.5-9B|chunk": {
+      "n": 366,
+      "core": 174,
+      "cap": 171,
+      "applied": 361,
+      "build": 361,
+      "pass": 358,
+      "failures": {
+        "wrong_output": 3
+      }
+    },
+    "Qwen3.5-9B|graph": {
+      "n": 366,
+      "core": 343,
+      "cap": 343,
+      "applied": 364,
+      "build": 364,
+      "pass": 364,
+      "failures": {}
+    },
+    "Gemini 3.1 Flash-Lite|none": {
+      "n": 366,
+      "core": 143,
+      "cap": 143,
+      "applied": 362,
+      "build": 362,
+      "pass": 362,
+      "failures": {}
+    },
+    "Gemini 3.1 Flash-Lite|fulldoc": {
+      "n": 366,
+      "core": 363,
+      "cap": 363,
+      "applied": 366,
+      "build": 366,
+      "pass": 366,
+      "failures": {}
+    },
+    "Gemini 3.1 Flash-Lite|chunk": {
+      "n": 366,
+      "core": 252,
+      "cap": 252,
+      "applied": 365,
+      "build": 365,
+      "pass": 365,
+      "failures": {}
+    },
+    "Gemini 3.1 Flash-Lite|graph": {
+      "n": 366,
+      "core": 366,
+      "cap": 366,
+      "applied": 366,
+      "build": 366,
+      "pass": 366,
+      "failures": {}
+    },
+    "DeepSeek V4 Flash|none": {
+      "n": 366,
+      "core": 111,
+      "cap": 111,
+      "applied": 207,
+      "build": 207,
+      "pass": 207,
+      "failures": {}
+    },
+    "DeepSeek V4 Flash|fulldoc": {
+      "n": 366,
+      "core": 353,
+      "cap": 353,
+      "applied": 355,
+      "build": 355,
+      "pass": 355,
+      "failures": {}
+    },
+    "DeepSeek V4 Flash|chunk": {
+      "n": 366,
+      "core": 245,
+      "cap": 245,
+      "applied": 324,
+      "build": 324,
+      "pass": 324,
+      "failures": {}
+    },
+    "DeepSeek V4 Flash|graph": {
+      "n": 366,
+      "core": 363,
+      "cap": 363,
+      "applied": 363,
+      "build": 363,
+      "pass": 363,
+      "failures": {}
+    },
+    "Gemma 4 26B|none": {
+      "n": 366,
+      "core": 131,
+      "cap": 131,
+      "applied": 365,
+      "build": 365,
+      "pass": 365,
+      "failures": {}
+    },
+    "Gemma 4 26B|fulldoc": {
+      "n": 366,
+      "core": 352,
+      "cap": 352,
+      "applied": 366,
+      "build": 366,
+      "pass": 366,
+      "failures": {}
+    },
+    "Gemma 4 26B|chunk": {
+      "n": 366,
+      "core": 246,
+      "cap": 246,
+      "applied": 365,
+      "build": 365,
+      "pass": 365,
+      "failures": {}
+    },
+    "Gemma 4 26B|graph": {
+      "n": 366,
+      "core": 366,
+      "cap": 366,
+      "applied": 366,
+      "build": 366,
+      "pass": 366,
+      "failures": {}
+    },
+    "linter autofix|none": {
+      "n": 366,
+      "core": 93,
+      "cap": 93,
+      "applied": 93,
+      "build": 93,
+      "pass": 93,
+      "failures": {}
+    },
+    "linter autofix|fulldoc": {
+      "n": 366,
+      "core": 93,
+      "cap": 93,
+      "applied": 93,
+      "build": 93,
+      "pass": 93,
+      "failures": {}
+    },
+    "linter autofix|chunk": {
+      "n": 366,
+      "core": 93,
+      "cap": 93,
+      "applied": 93,
+      "build": 93,
+      "pass": 93,
+      "failures": {}
+    },
+    "linter autofix|graph": {
+      "n": 366,
+      "core": 93,
+      "cap": 93,
+      "applied": 93,
+      "build": 93,
+      "pass": 93,
+      "failures": {}
+    }
+  },
+  "tests": [
+    [
+      "o3-mini",
+      "none",
+      75.68306010928961,
+      103,
+      0,
+      1.9721522630525295e-31,
+      2.1693674893577825e-30
+    ],
+    [
+      "o3-mini",
+      "fulldoc",
+      2.185792349726776,
+      5,
+      0,
+      0.0625,
+      0.2294921875
+    ],
+    [
+      "GPT-6 Luna",
+      "none",
+      53.55191256830601,
+      72,
+      0,
+      4.235164736271502e-22,
+      2.964615315390051e-21
+    ],
+    [
+      "GPT-6 Luna",
+      "fulldoc",
+      0.546448087431694,
+      2,
+      0,
+      0.5,
+      1.0
+    ],
+    [
+      "Qwen3.5-9B",
+      "none",
+      73.49726775956285,
+      109,
+      0,
+      3.0814879110195774e-33,
+      3.697785493223493e-32
+    ],
+    [
+      "Qwen3.5-9B",
+      "fulldoc",
+      7.377049180327866,
+      27,
+      13,
+      0.03847730828420026,
+      0.1923865414210013
+    ],
+    [
+      "Gemini 3.1 Flash-Lite",
+      "none",
+      60.92896174863388,
+      83,
+      0,
+      2.0679515313825692e-25,
+      1.8611563782443123e-24
+    ],
+    [
+      "Gemini 3.1 Flash-Lite",
+      "fulldoc",
+      0.819672131147541,
+      2,
+      0,
+      0.5,
+      1.0
+    ],
+    [
+      "DeepSeek V4 Flash",
+      "none",
+      68.85245901639347,
+      101,
+      1,
+      4.062633661888211e-29,
+      4.062633661888211e-28
+    ],
+    [
+      "DeepSeek V4 Flash",
+      "fulldoc",
+      2.7322404371584708,
+      11,
+      3,
+      0.057373046875,
+      0.2294921875
+    ],
+    [
+      "Gemma 4 26B",
+      "none",
+      64.20765027322405,
+      83,
+      0,
+      2.0679515313825692e-25,
+      1.8611563782443123e-24
+    ],
+    [
+      "Gemma 4 26B",
+      "fulldoc",
+      3.825136612021858,
+      6,
+      0,
+      0.03125,
+      0.1875
+    ]
+  ]
+}

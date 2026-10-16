@@ -1,0 +1,38 @@
+{
+  "snippetId": "py_079",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "function",
+  "name": "safe_fragment",
+  "codeBare": "def safe_fragment(\n    value: object,\n    *,\n    limit: int = _MAX_FRAGMENT,\n    escape_structure: bool = True,\n) -> str:\n    \n    text = str(value)\n    text = \"\".join(\n        \" \" if unicodedata.category(char).startswith(\"C\") else char\n        for char in text\n    )\n    text = \" \".join(text.split())\n    text = _TOOL_MARKER_RE.sub(\"#vc‑\", text)\n    if escape_structure:\n        text = text.translate(_STRUCTURAL_CHARS)\n    if len(text) > limit:\n        text = text[: max(0, limit - 1)].rstrip() + \"…\"\n    return text",
+  "referenceComment": "\"\"\"Return bounded, single-line presentation text for an export value.\n\n    CSV values are untrusted presentation input.  Control/format characters\n    become spaces, whitespace collapses, the ASCII ``#vc-`` sequence is\n    neutralised, and reference punctuation is full-width escaped so a field\n    cannot forge another tool hashtag or structural clause.  The raw value is\n    never changed by this helper.\n    \"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-FUNC"
+  ],
+  "origin": "snippet",
+  "source": "github:tonym999/vault-cleaner@1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+  "sourceDetail": "src/vault_cleaner/duplicate_reference.py lines 57-82 (function safe_fragment); license MIT; repo created 2026-07-18T09:39:13Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 8,
+  "signature": {
+    "params": 3,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "tonym999/vault-cleaner",
+    "repoUrl": "https://github.com/tonym999/vault-cleaner",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-18T09:39:13Z",
+    "commit": "1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+    "path": "src/vault_cleaner/duplicate_reference.py",
+    "startLine": 57,
+    "endLine": 82,
+    "unit": "function safe_fragment",
+    "corpusFile": "corpus/python/tonym999__vault-cleaner__duplicate_reference.py.md"
+  }
+}

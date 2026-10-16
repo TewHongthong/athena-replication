@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_003",
+  "language": "csharp",
+  "originalName": "IBinaryUnpackable",
+  "injectedName": "i_binary_unpackable",
+  "identifierKind": "interface",
+  "violatedRuleId": "DOTNET-INTERFACE-I-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'i_binary_unpackable' does not match PascalCase pattern",
+    "name 'i_binary_unpackable' does not start with required prefix 'I'"
+  ],
+  "codeContextWithViolation": "public interface i_binary_unpackable\n{\n    /// <summary>Reads the type's binary representation from the supplied stream.</summary>\n    /// <param name=\"stream\">The source binary stream.</param>\n    void Unpack(IBinaryStream stream);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

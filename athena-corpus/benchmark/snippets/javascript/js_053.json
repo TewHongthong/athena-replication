@@ -1,0 +1,52 @@
+{
+  "id": "js_053",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/utils/errors.js lines 15-30 (class UserError); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export class UserError extends Error {\n  /**\n   * @param {string} message  Short, user-facing description of what went wrong.\n   * @param {object} [opts]\n   * @param {string} [opts.suggestion]  What the user should do next.\n   * @param {string} [opts.detail]      Technical detail (shown with --verbose).\n   * @param {string} [opts.code]        Machine-readable error code.\n   */\n  constructor(message, opts = {}) {\n    super(message)\n    this.name = 'UserError'\n    this.suggestion = opts.suggestion || ''\n    this.detail = opts.detail || ''\n    this.userCode = opts.code || ''\n  }\n}",
+  "identifiers": [
+    {
+      "name": "name",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "message",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "opts",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "suggestion",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "detail",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "userCode",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/utils/errors.js",
+    "startLine": 15,
+    "endLine": 30,
+    "unit": "class UserError",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__errors.js.md"
+  }
+}

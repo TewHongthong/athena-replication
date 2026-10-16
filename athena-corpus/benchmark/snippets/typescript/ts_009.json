@@ -1,0 +1,47 @@
+{
+  "id": "ts_009",
+  "language": "typescript",
+  "source": "github:Brainferno/brainferno-mcp-bridge@95695615162b4db4a3189be9dd0ebf9e7d80c129",
+  "sourceDetail": "packages/server/src/tools/result.ts lines 32-39 (function imageResult); license Apache-2.0; repo created 2026-08-26; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export async function imageResult(filePath: string, mimeType: \"image/png\" | \"image/jpeg\", note?: string): Promise<CallToolResult> {\n  const text = { type: \"text\" as const, text: note === undefined ? filePath : `${note}\n${filePath}` };\n  if (previewMode === \"path\") return { content: [text] };\n  const data = (await readFile(filePath)).toString(\"base64\");\n  const image = { type: \"image\" as const, data, mimeType };\n  return { content: previewMode === \"inline\" ? [image] : [image, text] };\n}",
+  "identifiers": [
+    {
+      "name": "imageResult",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "text",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "filePath",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "note",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "image",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Brainferno/brainferno-mcp-bridge",
+    "repoUrl": "https://github.com/Brainferno/brainferno-mcp-bridge",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-08-26",
+    "commit": "95695615162b4db4a3189be9dd0ebf9e7d80c129",
+    "path": "packages/server/src/tools/result.ts",
+    "startLine": 32,
+    "endLine": 39,
+    "unit": "function imageResult",
+    "corpusFile": "corpus/typescript/Brainferno__brainferno-mcp-bridge__result.ts.md"
+  }
+}

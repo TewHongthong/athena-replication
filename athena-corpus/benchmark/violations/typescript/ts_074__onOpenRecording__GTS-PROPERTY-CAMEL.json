@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_074",
+  "language": "typescript",
+  "originalName": "onOpenRecording",
+  "injectedName": "on_open_recording",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'on_open_recording' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface StudioScreenProps {\n  demo: boolean;\n  wide: boolean;\n  recordings: Recording[];\n  onCapture: (input: NewRecording) => Promise<Recording>;\n  on_open_recording: (recording: Recording) => void;\n  onOpenRoll: () => void;\n  onEnterDemo?: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

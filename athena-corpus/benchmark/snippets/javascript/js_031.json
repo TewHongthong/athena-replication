@@ -1,0 +1,42 @@
+{
+  "id": "js_031",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/doctor.js lines 256-266 (function parseSkillContent); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function parseSkillContent(skillDir) {\n  const skillPath = join(skillDir, 'SKILL.md')\n  try {\n    const raw = readFileSync(skillPath, 'utf-8')\n    const { attrs, body } = parseFrontmatter(raw)\n    const sections = splitSections(body)\n    return { attrs, sections }\n  } catch {\n    return null\n  }\n}",
+  "identifiers": [
+    {
+      "name": "parseSkillContent",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "skillPath",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "skillDir",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "raw",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/doctor.js",
+    "startLine": 256,
+    "endLine": 266,
+    "unit": "function parseSkillContent",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__doctor.js.md"
+  }
+}

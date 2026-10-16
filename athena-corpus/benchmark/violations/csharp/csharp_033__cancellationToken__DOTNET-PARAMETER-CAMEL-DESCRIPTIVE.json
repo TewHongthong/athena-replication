@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_033",
+  "language": "csharp",
+  "originalName": "cancellationToken",
+  "injectedName": "cancellation_token",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'cancellation_token' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public static class ProviderResponseBody\n{\n    public const int MaximumBytes = 256 * 1024;\n\n    public static async Task<string> ReadAsync(HttpContent content, CancellationToken cancellation_token = default)\n    {\n        ArgumentNullException.ThrowIfNull(content);\n        cancellation_token.ThrowIfCancellationRequested();\n        if (content.Headers.ContentLength > MaximumBytes)\n        {\n            throw new InvalidDataException(\"The provider response exceeds the byte limit.\");\n        }\n\n        using var source = await content.ReadAsStreamAsync(cancellation_token).ConfigureAwait(false);\n        using var body = new MemoryStream();\n        var buffer = new byte[8192];\n        while (true)\n        {\n            var count = await source.ReadAsync(buffer.AsMemory(0, Math.Min(buffer.Length, MaximumBytes + 1 - checked((int)body.Length))), cancellation_token).ConfigureAwait(false);\n            if (count == 0)\n            {\n                return Encoding.UTF8.GetString(body.GetBuffer(), 0, checked((int)body.Length));\n            }\n            if (body.Length + count > MaximumBytes)\n            {\n                throw new InvalidDataException(\"The provider response exceeds the byte limit.\");\n            }\n            body.Write(buffer, 0, count);\n        }\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

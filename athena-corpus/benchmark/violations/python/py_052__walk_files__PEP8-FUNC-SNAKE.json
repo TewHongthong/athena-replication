@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_052",
+  "language": "python",
+  "originalName": "walk_files",
+  "injectedName": "WALK_FILES",
+  "identifierKind": "function",
+  "violatedRuleId": "PEP8-FUNC-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'WALK_FILES' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def WALK_FILES(root: Path, skip_dirs: set[str]):\n    for dirpath, dirnames, filenames in os.walk(root):\n        dirnames[:] = sorted(d for d in dirnames if d not in skip_dirs and not d.startswith(\".\"))\n        for fn in sorted(filenames):\n            path = Path(dirpath) / fn\n            if path.is_file():\n                yield path",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

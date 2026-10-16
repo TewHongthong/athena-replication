@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_061",
+  "language": "csharp",
+  "originalName": "message",
+  "injectedName": "MESSAGE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MESSAGE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private static void AddOptionalMetadata(\n    IDictionary<string, string> body,\n    SmsMessage MESSAGE,\n    string key)\n{\n    var value = ReadMetadata(MESSAGE, key);\n    if (value is not null)\n        body[key] = value;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_005",
+  "language": "python",
+  "originalName": "out",
+  "injectedName": "OUT",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'OUT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class Evaluator:\n    def __init__(self, stack: Any, encryptor: Any, reranker: Any, path_to_doc: dict[str, str]):\n        self.stack = stack\n        self.encryptor = encryptor\n        self.reranker = reranker\n        self.path_to_doc = path_to_doc\n        self._meta_cache: dict[str, dict] = {}\n\n    def _docs(self, chunk_ids: list[str]) -> list[str]:\n        missing = [c for c in chunk_ids if c not in self._meta_cache]\n        for s in range(0, len(missing), 500):\n            self._meta_cache.update(self.stack.store.get_metadata(missing[s:s + 500]))\n        seen, OUT = set(), []\n        for c in chunk_ids:\n            meta = self._meta_cache.get(c)\n            if meta is None:\n                continue\n            doc = self.path_to_doc[meta[\"path\"]]\n            if doc not in seen:\n                seen.add(doc)\n                OUT.append(doc)\n        return OUT\n\n    def rank(self, mode: str, query: str, q_emb: list[float], where: dict) -> list[str]:\n        retriever = self.stack.retriever\n        if mode == \"dense\":\n            return self._docs([c for c, _ in self.stack.store.query(q_emb, 100, where)])\n        if mode == \"sparse\":\n            return self._docs([c for c, _ in self.stack.sparse.search(query, partitions_for_filter(where), 100)])\n        fused = [c for c, _ in retriever.candidates(query, where)]\n        if mode == \"hybrid\":\n            return self._docs(fused)\n        head, tail = fused[:30], fused[30:]\n        rows = self.stack.store.get(head)\n        from securerag.security.encryption import aad_for\n\n        texts = [self.encryptor.decrypt(ct, aad=aad_for(cid, meta)) for cid, ct, meta in rows]\n        scores = self.reranker.score(query, texts)\n        reranked = [cid for (cid, _, _), _ in sorted(zip(rows, scores, strict=True), key=lambda x: -x[1])]\n        return self._docs(reranked + tail)",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

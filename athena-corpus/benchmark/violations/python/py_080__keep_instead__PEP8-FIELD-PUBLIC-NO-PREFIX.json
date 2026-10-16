@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_080",
+  "language": "python",
+  "originalName": "keep_instead",
+  "injectedName": "KEEP_INSTEAD",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'KEEP_INSTEAD' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass(frozen=True)\nclass ProposalExplanation:\n    label: str  # short per-slug title\n    why: str  # one or two sentences\n    KEEP_INSTEAD: str  # \"\" when the reasoning names no retained copy\n    gives_up: str\n    caveats: tuple[str, ...] = ()",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

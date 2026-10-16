@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_047",
+  "language": "typescript",
+  "originalName": "onPress",
+  "injectedName": "on_press",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'on_press' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface TakeFrameProps {\n  recording: Recording;\n  width: number;\n  active: boolean;\n  on_press: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

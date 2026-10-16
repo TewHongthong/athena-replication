@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_033",
+  "language": "typescript",
+  "originalName": "index",
+  "injectedName": "INDEX",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INDEX' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function LeaderStage({ width, height }: { width: number; height: number }) {\n  const dial = Math.min(width, height) * 0.74;\n  return (\n    <View style={[styles.stage, { width, height }]}>\n      <Svg width={width} height={height} style={StyleSheet.absoluteFill}>\n        <Line x1={0} y1={height / 2} x2={width} y2={height / 2} stroke={colors.bone} strokeOpacity={0.1} />\n        <Line x1={width / 2} y1={0} x2={width / 2} y2={height} stroke={colors.bone} strokeOpacity={0.1} />\n      </Svg>\n      {[\n        { top: 14, left: 14 },\n        { top: 14, right: 14, transform: [{ scaleX: -1 }] },\n        { bottom: 14, left: 14, transform: [{ scaleY: -1 }] },\n        { bottom: 14, right: 14, transform: [{ scaleX: -1 }, { scaleY: -1 }] },\n      ].map((position, INDEX) => (\n        <Svg key={INDEX} width={26} height={26} style={[styles.corner, position]}>\n          <Path d={corner} stroke={colors.bone} strokeOpacity={0.7} strokeWidth={2} fill=\"none\" />\n        </Svg>\n      ))}\n      <LeaderLoop size={dial} />\n    </View>\n  );\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_085",
+  "language": "javascript",
+  "originalName": "index",
+  "injectedName": "i",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildTopicScopeIndex(subjects=[]){\n  const i=new Map();\n  for(const subject of subjects||[])for(const topic of subject?.topics||[]){\n    if(topic?.id)i.set(topic.id,normalizeExamTags(topic.examTags));\n  }\n  return i;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

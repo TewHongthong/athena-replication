@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_073",
+  "language": "csharp",
+  "originalName": "maxRad",
+  "injectedName": "max_rad",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'max_rad' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private void ScanConeDeterministic()\n{\n    float max_rad = (coneAngle / 2f) * Mathf.Deg2Rad;\n    Quaternion coneRotation = Quaternion.FromToRotation(Vector3.forward, transform.forward);\n    Vector3 origin = transform.position;\n\n    TargetVisible = false;\n    VisibleTarget = null;\n    uniqueHitsThisFrame.Clear();\n\n    for (int i = 0; i < rayCount; i++)\n    {\n        float t = (float)i / rayCount;\n        float theta = t * max_rad;\n        float phi = i * 2.4f;\n\n        float sinTheta = Mathf.Sin(theta);\n        float cosTheta = Mathf.Cos(theta);\n\n        Vector3 localDir = new Vector3(Mathf.Cos(phi) * sinTheta, Mathf.Sin(phi) * sinTheta, cosTheta);\n        Vector3 rayDirection = coneRotation * localDir;\n\n        if (Physics.Raycast(origin, rayDirection, out RaycastHit hit, maxDistance, hitMask))\n        {\n            if (hit.collider.CompareTag(targetTag))\n            {\n                TargetVisible = true;\n                VisibleTarget = hit.collider.transform;\n                uniqueHitsThisFrame.Add(hit.collider);\n\n                if (logHits)\n                    Debug.Log($\"Found {targetTag} at: {hit.collider.transform.position}\");\n\n                Debug.DrawLine(origin, hit.point, Color.green);\n                continue;\n            }\n        }\n        Debug.DrawLine(origin, origin + rayDirection * maxDistance, Color.red);\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,37 @@
+{
+  "id": "py_072",
+  "language": "python",
+  "source": "github:sl2ver/wm811k-wafer-defect-classification@305dbf7387943b4dec4f4f41a38ff99bfe284796",
+  "sourceDetail": "scripts/download_data.py lines 31-36 (function sha256); license MIT; repo created 2026-09-27T06:25:24Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def sha256(path: Path) -> str:\n    h = hashlib.sha256()\n    with open(path, \"rb\") as f:\n        for chunk in iter(lambda: f.read(1 << 24), b\"\"):\n            h.update(chunk)\n    return h.hexdigest()",
+  "identifiers": [
+    {
+      "name": "sha256",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "chunk",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sl2ver/wm811k-wafer-defect-classification",
+    "repoUrl": "https://github.com/sl2ver/wm811k-wafer-defect-classification",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-27T06:25:24Z",
+    "commit": "305dbf7387943b4dec4f4f41a38ff99bfe284796",
+    "path": "scripts/download_data.py",
+    "startLine": 31,
+    "endLine": 36,
+    "unit": "function sha256",
+    "corpusFile": "corpus/python/sl2ver__wm811k-wafer-defect-classification__download_data.py.md"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_066",
+  "language": "javascript",
+  "originalName": "item",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildAchievementViewModel(achievements = []) {\n  const rows = (Array.isArray(achievements) ? achievements : []).map(i => ({ ...i, unlocked: Boolean(i?.unlocked) }));\n  const unlocked = rows.filter(i => i.unlocked);\n  const locked = rows.filter(i => !i.unlocked);\n  return {\n    total: rows.length,\n    unlockedCount: unlocked.length,\n    remainingCount: locked.length,\n    unlocked,\n    locked\n  };\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

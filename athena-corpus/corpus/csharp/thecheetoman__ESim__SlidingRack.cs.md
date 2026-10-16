@@ -1,0 +1,71 @@
+# Assets/Scripts/Robot/SlidingRack.cs
+
+- source repo: thecheetoman/ESim
+- repo url: https://github.com/thecheetoman/ESim
+- license: MIT
+- created_at: 2026-09-16T23:28:41Z
+- file path: Assets/Scripts/Robot/SlidingRack.cs
+- commit: 59cde034d0041d0af0a43cdf7e43d979935b7db8
+
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Robot.InputHandling;
+
+public class SlidingRack : MonoBehaviour
+{
+    [Header("Position Settings")]
+    [Tooltip("Local position when the intake is deployed/extended.")]
+    [SerializeField] private Vector3 extendedPosition = Vector3.zero;
+
+    [Tooltip("Local position when the intake is stowed/retracted.")]
+    [SerializeField] private Vector3 retractedPosition = new Vector3(0f, -0.00065f, -0.00307f);
+
+    [Tooltip("Lower values make it slide smoother/slower. Try 5 to 15.")]
+    [SerializeField] private float lerpSpeed = 10f;
+
+    [Header("Control Settings")]
+    [SerializeField] private KeyCode intakeKey = KeyCode.LeftShift;
+
+    private bool isDeployed = false;
+    private bool isEnabled = false;
+
+    private void OnEnable()
+    {
+        GameManager.OnRobotStateChanged += OnRobotStateChanged;
+        isEnabled = GameManager.IsRobotEnabled;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnRobotStateChanged -= OnRobotStateChanged;
+    }
+
+    private void OnRobotStateChanged(bool enabled)
+    {
+        isEnabled = enabled;
+    }
+
+    private void Start()
+    {
+        transform.localPosition = retractedPosition;
+    }
+
+    private void Update()
+    {
+        if (!isEnabled) return;
+
+        bool deployPressed = Input.GetKeyDown(intakeKey)
+            || (PlayerInputHandler.Instance != null && PlayerInputHandler.Instance.DeployPressedThisFrame());
+
+        if (deployPressed)
+        {
+            isDeployed = !isDeployed;
+        }
+
+        Vector3 targetPosition = isDeployed ? extendedPosition : retractedPosition;
+
+        transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * lerpSpeed);
+    }
+}```

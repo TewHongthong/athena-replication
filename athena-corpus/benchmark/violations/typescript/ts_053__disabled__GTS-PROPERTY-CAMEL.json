@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_053",
+  "language": "typescript",
+  "originalName": "disabled",
+  "injectedName": "DISABLED",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DISABLED' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface RecordButtonProps {\n  phase: TakePhase;\n  DISABLED: boolean;\n  progress: number;\n  reducedMotion: boolean;\n  onPress: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

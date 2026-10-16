@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_095",
+  "language": "javascript",
+  "originalName": "createTopicHistoryService",
+  "injectedName": "create_topic_history_service",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'create_topic_history_service' does not match camelCase pattern",
+    "name 'create_topic_history_service' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function create_topic_history_service({getState,clock,idGenerator,toLocalDate=value=>value}={}){\n  if(typeof getState!=='function'||!clock||typeof idGenerator!=='function')throw new TypeError('Serviço de histórico requer estado, relógio e gerador de IDs.');\n  const records=()=>{const state=getState();if(!Array.isArray(state.topicHistory))state.topicHistory=[];return state.topicHistory};\n  const referenceOf=metadata=>metadata?.sessionId||metadata?.reviewId||metadata?.operationId||null;\n  const add=(type,subjectId,topicId=null,metadata={},options={})=>{\n    const reference=referenceOf(metadata);\n    if(reference){const existing=records().find(event=>event.type===type&&referenceOf(event.metadata)===reference);if(existing)return existing}\n    const occurredAt=options.occurredAt||clock.nowISO(),localDate=options.localDate||clock.today();\n    const event={id:idGenerator('history'),date:occurredAt,occurredAt,localDate,type,subjectId:subjectId||null,topicId:topicId||null,examScope:Array.isArray(options.examScope)?[...options.examScope]:null,metadata:{...metadata}};\n    records().push(event);return event;\n  };\n  const list=({type,subjectId,topicId,start,end,includeLifecycle=true}={})=>records().filter(event=>{\n    if(type&&event.type!==type)return false;\n    if(subjectId&&event.subjectId!==subjectId)return false;\n    if(topicId&&event.topicId!==topicId)return false;\n    if(!includeLifecycle&&IGNORED_ACTIVITY_TYPES.has(event.type))return false;\n    const date=historyEventLocalDate(event,toLocalDate);\n    return (!start||date>=start)&&(!end||date<=end);\n  });\n  const lastActivity=filter=>list({...filter,includeLifecycle:false}).reduce((latest,event)=>{const date=historyEventLocalDate(event,toLocalDate);return date&&(!latest||date>latest)?date:latest},null);\n  return Object.freeze({add,list,lastActivity,eventLocalDate:event=>historyEventLocalDate(event,toLocalDate)});\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_029",
+  "language": "csharp",
+  "originalName": "SignCanonicalProof",
+  "injectedName": "sign_canonical_proof",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'sign_canonical_proof' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public interface IOwnerDeviceSigner : IDisposable\n{\n    string PublicKeySpkiBase64 { get; }\n\n    string PublicKeyFingerprint { get; }\n\n    string sign_canonical_proof(string canonicalProof);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

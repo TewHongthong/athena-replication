@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_070",
+  "language": "typescript",
+  "originalName": "useSweep",
+  "injectedName": "use_sweep",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'use_sweep' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function use_sweep(cycleKey: unknown, running: boolean, restingValue = 0.75, duration = 1000) {\n  const progress = useRef(new Animated.Value(restingValue)).current;\n\n  useEffect(() => {\n    if (!running) {\n      progress.setValue(restingValue);\n      return;\n    }\n    progress.setValue(0);\n    const animation = Animated.timing(progress, {\n      toValue: 1,\n      duration,\n      easing: Easing.linear,\n      useNativeDriver: motion.native,\n    });\n    animation.start();\n    return () => animation.stop();\n  }, [cycleKey, running]);\n\n  return progress;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

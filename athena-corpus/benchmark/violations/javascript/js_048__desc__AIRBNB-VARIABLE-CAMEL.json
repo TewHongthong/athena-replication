@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_048",
+  "language": "javascript",
+  "originalName": "desc",
+  "injectedName": "DESC",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DESC' does not match camelCase pattern",
+    "name 'DESC' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "function searchItemCard(item, selected) {\n  const sel = selected ? theme.reverse(' > ') : '   '\n  const name = selected ? bold(item.full_name) : dim(item.full_name)\n  const DESC = item.description || 'No description'\n  return [\n    `${sel}${name}`,\n    `   ${DESC}`,\n    `   ⭐ ${item.stargazers_count} · ${item.language || 'N/A'}`,\n    `   rolecraft install ${item.full_name}`,\n  ]\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

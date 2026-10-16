@@ -1,0 +1,52 @@
+# scripts/setup-hooks.mjs
+
+- source repo: rolecraft-sh/rolecraft
+- repo url: https://github.com/rolecraft-sh/rolecraft
+- license: MIT
+- created_at: 2026-06-12T15:31:13Z
+- file path: scripts/setup-hooks.mjs
+- commit: b74f936ad1dc051aa5b25ce3154fb532597e802a
+
+```javascript
+#!/usr/bin/env node
+// scripts/setup-hooks.mjs — point git core.hooksPath at the repo-tracked hooks/ dir
+// Runs automatically via npm postinstall so every clone gets the hook without
+// any manual setup. Zero-dependency, no husky needed.
+import { execSync } from 'node:child_process'
+import { chmodSync, existsSync, readdirSync } from 'node:fs'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const hooksDir = join(__dirname, '..', 'hooks')
+
+if (!existsSync(hooksDir)) {
+  // Published npm packages ship without hooks/ — skip silently for consumers
+  process.exit(0)
+}
+
+// Make all hooks executable so they actually run
+for (const entry of readdirSync(hooksDir)) {
+  chmodSync(join(hooksDir, entry), 0o755)
+}
+
+// Tell git to use the repo-tracked hooks/ folder instead of .git/hooks
+const inGitRepo = (() => {
+  try {
+    execSync('git rev-parse --git-dir', { stdio: 'ignore' })
+    return true
+  } catch {
+    return false
+  }
+})()
+
+if (!inGitRepo) {
+  // npm install runs before git init in some workflows; skip silently
+  process.exit(0)
+}
+
+execSync('git config core.hooksPath hooks', { stdio: 'inherit' })
+console.log(
+  'git hooks configured: core.hooksPath = hooks (pre-commit runs lint before commit)',
+)
+```

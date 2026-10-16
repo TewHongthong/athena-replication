@@ -1,0 +1,42 @@
+{
+  "id": "py_003",
+  "language": "python",
+  "source": "github:Ayush1860/SecureRag@a65d2f6f70fdc5dcb477d48353de0374853125e7",
+  "sourceDetail": "scripts/create_api_key.py lines 22-44 (function main); license MIT; repo created 2026-09-02T18:22:54Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def main(argv: list[str] | None = None) -> int:\n    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)\n    parser.add_argument(\"--principal\", required=True)\n    parser.add_argument(\"--role\", required=True, choices=sorted(ROLE_POLICY))\n    parser.add_argument(\"--file\", help=\"keys file (default: API_KEYS_FILE)\")\n    args = parser.parse_args(argv)\n\n    path = Path(args.file or get_settings().api_keys_file)\n    data = json.loads(path.read_text(encoding=\"utf-8\")) if path.exists() else {\"keys\": []}\n    key = \"srag_\" + secrets.token_urlsafe(32)\n    key_id = f\"{args.principal}-{secrets.token_hex(3)}\"\n    data[\"keys\"].append({\n        \"id\": key_id,\n        \"hash\": hash_api_key(key),\n        \"principal\": args.principal,\n        \"role\": args.role,\n        \"created_at\": datetime.now(UTC).isoformat(timespec=\"seconds\"),\n    })\n    path.parent.mkdir(parents=True, exist_ok=True)\n    path.write_text(json.dumps(data, indent=2), encoding=\"utf-8\")\n    print(f\"Created key {key_id} for {args.principal} ({args.role}) in {path}\")\n    print(f\"API key (shown once): {key}\")\n    return 0",
+  "identifiers": [
+    {
+      "name": "main",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "parser",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "argv",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "data",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Ayush1860/SecureRag",
+    "repoUrl": "https://github.com/Ayush1860/SecureRag",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-02T18:22:54Z",
+    "commit": "a65d2f6f70fdc5dcb477d48353de0374853125e7",
+    "path": "scripts/create_api_key.py",
+    "startLine": 22,
+    "endLine": 44,
+    "unit": "function main",
+    "corpusFile": "corpus/python/Ayush1860__SecureRag__create_api_key.py.md"
+  }
+}

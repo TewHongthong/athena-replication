@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_097",
+  "language": "csharp",
+  "originalName": "post",
+  "injectedName": "POST",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'POST' does not match camelCase pattern",
+    "name 'POST' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "static string RemoveWords(string s, Regex rx, bool requireBoundaries) => rx.Replace(s, m =>\n{\n    bool hasPre = m.Groups[\"pre\"].Success;\n    string POST = m.Groups[\"post\"].Success ? m.Groups[\"post\"].Value.Trim() : \"\";\n    bool sentenceStart = !hasPre && IsSentenceStart(s, m.Index);\n    bool boundaryBefore = hasPre || PreviousChar(s, m.Index) == Pause;\n    var rest = s.AsSpan(m.Index + m.Length).TrimStart(' ');\n    bool boundaryAfter = POST.Length > 0 || rest.IsEmpty || rest[0] == Pause;\n\n    if (requireBoundaries && !((boundaryBefore || sentenceStart) && boundaryAfter))\n        return m.Value;\n\n    string endPunct = POST.Replace(\",\", \"\");\n    if (endPunct.Length > 0) return sentenceStart ? \" \" : endPunct + \" \";\n    return sentenceStart ? \" \" + Cap : \" \";\n});",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

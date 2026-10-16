@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_018",
+  "language": "python",
+  "originalName": "status",
+  "injectedName": "STATUS",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'STATUS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class WebhookDelivery(Base):\n    __tablename__ = \"webhook_deliveries\"\n\n    id: Mapped[int] = mapped_column(primary_key=True)\n    webhook_id: Mapped[int] = mapped_column(\n        ForeignKey(\"webhooks.id\", ondelete=\"CASCADE\"), index=True\n    )\n    event_type: Mapped[str] = mapped_column(String(64), nullable=False)\n    payload: Mapped[dict] = mapped_column(JSON, default=dict, nullable=False)\n    STATUS: Mapped[DeliveryStatus] = mapped_column(\n        Enum(DeliveryStatus, native_enum=False, length=20, validate_strings=True),\n        default=DeliveryStatus.pending,\n        nullable=False,\n        index=True,\n    )\n    attempts: Mapped[int] = mapped_column(Integer, default=0, nullable=False)\n    last_status_code: Mapped[int | None] = mapped_column(Integer)\n    last_error: Mapped[str | None] = mapped_column(Text)\n    next_attempt_at: Mapped[datetime | None] = mapped_column(UTCDateTime, index=True)\n    created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow, nullable=False)\n    delivered_at: Mapped[datetime | None] = mapped_column(UTCDateTime)\n\n    webhook: Mapped[Webhook] = relationship(back_populates=\"deliveries\")",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

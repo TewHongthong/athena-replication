@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_042",
+  "language": "java",
+  "originalName": "load",
+  "injectedName": "LOAD",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOAD' does not match camelCase pattern",
+    "name 'LOAD' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static Tex LOAD(String capeId) {\n    MinecraftClient mc = MinecraftClient.getInstance();\n    Identifier packed = Identifier.of(\"aero\", \"textures/cape/\" + capeId + \".png\");\n    try {\n        var res = mc.getResourceManager().getResource(packed);\n        if (res.isPresent()) {\n            try (InputStream in = res.get().getInputStream()) {\n                NativeImage img = NativeImage.read(in);\n                Tex tex = new Tex(packed, img.getWidth(), img.getHeight());\n                img.close();\n                return tex;\n            }\n        }\n    } catch (Throwable ignored) {\n    }\n    try {\n        Path file = folder().resolve(capeId + \".png\");\n        if (Files.isRegularFile(file)) {\n            try (InputStream in = Files.newInputStream(file)) {\n                NativeImage image = NativeImage.read(in);\n                Identifier id = Identifier.of(\"aero\", \"dyncape/\" + capeId);\n                mc.getTextureManager().registerTexture(id, new NativeImageBackedTexture(() -> \"aero cape \" + capeId, image));\n                return new Tex(id, image.getWidth(), image.getHeight());\n            }\n        }\n    } catch (Throwable ignored) {\n    }\n    return null;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

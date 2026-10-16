@@ -1,0 +1,15 @@
+{
+  "snippetId": "java_028",
+  "language": "java",
+  "originalName": "equipHurtHits",
+  "injectedName": "equip_hurt_hits",
+  "identifierKind": "field",
+  "violatedRuleId": "GJAVA-FIELD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'equip_hurt_hits' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public final class DamageTintState {\n    public static final ThreadLocal<Boolean> ARMOR_HURT = ThreadLocal.withInitial(() -> false);\n\n    public static int armorBegin;\n    public static int equipHits;\n    public static int equip_hurt_hits;\n\n    private DamageTintState() {}\n\n    public static boolean on(LivingEntityRenderState state) {\n        return AeroClient.CONFIG != null && AeroClient.CONFIG.damageTint && state instanceof PlayerEntityRenderState;\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

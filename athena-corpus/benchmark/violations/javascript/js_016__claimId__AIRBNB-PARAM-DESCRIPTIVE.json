@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_016",
+  "language": "javascript",
+  "originalName": "claimId",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export const claimsAPI = {\n  // Get paginated/filtered list of claims\n  getClaims: (params = {}) => api.get('/api/claims/', { params }),\n\n  // Get executive KPI stats\n  getStats: () => api.get('/api/claims/stats/summary'),\n\n  // Get full claim dossier with audit logs and dual-model probabilities\n  getClaimDetail: (l) => api.get(`/api/claims/${l}`),\n\n  // Submit new claim\n  submitClaim: (data) => api.post('/api/claims/submit', data),\n\n  // OCR document pre-parse\n  processOCR: (formData) =>\n    api.post('/api/claims/ocr-process', formData, {\n      headers: { 'Content-Type': 'multipart/form-data' },\n    }),\n\n  // Upload evidence media (photo, video, barcode)\n  uploadMedia: (formData) =>\n    api.post('/api/claims/upload-media', formData, {\n      headers: { 'Content-Type': 'multipart/form-data' },\n    }),\n\n  // Real-time cross-document serial & model verification\n  crossVerify: (data) => api.post('/api/claims/cross-verify', data),\n\n  // Adjuster decision on a claim\n  adjudicateClaim: (l, payload) =>\n    api.post(`/api/claims/${l}/adjudicate`, payload),\n};",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_027",
+  "language": "java",
+  "originalName": "message",
+  "injectedName": "MESSAGE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MESSAGE' does not match camelCase pattern",
+    "name 'MESSAGE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static void onIncoming(Text MESSAGE) {\n    var c = AeroClient.CONFIG;\n    if (c == null || !c.chatTranslate || MESSAGE == null) {\n        return;\n    }\n    String line = MESSAGE.getString();\n    if (line.startsWith(MARK) || line.length() > 256) {\n        return;\n    }\n    Matcher m = CHAT.matcher(line.replaceAll(\"§.\", \"\").trim());\n    if (!m.matches()) {\n        return;\n    }\n    String sender = m.group(1) != null ? m.group(1) : m.group(2);\n    MinecraftClient mc = MinecraftClient.getInstance();\n    if (sender == null || sender.equalsIgnoreCase(mc.getSession().getUsername())) {\n        return;\n    }\n    String body = m.group(3).trim();\n    if (body.codePoints().noneMatch(Character::isLetter)) {\n        return;\n    }\n    translate(body, code(c.chatTranslateLang), out -> {\n        if (out != null && mc.inGameHud != null) {\n            mc.inGameHud.getChatHud().addMessage(Text.literal(MARK + out).formatted(Formatting.GRAY, Formatting.ITALIC));\n        }\n    });\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

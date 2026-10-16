@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_035",
+  "language": "python",
+  "originalName": "replacements",
+  "injectedName": "REPLACEMENTS",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'REPLACEMENTS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def escape_latex(text: str) -> str:\n    \"\"\"Escape special LaTeX characters.\"\"\"\n    REPLACEMENTS = {\n        \"\\\\\": r\"\\textbackslash{}\",\n        \"&\": r\"\\&\",\n        \"%\": r\"\\%\",\n        \"$\": r\"\\$\",\n        \"#\": r\"\\#\",\n        \"_\": r\"\\_\",\n        \"{\": r\"\\{\",\n        \"}\": r\"\\}\",\n        \"~\": r\"\\textasciitilde{}\",\n        \"^\": r\"\\textasciicircum{}\",\n    }\n    for char, escaped in REPLACEMENTS.items():\n        text = text.replace(char, escaped)\n    return text",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

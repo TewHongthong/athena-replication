@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_007",
+  "language": "typescript",
+  "originalName": "format",
+  "injectedName": "FORMAT",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FORMAT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function FORMAT(detail: unknown): string {\n  if (detail instanceof Error) return `${detail.name}: ${detail.message}`;\n  try {\n    return JSON.stringify(detail);\n  } catch {\n    return String(detail);\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

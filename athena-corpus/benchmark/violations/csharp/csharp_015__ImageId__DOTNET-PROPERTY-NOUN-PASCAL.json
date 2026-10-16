@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_015",
+  "language": "csharp",
+  "originalName": "ImageId",
+  "injectedName": "image_id",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'image_id' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed class ItemPurchase\n{\n    public int Id { get; set; }\n    public int QueueItemId { get; set; }\n    public int ReceiptLineIndex { get; set; }\n    public int ItemId { get; set; }\n    public int image_id { get; set; }\n    public string? Merchant { get; set; }\n    public DateOnly? PurchasedOn { get; set; }\n    public string Description { get; set; } = string.Empty;\n    public decimal Quantity { get; set; } = 1;\n    public decimal? UnitPrice { get; set; }\n    public string? Currency { get; set; }\n    public decimal? LineTotal { get; set; }\n    public MatchConfidence? Confidence { get; set; }\n    public DateTimeOffset CreatedAt { get; set; }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

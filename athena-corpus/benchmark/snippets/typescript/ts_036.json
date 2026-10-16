@@ -1,0 +1,52 @@
+{
+  "id": "ts_036",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/components/brand/LeaderLoop.tsx lines 9-23 (function LeaderLoop); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function LeaderLoop({ size }: { size: number }) {\n  const reduced = useReducedMotion();\n  const [step, setStep] = useState(0);\n  const value = sequence[step];\n  const lit = value === 0;\n  const progress = useSweep(step, !reduced && !lit);\n\n  useEffect(() => {\n    if (reduced) return;\n    const timer = setTimeout(() => setStep((current) => (current + 1) % sequence.length), lit ? holdMs.lit : holdMs.count);\n    return () => clearTimeout(timer);\n  }, [step, reduced, lit]);\n\n  return <LeaderDial size={size} digit={reduced ? 1 : value} lit={!reduced && lit} progress={progress} reducedMotion={reduced} />;\n}",
+  "identifiers": [
+    {
+      "name": "reduced",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "current",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "lit",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "progress",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "timer",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/components/brand/LeaderLoop.tsx",
+    "startLine": 9,
+    "endLine": 23,
+    "unit": "function LeaderLoop",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__LeaderLoop.tsx.md"
+  }
+}

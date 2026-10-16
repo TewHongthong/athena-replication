@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_066",
+  "language": "javascript",
+  "originalName": "rows",
+  "injectedName": "ROWS",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ROWS' does not match camelCase pattern",
+    "name 'ROWS' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function buildAchievementViewModel(achievements = []) {\n  const ROWS = (Array.isArray(achievements) ? achievements : []).map(item => ({ ...item, unlocked: Boolean(item?.unlocked) }));\n  const unlocked = ROWS.filter(item => item.unlocked);\n  const locked = ROWS.filter(item => !item.unlocked);\n  return {\n    total: ROWS.length,\n    unlockedCount: unlocked.length,\n    remainingCount: locked.length,\n    unlocked,\n    locked\n  };\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_071",
+  "language": "csharp",
+  "originalName": "ClearContainer",
+  "injectedName": "clear_container",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'clear_container' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "private void clear_container()\n{\n    if (containerParent == null) return;\n\n    Undo.IncrementCurrentGroup();\n    Undo.SetCurrentGroupName(\"Clear Fuel Container\");\n    int undoGroupIndex = Undo.GetCurrentGroup();\n\n    for (int i = containerParent.childCount - 1; i >= 0; i--)\n    {\n        Undo.DestroyObjectImmediate(containerParent.GetChild(i).gameObject);\n    }\n\n    Undo.CollapseUndoOperations(undoGroupIndex);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

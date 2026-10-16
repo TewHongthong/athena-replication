@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_095",
+  "language": "csharp",
+  "originalName": "Apply",
+  "injectedName": "apply",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'apply' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static string apply(string text)\n{\n    if (string.IsNullOrWhiteSpace(text)) return text;\n    int searchFrom = 0;\n    for (int guard = 0; guard < 12 && searchFrom <= text.Length; guard++)\n    {\n        var m = Cue.Match(text, searchFrom);\n        if (!m.Success) break;\n        string? fixedText = TryCorrect(text, m);\n        if (fixedText == null)\n        {\n            searchFrom = m.Index + m.Length; // ordinary speech; look further on\n            continue;\n        }\n        text = fixedText;\n        searchFrom = 0;\n    }\n    return text;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

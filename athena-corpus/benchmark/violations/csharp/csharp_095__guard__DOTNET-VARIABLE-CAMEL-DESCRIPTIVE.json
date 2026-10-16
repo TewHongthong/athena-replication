@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_095",
+  "language": "csharp",
+  "originalName": "guard",
+  "injectedName": "GUARD",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'GUARD' does not match camelCase pattern",
+    "name 'GUARD' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static string Apply(string text)\n{\n    if (string.IsNullOrWhiteSpace(text)) return text;\n    int searchFrom = 0;\n    for (int GUARD = 0; GUARD < 12 && searchFrom <= text.Length; GUARD++)\n    {\n        var m = Cue.Match(text, searchFrom);\n        if (!m.Success) break;\n        string? fixedText = TryCorrect(text, m);\n        if (fixedText == null)\n        {\n            searchFrom = m.Index + m.Length; // ordinary speech; look further on\n            continue;\n        }\n        text = fixedText;\n        searchFrom = 0;\n    }\n    return text;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

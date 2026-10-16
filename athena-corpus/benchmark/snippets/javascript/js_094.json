@@ -1,0 +1,52 @@
+{
+  "id": "js_094",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/guided-study/guided-study-service.js lines 2-27 (function createGuidedStudyService); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function createGuidedStudyService({recommend,sessionService,clock={nowISO:()=>new Date().toISOString()}}={}){\n  if(typeof recommend!=='function'||!sessionService)throw new TypeError('Guided study requires recommendation and session services');\n  let active=null;\n  return{\n    next({id,source=null,type=null}={}){\n      const recommendation=recommend({id})[0]||null;\n      active=recommendation?{recommendation,recommendationSource:source,recommendationType:type||recommendation.activityType||recommendation.studyType||'study',startedAt:null,paused:false}:null;\n      return active;\n    },\n    start(){if(!active)return null;active.startedAt=clock.nowISO();active.paused=false;return active},\n    pause(){if(!active)return null;active.paused=true;return active},\n    resume(){if(!active)return null;active.paused=false;return active},\n    complete(result={}){\n      if(!active)return null;\n      const session=sessionService.complete({...result,recommendationId:active.recommendation.recommendationId||active.recommendation.id,\n        recommendationSource:active.recommendationSource,recommendationType:active.recommendationType,\n        topicId:result.topicId??active.recommendation.topicId,subjectId:result.subjectId??active.recommendation.subjectId,\n        startedAt:result.startedAt||active.startedAt,endedAt:result.endedAt||clock.nowISO(),durationSeconds:result.durationSeconds||0,\n        questionsResolved:result.questionsResolved||0,correctAnswers:result.correctAnswers||0,type:result.type||'study',source:'recommendation'});\n      active=null;\n      return session;\n    },\n    reset(){active=null},\n    current:()=>active\n  };\n}",
+  "identifiers": [
+    {
+      "name": "createGuidedStudyService",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "next",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "active",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "result",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "start",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "pause",
+      "kind": "method",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/guided-study/guided-study-service.js",
+    "startLine": 2,
+    "endLine": 27,
+    "unit": "function createGuidedStudyService",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__guided-study-service.js.md"
+  }
+}

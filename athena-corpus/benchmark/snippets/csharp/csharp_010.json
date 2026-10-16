@@ -1,0 +1,52 @@
+{
+  "id": "csharp_010",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Entities/Container.cs lines 3-11 (class ContainerType); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public enum ContainerType\n{\n    Box,\n    Shelf,\n    Drawer,\n    Bin,\n    Cupboard,\n    Other\n}",
+  "identifiers": [
+    {
+      "name": "ContainerType",
+      "kind": "enum",
+      "isCompliant": true
+    },
+    {
+      "name": "Box",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Shelf",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Drawer",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Bin",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Cupboard",
+      "kind": "enum_member",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Entities/Container.cs",
+    "startLine": 3,
+    "endLine": 11,
+    "unit": "class ContainerType",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__Container.cs.md"
+  }
+}

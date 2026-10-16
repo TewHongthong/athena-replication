@@ -1,0 +1,52 @@
+{
+  "id": "py_091",
+  "language": "python",
+  "source": "github:vikasiec/AI-Trading-App@beb8d00e020adcbdf2afc156bd87592daa40d881",
+  "sourceDetail": "src/jev_indstocks_trader/backtest.py lines 34-43 (class BacktestTrade); license MIT; repo created 2026-09-25T18:06:05Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@dataclass(frozen=True)\nclass BacktestTrade:\n    entry_time: str\n    exit_time: str\n    entry_price: float\n    exit_price: float\n    qty: int\n    exit_reason: str\n    gross_pnl: float\n    net_pnl: float",
+  "identifiers": [
+    {
+      "name": "BacktestTrade",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "entry_time",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "exit_time",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "entry_price",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "exit_price",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "qty",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vikasiec/AI-Trading-App",
+    "repoUrl": "https://github.com/vikasiec/AI-Trading-App",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T18:06:05Z",
+    "commit": "beb8d00e020adcbdf2afc156bd87592daa40d881",
+    "path": "src/jev_indstocks_trader/backtest.py",
+    "startLine": 34,
+    "endLine": 43,
+    "unit": "class BacktestTrade",
+    "corpusFile": "corpus/python/vikasiec__AI-Trading-App__backtest.py.md"
+  }
+}

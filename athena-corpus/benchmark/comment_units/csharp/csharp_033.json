@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_033",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "ProviderResponseBody",
+  "codeBare": "public static class ProviderResponseBody\n{\n    public const int MaximumBytes = 256 * 1024;\n\n    public static async Task<string> ReadAsync(HttpContent content, CancellationToken cancellationToken = default)\n    {\n        ArgumentNullException.ThrowIfNull(content);\n        cancellationToken.ThrowIfCancellationRequested();\n        if (content.Headers.ContentLength > MaximumBytes)\n        {\n            throw new InvalidDataException(\"The provider response exceeds the byte limit.\");\n        }\n\n        using var source = await content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);\n        using var body = new MemoryStream();\n        var buffer = new byte[8192];\n        while (true)\n        {\n            var count = await source.ReadAsync(buffer.AsMemory(0, Math.Min(buffer.Length, MaximumBytes + 1 - checked((int)body.Length))), cancellationToken).ConfigureAwait(false);\n            if (count == 0)\n            {\n                return Encoding.UTF8.GetString(body.GetBuffer(), 0, checked((int)body.Length));\n            }\n            if (body.Length + count > MaximumBytes)\n            {\n                throw new InvalidDataException(\"The provider response exceeds the byte limit.\");\n            }\n            body.Write(buffer, 0, count);\n        }\n    }\n}",
+  "referenceComment": "/// <summary>Caps remote response bytes before JSON parsing or full buffering.</summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Simulation/Cognition/ProviderResponseBody.cs lines 6-36 (class ProviderResponseBody); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Simulation/Cognition/ProviderResponseBody.cs",
+    "startLine": 6,
+    "endLine": 36,
+    "unit": "class ProviderResponseBody",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__ProviderResponseBody.cs.md"
+  }
+}

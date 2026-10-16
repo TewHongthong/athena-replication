@@ -1,0 +1,42 @@
+{
+  "id": "ts_014",
+  "language": "typescript",
+  "source": "github:guillermolg00/morphicons@38d2a7221633a453eeafebd872ee3649b9274b22",
+  "sourceDetail": "src/adapters/svg.ts lines 46-56 (function readSvgAttrs); license MIT; repo created 2026-08-01; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "function readSvgAttrs(raw: string): IconNodeAttrs {\n  const attrs: IconNodeAttrs = {};\n  SVG_ATTR.lastIndex = 0;\n  let m: RegExpExecArray | null;\n  // biome-ignore lint/suspicious/noAssignInExpressions: standard regex drain.\n  while ((m = SVG_ATTR.exec(raw)) !== null) {\n    const name = m[1] ?? m[3];\n    if (name) attrs[name] = m[2] ?? m[4] ?? \"\";\n  }\n  return attrs;\n}",
+  "identifiers": [
+    {
+      "name": "readSvgAttrs",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "attrs",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "raw",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "guillermolg00/morphicons",
+    "repoUrl": "https://github.com/guillermolg00/morphicons",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-01",
+    "commit": "38d2a7221633a453eeafebd872ee3649b9274b22",
+    "path": "src/adapters/svg.ts",
+    "startLine": 46,
+    "endLine": 56,
+    "unit": "function readSvgAttrs",
+    "corpusFile": "corpus/typescript/guillermolg00__morphicons__svg.ts.md"
+  }
+}

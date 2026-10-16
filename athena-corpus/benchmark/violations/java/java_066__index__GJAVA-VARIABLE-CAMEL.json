@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_066",
+  "language": "java",
+  "originalName": "index",
+  "injectedName": "INDEX",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INDEX' does not match camelCase pattern",
+    "name 'INDEX' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Test\nvoid loadsTheSharedThemeBeforeComponentStyles() throws IOException {\n  String INDEX = resource(\"/META-INF/resources/admin/index.html\");\n\n  int theme = INDEX.indexOf(\"id=\\\"kkrepo-theme-stylesheet\\\"\");\n  int bootstrap = INDEX.indexOf(\"/login/assets/ui-theme.js\");\n  int components = INDEX.indexOf(\"./assets/admin.css\");\n  assertTrue(theme >= 0 && bootstrap > theme && components > bootstrap);\n  assertTrue(INDEX.contains(\n      \"/browse/assets/themes/default.css?v=20260826-nexus-a11y-1\"));\n  assertTrue(INDEX.contains(\"/login/assets/ui-theme.js?v=20260826-nexus-a11y-1\"));\n  assertTrue(INDEX.contains(\"./assets/admin.css?v=20260923-scan-task-assets-2\"));\n  assertFalse(INDEX.contains(\"/browse/assets/tokens.css\"));\n}",
+  "occurrencesRenamed": 8,
+  "commentOccurrencesRenamed": 0
+}

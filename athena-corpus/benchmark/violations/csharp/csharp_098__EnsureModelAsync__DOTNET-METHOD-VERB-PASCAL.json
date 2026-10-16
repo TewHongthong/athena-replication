@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_098",
+  "language": "csharp",
+  "originalName": "EnsureModelAsync",
+  "injectedName": "ensure_model_async",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ensure_model_async' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static async Task ensure_model_async(AppSettings s, IProgress<long>? progressMb, CancellationToken ct)\n{\n    string path = ModelPath(s.ModelType, s.ModelQuantization);\n    if (File.Exists(path)) return;\n\n    Directory.CreateDirectory(AppPaths.Models);\n    string partial = path + \".part\";\n    Log.Write($\"Downloading model {s.ModelType} {s.ModelQuantization}\");\n    await using (var source = await WhisperGgmlDownloader.Default.GetGgmlModelAsync(s.ModelType, s.ModelQuantization, ct))\n    await using (var target = File.Create(partial))\n    {\n        var buffer = new byte[1 << 20];\n        long total = 0, lastMb = -1;\n        int read;\n        while ((read = await source.ReadAsync(buffer, ct)) > 0)\n        {\n            await target.WriteAsync(buffer.AsMemory(0, read), ct);\n            total += read;\n            long mb = total >> 20;\n            if (mb != lastMb) progressMb?.Report(lastMb = mb);\n        }\n    }\n    File.Move(partial, path, overwrite: true);\n    Log.Write(\"Model download complete\");\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_031",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "WorldObservationClient",
+  "codeBare": "public sealed class WorldObservationClient(HttpClient httpClient)\n{\n    private static readonly JsonSerializerOptions JsonOptions = new()\n    {\n        PropertyNameCaseInsensitive = true,\n    };\n\n    public async Task<WorldObservation> ReconnectAsync(Uri worldBaseUri, long afterEventId, CancellationToken cancellationToken)\n    {\n        ArgumentNullException.ThrowIfNull(worldBaseUri);\n        ArgumentOutOfRangeException.ThrowIfNegative(afterEventId);\n\n        var handshakeUri = new Uri(worldBaseUri, \"/api/v1/handshake\");\n        var reconnectUri = new Uri(worldBaseUri, $\"/api/v1/reconnect?afterEventId={afterEventId}\");\n        var handshakeTask = httpClient.GetFromJsonAsync<WorldHandshake>(handshakeUri, JsonOptions, cancellationToken);\n        var reconnectTask = httpClient.GetFromJsonAsync<WorldReconnectBaseline>(reconnectUri, JsonOptions, cancellationToken);\n        await Task.WhenAll(handshakeTask, reconnectTask);\n\n        var handshake = await handshakeTask ?? throw new InvalidDataException(\"Server returned an empty handshake.\");\n        var baseline = await reconnectTask ?? throw new InvalidDataException(\"Server returned an empty reconnect baseline.\");\n        return new WorldObservation(handshake, baseline);\n    }\n}",
+  "referenceComment": "/// <summary>\n/// Small HTTP adapter for the read-only observation boundary. It performs no\n/// action submission and exposes no client-side mutation route.\n/// </summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.GodotClient/Protocol/WorldObservationProtocol.cs lines 146-168 (class WorldObservationClient); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 4,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.GodotClient/Protocol/WorldObservationProtocol.cs",
+    "startLine": 146,
+    "endLine": 168,
+    "unit": "class WorldObservationClient",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__WorldObservationProtocol.cs.md"
+  }
+}

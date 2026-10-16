@@ -1,0 +1,52 @@
+{
+  "id": "ts_012",
+  "language": "typescript",
+  "source": "github:guillermolg00/morphicons@38d2a7221633a453eeafebd872ee3649b9274b22",
+  "sourceDetail": "src/adapters/canvas.ts lines 70-85 (interface CanvasTargetOptions); license MIT; repo created 2026-08-01; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export interface CanvasTargetOptions {\n  /** Grid the icon's coordinates live on (Lucide/Iconify default: \"0 0 24 24\").\n   *  Used to map the geometry onto the backing store. */\n  viewBox?: string;\n  /** Stroke width in grid units (Lucide's default is 2). */\n  strokeWidth?: number;\n  /** Stroke color. Defaults to the canvas' computed CSS color when it is a\n   *  styled element; otherwise the context's current `strokeStyle` stands. */\n  color?: string;\n  /** Clear the canvas before each frame. Turn off for manual compositing or\n   *  trails — every frame then draws on top of the last. Default true. */\n  clear?: boolean;\n  /** Called after every drawn frame — the texture consumer's dirty signal\n   *  (e.g. re-upload the canvas with `texImage2D`, or blit it into a scene). */\n  onWrite?: () => void;\n}",
+  "identifiers": [
+    {
+      "name": "CanvasTargetOptions",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "viewBox",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "strokeWidth",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "color",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "clear",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "onWrite",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "guillermolg00/morphicons",
+    "repoUrl": "https://github.com/guillermolg00/morphicons",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-01",
+    "commit": "38d2a7221633a453eeafebd872ee3649b9274b22",
+    "path": "src/adapters/canvas.ts",
+    "startLine": 70,
+    "endLine": 85,
+    "unit": "interface CanvasTargetOptions",
+    "corpusFile": "corpus/typescript/guillermolg00__morphicons__canvas.ts.md"
+  }
+}

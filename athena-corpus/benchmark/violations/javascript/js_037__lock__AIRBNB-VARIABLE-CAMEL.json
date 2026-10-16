@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_037",
+  "language": "javascript",
+  "originalName": "lock",
+  "injectedName": "LOCK",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOCK' does not match camelCase pattern",
+    "name 'LOCK' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "async function addHistoryBack(slug, entry, lockPath) {\n  const LOCK = await readLock(lockPath)\n  if (!LOCK.skills[slug]) return\n  if (!LOCK.skills[slug].history) LOCK.skills[slug].history = []\n  LOCK.skills[slug].history.push(entry)\n  await writeLock(LOCK, lockPath)\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

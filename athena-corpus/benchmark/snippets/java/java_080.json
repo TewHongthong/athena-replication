@@ -1,0 +1,37 @@
+{
+  "id": "java_080",
+  "language": "java",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/client/FurkinClientSetup.java lines 22-35 (class FurkinClientSetup); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Mod.EventBusSubscriber(modid = FurkinMod.MODID, value = Dist.CLIENT,\n        bus = Mod.EventBusSubscriber.Bus.MOD)\npublic final class FurkinClientSetup {\n\n    private FurkinClientSetup() {\n    }\n\n    @SubscribeEvent\n    public static void onClientSetup(FMLClientSetupEvent event) {\n        // enqueueWork：屏幕注册表不是线程安全的，官方要求在客户端主线程里注册。\n        event.enqueueWork(() -> MenuScreens.register(\n                ModMenus.FURKIN_POUCH.get(), FurkinPanelScreen::new));\n    }\n}",
+  "identifiers": [
+    {
+      "name": "FurkinClientSetup",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "onClientSetup",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "event",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/client/FurkinClientSetup.java",
+    "startLine": 22,
+    "endLine": 35,
+    "unit": "class FurkinClientSetup",
+    "corpusFile": "corpus/java/wanancat__furkin__FurkinClientSetup.java.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_034",
+  "language": "python",
+  "originalName": "book",
+  "injectedName": "BOOK",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'BOOK' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def epub_to_raw_text(epub_path, output_txt_path=None):\n    # Read the EPUB file (suppressing internal warnings)\n    BOOK = epub.read_epub(epub_path)\n    text_content = []\n\n    # Iterate through each item in the EPUB file\n    for item in BOOK.get_items():\n        # EPUB document content is stored as HTML/XHTML items\n        if item.get_type() == ebooklib.ITEM_DOCUMENT:\n            # Parse HTML content\n            soup = BeautifulSoup(item.get_content(), \"html.parser\")\n\n            # Remove images, SVG elements, style tags, and scripts\n            for element in soup([\"script\", \"style\", \"img\", \"svg\", \"figure\"]):\n                element.decompose()\n\n            # Extract pure text with line breaks preserved\n            text = soup.get_text(separator=\" \", strip=True)\n\n            if text:\n                text_content.append(text)\n\n    # Combine all extracted chapter segments with single newline breaks\n    full_text = \"\\n\".join(text_content)\n\n    # Save to file if output path provided, otherwise return text\n    if output_txt_path:\n        with open(output_txt_path, \"w\", encoding=\"utf-8\") as f:\n            f.write(full_text)\n        print(f\"Successfully extracted raw text to: {output_txt_path}\")\n\n    return full_text",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

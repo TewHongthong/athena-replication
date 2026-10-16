@@ -1,0 +1,37 @@
+{
+  "snippetId": "java_075",
+  "language": "java",
+  "standardId": "GOOGLE_JAVA",
+  "identifierKind": "class",
+  "name": "FurkinCapability",
+  "codeBare": "public final class FurkinCapability {\n\n    /** 能力标识（ResourceLocation）。 */\n    public static final ResourceLocation ID = new ResourceLocation(FurkinMod.MODID, \"furkin_data\");\n\n    /** 能力实例。 */\n    public static final Capability<FurkinData> FURKIN_DATA = CapabilityManager.get(new CapabilityToken<>() {});\n\n    private FurkinCapability() {\n    }\n\n    /** 在 {@link RegisterCapabilitiesEvent} 中调用，注册能力。 */\n    public static void register(RegisterCapabilitiesEvent event) {\n        event.register(FurkinData.class);\n    }\n}",
+  "referenceComment": "/**\n * 绒亲能力注册点。\n *\n * <p>持有 {@link Capability}&lt;{@link FurkinData}&gt; 的静态引用，供全模组取用。\n * 注册走 {@link RegisterCapabilitiesEvent}。</p>\n */",
+  "ruleIds": [
+    "GJAVA-JAVADOC-CLASS-REQUIRED",
+    "GJAVA-JAVADOC-PARAGRAPHS"
+  ],
+  "origin": "snippet",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/capability/FurkinCapability.java lines 16-31 (class FurkinCapability); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 6,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/capability/FurkinCapability.java",
+    "startLine": 16,
+    "endLine": 31,
+    "unit": "class FurkinCapability",
+    "corpusFile": "corpus/java/wanancat__furkin__FurkinCapability.java.md"
+  }
+}

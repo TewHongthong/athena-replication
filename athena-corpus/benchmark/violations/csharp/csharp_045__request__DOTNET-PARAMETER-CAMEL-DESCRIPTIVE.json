@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_045",
+  "language": "csharp",
+  "originalName": "request",
+  "injectedName": "REQUEST",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'REQUEST' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private sealed class PreviewIdleProvider : IDecisionProvider\n{\n    public DecisionProviderKind Kind => DecisionProviderKind.Deterministic;\n    public long ProviderEpoch => 0;\n\n    public ValueTask<CognitionDecisionResponse> DecideAsync(CognitionDecisionRequest REQUEST, CancellationToken cancellationToken = default)\n    {\n        cancellationToken.ThrowIfCancellationRequested();\n        return ValueTask.FromResult(new CognitionDecisionResponse(REQUEST.RequestId, REQUEST.Observation.InhabitantId,\n            Kind, ProviderEpoch, REQUEST.Observation.RunEpoch, REQUEST.Observation.DecisionGeneration,\n            REQUEST.Observation.ObservationDigest, \"safe_idle\", 1,\n            REQUEST.Observation.Candidates.ToDictionary(candidate => candidate.Id, candidate => candidate.Id == \"safe_idle\" ? 1d : 0d, StringComparer.Ordinal)));\n    }\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0
+}

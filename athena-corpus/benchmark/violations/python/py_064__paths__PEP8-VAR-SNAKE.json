@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_064",
+  "language": "python",
+  "originalName": "paths",
+  "injectedName": "PATHS",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PATHS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def validate_yaml() -> None:\n    print(\"YAML\")\n    PATHS = sorted((REPO_ROOT / \".github\").rglob(\"*.yml\"))\n    PATHS.append(REPO_ROOT / \".pre-commit-config.yaml\")\n    for path in PATHS:\n        rel = path.relative_to(REPO_ROOT)\n        try:\n            yaml.safe_load(path.read_text(encoding=\"utf-8\"))\n            check(str(rel), True)\n        except yaml.YAMLError as exc:\n            check(str(rel), False, str(exc).splitlines()[0])",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_041",
+  "language": "java",
+  "originalName": "interval",
+  "injectedName": "INTERVAL",
+  "identifierKind": "field",
+  "violatedRuleId": "GJAVA-FIELD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INTERVAL' does not match camelCase pattern",
+    "name 'INTERVAL' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static final class DeviceCode {\n    public String userCode = \"\";\n    public String deviceCode = \"\";\n    public String verificationUri = \"\";\n    public int INTERVAL = 5;\n    public int expiresIn = 900;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

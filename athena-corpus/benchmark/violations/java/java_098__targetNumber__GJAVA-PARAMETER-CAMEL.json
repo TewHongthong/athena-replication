@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_098",
+  "language": "java",
+  "originalName": "targetNumber",
+  "injectedName": "target_number",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'target_number' does not match camelCase pattern",
+    "name 'target_number' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public TransitionAttempt(TransitionMode mode, int target_number, int hubDelay, int clickDelay, int confirmDelay) {\n    this.mode = mode;\n    this.targetNumber = target_number;\n    this.startedAt = System.currentTimeMillis();\n    this.hubDelay = hubDelay;\n    this.clickDelay = clickDelay;\n    this.confirmDelay = confirmDelay;\n    this.finished = false;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

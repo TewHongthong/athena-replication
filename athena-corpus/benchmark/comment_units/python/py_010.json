@@ -1,0 +1,39 @@
+{
+  "snippetId": "py_010",
+  "language": "python",
+  "standardId": "PEP8",
+  "identifierKind": "function",
+  "name": "cast_vote",
+  "codeBare": "@router.post(\n    \"/events/{slug}/projects/{pid}/votes\",\n    status_code=201,\n    dependencies=[Depends(limiter(\"vote\", 30, 60))],\n)\ndef cast_vote(\n    request: Request,\n    pid: str,\n    ctx: EventContext = Depends(load_event),\n    voter: Voter | None = Depends(current_voter),\n    db: DbSession = Depends(get_db),\n    settings: Settings = Depends(get_settings),\n):\n    \n    project = projects_service.get_project(db, ctx.event, pid, ctx.user, organizer=ctx.is_organizer)\n    new_cookie = None\n    if voter is None and ctx.event.voting_mode.value == \"link\":\n        voter_id, new_cookie = voting_service.new_voter_cookie(settings.secret_key)\n        voter = Voter(key=f\"anon:{voter_id}\", mode=ctx.event.voting_mode)\n    if voter is None:\n        raise Unauthorized(\"Sign in or redeem a voting code to vote in this event.\")\n    voting_service.cast(\n        db, ctx.event, project, voter, ip_hash=ip_hash(request), ua_hash=ua_hash(request)\n    )\n    response = JSONResponse({\"vote\": _vote_out(ctx.event, project, voter, db)}, status_code=201)\n    if new_cookie:\n        response.set_cookie(\n            VOTER_COOKIE,\n            new_cookie,\n            httponly=True,\n            samesite=\"lax\",\n            secure=settings.secure_cookies,\n            max_age=60 * 60 * 24 * 90,\n            path=\"/\",\n        )\n    return response",
+  "referenceComment": "\"\"\"Cast one vote (or one more credit in quadratic mode) for a project.\"\"\"",
+  "ruleIds": [
+    "PEP8-DOC-FUNC"
+  ],
+  "origin": "snippet",
+  "source": "github:Nikhils-G/podium@64d18bf7ed5c1eef58d5397ff282807ceb3bf23e",
+  "sourceDetail": "src/podium/api/v1/community.py lines 45-80 (function cast_vote); license MIT; repo created 2026-09-26T18:48:58Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 6,
+    "returns": true,
+    "throws": true
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns",
+    "throws"
+  ],
+  "provenance": {
+    "repo": "Nikhils-G/podium",
+    "repoUrl": "https://github.com/Nikhils-G/podium",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:48:58Z",
+    "commit": "64d18bf7ed5c1eef58d5397ff282807ceb3bf23e",
+    "path": "src/podium/api/v1/community.py",
+    "startLine": 45,
+    "endLine": 80,
+    "unit": "function cast_vote",
+    "corpusFile": "corpus/python/Nikhils-G__podium__community.py.md"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "js_082",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/exam-intelligence/import-exam-json.js lines 10-27 (function parseExamImportJson); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function parseExamImportJson(text){\n  if(typeof text!=='string'||!text.trim()||text.length>2*1024*1024)throw new TypeError('Arquivo vazio ou maior que 2 MB.');\n  let data;try{data=JSON.parse(text)}catch{throw new TypeError('JSON inválido. Verifique a sintaxe do arquivo.')}\n  const raw=data?.exam,rows=data?.questions;\n  if(!raw||typeof raw!=='object'||Array.isArray(raw)||!Array.isArray(rows)||!rows.length||rows.length>10000)throw new TypeError('Informe exam e uma lista de 1 a 10.000 questions.');\n  const exam={institution:clean(raw.institution),examName:clean(raw.examName)||`${clean(raw.role)} ${raw.year??''}`.trim(),role:clean(raw.role),board:clean(raw.board),year:raw.year,date:raw.date??null,source:'imported',sourceReference:clean(raw.sourceReference)||null,coverage:raw.coverage??'partial',examTags:unique(Array.isArray(raw.examTags)?raw.examTags.map(clean):[]),expectedQuestionCount:raw.expectedQuestionCount??null};\n  createExam({...exam,id:'exam-preview'});\n  const numbers=new Set();\n  const questions=rows.map((row,index)=>{\n    if(!row||typeof row!=='object'||Array.isArray(row)||!Number.isInteger(row.number)||row.number<1||numbers.has(row.number))throw new TypeError(`Questão ${index+1}: número inválido ou duplicado.`);\n    numbers.add(row.number);\n    const subject=clean(row.subject),topic=clean(row.topic),weight=row.weight??null;\n    if(!subject||!topic||subject.length>300||topic.length>300||weight!=null&&(!Number.isFinite(weight)||weight<=0))throw new TypeError(`Questão ${row.number}: disciplina, tópico ou peso inválido.`);\n    return {number:row.number,subject,topic,weight};\n  });\n  if(exam.expectedQuestionCount!=null&&exam.expectedQuestionCount<questions.length)throw new TypeError('O total declarado não pode ser menor que as questões do arquivo.');\n  return {exam,questions};\n}",
+  "identifiers": [
+    {
+      "name": "parseExamImportJson",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "data",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "text",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "raw",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "rows",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "numbers",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/exam-intelligence/import-exam-json.js",
+    "startLine": 10,
+    "endLine": 27,
+    "unit": "function parseExamImportJson",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__import-exam-json.js.md"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_086",
+  "language": "csharp",
+  "originalName": "setpoint",
+  "injectedName": "SETPOINT",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SETPOINT' does not match camelCase pattern",
+    "name 'SETPOINT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private void ApplyWheelForceAtContact(int moduleIndex, RaycastHit hit)\n{\n    var module = _swerveWheels[moduleIndex];\n    var SETPOINT = _swerveSetpoints[moduleIndex];\n\n    var realGroundSpeed = module.transform.InverseTransformVector(\n        _rb.GetPointVelocity(module.transform.position)).z;\n\n    var speedRatio = Mathf.Clamp01(Mathf.Abs(realGroundSpeed) / _maxSpeedMeters);\n    var falloff = GetFalloffFromLookup(speedRatio);\n\n    var forceMag = _accelerationForce * FEET_TO_METERS * SETPOINT.Velocity * falloff;\n\n    module.transform.localEulerAngles = new Vector3(0f, SETPOINT.Angle, 0f);\n\n    Vector3 propulsionForce = module.transform.forward * forceMag;\n    _rb.AddForceAtPosition(propulsionForce, hit.point, ForceMode.Impulse);\n\n    module.wheelAngle = module.transform.localRotation.eulerAngles.y;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

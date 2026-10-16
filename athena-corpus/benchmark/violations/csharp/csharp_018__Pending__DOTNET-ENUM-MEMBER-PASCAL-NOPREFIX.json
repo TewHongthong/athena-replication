@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_018",
+  "language": "csharp",
+  "originalName": "Pending",
+  "injectedName": "pending",
+  "identifierKind": "enum_member",
+  "violatedRuleId": "DOTNET-ENUM-MEMBER-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'pending' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum ModifyQueueStatus\n{\n    pending,\n    Processing,\n    ReadyForReview,\n    Failed,\n    Applied,\n    Dismissed\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

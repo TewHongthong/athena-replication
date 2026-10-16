@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_011",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "Image",
+  "codeBare": "public class Image\n{\n    public int Id { get; set; }\n\n    /// <summary>On-disk filename of the original (a GUID plus the original extension).</summary>\n    public string StorageKey { get; set; } = string.Empty;\n\n    public string ContentType { get; set; } = \"application/octet-stream\";\n\n    public string? OriginalName { get; set; }\n\n    public int? Width { get; set; }\n    public int? Height { get; set; }\n    public long? ByteSize { get; set; }\n\n    /// <summary>SHA-256 of the original bytes, used to de-duplicate identical uploads.</summary>\n    public string? Sha256 { get; set; }\n\n    /// <summary>Populated when the image was downloaded from a URL.</summary>\n    public string? SourceUrl { get; set; }\n\n    public DateTimeOffset CreatedAt { get; set; }\n}",
+  "referenceComment": "/// <summary>\n/// Metadata for a stored image. The binary lives on disk under the configured image root\n/// (keyed by <see cref=\"StorageKey\"/>); thumbnails are generated on demand and cached there.\n/// </summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Entities/Image.cs lines 7-29 (class Image); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 4,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Entities/Image.cs",
+    "startLine": 7,
+    "endLine": 29,
+    "unit": "class Image",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__Image.cs.md"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "csharp_028",
+  "language": "csharp",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.GodotClient/ClientState/GameDisplayPreferencesStore.cs lines 16-51 (class GameDisplayPreferencesStore); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public sealed class GameDisplayPreferencesStore(string path)\n{\n    private readonly string path = Path.GetFullPath(path);\n\n    public GameDisplayPreferences Load()\n    {\n        try\n        {\n            return File.Exists(path)\n                ? JsonSerializer.Deserialize<GameDisplayPreferences>(File.ReadAllText(path)) ?? new()\n                : new();\n        }\n        catch (Exception exception) when (exception is IOException or UnauthorizedAccessException or JsonException)\n        {\n            return new();\n        }\n    }\n\n    public void Save(GameDisplayPreferences preferences)\n    {\n        ArgumentNullException.ThrowIfNull(preferences);\n        var directory = Path.GetDirectoryName(path) ??\n            throw new InvalidOperationException(\"The game settings path has no directory.\");\n        Directory.CreateDirectory(directory);\n        var temporary = path + \".\" + Guid.NewGuid().ToString(\"N\") + \".tmp\";\n        try\n        {\n            File.WriteAllText(temporary, JsonSerializer.Serialize(preferences));\n            File.Move(temporary, path, overwrite: true);\n        }\n        finally\n        {\n            if (File.Exists(temporary)) File.Delete(temporary);\n        }\n    }\n}",
+  "identifiers": [
+    {
+      "name": "GameDisplayPreferencesStore",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "Load",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "exception",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "preferences",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "Save",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "directory",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.GodotClient/ClientState/GameDisplayPreferencesStore.cs",
+    "startLine": 16,
+    "endLine": 51,
+    "unit": "class GameDisplayPreferencesStore",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__GameDisplayPreferencesStore.cs.md"
+  }
+}

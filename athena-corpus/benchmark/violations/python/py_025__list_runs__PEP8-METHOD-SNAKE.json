@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_025",
+  "language": "python",
+  "originalName": "list_runs",
+  "injectedName": "LIST_RUNS",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LIST_RUNS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def LIST_RUNS(\n    self,\n    *,\n    task: str | None = None,\n    limit: int = 20,\n    experiment: str | None = None,\n    experiment_prefix: str | None = None,\n) -> list[RunRow]:\n    clauses, params = [], []\n    if task:\n        clauses.append(\"task=?\")\n        params.append(task)\n    if experiment:\n        clauses.append(\"experiment=?\")\n        params.append(experiment)\n    if experiment_prefix:\n        clauses.append(\"experiment LIKE ?\")\n        params.append(f\"{experiment_prefix}%\")\n    where = f\"WHERE {' AND '.join(clauses)}\" if clauses else \"\"\n    cur = self._conn.execute(\n        f\"SELECT * FROM runs {where} ORDER BY started_at DESC LIMIT ?\",\n        (*params, limit),\n    )\n    return [_to_run_row(r) for r in cur.fetchall()]",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

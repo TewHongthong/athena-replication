@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_057",
+  "language": "typescript",
+  "originalName": "grow",
+  "injectedName": "GROW",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'GROW' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface ButtonProps {\n  label: string;\n  icon?: IconName;\n  variant?: Variant;\n  disabled?: boolean;\n  GROW?: boolean;\n  onPress: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

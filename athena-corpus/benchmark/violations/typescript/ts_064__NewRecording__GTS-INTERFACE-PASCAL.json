@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_064",
+  "language": "typescript",
+  "originalName": "NewRecording",
+  "injectedName": "new_recording",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'new_recording' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "export interface new_recording {\n  uri: string;\n  mimeType: string;\n  durationMs: number;\n  facing: Facing;\n  source: CaptureSource;\n  blob?: Blob;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

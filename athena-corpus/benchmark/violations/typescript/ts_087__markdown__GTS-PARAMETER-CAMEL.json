@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_087",
+  "language": "typescript",
+  "originalName": "markdown",
+  "injectedName": "MARKDOWN",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MARKDOWN' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function headings(MARKDOWN: string) {\n  return MARKDOWN\n    .split(\"\\n\")\n    .filter((line) => /^##\\s/.test(line))\n    .map((line) => {\n      const text = line.replace(/^##\\s+/, \"\").replace(/[*`]/g, \"\")\n      return { text, id: slugify(line.replace(/^##\\s+/, \"\")) }\n    })\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

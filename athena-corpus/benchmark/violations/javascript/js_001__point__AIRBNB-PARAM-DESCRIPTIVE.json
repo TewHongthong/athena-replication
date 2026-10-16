@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_001",
+  "language": "javascript",
+  "originalName": "point",
+  "injectedName": "p",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'p' shorter than minLength=2",
+    "name 'p' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "cross(p){\n    return new Point(\n        this.y * p.z - this.z * p.y,\n        this.z * p.x - this.x * p.z,\n        this.x * p.y - this.y * p.x\n    )\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

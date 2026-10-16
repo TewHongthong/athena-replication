@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_072",
+  "language": "typescript",
+  "originalName": "hint",
+  "injectedName": "HINT",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'HINT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function HINT(access: CaptureAccess) {\n  const camera = cameraStatus(access);\n  if (Platform.OS !== \"web\" || camera === \"denied\") return null;\n  if (camera === \"unavailable\") return \"Nenhuma câmera encontrada neste navegador. O modo demonstração grava uma cena gerada em tempo real, com o mesmo fluxo do app.\";\n  return \"Sem webcam por perto? O modo demonstração grava uma cena gerada em tempo real, com o mesmo fluxo do app.\";\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

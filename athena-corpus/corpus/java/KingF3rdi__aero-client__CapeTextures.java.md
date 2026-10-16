@@ -1,0 +1,102 @@
+# src/main/java/dev/aero/client/cosmetic/CapeTextures.java
+
+- source repo: KingF3rdi/aero-client
+- repo url: https://github.com/KingF3rdi/aero-client
+- license: MIT
+- created_at: 2026-09-20T13:19:19Z
+- file path: src/main/java/dev/aero/client/cosmetic/CapeTextures.java
+- commit: d8888aba64351257362cd47f69282311dd942c8f
+
+```java
+package dev.aero.client.cosmetic;
+
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.texture.NativeImage;
+import net.minecraft.client.texture.NativeImageBackedTexture;
+import net.minecraft.util.Identifier;
+
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Cape textures (64x32 PNGs, design in the top-left 10x16): Aero's own capes from this mod's
+ * assets/aero/textures/cape/<id>.png (animated ones as <id>_<frame>.png), community capes downloaded
+ * into <gameDir>/aero-capes/. Capes without a file fall back to a plain colored cape.
+ */
+public final class CapeTextures {
+    /** A loaded cape texture and its pixel size (legacy capes are 22x17, newer ones 64x32). */
+    public record Tex(Identifier id, int w, int h) {}
+
+    private static final Map<String, Tex> CACHE = new HashMap<>();
+    // "no texture" is only remembered for built-in ids: a "custom_<n>" id may still be downloading, so it
+    // is retried (via CustomCapes) instead of being cached as a permanent miss.
+    private static final java.util.Set<String> NO_TEXTURE = new java.util.HashSet<>();
+
+    private CapeTextures() {}
+
+    public static Path folder() {
+        return FabricLoader.getInstance().getGameDir().resolve("aero-capes");
+    }
+
+    /** The texture for a cape id, or null when no file for it exists (yet, for a custom cape still downloading). */
+    public static Tex get(String capeId) {
+        Integer frames = Cosmetics.ANIMATED.get(capeId);
+        if (frames != null) {
+            // Animated capes ship one texture per frame: <id>_0.png .. <id>_<n-1>.png, 150 ms each.
+            capeId = capeId + "_" + (int) ((System.currentTimeMillis() / 150L) % frames);
+        }
+        Tex cached = CACHE.get(capeId);
+        if (cached != null) {
+            return cached;
+        }
+        if (NO_TEXTURE.contains(capeId)) {
+            return null;
+        }
+        Tex found = load(capeId);
+        if (found != null) {
+            CACHE.put(capeId, found);
+            return found;
+        }
+        if (capeId.startsWith("custom_")) {
+            CustomCapes.ensureDownloaded(capeId);
+        } else {
+            NO_TEXTURE.add(capeId);
+        }
+        return null;
+    }
+
+    private static Tex load(String capeId) {
+        MinecraftClient mc = MinecraftClient.getInstance();
+        Identifier packed = Identifier.of("aero", "textures/cape/" + capeId + ".png");
+        try {
+            var res = mc.getResourceManager().getResource(packed);
+            if (res.isPresent()) {
+                try (InputStream in = res.get().getInputStream()) {
+                    NativeImage img = NativeImage.read(in);
+                    Tex tex = new Tex(packed, img.getWidth(), img.getHeight());
+                    img.close();
+                    return tex;
+                }
+            }
+        } catch (Throwable ignored) {
+        }
+        try {
+            Path file = folder().resolve(capeId + ".png");
+            if (Files.isRegularFile(file)) {
+                try (InputStream in = Files.newInputStream(file)) {
+                    NativeImage image = NativeImage.read(in);
+                    Identifier id = Identifier.of("aero", "dyncape/" + capeId);
+                    mc.getTextureManager().registerTexture(id, new NativeImageBackedTexture(() -> "aero cape " + capeId, image));
+                    return new Tex(id, image.getWidth(), image.getHeight());
+                }
+            }
+        } catch (Throwable ignored) {
+        }
+        return null;
+    }
+}
+```

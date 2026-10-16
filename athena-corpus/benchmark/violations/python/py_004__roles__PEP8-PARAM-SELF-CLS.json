@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_004",
+  "language": "python",
+  "originalName": "roles",
+  "injectedName": "ROLES",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ROLES' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def build(ROLES: tuple[str, ...] = DEMO_ROLES) -> tuple[dict[str, str], dict]:\n    plain: dict[str, str] = {}\n    entries = []\n    stamp = datetime.now(UTC).isoformat(timespec=\"seconds\")\n    for role in ROLES:\n        if role not in ROLE_POLICY:\n            raise ValueError(f\"unknown role {role}\")\n        key = f\"srag_demo_{role}_\" + secrets.token_urlsafe(24)\n        plain[role] = key\n        entries.append({\"id\": f\"demo-{role}\", \"hash\": hash_api_key(key), \"principal\": f\"demo-{role}\",\n                        \"role\": role, \"created_at\": stamp})\n    return plain, {\"keys\": entries}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "py_024",
+  "language": "python",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/experiment.py lines 18-28 (class Arm); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@dataclass\nclass Arm:\n    name: str\n    description: str = \"\"\n    compose_mode: str | None = None\n    context_strategy: str = \"full\"\n    memory_enabled: bool = False\n    executor: str | None = None\n    publish: bool = False\n    requires: list[str] = field(default_factory=list)\n    skip_steps: list[str] | None = None",
+  "identifiers": [
+    {
+      "name": "Arm",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "description",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "compose_mode",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "context_strategy",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "memory_enabled",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/experiment.py",
+    "startLine": 18,
+    "endLine": 28,
+    "unit": "class Arm",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__experiment.py.md"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "java_066",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminUiThemeContractTest.java lines 14-27 (method AdminUiThemeContractTest.loadsTheSharedThemeBeforeComponentStyles); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Test\nvoid loadsTheSharedThemeBeforeComponentStyles() throws IOException {\n  String index = resource(\"/META-INF/resources/admin/index.html\");\n\n  int theme = index.indexOf(\"id=\\\"kkrepo-theme-stylesheet\\\"\");\n  int bootstrap = index.indexOf(\"/login/assets/ui-theme.js\");\n  int components = index.indexOf(\"./assets/admin.css\");\n  assertTrue(theme >= 0 && bootstrap > theme && components > bootstrap);\n  assertTrue(index.contains(\n      \"/browse/assets/themes/default.css?v=20260826-nexus-a11y-1\"));\n  assertTrue(index.contains(\"/login/assets/ui-theme.js?v=20260826-nexus-a11y-1\"));\n  assertTrue(index.contains(\"./assets/admin.css?v=20260923-scan-task-assets-2\"));\n  assertFalse(index.contains(\"/browse/assets/tokens.css\"));\n}",
+  "identifiers": [
+    {
+      "name": "index",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "theme",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "bootstrap",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "components",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminUiThemeContractTest.java",
+    "startLine": 14,
+    "endLine": 27,
+    "unit": "method AdminUiThemeContractTest.loadsTheSharedThemeBeforeComponentStyles",
+    "corpusFile": "corpus/java/klboke__kkRepo__AdminUiThemeContractTest.java.md"
+  }
+}

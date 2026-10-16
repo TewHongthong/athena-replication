@@ -1,0 +1,1080 @@
+[
+  {
+    "model": "o3mini",
+    "task": "rename",
+    "rates": {
+      "graph": {
+        "source": "new",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          98.96128504743652,
+          100.0
+        ]
+      },
+      "graph_noex": {
+        "source": "new",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 95.35519125683061,
+        "ci": [
+          92.68806483269036,
+          97.08009537427391
+        ]
+      },
+      "none": {
+        "source": "orig",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 24.316939890710383,
+        "ci": [
+          20.203362675012702,
+          28.964064677670176
+        ]
+      },
+      "fulldoc": {
+        "source": "orig",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 97.81420765027322,
+        "ci": [
+          95.74674142821212,
+          98.88836722370804
+        ]
+      },
+      "chunk": {
+        "source": "orig",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 62.568306010928964,
+        "ci": [
+          57.503779165229474,
+          67.37173510898954
+        ]
+      },
+      "graph_orig": {
+        "source": "orig",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          98.96128504743652,
+          100.0
+        ]
+      }
+    },
+    "extra": {
+      "prefix_match": {
+        "graph": 100.0,
+        "graph_noex": 92.82700421940929,
+        "none": 20.25316455696203,
+        "fulldoc": 100.0,
+        "chunk": 86.07594936708861,
+        "graph_orig": 100.0
+      },
+      "exact_match": {
+        "graph": 86.33879781420764,
+        "graph_noex": 80.32786885245902,
+        "none": 22.950819672131143,
+        "fulldoc": 78.41530054644807,
+        "chunk": 38.79781420765028,
+        "graph_orig": 85.51912568306011
+      }
+    },
+    "comparisons": [
+      {
+        "a": "graph",
+        "b": "graph_noex",
+        "label": "E: examples",
+        "n_units": 122,
+        "better": 8,
+        "worse": 0,
+        "ties": 114,
+        "mean_diff_pp": 4.644808743169399,
+        "p": 0.0078125,
+        "p_holm": 0.0234375
+      },
+      {
+        "a": "graph_noex",
+        "b": "chunk",
+        "label": "S: selection vs chunk",
+        "n_units": 122,
+        "better": 50,
+        "worse": 7,
+        "ties": 65,
+        "mean_diff_pp": 32.78688524590163,
+        "p": 4.236709844063213e-09,
+        "p_holm": 1.6946839376252854e-08
+      },
+      {
+        "a": "graph_noex",
+        "b": "fulldoc",
+        "label": "S: selection vs full document",
+        "n_units": 122,
+        "better": 5,
+        "worse": 8,
+        "ties": 109,
+        "mean_diff_pp": -2.459016393442622,
+        "p": 0.5810546875,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "none",
+        "label": "noex vs none",
+        "n_units": 122,
+        "better": 100,
+        "worse": 0,
+        "ties": 22,
+        "mean_diff_pp": 71.0382513661202,
+        "p": 1.5777218104420236e-30,
+        "p_holm": 7.888609052210118e-30
+      },
+      {
+        "a": "graph",
+        "b": "graph_orig",
+        "label": "replication: graph re-run vs original",
+        "n_units": 122,
+        "better": 0,
+        "worse": 0,
+        "ties": 122,
+        "mean_diff_pp": 0.0,
+        "p": 1.0,
+        "p_holm": 1.0
+      }
+    ]
+  },
+  {
+    "model": "o3mini",
+    "task": "comment",
+    "rates": {
+      "graph": {
+        "source": "new",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          90.35781695514235,
+          100.0
+        ]
+      },
+      "graph_noex": {
+        "source": "new",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          90.35781695514235,
+          100.0
+        ]
+      },
+      "none": {
+        "source": "orig",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 0.0,
+        "ci": [
+          0.0,
+          9.642183044857635
+        ]
+      },
+      "fulldoc": {
+        "source": "orig",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 88.88888888888889,
+        "ci": [
+          74.68487098496365,
+          95.59343109125815
+        ]
+      },
+      "chunk": {
+        "source": "orig",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 80.55555555555556,
+        "ci": [
+          64.9716379364848,
+          90.24702798054665
+        ]
+      },
+      "graph_orig": {
+        "source": "orig",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          90.35781695514235,
+          100.0
+        ]
+      }
+    },
+    "extra": {},
+    "comparisons": [
+      {
+        "a": "graph",
+        "b": "graph_noex",
+        "label": "E: examples",
+        "n_units": 12,
+        "better": 0,
+        "worse": 0,
+        "ties": 12,
+        "mean_diff_pp": 0.0,
+        "p": 1.0,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "chunk",
+        "label": "S: selection vs chunk",
+        "n_units": 12,
+        "better": 3,
+        "worse": 0,
+        "ties": 9,
+        "mean_diff_pp": 19.444444444444446,
+        "p": 0.25,
+        "p_holm": 0.75
+      },
+      {
+        "a": "graph_noex",
+        "b": "fulldoc",
+        "label": "S: selection vs full document",
+        "n_units": 12,
+        "better": 4,
+        "worse": 0,
+        "ties": 8,
+        "mean_diff_pp": 11.111111111111112,
+        "p": 0.125,
+        "p_holm": 0.5
+      },
+      {
+        "a": "graph_noex",
+        "b": "none",
+        "label": "noex vs none",
+        "n_units": 12,
+        "better": 12,
+        "worse": 0,
+        "ties": 0,
+        "mean_diff_pp": 100.0,
+        "p": 0.00048828125,
+        "p_holm": 0.00244140625
+      },
+      {
+        "a": "graph",
+        "b": "graph_orig",
+        "label": "replication: graph re-run vs original",
+        "n_units": 12,
+        "better": 0,
+        "worse": 0,
+        "ties": 12,
+        "mean_diff_pp": 0.0,
+        "p": 1.0,
+        "p_holm": 1.0
+      }
+    ]
+  },
+  {
+    "model": "luna",
+    "task": "rename",
+    "rates": {
+      "graph": {
+        "source": "new",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          98.96128504743652,
+          100.0
+        ]
+      },
+      "graph_noex": {
+        "source": "new",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 98.63387978142076,
+        "ci": [
+          96.84231502546716,
+          99.41510977477162
+        ]
+      },
+      "none": {
+        "source": "orig",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 46.44808743169399,
+        "ci": [
+          41.40185371840936,
+          51.56810963887656
+        ]
+      },
+      "fulldoc": {
+        "source": "orig",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 99.4535519125683,
+        "ci": [
+          98.02972171767172,
+          99.85001923088572
+        ]
+      },
+      "chunk": {
+        "source": "orig",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 76.77595628415301,
+        "ci": [
+          72.18527411602048,
+          80.81038672905481
+        ]
+      },
+      "graph_orig": {
+        "source": "orig",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          98.96128504743652,
+          100.0
+        ]
+      }
+    },
+    "extra": {
+      "prefix_match": {
+        "graph": 100.0,
+        "graph_noex": 97.8902953586498,
+        "none": 44.72573839662447,
+        "fulldoc": 100.0,
+        "chunk": 92.82700421940928,
+        "graph_orig": 100.0
+      },
+      "exact_match": {
+        "graph": 99.4535519125683,
+        "graph_noex": 92.62295081967214,
+        "none": 43.16939890710382,
+        "fulldoc": 88.79781420765028,
+        "chunk": 56.557377049180324,
+        "graph_orig": 99.45355191256832
+      }
+    },
+    "comparisons": [
+      {
+        "a": "graph",
+        "b": "graph_noex",
+        "label": "E: examples",
+        "n_units": 122,
+        "better": 2,
+        "worse": 0,
+        "ties": 120,
+        "mean_diff_pp": 1.3661202185792352,
+        "p": 0.5,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "chunk",
+        "label": "S: selection vs chunk",
+        "n_units": 122,
+        "better": 34,
+        "worse": 2,
+        "ties": 86,
+        "mean_diff_pp": 21.857923497267763,
+        "p": 1.941225491464138e-08,
+        "p_holm": 7.764901965856552e-08
+      },
+      {
+        "a": "graph_noex",
+        "b": "fulldoc",
+        "label": "S: selection vs full document",
+        "n_units": 122,
+        "better": 2,
+        "worse": 2,
+        "ties": 118,
+        "mean_diff_pp": -0.819672131147541,
+        "p": 1.0,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "none",
+        "label": "noex vs none",
+        "n_units": 122,
+        "better": 71,
+        "worse": 0,
+        "ties": 51,
+        "mean_diff_pp": 52.18579234972679,
+        "p": 8.470329472543003e-22,
+        "p_holm": 4.235164736271502e-21
+      },
+      {
+        "a": "graph",
+        "b": "graph_orig",
+        "label": "replication: graph re-run vs original",
+        "n_units": 122,
+        "better": 0,
+        "worse": 0,
+        "ties": 122,
+        "mean_diff_pp": 0.0,
+        "p": 1.0,
+        "p_holm": 1.0
+      }
+    ]
+  },
+  {
+    "model": "luna",
+    "task": "comment",
+    "rates": {
+      "graph": {
+        "source": "new",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          90.35781695514235,
+          100.0
+        ]
+      },
+      "graph_noex": {
+        "source": "new",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          90.35781695514235,
+          100.0
+        ]
+      },
+      "none": {
+        "source": "orig",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 0.0,
+        "ci": [
+          0.0,
+          9.642183044857635
+        ]
+      },
+      "fulldoc": {
+        "source": "orig",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 27.77777777777778,
+        "ci": [
+          15.848170025813795,
+          43.992800216345145
+        ]
+      },
+      "chunk": {
+        "source": "orig",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 13.88888888888889,
+        "ci": [
+          6.081725363115098,
+          28.659851280393195
+        ]
+      },
+      "graph_orig": {
+        "source": "orig",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          90.35781695514235,
+          100.0
+        ]
+      }
+    },
+    "extra": {},
+    "comparisons": [
+      {
+        "a": "graph",
+        "b": "graph_noex",
+        "label": "E: examples",
+        "n_units": 12,
+        "better": 0,
+        "worse": 0,
+        "ties": 12,
+        "mean_diff_pp": 0.0,
+        "p": 1.0,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "chunk",
+        "label": "S: selection vs chunk",
+        "n_units": 12,
+        "better": 12,
+        "worse": 0,
+        "ties": 0,
+        "mean_diff_pp": 86.11111111111113,
+        "p": 0.00048828125,
+        "p_holm": 0.00244140625
+      },
+      {
+        "a": "graph_noex",
+        "b": "fulldoc",
+        "label": "S: selection vs full document",
+        "n_units": 12,
+        "better": 12,
+        "worse": 0,
+        "ties": 0,
+        "mean_diff_pp": 72.22222222222223,
+        "p": 0.00048828125,
+        "p_holm": 0.00244140625
+      },
+      {
+        "a": "graph_noex",
+        "b": "none",
+        "label": "noex vs none",
+        "n_units": 12,
+        "better": 12,
+        "worse": 0,
+        "ties": 0,
+        "mean_diff_pp": 100.0,
+        "p": 0.00048828125,
+        "p_holm": 0.00244140625
+      },
+      {
+        "a": "graph",
+        "b": "graph_orig",
+        "label": "replication: graph re-run vs original",
+        "n_units": 12,
+        "better": 0,
+        "worse": 0,
+        "ties": 12,
+        "mean_diff_pp": 0.0,
+        "p": 1.0,
+        "p_holm": 1.0
+      }
+    ]
+  },
+  {
+    "model": "gemini31fl",
+    "task": "rename",
+    "rates": {
+      "graph": {
+        "source": "new",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          98.96128504743652,
+          100.0
+        ]
+      },
+      "graph_noex": {
+        "source": "new",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 98.36065573770492,
+        "ci": [
+          96.47007883085503,
+          99.24657391994421
+        ]
+      },
+      "none": {
+        "source": "orig",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 39.07103825136612,
+        "ci": [
+          34.210617240842055,
+          44.15850078157618
+        ]
+      },
+      "fulldoc": {
+        "source": "orig",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 99.18032786885246,
+        "ci": [
+          97.61811012867139,
+          99.7208587704465
+        ]
+      },
+      "chunk": {
+        "source": "orig",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 68.85245901639344,
+        "ci": [
+          63.932816314204054,
+          73.38045509712447
+        ]
+      },
+      "graph_orig": {
+        "source": "orig",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          98.96128504743652,
+          100.0
+        ]
+      }
+    },
+    "extra": {
+      "prefix_match": {
+        "graph": 100.0,
+        "graph_noex": 97.46835443037975,
+        "none": 38.81856540084389,
+        "fulldoc": 100.0,
+        "chunk": 84.38818565400842,
+        "graph_orig": 100.0
+      },
+      "exact_match": {
+        "graph": 91.53005464480876,
+        "graph_noex": 84.69945355191257,
+        "none": 37.15846994535519,
+        "fulldoc": 91.2568306010929,
+        "chunk": 51.36612021857924,
+        "graph_orig": 90.98360655737703
+      }
+    },
+    "comparisons": [
+      {
+        "a": "graph",
+        "b": "graph_noex",
+        "label": "E: examples",
+        "n_units": 122,
+        "better": 2,
+        "worse": 0,
+        "ties": 120,
+        "mean_diff_pp": 1.639344262295082,
+        "p": 0.5,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "chunk",
+        "label": "S: selection vs chunk",
+        "n_units": 122,
+        "better": 43,
+        "worse": 2,
+        "ties": 77,
+        "mean_diff_pp": 29.508196721311474,
+        "p": 5.88897819397971e-11,
+        "p_holm": 2.355591277591884e-10
+      },
+      {
+        "a": "graph_noex",
+        "b": "fulldoc",
+        "label": "S: selection vs full document",
+        "n_units": 122,
+        "better": 2,
+        "worse": 2,
+        "ties": 118,
+        "mean_diff_pp": -0.8196721311475408,
+        "p": 1.0,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "none",
+        "label": "noex vs none",
+        "n_units": 122,
+        "better": 81,
+        "worse": 0,
+        "ties": 41,
+        "mean_diff_pp": 59.289617486338805,
+        "p": 8.271806125530277e-25,
+        "p_holm": 4.1359030627651384e-24
+      },
+      {
+        "a": "graph",
+        "b": "graph_orig",
+        "label": "replication: graph re-run vs original",
+        "n_units": 122,
+        "better": 0,
+        "worse": 0,
+        "ties": 122,
+        "mean_diff_pp": 0.0,
+        "p": 1.0,
+        "p_holm": 1.0
+      }
+    ]
+  },
+  {
+    "model": "gemini31fl",
+    "task": "comment",
+    "rates": {
+      "graph": {
+        "source": "new",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          90.35781695514235,
+          100.0
+        ]
+      },
+      "graph_noex": {
+        "source": "new",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          90.35781695514235,
+          100.0
+        ]
+      },
+      "none": {
+        "source": "orig",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 0.0,
+        "ci": [
+          0.0,
+          9.642183044857635
+        ]
+      },
+      "fulldoc": {
+        "source": "orig",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 94.44444444444444,
+        "ci": [
+          81.8550258923888,
+          98.4630336232933
+        ]
+      },
+      "chunk": {
+        "source": "orig",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 83.33333333333333,
+        "ci": [
+          68.10888526532568,
+          92.1296593714359
+        ]
+      },
+      "graph_orig": {
+        "source": "orig",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          90.35781695514235,
+          100.0
+        ]
+      }
+    },
+    "extra": {},
+    "comparisons": [
+      {
+        "a": "graph",
+        "b": "graph_noex",
+        "label": "E: examples",
+        "n_units": 12,
+        "better": 0,
+        "worse": 0,
+        "ties": 12,
+        "mean_diff_pp": 0.0,
+        "p": 1.0,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "chunk",
+        "label": "S: selection vs chunk",
+        "n_units": 12,
+        "better": 2,
+        "worse": 0,
+        "ties": 10,
+        "mean_diff_pp": 16.666666666666668,
+        "p": 0.5,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "fulldoc",
+        "label": "S: selection vs full document",
+        "n_units": 12,
+        "better": 2,
+        "worse": 0,
+        "ties": 10,
+        "mean_diff_pp": 5.555555555555556,
+        "p": 0.5,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "none",
+        "label": "noex vs none",
+        "n_units": 12,
+        "better": 12,
+        "worse": 0,
+        "ties": 0,
+        "mean_diff_pp": 100.0,
+        "p": 0.00048828125,
+        "p_holm": 0.00244140625
+      },
+      {
+        "a": "graph",
+        "b": "graph_orig",
+        "label": "replication: graph re-run vs original",
+        "n_units": 12,
+        "better": 0,
+        "worse": 0,
+        "ties": 12,
+        "mean_diff_pp": 0.0,
+        "p": 1.0,
+        "p_holm": 1.0
+      }
+    ]
+  },
+  {
+    "model": "gemma4or",
+    "task": "rename",
+    "rates": {
+      "graph": {
+        "source": "new",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          98.96128504743652,
+          100.0
+        ]
+      },
+      "graph_noex": {
+        "source": "new",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          98.96128504743652,
+          100.0
+        ]
+      },
+      "none": {
+        "source": "new",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 33.87978142076503,
+        "ci": [
+          29.220559926459888,
+          38.873889156607014
+        ]
+      },
+      "fulldoc": {
+        "source": "new",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 95.90163934426229,
+        "ci": [
+          93.34882562634913,
+          97.50087867949422
+        ]
+      },
+      "chunk": {
+        "source": "new",
+        "n_trials": 366,
+        "api_errors": 0,
+        "rate": 66.93989071038251,
+        "ci": [
+          61.966211220779755,
+          71.56165584447196
+        ]
+      }
+    },
+    "extra": {
+      "prefix_match": {
+        "graph": 100.0,
+        "graph_noex": 100.0,
+        "none": 37.9746835443038,
+        "fulldoc": 100.0,
+        "chunk": 86.91983122362869
+      },
+      "exact_match": {
+        "graph": 91.25683060109289,
+        "graph_noex": 88.79781420765028,
+        "none": 32.240437158469945,
+        "fulldoc": 91.80327868852459,
+        "chunk": 51.36612021857924
+      }
+    },
+    "comparisons": [
+      {
+        "a": "graph",
+        "b": "graph_noex",
+        "label": "E: examples",
+        "n_units": 122,
+        "better": 0,
+        "worse": 0,
+        "ties": 122,
+        "mean_diff_pp": 0.0,
+        "p": 1.0,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "chunk",
+        "label": "S: selection vs chunk",
+        "n_units": 122,
+        "better": 44,
+        "worse": 0,
+        "ties": 78,
+        "mean_diff_pp": 33.060109289617486,
+        "p": 1.1368683772161603e-13,
+        "p_holm": 3.410605131648481e-13
+      },
+      {
+        "a": "graph_noex",
+        "b": "fulldoc",
+        "label": "S: selection vs full document",
+        "n_units": 122,
+        "better": 8,
+        "worse": 0,
+        "ties": 114,
+        "mean_diff_pp": 4.098360655737705,
+        "p": 0.0078125,
+        "p_holm": 0.015625
+      },
+      {
+        "a": "graph_noex",
+        "b": "none",
+        "label": "noex vs none",
+        "n_units": 122,
+        "better": 88,
+        "worse": 0,
+        "ties": 34,
+        "mean_diff_pp": 66.12021857923497,
+        "p": 6.462348535570529e-27,
+        "p_holm": 3.2311742677852644e-26
+      },
+      {
+        "a": "graph",
+        "b": "none",
+        "label": "graph vs none (same run)",
+        "n_units": 122,
+        "better": 88,
+        "worse": 0,
+        "ties": 34,
+        "mean_diff_pp": 66.12021857923497,
+        "p": 6.462348535570529e-27,
+        "p_holm": 3.2311742677852644e-26
+      }
+    ]
+  },
+  {
+    "model": "gemma4or",
+    "task": "comment",
+    "rates": {
+      "graph": {
+        "source": "new",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          90.35781695514235,
+          100.0
+        ]
+      },
+      "graph_noex": {
+        "source": "new",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          90.35781695514235,
+          100.0
+        ]
+      },
+      "none": {
+        "source": "new",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 0.0,
+        "ci": [
+          0.0,
+          9.642183044857635
+        ]
+      },
+      "fulldoc": {
+        "source": "new",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 100.0,
+        "ci": [
+          90.35781695514235,
+          100.0
+        ]
+      },
+      "chunk": {
+        "source": "new",
+        "n_trials": 36,
+        "api_errors": 0,
+        "rate": 83.33333333333333,
+        "ci": [
+          68.10888526532568,
+          92.1296593714359
+        ]
+      }
+    },
+    "extra": {},
+    "comparisons": [
+      {
+        "a": "graph",
+        "b": "graph_noex",
+        "label": "E: examples",
+        "n_units": 12,
+        "better": 0,
+        "worse": 0,
+        "ties": 12,
+        "mean_diff_pp": 0.0,
+        "p": 1.0,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "chunk",
+        "label": "S: selection vs chunk",
+        "n_units": 12,
+        "better": 2,
+        "worse": 0,
+        "ties": 10,
+        "mean_diff_pp": 16.666666666666668,
+        "p": 0.5,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "fulldoc",
+        "label": "S: selection vs full document",
+        "n_units": 12,
+        "better": 0,
+        "worse": 0,
+        "ties": 12,
+        "mean_diff_pp": 0.0,
+        "p": 1.0,
+        "p_holm": 1.0
+      },
+      {
+        "a": "graph_noex",
+        "b": "none",
+        "label": "noex vs none",
+        "n_units": 12,
+        "better": 12,
+        "worse": 0,
+        "ties": 0,
+        "mean_diff_pp": 100.0,
+        "p": 0.00048828125,
+        "p_holm": 0.00244140625
+      },
+      {
+        "a": "graph",
+        "b": "none",
+        "label": "graph vs none (same run)",
+        "n_units": 12,
+        "better": 12,
+        "worse": 0,
+        "ties": 0,
+        "mean_diff_pp": 100.0,
+        "p": 0.00048828125,
+        "p_holm": 0.00244140625
+      }
+    ]
+  }
+]

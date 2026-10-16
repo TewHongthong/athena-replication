@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_036",
+  "language": "csharp",
+  "originalName": "ControlDigest",
+  "injectedName": "control_digest",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'control_digest' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static class control_digest\n{\n    public static string State(ControlCheckpoint checkpoint) => Digest(Encoding.UTF8.GetString(ControlCheckpointCodec.Encode(checkpoint with { Events = [] })));\n    public static string Events(IEnumerable<ControlEvent> events) => Digest(string.Join('\\n', events.OrderBy(item => item.EventId).Select(item => $\"{item.EventId}|{item.WorldTick}|{item.Kind}|{item.Detail}\")));\n    private static string Digest(string canonical) => Convert.ToHexStringLower(SHA256.HashData(Encoding.UTF8.GetBytes(canonical)));\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

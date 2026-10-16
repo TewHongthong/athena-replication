@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_040",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "SaveInspector",
+  "codeBare": "public static class SaveInspector\n{\n    public static SaveInspection Inspect(PersistedWorld save)\n    {\n        ArgumentNullException.ThrowIfNull(save);\n        var snapshot = CanonicalPersistenceCodec.DecodeSnapshot(save.SnapshotBytes);\n        var events = CanonicalPersistenceCodec.DecodeEventLog(save.EventLogBytes);\n        var current = WorldReplay.ReplaySnapshotSuffix(snapshot, events);\n\n        return new SaveInspection(\n            current.Identity,\n            current.LastEventId,\n            events.Count,\n            CanonicalPersistenceCodec.StateDigest(current),\n            CanonicalPersistenceCodec.EventDigest(events));\n    }\n}",
+  "referenceComment": "/// <summary>\n/// Decodes a save without attempting to run it, preserving the contract's\n/// recoverable-for-inspection path.\n/// </summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:compoodment/ClankerWorld@58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+  "sourceDetail": "src/ClankerWorld.Simulation/Persistence/PersistenceMigrationSpike.cs lines 226-242 (class SaveInspector); license MIT; repo created 2026-09-18T08:13:45Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 4,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "compoodment/ClankerWorld",
+    "repoUrl": "https://github.com/compoodment/ClankerWorld",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-18T08:13:45Z",
+    "commit": "58d48ddaa57f24bceedae8ac01aff6e7f396920f",
+    "path": "src/ClankerWorld.Simulation/Persistence/PersistenceMigrationSpike.cs",
+    "startLine": 226,
+    "endLine": 242,
+    "unit": "class SaveInspector",
+    "corpusFile": "corpus/csharp/compoodment__ClankerWorld__PersistenceMigrationSpike.cs.md"
+  }
+}

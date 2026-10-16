@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_070",
+  "language": "csharp",
+  "originalName": "json",
+  "injectedName": "JSON",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'JSON' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public SmsWebhookEvent ParseJson(string JSON)\n{\n    using var document = JsonDocument.Parse(JSON);\n    var root = document.RootElement;\n\n    var messageId = ReadString(root, \"batch_id\");\n    var to = ReadString(root, \"recipient\");\n    var status = ReadString(root, \"status\");\n    var errorCode = ReadString(root, \"code\");\n    var timestamp = ReadString(root, \"at\");\n\n    return new SmsWebhookEvent\n    {\n        Provider = Provider,\n        MessageId = messageId,\n        To = to,\n        Status = MapStatus(status),\n        ErrorCode = errorCode,\n        Timestamp = DateTimeOffset.TryParse(timestamp, out var parsed)\n            ? parsed\n            : DateTimeOffset.UtcNow,\n        Raw = new Dictionary<string, string>()\n    };\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

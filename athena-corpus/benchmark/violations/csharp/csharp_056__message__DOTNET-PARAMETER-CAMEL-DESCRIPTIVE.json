@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_056",
+  "language": "csharp",
+  "originalName": "message",
+  "injectedName": "MESSAGE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MESSAGE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class MessageBirdSmsRequestMapper\n{\n    public static IReadOnlyDictionary<string, string> ToFormFields(\n        SmsMessage MESSAGE,\n        string defaultFrom) =>\n        new Dictionary<string, string>\n        {\n            [\"originator\"] = MESSAGE.From ?? defaultFrom,\n            [\"recipients\"] = MESSAGE.To.TrimStart('+'),\n            [\"body\"] = MESSAGE.Body,\n            [\"datacoding\"] = \"auto\"\n        };\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "java_065",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminUiScrollbarContractTest.java lines 12-36 (class AdminUiScrollbarContractTest); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "class AdminUiScrollbarContractTest {\n\n  @Test\n  void loadsSharedScrollbarStylesAfterTheThemeAndBeforeComponentStyles() throws IOException {\n    String index = resource(\"/META-INF/resources/admin/index.html\");\n    String admin = resource(\"/META-INF/resources/admin/assets/admin.css\");\n\n    int theme = index.indexOf(\"id=\\\"kkrepo-theme-stylesheet\\\"\");\n    int scrollbars = index.indexOf(\"/browse/assets/ui-scrollbars.css\");\n    int components = index.indexOf(\"./assets/admin.css\");\n\n    assertTrue(theme >= 0 && scrollbars > theme && components > scrollbars);\n    assertTrue(index.contains(\n        \"/browse/assets/ui-scrollbars.css?v=20260826-shared-scrollbars-4\"));\n    assertFalse(admin.contains(\"::-webkit-scrollbar\"));\n    assertFalse(admin.contains(\"scrollbar-color:\"));\n    assertFalse(admin.contains(\"scrollbar-width:\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "identifiers": [
+    {
+      "name": "AdminUiScrollbarContractTest",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "resource",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "index",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "admin",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "theme",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminUiScrollbarContractTest.java",
+    "startLine": 12,
+    "endLine": 36,
+    "unit": "class AdminUiScrollbarContractTest",
+    "corpusFile": "corpus/java/klboke__kkRepo__AdminUiScrollbarContractTest.java.md"
+  }
+}

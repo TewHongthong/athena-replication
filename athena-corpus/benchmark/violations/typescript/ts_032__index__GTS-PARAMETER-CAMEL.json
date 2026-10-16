@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_032",
+  "language": "typescript",
+  "originalName": "index",
+  "injectedName": "INDEX",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'INDEX' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function DeniedHelp() {\n  return (\n    <View style={styles.panel} accessibilityRole=\"alert\">\n      <View style={styles.head}>\n        <Icon name=\"cameraOff\" size={20} color={colors.tallyText} />\n        <Text style={styles.title}>A câmera está bloqueada</Text>\n      </View>\n      <Text style={styles.lead}>Sem permissão não tem tomada. Para liberar:</Text>\n      {steps.map((step, INDEX) => (\n        <View key={step} style={styles.step}>\n          <Text style={styles.number}>{INDEX + 1}</Text>\n          <Text style={styles.stepText}>{step}</Text>\n        </View>\n      ))}\n    </View>\n  );\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

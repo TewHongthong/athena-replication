@@ -1,0 +1,42 @@
+{
+  "id": "js_017",
+  "language": "javascript",
+  "source": "github:minichao9901/web-serial-rtt-tools@f64bcb46aa6899341636bcdf14851cb66800698a",
+  "sourceDetail": "app/ui/toast.js lines 2-14 (function toast); license Apache-2.0; repo created 2026-09-26; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function toast(msg, kind = 'info', ms = 3400){\n  const box = document.getElementById('toasts');\n  if (!box) return;\n  const el = document.createElement('div');\n  el.className = 'toast t-' + kind;\n  el.textContent = msg;\n  box.appendChild(el);\n  setTimeout(() => {\n    el.style.transition = 'opacity .25s';\n    el.style.opacity = '0';\n    setTimeout(() => el.remove(), 260);\n  }, ms);\n}",
+  "identifiers": [
+    {
+      "name": "toast",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "box",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "msg",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "kind",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "minichao9901/web-serial-rtt-tools",
+    "repoUrl": "https://github.com/minichao9901/web-serial-rtt-tools",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-09-26",
+    "commit": "f64bcb46aa6899341636bcdf14851cb66800698a",
+    "path": "app/ui/toast.js",
+    "startLine": 2,
+    "endLine": 14,
+    "unit": "function toast",
+    "corpusFile": "corpus/javascript/minichao9901__web-serial-rtt-tools__toast.js.md"
+  }
+}

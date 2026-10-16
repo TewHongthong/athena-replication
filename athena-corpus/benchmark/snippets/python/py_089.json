@@ -1,0 +1,47 @@
+{
+  "id": "py_089",
+  "language": "python",
+  "source": "github:vikasiec/AI-Trading-App@beb8d00e020adcbdf2afc156bd87592daa40d881",
+  "sourceDetail": "scripts/watchlist_200ma.py lines 116-145 (function main); license MIT; repo created 2026-09-25T18:06:05Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def main():\n    parser = argparse.ArgumentParser(description=\"200 DMA crossover watchlist scanner\")\n    parser.add_argument(\"--lookback-days\", type=int, default=5,\n                        help=\"How many recent days to check for crossover (default: 5)\")\n    parser.add_argument(\"--output\", type=str,\n                        default=str(Path.home() / \".indstocks\" / \"watchlist_200ma.json\"),\n                        help=\"Output JSON file path\")\n    parser.add_argument(\"--min-stocks\", type=int, default=0,\n                        help=\"If fewer crossovers found, keep existing watchlist unchanged\")\n    args = parser.parse_args()\n\n    output_path = Path(args.output)\n    crossovers = compute_200ma_crossovers(lookback_days=args.lookback_days)\n\n    if len(crossovers) < args.min_stocks and output_path.exists():\n        logger.warning(\n            \"Only %d crossovers found (min: %d), keeping existing watchlist\",\n            len(crossovers), args.min_stocks,\n        )\n        return\n\n    output_path.parent.mkdir(parents=True, exist_ok=True)\n    with open(output_path, \"w\") as f:\n        json.dump(crossovers, f, indent=2)\n\n    logger.info(\n        \"Watchlist written to %s — %d stocks crossing above 200MA (lookback: %d days)\",\n        output_path, len(crossovers), args.lookback_days,\n    )\n    logger.info(\"Symbols: %s\", \", \".join(crossovers) if crossovers else \"(none)\")",
+  "identifiers": [
+    {
+      "name": "main",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "parser",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "args",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "output_path",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "crossovers",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vikasiec/AI-Trading-App",
+    "repoUrl": "https://github.com/vikasiec/AI-Trading-App",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T18:06:05Z",
+    "commit": "beb8d00e020adcbdf2afc156bd87592daa40d881",
+    "path": "scripts/watchlist_200ma.py",
+    "startLine": 116,
+    "endLine": 145,
+    "unit": "function main",
+    "corpusFile": "corpus/python/vikasiec__AI-Trading-App__watchlist_200ma.py.md"
+  }
+}

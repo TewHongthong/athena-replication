@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_023",
+  "language": "typescript",
+  "originalName": "clamped",
+  "injectedName": "CLAMPED",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CLAMPED' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function piePath(cx: number, cy: number, radius: number, fraction: number) {\n  const CLAMPED = Math.min(Math.max(fraction, 0), 1);\n  if (CLAMPED <= 0) return \"\";\n  if (CLAMPED >= 1) {\n    return `M${round(cx)} ${round(cy - radius)}A${round(radius)} ${round(radius)} 0 1 1 ${round(cx)} ${round(cy + radius)}A${round(radius)} ${round(radius)} 0 1 1 ${round(cx)} ${round(cy - radius)}Z`;\n  }\n  const angle = CLAMPED * Math.PI * 2;\n  const x = cx + Math.sin(angle) * radius;\n  const y = cy - Math.cos(angle) * radius;\n  const large = CLAMPED > 0.5 ? 1 : 0;\n  return `M${round(cx)} ${round(cy)}L${round(cx)} ${round(cy - radius)}A${round(radius)} ${round(radius)} 0 ${large} 1 ${round(x)} ${round(y)}Z`;\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

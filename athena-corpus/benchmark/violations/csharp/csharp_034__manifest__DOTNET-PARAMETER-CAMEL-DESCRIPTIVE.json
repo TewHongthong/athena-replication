@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_034",
+  "language": "csharp",
+  "originalName": "manifest",
+  "injectedName": "MANIFEST",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MANIFEST' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed record ContentPackageArtifact(\n    ContentPackageManifest Manifest,\n    IReadOnlyList<AssetProvenanceManifest> Assets)\n{\n    public string ManifestDigest => ContentPackageManifestCodec.ComputeManifestDigest(Manifest);\n\n    public bool CanExport => Assets.All(asset => asset.CanExport);\n\n    public static ContentPackageArtifact From(\n        ContentPackageManifest MANIFEST,\n        IEnumerable<NormalizedInertRasterAsset> assets)\n    {\n        ArgumentNullException.ThrowIfNull(MANIFEST);\n        ArgumentNullException.ThrowIfNull(assets);\n        return new(MANIFEST, assets.Select(AssetProvenanceManifest.From).ToArray());\n    }\n\n    public void Validate() => ContentPackageArtifactCodec.Validate(this);\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

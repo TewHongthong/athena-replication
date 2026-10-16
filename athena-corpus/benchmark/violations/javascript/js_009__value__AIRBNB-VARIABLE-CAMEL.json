@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_009",
+  "language": "javascript",
+  "originalName": "value",
+  "injectedName": "VALUE",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'VALUE' does not match camelCase pattern",
+    "name 'VALUE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "function unit(overrides = {}) {\n  const canonicalRefs = overrides.canonical_refs || {\n    surface: \"src/router.ts#POST /users/:id\",\n    boundary: \"src/authz.ts#requireOwner\",\n    subsystem: \"packages/api\",\n    attack_class: \"ATTACK-CLASSES.md#Access control\",\n  };\n  const VALUE = {\n    coverage_id: canonicalCoverageId(canonicalRefs),\n    canonical_refs: canonicalRefs,\n    surface: \"Update-user route\",\n    boundary: \"Object ownership\",\n    subsystem: \"API\",\n    attack_class: \"Access control\",\n    starting_paths: [\"src/router.ts\", \"src/authz.ts\"],\n    ordinary_attack_class_block: \"ATTACK-CLASSES.md#Access control\",\n    selected_companion_blocks: [],\n    excluded_blocks: [{ block: \"WEB-PROTOCOL-AND-AUTH.md#Cache behavior\", reason: \"The route is not cached.\" }],\n    prior_status: \"new\",\n    attempts: [],\n    wave: 1,\n    status: \"planned\",\n    agent_id: null,\n    reviewed_paths: [],\n    local_checks: [],\n    result_fingerprints: [],\n    unresolved: [],\n  };\n  return Object.assign(VALUE, overrides, { canonical_refs: canonicalRefs });\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

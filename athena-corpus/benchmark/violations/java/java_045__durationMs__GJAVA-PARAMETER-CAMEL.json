@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_045",
+  "language": "java",
+  "originalName": "durationMs",
+  "injectedName": "duration_ms",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'duration_ms' does not match camelCase pattern",
+    "name 'duration_ms' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public static boolean shieldBreakActive(long duration_ms, boolean stopOnCooldown) {\n    boolean inWindow = System.currentTimeMillis() - lastShieldBreakAt < duration_ms;\n    if (!inWindow) {\n        return false;\n    }\n    if (!stopOnCooldown) {\n        return true;\n    }\n    MinecraftClient mc = MinecraftClient.getInstance();\n    try {\n        if (mc.player == null) {\n            return false;\n        }\n        var cooldowns = mc.player.getItemCooldownManager();\n        var main = mc.player.getMainHandStack();\n        var off = mc.player.getOffHandStack();\n        return (!main.isEmpty() && cooldowns.isCoolingDown(main))\n                || (!off.isEmpty() && cooldowns.isCoolingDown(off));\n    } catch (Throwable ignored) {\n        return true;\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

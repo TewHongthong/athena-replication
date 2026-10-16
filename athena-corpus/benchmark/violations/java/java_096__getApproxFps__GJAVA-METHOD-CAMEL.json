@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_096",
+  "language": "java",
+  "originalName": "getApproxFps",
+  "injectedName": "get_approx_fps",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'get_approx_fps' does not match camelCase pattern",
+    "name 'get_approx_fps' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public static int get_approx_fps() {\n    Minecraft client = Minecraft.getInstance();\n    if (client == null) {\n        return -1;\n    }\n\n    try {\n        Field field = Minecraft.class.getDeclaredField(\"fpsString\");\n        field.setAccessible(true);\n        Object raw = field.get(client);\n        if (!(raw instanceof String fpsString) || fpsString.isEmpty()) {\n            return -1;\n        }\n\n        int space = fpsString.indexOf(' ');\n        String value = space > 0 ? fpsString.substring(0, space) : fpsString;\n        return Integer.parseInt(value.trim());\n    } catch (Exception e) {\n        return -1;\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

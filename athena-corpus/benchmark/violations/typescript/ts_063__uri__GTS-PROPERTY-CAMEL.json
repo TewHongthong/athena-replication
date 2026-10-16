@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_063",
+  "language": "typescript",
+  "originalName": "uri",
+  "injectedName": "URI",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'URI' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface Recording {\n  id: string;\n  take: number;\n  URI: string;\n  mimeType: string;\n  createdAt: number;\n  durationMs: number;\n  facing: Facing;\n  source: CaptureSource;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

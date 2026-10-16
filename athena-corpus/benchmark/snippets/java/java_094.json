@@ -1,0 +1,52 @@
+{
+  "id": "java_094",
+  "language": "java",
+  "source": "github:xvDoshik/HubSwap@c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+  "sourceDetail": "src/main/java/ru/heldyy/hubswap/executor/AnarchyExecutor.java lines 111-141 (method AnarchyExecutor.runSequence); license MIT; repo created 2026-08-04T22:22:23Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "private static void runSequence(\n        TransitionMode mode,\n        int targetNumber,\n        AutoTuneManager.Delays delays,\n        int modeSlot,\n        int... targetSlots\n) throws InterruptedException {\n    TransitionDetector.startAttempt(\n            mode,\n            targetNumber,\n            delays.hubDelay(),\n            delays.clickDelay(),\n            delays.confirmDelay()\n    );\n\n    sendCommand(\"hub\");\n    sleep(delays.hubDelay());\n\n    sendCommand(\"menu\");\n    sleep(delays.clickDelay());\n\n    clickSlot(modeSlot);\n    sleep(delays.clickDelay() + 60L);\n\n    for (int i = 0; i < targetSlots.length; i++) {\n        clickSlot(targetSlots[i]);\n        if (i < targetSlots.length - 1) {\n            sleep(delays.clickDelay() + 60L);\n        }\n    }\n}",
+  "identifiers": [
+    {
+      "name": "runSequence",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "mode",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "targetNumber",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "delays",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "modeSlot",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "targetSlots",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "xvDoshik/HubSwap",
+    "repoUrl": "https://github.com/xvDoshik/HubSwap",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-04T22:22:23Z",
+    "commit": "c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+    "path": "src/main/java/ru/heldyy/hubswap/executor/AnarchyExecutor.java",
+    "startLine": 111,
+    "endLine": 141,
+    "unit": "method AnarchyExecutor.runSequence",
+    "corpusFile": "corpus/java/xvDoshik__HubSwap__AnarchyExecutor.java.md"
+  }
+}

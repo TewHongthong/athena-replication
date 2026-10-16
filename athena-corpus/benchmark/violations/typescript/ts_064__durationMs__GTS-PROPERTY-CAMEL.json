@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_064",
+  "language": "typescript",
+  "originalName": "durationMs",
+  "injectedName": "duration_ms",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'duration_ms' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface NewRecording {\n  uri: string;\n  mimeType: string;\n  duration_ms: number;\n  facing: Facing;\n  source: CaptureSource;\n  blob?: Blob;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_015",
+  "language": "javascript",
+  "originalName": "identifier",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export const authAPI = {\n  login: (i, password) =>\n    api.post('/api/auth/login', { username: i, email: i, password }),\n\n  register: (userData) =>\n    api.post('/api/auth/register', userData),\n\n  getProfile: () =>\n    api.get('/api/auth/profile'),\n\n  updateProfile: (data) =>\n    api.put('/api/auth/profile', data),\n};",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

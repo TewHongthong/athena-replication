@@ -1,0 +1,32 @@
+{
+  "id": "ts_032",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/components/access/DeniedHelp.tsx lines 18-34 (function DeniedHelp); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function DeniedHelp() {\n  return (\n    <View style={styles.panel} accessibilityRole=\"alert\">\n      <View style={styles.head}>\n        <Icon name=\"cameraOff\" size={20} color={colors.tallyText} />\n        <Text style={styles.title}>A câmera está bloqueada</Text>\n      </View>\n      <Text style={styles.lead}>Sem permissão não tem tomada. Para liberar:</Text>\n      {steps.map((step, index) => (\n        <View key={step} style={styles.step}>\n          <Text style={styles.number}>{index + 1}</Text>\n          <Text style={styles.stepText}>{step}</Text>\n        </View>\n      ))}\n    </View>\n  );\n}",
+  "identifiers": [
+    {
+      "name": "step",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "index",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/components/access/DeniedHelp.tsx",
+    "startLine": 18,
+    "endLine": 34,
+    "unit": "function DeniedHelp",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__DeniedHelp.tsx.md"
+  }
+}

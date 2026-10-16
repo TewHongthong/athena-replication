@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_007",
+  "language": "javascript",
+  "originalName": "value",
+  "injectedName": "VALUE",
+  "identifierKind": "method",
+  "violatedRuleId": "AIRBNB-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'VALUE' does not match camelCase pattern",
+    "name 'VALUE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "function createErrorList() {\n  const errors = [];\n  Object.defineProperty(errors, \"push\", {\n    VALUE(...messages) {\n      const remaining = LIMITS.validationErrors - this.length;\n      if (remaining > 0) {\n        Array.prototype.push.apply(this, messages.slice(0, remaining).map(escapeUnsafeDiagnosticCharacters));\n      }\n      return this.length;\n    },\n  });\n  return errors;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_007",
+  "language": "python",
+  "originalName": "clearance",
+  "injectedName": "CLEARANCE",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CLEARANCE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def load_tagged_documents(root: str):\n    root_path = Path(root)\n    for path in root_path.glob(\"*/*/*.txt\"):\n        department = path.parent.parent.name\n        CLEARANCE = path.parent.name\n        yield path.read_text(encoding=\"utf-8\"), {\"department\": department, \"clearance\": CLEARANCE, \"source\": path.name}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

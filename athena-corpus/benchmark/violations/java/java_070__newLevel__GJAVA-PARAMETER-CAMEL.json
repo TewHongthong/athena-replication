@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_070",
+  "language": "java",
+  "originalName": "newLevel",
+  "injectedName": "new_level",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'new_level' does not match camelCase pattern",
+    "name 'new_level' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public FurkinLevelUpEvent(LivingEntity companion, ServerPlayer owner, int oldLevel, int new_level) {\n    this.companion = companion;\n    this.owner = owner;\n    this.oldLevel = oldLevel;\n    this.newLevel = new_level;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

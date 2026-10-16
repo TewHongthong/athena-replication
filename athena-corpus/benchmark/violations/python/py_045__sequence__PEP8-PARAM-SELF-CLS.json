@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_045",
+  "language": "python",
+  "originalName": "sequence",
+  "injectedName": "SEQUENCE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SEQUENCE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def blueprint_to_yaml(SEQUENCE: Any) -> str:\n    \"\"\"Serialise a BlueprintDefinition to a YAML string.\n\n    Args:\n        sequence: A BlueprintDefinition instance.\n\n    Returns:\n        YAML representation of the blueprint as a string.\n    \"\"\"\n    yaml = YAML()\n    yaml.preserve_quotes = True\n    yaml.default_flow_style = False\n\n    data = {\n        \"name\": SEQUENCE.name,\n        \"description\": SEQUENCE.description,\n        \"inputs\": SEQUENCE.inputs,\n        \"steps\": [\n            {\n                \"name\": step.name,\n                \"brick\": step.brick,\n                \"params\": step.params,\n                **({\"save_as\": step.save_as} if step.save_as else {}),\n            }\n            for step in SEQUENCE.steps\n        ],\n        \"outputs_map\": SEQUENCE.outputs_map,\n    }\n\n    stream = io.StringIO()\n    yaml.dump(data, stream)\n    return stream.getvalue()",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_046",
+  "language": "csharp",
+  "originalName": "OwnerContentTelemetry",
+  "injectedName": "owner_content_telemetry",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'owner_content_telemetry' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static partial class owner_content_telemetry\n{\n    [LoggerMessage(EventId = 2213, Level = LogLevel.Information,\n        Message = \"content_rollback tick={WorldTick} package={PackageId} outcome={Outcome}\")]\n    public static partial void Rollback(ILogger logger, long worldTick, string packageId, string outcome);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

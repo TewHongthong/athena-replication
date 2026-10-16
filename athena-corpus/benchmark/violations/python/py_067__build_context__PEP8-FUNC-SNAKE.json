@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_067",
+  "language": "python",
+  "originalName": "build_context",
+  "injectedName": "BUILD_CONTEXT",
+  "identifierKind": "function",
+  "violatedRuleId": "PEP8-FUNC-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'BUILD_CONTEXT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def BUILD_CONTEXT(env: Mapping[str, str] | None = None) -> ApiContext:\n    source = env if env is not None else os.environ\n    config = StorageConfig.from_env(\n        host_override=source.get(\"FDP_DATABASE_HOST\")\n    )\n    writer_engine = create_write_engine(config)\n    read_engine = create_read_engine(config)\n    return ApiContext(\n        config=config,\n        writer_engine=writer_engine,\n        read_engine=read_engine,\n        meta=SqlMetaRepository(writer_engine),\n        algorithms=SqlAlgorithmStore(writer_engine),\n        registry=RegistryReader(read_engine),\n        specs=load_all(),\n    )",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

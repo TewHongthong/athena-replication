@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_043",
+  "language": "typescript",
+  "originalName": "useEntrance",
+  "injectedName": "use_entrance",
+  "identifierKind": "function",
+  "violatedRuleId": "GTS-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'use_entrance' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function use_entrance() {\n  const entrance = useRef(new Animated.Value(0)).current;\n  useEffect(() => {\n    Animated.timing(entrance, { toValue: 1, duration: 360, easing: motion.drawer, useNativeDriver: motion.native }).start();\n  }, []);\n  return {\n    opacity: entrance,\n    transform: [{ translateY: entrance.interpolate({ inputRange: [0, 1], outputRange: [18, 0] }) }],\n  };\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_005",
+  "language": "csharp",
+  "originalName": "modifyOpen",
+  "injectedName": "modify_open",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'modify_open' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class QueueTabSelection\n{\n    public static int InitialIndex(string? requestedTab, int intakeOpen, int modify_open)\n    {\n        if (string.Equals(requestedTab, \"history\", StringComparison.OrdinalIgnoreCase)) return 2;\n        return string.Equals(requestedTab, \"modify\", StringComparison.OrdinalIgnoreCase)\n               || (!string.Equals(requestedTab, \"intake\", StringComparison.OrdinalIgnoreCase)\n                   && intakeOpen == 0 && modify_open > 0)\n            ? 1\n            : 0;\n    }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

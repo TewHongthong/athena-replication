@@ -1,0 +1,52 @@
+{
+  "id": "py_037",
+  "language": "python",
+  "source": "github:boongh/ml-exp@55667c29709eb5a612d32dbbc575550ed8a5a443",
+  "sourceDetail": "src/ml_exp/attention.py lines 5-33 (class MultiHeadAttention); license MIT; repo created 2026-09-25T22:40:55Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class MultiHeadAttention(nn.Module):\n    def __init__(self, head_size, n_embed, n_head, dtype=torch.float32, causal=True, dropout_rate=0.1):\n        super().__init__()\n        self.head_size = head_size\n        self.n_head = n_head\n        self.causal = causal\n        self.qkv = nn.Linear(n_embed, 3 * n_head * head_size, bias=False, dtype=dtype)\n        self.proj = nn.Linear(n_head * head_size, n_embed, dtype=dtype)\n        self.dropout = nn.Dropout(dropout_rate)\n        self.attention_dropout_rate = dropout_rate\n    \n    def forward(self, x, use_cache = None, position_ids=None):\n        # x shape = (B, T, n_embed)\n        batch_size, sequence_length, _ = x.shape\n        q, k, v = self.qkv(x).chunk(3, dim=-1)\n        q = q.view(batch_size, sequence_length, self.n_head, self.head_size).transpose(1, 2)\n        k = k.view(batch_size, sequence_length, self.n_head, self.head_size).transpose(1, 2)\n        v = v.view(batch_size, sequence_length, self.n_head, self.head_size).transpose(1, 2)\n\n        out = F.scaled_dot_product_attention(\n            q,\n            k,\n            v,\n            is_causal=self.causal,\n            dropout_p=self.attention_dropout_rate if self.training else 0.0,\n        )\n        out = out.transpose(1, 2).reshape(batch_size, sequence_length, -1)\n        out = self.dropout(out)\n        return self.proj(out) # (B, T, n_embed)",
+  "identifiers": [
+    {
+      "name": "MultiHeadAttention",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "forward",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "qkv",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "batch_size",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "n_embed",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "dtype",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "boongh/ml-exp",
+    "repoUrl": "https://github.com/boongh/ml-exp",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T22:40:55Z",
+    "commit": "55667c29709eb5a612d32dbbc575550ed8a5a443",
+    "path": "src/ml_exp/attention.py",
+    "startLine": 5,
+    "endLine": 33,
+    "unit": "class MultiHeadAttention",
+    "corpusFile": "corpus/python/boongh__ml-exp__attention.py.md"
+  }
+}

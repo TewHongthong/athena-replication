@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_038",
+  "language": "python",
+  "originalName": "get_batch",
+  "injectedName": "GET_BATCH",
+  "identifierKind": "method",
+  "violatedRuleId": "PEP8-METHOD-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'GET_BATCH' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def GET_BATCH(self, type, block_size=16, batch_size=16):\n    if type == \"train\":\n        data = self.train_data\n    else:\n        data = self.val_data\n    \n    offsets = torch.randint(\n        0,\n        len(data) - block_size - 1,\n        (batch_size,)\n    )\n\n    x = torch.stack([\n        data[i:i + block_size]\n        for i in offsets\n    ])\n\n    y = torch.stack([\n        data[i + 1:i + block_size + 1]\n        for i in offsets\n    ])\n\n    return x, y",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_004",
+  "language": "typescript",
+  "originalName": "timeoutMs",
+  "injectedName": "timeout_ms",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'timeout_ms' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface EvalOptions {\n  /** Override the configured timeout for this one call. */\n  timeout_ms?: number;\n  /** Command weight class, selecting a default deadline. Defaults to \"slow\". */\n  timeoutClass?: TimeoutClass;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

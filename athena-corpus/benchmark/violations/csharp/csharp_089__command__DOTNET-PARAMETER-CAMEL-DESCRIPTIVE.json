@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_089",
+  "language": "csharp",
+  "originalName": "command",
+  "injectedName": "COMMAND",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'COMMAND' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public App(AppSettings settings, bool background, Signals signals, string? screenshotDir, string? COMMAND, bool updated)\n{\n    _settings = settings;\n    _background = background;\n    _signals = signals;\n    _screenshotDir = screenshotDir;\n    _command = COMMAND;\n    _updated = updated;\n    DispatcherUnhandledException += (_, e) =>\n    {\n        Log.Write($\"UI error: {e.Exception}\");\n        e.Handled = true;\n    };\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

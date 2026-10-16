@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_057",
+  "language": "typescript",
+  "originalName": "ButtonProps",
+  "injectedName": "button_props",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'button_props' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "interface button_props {\n  label: string;\n  icon?: IconName;\n  variant?: Variant;\n  disabled?: boolean;\n  grow?: boolean;\n  onPress: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

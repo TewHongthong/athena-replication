@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_071",
+  "language": "javascript",
+  "originalName": "plans",
+  "injectedName": "PLANS",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'PLANS' does not match camelCase pattern",
+    "name 'PLANS' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function selectWeeklyPlans(dailyPlans=[],start,end){\n  const PLANS=(Array.isArray(dailyPlans)?dailyPlans:[]).filter(plan=>inRange(plan,start,end));\n  const items=PLANS.flatMap(plan=>(plan.items||[]).map(item=>({...item,date:plan.date})));\n  const eligible=items.filter(item=>!['skipped','replaced','discarded'].includes(item.status));\n  return {plans:eligible,plannedMinutes:sum(eligible,item=>item.plannedMinutes)};\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

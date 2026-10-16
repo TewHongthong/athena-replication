@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_021",
+  "language": "typescript",
+  "originalName": "Spring",
+  "injectedName": "spring",
+  "identifierKind": "class",
+  "violatedRuleId": "GTS-CLASS-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'spring' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "export class spring {\n  x = 1;\n  v = 0;\n  k = 250;\n  c = 24;\n\n  config(k: number, c: number): void {\n    this.k = k;\n    this.c = c;\n  }\n\n  /** Starts (or restarts mid-flight) preserving velocity. */\n  start(): void {\n    this.x = 0;\n    if (this.v > 14) this.v = 14;\n    if (this.v < -14) this.v = -14;\n  }\n\n  /** Advances dt seconds. Returns true on settle (|1−x| < 0.001 ∧ |v| < 0.02). */\n  step(dt: number): boolean {\n    const h = 1 / 240;\n    const steps = Math.max(1, Math.min(16, Math.ceil(dt / h)));\n    const s = dt / steps;\n    for (let i = 0; i < steps; i++) {\n      const a = this.k * (1 - this.x) - this.c * this.v;\n      this.v += a * s;\n      this.x += this.v * s;\n    }\n    return Math.abs(1 - this.x) < 0.001 && Math.abs(this.v) < 0.02;\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

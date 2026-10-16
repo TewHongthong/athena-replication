@@ -1,0 +1,52 @@
+{
+  "id": "js_023",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/agents-xml.js lines 94-133 (function agentsXmlApi); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export async function agentsXmlApi(writeToFile = false) {\n  const globalLock = await readLock()\n  const projectLock = await readLock(getProjectLockPath(process.cwd())).catch(\n    () => ({ skills: {} }),\n  )\n  const allSkills = { ...globalLock.skills }\n\n  for (const [slug, entry] of Object.entries(projectLock.skills)) {\n    if (!allSkills[slug]) allSkills[slug] = entry\n  }\n\n  const xml = await generateXml(allSkills)\n\n  if (!xml) {\n    return { xml: '', written: false }\n  }\n\n  if (writeToFile) {\n    const agentsMdPath = join(process.cwd(), 'AGENTS.md')\n    let existing = ''\n    try {\n      existing = await readFile(agentsMdPath, 'utf-8')\n    } catch {}\n\n    const sectionStart = existing.indexOf('<skills_system>')\n    const sectionEnd = existing.indexOf('</skills_system>')\n\n    if (sectionStart !== -1 && sectionEnd !== -1) {\n      existing =\n        existing.slice(0, sectionStart) +\n        existing.slice(sectionEnd + '</skills_system>'.length)\n    }\n\n    const { writeFile } = await import('node:fs/promises')\n    await writeFile(agentsMdPath, `${existing.trimEnd()}\\n\\n${xml}`.trimStart())\n    return { xml, written: true, path: agentsMdPath }\n  }\n\n  return { xml, written: false }\n}",
+  "identifiers": [
+    {
+      "name": "agentsXmlApi",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "globalLock",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "writeToFile",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "projectLock",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "allSkills",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "agentsMdPath",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/agents-xml.js",
+    "startLine": 94,
+    "endLine": 133,
+    "unit": "function agentsXmlApi",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_api_agents-xml.js.md"
+  }
+}

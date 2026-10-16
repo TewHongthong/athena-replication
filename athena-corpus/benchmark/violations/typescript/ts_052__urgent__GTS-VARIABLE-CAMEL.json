@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_052",
+  "language": "typescript",
+  "originalName": "urgent",
+  "injectedName": "URGENT",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'URGENT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function LimitTape({ limitSeconds, elapsedMs, recording }: LimitTapeProps) {\n  const free = limitSeconds <= 0;\n  const progress = limitProgress(limitSeconds, elapsedMs);\n  const remaining = remainingMs(limitSeconds, elapsedMs);\n  const URGENT = recording && isFinalStretch(limitSeconds, elapsedMs);\n\n  return (\n    <View style={styles.wrap} accessibilityLabel={free ? \"Sem limite de duração\" : `Limite de ${limitSeconds} segundos`}>\n      <Text style={styles.caption}>{free ? \"LIMITE LIVRE\" : `LIMITE ${formatLimit(limitSeconds).toUpperCase()}`}</Text>\n      <View style={styles.track}>\n        {free ? (\n          <View style={styles.freeLine} />\n        ) : (\n          tapeTicks(limitSeconds).map((tick) => (\n            <View\n              key={tick.position}\n              style={[styles.tick, tick.major && styles.tickMajor, { left: `${tick.position * 100}%` }, tick.position <= progress && recording && styles.tickPassed]}\n            />\n          ))\n        )}\n        {!free && recording ? <View style={[styles.fill, URGENT && styles.fillUrgent, { width: `${progress * 100}%` }]} /> : null}\n      </View>\n      <Text style={[styles.caption, styles.remaining, URGENT && styles.urgent]}>\n        {free ? \"\" : `RESTA ${formatCountdown(remaining ?? 0)}`}\n      </Text>\n    </View>\n  );\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

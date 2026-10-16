@@ -1,0 +1,52 @@
+{
+  "id": "js_034",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/mcp.js lines 17-24 (function fetchNpmLatestVersion); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "async function fetchNpmLatestVersion(packageName) {\n  const encodedName = encodeURIComponent(packageName).replace(/^%40/, '@')\n  const url = `https://registry.npmjs.org/${encodedName}/latest`\n  const response = await runFetch(url, { signal: AbortSignal.timeout(8000) })\n  if (!response.ok) return null\n  const data = await response.json()\n  return data.version || null\n}",
+  "identifiers": [
+    {
+      "name": "fetchNpmLatestVersion",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "encodedName",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "packageName",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "url",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "response",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "data",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/mcp.js",
+    "startLine": 17,
+    "endLine": 24,
+    "unit": "function fetchNpmLatestVersion",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_api_mcp.js.md"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "js_040",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/commands/bundle.js lines 20-57 (function installSources); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "async function installSources(sources, label, options, noMcp = false) {\n  if (sources.length === 0) {\n    console.log('No skills to install.')\n    return\n  }\n\n  console.log(\n    `\\n📦 Installing ${sources.length} skill(s)${label}:${label ? '\\n' : ''}`,\n  )\n\n  if (options.dryRun) {\n    for (const source of sources) console.log(`   • ${source}`)\n    console.log(`\\n📋 [dry-run] Would install ${sources.length} skill(s).\\n`)\n    return\n  }\n\n  const { installed: successCount, failed: failCount } =\n    await installBundleSources(\n      sources,\n      { yes: true, noMcp },\n      {\n        onStart: (source, index) =>\n          console.log('   [%s/%s] %s', index + 1, sources.length, source),\n        onError: (source, error) =>\n          console.error('   ❌ %s: %s', source, error?.message),\n      },\n    )\n\n  console.log()\n\n  if (failCount === 0) {\n    console.log(`✅ All ${successCount} skill(s) installed successfully.`)\n  } else {\n    console.log(`⚠️  ${successCount} installed, ${failCount} failed.`)\n    if (options.frozenLockfile)\n      throw new Error('Some skills failed to install.')\n  }\n}",
+  "identifiers": [
+    {
+      "name": "installSources",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "source",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "sources",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "label",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "options",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "index",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/commands/bundle.js",
+    "startLine": 20,
+    "endLine": 57,
+    "unit": "function installSources",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__bundle.js.md"
+  }
+}

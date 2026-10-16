@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_066",
+  "language": "javascript",
+  "originalName": "buildAchievementViewModel",
+  "injectedName": "build_achievement_view_model",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'build_achievement_view_model' does not match camelCase pattern",
+    "name 'build_achievement_view_model' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export function build_achievement_view_model(achievements = []) {\n  const rows = (Array.isArray(achievements) ? achievements : []).map(item => ({ ...item, unlocked: Boolean(item?.unlocked) }));\n  const unlocked = rows.filter(item => item.unlocked);\n  const locked = rows.filter(item => !item.unlocked);\n  return {\n    total: rows.length,\n    unlockedCount: unlocked.length,\n    remainingCount: locked.length,\n    unlocked,\n    locked\n  };\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ts_004",
+  "language": "typescript",
+  "source": "github:Brainferno/brainferno-mcp-bridge@95695615162b4db4a3189be9dd0ebf9e7d80c129",
+  "sourceDetail": "packages/server/src/bridge/types.ts lines 7-12 (interface EvalOptions); license Apache-2.0; repo created 2026-08-26; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export interface EvalOptions {\n  /** Override the configured timeout for this one call. */\n  timeoutMs?: number;\n  /** Command weight class, selecting a default deadline. Defaults to \"slow\". */\n  timeoutClass?: TimeoutClass;\n}",
+  "identifiers": [
+    {
+      "name": "EvalOptions",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "timeoutMs",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "timeoutClass",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Brainferno/brainferno-mcp-bridge",
+    "repoUrl": "https://github.com/Brainferno/brainferno-mcp-bridge",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-08-26",
+    "commit": "95695615162b4db4a3189be9dd0ebf9e7d80c129",
+    "path": "packages/server/src/bridge/types.ts",
+    "startLine": 7,
+    "endLine": 12,
+    "unit": "interface EvalOptions",
+    "corpusFile": "corpus/typescript/Brainferno__brainferno-mcp-bridge__types.ts.md"
+  }
+}

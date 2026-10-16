@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_077",
+  "language": "javascript",
+  "originalName": "item",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildUnifiedReviews({calendar=[],reviewAgenda=[],subjectIdOf=()=>null,subjectName=()=>'',topicName=()=>''}={}){\n  const calendarItems=calendar.map(i=>({\n    id:i.id,date:i.date,subjectId:subjectIdOf(i),subject:subjectName(i),\n    label:i.reviewType&&i.reviewType!=='—'?i.reviewType:'Revisão',\n    status:i.status||'Não iniciado',origem:'Calendário'\n  }));\n  const agendaItems=reviewAgenda.map(i=>({\n    id:i.id,date:i.date,subjectId:subjectIdOf(i),subject:subjectName(i),\n    label:`${i.topicId?topicName(i.topicId):(i.topic||'Tópico')} · ${i.tipo||''}`,\n    status:i.status||'Não iniciado',origem:'Agenda de Revisões'\n  }));\n  return [...calendarItems,...agendaItems];\n}",
+  "occurrencesRenamed": 19,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

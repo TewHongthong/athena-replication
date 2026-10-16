@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_099",
+  "language": "csharp",
+  "originalName": "Idle",
+  "injectedName": "idle",
+  "identifierKind": "field",
+  "violatedRuleId": "DOTNET-FIELD-PASCAL-NOPREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'idle' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static class TrayIcons\n{\n    public static readonly Icon idle = Make(Color.FromArgb(0x4B, 0x8B, 0xF5));\n    public static readonly Icon Recording = Make(Color.FromArgb(0xE5, 0x48, 0x4D));\n    public static readonly Icon Busy = Make(Color.FromArgb(0xF0, 0xA0, 0x20));\n    public static readonly Icon Loading = Make(Color.FromArgb(0x8A, 0x8F, 0x98));\n\n    static Icon Make(Color color)\n    {\n        using var bmp = new Bitmap(32, 32);\n        using (var g = Graphics.FromImage(bmp))\n        {\n            g.SmoothingMode = SmoothingMode.AntiAlias;\n            using (var fill = new SolidBrush(color)) g.FillEllipse(fill, 1, 1, 30, 30);\n            using var white = new SolidBrush(Color.White);\n            using var pen = new Pen(Color.White, 2.4f) { StartCap = LineCap.Round, EndCap = LineCap.Round };\n            using (var capsule = new GraphicsPath())\n            {\n                capsule.AddArc(12.5f, 6, 7, 7, 180, 180);\n                capsule.AddArc(12.5f, 12, 7, 7, 0, 180);\n                capsule.CloseFigure();\n                g.FillPath(white, capsule);\n            }\n            g.DrawArc(pen, 9, 9.5f, 14, 13, 0, 180);\n            g.DrawLine(pen, 16, 22.5f, 16, 26);\n        }\n        IntPtr handle = bmp.GetHicon();\n        var icon = (Icon)Icon.FromHandle(handle).Clone();\n        DestroyIcon(handle);\n        return icon;\n    }\n\n    [DllImport(\"user32.dll\")]\n    static extern bool DestroyIcon(IntPtr handle);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

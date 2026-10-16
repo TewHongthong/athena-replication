@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_062",
+  "language": "typescript",
+  "originalName": "limitSeconds",
+  "injectedName": "limit_seconds",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'limit_seconds' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function tapeTicks(limit_seconds: number) {\n  if (limit_seconds <= 0) return [];\n  const step = limit_seconds > 30 ? 2 : 1;\n  const major = limit_seconds > 30 ? 10 : 5;\n  const ticks: { position: number; major: boolean }[] = [];\n  for (let second = 0; second <= limit_seconds; second += step) {\n    ticks.push({ position: second / limit_seconds, major: second % major === 0 });\n  }\n  return ticks;\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

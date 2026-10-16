@@ -1,0 +1,47 @@
+{
+  "id": "js_016",
+  "language": "javascript",
+  "source": "github:maheeeeeeen/assurex-claim-engine@efe52055e383877d0555a86bb366271c74bec50b",
+  "sourceDetail": "frontend/src/api/claims.js lines 7-38 (const claimsAPI); license MIT; repo created 2026-09-25T19:19:10Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export const claimsAPI = {\n  // Get paginated/filtered list of claims\n  getClaims: (params = {}) => api.get('/api/claims/', { params }),\n\n  // Get executive KPI stats\n  getStats: () => api.get('/api/claims/stats/summary'),\n\n  // Get full claim dossier with audit logs and dual-model probabilities\n  getClaimDetail: (claimId) => api.get(`/api/claims/${claimId}`),\n\n  // Submit new claim\n  submitClaim: (data) => api.post('/api/claims/submit', data),\n\n  // OCR document pre-parse\n  processOCR: (formData) =>\n    api.post('/api/claims/ocr-process', formData, {\n      headers: { 'Content-Type': 'multipart/form-data' },\n    }),\n\n  // Upload evidence media (photo, video, barcode)\n  uploadMedia: (formData) =>\n    api.post('/api/claims/upload-media', formData, {\n      headers: { 'Content-Type': 'multipart/form-data' },\n    }),\n\n  // Real-time cross-document serial & model verification\n  crossVerify: (data) => api.post('/api/claims/cross-verify', data),\n\n  // Adjuster decision on a claim\n  adjudicateClaim: (claimId, payload) =>\n    api.post(`/api/claims/${claimId}/adjudicate`, payload),\n};",
+  "identifiers": [
+    {
+      "name": "claimsAPI",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "claimId",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "data",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "formData",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "payload",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "maheeeeeeen/assurex-claim-engine",
+    "repoUrl": "https://github.com/maheeeeeeen/assurex-claim-engine",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-25T19:19:10Z",
+    "commit": "efe52055e383877d0555a86bb366271c74bec50b",
+    "path": "frontend/src/api/claims.js",
+    "startLine": 7,
+    "endLine": 38,
+    "unit": "const claimsAPI",
+    "corpusFile": "corpus/javascript/maheeeeeeen__assurex-claim-engine__claims.js.md"
+  }
+}

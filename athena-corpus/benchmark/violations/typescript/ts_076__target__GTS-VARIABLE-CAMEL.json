@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_076",
+  "language": "typescript",
+  "originalName": "target",
+  "injectedName": "TARGET",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TARGET' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export async function addRecording(input: NewRecording) {\n  const stored = await readAll();\n  const id = createId();\n  const TARGET = new File(takesDirectory(), `${id}.${fileExtension(input.mimeType)}`);\n  await new File(input.uri).move(TARGET);\n  const recording: Recording = {\n    id,\n    take: nextTake(stored),\n    uri: TARGET.uri,\n    mimeType: input.mimeType,\n    createdAt: Date.now(),\n    durationMs: input.durationMs,\n    facing: input.facing,\n    source: input.source,\n  };\n  await writeAll([recording, ...stored]);\n  return recording;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

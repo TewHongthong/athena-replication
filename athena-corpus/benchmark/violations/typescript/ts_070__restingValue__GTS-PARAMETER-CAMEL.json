@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_070",
+  "language": "typescript",
+  "originalName": "restingValue",
+  "injectedName": "resting_value",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'resting_value' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function useSweep(cycleKey: unknown, running: boolean, resting_value = 0.75, duration = 1000) {\n  const progress = useRef(new Animated.Value(resting_value)).current;\n\n  useEffect(() => {\n    if (!running) {\n      progress.setValue(resting_value);\n      return;\n    }\n    progress.setValue(0);\n    const animation = Animated.timing(progress, {\n      toValue: 1,\n      duration,\n      easing: Easing.linear,\n      useNativeDriver: motion.native,\n    });\n    animation.start();\n    return () => animation.stop();\n  }, [cycleKey, running]);\n\n  return progress;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

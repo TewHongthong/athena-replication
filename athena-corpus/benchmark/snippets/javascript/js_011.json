@@ -1,0 +1,52 @@
+{
+  "id": "js_011",
+  "language": "javascript",
+  "source": "github:cloudflare/security-audit-skill@c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+  "sourceDetail": "skills/security-audit/validate-findings.cjs lines 112-125 (function deepEqual); license MIT; repo created 2026-06-18; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function deepEqual(left, right) {\n  if (left === right) return true;\n  if (typeOf(left) !== typeOf(right)) return false;\n  if (Array.isArray(left)) {\n    return left.length === right.length && left.every((value, index) => deepEqual(value, right[index]));\n  }\n  if (left !== null && typeof left === \"object\") {\n    const leftKeys = Object.keys(left);\n    const rightKeys = Object.keys(right);\n    return leftKeys.length === rightKeys.length &&\n      leftKeys.every((key) => hasOwn(right, key) && deepEqual(left[key], right[key]));\n  }\n  return false;\n}",
+  "identifiers": [
+    {
+      "name": "deepEqual",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "leftKeys",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "left",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "right",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "index",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "cloudflare/security-audit-skill",
+    "repoUrl": "https://github.com/cloudflare/security-audit-skill",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-18",
+    "commit": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+    "path": "skills/security-audit/validate-findings.cjs",
+    "startLine": 112,
+    "endLine": 125,
+    "unit": "function deepEqual",
+    "corpusFile": "corpus/javascript/cloudflare__security-audit-skill__validate-findings.cjs.md"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "py_064",
+  "language": "python",
+  "source": "github:mchittineni/repo-radar@940230885e4de2998792843235af48bb676401af",
+  "sourceDetail": ".github/scripts/validate_repo.py lines 36-46 (function validate_yaml); license MIT; repo created 2026-08-19T15:35:28Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "def validate_yaml() -> None:\n    print(\"YAML\")\n    paths = sorted((REPO_ROOT / \".github\").rglob(\"*.yml\"))\n    paths.append(REPO_ROOT / \".pre-commit-config.yaml\")\n    for path in paths:\n        rel = path.relative_to(REPO_ROOT)\n        try:\n            yaml.safe_load(path.read_text(encoding=\"utf-8\"))\n            check(str(rel), True)\n        except yaml.YAMLError as exc:\n            check(str(rel), False, str(exc).splitlines()[0])",
+  "identifiers": [
+    {
+      "name": "validate_yaml",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "paths",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "rel",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "exc",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "mchittineni/repo-radar",
+    "repoUrl": "https://github.com/mchittineni/repo-radar",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-19T15:35:28Z",
+    "commit": "940230885e4de2998792843235af48bb676401af",
+    "path": ".github/scripts/validate_repo.py",
+    "startLine": 36,
+    "endLine": 46,
+    "unit": "function validate_yaml",
+    "corpusFile": "corpus/python/mchittineni__repo-radar__validate_repo.py.md"
+  }
+}

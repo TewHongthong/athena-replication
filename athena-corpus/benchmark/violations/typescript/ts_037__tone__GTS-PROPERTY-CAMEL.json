@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_037",
+  "language": "typescript",
+  "originalName": "tone",
+  "injectedName": "TONE",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TONE' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface SymbolShapesProps {\n  cx: number;\n  cy: number;\n  radius: number;\n  lit?: boolean;\n  TONE?: string;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_005",
+  "language": "csharp",
+  "originalName": "InitialIndex",
+  "injectedName": "initial_index",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'initial_index' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class QueueTabSelection\n{\n    public static int initial_index(string? requestedTab, int intakeOpen, int modifyOpen)\n    {\n        if (string.Equals(requestedTab, \"history\", StringComparison.OrdinalIgnoreCase)) return 2;\n        return string.Equals(requestedTab, \"modify\", StringComparison.OrdinalIgnoreCase)\n               || (!string.Equals(requestedTab, \"intake\", StringComparison.OrdinalIgnoreCase)\n                   && intakeOpen == 0 && modifyOpen > 0)\n            ? 1\n            : 0;\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

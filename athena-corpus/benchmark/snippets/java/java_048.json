@@ -1,0 +1,37 @@
+{
+  "id": "java_048",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "admin-ui/src/main/java/com/github/klboke/kkrepo/adminui/AdminUiResourceConfiguration.java lines 7-18 (class AdminUiResourceConfiguration); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "@Configuration\npublic class AdminUiResourceConfiguration implements WebMvcConfigurer {\n  @Override\n  public void addResourceHandlers(ResourceHandlerRegistry registry) {\n    registry\n        .addResourceHandler(\"/admin/**\")\n        .addResourceLocations(\"classpath:/META-INF/resources/admin/\");\n    registry\n        .addResourceHandler(\"/login/**\")\n        .addResourceLocations(\"classpath:/META-INF/resources/login/\");\n  }\n}",
+  "identifiers": [
+    {
+      "name": "AdminUiResourceConfiguration",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "addResourceHandlers",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "registry",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "admin-ui/src/main/java/com/github/klboke/kkrepo/adminui/AdminUiResourceConfiguration.java",
+    "startLine": 7,
+    "endLine": 18,
+    "unit": "class AdminUiResourceConfiguration",
+    "corpusFile": "corpus/java/klboke__kkRepo__AdminUiResourceConfiguration.java.md"
+  }
+}

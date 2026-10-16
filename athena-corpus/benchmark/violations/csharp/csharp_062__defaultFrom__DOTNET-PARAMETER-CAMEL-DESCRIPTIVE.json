@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_062",
+  "language": "csharp",
+  "originalName": "defaultFrom",
+  "injectedName": "default_from",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'default_from' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class TelnyxSmsRequestMapper\n{\n    public static object ToRequestBody(SmsMessage message, string default_from) => new\n    {\n        from = message.From ?? default_from,\n        to = message.To,\n        text = message.Body\n    };\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

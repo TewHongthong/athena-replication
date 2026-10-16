@@ -1,0 +1,47 @@
+{
+  "id": "js_064",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "scripts/build.mjs lines 47-59 (function writeOrCheck); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "async function writeOrCheck(output,generated){\n  const outputFile=resolve(projectRoot,output);\n  if(checkOnly){\n    const current=await readFile(outputFile,'utf8').catch(()=>null);\n    if(current!==generated){\n      console.error(`${output} esta desatualizado. Execute npm run build.`);\n      stale=true;\n    }else console.log(`${output} atualizado e reproduzivel.`);\n  }else{\n    await writeFile(outputFile,generated,'utf8');\n    console.log(`Arquivo atualizado: ${outputFile}`);\n  }\n}",
+  "identifiers": [
+    {
+      "name": "writeOrCheck",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "outputFile",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "output",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "generated",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "current",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "scripts/build.mjs",
+    "startLine": 47,
+    "endLine": 59,
+    "unit": "function writeOrCheck",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__build.mjs.md"
+  }
+}

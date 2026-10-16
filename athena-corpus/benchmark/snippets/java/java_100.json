@@ -1,0 +1,52 @@
+{
+  "id": "java_100",
+  "language": "java",
+  "source": "github:xvDoshik/HubSwap@c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+  "sourceDetail": "src/main/java/ru/heldyy/hubswap/gui/TransitionMode.java lines 3-18 (class TransitionMode); license MIT; repo created 2026-08-04T22:22:23Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public enum TransitionMode {\n    CLASSIC(\"Classic\"),\n    LIGHT(\"Lite\"),\n    LIGHT120(\"Lite 1.20\"),\n    PRIME(\"Prime\");\n\n    private final String displayName;\n\n    TransitionMode(String displayName) {\n        this.displayName = displayName;\n    }\n\n    public String getDisplayName() {\n        return displayName;\n    }\n}",
+  "identifiers": [
+    {
+      "name": "TransitionMode",
+      "kind": "enum",
+      "isCompliant": true
+    },
+    {
+      "name": "getDisplayName",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "CLASSIC",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "LIGHT",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "LIGHT120",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "PRIME",
+      "kind": "enum_member",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "xvDoshik/HubSwap",
+    "repoUrl": "https://github.com/xvDoshik/HubSwap",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-04T22:22:23Z",
+    "commit": "c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+    "path": "src/main/java/ru/heldyy/hubswap/gui/TransitionMode.java",
+    "startLine": 3,
+    "endLine": 18,
+    "unit": "class TransitionMode",
+    "corpusFile": "corpus/java/xvDoshik__HubSwap__TransitionMode.java.md"
+  }
+}

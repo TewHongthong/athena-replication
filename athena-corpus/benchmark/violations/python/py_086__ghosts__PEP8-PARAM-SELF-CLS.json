@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_086",
+  "language": "python",
+  "originalName": "ghosts",
+  "injectedName": "GHOSTS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'GHOSTS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def run(GHOSTS: pd.DataFrame) -> list[Decision]:\n    decisions: list[Decision] = []\n    for _, row in GHOSTS.iterrows():\n        if protection_reason(row) is not None:\n            continue\n        hashtag = \"#vc-junk: ghost-unprotected-surplus\"\n        decisions.append(\n            Decision(\n                id=row[\"Id\"], hash=row[\"Hash\"], name=row[\"Name\"],\n                location=row.get(\"Owner\", \"\"), guardian_class=\"\",\n                action=\"junk\", tag=\"junk\",\n                note=append_tool_clause(row[\"Notes\"], hashtag), kept_id=\"\",\n            )\n        )\n    return decisions",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

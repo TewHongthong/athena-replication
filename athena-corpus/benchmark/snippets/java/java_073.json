@@ -1,0 +1,47 @@
+{
+  "id": "java_073",
+  "language": "java",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/attribute/AttributeDisplay.java lines 127-143 (method AttributeDisplay.displayableAttributes); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public static List<Attribute> displayableAttributes(LivingEntity entity) {\n    if (entity == null) {\n        return List.of();\n    }\n    List<Attribute> preferred = new ArrayList<>();\n    List<Attribute> rest = new ArrayList<>();\n    for (Attribute attribute : ForgeRegistries.ATTRIBUTES) {\n        if (!isDisplayable(attribute) || !entity.getAttributes().hasAttribute(attribute)) {\n            continue;\n        }\n        (PREFERRED_ORDER.contains(attribute) ? preferred : rest).add(attribute);\n    }\n    preferred.sort(Comparator.comparingInt(PREFERRED_ORDER::indexOf));\n    rest.sort(Comparator.comparing(AttributeDisplay::idOf));\n    preferred.addAll(rest);\n    return preferred;\n}",
+  "identifiers": [
+    {
+      "name": "displayableAttributes",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "preferred",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "entity",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "rest",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "attribute",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/attribute/AttributeDisplay.java",
+    "startLine": 127,
+    "endLine": 143,
+    "unit": "method AttributeDisplay.displayableAttributes",
+    "corpusFile": "corpus/java/wanancat__furkin__AttributeDisplay.java.md"
+  }
+}

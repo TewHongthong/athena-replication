@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_082",
+  "language": "javascript",
+  "originalName": "rows",
+  "injectedName": "ROWS",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ROWS' does not match camelCase pattern",
+    "name 'ROWS' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function parseExamImportJson(text){\n  if(typeof text!=='string'||!text.trim()||text.length>2*1024*1024)throw new TypeError('Arquivo vazio ou maior que 2 MB.');\n  let data;try{data=JSON.parse(text)}catch{throw new TypeError('JSON inválido. Verifique a sintaxe do arquivo.')}\n  const raw=data?.exam,ROWS=data?.questions;\n  if(!raw||typeof raw!=='object'||Array.isArray(raw)||!Array.isArray(ROWS)||!ROWS.length||ROWS.length>10000)throw new TypeError('Informe exam e uma lista de 1 a 10.000 questions.');\n  const exam={institution:clean(raw.institution),examName:clean(raw.examName)||`${clean(raw.role)} ${raw.year??''}`.trim(),role:clean(raw.role),board:clean(raw.board),year:raw.year,date:raw.date??null,source:'imported',sourceReference:clean(raw.sourceReference)||null,coverage:raw.coverage??'partial',examTags:unique(Array.isArray(raw.examTags)?raw.examTags.map(clean):[]),expectedQuestionCount:raw.expectedQuestionCount??null};\n  createExam({...exam,id:'exam-preview'});\n  const numbers=new Set();\n  const questions=ROWS.map((row,index)=>{\n    if(!row||typeof row!=='object'||Array.isArray(row)||!Number.isInteger(row.number)||row.number<1||numbers.has(row.number))throw new TypeError(`Questão ${index+1}: número inválido ou duplicado.`);\n    numbers.add(row.number);\n    const subject=clean(row.subject),topic=clean(row.topic),weight=row.weight??null;\n    if(!subject||!topic||subject.length>300||topic.length>300||weight!=null&&(!Number.isFinite(weight)||weight<=0))throw new TypeError(`Questão ${row.number}: disciplina, tópico ou peso inválido.`);\n    return {number:row.number,subject,topic,weight};\n  });\n  if(exam.expectedQuestionCount!=null&&exam.expectedQuestionCount<questions.length)throw new TypeError('O total declarado não pode ser menor que as questões do arquivo.');\n  return {exam,questions};\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

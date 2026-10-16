@@ -1,0 +1,33 @@
+{
+  "snippetId": "cx_typescript_002",
+  "language": "typescript",
+  "standardId": "GOOGLE_TS",
+  "identifierKind": "function",
+  "name": "readHandshake",
+  "codeBare": "export function readHandshake(path: string): Handshake | null {\n  try {\n    const p = JSON.parse(readFileSync(path, \"utf8\")) as Partial<Handshake>;\n    if (typeof p.port !== \"number\" || typeof p.pid !== \"number\" || typeof p.token !== \"string\" || typeof p.protocolVersion !== \"number\") return null;\n    return { protocolVersion: p.protocolVersion, port: p.port, token: p.token, pid: p.pid };\n  } catch {\n    return null;\n  }\n}",
+  "referenceComment": "/** The handshake currently on disk, or null when it is missing or unreadable. */",
+  "ruleIds": [
+    "GTS-JSDOC-TOPLEVEL-EXPORT"
+  ],
+  "origin": "extra",
+  "source": "github:Brainferno/brainferno-mcp-bridge@95695615162b4db4a3189be9dd0ebf9e7d80c129",
+  "sourceDetail": "packages/server/src/bridge/handshake.ts lines 48-56 (function readHandshake); license Apache-2.0; repo created 2026-08-26; curated by athena-comment-units-1.0",
+  "referenceCommentLines": 1,
+  "signature": {
+    "params": 1,
+    "returns": true,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary",
+    "params",
+    "returns"
+  ],
+  "provenance": {
+    "repo": "Brainferno/brainferno-mcp-bridge",
+    "path": "packages/server/src/bridge/handshake.ts",
+    "startLine": 48,
+    "endLine": 56,
+    "corpusFile": "corpus/typescript/Brainferno__brainferno-mcp-bridge__handshake.ts.md"
+  }
+}

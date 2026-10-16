@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_036",
+  "language": "typescript",
+  "originalName": "current",
+  "injectedName": "CURRENT",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CURRENT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function LeaderLoop({ size }: { size: number }) {\n  const reduced = useReducedMotion();\n  const [step, setStep] = useState(0);\n  const value = sequence[step];\n  const lit = value === 0;\n  const progress = useSweep(step, !reduced && !lit);\n\n  useEffect(() => {\n    if (reduced) return;\n    const timer = setTimeout(() => setStep((CURRENT) => (CURRENT + 1) % sequence.length), lit ? holdMs.lit : holdMs.count);\n    return () => clearTimeout(timer);\n  }, [step, reduced, lit]);\n\n  return <LeaderDial size={size} digit={reduced ? 1 : value} lit={!reduced && lit} progress={progress} reducedMotion={reduced} />;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

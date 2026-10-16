@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_067",
+  "language": "java",
+  "originalName": "javascript",
+  "injectedName": "JAVASCRIPT",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'JAVASCRIPT' does not match camelCase pattern",
+    "name 'JAVASCRIPT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "class LoginModalIconsContractTest {\n\n  @Test\n  void signInDialogUsesSharedLucideIconsWithoutObscuringPasswordControls() throws IOException {\n    String JAVASCRIPT = resource(\"/META-INF/resources/login/assets/login-modal.js\");\n    String stylesheet = resource(\"/META-INF/resources/login/assets/login-modal.css\");\n\n    assertFalse(JAVASCRIPT.contains(\"login-dialog-title-icon\"));\n    assertTrue(JAVASCRIPT.contains(\"login-dialog-field-icon lucide-icon icon-user-round\"));\n    assertTrue(JAVASCRIPT.contains(\"login-dialog-field-icon lucide-icon icon-lock\"));\n    assertTrue(JAVASCRIPT.contains(\"login-dialog-button-icon lucide-icon icon-shield-check\"));\n    assertTrue(JAVASCRIPT.contains(\"login-dialog-submit\\\" type=\\\"submit\\\"><span class=\\\"login-dialog-button-icon lucide-icon icon-log-in\\\"\"));\n    assertTrue(stylesheet.contains(\".login-dialog-input-wrap\"));\n    assertTrue(stylesheet.contains(\"padding: 0 42px 0 40px\"));\n    assertTrue(stylesheet.contains(\".login-dialog-input-wrap:focus-within .login-dialog-field-icon\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

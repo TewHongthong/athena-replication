@@ -1,0 +1,17 @@
+{
+  "snippetId": "java_014",
+  "language": "java",
+  "originalName": "FileStorageService",
+  "injectedName": "file_storage_service",
+  "identifierKind": "interface",
+  "violatedRuleId": "GJAVA-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'file_storage_service' does not match PascalCase pattern",
+    "name 'file_storage_service' matches forbidden pattern '^[a-z]'",
+    "name 'file_storage_service' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public interface file_storage_service {\n\n    String store(MultipartFile file);\n\n    Resource load(String fileName);\n\n    String determineContentType(String fileName);\n\n    void delete(String fileUrl);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

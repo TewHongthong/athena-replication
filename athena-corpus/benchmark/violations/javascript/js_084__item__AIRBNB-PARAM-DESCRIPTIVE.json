@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_084",
+  "language": "javascript",
+  "originalName": "item",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function reviewExamClassification({exams=[],examQuestions=[],subjects=[]},{examId,questionNumber,topicId,confidence,now,idGenerator}={}){\n  const exam=exams.find(i=>i.id===examId),subject=subjects.find(i=>!i.archived&&(i.topics||[]).some(topic=>topic.id===topicId&&!topic.archived&&isTopicInExamScope(topic,exam?.examTags||[])));\n  if(!exam||!subject||!Number.isInteger(questionNumber)||questionNumber<1||!Number.isFinite(confidence)||confidence<0||confidence>1||!Number.isFinite(Date.parse(now))||typeof idGenerator!=='function')throw new TypeError('Escolha uma prova, questão, tópico e confiança válidos.');\n  const existing=examQuestions.find(i=>i.examId===examId&&i.questionNumber===questionNumber);\n  const pending=(exam.unresolvedQuestions||[]).find(i=>i.number===questionNumber);\n  if(!existing&&!pending)throw new TypeError('Questão histórica não encontrada.');\n  const question=createExamQuestion({id:existing?.id||idGenerator('exam-question'),examId,subjectId:subject.id,topicId,questionNumber,weight:existing?.weight??pending?.weight??null,source:existing?.source||exam.sourceReference||'',classification:{method:'manual',confidence,reviewedAt:now}});\n  const nextQuestions=examQuestions.map(i=>i===existing?question:i);\n  if(!existing)nextQuestions.push(question);\n  const unresolvedQuestions=(exam.unresolvedQuestions||[]).filter(i=>i.number!==questionNumber);\n  const count=exam.importedQuestionCount==null?null:Math.max(exam.importedQuestionCount,new Set(nextQuestions.filter(i=>i.examId===examId).map(i=>i.questionNumber)).size+unresolvedQuestions.length);\n  const coverage=exam.declaredCoverage==='complete'&&!unresolvedQuestions.length&&(exam.expectedQuestionCount==null||count===exam.expectedQuestionCount)?'complete':exam.coverage;\n  const nextExam=createExam({...exam,coverage,importedQuestionCount:count,unresolvedQuestions});\n  return {exams:exams.map(i=>i===exam?nextExam:i),examQuestions:nextQuestions,question};\n}",
+  "occurrencesRenamed": 22,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

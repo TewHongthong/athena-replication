@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_034",
+  "language": "typescript",
+  "originalName": "reducedMotion",
+  "injectedName": "reduced_motion",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'reduced_motion' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface LeaderDialProps {\n  size: number;\n  digit: number | null;\n  progress: Animated.Value;\n  lit?: boolean;\n  reduced_motion?: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

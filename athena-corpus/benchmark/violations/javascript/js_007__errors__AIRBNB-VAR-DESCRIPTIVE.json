@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_007",
+  "language": "javascript",
+  "originalName": "errors",
+  "injectedName": "e",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'e' shorter than minLength=2",
+    "name 'e' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function createErrorList() {\n  const e = [];\n  Object.defineProperty(e, \"push\", {\n    value(...messages) {\n      const remaining = LIMITS.validationErrors - this.length;\n      if (remaining > 0) {\n        Array.prototype.push.apply(this, messages.slice(0, remaining).map(escapeUnsafeDiagnosticCharacters));\n      }\n      return this.length;\n    },\n  });\n  return e;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

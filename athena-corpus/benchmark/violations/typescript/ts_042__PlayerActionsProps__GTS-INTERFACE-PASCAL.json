@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_042",
+  "language": "typescript",
+  "originalName": "PlayerActionsProps",
+  "injectedName": "player_actions_props",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'player_actions_props' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "interface player_actions_props {\n  recording: Recording;\n  stacked: boolean;\n  onDelete: () => Promise<void>;\n  onMessage: (text: string) => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

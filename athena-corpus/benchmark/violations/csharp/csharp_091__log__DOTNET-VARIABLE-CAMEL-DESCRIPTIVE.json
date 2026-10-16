@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_091",
+  "language": "csharp",
+  "originalName": "log",
+  "injectedName": "LOG",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'LOG' does not match camelCase pattern",
+    "name 'LOG' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static void Save(string zipPath, DictationController c)\n{\n    if (File.Exists(zipPath)) File.Delete(zipPath);\n    using var zip = ZipFile.Open(zipPath, ZipArchiveMode.Create);\n    Add(zip, \"about.txt\", Report(c));\n    Add(zip, \"settings.json\", Redact(RedactedSettings(c.Settings).ToJson()));\n    string LOG = \"\";\n    try { if (File.Exists(AppPaths.LogFile)) LOG = File.ReadAllText(AppPaths.LogFile); }\n    catch (IOException) { /* being written; leave it out */ }\n    Add(zip, \"log.txt\", Redact(LOG));\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

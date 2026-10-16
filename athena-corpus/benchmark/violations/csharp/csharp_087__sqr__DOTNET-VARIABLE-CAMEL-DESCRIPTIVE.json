@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_087",
+  "language": "csharp",
+  "originalName": "sqr",
+  "injectedName": "SQR",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'SQR' does not match camelCase pattern",
+    "name 'SQR' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private GameObject FindNearestHubTo(Vector3 worldPos)\n{\n    if (hubCache == null)\n        hubCache = GameObject.FindGameObjectsWithTag(\"Hub\");\n\n    GameObject best = null;\n    float bestSqr = float.PositiveInfinity;\n    foreach (GameObject hub in hubCache)\n    {\n        if (hub == null) continue;\n        float SQR = (hub.transform.position - worldPos).sqrMagnitude;\n        if (SQR < bestSqr)\n        {\n            bestSqr = SQR;\n            best = hub;\n        }\n    }\n    return best;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

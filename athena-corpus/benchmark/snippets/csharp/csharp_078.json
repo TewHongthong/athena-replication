@@ -1,0 +1,47 @@
+{
+  "id": "csharp_078",
+  "language": "csharp",
+  "source": "github:thecheetoman/ESim@59cde034d0041d0af0a43cdf7e43d979935b7db8",
+  "sourceDetail": "Assets/Scripts/Robot/Drivecontroller.cs lines 31-37 (class WorldAxis); license MIT; repo created 2026-09-16T23:28:41Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public enum WorldAxis\n{\n    PositiveZ,\n    PositiveX,\n    NegativeZ,\n    NegativeX,\n}",
+  "identifiers": [
+    {
+      "name": "WorldAxis",
+      "kind": "enum",
+      "isCompliant": true
+    },
+    {
+      "name": "PositiveZ",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "PositiveX",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "NegativeZ",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "NegativeX",
+      "kind": "enum_member",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "thecheetoman/ESim",
+    "repoUrl": "https://github.com/thecheetoman/ESim",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-16T23:28:41Z",
+    "commit": "59cde034d0041d0af0a43cdf7e43d979935b7db8",
+    "path": "Assets/Scripts/Robot/Drivecontroller.cs",
+    "startLine": 31,
+    "endLine": 37,
+    "unit": "class WorldAxis",
+    "corpusFile": "corpus/csharp/thecheetoman__ESim__Drivecontroller.cs.md"
+  }
+}

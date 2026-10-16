@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_049",
+  "language": "python",
+  "originalName": "event_id",
+  "injectedName": "EVENT_ID",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'EVENT_ID' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class AuditLog(Base):\n    __tablename__ = \"audit_logs\"\n\n    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)\n    guest_id = Column(UUID(as_uuid=True), index=True, nullable=True)\n    EVENT_ID = Column(UUID(as_uuid=True), index=True, nullable=True)\n    action = Column(String(255), nullable=False)\n    timestamp = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,66 @@
+# src/vault_cleaner/rules/ghosts.py
+
+- source repo: tonym999/vault-cleaner
+- repo url: https://github.com/tonym999/vault-cleaner
+- license: MIT
+- created_at: 2026-07-18T09:39:13Z
+- file path: src/vault_cleaner/rules/ghosts.py
+- commit: 1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372
+
+```python
+"""Ghost shell cleanup pass (#8).
+
+Policy (maintainer decision, PR #15): ghosts carry no quality signal — mods move
+freely between shells, DIM's Energy Capacity / Masterwork Tier columns are
+empty in current exports (retired system), and dismantled shells can be
+reacquired from Collections. So there is no "best" to rank, and this pass
+went through a ranking design before landing here — see WORKLOG 2026-07-19.
+A shell is kept only for explicit reasons:
+
+- tagged favorite/keep/archive or equipped (as everywhere),
+- locked — for ghosts the lock IS the keep signal, so no `#vc-review`,
+- referenced by a saved DIM loadout (`Loadouts` column non-empty).
+
+Everything else — including unlocked Exotic-rarity shells; rarity is
+cosmetic for ghosts — is junked as `#vc-junk: ghost-unprotected-surplus`.
+Dry-run, DIM import review, and the in-game dismantle remain the gates.
+"""
+
+from __future__ import annotations
+
+import pandas as pd
+
+from vault_cleaner.note_history import append_tool_clause
+from vault_cleaner.rules import rails
+from vault_cleaner.rules.dupes import Decision
+
+
+def protection_reason(row: pd.Series) -> str | None:
+    tag = row.get("Tag", "")
+    if tag in rails.HARD_PROTECT_TAGS:
+        return f"dim-tag:{tag}"
+    if rails.is_true(row.get("Equipped", "")):
+        return "equipped"
+    if rails.is_true(row.get("Locked", "")):
+        return "locked"
+    if str(row.get("Loadouts", "")).strip():
+        return "loadout"
+    return None
+
+
+def run(ghosts: pd.DataFrame) -> list[Decision]:
+    decisions: list[Decision] = []
+    for _, row in ghosts.iterrows():
+        if protection_reason(row) is not None:
+            continue
+        hashtag = "#vc-junk: ghost-unprotected-surplus"
+        decisions.append(
+            Decision(
+                id=row["Id"], hash=row["Hash"], name=row["Name"],
+                location=row.get("Owner", ""), guardian_class="",
+                action="junk", tag="junk",
+                note=append_tool_clause(row["Notes"], hashtag), kept_id="",
+            )
+        )
+    return decisions
+```

@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_052",
+  "language": "javascript",
+  "originalName": "waitMs",
+  "injectedName": "l",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function createDebouncer(l) {\n  const timers = new Map()\n\n  function schedule(key, callback) {\n    cancel(key)\n\n    const timer = setTimeout(() => {\n      timers.delete(key)\n      void Promise.resolve()\n        .then(callback)\n        .catch(() => {})\n    }, l)\n\n    timers.set(key, timer)\n  }\n\n  function cancel(key) {\n    const timer = timers.get(key)\n    if (!timer) return false\n\n    clearTimeout(timer)\n    timers.delete(key)\n    return true\n  }\n\n  function cancelAll() {\n    for (const timer of timers.values()) {\n      clearTimeout(timer)\n    }\n    timers.clear()\n  }\n\n  return { schedule, cancel, cancelAll }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

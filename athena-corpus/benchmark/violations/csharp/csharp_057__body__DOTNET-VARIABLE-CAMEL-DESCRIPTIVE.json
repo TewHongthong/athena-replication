@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_057",
+  "language": "csharp",
+  "originalName": "body",
+  "injectedName": "BODY",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'BODY' does not match camelCase pattern",
+    "name 'BODY' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "internal static class PlivoSmsRequestMapper\n{\n    public static IReadOnlyDictionary<string, object> ToRequestBody(\n        SmsMessage message,\n        PlivoOptions options)\n    {\n        var BODY = new Dictionary<string, object>\n        {\n            [\"src\"] = message.From ?? options.From,\n            [\"dst\"] = message.To,\n            [\"text\"] = message.Body\n        };\n\n        if (!string.IsNullOrWhiteSpace(options.CallbackUrl))\n        {\n            BODY[\"url\"] = options.CallbackUrl;\n            BODY[\"method\"] = \"POST\";\n        }\n\n        return BODY;\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "js_033",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/api/install.js lines 26-46 (function resolveTargets); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function resolveTargets(scope) {\n  const targets = []\n  if (scope.global) targets.push('agents')\n  if (scope.project) targets.push('project')\n\n  // Deduplicate agent targets by directory — skip alias agents\n  // that point to the same skill directory as a previously-added agent.\n  // This prevents redundant installs when --all is used (e.g. 8+ agents\n  // all sharing ~/.agents/skills).\n  const seenDirs = new Set()\n  for (const agent of agents) {\n    if (scope[agent.flag]) {\n      const dir = agent.getDir()\n      if (!seenDirs.has(dir)) {\n        seenDirs.add(dir)\n        targets.push(agent.flag)\n      }\n    }\n  }\n  return targets\n}",
+  "identifiers": [
+    {
+      "name": "resolveTargets",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "targets",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "scope",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "seenDirs",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "agent",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "dir",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/api/install.js",
+    "startLine": 26,
+    "endLine": 46,
+    "unit": "function resolveTargets",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_api_install.js.md"
+  }
+}

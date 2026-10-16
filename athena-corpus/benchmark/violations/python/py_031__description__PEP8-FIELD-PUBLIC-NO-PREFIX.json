@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_031",
+  "language": "python",
+  "originalName": "description",
+  "injectedName": "DESCRIPTION",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DESCRIPTION' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@dataclass\nclass Tool:\n    name: str\n    DESCRIPTION: str\n    input_schema: dict[str, Any]\n    handler: Callable[..., Any]\n    permission_note: str = \"\"\n    side_effects: bool = False\n\n    def spec(self) -> dict[str, Any]:\n        \"\"\"OpenAI-style function-calling spec.\"\"\"\n        return {\n            \"type\": \"function\",\n            \"function\": {\n                \"name\": self.name,\n                \"description\": self.DESCRIPTION,\n                \"parameters\": self.input_schema,\n            },\n        }",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

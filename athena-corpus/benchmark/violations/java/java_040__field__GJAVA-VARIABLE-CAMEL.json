@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_040",
+  "language": "java",
+  "originalName": "field",
+  "injectedName": "FIELD",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'FIELD' does not match camelCase pattern",
+    "name 'FIELD' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static void applySession(SavedAccount logged) {\n    MinecraftClient mc = MinecraftClient.getInstance();\n    try {\n        Object session = createSession(logged);\n        if (session == null) {\n            status.set(\"Angemeldet als \" + logged.name + \" (Session-API nicht gesetzt, nach Relog gilt der Token)\");\n            return;\n        }\n        boolean set = false;\n        for (Field FIELD : MinecraftClient.class.getDeclaredFields()) {\n            if (Modifier.isStatic(FIELD.getModifiers())) {\n                continue;\n            }\n            String type = FIELD.getType().getName();\n            if (type.endsWith(\"Session\") || type.endsWith(\".User\")) {\n                FIELD.setAccessible(true);\n                FIELD.set(mc, session);\n                set = true;\n            }\n            if (type.contains(\"CompletableFuture\") && FIELD.getName().toLowerCase().contains(\"gameprofile\")) {\n                FIELD.setAccessible(true);\n                FIELD.set(mc, java.util.concurrent.CompletableFuture.completedFuture(null));\n            }\n        }\n        SkinPreview.requestOwn();\n        try {\n            mc.getSkinProvider().fetchSkinTextures(mc.getGameProfile());\n        } catch (Throwable ignored) {\n        }\n        status.set(set\n                ? \"Angemeldet als \" + logged.name + \" — für Server neu joinen\"\n                : \"Account gespeichert: \" + logged.name);\n    } catch (Throwable t) {\n        status.set(\"Account gespeichert: \" + logged.name);\n        SkinPreview.requestOwn();\n    }\n}",
+  "occurrencesRenamed": 8,
+  "commentOccurrencesRenamed": 0
+}

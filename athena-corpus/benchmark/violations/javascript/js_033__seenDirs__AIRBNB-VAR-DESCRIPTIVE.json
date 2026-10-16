@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_033",
+  "language": "javascript",
+  "originalName": "seenDirs",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function resolveTargets(scope) {\n  const targets = []\n  if (scope.global) targets.push('agents')\n  if (scope.project) targets.push('project')\n\n  // Deduplicate agent targets by directory — skip alias agents\n  // that point to the same skill directory as a previously-added agent.\n  // This prevents redundant installs when --all is used (e.g. 8+ agents\n  // all sharing ~/.agents/skills).\n  const l = new Set()\n  for (const agent of agents) {\n    if (scope[agent.flag]) {\n      const dir = agent.getDir()\n      if (!l.has(dir)) {\n        l.add(dir)\n        targets.push(agent.flag)\n      }\n    }\n  }\n  return targets\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_063",
+  "language": "csharp",
+  "originalName": "ReadMetadata",
+  "injectedName": "read_metadata",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'read_metadata' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class TermiiSmsRequestMapper\n{\n    public static object ToRequestBody(SmsMessage message, TermiiOptions options) => new\n    {\n        to = message.To,\n        from = message.From ?? options.From,\n        sms = message.Body,\n        type = read_metadata(message, \"type\") ?? \"plain\",\n        channel = read_metadata(message, \"channel\") ?? options.Channel,\n        api_key = options.ApiKey\n    };\n\n    private static string? read_metadata(SmsMessage message, string key)\n    {\n        if (message.Metadata is null)\n            return null;\n\n        return message.Metadata.TryGetValue(key, out var value) && !string.IsNullOrWhiteSpace(value)\n            ? value\n            : null;\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

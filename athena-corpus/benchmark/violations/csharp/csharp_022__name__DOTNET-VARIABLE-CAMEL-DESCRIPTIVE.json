@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_022",
+  "language": "csharp",
+  "originalName": "name",
+  "injectedName": "NAME",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'NAME' does not match camelCase pattern",
+    "name 'NAME' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static IEnumerable<(string Id, string Sql)> LoadScripts()\n{\n    var asm = typeof(MigrationRunner).Assembly;\n    var names = asm.GetManifestResourceNames()\n        .Where(n => n.StartsWith(ScriptPrefix) && n.EndsWith(\".sql\"))\n        .OrderBy(n => n, StringComparer.Ordinal);\n\n    foreach (var NAME in names)\n    {\n        using var stream = asm.GetManifestResourceStream(NAME)!;\n        using var reader = new StreamReader(stream);\n        var id = NAME[ScriptPrefix.Length..];\n        yield return (id, reader.ReadToEnd());\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

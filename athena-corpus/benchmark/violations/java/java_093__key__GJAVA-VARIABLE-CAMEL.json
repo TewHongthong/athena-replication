@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_093",
+  "language": "java",
+  "originalName": "key",
+  "injectedName": "KEY",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'KEY' does not match camelCase pattern",
+    "name 'KEY' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public void recordSwitch(String mode, int number) {\n    totalSwitches++;\n    sessionSwitches++;\n    String KEY = mode + \"_\" + number;\n    serverCounts.merge(KEY, 1L, Long::sum);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

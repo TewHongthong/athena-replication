@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_021",
+  "language": "csharp",
+  "originalName": "CreatedAt",
+  "injectedName": "created_at",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'created_at' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed class Tag\n{\n    public int Id { get; set; }\n    public string Name { get; set; } = string.Empty;\n    public int ItemCount { get; set; }\n    public DateTimeOffset created_at { get; set; }\n    public DateTimeOffset UpdatedAt { get; set; }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

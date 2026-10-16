@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_091",
+  "language": "typescript",
+  "originalName": "data",
+  "injectedName": "DATA",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DATA' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Area1() {\n  const motion = useChartMotion()\n  const DATA = [186, 305, 237, 273, 209, 314].map((facturado, i) => ({ mes: MESES[i], facturado: facturado * 1000 }))\n  const config = { facturado: { label: \"Facturado\" } } satisfies ChartConfig\n  return (\n    <Card className=\"w-full max-w-lg\" size=\"sm\">\n      <CardHeader>\n        <CardTitle>Facturado por mes</CardTitle>\n        <CardDescription>Primer semestre, en pesos.</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <ChartContainer className=\"aspect-[2/1]\" config={config}>\n          <AreaChart data={DATA} margin={{ left: 4, right: 4, top: 8 }} responsive>\n            <CartesianGrid vertical={false} />\n            <XAxis axisLine={false} dataKey=\"mes\" tickLine={false} tickMargin={8} />\n            <ChartTooltip content={<ChartTooltipContent formatter={pesos} indicator=\"line\" />} cursor />\n            <Area\n              dataKey=\"facturado\"\n              fill=\"var(--color-facturado)\"\n              fillOpacity={0.1}\n              stroke=\"var(--color-facturado)\"\n              strokeWidth={2}\n              type=\"monotone\"\n              {...motion}\n            />\n          </AreaChart>\n        </ChartContainer>\n      </CardContent>\n    </Card>\n  )\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

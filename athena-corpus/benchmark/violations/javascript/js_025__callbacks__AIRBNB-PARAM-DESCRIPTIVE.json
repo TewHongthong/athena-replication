@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_025",
+  "language": "javascript",
+  "originalName": "callbacks",
+  "injectedName": "c",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'c' shorter than minLength=2",
+    "name 'c' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function installBundleSources(\n  sources,\n  options = {},\n  c = {},\n) {\n  const results = []\n  const installOpts = {\n    scope: { global: true, project: true },\n    yes: options.yes ?? false,\n    noMcp: options.noMcp ?? false,\n  }\n  let installed = 0\n  let failed = 0\n  for (const [index, source] of sources.entries()) {\n    c.onStart?.(source, index)\n    try {\n      const details = await apiInstallSkills(source, installOpts)\n      installed++\n      results.push({ source, status: 'ok', details })\n    } catch (error) {\n      failed++\n      results.push({ source, status: 'failed', error: error?.message })\n      c.onError?.(source, error)\n    }\n  }\n  return { installed, failed, results }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

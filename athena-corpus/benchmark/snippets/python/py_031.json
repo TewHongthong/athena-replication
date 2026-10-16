@@ -1,0 +1,52 @@
+{
+  "id": "py_031",
+  "language": "python",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/registry.py lines 71-89 (class Tool); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@dataclass\nclass Tool:\n    name: str\n    description: str\n    input_schema: dict[str, Any]\n    handler: Callable[..., Any]\n    permission_note: str = \"\"\n    side_effects: bool = False\n\n    def spec(self) -> dict[str, Any]:\n        \"\"\"OpenAI-style function-calling spec.\"\"\"\n        return {\n            \"type\": \"function\",\n            \"function\": {\n                \"name\": self.name,\n                \"description\": self.description,\n                \"parameters\": self.input_schema,\n            },\n        }",
+  "identifiers": [
+    {
+      "name": "Tool",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "spec",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "description",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "input_schema",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "handler",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/registry.py",
+    "startLine": 71,
+    "endLine": 89,
+    "unit": "class Tool",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__registry.py.md"
+  }
+}

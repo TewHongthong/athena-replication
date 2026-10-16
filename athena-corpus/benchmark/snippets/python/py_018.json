@@ -1,0 +1,52 @@
+{
+  "id": "py_018",
+  "language": "python",
+  "source": "github:Nikhils-G/podium@64d18bf7ed5c1eef58d5397ff282807ceb3bf23e",
+  "sourceDetail": "src/podium/models/integrations.py lines 33-55 (class WebhookDelivery); license MIT; repo created 2026-09-26T18:48:58Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class WebhookDelivery(Base):\n    __tablename__ = \"webhook_deliveries\"\n\n    id: Mapped[int] = mapped_column(primary_key=True)\n    webhook_id: Mapped[int] = mapped_column(\n        ForeignKey(\"webhooks.id\", ondelete=\"CASCADE\"), index=True\n    )\n    event_type: Mapped[str] = mapped_column(String(64), nullable=False)\n    payload: Mapped[dict] = mapped_column(JSON, default=dict, nullable=False)\n    status: Mapped[DeliveryStatus] = mapped_column(\n        Enum(DeliveryStatus, native_enum=False, length=20, validate_strings=True),\n        default=DeliveryStatus.pending,\n        nullable=False,\n        index=True,\n    )\n    attempts: Mapped[int] = mapped_column(Integer, default=0, nullable=False)\n    last_status_code: Mapped[int | None] = mapped_column(Integer)\n    last_error: Mapped[str | None] = mapped_column(Text)\n    next_attempt_at: Mapped[datetime | None] = mapped_column(UTCDateTime, index=True)\n    created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow, nullable=False)\n    delivered_at: Mapped[datetime | None] = mapped_column(UTCDateTime)\n\n    webhook: Mapped[Webhook] = relationship(back_populates=\"deliveries\")",
+  "identifiers": [
+    {
+      "name": "WebhookDelivery",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "webhook_id",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "event_type",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "payload",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "status",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "attempts",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Nikhils-G/podium",
+    "repoUrl": "https://github.com/Nikhils-G/podium",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T18:48:58Z",
+    "commit": "64d18bf7ed5c1eef58d5397ff282807ceb3bf23e",
+    "path": "src/podium/models/integrations.py",
+    "startLine": 33,
+    "endLine": 55,
+    "unit": "class WebhookDelivery",
+    "corpusFile": "corpus/python/Nikhils-G__podium__integrations.py.md"
+  }
+}

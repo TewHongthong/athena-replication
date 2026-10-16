@@ -1,0 +1,42 @@
+{
+  "id": "csharp_056",
+  "language": "csharp",
+  "source": "github:teesofttech/SMSBridge@1b400e9c1804dc01402d0b9769db5475f76d3785",
+  "sourceDetail": "src/SmsBridge/Providers/MessageBird/MessageBirdSmsRequestMapper.cs lines 5-17 (class MessageBirdSmsRequestMapper); license MIT; repo created 2026-06-13; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "internal static class MessageBirdSmsRequestMapper\n{\n    public static IReadOnlyDictionary<string, string> ToFormFields(\n        SmsMessage message,\n        string defaultFrom) =>\n        new Dictionary<string, string>\n        {\n            [\"originator\"] = message.From ?? defaultFrom,\n            [\"recipients\"] = message.To.TrimStart('+'),\n            [\"body\"] = message.Body,\n            [\"datacoding\"] = \"auto\"\n        };\n}",
+  "identifiers": [
+    {
+      "name": "MessageBirdSmsRequestMapper",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "ToFormFields",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "message",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "defaultFrom",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "teesofttech/SMSBridge",
+    "repoUrl": "https://github.com/teesofttech/SMSBridge",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-13",
+    "commit": "1b400e9c1804dc01402d0b9769db5475f76d3785",
+    "path": "src/SmsBridge/Providers/MessageBird/MessageBirdSmsRequestMapper.cs",
+    "startLine": 5,
+    "endLine": 17,
+    "unit": "class MessageBirdSmsRequestMapper",
+    "corpusFile": "corpus/csharp/teesofttech__SMSBridge__MessageBirdSmsRequestMapper.cs.md"
+  }
+}

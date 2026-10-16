@@ -1,0 +1,52 @@
+{
+  "id": "js_087",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/exams/exam-scope-transition.js lines 3-11 (function setActiveExamTags); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function setActiveExamTags(state,tags=[],{configuredAt=null}={}){\n  if(!state?.examBlueprint)throw new TypeError('Estado da prova inválido.');\n  const next=normalizeExamTags(tags),changed=JSON.stringify(next)!==JSON.stringify(normalizeExamTags(state.examBlueprint.activeExamTags));\n  if(!changed)return false;\n  state.examBlueprint.activeExamTags=next;\n  if(configuredAt)state.examBlueprint.configuredAt=configuredAt;\n  for(const field of DERIVED_FIELDS)if(field in state)state[field]=null;\n  return true;\n}",
+  "identifiers": [
+    {
+      "name": "setActiveExamTags",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "next",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "state",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "tags",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "changed",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "field",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/exams/exam-scope-transition.js",
+    "startLine": 3,
+    "endLine": 11,
+    "unit": "function setActiveExamTags",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__exam-scope-transition.js.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_051",
+  "language": "python",
+  "originalName": "created_at",
+  "injectedName": "CREATED_AT",
+  "identifierKind": "field",
+  "violatedRuleId": "PEP8-FIELD-PUBLIC-NO-PREFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CREATED_AT' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "class UserResponse(UserBase):\n    id: UUID\n    CREATED_AT: datetime\n    updated_at: datetime\n\n    class Config:\n        from_attributes = True",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

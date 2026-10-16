@@ -1,0 +1,62 @@
+{
+  "gscs_cpp_001": {
+    "status": "ran",
+    "stdout": "3.3333\n0.0000\n4.0000\n",
+    "detail": ""
+  },
+  "gscs_cpp_002": {
+    "status": "ran",
+    "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n",
+    "detail": ""
+  },
+  "gscs_cpp_004": {
+    "status": "ran",
+    "stdout": "Bob\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 30\n",
+    "detail": ""
+  },
+  "gscs_cpp_005": {
+    "status": "ran",
+    "stdout": "9.2500\n-2.0000\n3.5000\n",
+    "detail": ""
+  },
+  "gscs_java_001": {
+    "status": "ran",
+    "stdout": "3.3333\n0.0000\n4.0000\n",
+    "detail": ""
+  },
+  "gscs_java_002": {
+    "status": "ran",
+    "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n",
+    "detail": ""
+  },
+  "gscs_java_004": {
+    "status": "ran",
+    "stdout": "7.25\n",
+    "detail": ""
+  },
+  "gscs_java_005": {
+    "status": "ran",
+    "stdout": "100.0000\n0.0000\n37.0000\n",
+    "detail": ""
+  },
+  "gscs_python_001": {
+    "status": "ran",
+    "stdout": "3.3333\n0.0000\n4.0000\n",
+    "detail": ""
+  },
+  "gscs_python_002": {
+    "status": "ran",
+    "stdout": "Alice 3.5\nZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 2.25\n",
+    "detail": ""
+  },
+  "gscs_python_004": {
+    "status": "ran",
+    "stdout": "30\n100\n100\n",
+    "detail": ""
+  },
+  "gscs_python_005": {
+    "status": "ran",
+    "stdout": "12.35\n0.0\n7.0\n",
+    "detail": ""
+  }
+}

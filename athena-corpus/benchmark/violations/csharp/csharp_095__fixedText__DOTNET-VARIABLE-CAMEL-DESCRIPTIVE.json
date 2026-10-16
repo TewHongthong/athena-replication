@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_095",
+  "language": "csharp",
+  "originalName": "fixedText",
+  "injectedName": "fixed_text",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'fixed_text' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public static string Apply(string text)\n{\n    if (string.IsNullOrWhiteSpace(text)) return text;\n    int searchFrom = 0;\n    for (int guard = 0; guard < 12 && searchFrom <= text.Length; guard++)\n    {\n        var m = Cue.Match(text, searchFrom);\n        if (!m.Success) break;\n        string? fixed_text = TryCorrect(text, m);\n        if (fixed_text == null)\n        {\n            searchFrom = m.Index + m.Length; // ordinary speech; look further on\n            continue;\n        }\n        text = fixed_text;\n        searchFrom = 0;\n    }\n    return text;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

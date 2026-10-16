@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_031",
+  "language": "javascript",
+  "originalName": "parseSkillContent",
+  "injectedName": "parse_skill_content",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'parse_skill_content' does not match camelCase pattern",
+    "name 'parse_skill_content' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "function parse_skill_content(skillDir) {\n  const skillPath = join(skillDir, 'SKILL.md')\n  try {\n    const raw = readFileSync(skillPath, 'utf-8')\n    const { attrs, body } = parseFrontmatter(raw)\n    const sections = splitSections(body)\n    return { attrs, sections }\n  } catch {\n    return null\n  }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

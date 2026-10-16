@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_055",
+  "language": "javascript",
+  "originalName": "lock",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' shorter than minLength=2",
+    "name 'l' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export async function addSkillToLock(\n  slug,\n  entry,\n  lockPath = getGlobalLockPath(),\n) {\n  const l = await readLock(lockPath)\n  const existing = l.skills[slug]\n\n  const mergedAgents = existing?.agents\n    ? [...new Set([...existing.agents, ...(entry.agents || [])])]\n    : entry.agents || []\n\n  pushHistory(l, slug, entry)\n\n  const history = l.skills[slug]?.history || []\n\n  l.skills[slug] = {\n    ...entry,\n    agents: mergedAgents,\n    installedAt: new Date().toISOString(),\n    history,\n  }\n\n  await writeLock(l, lockPath)\n\n  return l\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0
+}

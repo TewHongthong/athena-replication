@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_076",
+  "language": "python",
+  "originalName": "runs",
+  "injectedName": "RUNS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RUNS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def summarize(RUNS: list[dict]) -> dict:\n    f1 = np.array([r[\"test_macro_f1\"] for r in RUNS])\n    rec = {c: np.array([r[\"test_recall\"][c] for r in RUNS]) for c in CLASSES}\n    return {\"macro_f1_mean_std_min_max\": [round(float(f1.mean()), 4), round(float(f1.std(ddof=1)), 4),\n                                          float(f1.min()), float(f1.max())],\n            \"recall_mean_std_min_max\": {c: [round(float(v.mean()), 4), round(float(v.std(ddof=1)), 4),\n                                            float(v.min()), float(v.max())] for c, v in rec.items()},\n            \"seeds_with_all_recall_ge_0.50\": int(sum(min(r[\"test_recall\"].values()) >= 0.5 for r in RUNS))}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

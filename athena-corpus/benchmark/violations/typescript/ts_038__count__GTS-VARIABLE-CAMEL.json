@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_038",
+  "language": "typescript",
+  "originalName": "count",
+  "injectedName": "COUNT",
+  "identifierKind": "variable",
+  "violatedRuleId": "GTS-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'COUNT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function Perforations({ width, pitch = 13 }: { width: number; pitch?: number }) {\n  const COUNT = Math.max(4, Math.floor(width / pitch));\n  return (\n    <View style={styles.row} accessibilityElementsHidden importantForAccessibility=\"no-hide-descendants\">\n      {Array.from({ length: COUNT }, (_, index) => (\n        <View key={index} style={styles.hole} />\n      ))}\n    </View>\n  );\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_064",
+  "language": "typescript",
+  "originalName": "mimeType",
+  "injectedName": "mime_type",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'mime_type' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface NewRecording {\n  uri: string;\n  mime_type: string;\n  durationMs: number;\n  facing: Facing;\n  source: CaptureSource;\n  blob?: Blob;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

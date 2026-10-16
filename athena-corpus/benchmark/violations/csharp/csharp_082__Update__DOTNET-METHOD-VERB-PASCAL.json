@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_082",
+  "language": "csharp",
+  "originalName": "Update",
+  "injectedName": "update",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'update' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "void update()\n{\n    if (!isEnabled) return;\n\n    bool deployPressed = Input.GetKeyDown(deployKey)\n        || (PlayerInputHandler.Instance != null && PlayerInputHandler.Instance.DeployPressedThisFrame());\n\n    if (deployPressed)\n    {\n        isDeployed = !isDeployed;\n    }\n\n    float targetAngle = isDeployed ? extendedAngle : retractedAngle;\n\n    currentAngle = Mathf.MoveTowards(currentAngle, targetAngle, rotationSpeed * Time.deltaTime * 100f);\n\n    transform.localRotation = Quaternion.Euler(angleOffset) * Quaternion.AngleAxis(currentAngle, rotationAxis);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

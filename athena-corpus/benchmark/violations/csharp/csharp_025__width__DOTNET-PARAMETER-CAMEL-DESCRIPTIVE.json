@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_025",
+  "language": "csharp",
+  "originalName": "width",
+  "injectedName": "WIDTH",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'WIDTH' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public static class ImageUrls\n{\n    public static string? For(int? imageId, string? fallbackUrl = null, int? WIDTH = null)\n    {\n        if (imageId is { } id)\n            return WIDTH is { } w ? $\"/img/{id}?w={w}\" : $\"/img/{id}\";\n        return string.IsNullOrWhiteSpace(fallbackUrl) ? null : fallbackUrl;\n    }\n\n    public static bool Has(int? imageId, string? fallbackUrl = null) =>\n        imageId is not null || !string.IsNullOrWhiteSpace(fallbackUrl);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

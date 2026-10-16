@@ -1,0 +1,52 @@
+{
+  "id": "java_042",
+  "language": "java",
+  "source": "github:KingF3rdi/aero-client@d8888aba64351257362cd47f69282311dd942c8f",
+  "sourceDetail": "src/main/java/dev/aero/client/cosmetic/CapeTextures.java lines 62-90 (method CapeTextures.load); license MIT; repo created 2026-09-20T13:19:19Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "private static Tex load(String capeId) {\n    MinecraftClient mc = MinecraftClient.getInstance();\n    Identifier packed = Identifier.of(\"aero\", \"textures/cape/\" + capeId + \".png\");\n    try {\n        var res = mc.getResourceManager().getResource(packed);\n        if (res.isPresent()) {\n            try (InputStream in = res.get().getInputStream()) {\n                NativeImage img = NativeImage.read(in);\n                Tex tex = new Tex(packed, img.getWidth(), img.getHeight());\n                img.close();\n                return tex;\n            }\n        }\n    } catch (Throwable ignored) {\n    }\n    try {\n        Path file = folder().resolve(capeId + \".png\");\n        if (Files.isRegularFile(file)) {\n            try (InputStream in = Files.newInputStream(file)) {\n                NativeImage image = NativeImage.read(in);\n                Identifier id = Identifier.of(\"aero\", \"dyncape/\" + capeId);\n                mc.getTextureManager().registerTexture(id, new NativeImageBackedTexture(() -> \"aero cape \" + capeId, image));\n                return new Tex(id, image.getWidth(), image.getHeight());\n            }\n        }\n    } catch (Throwable ignored) {\n    }\n    return null;\n}",
+  "identifiers": [
+    {
+      "name": "load",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "packed",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "capeId",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "res",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "img",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "tex",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "KingF3rdi/aero-client",
+    "repoUrl": "https://github.com/KingF3rdi/aero-client",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-20T13:19:19Z",
+    "commit": "d8888aba64351257362cd47f69282311dd942c8f",
+    "path": "src/main/java/dev/aero/client/cosmetic/CapeTextures.java",
+    "startLine": 62,
+    "endLine": 90,
+    "unit": "method CapeTextures.load",
+    "corpusFile": "corpus/java/KingF3rdi__aero-client__CapeTextures.java.md"
+  }
+}

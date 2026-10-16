@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_072",
+  "language": "java",
+  "originalName": "byId",
+  "injectedName": "by_id",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'by_id' does not match camelCase pattern",
+    "name 'by_id' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "public final class FurkinSkillEffectTypeRegistry {\n\n    private static final Map<ResourceLocation, FurkinSkillEffectType> BY_ID = new ConcurrentHashMap<>();\n\n    private FurkinSkillEffectTypeRegistry() {\n    }\n\n    /** 注册一个效果类型（幂等：重复注册覆盖）。 */\n    public static FurkinSkillEffectType register(FurkinSkillEffectType type) {\n        BY_ID.put(type.getId(), type);\n        return type;\n    }\n\n    /** 按标识查询。 */\n    public static Optional<FurkinSkillEffectType> by_id(ResourceLocation id) {\n        return Optional.ofNullable(BY_ID.get(id));\n    }\n\n    /** 判断某标识是否已注册为效果类型。 */\n    public static boolean isRegistered(ResourceLocation id) {\n        return BY_ID.containsKey(id);\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

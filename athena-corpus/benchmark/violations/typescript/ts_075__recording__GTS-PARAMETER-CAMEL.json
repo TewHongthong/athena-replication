@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_075",
+  "language": "typescript",
+  "originalName": "recording",
+  "injectedName": "RECORDING",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RECORDING' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "function useFinalStretchCue(RECORDING: boolean, limit: number, elapsed: number) {\n  const seconds = RECORDING ? remainingWholeSeconds(limit, elapsed) : null;\n  useEffect(() => {\n    if (seconds !== null && seconds > 0 && seconds <= 5) cues.finalSecond();\n  }, [seconds]);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

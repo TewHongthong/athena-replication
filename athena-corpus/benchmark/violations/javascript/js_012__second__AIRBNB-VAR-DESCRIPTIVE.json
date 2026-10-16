@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_012",
+  "language": "javascript",
+  "originalName": "second",
+  "injectedName": "s",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VAR-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 's' shorter than minLength=2",
+    "name 's' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function codePointLength(value) {\n  let length = 0;\n  let index = 0;\n  while (index < value.length) {\n    const first = value.charCodeAt(index++);\n    if (first >= 0xd800 && first <= 0xdbff && index < value.length) {\n      const s = value.charCodeAt(index);\n      if (s >= 0xdc00 && s <= 0xdfff) index++;\n    }\n    length++;\n  }\n  return length;\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

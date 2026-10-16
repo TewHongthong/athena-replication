@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_038",
+  "language": "python",
+  "originalName": "data",
+  "injectedName": "DATA",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DATA' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def get_batch(self, type, block_size=16, batch_size=16):\n    if type == \"train\":\n        DATA = self.train_data\n    else:\n        DATA = self.val_data\n    \n    offsets = torch.randint(\n        0,\n        len(DATA) - block_size - 1,\n        (batch_size,)\n    )\n\n    x = torch.stack([\n        DATA[i:i + block_size]\n        for i in offsets\n    ])\n\n    y = torch.stack([\n        DATA[i + 1:i + block_size + 1]\n        for i in offsets\n    ])\n\n    return x, y",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

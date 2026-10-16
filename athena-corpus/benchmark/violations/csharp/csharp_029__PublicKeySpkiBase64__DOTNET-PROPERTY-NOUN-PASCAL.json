@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_029",
+  "language": "csharp",
+  "originalName": "PublicKeySpkiBase64",
+  "injectedName": "public_key_spki_base64",
+  "identifierKind": "property",
+  "violatedRuleId": "DOTNET-PROPERTY-NOUN-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'public_key_spki_base64' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public interface IOwnerDeviceSigner : IDisposable\n{\n    string public_key_spki_base64 { get; }\n\n    string PublicKeyFingerprint { get; }\n\n    string SignCanonicalProof(string canonicalProof);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

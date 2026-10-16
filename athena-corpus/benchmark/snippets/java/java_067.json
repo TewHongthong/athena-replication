@@ -1,0 +1,52 @@
+{
+  "id": "java_067",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/LoginModalIconsContractTest.java lines 12-34 (class LoginModalIconsContractTest); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "class LoginModalIconsContractTest {\n\n  @Test\n  void signInDialogUsesSharedLucideIconsWithoutObscuringPasswordControls() throws IOException {\n    String javascript = resource(\"/META-INF/resources/login/assets/login-modal.js\");\n    String stylesheet = resource(\"/META-INF/resources/login/assets/login-modal.css\");\n\n    assertFalse(javascript.contains(\"login-dialog-title-icon\"));\n    assertTrue(javascript.contains(\"login-dialog-field-icon lucide-icon icon-user-round\"));\n    assertTrue(javascript.contains(\"login-dialog-field-icon lucide-icon icon-lock\"));\n    assertTrue(javascript.contains(\"login-dialog-button-icon lucide-icon icon-shield-check\"));\n    assertTrue(javascript.contains(\"login-dialog-submit\\\" type=\\\"submit\\\"><span class=\\\"login-dialog-button-icon lucide-icon icon-log-in\\\"\"));\n    assertTrue(stylesheet.contains(\".login-dialog-input-wrap\"));\n    assertTrue(stylesheet.contains(\"padding: 0 42px 0 40px\"));\n    assertTrue(stylesheet.contains(\".login-dialog-input-wrap:focus-within .login-dialog-field-icon\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "identifiers": [
+    {
+      "name": "LoginModalIconsContractTest",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "resource",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "javascript",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "stylesheet",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "stream",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/LoginModalIconsContractTest.java",
+    "startLine": 12,
+    "endLine": 34,
+    "unit": "class LoginModalIconsContractTest",
+    "corpusFile": "corpus/java/klboke__kkRepo__LoginModalIconsContractTest.java.md"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "csharp_085",
+  "language": "csharp",
+  "source": "github:thecheetoman/ESim@59cde034d0041d0af0a43cdf7e43d979935b7db8",
+  "sourceDetail": "Assets/Scripts/Robot/SpinningRollerIntake.cs lines 102-113 (method SpinningRollerIntake.OnTriggerStay); license MIT; repo created 2026-09-16T23:28:41Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "private void OnTriggerStay(Collider other)\n{\n    if (isEnabled && started && other.CompareTag(\"GamePiece\"))\n    {\n        Rigidbody ballRb = other.attachedRigidbody;\n        if (ballRb != null && targetPosition != null)\n        {\n            Vector3 directionToTarget = (targetPosition.position - other.transform.position).normalized;\n            ballRb.velocity = directionToTarget * surfaceVelocity;\n        }\n    }\n}",
+  "identifiers": [
+    {
+      "name": "OnTriggerStay",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "ballRb",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "other",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "directionToTarget",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "thecheetoman/ESim",
+    "repoUrl": "https://github.com/thecheetoman/ESim",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-16T23:28:41Z",
+    "commit": "59cde034d0041d0af0a43cdf7e43d979935b7db8",
+    "path": "Assets/Scripts/Robot/SpinningRollerIntake.cs",
+    "startLine": 102,
+    "endLine": 113,
+    "unit": "method SpinningRollerIntake.OnTriggerStay",
+    "corpusFile": "corpus/csharp/thecheetoman__ESim__SpinningRollerIntake.cs.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_087",
+  "language": "python",
+  "originalName": "col",
+  "injectedName": "l",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-AVOID-CONFUSING-CHARS",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'l' matches forbidden pattern '^l$'"
+  ],
+  "codeContextWithViolation": "def row_perk_hashes(row: pd.Series, perk_map: dict[str, frozenset[int]]) -> frozenset[int]:\n    \"\"\"All perk hashes present on an item, resolved from complete Perks N cells.\n\n    DIM's measured cells contain one complete perk name, including legitimate\n    commas. Only the single trailing ``*`` selected marker is removed; names\n    are never split into guessed options.\n    \"\"\"\n    hashes: set[int] = set()\n    for l in row.index:\n        if not l.startswith(\"Perks \"):\n            continue\n        name = str(row[l]).strip().removesuffix(\"*\").strip().casefold()\n        if name:\n            hashes |= perk_map.get(name, frozenset())\n    return frozenset(hashes)",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

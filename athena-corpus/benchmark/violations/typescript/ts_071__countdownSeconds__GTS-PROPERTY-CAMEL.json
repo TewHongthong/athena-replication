@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_071",
+  "language": "typescript",
+  "originalName": "countdownSeconds",
+  "injectedName": "countdown_seconds",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'countdown_seconds' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface TakeRecorderOptions {\n  viewfinder: RefObject<ViewfinderHandle | null>;\n  limitSeconds: number;\n  countdown_seconds: number;\n  facing: Facing;\n  source: CaptureSource;\n  onCapture: (input: NewRecording) => Promise<Recording>;\n  onFinished: (recording: Recording) => void;\n  onError: (message: string) => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

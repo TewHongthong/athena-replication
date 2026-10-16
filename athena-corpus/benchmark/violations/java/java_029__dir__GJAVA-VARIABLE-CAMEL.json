@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_029",
+  "language": "java",
+  "originalName": "dir",
+  "injectedName": "DIR",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'DIR' does not match camelCase pattern",
+    "name 'DIR' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void shot(MinecraftClient mc, String name) {\n    try {\n        Path DIR = mc.runDirectory.toPath().resolve(\"shots\");\n        Files.createDirectories(DIR);\n        Path out = DIR.resolve(name + \".png\");\n        ScreenshotRecorder.takeScreenshot(mc.getFramebuffer(), img -> {\n            try {\n                img.writeTo(out);\n            } catch (Exception ignored) {\n            }\n        });\n    } catch (Exception e) {\n        e.printStackTrace();\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

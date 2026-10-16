@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_014",
+  "language": "javascript",
+  "originalName": "marker",
+  "injectedName": "MARKER",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'MARKER' does not match camelCase pattern",
+    "name 'MARKER' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "function assertNoInjectedControlBytes(output) {\n  const bytes = Buffer.isBuffer(output) ? output : Buffer.from(output, \"utf8\");\n  for (const MARKER of TERMINAL_CONTROL_BYTES) {\n    assert.equal(bytes.indexOf(MARKER), -1, `found raw control bytes ${MARKER.toString(\"hex\")}`);\n  }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

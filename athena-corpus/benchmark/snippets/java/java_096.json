@@ -1,0 +1,52 @@
+{
+  "id": "java_096",
+  "language": "java",
+  "source": "github:xvDoshik/HubSwap@c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+  "sourceDetail": "src/main/java/ru/heldyy/hubswap/gui/MinecraftStatsHelper.java lines 89-109 (method MinecraftStatsHelper.getApproxFps); license MIT; repo created 2026-08-04T22:22:23Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public static int getApproxFps() {\n    Minecraft client = Minecraft.getInstance();\n    if (client == null) {\n        return -1;\n    }\n\n    try {\n        Field field = Minecraft.class.getDeclaredField(\"fpsString\");\n        field.setAccessible(true);\n        Object raw = field.get(client);\n        if (!(raw instanceof String fpsString) || fpsString.isEmpty()) {\n            return -1;\n        }\n\n        int space = fpsString.indexOf(' ');\n        String value = space > 0 ? fpsString.substring(0, space) : fpsString;\n        return Integer.parseInt(value.trim());\n    } catch (Exception e) {\n        return -1;\n    }\n}",
+  "identifiers": [
+    {
+      "name": "getApproxFps",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "client",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "field",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "raw",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "space",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "xvDoshik/HubSwap",
+    "repoUrl": "https://github.com/xvDoshik/HubSwap",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-04T22:22:23Z",
+    "commit": "c6967c6dadcae0fd21acdf29749ea597bf6c7ad9",
+    "path": "src/main/java/ru/heldyy/hubswap/gui/MinecraftStatsHelper.java",
+    "startLine": 89,
+    "endLine": 109,
+    "unit": "method MinecraftStatsHelper.getApproxFps",
+    "corpusFile": "corpus/java/xvDoshik__HubSwap__MinecraftStatsHelper.java.md"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "js_007",
+  "language": "javascript",
+  "source": "github:cloudflare/security-audit-skill@c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+  "sourceDetail": "skills/security-audit/validate-coverage-ledger.cjs lines 123-135 (function createErrorList); license MIT; repo created 2026-06-18; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function createErrorList() {\n  const errors = [];\n  Object.defineProperty(errors, \"push\", {\n    value(...messages) {\n      const remaining = LIMITS.validationErrors - this.length;\n      if (remaining > 0) {\n        Array.prototype.push.apply(this, messages.slice(0, remaining).map(escapeUnsafeDiagnosticCharacters));\n      }\n      return this.length;\n    },\n  });\n  return errors;\n}",
+  "identifiers": [
+    {
+      "name": "createErrorList",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "errors",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "messages",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "remaining",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "cloudflare/security-audit-skill",
+    "repoUrl": "https://github.com/cloudflare/security-audit-skill",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-18",
+    "commit": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+    "path": "skills/security-audit/validate-coverage-ledger.cjs",
+    "startLine": 123,
+    "endLine": 135,
+    "unit": "function createErrorList",
+    "corpusFile": "corpus/javascript/cloudflare__security-audit-skill__validate-coverage-ledger.cjs.md"
+  }
+}

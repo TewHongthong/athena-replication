@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_088",
+  "language": "java",
+  "originalName": "total",
+  "injectedName": "TOTAL",
+  "identifierKind": "method",
+  "violatedRuleId": "GJAVA-METHOD-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TOTAL' does not match camelCase pattern",
+    "name 'TOTAL' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public static List<Entry> TOTAL(Container equipment) {\n    Map<Key, Double> sums = new LinkedHashMap<>();\n    int slots = Math.min(equipment.getContainerSize(), MobEquipmentContainer.SLOT_COUNT);\n    for (int i = 0; i < slots; i++) {\n        ItemStack stack = equipment.getItem(i);\n        if (stack.isEmpty()) {\n            continue;\n        }\n        EquipmentSlot slot = MobEquipmentContainer.slotFor(i);\n        Multimap<Attribute, AttributeModifier> modifiers = stack.getAttributeModifiers(slot);\n        for (Map.Entry<Attribute, AttributeModifier> entry : modifiers.entries()) {\n            AttributeModifier modifier = entry.getValue();\n            sums.merge(new Key(entry.getKey(), modifier.getOperation()),\n                    modifier.getAmount(), Double::sum);\n        }\n    }\n\n    List<Entry> entries = new ArrayList<>();\n    sums.forEach((key, amount) -> {\n        // 正负相抵为 0 的项不显示 —— 原版 tooltip 同样是逐条列原始值，但摘要是\"合计\"，\n        // 列一条 `+0 护甲` 只会让人以为算错了。\n        if (amount != 0.0D) {\n            entries.add(new Entry(key.attribute(), key.operation(), amount));\n        }\n    });\n    entries.sort(Comparator\n            .comparingInt((Entry entry) -> priorityOf(entry.attribute()))\n            .thenComparingInt(entry -> entry.operation().ordinal())\n            .thenComparing(entry -> entry.attribute().getDescriptionId()));\n    return entries;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_050",
+  "language": "javascript",
+  "originalName": "event",
+  "injectedName": "e",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'e' shorter than minLength=2",
+    "name 'e' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function printEvent(e) {\n  switch (e.type) {\n    case 'start':\n      console.log(\n        `\\n👀 Watching ${e.slugs.length} skill(s) for changes...\\n`,\n      )\n      break\n    case 'skip':\n      console.log(`   Skipping \"${e.slug}\" (${e.sourceType} source)`)\n      break\n    case 'watching':\n      console.log(`   ✓ ${e.slug} → watching ${e.path}`)\n      break\n    case 'error':\n      console.error(`   ✗ ${e.slug}: cannot watch (${e.error.message})`)\n      break\n    case 'syncing':\n      console.log(\n        `  [${e.startedAt.toLocaleTimeString()}] ${e.slug}: ${e.filename} changed, syncing...`,\n      )\n      break\n    case 'synced':\n      console.log(\n        `  [${e.startedAt.toLocaleTimeString()}] ${e.slug}: ${e.ok ? 'synced successfully' : 'sync failed'}`,\n      )\n      break\n  }\n}",
+  "occurrencesRenamed": 15,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

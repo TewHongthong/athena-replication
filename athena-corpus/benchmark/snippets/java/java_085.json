@@ -1,0 +1,52 @@
+{
+  "id": "java_085",
+  "language": "java",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/contract/RemoteSummonRequest.java lines 41-55 (constructor RemoteSummonRequest); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "RemoteSummonRequest(long requestId, UUID playerUuid, UUID companionId,\n                    UUID canonicalUuid, ResourceKey<Level> targetDimension,\n                    ChunkPos center, int radius, long deadlineGameTime,\n                    RemoteSummonOrigin origin, RemoteSummonFeedback feedback) {\n    this.requestId = requestId;\n    this.playerUuid = playerUuid;\n    this.companionId = companionId;\n    this.canonicalUuid = canonicalUuid;\n    this.targetDimension = targetDimension;\n    this.center = center;\n    this.radius = radius;\n    this.deadlineGameTime = deadlineGameTime;\n    this.origin = origin;\n    this.feedback = feedback;\n}",
+  "identifiers": [
+    {
+      "name": "requestId",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "playerUuid",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "companionId",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "canonicalUuid",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "targetDimension",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "center",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/contract/RemoteSummonRequest.java",
+    "startLine": 41,
+    "endLine": 55,
+    "unit": "constructor RemoteSummonRequest",
+    "corpusFile": "corpus/java/wanancat__furkin__RemoteSummonRequest.java.md"
+  }
+}

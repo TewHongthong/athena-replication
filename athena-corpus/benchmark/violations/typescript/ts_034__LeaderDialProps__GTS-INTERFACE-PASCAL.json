@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_034",
+  "language": "typescript",
+  "originalName": "LeaderDialProps",
+  "injectedName": "leader_dial_props",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'leader_dial_props' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "interface leader_dial_props {\n  size: number;\n  digit: number | null;\n  progress: Animated.Value;\n  lit?: boolean;\n  reducedMotion?: boolean;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

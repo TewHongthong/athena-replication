@@ -1,0 +1,36 @@
+{
+  "snippetId": "csharp_025",
+  "language": "csharp",
+  "standardId": "DOTNET_DESIGN",
+  "identifierKind": "class",
+  "name": "ImageUrls",
+  "codeBare": "public static class ImageUrls\n{\n    public static string? For(int? imageId, string? fallbackUrl = null, int? width = null)\n    {\n        if (imageId is { } id)\n            return width is { } w ? $\"/img/{id}?w={w}\" : $\"/img/{id}\";\n        return string.IsNullOrWhiteSpace(fallbackUrl) ? null : fallbackUrl;\n    }\n\n    public static bool Has(int? imageId, string? fallbackUrl = null) =>\n        imageId is not null || !string.IsNullOrWhiteSpace(fallbackUrl);\n}",
+  "referenceComment": "/// <summary>\n/// Builds image <c>src</c> values consistently across the app: a stored image is served from\n/// <c>/img/{id}</c> (optionally as a thumbnail via <c>?w=</c>), otherwise an optional remote\n/// fallback URL (e.g. a lookup provider's cover) is used.\n/// </summary>",
+  "ruleIds": [
+    "DOTNET-XMLDOC-TYPE-SUMMARY"
+  ],
+  "origin": "snippet",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/ImageUrls.cs lines 8-19 (class ImageUrls); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "referenceCommentLines": 5,
+  "signature": {
+    "params": 0,
+    "returns": false,
+    "throws": false
+  },
+  "expectedElements": [
+    "summary"
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/ImageUrls.cs",
+    "startLine": 8,
+    "endLine": 19,
+    "unit": "class ImageUrls",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__ImageUrls.cs.md"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_017",
+  "language": "javascript",
+  "originalName": "msg",
+  "injectedName": "m",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'm' shorter than minLength=2",
+    "name 'm' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function toast(m, kind = 'info', ms = 3400){\n  const box = document.getElementById('toasts');\n  if (!box) return;\n  const el = document.createElement('div');\n  el.className = 'toast t-' + kind;\n  el.textContent = m;\n  box.appendChild(el);\n  setTimeout(() => {\n    el.style.transition = 'opacity .25s';\n    el.style.opacity = '0';\n    setTimeout(() => el.remove(), 260);\n  }, ms);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

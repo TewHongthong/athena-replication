@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_063",
+  "language": "java",
+  "originalName": "javascript",
+  "injectedName": "JAVASCRIPT",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'JAVASCRIPT' does not match camelCase pattern",
+    "name 'JAVASCRIPT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "class AdminSwiftRepositoryContractTest {\n\n  @Test\n  void swiftProxyIsGithubOnlyAndGroupsCanBeNested() throws IOException {\n    String index = resource(\"/META-INF/resources/admin/index.html\");\n    String JAVASCRIPT = resource(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(index.contains(\"id=\\\"repository-swift-proxy-note\\\"\"));\n    assertTrue(index.contains(\"https://github.com/\"));\n    assertTrue(index.contains(\"SwiftPM clients should always connect to kkrepo over HTTPS\"));\n    assertTrue(JAVASCRIPT.contains(\"format === \\\"swift\\\" && type === \\\"PROXY\\\"\"));\n    assertTrue(JAVASCRIPT.contains(\"recipe?.type === \\\"PROXY\\\" && recipe?.format === \\\"swift\\\"\"));\n    assertTrue(JAVASCRIPT.contains(\"swift: \\\"https://github.com/\\\"\"));\n    assertTrue(JAVASCRIPT.contains(\"format === \\\"swift\\\"\"));\n    assertTrue(JAVASCRIPT.contains(\"format === \\\"terraform\\\" || format === \\\"swift\\\"\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "occurrencesRenamed": 6,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_085",
+  "language": "javascript",
+  "originalName": "subjects",
+  "injectedName": "s",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 's' shorter than minLength=2",
+    "name 's' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "export function buildTopicScopeIndex(s=[]){\n  const index=new Map();\n  for(const subject of s||[])for(const topic of subject?.topics||[]){\n    if(topic?.id)index.set(topic.id,normalizeExamTags(topic.examTags));\n  }\n  return index;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_019",
+  "language": "typescript",
+  "originalName": "closed",
+  "injectedName": "CLOSED",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CLOSED' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function serialize(\n  subs: readonly Float64Array[],\n  CLOSED?: readonly boolean[],\n): string {\n  let d = \"\";\n  for (let k = 0; k < subs.length; k++) {\n    const o = subs[k];\n    const n = o.length / 2;\n    d += `M${fmt(o[0])} ${fmt(o[1])}`;\n    for (let i = 1; i < n; i++) d += `L${fmt(o[2 * i])} ${fmt(o[2 * i + 1])}`;\n    if (CLOSED?.[k]) d += \"Z\";\n  }\n  return d;\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "py_080",
+  "language": "python",
+  "source": "github:tonym999/vault-cleaner@1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+  "sourceDetail": "src/vault_cleaner/explanation.py lines 16-22 (class ProposalExplanation); license MIT; repo created 2026-07-18T09:39:13Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "@dataclass(frozen=True)\nclass ProposalExplanation:\n    label: str  # short per-slug title\n    why: str  # one or two sentences\n    keep_instead: str  # \"\" when the reasoning names no retained copy\n    gives_up: str\n    caveats: tuple[str, ...] = ()",
+  "identifiers": [
+    {
+      "name": "ProposalExplanation",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "label",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "why",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "keep_instead",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "gives_up",
+      "kind": "field",
+      "isCompliant": true
+    },
+    {
+      "name": "caveats",
+      "kind": "field",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "tonym999/vault-cleaner",
+    "repoUrl": "https://github.com/tonym999/vault-cleaner",
+    "license": "MIT",
+    "repoCreatedAt": "2026-07-18T09:39:13Z",
+    "commit": "1ab2eaed9c327e98fa8c8b169f9cc9b39a64f372",
+    "path": "src/vault_cleaner/explanation.py",
+    "startLine": 16,
+    "endLine": 22,
+    "unit": "class ProposalExplanation",
+    "corpusFile": "corpus/python/tonym999__vault-cleaner__explanation.py.md"
+  }
+}

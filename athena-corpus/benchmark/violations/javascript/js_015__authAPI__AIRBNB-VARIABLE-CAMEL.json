@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_015",
+  "language": "javascript",
+  "originalName": "authAPI",
+  "injectedName": "auth_api",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'auth_api' does not match camelCase pattern",
+    "name 'auth_api' matches forbidden pattern '_'"
+  ],
+  "codeContextWithViolation": "export const auth_api = {\n  login: (identifier, password) =>\n    api.post('/api/auth/login', { username: identifier, email: identifier, password }),\n\n  register: (userData) =>\n    api.post('/api/auth/register', userData),\n\n  getProfile: () =>\n    api.get('/api/auth/profile'),\n\n  updateProfile: (data) =>\n    api.put('/api/auth/profile', data),\n};",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

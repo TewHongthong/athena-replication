@@ -1,0 +1,52 @@
+{
+  "id": "ts_074",
+  "language": "typescript",
+  "source": "github:leandromlmoreira/video-capture@def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+  "sourceDetail": "src/screens/StudioScreen.tsx lines 29-37 (interface StudioScreenProps); license MIT; repo created 2026-09-26T07:32:29Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "interface StudioScreenProps {\n  demo: boolean;\n  wide: boolean;\n  recordings: Recording[];\n  onCapture: (input: NewRecording) => Promise<Recording>;\n  onOpenRecording: (recording: Recording) => void;\n  onOpenRoll: () => void;\n  onEnterDemo?: () => void;\n}",
+  "identifiers": [
+    {
+      "name": "StudioScreenProps",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "demo",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "wide",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "recordings",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "onCapture",
+      "kind": "property",
+      "isCompliant": true
+    },
+    {
+      "name": "onOpenRecording",
+      "kind": "property",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "leandromlmoreira/video-capture",
+    "repoUrl": "https://github.com/leandromlmoreira/video-capture",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T07:32:29Z",
+    "commit": "def6b01cdccbd271a07b0ec29a9e39603f0b9e75",
+    "path": "src/screens/StudioScreen.tsx",
+    "startLine": 29,
+    "endLine": 37,
+    "unit": "interface StudioScreenProps",
+    "corpusFile": "corpus/typescript/leandromlmoreira__video-capture__StudioScreen.tsx.md"
+  }
+}

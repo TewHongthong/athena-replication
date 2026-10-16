@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_065",
+  "language": "javascript",
+  "originalName": "collect",
+  "injectedName": "COLLECT",
+  "identifierKind": "function",
+  "violatedRuleId": "AIRBNB-FUNCTION-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'COLLECT' does not match camelCase pattern",
+    "name 'COLLECT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "function COLLECT(directory){\n  for(const entry of readdirSync(directory,{withFileTypes:true})){\n    if(ignored.has(entry.name))continue;\n    const path=join(directory,entry.name);\n    if(entry.isDirectory())COLLECT(path);\n    else if(['.js','.mjs'].includes(extname(entry.name))&&!entry.name.endsWith('.bundle.js'))files.push(path);\n  }\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

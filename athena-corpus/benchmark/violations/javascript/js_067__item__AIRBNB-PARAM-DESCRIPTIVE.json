@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_067",
+  "language": "javascript",
+  "originalName": "item",
+  "injectedName": "i",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'i' shorter than minLength=2",
+    "name 'i' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function presentDiagnosisItem(i,{type,reason,action,confidence=null,insufficient=false,evidence=[],explanation=[],secondaryReasons=[]}={}){\n  const confidenceValue=numericValue(confidence);\n  const normalizedConfidence=confidenceValue==null?null:Math.max(0,Math.min(1,confidenceValue));\n  const limited=insufficient||(normalizedConfidence!=null&&normalizedConfidence<.35);\n  const score=Number(i.risk?.value??i.severity??i.opportunityScore??i.reviewUrgency);\n  const severity=type==='focus'?'info':severityFor(Number.isFinite(score)?score:0,limited);\n  const signalLabel=limited?'Evidência limitada':type==='focus'?'Distribuição sugerida':type==='review'?'Revisão prioritária':type==='opportunity'\n    ?score>=70?'Retorno alto':score>=45?'Retorno moderado':'Retorno potencial'\n    :severity==='high'?'Risco alto':severity==='medium'?'Risco moderado':'Risco baixo';\n  const validEvidence=evidence.filter(Boolean),validExplanation=[...evidence,...explanation].filter(Boolean);\n  const explanationSummary={\n    bottleneck:'A leitura combina domínio, retenção, tendência, recência e impacto na prova quando esses dados estão disponíveis.',\n    opportunity:'O potencial considera a lacuna de domínio, a relevância na prova e o esforço estimado quando configurados.',\n    review:'A urgência considera o tempo sem contato, a retenção e o domínio disponíveis para este tópico.',\n    focus:'A distribuição usa a prioridade das disciplinas e a disponibilidade semanal informada.'\n  }[type];\n  return {...i,diagnosisExplanation:validExplanation,diagnosisExplanationSummary:explanationSummary,signalLabel,signalTone:severity==='insufficient'?'neutral':severity==='high'?'high':severity==='medium'?'medium':'low',presentation:{\n    type,severity,confidence:normalizedConfidence,title:titleFor(i),summary:reason,primaryReason:reason,\n    secondaryReasons:secondaryReasons.filter(Boolean).slice(0,2),evidence:validEvidence.slice(0,2),\n    recommendedAction:{label:action.label,type:'navigate',targetId:action.tab}\n  }};\n}",
+  "occurrencesRenamed": 7,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

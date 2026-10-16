@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_091",
+  "language": "python",
+  "originalName": "BacktestTrade",
+  "injectedName": "backtest_trade",
+  "identifierKind": "class",
+  "violatedRuleId": "PEP8-CLASS-CAPWORDS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'backtest_trade' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "@dataclass(frozen=True)\nclass backtest_trade:\n    entry_time: str\n    exit_time: str\n    entry_price: float\n    exit_price: float\n    qty: int\n    exit_reason: str\n    gross_pnl: float\n    net_pnl: float",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,47 @@
+{
+  "id": "js_013",
+  "language": "javascript",
+  "source": "github:cloudflare/security-audit-skill@c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+  "sourceDetail": "skills/security-audit/validate-findings.test.cjs lines 101-114 (function runCli); license MIT; repo created 2026-06-18; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function runCli(contents, options = {}) {\n  const { nodeArgs = [], timeout = CLI_TIMEOUT_MS } = options;\n  const directory = fs.mkdtempSync(path.join(os.tmpdir(), \"validate-findings-\"));\n  const findingsPath = path.join(directory, \"findings.json\");\n  try {\n    fs.writeFileSync(findingsPath, contents);\n    return spawnSync(process.execPath, [...nodeArgs, validatorPath, findingsPath], {\n      encoding: \"utf8\",\n      timeout,\n    });\n  } finally {\n    fs.rmSync(directory, { recursive: true, force: true });\n  }\n}",
+  "identifiers": [
+    {
+      "name": "runCli",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "directory",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "contents",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "options",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "findingsPath",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "cloudflare/security-audit-skill",
+    "repoUrl": "https://github.com/cloudflare/security-audit-skill",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-18",
+    "commit": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+    "path": "skills/security-audit/validate-findings.test.cjs",
+    "startLine": 101,
+    "endLine": 114,
+    "unit": "function runCli",
+    "corpusFile": "corpus/javascript/cloudflare__security-audit-skill__validate-findings.test.cjs.md"
+  }
+}

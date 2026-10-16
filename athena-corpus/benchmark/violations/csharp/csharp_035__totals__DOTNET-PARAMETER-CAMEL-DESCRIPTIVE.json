@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_035",
+  "language": "csharp",
+  "originalName": "totals",
+  "injectedName": "TOTALS",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'TOTALS' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed record WorldAssetCacheResult(\n    bool IsSuccess,\n    WorldAssetCacheTotals Totals,\n    IReadOnlyList<WorldAssetCacheKey> Evicted,\n    string? FailureCode,\n    string? Diagnostic)\n{\n    public static WorldAssetCacheResult Success(\n        WorldAssetCacheTotals TOTALS,\n        IReadOnlyList<WorldAssetCacheKey> evicted) =>\n        new(true, TOTALS, evicted, null, null);\n\n    public static WorldAssetCacheResult Failure(\n        WorldAssetCacheTotals TOTALS,\n        string failureCode,\n        string diagnostic) =>\n        new(false, TOTALS, [], failureCode, diagnostic);\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,52 @@
+{
+  "id": "js_083",
+  "language": "javascript",
+  "source": "github:vitoriapac/Extrato@b27c700b6b12123dd68e38a3fab2812776cd6db3",
+  "sourceDetail": "src/application/exam-intelligence/import-exam-json.js lines 29-44 (function previewExamImport); license MIT; repo created 2026-08-31T09:50:12Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export function previewExamImport(parsed,{subjects=[],exams=[],examQuestions=[]}={}){\n  const examId=`exam-import-${hash(identity(parsed.exam))}`;\n  const existing=exams.find(item=>item.id===examId||identity(item)===identity(parsed.exam));\n  const existingQuestions=examQuestions.filter(question=>question.examId===(existing?.id||examId));\n  const rows=parsed.questions.map(question=>{\n    const reviewed=existingQuestions.find(item=>item.questionNumber===question.number&&item.classification?.method==='manual');\n    if(reviewed)return {...question,status:'mapped',subjectId:reviewed.subjectId,topicId:reviewed.topicId};\n    const matches=subjects.filter(subject=>!subject.archived&&key(subject.name)===key(question.subject));\n    const subject=matches.length===1?matches[0]:null;\n    const topics=subject?.topics?.filter(topic=>!topic.archived&&key(topic.name)===key(question.topic))||[];\n    const topic=topics.length===1?topics[0]:null;\n    const status=!subject?'subject-unresolved':!topic?'topic-unresolved':'mapped';\n    return {...question,status,subjectId:subject?.id||null,topicId:topic?.id||null};\n  });\n  return {examId:existing?.id||examId,existingExam:existing||null,rows,existingQuestionCount:existingQuestions.length,mappedCount:rows.filter(row=>row.status==='mapped').length,unresolvedCount:rows.filter(row=>row.status!=='mapped').length};\n}",
+  "identifiers": [
+    {
+      "name": "previewExamImport",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "examId",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "parsed",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "existing",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "item",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "existingQuestions",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "vitoriapac/Extrato",
+    "repoUrl": "https://github.com/vitoriapac/Extrato",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-31T09:50:12Z",
+    "commit": "b27c700b6b12123dd68e38a3fab2812776cd6db3",
+    "path": "src/application/exam-intelligence/import-exam-json.js",
+    "startLine": 29,
+    "endLine": 44,
+    "unit": "function previewExamImport",
+    "corpusFile": "corpus/javascript/vitoriapac__Extrato__import-exam-json.js.md"
+  }
+}

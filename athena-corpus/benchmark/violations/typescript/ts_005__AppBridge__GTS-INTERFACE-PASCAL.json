@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_005",
+  "language": "typescript",
+  "originalName": "AppBridge",
+  "injectedName": "app_bridge",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'app_bridge' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "export interface app_bridge {\n  readonly appId: AppId;\n  /** Whether a host is currently reachable through this bridge. */\n  isConnected(): boolean;\n  /** Send a named command to the host and resolve with its result. */\n  execute(name: string, params?: JsonValue, options?: EvalOptions): Promise<JsonValue>;\n  /** Convenience wrapper for the generic `eval` command (params `{script}`). */\n  evaluate(script: string, options?: EvalOptions): Promise<JsonValue>;\n  close(): Promise<void>;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

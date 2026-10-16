@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_032",
+  "language": "java",
+  "originalName": "option",
+  "injectedName": "OPTION",
+  "identifierKind": "variable",
+  "violatedRuleId": "GJAVA-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'OPTION' does not match camelCase pattern",
+    "name 'OPTION' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "private static void bindEnum(GameOptions opt, boolean on, String getter, String offName, boolean backup) {\n    Object OPTION = OPTION(opt, getter);\n    if (OPTION == null) {\n        return;\n    }\n    Object cur = getValue(OPTION);\n    if (on) {\n        if (backup && cloudsOr(getter) && cloudsBackup == null) {\n            cloudsBackup = cur;\n        }\n        if (backup && getter.contains(\"Particle\") && particlesBackup == null) {\n            particlesBackup = cur;\n        }\n        if (backup && getter.contains(\"Graphics\") && graphicsBackup == null) {\n            graphicsBackup = cur;\n        }\n        Object off = enumConst(cur, offName);\n        if (off != null) {\n            setValue(OPTION, off);\n        }\n    } else if (getter.contains(\"Cloud\") && cloudsBackup != null) {\n        setValue(OPTION, cloudsBackup);\n        cloudsBackup = null;\n    } else if (getter.contains(\"Particle\") && particlesBackup != null) {\n        setValue(OPTION, particlesBackup);\n        particlesBackup = null;\n    } else if (getter.contains(\"Graphics\") && graphicsBackup != null) {\n        setValue(OPTION, graphicsBackup);\n        graphicsBackup = null;\n    }\n}",
+  "occurrencesRenamed": 8,
+  "commentOccurrencesRenamed": 0
+}

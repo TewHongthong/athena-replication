@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_042",
+  "language": "csharp",
+  "originalName": "checkpoint",
+  "injectedName": "CHECKPOINT",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CHECKPOINT' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public static partial class SocietyFixture\n{\n    /// <summary>Protected care assignment for an infant, never consent on behalf of a capable dependent.</summary>\n    public static SocietyOperationResult AssumeInfantCare(SocietyCheckpoint CHECKPOINT, string adultId, string childId)\n    {\n        Validate(CHECKPOINT);\n        var adult = CHECKPOINT.GetInhabitant(adultId);\n        var child = CHECKPOINT.GetInhabitant(childId);\n        if (adult.Status != SocietyInhabitantStatus.Active || child.Status != SocietyInhabitantStatus.Active ||\n            adult.AgeBand is not (SocietyAgeBand.Adult or SocietyAgeBand.Elder) || child.AgeBand != SocietyAgeBand.Infant ||\n            adult.HouseholdId is null || adult.HouseholdId != child.HouseholdId ||\n            CHECKPOINT.Relationships.Any(edge => edge.Type == SocietyRelationshipType.Caregiver &&\n                edge.TargetId == childId && edge.State == SocietyRelationshipState.Accepted &&\n                CHECKPOINT.GetInhabitant(edge.ProposerId).Status == SocietyInhabitantStatus.Active))\n        {\n            return Reject(CHECKPOINT, \"care_assignment_rejected\", \"ineligible_or_existing_caregiver\");\n        }\n        var id = $\"dependent-care:{adultId}:{childId}:{CHECKPOINT.WorldTick}\";\n        if (CHECKPOINT.Relationships.Any(edge => edge.Id == id))\n            return Reject(CHECKPOINT, \"care_assignment_rejected\", \"duplicate_assignment\");\n        var edge = new SocietyRelationship(id, 1, SocietyRelationshipType.Caregiver, adultId, childId,\n            SocietyRelationshipState.Accepted, SocietyConsentState.ProtectedLifecycle,\n            CHECKPOINT.WorldTick, checked(CHECKPOINT.WorldTick + 1), \"public\", adult.HouseholdId, [adultId]);\n        var next = CHECKPOINT with\n        {\n            Relationships = CHECKPOINT.Relationships.Append(edge).OrderBy(item => item.Id, StringComparer.Ordinal).ToArray(),\n        };\n        return Commit(ApplyRelationshipProjection(next, edge), \"dependent_care_assigned\", id, id);\n    }\n}",
+  "occurrencesRenamed": 14,
+  "commentOccurrencesRenamed": 0
+}

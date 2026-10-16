@@ -1,0 +1,16 @@
+{
+  "snippetId": "java_074",
+  "language": "java",
+  "originalName": "event",
+  "injectedName": "EVENT",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GJAVA-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'EVENT' does not match camelCase pattern",
+    "name 'EVENT' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "@Mod.EventBusSubscriber(modid = \"furkin\", bus = Mod.EventBusSubscriber.Bus.FORGE)\npublic final class FurkinAttachHandler {\n\n    private FurkinAttachHandler() {\n    }\n\n    @SubscribeEvent\n    public static void onAttachCapabilities(AttachCapabilitiesEvent<Entity> EVENT) {\n        if (EVENT.getObject() instanceof LivingEntity) {\n            EVENT.addCapability(FurkinCapability.ID, new FurkinProvider());\n        }\n    }\n\n    /** 便捷读取：从实体取能力，实体无能力或非活体返回 null。 */\n    @SuppressWarnings(\"unchecked\")\n    public static FurkinData getData(Entity entity) {\n        if (!(entity instanceof LivingEntity living)) {\n            return null;\n        }\n        ICapabilityProvider provider = living;\n        var cap = provider.getCapability((Capability<FurkinData>) FurkinCapability.FURKIN_DATA).orElse(null);\n        return cap;\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

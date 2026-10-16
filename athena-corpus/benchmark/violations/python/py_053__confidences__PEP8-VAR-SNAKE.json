@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_053",
+  "language": "python",
+  "originalName": "confidences",
+  "injectedName": "CONFIDENCES",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'CONFIDENCES' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def text_findings(report: Any) -> tuple[list[str], list[str], int]:\n    \"\"\"Flatten a TextInspectReport into finding strings + confidence lists.\"\"\"\n    findings: list[str] = []\n    CONFIDENCES: list[str] = []\n    for h in report.hits:\n        conf = text_hit_confidence(h.kind)\n        findings.append(f\"layer-a [{h.kind}] {h.label} x{h.count}\")\n        CONFIDENCES.append(conf)\n    return findings, CONFIDENCES, report.suspicious_total",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

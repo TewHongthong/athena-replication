@@ -1,0 +1,52 @@
+{
+  "id": "py_023",
+  "language": "python",
+  "source": "github:Simon-zj1/agent-harness@c58b6f42c63cbc67f14b29049c084196ba5a1910",
+  "sourceDetail": "harness/decisions.py lines 34-51 (class FailureClass); license MIT; repo created 2026-09-22T17:43:10Z; curated by athena-curation-1.0",
+  "standardId": "PEP8",
+  "codeContext": "class FailureClass(str, Enum):\n    \"\"\"Why a decision is not PASS.\n\n    A stable vocabulary is what makes these decisions countable over time:\n    without it, \"validation failed\" is a single opaque bucket.\n    \"\"\"\n\n    FABRICATED_SOURCE = \"fabricated_source\"\n    UNKNOWN_VARIANT = \"unknown_variant\"\n    SOURCE_MISMATCH = \"source_mismatch\"\n    STALE_EVIDENCE = \"stale_evidence\"\n    UNSUPPORTED_CLAIM = \"unsupported_claim\"\n    PRECONDITION_UNKNOWN = \"precondition_unknown\"\n    POLICY_VIOLATION = \"policy_violation\"\n    SCOPE_VIOLATION = \"scope_violation\"\n    MALFORMED = \"malformed\"\n    NOT_APPLICABLE = \"not_applicable\"\n    INTERNAL_ERROR = \"internal_error\"",
+  "identifiers": [
+    {
+      "name": "FailureClass",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "FABRICATED_SOURCE",
+      "kind": "constant",
+      "isCompliant": true
+    },
+    {
+      "name": "UNKNOWN_VARIANT",
+      "kind": "constant",
+      "isCompliant": true
+    },
+    {
+      "name": "SOURCE_MISMATCH",
+      "kind": "constant",
+      "isCompliant": true
+    },
+    {
+      "name": "STALE_EVIDENCE",
+      "kind": "constant",
+      "isCompliant": true
+    },
+    {
+      "name": "UNSUPPORTED_CLAIM",
+      "kind": "constant",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Simon-zj1/agent-harness",
+    "repoUrl": "https://github.com/Simon-zj1/agent-harness",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-22T17:43:10Z",
+    "commit": "c58b6f42c63cbc67f14b29049c084196ba5a1910",
+    "path": "harness/decisions.py",
+    "startLine": 34,
+    "endLine": 51,
+    "unit": "class FailureClass",
+    "corpusFile": "corpus/python/Simon-zj1__agent-harness__decisions.py.md"
+  }
+}

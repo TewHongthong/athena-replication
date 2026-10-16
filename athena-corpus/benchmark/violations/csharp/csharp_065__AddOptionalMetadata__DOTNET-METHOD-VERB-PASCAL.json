@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_065",
+  "language": "csharp",
+  "originalName": "AddOptionalMetadata",
+  "injectedName": "add_optional_metadata",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'add_optional_metadata' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "private static void add_optional_metadata(\n    IDictionary<string, string> parameters,\n    SmsMessage message,\n    string parameterName,\n    params string[] metadataKeys)\n{\n    if (message.Metadata is null)\n        return;\n\n    foreach (var key in metadataKeys)\n    {\n        if (message.Metadata.TryGetValue(key, out var value) &&\n            !string.IsNullOrWhiteSpace(value))\n        {\n            parameters[parameterName] = value;\n            return;\n        }\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

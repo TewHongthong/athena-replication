@@ -1,0 +1,52 @@
+{
+  "id": "js_057",
+  "language": "javascript",
+  "source": "github:rolecraft-sh/rolecraft@b74f936ad1dc051aa5b25ce3154fb532597e802a",
+  "sourceDetail": "src/utils/mcp.js lines 135-150 (function addMcpServer); license MIT; repo created 2026-06-12T15:31:13Z; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "export async function addMcpServer(agent, name, serverConfig, source = null) {\n  const result = await readMcpConfig(agent)\n  if (!result) return false\n  const { configPath, data } = result\n  setMcpServerEntry(data, agent, name, serverConfig)\n  await mkdir(dirname(configPath), { recursive: true })\n  await writeFile(configPath, `${JSON.stringify(data, null, 2)}\\n`, 'utf-8')\n\n  await addServerToMcpLock(name, {\n    source: source || reconstructMcpSource(serverConfig, name),\n    sourceType: serverConfig.sourceType,\n    agents: [agent],\n  })\n\n  return true\n}",
+  "identifiers": [
+    {
+      "name": "addMcpServer",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "result",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "agent",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "name",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "serverConfig",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "source",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "rolecraft-sh/rolecraft",
+    "repoUrl": "https://github.com/rolecraft-sh/rolecraft",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-12T15:31:13Z",
+    "commit": "b74f936ad1dc051aa5b25ce3154fb532597e802a",
+    "path": "src/utils/mcp.js",
+    "startLine": 135,
+    "endLine": 150,
+    "unit": "function addMcpServer",
+    "corpusFile": "corpus/javascript/rolecraft-sh__rolecraft__src_utils_mcp.js.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_035",
+  "language": "csharp",
+  "originalName": "Success",
+  "injectedName": "success",
+  "identifierKind": "method",
+  "violatedRuleId": "DOTNET-METHOD-VERB-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'success' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed record WorldAssetCacheResult(\n    bool IsSuccess,\n    WorldAssetCacheTotals Totals,\n    IReadOnlyList<WorldAssetCacheKey> Evicted,\n    string? FailureCode,\n    string? Diagnostic)\n{\n    public static WorldAssetCacheResult success(\n        WorldAssetCacheTotals totals,\n        IReadOnlyList<WorldAssetCacheKey> evicted) =>\n        new(true, totals, evicted, null, null);\n\n    public static WorldAssetCacheResult Failure(\n        WorldAssetCacheTotals totals,\n        string failureCode,\n        string diagnostic) =>\n        new(false, totals, [], failureCode, diagnostic);\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

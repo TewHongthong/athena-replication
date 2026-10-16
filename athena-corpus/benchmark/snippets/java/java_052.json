@@ -1,0 +1,52 @@
+{
+  "id": "java_052",
+  "language": "java",
+  "source": "github:klboke/kkRepo@dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+  "sourceDetail": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminConanRepositoryContractTest.java lines 11-31 (class AdminConanRepositoryContractTest); license Apache-2.0; repo created 2026-06-12; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "class AdminConanRepositoryContractTest {\n  @Test\n  void exposesConanRecipesRemoteDefaultAndDurableStatus() throws IOException {\n    String index = resource(\"/META-INF/resources/admin/index.html\");\n    String javascript = resource(\"/META-INF/resources/admin/assets/admin.js\");\n\n    assertTrue(index.contains(\"id=\\\"repository-conan-fields\\\"\"));\n    assertTrue(index.contains(\"conanmanifest.txt\"));\n    assertTrue(javascript.contains(\"conan: \\\"Conan 2\\\"\"));\n    assertTrue(javascript.contains(\"conan: \\\"https://center2.conan.io/\\\"\"));\n    assertTrue(javascript.contains(\"function loadConanStatus\"));\n    assertTrue(javascript.contains(\"/conan/status\"));\n    assertTrue(javascript.contains(\"open upload sessions\"));\n  }\n\n  private String resource(String path) throws IOException {\n    try (InputStream stream = getClass().getResourceAsStream(path)) {\n      return new String(Objects.requireNonNull(stream).readAllBytes(), StandardCharsets.UTF_8);\n    }\n  }\n}",
+  "identifiers": [
+    {
+      "name": "AdminConanRepositoryContractTest",
+      "kind": "class",
+      "isCompliant": true
+    },
+    {
+      "name": "resource",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "index",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "path",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "javascript",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "stream",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "klboke/kkRepo",
+    "repoUrl": "https://github.com/klboke/kkRepo",
+    "license": "Apache-2.0",
+    "repoCreatedAt": "2026-06-12",
+    "commit": "dd7dc274d1c94a1b92775d410b3dea3f1edf6029",
+    "path": "admin-ui/src/test/java/com/github/klboke/kkrepo/admin/ui/AdminConanRepositoryContractTest.java",
+    "startLine": 11,
+    "endLine": 31,
+    "unit": "class AdminConanRepositoryContractTest",
+    "corpusFile": "corpus/java/klboke__kkRepo__AdminConanRepositoryContractTest.java.md"
+  }
+}

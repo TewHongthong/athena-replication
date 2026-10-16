@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_039",
+  "language": "csharp",
+  "originalName": "worldTick",
+  "injectedName": "world_tick",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'world_tick' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed record KernelClock(long WorldTick, long DayIndex, int DayOfYear, int MinuteOfDay)\n{\n    public const int TicksPerMinute = 1;\n    public const int TicksPerDay = 1_440;\n    public const int DaysPerYear = 365;\n    public const int ScheduledTicksPerSecond = 6;\n\n    public static KernelClock FromWorldTick(long world_tick)\n    {\n        ArgumentOutOfRangeException.ThrowIfNegative(world_tick);\n\n        var dayIndex = world_tick / TicksPerDay;\n        return new KernelClock(\n            world_tick,\n            dayIndex,\n            (int)(dayIndex % DaysPerYear),\n            (int)(world_tick % TicksPerDay));\n    }\n}",
+  "occurrencesRenamed": 5,
+  "commentOccurrencesRenamed": 0
+}

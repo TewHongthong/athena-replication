@@ -1,0 +1,52 @@
+{
+  "id": "js_012",
+  "language": "javascript",
+  "source": "github:cloudflare/security-audit-skill@c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+  "sourceDetail": "skills/security-audit/validate-findings.cjs lines 127-139 (function codePointLength); license MIT; repo created 2026-06-18; curated by athena-curation-1.0",
+  "standardId": "AIRBNB_JS",
+  "codeContext": "function codePointLength(value) {\n  let length = 0;\n  let index = 0;\n  while (index < value.length) {\n    const first = value.charCodeAt(index++);\n    if (first >= 0xd800 && first <= 0xdbff && index < value.length) {\n      const second = value.charCodeAt(index);\n      if (second >= 0xdc00 && second <= 0xdfff) index++;\n    }\n    length++;\n  }\n  return length;\n}",
+  "identifiers": [
+    {
+      "name": "codePointLength",
+      "kind": "function",
+      "isCompliant": true
+    },
+    {
+      "name": "length",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "value",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "index",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "first",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "second",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "cloudflare/security-audit-skill",
+    "repoUrl": "https://github.com/cloudflare/security-audit-skill",
+    "license": "MIT",
+    "repoCreatedAt": "2026-06-18",
+    "commit": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+    "path": "skills/security-audit/validate-findings.cjs",
+    "startLine": 127,
+    "endLine": 139,
+    "unit": "function codePointLength",
+    "corpusFile": "corpus/javascript/cloudflare__security-audit-skill__validate-findings.cjs.md"
+  }
+}

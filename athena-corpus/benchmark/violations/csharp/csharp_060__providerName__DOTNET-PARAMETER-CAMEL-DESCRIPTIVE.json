@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_060",
+  "language": "csharp",
+  "originalName": "providerName",
+  "injectedName": "provider_name",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'provider_name' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "internal static class SinchSmsResponseMapper\n{\n    public static SmsSendResult FromResponse(string provider_name, string json)\n    {\n        using var doc = JsonDocument.Parse(json);\n        var root = doc.RootElement;\n\n        var id = root.TryGetProperty(\"id\", out var idEl) ? idEl.GetString() : null;\n\n        // A successful POST creates a batch. Delivery outcomes are reported separately.\n        return SmsSendResult.Succeeded(provider_name, id, SmsDeliveryStatus.Queued);\n    }\n\n    public static SmsSendResult FromErrorResponse(string provider_name, int httpStatusCode, string json)\n    {\n        string? errorCode = null;\n        string? errorMessage = null;\n\n        try\n        {\n            using var doc = JsonDocument.Parse(json);\n            var root = doc.RootElement;\n            errorCode = root.TryGetProperty(\"code\", out var codeEl) ? codeEl.GetString() : null;\n            errorMessage = root.TryGetProperty(\"text\", out var textEl) ? textEl.GetString() : null;\n        }\n        catch (JsonException) { /* best-effort */ }\n\n        bool isTransient = httpStatusCode >= 500 || httpStatusCode == 429;\n        return SmsSendResult.Failed(\n            provider_name,\n            errorCode,\n            errorMessage ?? $\"HTTP {httpStatusCode}\",\n            isTransient,\n            mayHaveBeenAccepted: httpStatusCode >= 500);\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

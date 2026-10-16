@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_066",
+  "language": "typescript",
+  "originalName": "running",
+  "injectedName": "RUNNING",
+  "identifierKind": "parameter",
+  "violatedRuleId": "GTS-PARAMETER-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'RUNNING' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export function useElapsed(RUNNING: boolean) {\n  const [elapsed, setElapsed] = useState(0);\n\n  useEffect(() => {\n    if (!RUNNING) return;\n    const startedAt = Date.now();\n    setElapsed(0);\n    const timer = setInterval(() => setElapsed(Date.now() - startedAt), 50);\n    return () => clearInterval(timer);\n  }, [RUNNING]);\n\n  return RUNNING ? elapsed : 0;\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

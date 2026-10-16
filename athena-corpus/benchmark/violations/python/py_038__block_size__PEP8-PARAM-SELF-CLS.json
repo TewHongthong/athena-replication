@@ -1,0 +1,16 @@
+{
+  "snippetId": "py_038",
+  "language": "python",
+  "originalName": "block_size",
+  "injectedName": "BLOCK_SIZE",
+  "identifierKind": "parameter",
+  "violatedRuleId": "PEP8-PARAM-SELF-CLS",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'BLOCK_SIZE' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def get_batch(self, type, BLOCK_SIZE=16, batch_size=16):\n    if type == \"train\":\n        data = self.train_data\n    else:\n        data = self.val_data\n    \n    offsets = torch.randint(\n        0,\n        len(data) - BLOCK_SIZE - 1,\n        (batch_size,)\n    )\n\n    x = torch.stack([\n        data[i:i + BLOCK_SIZE]\n        for i in offsets\n    ])\n\n    y = torch.stack([\n        data[i + 1:i + BLOCK_SIZE + 1]\n        for i in offsets\n    ])\n\n    return x, y",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no dedicated ordinary-parameter casing rule for Python; PEP8-PARAM-SELF-CLS is the only rule attached to kind 'parameter' that carries casing=snake_case, so it is used as the casing carrier"
+}

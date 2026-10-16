@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_049",
+  "language": "typescript",
+  "originalName": "onFlip",
+  "injectedName": "on_flip",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'on_flip' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "interface CameraRailProps {\n  grid: boolean;\n  canFlip: boolean;\n  locked: boolean;\n  onToggleGrid: () => void;\n  on_flip: () => void;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

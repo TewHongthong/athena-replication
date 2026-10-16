@@ -1,0 +1,16 @@
+{
+  "snippetId": "csharp_037",
+  "language": "csharp",
+  "originalName": "route",
+  "injectedName": "ROUTE",
+  "identifierKind": "variable",
+  "violatedRuleId": "DOTNET-VARIABLE-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ROUTE' does not match camelCase pattern",
+    "name 'ROUTE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "public sealed class NonAuthoritativeRouteCache\n{\n    private readonly Dictionary<RouteCacheKey, GridPoint[]> routes = [];\n\n    public int ComputationCount { get; private set; }\n\n    public IReadOnlyList<GridPoint> GetOrCompute(SeededMap map, RouteCacheKey key)\n    {\n        ArgumentNullException.ThrowIfNull(map);\n        ArgumentNullException.ThrowIfNull(key);\n        ValidateKey(key);\n        if (routes.TryGetValue(key, out var cached))\n        {\n            return cached.ToArray();\n        }\n\n        var ROUTE = DeterministicRouteFinder.Find(map, key.Origin, key.Destination).ToArray();\n        routes.Add(key, ROUTE);\n        ComputationCount++;\n        return ROUTE.ToArray();\n    }\n\n    private static void ValidateKey(RouteCacheKey key)\n    {\n        ArgumentException.ThrowIfNullOrWhiteSpace(key.MovementProfileId);\n        ArgumentException.ThrowIfNullOrWhiteSpace(key.RouteConfigurationVersion);\n        ArgumentException.ThrowIfNullOrWhiteSpace(key.SimulationVersion);\n        ArgumentOutOfRangeException.ThrowIfNegative(key.ActorCapabilityEpoch);\n        ArgumentOutOfRangeException.ThrowIfNegative(key.TransportEpoch);\n        ArgumentOutOfRangeException.ThrowIfNegative(key.TopologyEpoch);\n    }\n}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

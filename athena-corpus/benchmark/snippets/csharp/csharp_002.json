@@ -1,0 +1,47 @@
+{
+  "id": "csharp_002",
+  "language": "csharp",
+  "source": "github:TrentBest/TheSingularityWorkshop.FSM_Serialization@b6ba826742ca6f4507323a478deeaa0b5d915aa9",
+  "sourceDetail": "src/IBinaryStream.cs lines 6-31 (interface IBinaryStream); license MIT; repo created 2026-09-26T23:07:23Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public interface IBinaryStream : IDisposable\n{\n    /// <summary>Gets a value indicating whether the stream supports reading.</summary>\n    bool CanRead { get; }\n\n    /// <summary>Gets a value indicating whether the stream supports writing.</summary>\n    bool CanWrite { get; }\n\n    /// <summary>Gets or sets the current position within the stream.</summary>\n    long Position { get; set; }\n\n    /// <summary>Gets the length of the stream in bytes.</summary>\n    long Length { get; }\n\n    /// <summary>Reads bytes from the stream into the supplied buffer.</summary>\n    /// <param name=\"buffer\">The destination buffer.</param>\n    /// <returns>The number of bytes read.</returns>\n    int Read(Span<byte> buffer);\n\n    /// <summary>Writes the supplied bytes to the stream.</summary>\n    /// <param name=\"buffer\">The bytes to write.</param>\n    void Write(ReadOnlySpan<byte> buffer);\n\n    /// <summary>Flushes buffered data to the underlying representation.</summary>\n    void Flush();\n}",
+  "identifiers": [
+    {
+      "name": "IBinaryStream",
+      "kind": "interface",
+      "isCompliant": true
+    },
+    {
+      "name": "CanRead",
+      "kind": "boolean_variable",
+      "isCompliant": true
+    },
+    {
+      "name": "buffer",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "CanWrite",
+      "kind": "boolean_variable",
+      "isCompliant": true
+    },
+    {
+      "name": "Flush",
+      "kind": "method",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "TrentBest/TheSingularityWorkshop.FSM_Serialization",
+    "repoUrl": "https://github.com/TrentBest/TheSingularityWorkshop.FSM_Serialization",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-26T23:07:23Z",
+    "commit": "b6ba826742ca6f4507323a478deeaa0b5d915aa9",
+    "path": "src/IBinaryStream.cs",
+    "startLine": 6,
+    "endLine": 31,
+    "unit": "interface IBinaryStream",
+    "corpusFile": "corpus/csharp/TrentBest__TheSingularityWorkshop.FSM_Serialization__IBinaryStream.cs.md"
+  }
+}

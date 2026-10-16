@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_085",
+  "language": "csharp",
+  "originalName": "other",
+  "injectedName": "OTHER",
+  "identifierKind": "parameter",
+  "violatedRuleId": "DOTNET-PARAMETER-CAMEL-DESCRIPTIVE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'OTHER' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "private void OnTriggerStay(Collider OTHER)\n{\n    if (isEnabled && started && OTHER.CompareTag(\"GamePiece\"))\n    {\n        Rigidbody ballRb = OTHER.attachedRigidbody;\n        if (ballRb != null && targetPosition != null)\n        {\n            Vector3 directionToTarget = (targetPosition.position - OTHER.transform.position).normalized;\n            ballRb.velocity = directionToTarget * surfaceVelocity;\n        }\n    }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0
+}

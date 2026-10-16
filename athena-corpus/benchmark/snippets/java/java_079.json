@@ -1,0 +1,52 @@
+{
+  "id": "java_079",
+  "language": "java",
+  "source": "github:wanancat/furkin@79335b3b0986a4a59414031b56b53b9a9669ce28",
+  "sourceDetail": "src/main/java/com/wanancat/furkin/internal/client/FurkinClientPacketHandler.java lines 33-53 (method FurkinClientPacketHandler.handleSyncFurkinData); license MIT; repo created 2026-09-19T18:53:15Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_JAVA",
+  "codeContext": "public static void handleSyncFurkinData(SyncFurkinDataPacket packet) {\n    Minecraft minecraft = Minecraft.getInstance();\n    if (minecraft.level == null) {\n        return;\n    }\n    Entity entity = minecraft.level.getEntity(packet.getEntityId());\n    if (!(entity instanceof LivingEntity living)) {\n        return;\n    }\n    FurkinData data = living.getCapability(FurkinCapability.FURKIN_DATA).orElse(null);\n    if (data == null) {\n        return;\n    }\n    CompoundTag nbt = packet.getData();\n    if (nbt != null && !nbt.isEmpty()) {\n        data.deserializeNBT(nbt);\n    } else {\n        // 空包 = 收回，清回 WILD。\n        data.setState(FurkinState.WILD);\n    }\n}",
+  "identifiers": [
+    {
+      "name": "handleSyncFurkinData",
+      "kind": "method",
+      "isCompliant": true
+    },
+    {
+      "name": "minecraft",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "packet",
+      "kind": "parameter",
+      "isCompliant": true
+    },
+    {
+      "name": "entity",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "data",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "nbt",
+      "kind": "variable",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "wanancat/furkin",
+    "repoUrl": "https://github.com/wanancat/furkin",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-19T18:53:15Z",
+    "commit": "79335b3b0986a4a59414031b56b53b9a9669ce28",
+    "path": "src/main/java/com/wanancat/furkin/internal/client/FurkinClientPacketHandler.java",
+    "startLine": 33,
+    "endLine": 53,
+    "unit": "method FurkinClientPacketHandler.handleSyncFurkinData",
+    "corpusFile": "corpus/java/wanancat__furkin__FurkinClientPacketHandler.java.md"
+  }
+}

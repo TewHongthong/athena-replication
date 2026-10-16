@@ -1,0 +1,47 @@
+{
+  "id": "csharp_020",
+  "language": "csharp",
+  "source": "github:Wixely/Stashographer@e6568f9ca670f00ead30fe18c88491466eba11d1",
+  "sourceDetail": "src/Stashographer/Data/Entities/SpecialAttribute.cs lines 37-43 (class SpecialAttributeValueKind); license MIT; repo created 2026-08-18T03:19:36Z; curated by athena-curation-1.0",
+  "standardId": "DOTNET_DESIGN",
+  "codeContext": "public enum SpecialAttributeValueKind\n{\n    Money,\n    Number,\n    Text,\n    Date\n}",
+  "identifiers": [
+    {
+      "name": "SpecialAttributeValueKind",
+      "kind": "enum",
+      "isCompliant": true
+    },
+    {
+      "name": "Money",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Number",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Text",
+      "kind": "enum_member",
+      "isCompliant": true
+    },
+    {
+      "name": "Date",
+      "kind": "enum_member",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "Wixely/Stashographer",
+    "repoUrl": "https://github.com/Wixely/Stashographer",
+    "license": "MIT",
+    "repoCreatedAt": "2026-08-18T03:19:36Z",
+    "commit": "e6568f9ca670f00ead30fe18c88491466eba11d1",
+    "path": "src/Stashographer/Data/Entities/SpecialAttribute.cs",
+    "startLine": 37,
+    "endLine": 43,
+    "unit": "class SpecialAttributeValueKind",
+    "corpusFile": "corpus/csharp/Wixely__Stashographer__SpecialAttribute.cs.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_011",
+  "language": "python",
+  "originalName": "issuers",
+  "injectedName": "ISSUERS",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ISSUERS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "@router.post(\"/events/{slug}/certificates/issue/{kind}\")\ndef issue_certificates(\n    kind: str,\n    ctx: EventContext = Depends(require_organizer),\n    db: DbSession = Depends(get_db),\n    settings: Settings = Depends(get_settings),\n):\n    \"\"\"Bulk-issue: participation (every member of a submitted team), judge (every judge with a\n    submitted review), winner (top three after results are published).\"\"\"\n    ISSUERS = {\n        \"participation\": cert_service.issue_participation,\n        \"judge\": cert_service.issue_judge_records,\n        \"winner\": cert_service.issue_winners,\n    }\n    if kind not in ISSUERS:\n        raise NotFound(\"kind must be participation, judge or winner.\")\n    report = ISSUERS[kind](db, settings, ctx.event, ctx.user)\n    return {\"issued\": report.issued, \"skipped\": report.skipped}",
+  "occurrencesRenamed": 3,
+  "commentOccurrencesRenamed": 0
+}

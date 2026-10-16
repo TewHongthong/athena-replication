@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_001",
+  "language": "typescript",
+  "originalName": "protocolVersion",
+  "injectedName": "protocol_version",
+  "identifierKind": "property",
+  "violatedRuleId": "GTS-PROPERTY-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'protocol_version' does not match camelCase pattern"
+  ],
+  "codeContextWithViolation": "export interface Handshake {\n  /** Wire protocol the server speaks; panels refuse a mismatch. */\n  protocol_version: number;\n  /** Loopback port the bridge is listening on. */\n  port: number;\n  /** Shared secret the panel must present, or \"\" when auth is disabled. */\n  token: string;\n  /** Server process id, so a panel can detect a stale file. */\n  pid: number;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

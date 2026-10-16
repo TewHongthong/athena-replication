@@ -1,0 +1,15 @@
+{
+  "snippetId": "py_066",
+  "language": "python",
+  "originalName": "repos",
+  "injectedName": "REPOS",
+  "identifierKind": "variable",
+  "violatedRuleId": "PEP8-VAR-SNAKE",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'REPOS' does not match snake_case pattern"
+  ],
+  "codeContextWithViolation": "def main() -> int:\n    \"\"\"Main function to sync the repository list\"\"\"\n    args = parse_arguments()\n\n    if args.verbose:\n        logger.setLevel(logging.DEBUG)\n\n    logger.info(\"Starting repository list sync\")\n\n    if not GH_TOKEN:\n        logger.warning(\"GH_TOKEN not set; only public repositories are visible and requests are rate limited\")\n\n    try:\n        REPOS = fetch_all_repos(args.user)\n        names = filter_repos(\n            REPOS,\n            include_forks=args.include_forks,\n            include_archived=args.include_archived,\n            include_private=args.include_private,\n        )\n\n        if not names:\n            logger.error(f\"No repositories matched the filters for {args.user}\")\n            return 1\n\n        if args.dry_run:\n            logger.info(f\"Dry run: {len(names)} repositories would be written to {args.config}\")\n            for name in names:\n                print(name)\n            return 0\n\n        write_config(args.config, args.user, names)\n        return 0\n\n    except requests.RequestException as e:\n        logger.error(f\"GitHub API request failed: {e}\")\n        return 2\n    except Exception as e:\n        logger.error(f\"Unhandled exception: {e}\")\n        return 3",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ts_098",
+  "language": "typescript",
+  "source": "github:sebafermanelli/sebs7n-ui@a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+  "sourceDetail": "docs/site/app/_demos/input.tsx lines 35-57 (function Error); license MIT; repo created 2026-09-23T02:47:39Z; curated by athena-curation-1.0",
+  "standardId": "GOOGLE_TS",
+  "codeContext": "export function Error() {\n  const id = useId()\n  const [valor, setValor] = useState(\"acme@\")\n  const invalido = !/^[^@\\s]+@[^@\\s.]+\\.[^@\\s]+$/.test(valor)\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-2\">\n      <Label htmlFor={id}>Email</Label>\n      <Input\n        aria-describedby={invalido ? `${id}-error` : undefined}\n        aria-invalid={invalido || undefined}\n        id={id}\n        onChange={(event) => setValor(event.target.value)}\n        type=\"email\"\n        value={valor}\n      />\n      {invalido && (\n        <p className=\"text-copy-13 text-red-900\" id={`${id}-error`}>\n          Escribí un email válido, con dominio.\n        </p>\n      )}\n    </div>\n  )\n}",
+  "identifiers": [
+    {
+      "name": "invalido",
+      "kind": "variable",
+      "isCompliant": true
+    },
+    {
+      "name": "event",
+      "kind": "parameter",
+      "isCompliant": true
+    }
+  ],
+  "provenance": {
+    "repo": "sebafermanelli/sebs7n-ui",
+    "repoUrl": "https://github.com/sebafermanelli/sebs7n-ui",
+    "license": "MIT",
+    "repoCreatedAt": "2026-09-23T02:47:39Z",
+    "commit": "a774dd4d3e4c02918772d5c3182b80ce0a86db3b",
+    "path": "docs/site/app/_demos/input.tsx",
+    "startLine": 35,
+    "endLine": 57,
+    "unit": "function Error",
+    "corpusFile": "corpus/typescript/sebafermanelli__sebs7n-ui__input.tsx.md"
+  }
+}

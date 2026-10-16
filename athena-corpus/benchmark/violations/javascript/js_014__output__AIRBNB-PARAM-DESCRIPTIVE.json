@@ -1,0 +1,17 @@
+{
+  "snippetId": "js_014",
+  "language": "javascript",
+  "originalName": "output",
+  "injectedName": "o",
+  "identifierKind": "parameter",
+  "violatedRuleId": "AIRBNB-PARAM-DESCRIPTIVE",
+  "injectionMethod": "forbidden_pattern",
+  "expectedViolationReasons": [
+    "name 'o' shorter than minLength=2",
+    "name 'o' matches forbidden pattern '^[a-zA-Z]$'"
+  ],
+  "codeContextWithViolation": "function assertNoInjectedControlBytes(o) {\n  const bytes = Buffer.isBuffer(o) ? o : Buffer.from(o, \"utf8\");\n  for (const marker of TERMINAL_CONTROL_BYTES) {\n    assert.equal(bytes.indexOf(marker), -1, `found raw control bytes ${marker.toString(\"hex\")}`);\n  }\n}",
+  "occurrencesRenamed": 4,
+  "commentOccurrencesRenamed": 0,
+  "ruleCaveat": "ontology v1 has no parameter-casing rule for JavaScript; only the descriptive-name (min length / single-letter) rule is checked"
+}

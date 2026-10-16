@@ -1,0 +1,15 @@
+{
+  "snippetId": "ts_004",
+  "language": "typescript",
+  "originalName": "EvalOptions",
+  "injectedName": "eval_options",
+  "identifierKind": "interface",
+  "violatedRuleId": "GTS-INTERFACE-PASCAL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'eval_options' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "export interface eval_options {\n  /** Override the configured timeout for this one call. */\n  timeoutMs?: number;\n  /** Command weight class, selecting a default deadline. Defaults to \"slow\". */\n  timeoutClass?: TimeoutClass;\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

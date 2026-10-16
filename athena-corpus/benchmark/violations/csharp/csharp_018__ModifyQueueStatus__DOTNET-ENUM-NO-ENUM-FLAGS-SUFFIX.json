@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_018",
+  "language": "csharp",
+  "originalName": "ModifyQueueStatus",
+  "injectedName": "modify_queue_status",
+  "identifierKind": "enum",
+  "violatedRuleId": "DOTNET-ENUM-NO-ENUM-FLAGS-SUFFIX",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'modify_queue_status' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public enum modify_queue_status\n{\n    Pending,\n    Processing,\n    ReadyForReview,\n    Failed,\n    Applied,\n    Dismissed\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

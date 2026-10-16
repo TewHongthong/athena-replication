@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_040",
+  "language": "csharp",
+  "originalName": "SaveInspector",
+  "injectedName": "save_inspector",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'save_inspector' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public static class save_inspector\n{\n    public static SaveInspection Inspect(PersistedWorld save)\n    {\n        ArgumentNullException.ThrowIfNull(save);\n        var snapshot = CanonicalPersistenceCodec.DecodeSnapshot(save.SnapshotBytes);\n        var events = CanonicalPersistenceCodec.DecodeEventLog(save.EventLogBytes);\n        var current = WorldReplay.ReplaySnapshotSuffix(snapshot, events);\n\n        return new SaveInspection(\n            current.Identity,\n            current.LastEventId,\n            events.Count,\n            CanonicalPersistenceCodec.StateDigest(current),\n            CanonicalPersistenceCodec.EventDigest(events));\n    }\n}",
+  "occurrencesRenamed": 1,
+  "commentOccurrencesRenamed": 0
+}

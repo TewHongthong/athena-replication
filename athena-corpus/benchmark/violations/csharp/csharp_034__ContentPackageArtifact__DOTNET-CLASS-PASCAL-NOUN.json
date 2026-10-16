@@ -1,0 +1,15 @@
+{
+  "snippetId": "csharp_034",
+  "language": "csharp",
+  "originalName": "ContentPackageArtifact",
+  "injectedName": "content_package_artifact",
+  "identifierKind": "class",
+  "violatedRuleId": "DOTNET-CLASS-PASCAL-NOUN",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'content_package_artifact' does not match PascalCase pattern"
+  ],
+  "codeContextWithViolation": "public sealed record content_package_artifact(\n    ContentPackageManifest Manifest,\n    IReadOnlyList<AssetProvenanceManifest> Assets)\n{\n    public string ManifestDigest => ContentPackageManifestCodec.ComputeManifestDigest(Manifest);\n\n    public bool CanExport => Assets.All(asset => asset.CanExport);\n\n    public static content_package_artifact From(\n        ContentPackageManifest manifest,\n        IEnumerable<NormalizedInertRasterAsset> assets)\n    {\n        ArgumentNullException.ThrowIfNull(manifest);\n        ArgumentNullException.ThrowIfNull(assets);\n        return new(manifest, assets.Select(AssetProvenanceManifest.From).ToArray());\n    }\n\n    public void Validate() => ContentPackageArtifactCodec.Validate(this);\n}",
+  "occurrencesRenamed": 2,
+  "commentOccurrencesRenamed": 0
+}

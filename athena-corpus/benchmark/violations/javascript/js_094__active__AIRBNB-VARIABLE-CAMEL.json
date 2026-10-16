@@ -1,0 +1,16 @@
+{
+  "snippetId": "js_094",
+  "language": "javascript",
+  "originalName": "active",
+  "injectedName": "ACTIVE",
+  "identifierKind": "variable",
+  "violatedRuleId": "AIRBNB-VARIABLE-CAMEL",
+  "injectionMethod": "casing_swap",
+  "expectedViolationReasons": [
+    "name 'ACTIVE' does not match camelCase pattern",
+    "name 'ACTIVE' matches forbidden pattern '^[A-Z]'"
+  ],
+  "codeContextWithViolation": "export function createGuidedStudyService({recommend,sessionService,clock={nowISO:()=>new Date().toISOString()}}={}){\n  if(typeof recommend!=='function'||!sessionService)throw new TypeError('Guided study requires recommendation and session services');\n  let ACTIVE=null;\n  return{\n    next({id,source=null,type=null}={}){\n      const recommendation=recommend({id})[0]||null;\n      ACTIVE=recommendation?{recommendation,recommendationSource:source,recommendationType:type||recommendation.activityType||recommendation.studyType||'study',startedAt:null,paused:false}:null;\n      return ACTIVE;\n    },\n    start(){if(!ACTIVE)return null;ACTIVE.startedAt=clock.nowISO();ACTIVE.paused=false;return ACTIVE},\n    pause(){if(!ACTIVE)return null;ACTIVE.paused=true;return ACTIVE},\n    resume(){if(!ACTIVE)return null;ACTIVE.paused=false;return ACTIVE},\n    complete(result={}){\n      if(!ACTIVE)return null;\n      const session=sessionService.complete({...result,recommendationId:ACTIVE.recommendation.recommendationId||ACTIVE.recommendation.id,\n        recommendationSource:ACTIVE.recommendationSource,recommendationType:ACTIVE.recommendationType,\n        topicId:result.topicId??ACTIVE.recommendation.topicId,subjectId:result.subjectId??ACTIVE.recommendation.subjectId,\n        startedAt:result.startedAt||ACTIVE.startedAt,endedAt:result.endedAt||clock.nowISO(),durationSeconds:result.durationSeconds||0,\n        questionsResolved:result.questionsResolved||0,correctAnswers:result.correctAnswers||0,type:result.type||'study',source:'recommendation'});\n      ACTIVE=null;\n      return session;\n    },\n    reset(){ACTIVE=null},\n    current:()=>ACTIVE\n  };\n}",
+  "occurrencesRenamed": 24,
+  "commentOccurrencesRenamed": 0
+}
